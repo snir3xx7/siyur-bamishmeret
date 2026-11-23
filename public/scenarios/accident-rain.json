@@ -1,0 +1,2695 @@
+{
+ "id": "accident-rain",
+ "version": 1,
+ "title": "תאונת דרכים קלה בגשם",
+ "category": "תנועה ובטיחות בדרך",
+ "summary": "שני כלי רכב מעורבים בצומת רטוב והתנועה ממשיכה לעבור לידם. יש לאבטח, לברר את מצב המעורבים, לשמוע גרסאות ולעדכן את המוקד.",
+ "estimatedMinutes": 12,
+ "difficultyLabel": "בינונית",
+ "skills": [
+  "הבטחת זירה",
+  "בירור מצב מעורבים",
+  "גביית גרסאות נפרדות",
+  "עדכון מוקד",
+  "תיעוד עובדות וגרסאות"
+ ],
+ "shifts": [
+  "morning",
+  "evening",
+  "night"
+ ],
+ "defaultShift": "night",
+ "location": {
+  "name": "שדרות הזית פינת רחוב הכלנית",
+  "area": "שכונת נווה גפן, קריית אלון (בדוי)"
+ },
+ "objectives": [
+  "לאבטח את הזירה מול התנועה החולפת",
+  "לברר את מצבם של כל המעורבים",
+  "לשמוע בנפרד את גרסאות הנהגים והעד",
+  "לעדכן את המוקד ולתאם סיוע לפי הצורך",
+  "לתעד בנפרד עובדות, תצפיות וגרסאות"
+ ],
+ "variants": [
+  {
+   "id": "dana-hurt",
+   "label": "הנהגת ברכב האדום חשה כאב",
+   "set": {
+    "injured": "dana"
+   },
+   "vars": {
+    "injured": "דנה",
+    "injuredFull": "דנה אבוטבול",
+    "painPlace": "צוואר ובכתף",
+    "injuredSign": "את נהגת הרכב האדום אוחזת בצוואר",
+    "g_asked": "נשאלה",
+    "g_wellbeing": "לשלומה",
+    "g_reported": "דיווחה",
+    "g_got": "קיבלה",
+    "g_turned": "פנתה",
+    "g_told": "סיפרה",
+    "g_stayed": "נשארה",
+    "g_checked": "נבדקה",
+    "g_complains": "מתלוננת",
+    "g_inpain": "כואבת",
+    "g_wait": "תמתין",
+    "g_limits": "ומגבילה",
+    "g_injured": "הפצועה",
+    "g_seated": "הושבה",
+    "g_looks": "נראית"
+   }
+  },
+  {
+   "id": "oren-hurt",
+   "label": "הנהג ברכב הכסוף חש כאב",
+   "set": {
+    "injured": "oren"
+   },
+   "vars": {
+    "injured": "אורן",
+    "injuredFull": "אורן שטרן",
+    "painPlace": "חזה, במקום חגורת הבטיחות",
+    "injuredSign": "את נהג הרכב הכסוף נשען על הדלת ונושם בכבדות",
+    "g_asked": "נשאל",
+    "g_wellbeing": "לשלומו",
+    "g_reported": "דיווח",
+    "g_got": "קיבל",
+    "g_turned": "פנה",
+    "g_told": "סיפר",
+    "g_stayed": "נשאר",
+    "g_checked": "נבדק",
+    "g_complains": "מתלונן",
+    "g_inpain": "כואב",
+    "g_wait": "ימתין",
+    "g_limits": "ומגביל",
+    "g_injured": "הפצוע",
+    "g_seated": "הושב",
+    "g_looks": "נראה"
+   }
+  }
+ ],
+ "facts": [
+  {
+   "id": "d-location",
+   "kind": "dispatch",
+   "text": "מיקום שנמסר: שדרות הזית פינת רחוב הכלנית, ליד מכולת הגפן"
+  },
+  {
+   "id": "d-two-vehicles",
+   "kind": "dispatch",
+   "text": "שני כלי רכב מעורבים"
+  },
+  {
+   "id": "d-traffic",
+   "kind": "dispatch",
+   "text": "התנועה ממשיכה לעבור בסמוך לרכבים"
+  },
+  {
+   "id": "d-no-injury-info",
+   "kind": "dispatch",
+   "text": "אין מידע על נפגעים"
+  },
+  {
+   "id": "d-caller",
+   "kind": "dispatch",
+   "text": "המדווח הוא עובר אורח שממתין מתחת לסוכך המכולת"
+  },
+  {
+   "id": "d-drivers-out",
+   "kind": "dispatch",
+   "text": "לפי המדווח, הנהגים יצאו מהרכבים ומתווכחים"
+  },
+  {
+   "id": "d-lane",
+   "kind": "dispatch",
+   "text": "אחד הרכבים עומד חלקית בנתיב הימני, אין דיווח על דליפה"
+  },
+  {
+   "id": "d-garbled",
+   "kind": "dispatch",
+   "text": "הודעת המוקד על מפגעים נקטעה ברעשי קשר"
+  },
+  {
+   "id": "o-arrival",
+   "kind": "observation",
+   "text": "שני רכבים עומדים בצומת – רכב כסוף ורכב אדום. הכביש רטוב ויורד גשם"
+  },
+  {
+   "id": "o-drivers-alert",
+   "kind": "observation",
+   "text": "שני הנהגים בהכרה, עומדים על רגליהם ומדברים"
+  },
+  {
+   "id": "o-lane",
+   "kind": "observation",
+   "text": "הרכב האדום חוסם חלקית את הנתיב הימני; רכבים חולפים סוטים סביבו"
+  },
+  {
+   "id": "o-positions",
+   "kind": "observation",
+   "text": "מיקום הרכבים תועד לפני הזזה: הכסוף בנתיב הימני של שדרות הזית, האדום ביציאה מרחוב הכלנית"
+  },
+  {
+   "id": "o-damage",
+   "kind": "observation",
+   "text": "פגיעה בדלת הקדמית הימנית של הרכב האדום ובפגוש הקדמי של הרכב הכסוף"
+  },
+  {
+   "id": "o-no-leak",
+   "kind": "observation",
+   "text": "אין סימני דליפת נוזלים או עשן"
+  },
+  {
+   "id": "o-stop-sign",
+   "kind": "observation",
+   "text": "ביציאה מרחוב הכלנית מוצב תמרור עצור"
+  },
+  {
+   "id": "o-witness-details",
+   "kind": "observation",
+   "text": "פרטי העד (סמיר חדאד, גר בבניין ממול) נרשמו לצורך תיעוד"
+  },
+  {
+   "id": "o-pain-visible",
+   "kind": "observation",
+   "text": "{{injured}} {{g_looks}} {{g_inpain}} {{g_limits}} תנועה"
+  },
+  {
+   "id": "c-oren-version",
+   "kind": "claim",
+   "source": "oren",
+   "text": "הרכב האדום יצא לשדרה מרחוב הכלנית בלי לתת זכות קדימה"
+  },
+  {
+   "id": "c-oren-speed",
+   "kind": "claim",
+   "source": "oren",
+   "text": "נסע במהירות של כ־40 קמ״ש"
+  },
+  {
+   "id": "c-oren-nophone",
+   "kind": "claim",
+   "source": "oren",
+   "text": "הטלפון היה בתושבת עם ניווט פתוח, לא דיבר בו"
+  },
+  {
+   "id": "c-dana-version",
+   "kind": "claim",
+   "source": "dana",
+   "text": "עצרה בתמרור, הסתכלה לשני הצדדים, והרכב הכסוף הגיע מהר"
+  },
+  {
+   "id": "c-dana-phone",
+   "kind": "claim",
+   "source": "dana",
+   "text": "נראה לה שנהג הרכב הכסוף דיבר בטלפון"
+  },
+  {
+   "id": "c-dana-short",
+   "kind": "claim",
+   "source": "dana",
+   "text": "סירבה להרחיב בשלב זה"
+  },
+  {
+   "id": "c-pain-dana",
+   "kind": "claim",
+   "source": "dana",
+   "text": "חשה כאב בצוואר ובכתף מאז הפגיעה"
+  },
+  {
+   "id": "c-pain-oren",
+   "kind": "claim",
+   "source": "oren",
+   "text": "חש כאב בחזה במקום חגורת הבטיחות, כואב לו לנשום עמוק"
+  },
+  {
+   "id": "c-oren-ok",
+   "kind": "claim",
+   "source": "oren",
+   "text": "מרגיש בסדר, רק נסער"
+  },
+  {
+   "id": "c-dana-ok",
+   "kind": "claim",
+   "source": "dana",
+   "text": "רועדת קצת, אבל לא נפגעה"
+  },
+  {
+   "id": "c-samir-saw",
+   "kind": "claim",
+   "source": "samir",
+   "text": "ראה את הרכב האדום עוצר בתמרור ואז מתחיל לפנות; לא יכול לומר באיזו מהירות נסע הכסוף"
+  },
+  {
+   "id": "c-samir-phone",
+   "kind": "claim",
+   "source": "samir",
+   "text": "לא ראה אם נהג הכסוף השתמש בטלפון – הגשם הקשה לראות"
+  },
+  {
+   "id": "c-samir-hurt",
+   "kind": "claim",
+   "source": "samir",
+   "text": "ראה {{injuredSign}} מיד אחרי הפגיעה"
+  }
+ ],
+ "characters": [
+  {
+   "id": "oren",
+   "name": "אורן שטרן",
+   "role": "נהג הרכב הכסוף",
+   "gender": "m",
+   "look": {
+    "skin": "#e2b48e",
+    "hair": "#3b2a20",
+    "hairStyle": "short",
+    "top": "#2f4b6e",
+    "bottom": "#2d2d33",
+    "height": 1.02
+   },
+   "attitude": 1,
+   "x": 33,
+   "y": 63,
+   "scale": 1,
+   "moodRules": [
+    {
+     "when": {
+      "all": [
+       {
+        "flag": "injured",
+        "eq": "oren"
+       },
+       {
+        "flag": "painKnown"
+       }
+      ]
+     },
+     "mood": "hurt"
+    }
+   ]
+  },
+  {
+   "id": "dana",
+   "name": "דנה אבוטבול",
+   "role": "נהגת הרכב האדום",
+   "gender": "f",
+   "look": {
+    "skin": "#c98e64",
+    "hair": "#1d1410",
+    "hairStyle": "long",
+    "top": "#8a3b52",
+    "bottom": "#2b2b3a",
+    "height": 0.95,
+    "accessory": "phone"
+   },
+   "attitude": 1,
+   "x": 50,
+   "y": 64,
+   "scale": 1,
+   "moodRules": [
+    {
+     "when": {
+      "all": [
+       {
+        "flag": "injured",
+        "eq": "dana"
+       },
+       {
+        "flag": "painKnown"
+       }
+      ]
+     },
+     "mood": "hurt"
+    }
+   ]
+  },
+  {
+   "id": "samir",
+   "name": "סמיר חדאד",
+   "role": "עד ראייה (המדווח)",
+   "gender": "m",
+   "look": {
+    "skin": "#b07a52",
+    "hair": "#222",
+    "hairStyle": "cap",
+    "top": "#4f6b3a",
+    "bottom": "#3a3a3a",
+    "accessory": "umbrella"
+   },
+   "attitude": 2,
+   "x": 82,
+   "y": 57,
+   "scale": 0.9
+  }
+ ],
+ "dispatch": {
+  "time": {
+   "morning": "07:48",
+   "evening": "18:36",
+   "night": "23:12"
+  },
+  "unit": "סייר 23",
+  "incident": "4471",
+  "lines": [
+   {
+    "speaker": "dispatch",
+    "text": "סייר 23, כאן מוקד אלון. דיווח על תאונה בין שני כלי רכב בשדרות הזית פינת רחוב הכלנית, ליד מכולת הגפן. לפי המדווח התנועה ממשיכה לעבור לידם. אין מידע על נפגעים. אשר קבלה."
+   }
+  ],
+  "initialFacts": [
+   "d-location",
+   "d-two-vehicles",
+   "d-traffic",
+   "d-no-injury-info"
+  ],
+  "basicExtraFacts": [
+   "d-caller"
+  ],
+  "followUps": [
+   {
+    "id": "f-injuries",
+    "label": "לשאול: נמסר משהו על נפגעים?",
+    "lines": [
+     {
+      "speaker": "player",
+      "text": "מוקד, כאן סייר 23. נמסר משהו על נפגעים?"
+     },
+     {
+      "speaker": "dispatch",
+      "text": "לא נמסר על נפגעים. המדווח אמר שהנהגים יצאו מהרכבים ומתווכחים."
+     }
+    ],
+    "effects": {
+     "reveal": [
+      "d-drivers-out"
+     ]
+    },
+    "report": "בירור עם המוקד לגבי נפגעים לפני ההגעה"
+   },
+   {
+    "id": "f-hazard",
+    "label": "לשאול: יש חסימה, דליפה או סכנה נוספת?",
+    "branches": [
+     {
+      "when": {
+       "difficulty": [
+        "advanced"
+       ]
+      },
+      "lines": [
+       {
+        "speaker": "player",
+        "text": "מוקד, יש חסימה, דליפה או סכנה נוספת?"
+       },
+       {
+        "speaker": "dispatch",
+        "text": "נמסר שאחד ה… [רחש] …חלקית ב… [ההודעה נקטעה]"
+       }
+      ],
+      "effects": {
+       "reveal": [
+        "d-garbled"
+       ],
+       "set": {
+        "garbled": true
+       }
+      }
+     }
+    ],
+    "lines": [
+     {
+      "speaker": "player",
+      "text": "מוקד, יש חסימה, דליפה או סכנה נוספת?"
+     },
+     {
+      "speaker": "dispatch",
+      "text": "נמסר שאחד הרכבים עומד חלקית בנתיב הימני. אין דיווח על דליפה."
+     }
+    ],
+    "effects": {
+     "reveal": [
+      "d-lane"
+     ]
+    },
+    "report": "בירור עם המוקד לגבי מפגעים בזירה"
+   },
+   {
+    "id": "f-hazard-repeat",
+    "label": "לבקש מהמוקד לחזור על ההודעה שנקטעה",
+    "when": {
+     "flag": "garbled"
+    },
+    "lines": [
+     {
+      "speaker": "player",
+      "text": "מוקד, ההודעה נקטעה. חזור בבקשה."
+     },
+     {
+      "speaker": "dispatch",
+      "text": "חוזר: אחד הרכבים עומד חלקית בנתיב הימני. אין דיווח על דליפה."
+     }
+    ],
+    "effects": {
+     "reveal": [
+      "d-lane"
+     ]
+    },
+    "report": "בקשה מהמוקד לחזור על הודעה שנקטעה"
+   },
+   {
+    "id": "f-caller",
+    "label": "לשאול: מי המדווח, והאם הוא עדיין במקום?",
+    "when": {
+     "not": {
+      "fact": "d-caller"
+     }
+    },
+    "lines": [
+     {
+      "speaker": "player",
+      "text": "מי המדווח? הוא עדיין במקום?"
+     },
+     {
+      "speaker": "dispatch",
+      "text": "המדווח עובר אורח. אמר שהוא מחכה בצד, מתחת לסוכך של המכולת."
+     }
+    ],
+    "effects": {
+     "reveal": [
+      "d-caller"
+     ]
+    },
+    "report": "בירור עם המוקד לגבי זהות המדווח ומיקומו"
+   }
+  ],
+  "goLabel": "אישור קבלה ויציאה לזירה"
+ },
+ "transition": {
+  "kind": "car",
+  "text": "נסיעה לשדרות הזית. הגשם מתחזק והמגבים עובדים בקצב קבוע. בצומת הבא כבר רואים רכבים עומדים באלכסון.",
+  "travelMinutes": 4,
+  "ambience": [
+   "engine-wipers",
+   "rain"
+  ]
+ },
+ "scene": {
+  "background": "img/accident-street",
+  "alt": "צומת עירוני רטוב: בנייני מגורים עם מרפסות ודודי שמש, מכולת עם סוכך ושלט בעברית, מעבר חציה ותאורת רחוב שמשתקפת באספלט.",
+  "fallbackColor": "#28323f",
+  "ambience": [
+   "rain",
+   "traffic"
+  ],
+  "lights": "steady",
+  "lightsRules": [
+   {
+    "when": {
+     "flag": "secured"
+    },
+    "mode": "reflect"
+   }
+  ],
+  "reflect": {
+   "x": 0,
+   "y": 64,
+   "w": 100,
+   "h": 36
+  },
+  "weather": "rain",
+  "props": [
+   {
+    "id": "car-silver",
+    "kind": "car-silver",
+    "x": 35,
+    "y": 79,
+    "scale": 1,
+    "when": {
+     "not": {
+      "flag": "carsMoved"
+     }
+    }
+   },
+   {
+    "id": "car-red",
+    "kind": "car-red",
+    "x": 55,
+    "y": 78,
+    "scale": 1,
+    "flip": true,
+    "when": {
+     "not": {
+      "flag": "carsMoved"
+     }
+    }
+   },
+   {
+    "id": "car-silver-moved",
+    "kind": "car-silver",
+    "x": 14,
+    "y": 86,
+    "scale": 0.95,
+    "when": {
+     "flag": "carsMoved"
+    }
+   },
+   {
+    "id": "car-red-moved",
+    "kind": "car-red",
+    "x": 92,
+    "y": 86,
+    "scale": 0.95,
+    "flip": true,
+    "when": {
+     "flag": "carsMoved"
+    }
+   },
+   {
+    "id": "patrol-arrive",
+    "kind": "patrol",
+    "x": 8,
+    "y": 74,
+    "scale": 0.9,
+    "when": {
+     "not": {
+      "flag": "secured"
+     }
+    }
+   },
+   {
+    "id": "patrol-secure",
+    "kind": "patrol",
+    "x": 74,
+    "y": 80,
+    "scale": 1,
+    "when": {
+     "flag": "secured"
+    }
+   },
+   {
+    "id": "cone-1",
+    "kind": "cone",
+    "x": 84,
+    "y": 90,
+    "scale": 1,
+    "when": {
+     "flag": "secured"
+    }
+   }
+  ]
+ },
+ "arrivalLines": [
+  {
+   "speaker": "narrator",
+   "text": "הניידת נעצרת סמוך לצומת. שני רכבים עומדים באלכסון, ושני אנשים מתווכחים בקול ליד הרכב האדום. מתחת לסוכך המכולת עומד אדם עם מטרייה ומנופף לעברך. רכבים ממשיכים לחלוף לאט ליד התאונה."
+  }
+ ],
+ "arrivalFacts": [
+  "o-arrival",
+  "o-drivers-alert"
+ ],
+ "hotspots": [
+  {
+   "id": "h-scene",
+   "label": "אזור התאונה והתנועה",
+   "kind": "area",
+   "x": 45,
+   "y": 88,
+   "description": "הצומת הרטוב, שני הרכבים המעורבים והתנועה שחולפת לידם.",
+   "choices": [
+    {
+     "id": "s-secure",
+     "label": "למקם את הניידת עם אורות להגנה על הזירה",
+     "lines": [
+      {
+       "speaker": "narrator",
+       "text": "מיקמת את הניידת מאחורי הרכב האדום, הפעלת אורות והצבת קונוס. הרכבים החולפים מאטים וסוטים לנתיב השמאלי. עכשיו רואים בבירור שהרכב האדום חוסם חלקית את הנתיב הימני."
+      }
+     ],
+     "effects": {
+      "set": {
+       "secured": true
+      },
+      "reveal": [
+       "o-lane"
+      ],
+      "verify": [
+       "d-lane",
+       "d-two-vehicles",
+       "d-location",
+       "d-traffic"
+      ]
+     },
+     "report": "מיקום הניידת עם אורות והצבת קונוס להגנה על הזירה"
+    },
+    {
+     "id": "s-sidewalk",
+     "label": "לבקש מהנהגים לעבור למדרכה, הרחק מהתנועה",
+     "lines": [
+      {
+       "speaker": "player",
+       "text": "בואו נעבור למדרכה, מתחת לסוכך. שם בטוח יותר ונוכל לדבר."
+      },
+      {
+       "speaker": "oren",
+       "text": "בסדר, אבל שהיא לא תיסע מכאן."
+      },
+      {
+       "speaker": "dana",
+       "text": "אני לא הולכת לשום מקום."
+      }
+     ],
+     "effects": {
+      "set": {
+       "peopleSafe": true
+      }
+     },
+     "report": "הרחקת המעורבים מהכביש אל המדרכה"
+    },
+    {
+     "id": "s-look",
+     "label": "לתעד מה ראיתי: מיקום הרכבים, נזק ושילוט",
+     "branches": [
+      {
+       "when": {
+        "flag": "carsMoved"
+       },
+       "lines": [
+        {
+         "speaker": "narrator",
+         "text": "הרכבים כבר עומדים בשוליים. תיעדת את הנזק ואת תמרור העצור ביציאה מהכלנית, אבל המיקום המקורי של הרכבים כבר לא נראה."
+        }
+       ],
+       "effects": {
+        "reveal": [
+         "o-damage",
+         "o-no-leak",
+         "o-stop-sign"
+        ],
+        "set": {
+         "documented": true,
+         "positionsLost": true
+        },
+        "note": "מיקום הרכבים המקורי לא תועד"
+       }
+      }
+     ],
+     "lines": [
+      {
+       "speaker": "narrator",
+       "text": "תיעדת את מיקום שני הרכבים לפני כל הזזה: הכסוף בנתיב הימני של השדרה, האדום ביציאה מהכלנית. הדלת הימנית של האדום מעוכה, הפגוש של הכסוף סדוק. אין סימני דליפה. ביציאה מהכלנית מוצב תמרור עצור."
+      }
+     ],
+     "effects": {
+      "reveal": [
+       "o-positions",
+       "o-damage",
+       "o-no-leak",
+       "o-stop-sign"
+      ],
+      "verify": [
+       "d-two-vehicles"
+      ],
+      "set": {
+       "documented": true
+      }
+     },
+     "report": "תיעוד מיקום הרכבים, הנזק והשילוט בצומת"
+    },
+    {
+     "id": "s-move",
+     "label": "לבקש מהנהגים להזיז את הרכבים לשוליים",
+     "branches": [
+      {
+       "when": {
+        "not": {
+         "chosen": "s-look"
+        }
+       },
+       "lines": [
+        {
+         "speaker": "narrator",
+         "text": "הנהגים מזיזים את הרכבים לשוליים. התנועה זורמת שוב, אבל המיקום המקורי של הרכבים כבר לא נראה."
+        }
+       ],
+       "effects": {
+        "set": {
+         "carsMoved": true
+        },
+        "note": "הרכבים הוזזו לפני שתועד מיקומם"
+       }
+      }
+     ],
+     "lines": [
+      {
+       "speaker": "narrator",
+       "text": "אחרי התיעוד, הנהגים מזיזים את הרכבים לשוליים. הנתיב הימני נפתח והתנועה זורמת."
+      }
+     ],
+     "effects": {
+      "set": {
+       "carsMoved": true
+      }
+     },
+     "report": "הזזת הרכבים לשוליים ופתיחת הנתיב"
+    },
+    {
+     "id": "s-together",
+     "label": "לקרוא לשני הנהגים ולשמוע את שניהם יחד",
+     "when": {
+      "not": {
+       "all": [
+        {
+         "chosen": "o-version"
+        },
+        {
+         "chosen": "d-version"
+        }
+       ]
+      }
+     },
+     "lines": [
+      {
+       "speaker": "oren",
+       "text": "היא יצאה לי מהכלנית בלי להסתכל!"
+      },
+      {
+       "speaker": "dana",
+       "text": "אתה נסעת מהר ודיברת בטלפון!"
+      },
+      {
+       "speaker": "narrator",
+       "text": "השניים מתפרצים זה על דבריו של זה. קשה להבין מה כל אחד ראה בפועל."
+      }
+     ],
+     "effects": {
+      "attitude": {
+       "oren": -1,
+       "dana": -1
+      },
+      "reveal": [
+       "c-oren-version",
+       "c-dana-phone"
+      ],
+      "set": {
+       "together": true
+      },
+      "note": "שמיעת הנהגים יחד הגבירה את הוויכוח"
+     }
+    }
+   ]
+  },
+  {
+   "id": "h-oren",
+   "label": "אורן – נהג הרכב הכסוף",
+   "kind": "character",
+   "character": "oren",
+   "x": 33,
+   "y": 29,
+   "description": "אורן שטרן, נהג הרכב הכסוף. מדבר בקול ומצביע על הרכב האדום.",
+   "choices": [
+    {
+     "id": "o-feel",
+     "label": "לשאול את אורן איך הוא מרגיש",
+     "branches": [
+      {
+       "when": {
+        "flag": "injured",
+        "eq": "oren"
+       },
+       "lines": [
+        {
+         "speaker": "player",
+         "text": "אורן, לפני הכול – איך אתה מרגיש? משהו כואב?"
+        },
+        {
+         "speaker": "oren",
+         "text": "אני בסדר… האמת, החגורה לחצה לי פה בחזה. כואב כשאני נושם עמוק."
+        }
+       ],
+       "effects": {
+        "reveal": [
+         "c-pain-oren",
+         "o-pain-visible"
+        ],
+        "set": {
+         "painKnown": true
+        },
+        "note": "אורן סיפר על כאב רק לאחר ששאלת לשלומו"
+       }
+      }
+     ],
+     "lines": [
+      {
+       "speaker": "player",
+       "text": "אורן, לפני הכול – איך אתה מרגיש? משהו כואב?"
+      },
+      {
+       "speaker": "oren",
+       "text": "אני בסדר, רק עצבני. הרכב חדש."
+      }
+     ],
+     "effects": {
+      "reveal": [
+       "c-oren-ok"
+      ]
+     },
+     "report": "בירור מצבו של אורן שטרן"
+    },
+    {
+     "id": "o-version",
+     "label": "לשוחח עם אורן בנפרד ולשמוע את גרסתו",
+     "branches": [
+      {
+       "when": {
+        "attitudeLte": [
+         "oren",
+         0
+        ]
+       },
+       "lines": [
+        {
+         "speaker": "oren",
+         "text": "מה יש לשאול? היא אשמה. תרשום את זה וזהו."
+        }
+       ],
+       "effects": {
+        "reveal": [
+         "c-oren-version"
+        ],
+        "note": "אורן מסר גרסה מקוצרת בלבד"
+       }
+      }
+     ],
+     "lines": [
+      {
+       "speaker": "player",
+       "text": "אני רוצה לשמוע ממך מה קרה. ספר לי מההתחלה."
+      },
+      {
+       "speaker": "oren",
+       "text": "נסעתי בשדרה, לא מהר, איזה ארבעים. היא פשוט יצאה לי מהכלנית בלי לתת זכות קדימה."
+      }
+     ],
+     "effects": {
+      "reveal": [
+       "c-oren-version",
+       "c-oren-speed"
+      ]
+     },
+     "report": "גביית גרסת אורן שטרן בנפרד"
+    },
+    {
+     "id": "o-phone",
+     "label": "לשאול את אורן שאלה פתוחה על השניות שלפני הפגיעה",
+     "when": {
+      "chosen": "o-version"
+     },
+     "branches": [
+      {
+       "when": {
+        "attitudeLte": [
+         "oren",
+         0
+        ]
+       },
+       "lines": [
+        {
+         "speaker": "player",
+         "text": "מה עשית בשניות שלפני הפגיעה? איפה היה הטלפון?"
+        },
+        {
+         "speaker": "oren",
+         "text": "זה מה שהיא אמרה לך? אני לא עונה על זה."
+        }
+       ],
+       "effects": {
+        "note": "אורן סירב לענות על שאלת ההמשך"
+       }
+      }
+     ],
+     "lines": [
+      {
+       "speaker": "player",
+       "text": "מה עשית בשניות שלפני הפגיעה? איפה היה הטלפון?"
+      },
+      {
+       "speaker": "oren",
+       "text": "הטלפון היה בתושבת, הניווט היה פתוח. לא דיברתי."
+      }
+     ],
+     "effects": {
+      "reveal": [
+       "c-oren-nophone"
+      ]
+     },
+     "report": "שאלת המשך לאורן על רגע הפגיעה"
+    },
+    {
+     "id": "o-confront",
+     "label": "לומר לאורן שדנה טוענת שהוא דיבר בטלפון",
+     "when": {
+      "fact": "c-dana-phone"
+     },
+     "lines": [
+      {
+       "speaker": "player",
+       "text": "דנה אומרת שדיברת בטלפון."
+      },
+      {
+       "speaker": "oren",
+       "text": "מה?! היא ממציאה! אין לי מה לדבר איתך יותר."
+      }
+     ],
+     "effects": {
+      "attitude": {
+       "oren": -2
+      },
+      "set": {
+       "confronted": true
+      },
+      "note": "חזרת על טענת דנה בפני אורן"
+     }
+    },
+    {
+     "id": "o-repair",
+     "label": "להבהיר לאורן שאתה שומע את כל הצדדים ולא קובע אשמה",
+     "when": {
+      "attitudeLte": [
+       "oren",
+       0
+      ]
+     },
+     "lines": [
+      {
+       "speaker": "player",
+       "text": "אני לא קובע כאן מי אשם. אני שומע כל אחד בנפרד ומתעד. חשוב לי לשמוע גם אותך."
+      },
+      {
+       "speaker": "oren",
+       "text": "טוב… בסדר. תשאל."
+      }
+     ],
+     "effects": {
+      "attitude": {
+       "oren": 2
+      },
+      "set": {
+       "repaired": true
+      },
+      "note": "תיקנת את אופן הפנייה – אורן חזר לשתף פעולה"
+     },
+     "report": "הבהרה לאורן שהבירור נעשה מול כל הצדדים"
+    },
+    {
+     "id": "o-blame",
+     "label": "לומר לאורן שנראה שדנה אשמה, כי היה לה תמרור עצור",
+     "when": {
+      "fact": "o-stop-sign"
+     },
+     "lines": [
+      {
+       "speaker": "oren",
+       "text": "בדיוק! סוף סוף מישהו מבין."
+      },
+      {
+       "speaker": "narrator",
+       "text": "דנה, ששמעה את הדברים, מתרחקת בכעס ומדברת בטלפון."
+      }
+     ],
+     "effects": {
+      "attitude": {
+       "dana": -2
+      },
+      "set": {
+       "prejudged": true
+      },
+      "note": "הבעת עמדה לגבי האשמה לפני שהבירור הושלם"
+     }
+    },
+    {
+     "id": "o-care",
+     "label": "להושיב את אורן במקום מוגן ולבקש שלא יזוז עד לבדיקה",
+     "when": {
+      "all": [
+       {
+        "flag": "injured",
+        "eq": "oren"
+       },
+       {
+        "flag": "painKnown"
+       }
+      ]
+     },
+     "lines": [
+      {
+       "speaker": "player",
+       "text": "שב כאן מתחת לסוכך ונשום לאט. נדאג שיבדקו אותך."
+      },
+      {
+       "speaker": "oren",
+       "text": "תודה. באמת לא נעים לי לנשום."
+      }
+     ],
+     "effects": {
+      "set": {
+       "cared": true
+      }
+     },
+     "report": "הושבת אורן במקום מוגן עד לבדיקה"
+    }
+   ]
+  },
+  {
+   "id": "h-dana",
+   "label": "דנה – נהגת הרכב האדום",
+   "kind": "character",
+   "character": "dana",
+   "x": 50,
+   "y": 31,
+   "description": "דנה אבוטבול, נהגת הרכב האדום. עומדת ליד הדלת המעוכה ומחזיקה טלפון.",
+   "choices": [
+    {
+     "id": "d-feel",
+     "label": "לשאול את דנה איך היא מרגישה",
+     "branches": [
+      {
+       "when": {
+        "flag": "injured",
+        "eq": "dana"
+       },
+       "lines": [
+        {
+         "speaker": "player",
+         "text": "דנה, איך את מרגישה? משהו כואב לך?"
+        },
+        {
+         "speaker": "dana",
+         "text": "אני… בסדר. בעצם, הצוואר והכתף כואבים לי מאז המכה. חשבתי שזה יעבור."
+        }
+       ],
+       "effects": {
+        "reveal": [
+         "c-pain-dana",
+         "o-pain-visible"
+        ],
+        "set": {
+         "painKnown": true
+        },
+        "note": "דנה סיפרה על כאב רק לאחר ששאלת לשלומה"
+       }
+      }
+     ],
+     "lines": [
+      {
+       "speaker": "player",
+       "text": "דנה, איך את מרגישה? משהו כואב לך?"
+      },
+      {
+       "speaker": "dana",
+       "text": "אני רועדת קצת, אבל לא נפגעתי."
+      }
+     ],
+     "effects": {
+      "reveal": [
+       "c-dana-ok"
+      ]
+     },
+     "report": "בירור מצבה של דנה אבוטבול"
+    },
+    {
+     "id": "d-version",
+     "label": "לשוחח עם דנה בנפרד ולשמוע את גרסתה",
+     "branches": [
+      {
+       "when": {
+        "attitudeLte": [
+         "dana",
+         0
+        ]
+       },
+       "lines": [
+        {
+         "speaker": "dana",
+         "text": "אני לא רוצה לדבר עכשיו. כבר שמעת אותו, לא?"
+        }
+       ],
+       "effects": {
+        "reveal": [
+         "c-dana-short"
+        ],
+        "note": "דנה לא שיתפה פעולה ולא מסרה גרסה מלאה"
+       }
+      }
+     ],
+     "lines": [
+      {
+       "speaker": "player",
+       "text": "אני רוצה לשמוע את הגרסה שלך. מה קרה?"
+      },
+      {
+       "speaker": "dana",
+       "text": "עצרתי בעצור, הסתכלתי ימינה ושמאלה. הוא הגיע מהר. נראה לי שהוא דיבר בטלפון."
+      }
+     ],
+     "effects": {
+      "reveal": [
+       "c-dana-version",
+       "c-dana-phone"
+      ]
+     },
+     "report": "גביית גרסת דנה אבוטבול בנפרד"
+    },
+    {
+     "id": "d-retry",
+     "label": "לחזור לדנה בגישה רגועה ולשאול שוב",
+     "when": {
+      "all": [
+       {
+        "fact": "c-dana-short"
+       },
+       {
+        "not": {
+         "fact": "c-dana-version"
+        }
+       }
+      ]
+     },
+     "lines": [
+      {
+       "speaker": "player",
+       "text": "אני מבין שזה מתסכל. אני לא קובע כאן מי צודק – אני רוצה לשמוע גם את הגרסה שלך."
+      },
+      {
+       "speaker": "dana",
+       "text": "טוב. עצרתי בתמרור, הסתכלתי, והוא הגיע מהר. נראה לי שהוא דיבר בטלפון."
+      }
+     ],
+     "effects": {
+      "attitude": {
+       "dana": 2
+      },
+      "reveal": [
+       "c-dana-version",
+       "c-dana-phone"
+      ],
+      "set": {
+       "repaired": true
+      },
+      "note": "שאלת שוב בגישה רגועה – דנה מסרה גרסה מלאה"
+     },
+     "report": "פנייה חוזרת לדנה וגביית גרסתה המלאה"
+    },
+    {
+     "id": "d-confront",
+     "label": "לומר לדנה שאורן טוען שהיא יצאה בלי לתת זכות קדימה",
+     "when": {
+      "fact": "c-oren-version"
+     },
+     "lines": [
+      {
+       "speaker": "player",
+       "text": "אורן אומר שיצאת בלי לתת לו זכות קדימה."
+      },
+      {
+       "speaker": "dana",
+       "text": "אז מה, אתה כבר מאמין לו? אין לי מה להוסיף."
+      }
+     ],
+     "effects": {
+      "attitude": {
+       "dana": -2
+      },
+      "set": {
+       "confronted": true
+      },
+      "note": "חזרת על טענת אורן בפני דנה"
+     }
+    },
+    {
+     "id": "d-care",
+     "label": "להושיב את דנה במקום מוגן ולבקש שלא תזיז את הצוואר",
+     "when": {
+      "all": [
+       {
+        "flag": "injured",
+        "eq": "dana"
+       },
+       {
+        "flag": "painKnown"
+       }
+      ]
+     },
+     "lines": [
+      {
+       "speaker": "player",
+       "text": "שבי כאן מתחת לסוכך ואל תזיזי את הצוואר. נדאג שיבדקו אותך."
+      },
+      {
+       "speaker": "dana",
+       "text": "תודה."
+      }
+     ],
+     "effects": {
+      "set": {
+       "cared": true
+      }
+     },
+     "report": "הושבת דנה במקום מוגן עד לבדיקה"
+    }
+   ]
+  },
+  {
+   "id": "h-samir",
+   "label": "סמיר – העד שהתקשר",
+   "kind": "character",
+   "character": "samir",
+   "x": 82,
+   "y": 25,
+   "description": "סמיר חדאד, המדווח. עומד מתחת לסוכך המכולת עם מטרייה.",
+   "choices": [
+    {
+     "id": "w-talk",
+     "label": "לשוחח עם המדווח – מה בדיוק ראה?",
+     "lines": [
+      {
+       "speaker": "samir",
+       "text": "אני זה שהתקשר. עמדתי פה מתחת לסוכך. ראיתי את האדום עוצר בתמרור ואז מתחיל לפנות. הכסוף הגיע בשדרה – מהר או לא, אני לא יכול להגיד."
+      }
+     ],
+     "effects": {
+      "reveal": [
+       "c-samir-saw"
+      ],
+      "verify": [
+       "d-caller"
+      ]
+     },
+     "report": "שיחה עם העד שדיווח למוקד"
+    },
+    {
+     "id": "w-hurt",
+     "label": "לשאול את העד אם מישהו נראה פגוע",
+     "when": {
+      "chosen": "w-talk"
+     },
+     "lines": [
+      {
+       "speaker": "samir",
+       "text": "רגע אחרי המכה ראיתי {{injuredSign}}. אחר כך הם מיד התחילו לצעוק."
+      }
+     ],
+     "effects": {
+      "reveal": [
+       "c-samir-hurt"
+      ]
+     },
+     "report": "בירור עם העד לגבי סימני פגיעה"
+    },
+    {
+     "id": "w-phone",
+     "label": "לשאול את העד אם ראה שימוש בטלפון",
+     "when": {
+      "chosen": "w-talk"
+     },
+     "lines": [
+      {
+       "speaker": "samir",
+       "text": "לא ראיתי. היה גשם חזק והשמשות היו מלאות טיפות."
+      }
+     ],
+     "effects": {
+      "reveal": [
+       "c-samir-phone"
+      ]
+     },
+     "report": "בדיקת הטענה על שימוש בטלפון מול העד"
+    },
+    {
+     "id": "w-contact",
+     "label": "לבקש מהעד פרטי קשר לצורך תיעוד",
+     "when": {
+      "chosen": "w-talk"
+     },
+     "lines": [
+      {
+       "speaker": "samir",
+       "text": "בטח. סמיר חדאד, אני גר בבניין ממול. אפשר לרשום."
+      }
+     ],
+     "effects": {
+      "reveal": [
+       "o-witness-details"
+      ]
+     },
+     "report": "רישום פרטי העד"
+    }
+   ]
+  },
+  {
+   "id": "h-radio",
+   "label": "מכשיר הקשר – שאילתה למוקד",
+   "kind": "radio",
+   "x": 9,
+   "y": 58,
+   "description": "מכשיר הקשר בניידת. אפשר לבקש עדכון מהמוקד. לשליחת עדכון השתמש בכפתור „עדכון למוקד”.",
+   "choices": [
+    {
+     "id": "r-news",
+     "label": "לבקש עדכון מהמוקד: התקבלו דיווחים נוספים?",
+     "branches": [
+      {
+       "when": {
+        "not": {
+         "flag": "carsMoved"
+        }
+       },
+       "lines": [
+        {
+         "speaker": "player",
+         "text": "מוקד, כאן סייר 23. התקבלו דיווחים נוספים מהמקום?"
+        },
+        {
+         "speaker": "dispatch",
+         "text": "התקבלה שיחה מנהג שחלף במקום: רכב עומד בנתיב הימני, צריך זהירות."
+        }
+       ],
+       "effects": {
+        "reveal": [
+         "d-lane"
+        ]
+       }
+      }
+     ],
+     "lines": [
+      {
+       "speaker": "player",
+       "text": "מוקד, כאן סייר 23. התקבלו דיווחים נוספים מהמקום?"
+      },
+      {
+       "speaker": "dispatch",
+       "text": "אין דיווחים נוספים."
+      }
+     ],
+     "report": "בקשת עדכון מהמוקד על דיווחים נוספים"
+    },
+    {
+     "id": "r-eta",
+     "label": "לבקש מהמוקד זמן הגעה של הצוות הרפואי",
+     "when": {
+      "flag": "ems"
+     },
+     "lines": [
+      {
+       "speaker": "player",
+       "text": "מוקד, מה זמן ההגעה של הצוות הרפואי?"
+      },
+      {
+       "speaker": "dispatch",
+       "text": "הצוות במרחק כחמש דקות."
+      }
+     ],
+     "report": "בירור זמן הגעת הצוות הרפואי"
+    }
+   ]
+  }
+ ],
+ "update": {
+  "categories": {
+   "location": "מקום",
+   "situation": "מצב נוכחי",
+   "status": "מצב המעורבים",
+   "verified": "מה אומת",
+   "missing": "מה עדיין חסר",
+   "assistance": "סיוע נדרש",
+   "judgement": "קביעה"
+  },
+  "elements": [
+   {
+    "id": "u-loc",
+    "category": "location",
+    "text": "נמצא בשדרות הזית פינת הכלנית"
+   },
+   {
+    "id": "u-two-cars",
+    "category": "situation",
+    "text": "שני רכבים מעורבים, נזק פח"
+   },
+   {
+    "id": "u-lane",
+    "category": "situation",
+    "text": "רכב חוסם חלקית את הנתיב הימני",
+    "when": {
+     "all": [
+      {
+       "any": [
+        {
+         "fact": "d-lane"
+        },
+        {
+         "fact": "o-lane"
+        }
+       ]
+      },
+      {
+       "not": {
+        "flag": "carsMoved"
+       }
+      }
+     ]
+    }
+   },
+   {
+    "id": "u-lane-clear",
+    "category": "situation",
+    "text": "הרכבים הוזזו לשוליים, הנתיב פתוח",
+    "when": {
+     "flag": "carsMoved"
+    }
+   },
+   {
+    "id": "u-secured",
+    "category": "situation",
+    "text": "הזירה מאובטחת באורות הניידת",
+    "when": {
+     "flag": "secured"
+    }
+   },
+   {
+    "id": "u-status-checking",
+    "category": "status",
+    "text": "מצב המעורבים עדיין בבירור",
+    "when": {
+     "not": {
+      "flag": "painKnown"
+     }
+    }
+   },
+   {
+    "id": "u-status-ok",
+    "category": "status",
+    "text": "שני הנהגים בהכרה ועומדים על רגליהם",
+    "when": {
+     "fact": "o-drivers-alert"
+    }
+   },
+   {
+    "id": "u-status-pain",
+    "category": "status",
+    "text": "{{injuredFull}} {{g_complains}} על כאב ב{{painPlace}}",
+    "when": {
+     "flag": "painKnown"
+    }
+   },
+   {
+    "id": "u-versions",
+    "category": "verified",
+    "text": "נגבו גרסאות נפרדות – הגרסאות סותרות, הנסיבות בבירור",
+    "when": {
+     "all": [
+      {
+       "fact": "c-oren-version"
+      },
+      {
+       "fact": "c-dana-version"
+      }
+     ]
+    }
+   },
+   {
+    "id": "u-documented",
+    "category": "verified",
+    "text": "הנזק והשילוט בצומת תועדו",
+    "when": {
+     "flag": "documented"
+    }
+   },
+   {
+    "id": "u-witness",
+    "category": "verified",
+    "text": "יש עד ראייה, פרטיו נרשמו",
+    "when": {
+     "fact": "o-witness-details"
+    }
+   },
+   {
+    "id": "u-missing-circ",
+    "category": "missing",
+    "text": "עדיין בבירור: נסיבות התאונה"
+   },
+   {
+    "id": "u-missing-versions",
+    "category": "missing",
+    "text": "טרם נגבו גרסאות מכל המעורבים",
+    "when": {
+     "not": {
+      "all": [
+       {
+        "fact": "c-oren-version"
+       },
+       {
+        "fact": "c-dana-version"
+       },
+       {
+        "fact": "c-samir-saw"
+       }
+      ]
+     }
+    }
+   },
+   {
+    "id": "u-ems",
+    "category": "assistance",
+    "text": "מבקש צוות רפואי לבדיקת {{injured}}",
+    "when": {
+     "flag": "painKnown"
+    }
+   },
+   {
+    "id": "u-traffic",
+    "category": "assistance",
+    "text": "מבקש סיוע בהכוונת תנועה",
+    "when": {
+     "all": [
+      {
+       "any": [
+        {
+         "fact": "d-lane"
+        },
+        {
+         "fact": "o-lane"
+        }
+       ]
+      },
+      {
+       "not": {
+        "flag": "carsMoved"
+       }
+      }
+     ]
+    }
+   },
+   {
+    "id": "u-no-assist",
+    "category": "assistance",
+    "text": "לא נדרש סיוע נוסף כרגע"
+   },
+   {
+    "id": "u-fault",
+    "category": "judgement",
+    "text": "נהגת הרכב האדום אשמה בתאונה",
+    "when": {
+     "fact": "c-oren-version"
+    }
+   }
+  ],
+  "responses": [
+   {
+    "when": {
+     "inUpdate": "u-ems"
+    },
+    "lines": [
+     {
+      "speaker": "dispatch",
+      "text": "מוקד: קיבלתי, צוות רפואי בדרך. זמן הגעה משוער שמונה דקות."
+     }
+    ],
+    "effects": {
+     "set": {
+      "ems": true
+     }
+    }
+   },
+   {
+    "when": {
+     "inUpdate": "u-traffic"
+    },
+    "lines": [
+     {
+      "speaker": "dispatch",
+      "text": "מוקד: קיבלתי, ניידת נוספת תגיע לסייע בהכוונת התנועה."
+     }
+    ],
+    "effects": {
+     "set": {
+      "trafficHelp": true
+     }
+    }
+   },
+   {
+    "when": {
+     "all": [
+      {
+       "inUpdate": "u-no-assist"
+      },
+      {
+       "flag": "painKnown"
+      }
+     ]
+    },
+    "lines": [
+     {
+      "speaker": "dispatch",
+      "text": "מוקד: רשמתי שלא נדרש סיוע."
+     }
+    ],
+    "effects": {
+     "note": "דווח שלא נדרש סיוע למרות תלונה על כאב"
+    }
+   },
+   {
+    "when": {
+     "inUpdate": "u-fault"
+    },
+    "lines": [
+     {
+      "speaker": "dispatch",
+      "text": "מוקד: רשמתי."
+     }
+    ],
+    "effects": {
+     "note": "בעדכון נקבעה אשמה לפני השלמת הבירור"
+    }
+   }
+  ]
+ },
+ "finish": {
+  "label": "סיום הטיפול בזירה",
+  "confirm": "לסיים את הטיפול בזירה ולעבור לתחקיר? אפשר לשלוח עדכון נוסף למוקד לפני הסיום."
+ },
+ "endings": [
+  {
+   "id": "e-good",
+   "kind": "good",
+   "title": "האירוע טופל במלואו",
+   "text": "המעורבים מוגנים מהתנועה, {{injured}} {{g_checked}} בידי הצוות הרפואי, הגרסאות נגבו בנפרד והמוקד קיבל תמונת מצב ברורה.",
+   "when": {
+    "all": [
+     {
+      "flag": "painKnown"
+     },
+     {
+      "sent": "u-ems"
+     },
+     {
+      "flag": "secured"
+     },
+     {
+      "fact": "c-oren-version"
+     },
+     {
+      "fact": "c-dana-version"
+     },
+     {
+      "not": {
+       "flag": "prejudged"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "id": "e-partial",
+   "kind": "partial",
+   "title": "טיפול חלקי",
+   "text": "{{injured}} {{g_got}} מענה רפואי, אך חלק מהפעולות המרכזיות לא הושלמו – אבטחת הזירה, גביית הגרסאות או הימנעות מקביעה מוקדמת.",
+   "when": {
+    "all": [
+     {
+      "flag": "painKnown"
+     },
+     {
+      "sent": "u-ems"
+     }
+    ]
+   }
+  },
+  {
+   "id": "e-retry-ems",
+   "kind": "retry",
+   "title": "הזדמנות לתיקון: כאב שלא קיבל מענה",
+   "text": "{{injured}} {{g_told}} על כאב, אך לא תואם סיוע רפואי. בסבב הבא, כשמתגלה כאב – עדכן את המוקד ובקש צוות רפואי.",
+   "when": {
+    "flag": "painKnown"
+   }
+  },
+  {
+   "id": "e-retry",
+   "kind": "retry",
+   "title": "הזדמנות לתיקון: מצב המעורבים לא נבדק",
+   "text": "הטיפול הסתיים לפני שנבדק מצבם של כל המעורבים. כעבור שעה התקבל במוקד דיווח ש{{injured}} {{g_turned}} לבדיקה רפואית בעקבות כאב מהתאונה.",
+   "when": {
+    "always": true
+   }
+  }
+ ],
+ "hints": [
+  {
+   "when": {
+    "all": [
+     {
+      "stage": [
+       "dispatch"
+      ]
+     },
+     {
+      "not": {
+       "countChosen": {
+        "ids": [
+         "f-injuries",
+         "f-hazard",
+         "f-caller"
+        ],
+        "gte": 1
+       }
+      }
+     }
+    ]
+   },
+   "text": "לפני היציאה אפשר לבקש מהמוקד השלמת פרטים – למשל על נפגעים, מפגעים או המדווח."
+  },
+  {
+   "when": {
+    "flag": "garbled"
+   },
+   "text": "ההודעה נקטעה. אפשר לבקש מהמוקד לחזור עליה."
+  },
+  {
+   "when": {
+    "all": [
+     {
+      "stage": [
+       "scene"
+      ]
+     },
+     {
+      "not": {
+       "flag": "secured"
+      }
+     }
+    ]
+   },
+   "text": "התנועה ממשיכה לעבור ליד הרכבים. מה יגן על המעורבים לפני שמבררים מה קרה?"
+  },
+  {
+   "when": {
+    "all": [
+     {
+      "stage": [
+       "scene"
+      ]
+     },
+     {
+      "not": {
+       "countChosen": {
+        "ids": [
+         "o-feel",
+         "d-feel"
+        ],
+        "gte": 2
+       }
+      }
+     }
+    ]
+   },
+   "text": "לא כל פגיעה נראית מבחוץ. שאל כל אחד מהנהגים איך הוא מרגיש."
+  },
+  {
+   "when": {
+    "all": [
+     {
+      "flag": "painKnown"
+     },
+     {
+      "not": {
+       "sent": "u-ems"
+      }
+     }
+    ]
+   },
+   "text": "יש תלונה על כאב. האם המוקד יודע על כך?"
+  },
+  {
+   "when": {
+    "flag": "confronted"
+   },
+   "text": "אחד הצדדים נעשה פחות משתף פעולה. אפשר לחזור אליו ולהבהיר שאתה שומע את כולם."
+  },
+  {
+   "when": {
+    "not": {
+     "all": [
+      {
+       "chosen": "o-version"
+      },
+      {
+       "chosen": "d-version"
+      }
+     ]
+    }
+   },
+   "text": "שמיעת כל צד בנפרד מאפשרת לזהות סתירות בלי להסלים."
+  },
+  {
+   "when": {
+    "not": {
+     "updatesGte": 1
+    }
+   },
+   "text": "עדכון קצר למוקד: מקום, מצב נוכחי, מצב המעורבים, מה אומת, מה חסר וסיוע נדרש."
+  },
+  {
+   "when": {
+    "always": true
+   },
+   "text": "קיבלת מידע חדש? אפשר לשלוח עדכון נוסף למוקד לפני הסיום."
+  }
+ ],
+ "scoring": {
+  "rules": [
+   {
+    "id": "r-info-dispatch",
+    "domain": "info",
+    "label": "השלמת פרטים מהמוקד לפני ההגעה",
+    "max": 5,
+    "required": false,
+    "anchor": [
+     "f-injuries",
+     "f-hazard",
+     "f-caller"
+    ],
+    "tiers": [
+     {
+      "when": {
+       "countChosen": {
+        "ids": [
+         "f-injuries",
+         "f-hazard",
+         "f-caller"
+        ],
+        "gte": 2
+       }
+      },
+      "points": 5,
+      "explain": "התבקשו לפחות שתי השלמות פרטים לפני ההגעה.",
+      "keep": "לפני היציאה ביקשת מהמוקד השלמת פרטים על נפגעים, מפגעים או המדווח. כך הגעת לזירה עם תמונה רחבה יותר וידעת למה לצפות."
+     },
+     {
+      "when": {
+       "countChosen": {
+        "ids": [
+         "f-injuries",
+         "f-hazard",
+         "f-caller"
+        ],
+        "gte": 1
+       }
+      },
+      "points": 3,
+      "explain": "התבקשה השלמת פרטים אחת.",
+      "improve": "ביקשת מהמוקד השלמה אחת בלבד. בסבב הבא שאל גם על נפגעים ועל מפגעים בדרך – זה קובע מה עושים ראשון בהגעה."
+     }
+    ],
+    "fallback": {
+     "explain": "לא התבקשו השלמות פרטים מהמוקד.",
+     "improve": "יצאת לזירה בלי לבקש מהמוקד השלמת פרטים. בסבב הבא שאל על נפגעים, מפגעים ומיקום המדווח לפני היציאה."
+    },
+    "alternative": "גם בקשה לחזור על הודעה שנקטעה היא השלמת פרטים סבירה."
+   },
+   {
+    "id": "r-info-wellbeing",
+    "domain": "info",
+    "label": "בירור מצבם של כל המעורבים",
+    "max": 10,
+    "required": true,
+    "anchor": [
+     "o-feel",
+     "d-feel"
+    ],
+    "tiers": [
+     {
+      "when": {
+       "all": [
+        {
+         "chosen": "o-feel"
+        },
+        {
+         "chosen": "d-feel"
+        }
+       ]
+      },
+      "points": 10,
+      "explain": "שני הנהגים נשאלו לשלומם.",
+      "keep": "שאלת את שני הנהגים איך הם מרגישים. כך התגלה הכאב של {{injured}}, שלא נראה מבחוץ."
+     },
+     {
+      "when": {
+       "flag": "painKnown"
+      },
+      "points": 6,
+      "explain": "{{g_asked}} {{g_wellbeing}} רק {{injured}}.",
+      "improve": "שאלת {{g_wellbeing}} רק את {{injured}}. הכאב התגלה, אך הנהג השני לא נשאל. בסבב הבא שאל כל מעורב בנפרד – גם מי שנראה בסדר."
+     },
+     {
+      "when": {
+       "countChosen": {
+        "ids": [
+         "o-feel",
+         "d-feel"
+        ],
+        "gte": 1
+       }
+      },
+      "points": 3,
+      "explain": "נשאל לשלומו רק אחד הנהגים, והכאב של {{injured}} לא התגלה.",
+      "improve": "שאלת לשלומו רק נהג אחד. {{injured}} לא {{g_asked}} ולכן הכאב לא התגלה בזירה. בסבב הבא שאל את כל המעורבים."
+     }
+    ],
+    "fallback": {
+     "explain": "לא נבדק מצב המעורבים.",
+     "improve": "לא שאלת את המעורבים איך הם מרגישים, ולכן הכאב של {{injured}} לא התגלה בזירה. בסבב הבא שאל כל מעורב לשלומו לפני גביית הגרסאות."
+    }
+   },
+   {
+    "id": "r-info-versions",
+    "domain": "info",
+    "label": "שמיעת גרסאות הנהגים והעד",
+    "max": 10,
+    "required": true,
+    "anchor": [
+     "w-talk",
+     "o-version",
+     "d-version"
+    ],
+    "tiers": [
+     {
+      "when": {
+       "all": [
+        {
+         "fact": "c-oren-version"
+        },
+        {
+         "fact": "c-dana-version"
+        },
+        {
+         "fact": "c-samir-saw"
+        }
+       ]
+      },
+      "points": 10,
+      "explain": "נשמעו גרסאות שני הנהגים והעד.",
+      "keep": "שמעת את גרסאות שני הנהגים ושוחחת עם העד. כך זיהית שהגרסאות סותרות ושהעד מאשש רק חלק מהן."
+     },
+     {
+      "when": {
+       "any": [
+        {
+         "all": [
+          {
+           "fact": "c-oren-version"
+          },
+          {
+           "fact": "c-dana-version"
+          }
+         ]
+        },
+        {
+         "all": [
+          {
+           "fact": "c-oren-version"
+          },
+          {
+           "fact": "c-samir-saw"
+          }
+         ]
+        },
+        {
+         "all": [
+          {
+           "fact": "c-dana-version"
+          },
+          {
+           "fact": "c-samir-saw"
+          }
+         ]
+        }
+       ]
+      },
+      "points": 6,
+      "explain": "נשמעו שתיים משלוש העדויות.",
+      "improve": "חסרה אחת העדויות – של נהג או של העד. בסבב הבא השלם את כל הגרסאות לפני הסיכום; העד יכול לאשש או להחליש טענה."
+     },
+     {
+      "when": {
+       "any": [
+        {
+         "fact": "c-oren-version"
+        },
+        {
+         "fact": "c-dana-version"
+        },
+        {
+         "fact": "c-samir-saw"
+        }
+       ]
+      },
+      "points": 3,
+      "explain": "נשמעה עדות אחת בלבד.",
+      "improve": "נשמעה רק עדות אחת, כך שלא הייתה אפשרות לזהות סתירות. בסבב הבא שמע את שני הנהגים ואת העד."
+     }
+    ],
+    "fallback": {
+     "explain": "לא נגבו גרסאות.",
+     "improve": "לא נגבו גרסאות מהמעורבים או מהעד. בסבב הבא שוחח עם כל אחד מהם בנפרד."
+    }
+   },
+   {
+    "id": "r-assess-secure",
+    "domain": "assessment",
+    "label": "אבטחת הזירה לפני בירור הנסיבות",
+    "max": 10,
+    "required": true,
+    "anchor": [
+     "s-secure"
+    ],
+    "tiers": [
+     {
+      "when": {
+       "all": [
+        {
+         "before": [
+          "s-secure",
+          "o-version"
+         ]
+        },
+        {
+         "before": [
+          "s-secure",
+          "d-version"
+         ]
+        },
+        {
+         "before": [
+          "s-secure",
+          "s-together"
+         ]
+        }
+       ]
+      },
+      "points": 10,
+      "explain": "הזירה אובטחה לפני בירור הנסיבות.",
+      "keep": "מיקמת את הניידת עם אורות להגנה כבר בתחילת הטיפול. הרכבים החולפים האטו לפני שהתחלת לברר מה קרה."
+     },
+     {
+      "when": {
+       "chosen": "s-secure"
+      },
+      "points": 5,
+      "explain": "הזירה אובטחה, אך רק אחרי שהתחיל בירור הנסיבות.",
+      "improve": "אבטחת את הזירה רק אחרי שהתחלת לגבות גרסאות, כשהתנועה עדיין עברה ליד המעורבים. בסבב הבא אבטח את הזירה מיד בהגעה."
+     }
+    ],
+    "fallback": {
+     "explain": "הזירה לא אובטחה.",
+     "improve": "הזירה לא אובטחה והתנועה המשיכה לעבור ליד הרכבים והמעורבים. בסבב הבא מקם את הניידת עם אורות להגנה כבר בהגעה."
+    }
+   },
+   {
+    "id": "r-assess-priority",
+    "domain": "assessment",
+    "label": "תעדוף שלום המעורבים לפני שאלת האשמה",
+    "max": 7,
+    "required": false,
+    "anchor": [
+     "o-feel",
+     "d-feel"
+    ],
+    "tiers": [
+     {
+      "when": {
+       "any": [
+        {
+         "all": [
+          {
+           "before": [
+            "o-feel",
+            "o-version"
+           ]
+          },
+          {
+           "before": [
+            "o-feel",
+            "d-version"
+           ]
+          },
+          {
+           "before": [
+            "o-feel",
+            "s-together"
+           ]
+          }
+         ]
+        },
+        {
+         "all": [
+          {
+           "before": [
+            "d-feel",
+            "o-version"
+           ]
+          },
+          {
+           "before": [
+            "d-feel",
+            "d-version"
+           ]
+          },
+          {
+           "before": [
+            "d-feel",
+            "s-together"
+           ]
+          }
+         ]
+        }
+       ]
+      },
+      "points": 7,
+      "explain": "שלום המעורבים נבדק לפני בירור הנסיבות.",
+      "keep": "פתחת את השיחה עם המעורבים בשאלה על שלומם ורק אחר כך עברת לנסיבות. כך התעדוף של בטיחות לפני אשמה היה ברור גם להם."
+     },
+     {
+      "when": {
+       "countChosen": {
+        "ids": [
+         "o-feel",
+         "d-feel"
+        ],
+        "gte": 1
+       }
+      },
+      "points": 4,
+      "explain": "שלום המעורבים נבדק רק לאחר בירור הנסיבות.",
+      "improve": "שאלת לשלום המעורבים רק אחרי שהתחלת לברר את הנסיבות. בסבב הבא פתח בשאלה איך הם מרגישים – מצב רפואי קודם לשאלת האשמה."
+     }
+    ],
+    "fallback": {
+     "explain": "סדר הפעולות לא כלל בירור מצב המעורבים.",
+     "improve": "סדר הפעולות שלך עבר ישר לנסיבות התאונה. בסבב הבא קבע לעצמך סדר: בטיחות, שלום המעורבים, ואז גרסאות."
+    }
+   },
+   {
+    "id": "r-assess-move",
+    "domain": "assessment",
+    "label": "פינוי הנתיב רק אחרי תיעוד",
+    "max": 8,
+    "required": false,
+    "anchor": [
+     "s-move"
+    ],
+    "tiers": [
+     {
+      "when": {
+       "all": [
+        {
+         "chosen": "s-move"
+        },
+        {
+         "before": [
+          "s-look",
+          "s-move"
+         ]
+        }
+       ]
+      },
+      "points": 8,
+      "explain": "הרכבים הוזזו רק אחרי שתועד מיקומם.",
+      "keep": "תיעדת את מיקום הרכבים לפני שביקשת להזיז אותם. כך נשמרה תמונת הזירה והנתיב הימני נפתח לתנועה."
+     },
+     {
+      "when": {
+       "flag": "trafficHelp"
+      },
+      "points": 6,
+      "explain": "הרכבים נשארו במקומם, אך תואם סיוע בהכוונת תנועה.",
+      "improve": "הרכבים נשארו בנתיב ונעזרת בהכוונת תנועה – פתרון סביר. אפשר גם לתעד ולהזיז לשוליים כדי לפנות את הנתיב מהר יותר."
+     },
+     {
+      "when": {
+       "chosen": "s-move"
+      },
+      "points": 3,
+      "explain": "הרכבים הוזזו לפני שתועד מיקומם.",
+      "improve": "ביקשת להזיז את הרכבים לפני שתיעדת את מיקומם, ולכן המיקום המקורי לא תועד. בסבב הבא תעד קודם ורק אחר כך פנה את הנתיב."
+     }
+    ],
+    "fallback": {
+     "explain": "הרכבים נשארו בנתיב ללא הסדרת תנועה.",
+     "improve": "הרכבים נשארו חוסמים חלקית את הנתיב בלי הסדרת תנועה. בסבב הבא תעד את מיקומם ובקש להזיז אותם לשוליים, או בקש סיוע בהכוונת תנועה."
+    },
+    "alternative": "בקשת סיוע בהכוונת תנועה היא חלופה סבירה להזזת הרכבים."
+   },
+   {
+    "id": "r-comm-separate",
+    "domain": "communication",
+    "label": "שיחה נפרדת ומכבדת עם כל צד",
+    "max": 12,
+    "required": true,
+    "anchor": [
+     "o-version",
+     "d-version",
+     "s-together",
+     "o-confront",
+     "d-confront",
+     "o-blame"
+    ],
+    "tiers": [
+     {
+      "when": {
+       "all": [
+        {
+         "not": {
+          "flag": "together"
+         }
+        },
+        {
+         "not": {
+          "flag": "confronted"
+         }
+        },
+        {
+         "not": {
+          "flag": "prejudged"
+         }
+        },
+        {
+         "chosen": "o-version"
+        },
+        {
+         "chosen": "d-version"
+        }
+       ]
+      },
+      "points": 12,
+      "explain": "שיחות נפרדות, ללא חזרה על טענות וללא קביעה מוקדמת.",
+      "keep": "שוחחת עם כל נהג בנפרד ולא חזרת על טענות של צד אחד בפני האחר. שני הנהגים המשיכו לשתף פעולה ומסרו גרסה מלאה."
+     },
+     {
+      "when": {
+       "flag": "prejudged"
+      },
+      "points": 2,
+      "explain": "הובעה עמדה לגבי האשמה לפני השלמת הבירור.",
+      "improve": "אמרת לאורן שנראה שדנה אשמה. דנה שמעה, התרחקה, ושיתוף הפעולה שלה נפגע. בסבב הבא הימנע מקביעה לפני שהבירור הושלם – תמרור לבדו אינו מסביר את כל הנסיבות."
+     },
+     {
+      "when": {
+       "all": [
+        {
+         "flag": "confronted"
+        },
+        {
+         "flag": "repaired"
+        }
+       ]
+      },
+      "points": 7,
+      "explain": "הייתה חזרה על טענה של צד אחד בפני האחר, ואחריה תיקון של אופן הפנייה.",
+      "improve": "חזרת על טענה של נהג אחד בפני השני, והוא נעשה פחות משתף פעולה. אחר כך הבהרת שאינך קובע אשמה והשיחה חזרה למסלול – תיקון נכון. בסבב הבא שאל שאלה פתוחה בלי לצטט את הצד השני."
+     },
+     {
+      "when": {
+       "flag": "confronted"
+      },
+      "points": 3,
+      "explain": "הייתה חזרה על טענה של צד אחד בפני האחר.",
+      "improve": "חזרת על טענה של נהג אחד בפני השני, והוא נעשה פחות משתף פעולה ומסר פחות מידע. בסבב הבא שאל שאלה פתוחה בלי לצטט את הצד השני. אם זה כבר קרה – הבהר שאתה שומע את כולם ולא קובע אשמה."
+     },
+     {
+      "when": {
+       "flag": "together"
+      },
+      "points": 6,
+      "explain": "הנהגים נשמעו יחד והוויכוח התלקח.",
+      "improve": "כינסת את שני הנהגים יחד, והוויכוח התלקח עד שקשה היה להבין מה כל אחד ראה. בסבב הבא הפרד ביניהם ושמע כל גרסה בנפרד."
+     },
+     {
+      "when": {
+       "countChosen": {
+        "ids": [
+         "o-version",
+         "d-version"
+        ],
+        "gte": 1
+       }
+      },
+      "points": 6,
+      "explain": "נערכה שיחה נפרדת עם נהג אחד בלבד.",
+      "improve": "שוחחת בנפרד רק עם אחד הנהגים. בסבב הבא תן לכל צד הזדמנות שווה למסור גרסה."
+     }
+    ],
+    "fallback": {
+     "explain": "לא נערכה שיחה עם הנהגים על נסיבות התאונה.",
+     "improve": "לא שוחחת עם הנהגים על מה שקרה. בסבב הבא שוחח עם כל אחד מהם בנפרד ובגישה ניטרלית."
+    }
+   },
+   {
+    "id": "r-comm-followup",
+    "domain": "communication",
+    "label": "שאלות המשך ובדיקת טענות",
+    "max": 8,
+    "required": false,
+    "anchor": [
+     "o-phone",
+     "w-phone",
+     "w-contact"
+    ],
+    "tiers": [
+     {
+      "when": {
+       "all": [
+        {
+         "any": [
+          {
+           "chosen": "o-phone"
+          },
+          {
+           "chosen": "w-phone"
+          }
+         ]
+        },
+        {
+         "chosen": "w-contact"
+        }
+       ]
+      },
+      "points": 8,
+      "explain": "נבדקה הטענה על הטלפון בשאלה פתוחה ונרשמו פרטי העד.",
+      "keep": "בדקת את הטענה על השימוש בטלפון בשאלה פתוחה ולא בהאשמה, ורשמת את פרטי העד. כך התקבלו תשובות ברורות שאפשר לתעד כגרסאות."
+     },
+     {
+      "when": {
+       "any": [
+        {
+         "chosen": "o-phone"
+        },
+        {
+         "chosen": "w-phone"
+        },
+        {
+         "chosen": "w-contact"
+        }
+       ]
+      },
+      "points": 4,
+      "explain": "נשאלה חלק משאלות ההמשך.",
+      "improve": "נשאלה רק חלק משאלות ההמשך. בסבב הבא בדוק טענה שעלתה מול מי שיכול לאשש אותה, ורשום את פרטי העד לפני שהוא הולך."
+     }
+    ],
+    "fallback": {
+     "explain": "לא נשאלו שאלות המשך.",
+     "improve": "לא נשאלו שאלות המשך על הטענות שעלו, ופרטי העד לא נרשמו. בסבב הבא בדוק כל טענה חדשה בשאלה פתוחה."
+    }
+   },
+   {
+    "id": "r-disp-first",
+    "domain": "dispatch",
+    "label": "עדכון ראשון למוקד",
+    "max": 10,
+    "required": true,
+    "anchor": [
+     "update:1"
+    ],
+    "tiers": [
+     {
+      "when": {
+       "update": {
+        "n": 1,
+        "hasCat": [
+         "location",
+         "situation",
+         "status"
+        ]
+       }
+      },
+      "points": 10,
+      "explain": "בעדכון הראשון נמסרו מיקום, מצב נוכחי ומצב המעורבים.",
+      "keep": "העדכון הראשון שלך כלל מיקום, מצב נוכחי ומצב המעורבים. המוקד קיבל תמונה ברורה כבר בשלב מוקדם."
+     },
+     {
+      "when": {
+       "all": [
+        {
+         "update": {
+          "n": 1,
+          "hasCat": [
+           "location",
+           "situation"
+          ]
+         }
+        },
+        {
+         "update": {
+          "n": "any",
+          "hasCat": [
+           "status"
+          ]
+         }
+        }
+       ]
+      },
+      "points": 6,
+      "explain": "המיקום ומצב הזירה נמסרו. מצב המעורבים נמסר בעדכון הבא.",
+      "improve": "בעדכון הראשון מסרת את המיקום ואת מצב הזירה, אך מצב המעורבים נשאר לא ברור. בעדכון מאוחר יותר השלמת זאת – תיקון נכון. בסבב הבא כלול בעדכון הראשון גם את מצב המעורבים, או ציין שהוא עדיין בבירור."
+     },
+     {
+      "when": {
+       "update": {
+        "n": 1,
+        "hasCat": [
+         "location",
+         "situation"
+        ]
+       }
+      },
+      "points": 5,
+      "explain": "המיקום ומצב הזירה נמסרו, אך מצב המעורבים לא נמסר באף עדכון.",
+      "improve": "העדכונים למוקד לא כללו את מצב המעורבים. בסבב הבא ציין בכל עדכון את מצב המעורבים – גם „בבירור” הוא מידע חשוב למוקד."
+     },
+     {
+      "when": {
+       "updatesGte": 1
+      },
+      "points": 3,
+      "explain": "נשלח עדכון, אך חסרו בו מיקום או מצב נוכחי.",
+      "improve": "בעדכון הראשון חסרו המיקום או מצב הזירה. בסבב הבא פתח כל עדכון במקום ובמצב הנוכחי."
+     }
+    ],
+    "fallback": {
+     "explain": "לא נשלח עדכון למוקד.",
+     "improve": "לא נשלח עדכון למוקד במהלך הטיפול, והמוקד לא ידע מה מצב הזירה. בסבב הבא שלח עדכון קצר זמן קצר אחרי ההגעה."
+    }
+   },
+   {
+    "id": "r-disp-ems",
+    "domain": "dispatch",
+    "label": "תיאום סיוע רפואי",
+    "max": 10,
+    "required": true,
+    "appliesWhen": {
+     "flag": "painKnown"
+    },
+    "anchor": [
+     "sent:u-ems",
+     "o-feel",
+     "d-feel"
+    ],
+    "tiers": [
+     {
+      "when": {
+       "all": [
+        {
+         "sent": "u-ems"
+        },
+        {
+         "flag": "cared"
+        }
+       ]
+      },
+      "points": 10,
+      "explain": "תואם צוות רפואי ו{{injured}} {{g_seated}} במקום מוגן.",
+      "keep": "כשהתגלה הכאב של {{injured}}, עדכנת את המוקד וביקשת צוות רפואי, ודאגת ש{{injured}} {{g_wait}} במקום מוגן."
+     },
+     {
+      "when": {
+       "sent": "u-ems"
+      },
+      "points": 8,
+      "explain": "תואם צוות רפואי.",
+      "improve": "ביקשת צוות רפואי, אך {{injured}} {{g_stayed}} לעמוד ליד הרכבים בגשם. בסבב הבא הושב את {{g_injured}} במקום מוגן עד להגעת הצוות."
+     }
+    ],
+    "fallback": {
+     "explain": "{{injured}} {{g_reported}} על כאב ולא תואם סיוע רפואי.",
+     "improve": "{{injured}} {{g_reported}} על כאב, אך לא ביקשת מהמוקד צוות רפואי. בסבב הבא, כשמתגלה כאב, עדכן מיד את המוקד ובקש סיוע."
+    }
+   },
+   {
+    "id": "r-doc-observe",
+    "domain": "documentation",
+    "label": "תיעוד תצפיות בזירה",
+    "max": 6,
+    "required": true,
+    "anchor": [
+     "s-look"
+    ],
+    "tiers": [
+     {
+      "when": {
+       "all": [
+        {
+         "chosen": "s-look"
+        },
+        {
+         "not": {
+          "flag": "positionsLost"
+         }
+        }
+       ]
+      },
+      "points": 6,
+      "explain": "תועדו מיקום הרכבים, הנזק והשילוט.",
+      "keep": "תיעדת את מיקום הרכבים, הנזק והשילוט בצומת. כך הדוח נשען על מה שנצפה בזירה ולא רק על מה שנטען."
+     },
+     {
+      "when": {
+       "chosen": "s-look"
+      },
+      "points": 3,
+      "explain": "התיעוד בוצע לאחר שהרכבים הוזזו – מיקומם המקורי לא תועד.",
+      "improve": "התיעוד נעשה אחרי שהרכבים הוזזו, ולכן המיקום המקורי חסר. בסבב הבא תעד מיד לאחר אבטחת הזירה."
+     }
+    ],
+    "fallback": {
+     "explain": "לא תועדו תצפיות בזירה.",
+     "improve": "לא תיעדת את מה שראית בזירה – מיקום, נזק ושילוט. בסבב הבא תעד תצפיות לפני הסיכום, כדי שהדוח לא יישען רק על גרסאות."
+    }
+   },
+   {
+    "id": "r-doc-facts",
+    "domain": "documentation",
+    "label": "הבחנה בין עובדות לגרסאות בעדכון",
+    "max": 4,
+    "required": false,
+    "anchor": [
+     "sent:u-versions",
+     "sent:u-fault",
+     "update:last"
+    ],
+    "tiers": [
+     {
+      "when": {
+       "sent": "u-fault"
+      },
+      "points": 0,
+      "explain": "בעדכון נקבעה אשמה על סמך גרסה.",
+      "improve": "בעדכון למוקד נמסר שנהגת הרכב האדום אשמה, על סמך גרסה בלבד. בסבב הבא דווח שהגרסאות סותרות ושהנסיבות בבירור."
+     },
+     {
+      "when": {
+       "sent": "u-versions"
+      },
+      "points": 4,
+      "explain": "בעדכון צוין שהגרסאות סותרות והנסיבות בבירור.",
+      "keep": "בעדכון למוקד ציינת שהגרסאות סותרות ושהנסיבות בבירור, בלי לקבוע אשמה. כך הופרדו עובדות מטענות."
+     },
+     {
+      "when": {
+       "updatesGte": 1
+      },
+      "points": 2,
+      "explain": "העדכונים לא ציינו שיש גרסאות סותרות.",
+      "improve": "העדכונים לא ציינו שיש גרסאות סותרות. בסבב הבא הבחן בעדכון בין מה שנצפה לבין מה שנטען."
+     }
+    ],
+    "fallback": {
+     "explain": "לא נשלח עדכון שמסכם את האירוע.",
+     "improve": "לא נשלח סיכום למוקד. בסבב הבא סיים בעדכון שמבחין בין מה שנצפה לבין מה שנטען."
+    }
+   }
+  ]
+ },
+ "challenges": [
+  "נסה את התרחיש ברמת קושי מתקדמת – עם קטיעות קשר – ובדוק שהעדכון הראשון שלך עדיין שלם.",
+  "שחק במשמרת אחרת ובדוק אם סדר הפעולות שלך נשאר זהה כשהתאורה והתנועה משתנות.",
+  "נסה לשלוח עדכון ראשון שמכסה את כל הרכיבים: מקום, מצב נוכחי, מצב המעורבים, מה אומת, מה חסר וסיוע."
+ ],
+ "report": {
+  "reason": "התקבלה משימה מהמוקד: דיווח על תאונה בין שני כלי רכב בשדרות הזית פינת רחוב הכלנית.",
+  "checklist": [
+   {
+    "label": "מצב שני הנהגים",
+    "when": {
+     "all": [
+      {
+       "chosen": "o-feel"
+      },
+      {
+       "chosen": "d-feel"
+      }
+     ]
+    }
+   },
+   {
+    "label": "גרסת נהג הרכב הכסוף",
+    "when": {
+     "fact": "c-oren-version"
+    }
+   },
+   {
+    "label": "גרסת נהגת הרכב האדום",
+    "when": {
+     "fact": "c-dana-version"
+    }
+   },
+   {
+    "label": "עדות העד",
+    "when": {
+     "fact": "c-samir-saw"
+    }
+   },
+   {
+    "label": "פרטי העד",
+    "when": {
+     "fact": "o-witness-details"
+    }
+   },
+   {
+    "label": "מיקום הרכבים לפני הזזה",
+    "when": {
+     "fact": "o-positions"
+    }
+   },
+   {
+    "label": "תיאור הנזק",
+    "when": {
+     "fact": "o-damage"
+    }
+   }
+  ]
+ },
+ "media": {
+  "images": [
+   "img/accident-street-day.webp",
+   "img/accident-street-night.webp"
+  ],
+  "audio": [
+   "audio/rain.mp3",
+   "audio/traffic.mp3",
+   "audio/engine-wipers.mp3",
+   "audio/radio-chirp.mp3"
+  ],
+  "voice": {},
+  "narrationMissing": "אין עדיין קריינות מוקלטת בעברית. הקבצים יתווספו לתיקייה public/audio/voice/accident-rain/ וימופו בשדה media.voice."
+ }
+}

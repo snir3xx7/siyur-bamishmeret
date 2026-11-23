@@ -1,0 +1,44 @@
+{
+  "name": "siyur-bamishmeret",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "סיור במשמרת – סימולציה אינטראקטיבית בעברית לתרגול צוותי סיור",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview",
+    "serve:subpath": "node scripts/serve-subpath.mjs",
+    "lint": "eslint .",
+    "test": "vitest run",
+    "test:e2e": "playwright test",
+    "validate": "vitest run tests/unit/scenarios.test.ts",
+    "assets": "node scripts/build-assets.mjs",
+    "budget": "node scripts/check-budget.mjs",
+    "test:all": "npm run lint && npm test && npm run build && npm run budget && npm run test:e2e"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.15.0",
+    "@playwright/test": "^1.65.1",
+    "@testing-library/dom": "^10.4.0",
+    "@testing-library/react": "^16.0.1",
+    "@types/node": "^22.9.0",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "@vitejs/plugin-react": "^4.3.4",
+    "eslint": "^9.15.0",
+    "eslint-plugin-react-hooks": "^5.0.0",
+    "fake-indexeddb": "^6.0.0",
+    "globals": "^15.12.0",
+    "jsdom": "^25.0.1",
+    "sharp": "^0.33.5",
+    "typescript": "^5.6.3",
+    "typescript-eslint": "^8.15.0",
+    "vite": "^5.4.11",
+    "vitest": "^2.1.8"
+  }
+}

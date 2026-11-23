@@ -1,0 +1,2394 @@
+{
+ "id": "yard-dispute",
+ "version": 1,
+ "title": "ויכוח בין שכנים בחצר משותפת",
+ "category": "סדר ציבורי ויחסי שכנים",
+ "summary": "ויכוח קולני על מחסן משותף שננעל במנעול חדש, ושכנים מתאספים סביב. יש להרגיע, לשמוע כל צד בנפרד, לזהות סתירות ולהימנע מקביעה מוקדמת.",
+ "estimatedMinutes": 12,
+ "difficultyLabel": "בינונית",
+ "skills": [
+  "הרגעת שיח",
+  "שיחות נפרדות",
+  "זיהוי סתירות",
+  "הימנעות מקביעה מוקדמת",
+  "תיעוד מסודר"
+ ],
+ "shifts": [
+  "morning",
+  "evening"
+ ],
+ "defaultShift": "evening",
+ "location": {
+  "name": "חצר משותפת, רחוב השקמה 4",
+  "area": "שכונת נווה גפן, קריית אלון (בדוי)"
+ },
+ "objectives": [
+  "להרגיע את השיח ולהפחית את השפעת הקהל",
+  "לשמוע כל צד בנפרד ולזהות סתירות",
+  "לבדוק טענות מול מקורות נוספים",
+  "להימנע מקביעה מי צודק בשאלת הבעלות",
+  "להגיע לפתרון ביניים ולתעד באופן מסודר"
+ ],
+ "variants": [
+  {
+   "id": "notice",
+   "label": "הודעת הוועד על המנעול תלויה בלוח",
+   "set": {
+    "noticePosted": true
+   },
+   "vars": {
+    "noticeResult": "תלויה הודעת ועד מלפני שלושה ימים על החלפת המנעול",
+    "michaelTone": "פרסמתי הודעה על הלוח, תבדוק בעצמך"
+   }
+  },
+  {
+   "id": "no-notice",
+   "label": "אין הודעה בלוח",
+   "set": {
+    "noticePosted": false
+   },
+   "vars": {
+    "noticeResult": "אין הודעה על החלפת המנעול",
+    "michaelTone": "אמרתי לכולם שיבואו לקחת מפתח"
+   }
+  }
+ ],
+ "facts": [
+  {
+   "id": "d-addr",
+   "kind": "dispatch",
+   "text": "חצר משותפת ברחוב השקמה 4"
+  },
+  {
+   "id": "d-argue",
+   "kind": "dispatch",
+   "text": "ויכוח קולני בין שכנים בנוגע לרכוש משותף"
+  },
+  {
+   "id": "d-no-violence",
+   "kind": "dispatch",
+   "text": "לא דווח על אלימות או על חפצים מסוכנים – צעקות בלבד"
+  },
+  {
+   "id": "d-caller",
+   "kind": "dispatch",
+   "text": "המדווחת היא שכנה מהבניין הסמוך שעומדת ליד השער"
+  },
+  {
+   "id": "d-crowd",
+   "kind": "dispatch",
+   "text": "לפי המדווחת, שכנים נוספים התאספו סביב הוויכוח"
+  },
+  {
+   "id": "d-theft",
+   "kind": "dispatch",
+   "text": "לפני כחודש דווח על גניבת כלי עבודה מהמחסן המשותף בכתובת"
+  },
+  {
+   "id": "d-garbled",
+   "kind": "dispatch",
+   "text": "הודעת המוקד על אלימות נקטעה"
+  },
+  {
+   "id": "o-arrival",
+   "kind": "observation",
+   "text": "שני שכנים מתווכחים בקול ליד המחסן המשותף; כמה שכנים צופים מסביב"
+  },
+  {
+   "id": "o-lock",
+   "kind": "observation",
+   "text": "על דלת המחסן המשותף מנעול תלייה חדש, ללא סימני שבירה"
+  },
+  {
+   "id": "o-stroller",
+   "kind": "observation",
+   "text": "דרך החריץ בדלת המחסן רואים עגלת ילדים ושני זוגות אופניים"
+  },
+  {
+   "id": "o-notice",
+   "kind": "observation",
+   "text": "בלוח המודעות בכניסה לחצר {{noticeResult}}"
+  },
+  {
+   "id": "o-calmer",
+   "kind": "observation",
+   "text": "אחרי שהשכנים הסקרנים התרחקו, הטון בחצר ירד"
+  },
+  {
+   "id": "o-opened",
+   "kind": "observation",
+   "text": "המחסן נפתח ואילנה הוציאה את העגלה והאופניים"
+  },
+  {
+   "id": "o-tamar-details",
+   "kind": "observation",
+   "text": "פרטי העדה (תמר שלום, הבניין הסמוך) נרשמו לצורך תיעוד"
+  },
+  {
+   "id": "c-mic-vaad",
+   "kind": "claim",
+   "source": "michael",
+   "text": "חבר ועד הבית; החליף את המנעול כדי לשמור על המחסן"
+  },
+  {
+   "id": "c-mic-announced",
+   "kind": "claim",
+   "source": "michael",
+   "text": "{{michaelTone}}"
+  },
+  {
+   "id": "c-mic-theft",
+   "kind": "claim",
+   "source": "michael",
+   "text": "לפני חודש נגנבו ממנו כלי עבודה מהמחסן – לכן מיהר להחליף מנעול"
+  },
+  {
+   "id": "c-mic-key",
+   "kind": "claim",
+   "source": "michael",
+   "text": "אילנה ביקשה ממנו מפתח אתמול, והוא דחה זאת „לאחר כך”"
+  },
+  {
+   "id": "c-mic-broke",
+   "kind": "claim",
+   "source": "michael",
+   "text": "אילנה ניסתה לשבור את המנעול"
+  },
+  {
+   "id": "c-mic-ok",
+   "kind": "claim",
+   "source": "michael",
+   "text": "לא נפגע, אף אחד לא נגע בו"
+  },
+  {
+   "id": "c-ila-stroller",
+   "kind": "claim",
+   "source": "ilana",
+   "text": "העגלה והאופניים שלה במחסן, והיא צריכה אותם לגן"
+  },
+  {
+   "id": "c-ila-nobody",
+   "kind": "claim",
+   "source": "ilana",
+   "text": "אף אחד לא הודיע לה על החלפת המנעול"
+  },
+  {
+   "id": "c-ila-pulled",
+   "kind": "claim",
+   "source": "ilana",
+   "text": "מודה שמשכה במנעול בכעס, אך לא שברה דבר"
+  },
+  {
+   "id": "c-ila-asked",
+   "kind": "claim",
+   "source": "ilana",
+   "text": "ביקשה ממיכאל מפתח אתמול והוא אמר „אחר כך”"
+  },
+  {
+   "id": "c-ila-ok",
+   "kind": "claim",
+   "source": "ilana",
+   "text": "לא נפגעה, אף אחד לא נגע בה; מתוסכלת"
+  },
+  {
+   "id": "c-tamar-saw",
+   "kind": "claim",
+   "source": "tamar",
+   "text": "הצעקות התחילו כשאילנה משכה במנעול; אף אחד לא נגע באף אחד"
+  },
+  {
+   "id": "c-tamar-crowd",
+   "kind": "claim",
+   "source": "tamar",
+   "text": "השכנים שהתאספו הוסיפו הערות והלהיטו את הוויכוח"
+  }
+ ],
+ "characters": [
+  {
+   "id": "michael",
+   "name": "מיכאל אזולאי",
+   "role": "שכן, חבר ועד הבית",
+   "gender": "m",
+   "look": {
+    "skin": "#d8a982",
+    "hair": "#2b2b2b",
+    "hairStyle": "bald",
+    "top": "#2d5d7b",
+    "bottom": "#3b3b3b",
+    "height": 1.03
+   },
+   "attitude": 0,
+   "x": 43,
+   "y": 97,
+   "scale": 1
+  },
+  {
+   "id": "ilana",
+   "name": "אילנה פרץ",
+   "role": "שכנה מקומת הקרקע",
+   "gender": "f",
+   "look": {
+    "skin": "#c48b63",
+    "hair": "#3d2314",
+    "hairStyle": "long",
+    "top": "#8b5e9b",
+    "bottom": "#2f3446",
+    "height": 0.95,
+    "accessory": "bag"
+   },
+   "attitude": 0,
+   "x": 60,
+   "y": 97,
+   "scale": 1
+  },
+  {
+   "id": "tamar",
+   "name": "תמר שלום",
+   "role": "שכנה מהבניין הסמוך (המדווחת)",
+   "gender": "f",
+   "look": {
+    "skin": "#e3bd9b",
+    "hair": "#8a5a2b",
+    "hairStyle": "bun",
+    "top": "#3f7a6a",
+    "bottom": "#444",
+    "height": 0.92
+   },
+   "attitude": 2,
+   "x": 91,
+   "y": 93,
+   "scale": 0.85
+  },
+  {
+   "id": "n1",
+   "name": "שכן סקרן",
+   "role": "צופה",
+   "gender": "m",
+   "look": {
+    "skin": "#b98560",
+    "hair": "#111",
+    "hairStyle": "short",
+    "top": "#9a9a3a",
+    "bottom": "#333",
+    "height": 0.98
+   },
+   "attitude": 1,
+   "x": 14,
+   "y": 94,
+   "scale": 0.85,
+   "when": {
+    "not": {
+     "flag": "crowdDispersed"
+    }
+   }
+  },
+  {
+   "id": "n2",
+   "name": "שכנה סקרנית",
+   "role": "צופה",
+   "gender": "f",
+   "look": {
+    "skin": "#e0b896",
+    "hair": "#c9a35a",
+    "hairStyle": "long",
+    "top": "#b84a4a",
+    "bottom": "#333",
+    "height": 0.92
+   },
+   "attitude": 1,
+   "x": 25,
+   "y": 95,
+   "scale": 0.85,
+   "when": {
+    "not": {
+     "flag": "crowdDispersed"
+    }
+   }
+  }
+ ],
+ "dispatch": {
+  "time": {
+   "morning": "08:05",
+   "evening": "19:12"
+  },
+  "unit": "סייר 23",
+  "incident": "6230",
+  "lines": [
+   {
+    "speaker": "dispatch",
+    "text": "סייר 23, כאן מוקד אלון. דיווח על ויכוח קולני בין שכנים בחצר משותפת ברחוב השקמה 4, בנוגע לרכוש משותף. אשר קבלה."
+   }
+  ],
+  "initialFacts": [
+   "d-addr",
+   "d-argue"
+  ],
+  "basicExtraFacts": [
+   "d-no-violence"
+  ],
+  "followUps": [
+   {
+    "id": "f-violence",
+    "label": "לשאול: יש אלימות, פצועים או חפצים מסוכנים?",
+    "when": {
+     "not": {
+      "fact": "d-no-violence"
+     }
+    },
+    "branches": [
+     {
+      "when": {
+       "all": [
+        {
+         "difficulty": [
+          "advanced"
+         ]
+        },
+        {
+         "not": {
+          "flag": "garbled"
+         }
+        }
+       ]
+      },
+      "lines": [
+       {
+        "speaker": "player",
+        "text": "מוקד, יש אלימות, פצועים או חפצים מסוכנים?"
+       },
+       {
+        "speaker": "dispatch",
+        "text": "לא דווח על… [רחש] …צעקות ב… [ההודעה נקטעה]"
+       }
+      ],
+      "effects": {
+       "reveal": [
+        "d-garbled"
+       ],
+       "set": {
+        "garbled": true
+       }
+      }
+     }
+    ],
+    "lines": [
+     {
+      "speaker": "player",
+      "text": "מוקד, יש אלימות, פצועים או חפצים מסוכנים?"
+     },
+     {
+      "speaker": "dispatch",
+      "text": "לא דווח על אלימות או על חפצים מסוכנים. צעקות בלבד."
+     }
+    ],
+    "effects": {
+     "reveal": [
+      "d-no-violence"
+     ]
+    },
+    "report": "בירור עם המוקד לגבי אלימות ופצועים"
+   },
+   {
+    "id": "f-violence-repeat",
+    "label": "לבקש מהמוקד לחזור על ההודעה שנקטעה",
+    "when": {
+     "flag": "garbled"
+    },
+    "lines": [
+     {
+      "speaker": "player",
+      "text": "מוקד, ההודעה נקטעה. חזור בבקשה."
+     },
+     {
+      "speaker": "dispatch",
+      "text": "חוזר: לא דווח על אלימות או על חפצים מסוכנים. צעקות בלבד."
+     }
+    ],
+    "effects": {
+     "reveal": [
+      "d-no-violence"
+     ]
+    },
+    "report": "בקשה מהמוקד לחזור על הודעה שנקטעה"
+   },
+   {
+    "id": "f-caller",
+    "label": "לשאול: מי המדווחת והיכן היא נמצאת?",
+    "lines": [
+     {
+      "speaker": "player",
+      "text": "מי המדווחת? היא במקום?"
+     },
+     {
+      "speaker": "dispatch",
+      "text": "שכנה מהבניין הסמוך. אמרה שהיא עומדת ליד השער של החצר."
+     }
+    ],
+    "effects": {
+     "reveal": [
+      "d-caller"
+     ]
+    },
+    "report": "בירור עם המוקד לגבי המדווחת"
+   },
+   {
+    "id": "f-crowd",
+    "label": "לשאול: כמה אנשים מעורבים?",
+    "lines": [
+     {
+      "speaker": "player",
+      "text": "כמה אנשים מעורבים בוויכוח?"
+     },
+     {
+      "speaker": "dispatch",
+      "text": "שניים מתווכחים. המדווחת אמרה ששכנים נוספים התאספו מסביב."
+     }
+    ],
+    "effects": {
+     "reveal": [
+      "d-crowd"
+     ]
+    },
+    "report": "בירור עם המוקד לגבי מספר המעורבים"
+   }
+  ],
+  "goLabel": "אישור קבלה ויציאה לחצר"
+ },
+ "transition": {
+  "kind": "street",
+  "text": "נסיעה לרחוב השקמה. בחצר שבין שני הבניינים כבר שומעים קולות מתווכחים מהרחוב.",
+  "travelMinutes": 4,
+  "ambience": [
+   "engine-wipers"
+  ]
+ },
+ "scene": {
+  "background": "img/yard",
+  "alt": "חצר משותפת בין שני בנייני מגורים: חבלי כביסה בין המרפסות, עץ פיקוס בערוגה, פחי אשפה ירוקים, ספסל, ומחסן משותף מפח עם שלט, אופניים לידו.",
+  "fallbackColor": "#7c7262",
+  "ambience": [
+   "crowd",
+   "yard-morning"
+  ],
+  "ambienceRules": [
+   {
+    "when": {
+     "all": [
+      {
+       "flag": "crowdDispersed"
+      },
+      {
+       "shift": [
+        "evening"
+       ]
+      }
+     ]
+    },
+    "ambience": [
+     "yard-evening"
+    ]
+   },
+   {
+    "when": {
+     "flag": "crowdDispersed"
+    },
+    "ambience": [
+     "yard-morning"
+    ]
+   },
+   {
+    "when": {
+     "shift": [
+      "evening"
+     ]
+    },
+    "ambience": [
+     "crowd",
+     "yard-evening"
+    ]
+   }
+  ],
+  "lights": "off",
+  "weather": "none",
+  "props": [
+   {
+    "id": "lock",
+    "kind": "lock",
+    "x": 76.5,
+    "y": 63,
+    "scale": 0.9,
+    "when": {
+     "not": {
+      "flag": "interim"
+     }
+    }
+   }
+  ]
+ },
+ "arrivalLines": [
+  {
+   "speaker": "narrator",
+   "text": "בחצר עומדים גבר ואישה ליד המחסן המשותף ומדברים זה מעל זה. שני שכנים צופים מהצד ומוסיפים הערות, ועוד ראשים מציצים מהמרפסות. ליד השער עומדת אישה ומסמנת לך."
+  },
+  {
+   "speaker": "michael",
+   "text": "זה רכוש של הוועד! אני לא אתן לשבור פה מנעולים!"
+  },
+  {
+   "speaker": "ilana",
+   "text": "העגלה של הבת שלי שם! אתה לא יכול לנעול לי את הדברים!"
+  }
+ ],
+ "arrivalFacts": [
+  "o-arrival"
+ ],
+ "hotspots": [
+  {
+   "id": "h-yard",
+   "label": "מרכז החצר",
+   "kind": "area",
+   "x": 52,
+   "y": 90,
+   "description": "החצר המשותפת: המחסן הנעול, לוח המודעות בכניסה והמקום שבו מתנהל הוויכוח.",
+   "choices": [
+    {
+     "id": "y-calm",
+     "label": "להציג את עצמך בקול רגוע ולבקש מהשניים לעצור רגע",
+     "lines": [
+      {
+       "speaker": "player",
+       "text": "ערב טוב, אני מצוות הסיור. אני רוצה לשמוע את שניכם – כל אחד בתורו. בואו נעצור רגע ונוריד את הטון."
+      },
+      {
+       "speaker": "narrator",
+       "text": "השניים משתתקים לרגע. מיכאל משלב ידיים, אילנה נושמת עמוק."
+      }
+     ],
+     "effects": {
+      "attitude": {
+       "michael": 1,
+       "ilana": 1
+      },
+      "set": {
+       "calmed": true
+      }
+     },
+     "report": "הצגה עצמית והרגעת השיח"
+    },
+    {
+     "id": "y-together",
+     "label": "לשמוע את שני הצדדים יחד, במרכז החצר",
+     "when": {
+      "not": {
+       "all": [
+        {
+         "chosen": "m-private"
+        },
+        {
+         "chosen": "i-private"
+        }
+       ]
+      }
+     },
+     "lines": [
+      {
+       "speaker": "michael",
+       "text": "היא ניסתה לשבור את המנעול! כולם ראו!"
+      },
+      {
+       "speaker": "ilana",
+       "text": "אף אחד לא הודיע לי כלום! איך אני אמורה להוציא את העגלה?"
+      },
+      {
+       "speaker": "narrator",
+       "text": "אחד השכנים הסקרנים קורא „נכון!”, ושני הצדדים מרימים את הקול."
+      }
+     ],
+     "effects": {
+      "attitude": {
+       "michael": -1,
+       "ilana": -1
+      },
+      "reveal": [
+       "c-mic-broke",
+       "c-ila-nobody"
+      ],
+      "set": {
+       "together": true
+      },
+      "note": "הבירור המשותף מול הקהל החריף את הוויכוח"
+     }
+    },
+    {
+     "id": "y-board",
+     "label": "לבדוק את לוח המודעות בכניסה לחצר",
+     "lines": [
+      {
+       "speaker": "narrator",
+       "text": "בלוח המודעות בכניסה לחצר {{noticeResult}}."
+      }
+     ],
+     "effects": {
+      "reveal": [
+       "o-notice"
+      ]
+     },
+     "report": "בדיקת לוח המודעות בכניסה לחצר"
+    },
+    {
+     "id": "y-shed",
+     "label": "לבדוק את דלת המחסן",
+     "lines": [
+      {
+       "speaker": "narrator",
+       "text": "על הדלת מנעול תלייה חדש, בלי סימני שבירה. דרך החריץ רואים עגלת ילדים ושני זוגות אופניים."
+      }
+     ],
+     "effects": {
+      "reveal": [
+       "o-lock",
+       "o-stroller"
+      ]
+     },
+     "report": "בדיקת דלת המחסן"
+    },
+    {
+     "id": "y-doc",
+     "label": "לתעד מה ראיתי בחצר",
+     "lines": [
+      {
+       "speaker": "narrator",
+       "text": "רשמת: שעה, מיקום, מי נוכח, מצב דלת המחסן והמנעול, ומה כל צד אמר – בנפרד ממה שראית בעצמך."
+      }
+     ],
+     "effects": {
+      "set": {
+       "documented": true
+      },
+      "reveal": [
+       "o-lock"
+      ]
+     },
+     "report": "תיעוד המצב בחצר והפרדה בין נצפה לנטען"
+    },
+    {
+     "id": "y-interim",
+     "label": "להציע פתרון ביניים: לפתוח עכשיו את המחסן כדי שאילנה תוציא את חפציה",
+     "when": {
+      "all": [
+       {
+        "attitudeGte": [
+         "michael",
+         1
+        ]
+       },
+       {
+        "attitudeGte": [
+         "ilana",
+         1
+        ]
+       },
+       {
+        "fact": "c-mic-vaad"
+       },
+       {
+        "fact": "c-ila-stroller"
+       }
+      ]
+     },
+     "lines": [
+      {
+       "speaker": "player",
+       "text": "הצעה לעכשיו: מיכאל פותח את המחסן, אילנה מוציאה את העגלה והאופניים, וחלוקת המפתחות תידון בוועד הבית. מקובל?"
+      },
+      {
+       "speaker": "michael",
+       "text": "…בסדר. אני פותח."
+      },
+      {
+       "speaker": "ilana",
+       "text": "זה כל מה שביקשתי."
+      }
+     ],
+     "effects": {
+      "set": {
+       "interim": true
+      },
+      "reveal": [
+       "o-opened"
+      ]
+     },
+     "report": "הסכמה על פתרון ביניים: פתיחת המחסן והוצאת חפצי השכנה"
+    },
+    {
+     "id": "y-force",
+     "label": "להורות למיכאל לפתוח את המחסן",
+     "when": {
+      "not": {
+       "flag": "interim"
+      }
+     },
+     "branches": [
+      {
+       "when": {
+        "attitudeGte": [
+         "michael",
+         2
+        ]
+       },
+       "lines": [
+        {
+         "speaker": "michael",
+         "text": "טוב, טוב. אני פותח – אבל המפתח נשאר אצלי."
+        },
+        {
+         "speaker": "narrator",
+         "text": "מיכאל פותח, ואילנה מוציאה את העגלה בלי להביט בו."
+        }
+       ],
+       "effects": {
+        "set": {
+         "interim": true,
+         "forced": true
+        },
+        "reveal": [
+         "o-opened"
+        ],
+        "note": "המחסן נפתח, אבל ללא הסכמה של שני הצדדים"
+       }
+      }
+     ],
+     "lines": [
+      {
+       "speaker": "michael",
+       "text": "אני לא פותח כלום בלחץ! זה רכוש של הוועד."
+      }
+     ],
+     "effects": {
+      "attitude": {
+       "michael": -1
+      },
+      "note": "ההוראה לפני שנבנה שיתוף פעולה הקשיחה את עמדת מיכאל"
+     }
+    },
+    {
+     "id": "y-refer",
+     "label": "להסביר לשניהם על פנייה לוועד הבית ועל אפשרות לגישור קהילתי",
+     "when": {
+      "any": [
+       {
+        "chosen": "m-private"
+       },
+       {
+        "chosen": "i-private"
+       }
+      ]
+     },
+     "lines": [
+      {
+       "speaker": "player",
+       "text": "שאלת המפתחות והבעלות על המחסן היא עניין לוועד הבית. אם לא תגיעו להסכמה, יש אפשרות לגישור קהילתי."
+      },
+      {
+       "speaker": "ilana",
+       "text": "אני מוכנה, אם זה ייגמר."
+      }
+     ],
+     "effects": {
+      "set": {
+       "referred": true
+      }
+     },
+     "report": "הפניית המחלוקת על המפתחות לוועד הבית ולגישור"
+    }
+   ]
+  },
+  {
+   "id": "h-crowd",
+   "label": "השכנים הסקרנים",
+   "kind": "area",
+   "x": 20,
+   "y": 64,
+   "description": "שני שכנים שעומדים קרוב לוויכוח ומוסיפים הערות.",
+   "when": {
+    "not": {
+     "flag": "crowdDispersed"
+    }
+   },
+   "choices": [
+    {
+     "id": "c-disperse",
+     "label": "לבקש בנימוס מהשכנים הסקרנים לתת מרחב",
+     "lines": [
+      {
+       "speaker": "player",
+       "text": "תודה שאתם כאן, אבל אנחנו נטפל בזה. אפשר לתת לנו מרחב?"
+      },
+      {
+       "speaker": "narrator",
+       "text": "השכנים מושכים בכתפיים ונכנסים לבניין. בלי קהל, הטון בחצר יורד."
+      }
+     ],
+     "effects": {
+      "set": {
+       "crowdDispersed": true
+      },
+      "attitude": {
+       "michael": 1,
+       "ilana": 1
+      },
+      "reveal": [
+       "o-calmer"
+      ]
+     },
+     "report": "בקשה מהשכנים הסקרנים לתת מרחב"
+    }
+   ]
+  },
+  {
+   "id": "h-michael",
+   "label": "מיכאל – חבר ועד הבית",
+   "kind": "character",
+   "character": "michael",
+   "x": 43,
+   "y": 60,
+   "description": "מיכאל אזולאי, השכן שהחליף את המנעול.",
+   "choices": [
+    {
+     "id": "m-private",
+     "label": "לקחת את מיכאל לשיחה בצד ולשמוע את גרסתו",
+     "branches": [
+      {
+       "when": {
+        "all": [
+         {
+          "not": {
+           "flag": "crowdDispersed"
+          }
+         },
+         {
+          "attitudeLte": [
+           "michael",
+           1
+          ]
+         }
+        ]
+       },
+       "lines": [
+        {
+         "speaker": "michael",
+         "text": "(בקול, לכיוון המרפסות) אני חבר ועד! החלפתי מנעול כדי לשמור על המחסן, והיא ניסתה לשבור אותו!"
+        },
+        {
+         "speaker": "narrator",
+         "text": "מיכאל מדבר אל השכנים שמסביב יותר מאשר אליך."
+        }
+       ],
+       "effects": {
+        "reveal": [
+         "c-mic-vaad",
+         "c-mic-broke"
+        ],
+        "note": "מול הקהל מיכאל מסר גרסה מקוצרת"
+       }
+      }
+     ],
+     "lines": [
+      {
+       "speaker": "michael",
+       "text": "אני בוועד הבית. לפני חודש נגנבו לי כלי עבודה מהמחסן – לכן החלפתי מנעול. {{michaelTone}}."
+      }
+     ],
+     "effects": {
+      "reveal": [
+       "c-mic-vaad",
+       "c-mic-announced",
+       "c-mic-theft"
+      ]
+     },
+     "report": "שיחה נפרדת עם מיכאל אזולאי וגביית גרסתו"
+    },
+    {
+     "id": "m-again",
+     "label": "לחזור למיכאל לשיחה שקטה, הרחק מהקהל",
+     "when": {
+      "all": [
+       {
+        "chosen": "m-private"
+       },
+       {
+        "not": {
+         "fact": "c-mic-theft"
+        }
+       }
+      ]
+     },
+     "lines": [
+      {
+       "speaker": "player",
+       "text": "בוא נדבר רגע כאן בצד, רק אתה ואני. מה הוביל להחלפת המנעול?"
+      },
+      {
+       "speaker": "michael",
+       "text": "לפני חודש נגנבו לי כלי עבודה מהמחסן. לכן מיהרתי להחליף. {{michaelTone}}."
+      }
+     ],
+     "effects": {
+      "attitude": {
+       "michael": 2
+      },
+      "reveal": [
+       "c-mic-announced",
+       "c-mic-theft"
+      ],
+      "set": {
+       "repaired": true
+      },
+      "note": "בשיחה שקטה מיכאל סיפר על הגניבה מהמחסן"
+     },
+     "report": "שיחה חוזרת ושקטה עם מיכאל"
+    },
+    {
+     "id": "m-key",
+     "label": "לשאול את מיכאל אם אילנה קיבלה מפתח",
+     "when": {
+      "chosen": "m-private"
+     },
+     "branches": [
+      {
+       "when": {
+        "attitudeLte": [
+         "michael",
+         0
+        ]
+       },
+       "lines": [
+        {
+         "speaker": "michael",
+         "text": "זה לא העניין עכשיו."
+        }
+       ],
+       "effects": {
+        "note": "מיכאל לא ענה על שאלת המפתח"
+       }
+      }
+     ],
+     "lines": [
+      {
+       "speaker": "michael",
+       "text": "האמת… היא ביקשה אתמול, ואמרתי לה אחר כך. לא הספקתי."
+      }
+     ],
+     "effects": {
+      "reveal": [
+       "c-mic-key"
+      ]
+     },
+     "report": "שאלת המשך למיכאל על מסירת מפתח"
+    },
+    {
+     "id": "m-feel",
+     "label": "לשאול את מיכאל אם הוא בסדר ואם מישהו נגע בו",
+     "lines": [
+      {
+       "speaker": "michael",
+       "text": "אני בסדר. אף אחד לא נגע בי. אני פשוט עצבני."
+      }
+     ],
+     "effects": {
+      "reveal": [
+       "c-mic-ok"
+      ]
+     },
+     "report": "בירור מצבו של מיכאל"
+    },
+    {
+     "id": "m-confront",
+     "label": "לומר למיכאל שאילנה טוענת שאף אחד לא הודיע לה",
+     "when": {
+      "fact": "c-ila-nobody"
+     },
+     "lines": [
+      {
+       "speaker": "michael",
+       "text": "היא אומרת? אז היא משקרת. אין לי מה להוסיף."
+      }
+     ],
+     "effects": {
+      "attitude": {
+       "michael": -2
+      },
+      "set": {
+       "confronted": true
+      },
+      "note": "חזרת על טענת אילנה בפני מיכאל"
+     }
+    },
+    {
+     "id": "m-judge",
+     "label": "לומר למיכאל שאין לו זכות לנעול רכוש משותף",
+     "lines": [
+      {
+       "speaker": "michael",
+       "text": "אז עכשיו אתה גם שופט? אני חבר ועד!"
+      },
+      {
+       "speaker": "narrator",
+       "text": "אילנה מחייכת בניצחון לעבר המרפסות."
+      }
+     ],
+     "effects": {
+      "attitude": {
+       "michael": -2
+      },
+      "set": {
+       "prejudged": true
+      },
+      "note": "נקבעה עמדה בשאלת הבעלות לפני שהבירור הושלם"
+     }
+    }
+   ]
+  },
+  {
+   "id": "h-ilana",
+   "label": "אילנה – שכנה מקומת הקרקע",
+   "kind": "character",
+   "character": "ilana",
+   "x": 60,
+   "y": 61,
+   "description": "אילנה פרץ, שהחפצים שלה נמצאים במחסן.",
+   "choices": [
+    {
+     "id": "i-private",
+     "label": "לקחת את אילנה לשיחה בצד ולשמוע את גרסתה",
+     "branches": [
+      {
+       "when": {
+        "all": [
+         {
+          "not": {
+           "flag": "crowdDispersed"
+          }
+         },
+         {
+          "attitudeLte": [
+           "ilana",
+           1
+          ]
+         }
+        ]
+       },
+       "lines": [
+        {
+         "speaker": "ilana",
+         "text": "(בקול) העגלה של הבת שלי שם, ואף אחד לא הודיע לי כלום! מה, אני צריכה לבקש רשות?"
+        }
+       ],
+       "effects": {
+        "reveal": [
+         "c-ila-stroller",
+         "c-ila-nobody"
+        ],
+        "note": "מול הקהל אילנה מסרה גרסה מקוצרת"
+       }
+      }
+     ],
+     "lines": [
+      {
+       "speaker": "ilana",
+       "text": "העגלה והאופניים שלנו שם, ואני צריכה אותם לגן. אף אחד לא אמר לי שמחליפים מנעול."
+      },
+      {
+       "speaker": "ilana",
+       "text": "ביקשתי ממנו מפתח אתמול, הוא אמר „אחר כך”. היום משכתי במנעול מרוב כעס – אבל לא שברתי כלום."
+      }
+     ],
+     "effects": {
+      "reveal": [
+       "c-ila-stroller",
+       "c-ila-nobody",
+       "c-ila-pulled",
+       "c-ila-asked"
+      ]
+     },
+     "report": "שיחה נפרדת עם אילנה פרץ וגביית גרסתה"
+    },
+    {
+     "id": "i-again",
+     "label": "לחזור לאילנה לשיחה שקטה, הרחק מהקהל",
+     "when": {
+      "all": [
+       {
+        "chosen": "i-private"
+       },
+       {
+        "not": {
+         "fact": "c-ila-pulled"
+        }
+       }
+      ]
+     },
+     "lines": [
+      {
+       "speaker": "player",
+       "text": "בואי נדבר רגע כאן בצד. מה קרה לפני שהגענו?"
+      },
+      {
+       "speaker": "ilana",
+       "text": "ביקשתי ממנו מפתח אתמול, הוא אמר „אחר כך”. היום משכתי במנעול מרוב כעס – אבל לא שברתי כלום."
+      }
+     ],
+     "effects": {
+      "attitude": {
+       "ilana": 2
+      },
+      "reveal": [
+       "c-ila-pulled",
+       "c-ila-asked"
+      ],
+      "set": {
+       "repaired": true
+      },
+      "note": "בשיחה שקטה אילנה הודתה שמשכה במנעול"
+     },
+     "report": "שיחה חוזרת ושקטה עם אילנה"
+    },
+    {
+     "id": "i-feel",
+     "label": "לשאול את אילנה אם היא בסדר ואם מישהו נגע בה",
+     "lines": [
+      {
+       "speaker": "ilana",
+       "text": "לא, אף אחד לא נגע בי. אני פשוט מתוסכלת."
+      }
+     ],
+     "effects": {
+      "reveal": [
+       "c-ila-ok"
+      ]
+     },
+     "report": "בירור מצבה של אילנה"
+    },
+    {
+     "id": "i-confront",
+     "label": "לומר לאילנה שמיכאל טוען שניסתה לשבור את המנעול",
+     "when": {
+      "fact": "c-mic-broke"
+     },
+     "lines": [
+      {
+       "speaker": "ilana",
+       "text": "אז הוא כבר סיפר לך את הגרסה שלו. יופי. אין לי מה להגיד."
+      }
+     ],
+     "effects": {
+      "attitude": {
+       "ilana": -2
+      },
+      "set": {
+       "confronted": true
+      },
+      "note": "חזרת על טענת מיכאל בפני אילנה"
+     }
+    },
+    {
+     "id": "i-judge",
+     "label": "לומר לאילנה שאסור לה לגעת במנעול של הוועד",
+     "lines": [
+      {
+       "speaker": "ilana",
+       "text": "אז אתה בצד שלו. ברור."
+      },
+      {
+       "speaker": "narrator",
+       "text": "מיכאל מהנהן בסיפוק."
+      }
+     ],
+     "effects": {
+      "attitude": {
+       "ilana": -2
+      },
+      "set": {
+       "prejudged": true
+      },
+      "note": "נקבעה עמדה בשאלת הבעלות לפני שהבירור הושלם"
+     }
+    }
+   ]
+  },
+  {
+   "id": "h-tamar",
+   "label": "תמר – השכנה שהתקשרה",
+   "kind": "character",
+   "character": "tamar",
+   "x": 91,
+   "y": 66,
+   "description": "תמר שלום, מהבניין הסמוך. עומדת ליד השער.",
+   "choices": [
+    {
+     "id": "t-talk",
+     "label": "לשוחח עם תמר – מה ראתה?",
+     "lines": [
+      {
+       "speaker": "tamar",
+       "text": "ראיתי מהמרפסת. הצעקות התחילו כשאילנה משכה במנעול. אף אחד לא נגע באף אחד."
+      },
+      {
+       "speaker": "tamar",
+       "text": "ואז השכנים התחילו להתאסף ולהגיד כל מיני דברים, וזה רק החמיר."
+      }
+     ],
+     "effects": {
+      "reveal": [
+       "c-tamar-saw",
+       "c-tamar-crowd"
+      ],
+      "verify": [
+       "d-caller"
+      ]
+     },
+     "report": "שיחה עם העדה שדיווחה"
+    },
+    {
+     "id": "t-contact",
+     "label": "לרשום את פרטי העדה לצורך תיעוד",
+     "when": {
+      "chosen": "t-talk"
+     },
+     "lines": [
+      {
+       "speaker": "tamar",
+       "text": "תמר שלום, מהבניין ממול. אין בעיה."
+      }
+     ],
+     "effects": {
+      "reveal": [
+       "o-tamar-details"
+      ]
+     },
+     "report": "רישום פרטי העדה"
+    }
+   ]
+  },
+  {
+   "id": "h-radio",
+   "label": "מכשיר הקשר – שאילתה למוקד",
+   "kind": "radio",
+   "x": 6,
+   "y": 12,
+   "description": "מכשיר הקשר האישי. אפשר לבקש מידע מהמוקד. לשליחת עדכון השתמש בכפתור „עדכון למוקד”.",
+   "choices": [
+    {
+     "id": "r-history",
+     "label": "לבקש מהמוקד: היו אירועים קודמים בכתובת?",
+     "lines": [
+      {
+       "speaker": "player",
+       "text": "מוקד, היו אירועים קודמים בכתובת?"
+      },
+      {
+       "speaker": "dispatch",
+       "text": "לפני כחודש התקבל דיווח על גניבת כלי עבודה מהמחסן המשותף בכתובת."
+      }
+     ],
+     "effects": {
+      "reveal": [
+       "d-theft"
+      ]
+     },
+     "report": "שאילתה למוקד על אירועים קודמים בכתובת"
+    }
+   ]
+  }
+ ],
+ "update": {
+  "categories": {
+   "location": "מקום",
+   "situation": "מצב נוכחי",
+   "status": "מצב המעורבים",
+   "verified": "מה אומת",
+   "missing": "מה עדיין חסר",
+   "assistance": "סיוע נדרש",
+   "judgement": "קביעה"
+  },
+  "elements": [
+   {
+    "id": "u-loc",
+    "category": "location",
+    "text": "נמצא בחצר המשותפת ברחוב השקמה 4"
+   },
+   {
+    "id": "u-argue",
+    "category": "situation",
+    "text": "ויכוח בין שני שכנים על מחסן משותף שננעל"
+   },
+   {
+    "id": "u-crowd",
+    "category": "situation",
+    "text": "יש קהל סביב הוויכוח",
+    "when": {
+     "not": {
+      "flag": "crowdDispersed"
+     }
+    }
+   },
+   {
+    "id": "u-calm",
+    "category": "situation",
+    "text": "הקהל התפזר והטון נרגע",
+    "when": {
+     "flag": "crowdDispersed"
+    }
+   },
+   {
+    "id": "u-no-violence",
+    "category": "status",
+    "text": "אין אלימות ואין נפגעים",
+    "when": {
+     "any": [
+      {
+       "fact": "c-tamar-saw"
+      },
+      {
+       "fact": "c-ila-ok"
+      },
+      {
+       "fact": "c-mic-ok"
+      }
+     ]
+    }
+   },
+   {
+    "id": "u-status-check",
+    "category": "status",
+    "text": "מצב המעורבים בבירור",
+    "when": {
+     "not": {
+      "any": [
+       {
+        "fact": "c-tamar-saw"
+       },
+       {
+        "fact": "c-ila-ok"
+       },
+       {
+        "fact": "c-mic-ok"
+       }
+      ]
+     }
+    }
+   },
+   {
+    "id": "u-versions",
+    "category": "verified",
+    "text": "נגבו גרסאות נפרדות – יש סתירה לגבי ההודעה על החלפת המנעול",
+    "when": {
+     "all": [
+      {
+       "fact": "c-mic-announced"
+      },
+      {
+       "fact": "c-ila-nobody"
+      }
+     ]
+    }
+   },
+   {
+    "id": "u-notice",
+    "category": "verified",
+    "text": "נבדק לוח המודעות: {{noticeResult}}",
+    "when": {
+     "fact": "o-notice"
+    }
+   },
+   {
+    "id": "u-opened",
+    "category": "verified",
+    "text": "המחסן נפתח וחפצי השכנה הוצאו",
+    "when": {
+     "flag": "interim"
+    }
+   },
+   {
+    "id": "u-referred",
+    "category": "missing",
+    "text": "חלוקת המפתחות טרם הוסדרה – הופנתה לוועד הבית",
+    "when": {
+     "flag": "referred"
+    }
+   },
+   {
+    "id": "u-missing-versions",
+    "category": "missing",
+    "text": "טרם נשמעו כל הגרסאות",
+    "when": {
+     "not": {
+      "all": [
+       {
+        "chosen": "m-private"
+       },
+       {
+        "chosen": "i-private"
+       }
+      ]
+     }
+    }
+   },
+   {
+    "id": "u-no-assist",
+    "category": "assistance",
+    "text": "לא נדרש סיוע נוסף"
+   },
+   {
+    "id": "u-backup",
+    "category": "assistance",
+    "text": "מבקש ניידת נוספת לחצר"
+   },
+   {
+    "id": "u-judgement",
+    "category": "judgement",
+    "text": "מיכאל נעל רכוש משותף שלא כדין",
+    "when": {
+     "fact": "c-mic-vaad"
+    }
+   }
+  ],
+  "responses": [
+   {
+    "when": {
+     "inUpdate": "u-backup"
+    },
+    "lines": [
+     {
+      "speaker": "dispatch",
+      "text": "מוקד: אין ניידת פנויה כרגע. האם יש אלימות או סכנה?"
+     }
+    ],
+    "effects": {
+     "note": "התבקשה ניידת נוספת בלי שתואר צורך"
+    }
+   },
+   {
+    "when": {
+     "inUpdate": "u-judgement"
+    },
+    "lines": [
+     {
+      "speaker": "dispatch",
+      "text": "מוקד: רשמתי."
+     }
+    ],
+    "effects": {
+     "note": "בעדכון נקבעה עמדה בשאלת הבעלות"
+    }
+   }
+  ]
+ },
+ "finish": {
+  "label": "סיום הטיפול בחצר",
+  "confirm": "לסיים את הטיפול ולעבור לתחקיר? אפשר לשלוח עדכון אחרון למוקד לפני הסיום."
+ },
+ "endings": [
+  {
+   "id": "e-good",
+   "kind": "good",
+   "title": "הוויכוח הורגע ונמצא פתרון ביניים",
+   "text": "הקהל התפזר, כל צד נשמע בנפרד, נמצא פתרון ביניים מוסכם והמחלוקת על המפתחות הופנתה לוועד הבית – בלי קביעה מוקדמת.",
+   "when": {
+    "all": [
+     {
+      "flag": "interim"
+     },
+     {
+      "not": {
+       "flag": "forced"
+      }
+     },
+     {
+      "not": {
+       "flag": "prejudged"
+      }
+     },
+     {
+      "flag": "crowdDispersed"
+     }
+    ]
+   }
+  },
+  {
+   "id": "e-partial",
+   "kind": "partial",
+   "title": "טיפול חלקי",
+   "text": "המצב בחצר השתנה, אך חלק מהמטרות לא הושגו – הפתרון לא היה מוסכם, הקהל נשאר או שנקבעה עמדה לפני שהבירור הושלם.",
+   "when": {
+    "any": [
+     {
+      "flag": "interim"
+     },
+     {
+      "flag": "referred"
+     }
+    ]
+   }
+  },
+  {
+   "id": "e-retry",
+   "kind": "retry",
+   "title": "הזדמנות לתיקון: הוויכוח נמשך",
+   "text": "הצוות עזב כשהמחלוקת לא נפתרה. כעבור שעה התקבלה פנייה נוספת מאותה כתובת על צעקות בחצר.",
+   "when": {
+    "always": true
+   }
+  }
+ ],
+ "hints": [
+  {
+   "when": {
+    "all": [
+     {
+      "stage": [
+       "dispatch"
+      ]
+     },
+     {
+      "not": {
+       "countChosen": {
+        "ids": [
+         "f-violence",
+         "f-caller",
+         "f-crowd"
+        ],
+        "gte": 1
+       }
+      }
+     }
+    ]
+   },
+   "text": "לפני היציאה כדאי לברר אם יש אלימות ומי עוד נמצא במקום."
+  },
+  {
+   "when": {
+    "flag": "garbled"
+   },
+   "text": "ההודעה נקטעה. אפשר לבקש מהמוקד לחזור עליה."
+  },
+  {
+   "when": {
+    "all": [
+     {
+      "stage": [
+       "scene"
+      ]
+     },
+     {
+      "not": {
+       "flag": "crowdDispersed"
+      }
+     }
+    ]
+   },
+   "text": "שים לב לשכנים שמסביב – הם מוסיפים הערות. מה ישפיע על הטון של השיחה?"
+  },
+  {
+   "when": {
+    "not": {
+     "all": [
+      {
+       "chosen": "m-private"
+      },
+      {
+       "chosen": "i-private"
+      }
+     ]
+    }
+   },
+   "text": "שיחה עם כל צד בנפרד, בשקט, יכולה לחשוף פרטים שלא נאמרים מול כולם."
+  },
+  {
+   "when": {
+    "flag": "confronted"
+   },
+   "text": "ציטוט של צד אחד בפני השני הקשיח את העמדות. אפשר לחזור לשיחה שקטה."
+  },
+  {
+   "when": {
+    "not": {
+     "chosen": "y-board"
+    }
+   },
+   "text": "יש טענה על הודעה שפורסמה. אפשר לבדוק אותה בעצמך."
+  },
+  {
+   "when": {
+    "not": {
+     "flag": "interim"
+    }
+   },
+   "text": "מה אפשר לפתור עכשיו, ומה שייך לוועד הבית?"
+  },
+  {
+   "when": {
+    "always": true
+   },
+   "text": "לפני הסיום: האם המוקד יודע מה המצב ומה עדיין פתוח?"
+  }
+ ],
+ "scoring": {
+  "rules": [
+   {
+    "id": "y-info-dispatch",
+    "domain": "info",
+    "label": "השלמת פרטים מהמוקד",
+    "max": 5,
+    "required": false,
+    "anchor": [
+     "f-violence",
+     "f-caller",
+     "f-crowd"
+    ],
+    "tiers": [
+     {
+      "when": {
+       "countChosen": {
+        "ids": [
+         "f-violence",
+         "f-caller",
+         "f-crowd",
+         "f-violence-repeat"
+        ],
+        "gte": 2
+       }
+      },
+      "points": 5,
+      "explain": "התבקשו לפחות שתי השלמות פרטים.",
+      "keep": "לפני היציאה ביררת עם המוקד אם יש אלימות ומי נמצא במקום. כך הגעת לחצר מוכן לקהל שמסביב."
+     },
+     {
+      "when": {
+       "countChosen": {
+        "ids": [
+         "f-violence",
+         "f-caller",
+         "f-crowd",
+         "f-violence-repeat"
+        ],
+        "gte": 1
+       }
+      },
+      "points": 3,
+      "explain": "התבקשה השלמת פרטים אחת.",
+      "improve": "ביקשת השלמה אחת בלבד מהמוקד. בסבב הבא שאל גם על אלימות ועל מספר האנשים במקום."
+     }
+    ],
+    "fallback": {
+     "explain": "לא התבקשו השלמות פרטים.",
+     "improve": "יצאת בלי לשאול את המוקד דבר. בסבב הבא ברר לפחות אם יש אלימות ומי המדווח."
+    }
+   },
+   {
+    "id": "y-info-versions",
+    "domain": "info",
+    "label": "גרסאות מלאות מכל צד",
+    "max": 12,
+    "required": true,
+    "anchor": [
+     "m-private",
+     "i-private",
+     "m-again",
+     "i-again"
+    ],
+    "tiers": [
+     {
+      "when": {
+       "all": [
+        {
+         "fact": "c-mic-theft"
+        },
+        {
+         "fact": "c-ila-pulled"
+        }
+       ]
+      },
+      "points": 12,
+      "explain": "שני הצדדים מסרו גרסה מלאה, כולל מידע שלא נאמר מול הקהל.",
+      "keep": "שמעת כל צד בנפרד ובשקט, וכך נחשף מידע חדש: מיכאל סיפר על הגניבה מהמחסן ואילנה אמרה שמשכה במנעול. התמונה התבררה בלי שאיש נאלץ להתגונן מול השכנים."
+     },
+     {
+      "when": {
+       "any": [
+        {
+         "fact": "c-mic-theft"
+        },
+        {
+         "fact": "c-ila-pulled"
+        }
+       ]
+      },
+      "points": 8,
+      "explain": "צד אחד מסר גרסה מלאה, השני רק גרסה מקוצרת.",
+      "improve": "רק אחד הצדדים מסר גרסה מלאה; השני דיבר מול הקהל ומסר גרסה מקוצרת. בסבב הבא קח כל צד הצידה, אחרי שהקהל מתרחק."
+     },
+     {
+      "when": {
+       "all": [
+        {
+         "fact": "c-mic-vaad"
+        },
+        {
+         "fact": "c-ila-stroller"
+        }
+       ]
+      },
+      "points": 5,
+      "explain": "נשמעו שני הצדדים, אך רק בגרסאות המקוצרות שנאמרו מול הקהל.",
+      "improve": "שמעת את שני הצדדים, אבל רק את מה שאמרו מול הקהל. בסבב הבא בקש מהשכנים לתת מרחב ושוחח שוב עם כל צד – כך נחשפים פרטים חשובים."
+     },
+     {
+      "when": {
+       "any": [
+        {
+         "fact": "c-mic-vaad"
+        },
+        {
+         "fact": "c-ila-stroller"
+        }
+       ]
+      },
+      "points": 3,
+      "explain": "נשמע צד אחד בלבד.",
+      "improve": "שמעת רק צד אחד. בסבב הבא תן לכל צד הזדמנות שווה למסור גרסה."
+     }
+    ],
+    "fallback": {
+     "explain": "לא נגבו גרסאות.",
+     "improve": "לא נגבו גרסאות מהצדדים. בסבב הבא שוחח עם כל אחד מהם בנפרד."
+    }
+   },
+   {
+    "id": "y-info-verify",
+    "domain": "info",
+    "label": "בדיקת טענות מול מקורות נוספים",
+    "max": 8,
+    "required": false,
+    "anchor": [
+     "y-board",
+     "t-talk",
+     "r-history"
+    ],
+    "tiers": [
+     {
+      "when": {
+       "countChosen": {
+        "ids": [
+         "y-board",
+         "t-talk",
+         "r-history"
+        ],
+        "gte": 2
+       }
+      },
+      "points": 8,
+      "explain": "טענות נבדקו מול לפחות שני מקורות נוספים.",
+      "keep": "בדקת טענות מול מקורות נוספים – לוח המודעות, העדה או המוקד – ולא הסתפקת בדברי הצדדים. כך ידעת אילו טענות נתמכות ואילו לא."
+     },
+     {
+      "when": {
+       "countChosen": {
+        "ids": [
+         "y-board",
+         "t-talk",
+         "r-history"
+        ],
+        "gte": 1
+       }
+      },
+      "points": 4,
+      "explain": "טענות נבדקו מול מקור נוסף אחד.",
+      "improve": "בדקת טענות מול מקור אחד בלבד. בסבב הבא בדוק גם את לוח המודעות, את העדה או את המוקד – כל אחד מהם יכול לאשש או להחליש טענה."
+     }
+    ],
+    "fallback": {
+     "explain": "הטענות לא נבדקו מול מקורות נוספים.",
+     "improve": "לא בדקת אף טענה מול מקור נוסף. בסבב הבא, כשצד טוען שפרסם הודעה – בדוק את הלוח; כשיש עדה – שמע אותה."
+    }
+   },
+   {
+    "id": "y-assess-calm",
+    "domain": "assessment",
+    "label": "הרגעת השיח והפחתת השפעת הקהל",
+    "max": 10,
+    "required": true,
+    "anchor": [
+     "y-calm",
+     "c-disperse"
+    ],
+    "tiers": [
+     {
+      "when": {
+       "all": [
+        {
+         "chosen": "c-disperse"
+        },
+        {
+         "chosen": "y-calm"
+        }
+       ]
+      },
+      "points": 10,
+      "explain": "השיח הורגע והקהל התרחק.",
+      "keep": "פתחת בהרגעה ובבקשה מהשכנים הסקרנים לתת מרחב. בלי קהל הטון ירד, ושני הצדדים הסכימו לדבר בצד."
+     },
+     {
+      "when": {
+       "chosen": "c-disperse"
+      },
+      "points": 7,
+      "explain": "הקהל התרחק, אך לא נעשתה פנייה מרגיעה לצדדים עצמם.",
+      "improve": "ביקשת מהקהל לתת מרחב – צעד נכון – אבל לא פנית לשני הצדדים בבקשה לעצור ולהוריד טון. בסבב הבא הצג את עצמך ובקש מכל צד לדבר בתורו."
+     },
+     {
+      "when": {
+       "chosen": "y-calm"
+      },
+      "points": 5,
+      "explain": "השיח הורגע, אך הקהל נשאר.",
+      "improve": "הרגעת את הטון, אבל הקהל נשאר והמשיך להלהיט. בסבב הבא בקש מהשכנים הסקרנים לתת מרחב."
+     }
+    ],
+    "fallback": {
+     "explain": "לא ננקטו צעדים להרגעת השיח.",
+     "improve": "הוויכוח נמשך באותה עוצמה ומול קהל. בסבב הבא פתח בהצגה עצמית רגועה ובבקשה מהקהל לתת מרחב."
+    }
+   },
+   {
+    "id": "y-assess-nojudge",
+    "domain": "assessment",
+    "label": "הימנעות מקביעה מוקדמת",
+    "max": 8,
+    "required": true,
+    "anchor": [
+     "m-judge",
+     "i-judge"
+    ],
+    "tiers": [
+     {
+      "when": {
+       "not": {
+        "flag": "prejudged"
+       }
+      },
+      "points": 8,
+      "explain": "לא נקבע מי צודק בשאלת הבעלות.",
+      "keep": "לא קבעת מי צודק בשאלת המחסן – שאלה של ועד הבית שאינה מוכרעת בחצר. כך שני הצדדים המשיכו לשתף פעולה."
+     }
+    ],
+    "fallback": {
+     "explain": "נקבעה עמדה בשאלת הבעלות לפני שהבירור הושלם.",
+     "improve": "קבעת בפני אחד הצדדים מי צודק לגבי המנעול, והצד השני הקשיח את עמדתו. בסבב הבא התמקד במה שאפשר לפתור עכשיו והפנה את שאלת הבעלות לוועד הבית."
+    }
+   },
+   {
+    "id": "y-assess-solution",
+    "domain": "assessment",
+    "label": "פתרון ביניים והפניה להסדר קבוע",
+    "max": 7,
+    "required": false,
+    "anchor": [
+     "y-interim",
+     "y-refer",
+     "y-force"
+    ],
+    "tiers": [
+     {
+      "when": {
+       "all": [
+        {
+         "flag": "interim"
+        },
+        {
+         "not": {
+          "flag": "forced"
+         }
+        },
+        {
+         "flag": "referred"
+        }
+       ]
+      },
+      "points": 7,
+      "explain": "פתרון ביניים מוסכם והפניה להסדר קבוע.",
+      "keep": "הצעת פתרון לעכשיו – פתיחת המחסן כדי שאילנה תוציא את העגלה – והפנית את שאלת המפתחות לוועד הבית. כך נפתר הצורך המיידי בלי להכריע במחלוקת."
+     },
+     {
+      "when": {
+       "all": [
+        {
+         "flag": "interim"
+        },
+        {
+         "not": {
+          "flag": "forced"
+         }
+        }
+       ]
+      },
+      "points": 5,
+      "explain": "פתרון ביניים מוסכם, ללא הפניה להסדר קבוע.",
+      "improve": "פתרתם את הצורך המיידי, אבל שאלת המפתחות נשארה פתוחה. בסבב הבא הוסף הפניה לוועד הבית או לגישור."
+     },
+     {
+      "when": {
+       "flag": "interim"
+      },
+      "points": 3,
+      "explain": "המחסן נפתח לפי הוראה, לא בהסכמה.",
+      "improve": "המחסן נפתח בעקבות הוראה ולא בהסכמה, ומיכאל הבהיר שהמפתח נשאר אצלו. בסבב הבא בנה קודם שיתוף פעולה והצע פתרון ששני הצדדים מסכימים לו."
+     },
+     {
+      "when": {
+       "flag": "referred"
+      },
+      "points": 3,
+      "explain": "הופנה להסדר קבוע, ללא פתרון לצורך המיידי.",
+      "improve": "הפנית לוועד הבית, אבל אילנה נשארה בלי העגלה. בסבב הבא חפש גם פתרון לעכשיו."
+     }
+    ],
+    "fallback": {
+     "explain": "לא הוצע פתרון.",
+     "improve": "הטיפול הסתיים בלי פתרון לצורך המיידי ובלי הפניה להסדר. בסבב הבא הצע צעד אחד לעכשיו ואת הגורם שיטפל בהמשך."
+    }
+   },
+   {
+    "id": "y-comm-separate",
+    "domain": "communication",
+    "label": "שיחות נפרדות בלי לצטט את הצד השני",
+    "max": 12,
+    "required": true,
+    "anchor": [
+     "m-private",
+     "i-private",
+     "y-together",
+     "m-confront",
+     "i-confront"
+    ],
+    "tiers": [
+     {
+      "when": {
+       "all": [
+        {
+         "not": {
+          "flag": "together"
+         }
+        },
+        {
+         "not": {
+          "flag": "confronted"
+         }
+        },
+        {
+         "chosen": "m-private"
+        },
+        {
+         "chosen": "i-private"
+        }
+       ]
+      },
+      "points": 12,
+      "explain": "שיחות נפרדות, בלי חזרה על טענות הצד השני.",
+      "keep": "שוחחת עם כל צד בנפרד ולא ציטטת את הצד השני. כך זיהית את הסתירה לגבי ההודעה על המנעול בלי להבעיר את הוויכוח מחדש."
+     },
+     {
+      "when": {
+       "all": [
+        {
+         "flag": "confronted"
+        },
+        {
+         "flag": "repaired"
+        }
+       ]
+      },
+      "points": 7,
+      "explain": "הייתה חזרה על טענה של צד אחד בפני האחר, ואחריה שיחה שקטה מתקנת.",
+      "improve": "ציטטת טענה של צד אחד בפני השני, והוא הקשיח עמדה. אחר כך חזרת לשיחה שקטה – תיקון נכון. בסבב הבא שאל שאלה פתוחה בלי לצטט."
+     },
+     {
+      "when": {
+       "flag": "confronted"
+      },
+      "points": 3,
+      "explain": "הייתה חזרה על טענה של צד אחד בפני האחר.",
+      "improve": "ציטטת טענה של צד אחד בפני השני, והוא הפסיק לשתף פעולה. בסבב הבא שאל שאלה פתוחה, ואם זה קרה – חזור לשיחה שקטה הרחק מהקהל."
+     },
+     {
+      "when": {
+       "flag": "together"
+      },
+      "points": 6,
+      "explain": "הצדדים נשמעו יחד מול הקהל.",
+      "improve": "שמעת את שני הצדדים יחד במרכז החצר, והקהל הלהיט את הוויכוח. בסבב הבא קח כל צד הצידה."
+     },
+     {
+      "when": {
+       "any": [
+        {
+         "chosen": "m-private"
+        },
+        {
+         "chosen": "i-private"
+        }
+       ]
+      },
+      "points": 6,
+      "explain": "נערכה שיחה נפרדת עם צד אחד בלבד.",
+      "improve": "שוחחת בנפרד רק עם צד אחד. בסבב הבא תן לשני הצדדים הזדמנות שווה."
+     }
+    ],
+    "fallback": {
+     "explain": "לא נערכו שיחות עם הצדדים.",
+     "improve": "לא שוחחת עם הצדדים. בסבב הבא שמע כל צד בנפרד."
+    }
+   },
+   {
+    "id": "y-comm-wellbeing",
+    "domain": "communication",
+    "label": "בירור שלום המעורבים",
+    "max": 8,
+    "required": false,
+    "anchor": [
+     "i-feel",
+     "m-feel"
+    ],
+    "tiers": [
+     {
+      "when": {
+       "all": [
+        {
+         "chosen": "i-feel"
+        },
+        {
+         "chosen": "m-feel"
+        }
+       ]
+      },
+      "points": 8,
+      "explain": "שני הצדדים נשאלו לשלומם.",
+      "keep": "שאלת את שני הצדדים אם הם בסדר ואם מישהו נגע בהם. כך וידאת שהוויכוח לא היה אלים ושאין צורך בסיוע."
+     },
+     {
+      "when": {
+       "any": [
+        {
+         "chosen": "i-feel"
+        },
+        {
+         "chosen": "m-feel"
+        }
+       ]
+      },
+      "points": 4,
+      "explain": "רק צד אחד נשאל לשלומו.",
+      "improve": "שאלת לשלומו של צד אחד בלבד. בסבב הבא שאל את שניהם – גם כשהוויכוח נראה מילולי בלבד."
+     }
+    ],
+    "fallback": {
+     "explain": "לא נבדק שלום המעורבים.",
+     "improve": "לא שאלת אף צד אם הוא בסדר או אם מישהו נגע בו. בסבב הבא ודא זאת בתחילת השיחה."
+    }
+   },
+   {
+    "id": "y-disp-first",
+    "domain": "dispatch",
+    "label": "עדכון ראשון למוקד",
+    "max": 10,
+    "required": true,
+    "anchor": [
+     "update:1"
+    ],
+    "tiers": [
+     {
+      "when": {
+       "update": {
+        "n": 1,
+        "hasCat": [
+         "location",
+         "situation",
+         "status"
+        ]
+       }
+      },
+      "points": 10,
+      "explain": "בעדכון הראשון נמסרו מיקום, מצב נוכחי ומצב המעורבים.",
+      "keep": "העדכון הראשון כלל מיקום, מצב נוכחי ומצב המעורבים (כולל שאין אלימות או שהדבר בבירור). המוקד ידע מיד שלא נדרש תגבור."
+     },
+     {
+      "when": {
+       "all": [
+        {
+         "update": {
+          "n": 1,
+          "hasCat": [
+           "location",
+           "situation"
+          ]
+         }
+        },
+        {
+         "update": {
+          "n": "any",
+          "hasCat": [
+           "status"
+          ]
+         }
+        }
+       ]
+      },
+      "points": 6,
+      "explain": "מיקום ומצב נוכחי נמסרו; מצב המעורבים נמסר בעדכון הבא.",
+      "improve": "בעדכון הראשון חסר מצב המעורבים, והשלמת אותו בהמשך – תיקון נכון. בסבב הבא כלול כבר בעדכון הראשון אם יש אלימות או נפגעים, או שהדבר בבירור."
+     },
+     {
+      "when": {
+       "update": {
+        "n": 1,
+        "hasCat": [
+         "location",
+         "situation"
+        ]
+       }
+      },
+      "points": 5,
+      "explain": "מצב המעורבים לא נמסר באף עדכון.",
+      "improve": "העדכונים לא ציינו אם יש אלימות או נפגעים. בסבב הבא ציין זאת – זה מה שקובע אם המוקד צריך לשלוח תגבור."
+     },
+     {
+      "when": {
+       "updatesGte": 1
+      },
+      "points": 3,
+      "explain": "בעדכון חסרו מיקום או מצב נוכחי.",
+      "improve": "בעדכון הראשון חסרו מיקום או מצב נוכחי. בסבב הבא פתח בהם."
+     }
+    ],
+    "fallback": {
+     "explain": "לא נשלח עדכון למוקד.",
+     "improve": "לא נשלח עדכון למוקד. בסבב הבא עדכן זמן קצר אחרי ההגעה."
+    }
+   },
+   {
+    "id": "y-disp-close",
+    "domain": "dispatch",
+    "label": "עדכון סיום: מה נפתר ומה פתוח",
+    "max": 10,
+    "required": true,
+    "anchor": [
+     "update:last"
+    ],
+    "tiers": [
+     {
+      "when": {
+       "all": [
+        {
+         "update": {
+          "n": "last",
+          "has": [
+           "u-opened"
+          ]
+         }
+        },
+        {
+         "update": {
+          "n": "last",
+          "hasCat": [
+           "missing"
+          ]
+         }
+        }
+       ]
+      },
+      "points": 10,
+      "explain": "העדכון האחרון כלל מה נפתר ומה עדיין פתוח.",
+      "keep": "העדכון האחרון שלך מסר מה נפתר (המחסן נפתח) ומה עדיין פתוח (חלוקת המפתחות). כך המוקד יודע שהטיפול המיידי הסתיים ומה ההמשך."
+     },
+     {
+      "when": {
+       "update": {
+        "n": "last",
+        "hasCat": [
+         "verified"
+        ]
+       }
+      },
+      "points": 6,
+      "explain": "העדכון האחרון כלל מה אומת, אך לא מה נשאר פתוח.",
+      "improve": "העדכון האחרון מסר מה נעשה, אבל לא מה נשאר פתוח. בסבב הבא הוסף „מה עדיין חסר”."
+     },
+     {
+      "when": {
+       "updatesGte": 1
+      },
+      "points": 3,
+      "explain": "העדכון האחרון לא כלל את תוצאת הטיפול.",
+      "improve": "המוקד לא קיבל עדכון על תוצאת הטיפול. בסבב הבא סיים בעדכון קצר."
+     }
+    ],
+    "fallback": {
+     "explain": "לא נשלח עדכון למוקד.",
+     "improve": "לא נשלח עדכון סיום. בסבב הבא דווח על התוצאה לפני שעוזבים."
+    }
+   },
+   {
+    "id": "y-doc-observe",
+    "domain": "documentation",
+    "label": "תיעוד מסודר של החצר",
+    "max": 5,
+    "required": true,
+    "anchor": [
+     "y-doc",
+     "y-shed"
+    ],
+    "tiers": [
+     {
+      "when": {
+       "chosen": "y-doc"
+      },
+      "points": 5,
+      "explain": "תועדו שעה, נוכחים, מצב המנעול ודברי כל צד בנפרד.",
+      "keep": "תיעדת את המצב בחצר והפרדת בין מה שראית (המנעול שלם, החפצים במחסן) לבין מה שכל צד טען."
+     },
+     {
+      "when": {
+       "chosen": "y-shed"
+      },
+      "points": 3,
+      "explain": "נבדקה דלת המחסן, ללא תיעוד מסודר.",
+      "improve": "בדקת את דלת המחסן, אבל לא תיעדת את התמונה המלאה. בסבב הבא רשום שעה, נוכחים ומה כל צד טען."
+     }
+    ],
+    "fallback": {
+     "explain": "לא תועד המצב בחצר.",
+     "improve": "לא תיעדת מה ראית בחצר. בסבב הבא בדוק את המנעול והמחסן ותעד בנפרד תצפיות וטענות."
+    }
+   },
+   {
+    "id": "y-doc-claims",
+    "domain": "documentation",
+    "label": "הבחנה בין עובדות לטענות בעדכון",
+    "max": 5,
+    "required": false,
+    "anchor": [
+     "sent:u-judgement",
+     "sent:u-versions",
+     "update:last"
+    ],
+    "tiers": [
+     {
+      "when": {
+       "sent": "u-judgement"
+      },
+      "points": 0,
+      "explain": "בעדכון נקבעה עמדה בשאלת הבעלות.",
+      "improve": "בעדכון למוקד נמסר שמיכאל נעל שלא כדין – זו קביעה שלא הוכרעה בזירה. בסבב הבא דווח שיש מחלוקת ושהיא הופנתה לגורם המתאים."
+     },
+     {
+      "when": {
+       "sent": "u-versions"
+      },
+      "points": 5,
+      "explain": "בעדכון צוינה הסתירה בין הגרסאות.",
+      "keep": "בעדכון ציינת שיש סתירה בין הגרסאות לגבי ההודעה על המנעול, בלי להכריע. כך הופרדו טענות מעובדות."
+     },
+     {
+      "when": {
+       "updatesGte": 1
+      },
+      "points": 2,
+      "explain": "העדכונים לא ציינו את הסתירה בין הגרסאות.",
+      "improve": "העדכונים לא ציינו שיש גרסאות סותרות. בסבב הבא הבחן בעדכון בין מה שנצפה לבין מה שנטען."
+     }
+    ],
+    "fallback": {
+     "explain": "לא נשלח עדכון שמסכם את האירוע.",
+     "improve": "לא נשלח סיכום למוקד. בסבב הבא סיים בעדכון שמבחין בין נצפה לנטען."
+    }
+   }
+  ]
+ },
+ "challenges": [
+  "נסה את התרחיש ברמה מתקדמת ובמשמרת בוקר – האם הסדר שבו אתה מרגיע ומפריד עדיין עובד?",
+  "שחק שוב עם זרע אחר: האם לוח המודעות תומך בגרסת מיכאל, ואיך זה משנה את העדכון שלך?",
+  "נסה להגיע לפתרון ביניים בפחות פעולות, בלי לוותר על שמיעת כל צד בנפרד."
+ ],
+ "report": {
+  "reason": "התקבלה משימה מהמוקד: דיווח על ויכוח קולני בין שכנים בחצר משותפת ברחוב השקמה 4.",
+  "checklist": [
+   {
+    "label": "גרסת מיכאל אזולאי",
+    "when": {
+     "fact": "c-mic-vaad"
+    }
+   },
+   {
+    "label": "גרסת אילנה פרץ",
+    "when": {
+     "fact": "c-ila-stroller"
+    }
+   },
+   {
+    "label": "עדות המדווחת",
+    "when": {
+     "fact": "c-tamar-saw"
+    }
+   },
+   {
+    "label": "פרטי העדה",
+    "when": {
+     "fact": "o-tamar-details"
+    }
+   },
+   {
+    "label": "מצב המנעול והמחסן",
+    "when": {
+     "fact": "o-lock"
+    }
+   },
+   {
+    "label": "בדיקת לוח המודעות",
+    "when": {
+     "fact": "o-notice"
+    }
+   },
+   {
+    "label": "מצב המעורבים (אלימות/פגיעה)",
+    "when": {
+     "any": [
+      {
+       "fact": "c-ila-ok"
+      },
+      {
+       "fact": "c-mic-ok"
+      },
+      {
+       "fact": "c-tamar-saw"
+      }
+     ]
+    }
+   }
+  ]
+ },
+ "media": {
+  "images": [
+   "img/yard-day.webp",
+   "img/yard-night.webp"
+  ],
+  "audio": [
+   "audio/crowd.mp3",
+   "audio/yard-evening.mp3",
+   "audio/yard-morning.mp3",
+   "audio/engine-wipers.mp3",
+   "audio/radio-chirp.mp3"
+  ],
+  "voice": {},
+  "narrationMissing": "אין עדיין קריינות מוקלטת בעברית. הקבצים יתווספו לתיקייה public/audio/voice/yard-dispute/ וימופו בשדה media.voice."
+ }
+}

@@ -1,0 +1,2136 @@
+{
+ "id": "noise-building",
+ "version": 1,
+ "title": "דיווח על רעש בבניין מגורים",
+ "category": "סדר ציבורי ויחסי שכנים",
+ "summary": "תלונה על מוזיקה חזקה בשעת ערב. יש לאמת את מקור הרעש, לשמור על פרטיות המדווחת, לפנות למארח בכבוד ולתעד מה נצפה ומה רק נטען.",
+ "estimatedMinutes": 10,
+ "difficultyLabel": "קלה–בינונית",
+ "skills": [
+  "אימות מקור התלונה",
+  "שיח מכבד",
+  "שמירה על פרטיות מדווח",
+  "הבחנה בין נצפה לנטען",
+  "עדכון מוקד"
+ ],
+ "shifts": [
+  "evening",
+  "night"
+ ],
+ "defaultShift": "evening",
+ "location": {
+  "name": "רחוב התאנה 9, קומה 2",
+  "area": "שכונת גבעת הרימון, קריית אלון (בדוי)"
+ },
+ "objectives": [
+  "לאמת מאיזו דירה מגיע הרעש לפני פנייה לדיירים",
+  "לשמור על פרטיות המדווחת",
+  "לפנות למארח באופן מכבד ולהגיע להסדר",
+  "לוודא שהרעש ירד בפועל",
+  "לתעד מה נצפה ומה רק נטען"
+ ],
+ "variants": [
+  {
+   "id": "apt8",
+   "label": "המוזיקה מגיעה מהדירה הסמוכה ולא מהדירה שנמסרה",
+   "set": {
+    "loud": "8"
+   },
+   "vars": {
+    "loudApt": "8",
+    "quietApt": "7",
+    "sourceNote": "ולא מדירה 7 כפי שנמסר"
+   }
+  },
+  {
+   "id": "apt7",
+   "label": "המוזיקה מגיעה מהדירה שנמסרה",
+   "set": {
+    "loud": "7"
+   },
+   "vars": {
+    "loudApt": "7",
+    "quietApt": "8",
+    "sourceNote": "כפי שנמסר"
+   }
+  }
+ ],
+ "facts": [
+  {
+   "id": "d-address",
+   "kind": "dispatch",
+   "text": "כתובת שנמסרה: רחוב התאנה 9, קומה 2"
+  },
+  {
+   "id": "d-apt7",
+   "kind": "dispatch",
+   "text": "לפי המדווחת המוזיקה מגיעה מדירה 7"
+  },
+  {
+   "id": "d-music",
+   "kind": "dispatch",
+   "text": "מוזיקה חזקה, כבר כשעה"
+  },
+  {
+   "id": "d-privacy",
+   "kind": "dispatch",
+   "text": "המדווחת ביקשה שפרטיה לא ייחשפו בפני השכנים"
+  },
+  {
+   "id": "d-repeat",
+   "kind": "dispatch",
+   "text": "זו התלונה השנייה מהכתובת החודש"
+  },
+  {
+   "id": "d-reporter",
+   "kind": "dispatch",
+   "text": "המדווחת, רינה, גרה בדירה 3 בקומה הראשונה ומוכנה לפגוש בכניסה לבניין"
+  },
+  {
+   "id": "d-voices",
+   "kind": "dispatch",
+   "text": "המדווחת שמעה קולות של הרבה אנשים"
+  },
+  {
+   "id": "d-second-call",
+   "kind": "dispatch",
+   "text": "התקבלה פנייה נוספת מאותה כתובת לפני כעשר דקות"
+  },
+  {
+   "id": "d-garbled",
+   "kind": "dispatch",
+   "text": "הודעת המוקד על פרטי המדווחת נקטעה"
+  },
+  {
+   "id": "o-arrival",
+   "kind": "observation",
+   "text": "בחדר המדרגות נשמעת מוזיקה עמומה עם בס חזק"
+  },
+  {
+   "id": "o-source",
+   "kind": "observation",
+   "text": "המוזיקה מגיעה מדירה {{loudApt}} ({{sourceNote}})"
+  },
+  {
+   "id": "o-time",
+   "kind": "observation",
+   "text": "המוזיקה נשמעה בבירור בחדר המדרגות בזמן ההגעה"
+  },
+  {
+   "id": "o-guests",
+   "kind": "observation",
+   "text": "בדירה {{loudApt}} מתקיימת מסיבה עם כ־15 אורחים"
+  },
+  {
+   "id": "o-lowered",
+   "kind": "observation",
+   "text": "אחרי השיחה המוזיקה הונמכה וכמעט אינה נשמעת בחדר המדרגות"
+  },
+  {
+   "id": "c-rina-weekly",
+   "kind": "claim",
+   "source": "rina",
+   "text": "המוזיקה חוזרת כמעט בכל סוף שבוע עד שעה מאוחרת"
+  },
+  {
+   "id": "c-rina-child",
+   "kind": "claim",
+   "source": "rina",
+   "text": "יש לה ילד קטן שלא מצליח להירדם בגלל הרעש"
+  },
+  {
+   "id": "c-host-birthday",
+   "kind": "claim",
+   "source": "ido",
+   "text": "חוגג יום הולדת ותכנן לסיים לפני חצות"
+  },
+  {
+   "id": "c-host-first",
+   "kind": "claim",
+   "source": "ido",
+   "text": "טוען שזו הפעם הראשונה שהוא מארח החודש"
+  },
+  {
+   "id": "c-host-blame",
+   "kind": "claim",
+   "source": "ido",
+   "text": "טוען שהשכנה מדירה 3 „תמיד מתלוננת”"
+  },
+  {
+   "id": "c-shmuel-loud",
+   "kind": "claim",
+   "source": "shmuel",
+   "text": "הרעש מגיע מדירה {{loudApt}}, כבר יותר משעה"
+  }
+ ],
+ "characters": [
+  {
+   "id": "rina",
+   "name": "רינה מלכה",
+   "role": "הדיירת המדווחת",
+   "gender": "f",
+   "look": {
+    "skin": "#d6a57c",
+    "hair": "#5b3a24",
+    "hairStyle": "bun",
+    "top": "#5c6f8a",
+    "bottom": "#3d3d48",
+    "height": 0.94
+   },
+   "attitude": 2,
+   "x": 21,
+   "y": 96,
+   "scale": 1,
+   "when": {
+    "flag": "metRina"
+   }
+  },
+  {
+   "id": "ido",
+   "name": "עידו ברק",
+   "role": "המארח",
+   "gender": "m",
+   "look": {
+    "skin": "#e0b08a",
+    "hair": "#2a1d14",
+    "hairStyle": "short",
+    "top": "#c2552b",
+    "bottom": "#26324a",
+    "height": 1.03
+   },
+   "attitude": 1,
+   "x": 70,
+   "y": 96,
+   "scale": 1,
+   "when": {
+    "flag": "hostOpen"
+   }
+  },
+  {
+   "id": "shmuel",
+   "name": "שמואל דהן",
+   "role": "דייר בדירה הסמוכה",
+   "gender": "m",
+   "look": {
+    "skin": "#d9b08f",
+    "hair": "#bdbdbd",
+    "hairStyle": "short",
+    "top": "#6b6b5a",
+    "bottom": "#444",
+    "height": 0.97
+   },
+   "attitude": 1,
+   "x": 46,
+   "y": 96,
+   "scale": 1,
+   "when": {
+    "flag": "shmuelOpen"
+   }
+  }
+ ],
+ "dispatch": {
+  "time": {
+   "evening": "20:47",
+   "night": "23:24"
+  },
+  "unit": "סייר 23",
+  "incident": "5108",
+  "lines": [
+   {
+    "speaker": "dispatch",
+    "text": "סייר 23, כאן מוקד אלון. תלונה על מוזיקה חזקה בבניין מגורים ברחוב התאנה 9, קומה 2. לפי המדווחת המוזיקה מגיעה מדירה 7, כבר כשעה. המדווחת ביקשה שפרטיה לא ייחשפו בפני השכנים. אשר קבלה."
+   }
+  ],
+  "initialFacts": [
+   "d-address",
+   "d-apt7",
+   "d-music",
+   "d-privacy"
+  ],
+  "basicExtraFacts": [
+   "d-voices"
+  ],
+  "followUps": [
+   {
+    "id": "f-reporter",
+    "label": "לשאול: איפה גרה המדווחת, והאם אפשר לפגוש אותה בדיסקרטיות?",
+    "branches": [
+     {
+      "when": {
+       "all": [
+        {
+         "difficulty": [
+          "advanced"
+         ]
+        },
+        {
+         "not": {
+          "flag": "garbled"
+         }
+        }
+       ]
+      },
+      "lines": [
+       {
+        "speaker": "player",
+        "text": "מוקד, איפה גרה המדווחת? אפשר לפגוש אותה בלי שהשכנים יראו?"
+       },
+       {
+        "speaker": "dispatch",
+        "text": "המדווחת גרה ב… [רחש] …מוכנה לפגוש ב… [ההודעה נקטעה]"
+       }
+      ],
+      "effects": {
+       "reveal": [
+        "d-garbled"
+       ],
+       "set": {
+        "garbled": true
+       }
+      }
+     }
+    ],
+    "lines": [
+     {
+      "speaker": "player",
+      "text": "מוקד, איפה גרה המדווחת? אפשר לפגוש אותה בלי שהשכנים יראו?"
+     },
+     {
+      "speaker": "dispatch",
+      "text": "המדווחת, רינה, גרה בדירה 3 בקומה הראשונה. היא מוכנה לפגוש אתכם בכניסה לבניין."
+     }
+    ],
+    "effects": {
+     "reveal": [
+      "d-reporter"
+     ]
+    },
+    "report": "בירור עם המוקד על פרטי המדווחת ואפשרות לפגישה דיסקרטית"
+   },
+   {
+    "id": "f-reporter-repeat",
+    "label": "לבקש מהמוקד לחזור על ההודעה שנקטעה",
+    "when": {
+     "flag": "garbled"
+    },
+    "lines": [
+     {
+      "speaker": "player",
+      "text": "מוקד, ההודעה נקטעה. חזור בבקשה."
+     },
+     {
+      "speaker": "dispatch",
+      "text": "חוזר: המדווחת, רינה, גרה בדירה 3 בקומה הראשונה. מוכנה לפגוש בכניסה לבניין."
+     }
+    ],
+    "effects": {
+     "reveal": [
+      "d-reporter"
+     ]
+    },
+    "report": "בקשה מהמוקד לחזור על הודעה שנקטעה"
+   },
+   {
+    "id": "f-history",
+    "label": "לשאול: היו תלונות קודמות מהכתובת?",
+    "lines": [
+     {
+      "speaker": "player",
+      "text": "היו תלונות קודמות מהכתובת הזאת?"
+     },
+     {
+      "speaker": "dispatch",
+      "text": "זו התלונה השנייה מהכתובת החודש. בפעם הקודמת לא נשלח צוות."
+     }
+    ],
+    "effects": {
+     "reveal": [
+      "d-repeat"
+     ]
+    },
+    "report": "בירור עם המוקד על תלונות קודמות"
+   },
+   {
+    "id": "f-voices",
+    "label": "לשאול: נמסר משהו על כמות אנשים או על אלימות?",
+    "when": {
+     "not": {
+      "fact": "d-voices"
+     }
+    },
+    "lines": [
+     {
+      "speaker": "player",
+      "text": "נמסר משהו על כמות אנשים, צעקות או אלימות?"
+     },
+     {
+      "speaker": "dispatch",
+      "text": "המדווחת שמעה קולות של הרבה אנשים. אין דיווח על צעקות או אלימות."
+     }
+    ],
+    "effects": {
+     "reveal": [
+      "d-voices"
+     ]
+    },
+    "report": "בירור עם המוקד על כמות אנשים וחשש לאלימות"
+   }
+  ],
+  "goLabel": "אישור קבלה ויציאה לכתובת"
+ },
+ "transition": {
+  "kind": "street",
+  "text": "נסיעה קצרה לשכונת גבעת הרימון. בתאורת הערב החנויות נסגרות, ובבניין ברחוב התאנה רואים חלונות מוארים בקומה השנייה.",
+  "travelMinutes": 5,
+  "ambience": [
+   "engine-wipers"
+  ]
+ },
+ "scene": {
+  "background": "img/stairwell",
+  "alt": "חדר מדרגות בבניין מגורים: גרם מדרגות עם מעקה, תיבות דואר, לוח ועד הבית, שלט „נא לשמור על השקט” ושתי דלתות דירה – 7 ו־8 – על רצפת טראצו.",
+  "fallbackColor": "#5b5248",
+  "ambience": [
+   "music-muffled",
+   "building-hum"
+  ],
+  "ambienceRules": [
+   {
+    "when": {
+     "flag": "hostLowered"
+    },
+    "ambience": [
+     "building-hum"
+    ]
+   }
+  ],
+  "lights": "off",
+  "weather": "none",
+  "props": [
+   {
+    "id": "glow-7",
+    "kind": "door-glow",
+    "x": 57,
+    "y": 76,
+    "when": {
+     "all": [
+      {
+       "variant": [
+        "apt7"
+       ]
+      },
+      {
+       "not": {
+        "flag": "hostLowered"
+       }
+      }
+     ]
+    }
+   },
+   {
+    "id": "glow-8",
+    "kind": "door-glow",
+    "x": 82,
+    "y": 76,
+    "when": {
+     "all": [
+      {
+       "variant": [
+        "apt8"
+       ]
+      },
+      {
+       "not": {
+        "flag": "hostLowered"
+       }
+      }
+     ]
+    }
+   },
+   {
+    "id": "dim-7",
+    "kind": "glow-dim",
+    "x": 57,
+    "y": 76,
+    "when": {
+     "all": [
+      {
+       "variant": [
+        "apt7"
+       ]
+      },
+      {
+       "flag": "hostLowered"
+      }
+     ]
+    }
+   },
+   {
+    "id": "dim-8",
+    "kind": "glow-dim",
+    "x": 82,
+    "y": 76,
+    "when": {
+     "all": [
+      {
+       "variant": [
+        "apt8"
+       ]
+      },
+      {
+       "flag": "hostLowered"
+      }
+     ]
+    }
+   }
+  ]
+ },
+ "arrivalLines": [
+  {
+   "speaker": "narrator",
+   "text": "חדר המדרגות בקומה השנייה. בס עמום מהדהד בקירות, והאור במדרגות כבה ונדלק עם המתג. על הדלתות מספרים 7 ו־8. שלט על הקיר מבקש לשמור על השקט."
+  }
+ ],
+ "arrivalFacts": [
+  "o-arrival"
+ ],
+ "hotspots": [
+  {
+   "id": "h-stair",
+   "label": "חדר המדרגות",
+   "kind": "area",
+   "x": 30,
+   "y": 62,
+   "description": "חדר המדרגות של הקומה השנייה. המוזיקה נשמעת כאן בבירור.",
+   "choices": [
+    {
+     "id": "s-listen",
+     "label": "לעמוד רגע בשקט ולהקשיב מאיזו דלת מגיעה המוזיקה",
+     "lines": [
+      {
+       "speaker": "narrator",
+       "text": "עמדת בשקט ליד כל דלת. ליד דירה {{quietApt}} שקט יחסי; מאחורי דלת {{loudApt}} הבס חזק וקולות של אנשים. המוזיקה מגיעה מדירה {{loudApt}}, {{sourceNote}}."
+      }
+     ],
+     "effects": {
+      "reveal": [
+       "o-source"
+      ],
+      "verify": [
+       "d-address",
+       "d-music"
+      ]
+     },
+     "report": "האזנה בחדר המדרגות ואימות מקור הרעש"
+    },
+    {
+     "id": "s-doc",
+     "label": "לתעד מה שומעים ורואים: עוצמה, שעה ומקור",
+     "branches": [
+      {
+       "when": {
+        "fact": "o-source"
+       },
+       "lines": [
+        {
+         "speaker": "narrator",
+         "text": "תיעדת: מוזיקה עם בס חזק נשמעת בבירור בחדר המדרגות, מקורה בדירה {{loudApt}}, בשעת ההגעה."
+        }
+       ],
+       "effects": {
+        "reveal": [
+         "o-time"
+        ],
+        "set": {
+         "documented": true
+        }
+       }
+      }
+     ],
+     "lines": [
+      {
+       "speaker": "narrator",
+       "text": "תיעדת: מוזיקה עם בס חזק נשמעת בבירור בחדר המדרגות בשעת ההגעה. מקור הרעש עוד לא אומת."
+      }
+     ],
+     "effects": {
+      "reveal": [
+       "o-time"
+      ],
+      "set": {
+       "documented": true
+      }
+     },
+     "report": "תיעוד עוצמת הרעש, השעה והמקור כפי שנצפו"
+    },
+    {
+     "id": "s-recheck",
+     "label": "לחזור לחדר המדרגות ולוודא שהרעש ירד בפועל",
+     "when": {
+      "flag": "hostLowered"
+     },
+     "lines": [
+      {
+       "speaker": "narrator",
+       "text": "חזרת לחדר המדרגות והמתנת דקה. המוזיקה כמעט לא נשמעת, ונשמעים רק קולות דיבור שקטים."
+      }
+     ],
+     "effects": {
+      "reveal": [
+       "o-lowered"
+      ],
+      "minutes": 2
+     },
+     "report": "בדיקה חוזרת בחדר המדרגות – הרעש ירד"
+    }
+   ]
+  },
+  {
+   "id": "h-rina",
+   "label": "רינה – המדווחת (דירה 3)",
+   "kind": "character",
+   "character": "rina",
+   "x": 21,
+   "y": 62,
+   "description": "רינה מלכה, הדיירת שהתלוננה. גרה בקומה הראשונה.",
+   "when": {
+    "fact": "d-reporter"
+   },
+   "choices": [
+    {
+     "id": "r-meet",
+     "label": "לפגוש את רינה בכניסה לבניין, הרחק מהדירות בקומה השנייה",
+     "when": {
+      "not": {
+       "flag": "metRina"
+      }
+     },
+     "lines": [
+      {
+       "speaker": "rina",
+       "text": "תודה שבאתם. אני לא רוצה שידעו שזו אני – אנחנו גרים פה כולנו."
+      },
+      {
+       "speaker": "rina",
+       "text": "זה כמעט כל סוף שבוע עד מאוחר. יש לי ילד קטן והוא לא מצליח להירדם."
+      }
+     ],
+     "effects": {
+      "set": {
+       "metRina": true
+      },
+      "reveal": [
+       "c-rina-weekly",
+       "c-rina-child"
+      ],
+      "verify": [
+       "d-reporter"
+      ]
+     },
+     "report": "שיחה דיסקרטית עם המדווחת בכניסה לבניין"
+    },
+    {
+     "id": "r-knock3",
+     "label": "לדפוק בדלת דירה 3 ולשוחח עם רינה בחדר המדרגות",
+     "when": {
+      "not": {
+       "flag": "metRina"
+      }
+     },
+     "lines": [
+      {
+       "speaker": "rina",
+       "text": "(בלחש) כן, אני התקשרתי. זה כמעט כל סוף שבוע עד מאוחר, והילד שלי לא נרדם."
+      },
+      {
+       "speaker": "narrator",
+       "text": "בזמן השיחה דלת בקומה השנייה נפתחת לרגע, ומישהו מציץ אל חדר המדרגות."
+      }
+     ],
+     "effects": {
+      "set": {
+       "metRina": true,
+       "privacyExposed": true
+      },
+      "reveal": [
+       "c-rina-weekly",
+       "c-rina-child"
+      ],
+      "note": "השיחה עם המדווחת התקיימה בחדר המדרגות, בטווח ראייה של השכנים"
+     },
+     "report": "שיחה עם המדווחת בחדר המדרגות"
+    },
+    {
+     "id": "r-close",
+     "label": "לעדכן את רינה בתוצאה ובמה לעשות אם הרעש יחזור",
+     "when": {
+      "all": [
+       {
+        "flag": "metRina"
+       },
+       {
+        "flag": "hostLowered"
+       }
+      ]
+     },
+     "lines": [
+      {
+       "speaker": "player",
+       "text": "דיברנו עם הדיירים. המוזיקה הונמכה וסוכם על שעת סיום. אם זה חוזר – אפשר לפנות שוב למוקד."
+      },
+      {
+       "speaker": "rina",
+       "text": "תודה. ותודה שלא אמרתם שזו אני."
+      }
+     ],
+     "effects": {
+      "set": {
+       "closedLoop": true
+      }
+     },
+     "report": "עדכון המדווחת בתוצאת הטיפול"
+    }
+   ]
+  },
+  {
+   "id": "h-door7",
+   "label": "דלת דירה 7",
+   "kind": "item",
+   "x": 57,
+   "y": 40,
+   "description": "דלת דירה 7 – הדירה שנמסרה בתלונה.",
+   "when": {
+    "not": {
+     "any": [
+      {
+       "all": [
+        {
+         "variant": [
+          "apt7"
+         ]
+        },
+        {
+         "flag": "hostOpen"
+        }
+       ]
+      },
+      {
+       "all": [
+        {
+         "variant": [
+          "apt8"
+         ]
+        },
+        {
+         "flag": "shmuelOpen"
+        }
+       ]
+      }
+     ]
+    }
+   },
+   "choices": [
+    {
+     "id": "k7",
+     "label": "לדפוק בדלת דירה 7",
+     "branches": [
+      {
+       "when": {
+        "variant": [
+         "apt7"
+        ]
+       },
+       "lines": [
+        {
+         "speaker": "narrator",
+         "text": "המוזיקה נחלשת מעט. הדלת נפתחת ובחור בחולצה כתומה מציץ החוצה, מאחוריו אורחים ובלונים."
+        }
+       ],
+       "effects": {
+        "set": {
+         "hostOpen": true
+        }
+       }
+      }
+     ],
+     "lines": [
+      {
+       "speaker": "narrator",
+       "text": "אחרי כמה דפיקות נפתחת הדלת. אדם מבוגר בחלוק, עם משקפיים על המצח."
+      },
+      {
+       "speaker": "shmuel",
+       "text": "מה קרה? הערתם אותי. המוזיקה זה לא אצלי – זה מהדירה ליד."
+      }
+     ],
+     "effects": {
+      "set": {
+       "shmuelOpen": true,
+       "wrongDoor": true
+      },
+      "attitude": {
+       "shmuel": -1
+      },
+      "note": "הדפיקה בדירה 7 העירה דייר שלא היה קשור לרעש"
+     },
+     "report": "פנייה לדירה 7",
+     "sfx": "knock"
+    }
+   ]
+  },
+  {
+   "id": "h-door8",
+   "label": "דלת דירה 8",
+   "kind": "item",
+   "x": 82,
+   "y": 40,
+   "description": "דלת דירה 8, בצד ימין של חדר המדרגות.",
+   "when": {
+    "not": {
+     "any": [
+      {
+       "all": [
+        {
+         "variant": [
+          "apt8"
+         ]
+        },
+        {
+         "flag": "hostOpen"
+        }
+       ]
+      },
+      {
+       "all": [
+        {
+         "variant": [
+          "apt7"
+         ]
+        },
+        {
+         "flag": "shmuelOpen"
+        }
+       ]
+      }
+     ]
+    }
+   },
+   "choices": [
+    {
+     "id": "k8",
+     "label": "לדפוק בדלת דירה 8",
+     "branches": [
+      {
+       "when": {
+        "variant": [
+         "apt8"
+        ]
+       },
+       "lines": [
+        {
+         "speaker": "narrator",
+         "text": "המוזיקה נחלשת מעט. הדלת נפתחת ובחור בחולצה כתומה מציץ החוצה, מאחוריו אורחים ובלונים."
+        }
+       ],
+       "effects": {
+        "set": {
+         "hostOpen": true
+        }
+       }
+      }
+     ],
+     "lines": [
+      {
+       "speaker": "narrator",
+       "text": "אחרי כמה דפיקות נפתחת הדלת. אדם מבוגר בחלוק, עם משקפיים על המצח."
+      },
+      {
+       "speaker": "shmuel",
+       "text": "מה קרה? הערתם אותי. המוזיקה זה לא אצלי – זה מהדירה ליד."
+      }
+     ],
+     "effects": {
+      "set": {
+       "shmuelOpen": true,
+       "wrongDoor": true
+      },
+      "attitude": {
+       "shmuel": -1
+      },
+      "note": "הדפיקה בדירה 8 העירה דייר שלא היה קשור לרעש"
+     },
+     "report": "פנייה לדירה 8",
+     "sfx": "knock"
+    }
+   ]
+  },
+  {
+   "id": "h-ido",
+   "label": "עידו – המארח",
+   "kind": "character",
+   "character": "ido",
+   "x": 70,
+   "y": 62,
+   "description": "עידו ברק, המארח. עומד בפתח הדירה, מאחוריו אורחים.",
+   "when": {
+    "flag": "hostOpen"
+   },
+   "choices": [
+    {
+     "id": "h-polite",
+     "label": "להציג את עצמך בנימוס ולבקש לדבר רגע בחוץ",
+     "lines": [
+      {
+       "speaker": "player",
+       "text": "ערב טוב, אני מצוות הסיור. הגיעה פנייה בנוגע לרעש. אפשר לדבר איתך רגע כאן בחוץ?"
+      },
+      {
+       "speaker": "ido",
+       "text": "ערב טוב… כן, בטח. יש לי יום הולדת היום, חשבנו לסיים לפני חצות."
+      }
+     ],
+     "effects": {
+      "attitude": {
+       "ido": 1
+      },
+      "reveal": [
+       "c-host-birthday"
+      ]
+     },
+     "report": "פנייה מכבדת למארח"
+    },
+    {
+     "id": "h-order",
+     "label": "לדרוש: „תכבה את המוזיקה עכשיו, יש עליך תלונות”",
+     "lines": [
+      {
+       "speaker": "player",
+       "text": "תכבה את המוזיקה עכשיו. יש עליך תלונות."
+      },
+      {
+       "speaker": "ido",
+       "text": "תלונות? זאת הפעם הראשונה שאני מארח החודש! מי התלונן בכלל?"
+      }
+     ],
+     "effects": {
+      "attitude": {
+       "ido": -2
+      },
+      "reveal": [
+       "c-host-first"
+      ],
+      "set": {
+       "harsh": true
+      },
+      "note": "הפנייה התקיפה גרמה למארח להתגונן"
+     }
+    },
+    {
+     "id": "h-reveal",
+     "label": "לומר לעידו שהשכנה מדירה 3 התלוננה",
+     "when": {
+      "fact": "d-reporter"
+     },
+     "lines": [
+      {
+       "speaker": "player",
+       "text": "השכנה מדירה 3 התלוננה."
+      },
+      {
+       "speaker": "ido",
+       "text": "רינה? ברור. היא תמיד מתלוננת על כולם."
+      }
+     ],
+     "effects": {
+      "attitude": {
+       "ido": -1
+      },
+      "reveal": [
+       "c-host-blame"
+      ],
+      "set": {
+       "privacyBreached": true
+      },
+      "note": "נחשפה זהות המדווחת בפני המארח"
+     }
+    },
+    {
+     "id": "h-explain",
+     "label": "להסביר את ההשפעה: הבס נשמע בכל חדר המדרגות ומפריע לשכנים",
+     "lines": [
+      {
+       "speaker": "player",
+       "text": "המוזיקה נשמעת בכל חדר המדרגות, ויש פה משפחות עם ילדים קטנים. אני לא בא להרוס את המסיבה – רק להוריד את העוצמה."
+      },
+      {
+       "speaker": "ido",
+       "text": "לא חשבתי שזה עובר ככה. אפשר להבין."
+      }
+     ],
+     "effects": {
+      "attitude": {
+       "ido": 1
+      },
+      "set": {
+       "explained": true
+      }
+     },
+     "report": "הסבר למארח על השפעת הרעש על הבניין"
+    },
+    {
+     "id": "h-repair",
+     "label": "לחזור לנימוס: להבהיר שאתה כאן כדי למצוא פתרון ולא כדי להעניש",
+     "when": {
+      "attitudeLte": [
+       "ido",
+       0
+      ]
+     },
+     "lines": [
+      {
+       "speaker": "player",
+       "text": "רגע, בוא נתחיל מחדש. אני לא כאן כדי להעניש אף אחד – אני רוצה שנמצא פתרון שיתאים גם לך וגם לבניין."
+      },
+      {
+       "speaker": "ido",
+       "text": "…אוקיי. מה אתה מציע?"
+      }
+     ],
+     "effects": {
+      "attitude": {
+       "ido": 2
+      },
+      "set": {
+       "repaired": true
+      },
+      "note": "תיקנת את הטון – המארח חזר לשתף פעולה"
+     },
+     "report": "הבהרה למארח שהמטרה היא פתרון"
+    },
+    {
+     "id": "h-guests",
+     "label": "לשאול כמה אורחים יש ועד מתי מתוכנן האירוע",
+     "when": {
+      "attitudeGte": [
+       "ido",
+       1
+      ]
+     },
+     "lines": [
+      {
+       "speaker": "ido",
+       "text": "בערך חמישה־עשר חברים. חשבנו לסיים לפני חצות."
+      },
+      {
+       "speaker": "narrator",
+       "text": "מבעד לדלת רואים סלון עם אורחים, בלונים ורמקול גדול ליד החלון."
+      }
+     ],
+     "effects": {
+      "reveal": [
+       "o-guests",
+       "c-host-birthday"
+      ]
+     },
+     "report": "בירור מספר האורחים ומשך האירוע"
+    },
+    {
+     "id": "h-agree",
+     "label": "להציע הסדר: להנמיך עכשיו ולסיים עד שעה מוסכמת",
+     "when": {
+      "attitudeGte": [
+       "ido",
+       1
+      ]
+     },
+     "lines": [
+      {
+       "speaker": "player",
+       "text": "מה דעתך שנוריד עכשיו את העוצמה, נרחיק את הרמקול מהחלון ונסיים את המוזיקה עד אחת־עשרה וחצי?"
+      },
+      {
+       "speaker": "ido",
+       "text": "סגור. אני מוריד עכשיו."
+      },
+      {
+       "speaker": "narrator",
+       "text": "הבס נחלש בבת אחת."
+      }
+     ],
+     "effects": {
+      "set": {
+       "agreed": true,
+       "hostLowered": true
+      }
+     },
+     "report": "סיכום הסדר עם המארח: הנמכה מיידית וסיום בשעה מוסכמת"
+    },
+    {
+     "id": "h-demand-low",
+     "label": "לבקש להנמיך את המוזיקה",
+     "when": {
+      "attitudeLte": [
+       "ido",
+       0
+      ]
+     },
+     "lines": [
+      {
+       "speaker": "ido",
+       "text": "טוב, מוריד. אבל אחרי שתלכו זה לא העסק שלכם."
+      },
+      {
+       "speaker": "narrator",
+       "text": "המוזיקה יורדת מעט."
+      }
+     ],
+     "effects": {
+      "set": {
+       "partialLower": true,
+       "hostLowered": true
+      },
+      "note": "המארח הנמיך בלית ברירה, בלי הסכמה על המשך הערב"
+     },
+     "report": "בקשה מהמארח להנמיך את המוזיקה"
+    }
+   ]
+  },
+  {
+   "id": "h-shmuel",
+   "label": "שמואל – הדייר בדירה הסמוכה",
+   "kind": "character",
+   "character": "shmuel",
+   "x": 46,
+   "y": 62,
+   "description": "שמואל דהן, דייר מבוגר בדירה {{quietApt}}. עומד בפתח דלתו בחלוק.",
+   "when": {
+    "flag": "shmuelOpen"
+   },
+   "choices": [
+    {
+     "id": "sh-ask",
+     "label": "לשאול את שמואל מאיפה לדעתו מגיע הרעש",
+     "lines": [
+      {
+       "speaker": "shmuel",
+       "text": "מדירה {{loudApt}}. זה כבר יותר משעה. בדרך כלל הם בסדר, אבל היום זה חזק."
+      }
+     ],
+     "effects": {
+      "reveal": [
+       "c-shmuel-loud"
+      ]
+     },
+     "report": "שיחה עם דייר סמוך על מקור הרעש"
+    },
+    {
+     "id": "sh-sorry",
+     "label": "להתנצל על ההפרעה ולהסביר שבודקים את מקור הרעש",
+     "when": {
+      "flag": "wrongDoor"
+     },
+     "lines": [
+      {
+       "speaker": "player",
+       "text": "סליחה שהערנו אותך. אנחנו בודקים מאיפה מגיע הרעש."
+      },
+      {
+       "speaker": "shmuel",
+       "text": "זה בסדר. רק שיהיה שקט."
+      }
+     ],
+     "effects": {
+      "attitude": {
+       "shmuel": 1
+      }
+     },
+     "report": "התנצלות בפני הדייר שהוטרד"
+    }
+   ]
+  },
+  {
+   "id": "h-radio",
+   "label": "מכשיר הקשר – שאילתה למוקד",
+   "kind": "radio",
+   "x": 8,
+   "y": 14,
+   "description": "מכשיר הקשר האישי. אפשר לבקש עדכון מהמוקד. לשליחת עדכון השתמש בכפתור „עדכון למוקד”.",
+   "choices": [
+    {
+     "id": "r-news",
+     "label": "לבקש עדכון מהמוקד: התקבלו פניות נוספות מהכתובת?",
+     "lines": [
+      {
+       "speaker": "player",
+       "text": "מוקד, התקבלו פניות נוספות מהכתובת?"
+      },
+      {
+       "speaker": "dispatch",
+       "text": "התקבלה פנייה נוספת לפני כעשר דקות, מאותה כתובת, על אותו רעש."
+      }
+     ],
+     "effects": {
+      "reveal": [
+       "d-second-call"
+      ]
+     },
+     "report": "בקשת עדכון מהמוקד על פניות נוספות"
+    }
+   ]
+  }
+ ],
+ "update": {
+  "categories": {
+   "location": "מקום",
+   "situation": "מצב נוכחי",
+   "status": "מצב המעורבים",
+   "verified": "מה אומת",
+   "missing": "מה עדיין חסר",
+   "assistance": "סיוע נדרש",
+   "judgement": "קביעה"
+  },
+  "elements": [
+   {
+    "id": "u-loc",
+    "category": "location",
+    "text": "נמצא ברחוב התאנה 9, קומה 2"
+   },
+   {
+    "id": "u-source-claimed",
+    "category": "situation",
+    "text": "לפי התלונה הרעש מדירה 7 – טרם אומת",
+    "when": {
+     "not": {
+      "fact": "o-source"
+     }
+    }
+   },
+   {
+    "id": "u-source",
+    "category": "situation",
+    "text": "מקור הרעש אומת: דירה {{loudApt}}",
+    "when": {
+     "fact": "o-source"
+    }
+   },
+   {
+    "id": "u-party",
+    "category": "situation",
+    "text": "מסיבת יום הולדת עם כ־15 אורחים",
+    "when": {
+     "fact": "o-guests"
+    }
+   },
+   {
+    "id": "u-calm",
+    "category": "status",
+    "text": "אין צעקות או אלימות, האווירה רגועה",
+    "when": {
+     "any": [
+      {
+       "flag": "hostOpen"
+      },
+      {
+       "fact": "o-source"
+      }
+     ]
+    }
+   },
+   {
+    "id": "u-host-coop",
+    "category": "status",
+    "text": "המארח משתף פעולה",
+    "when": {
+     "all": [
+      {
+       "flag": "hostOpen"
+      },
+      {
+       "attitudeGte": [
+        "ido",
+        1
+       ]
+      }
+     ]
+    }
+   },
+   {
+    "id": "u-host-refuse",
+    "category": "status",
+    "text": "המארח מתנגד ומתווכח",
+    "when": {
+     "all": [
+      {
+       "flag": "hostOpen"
+      },
+      {
+       "attitudeLte": [
+        "ido",
+        0
+       ]
+      }
+     ]
+    }
+   },
+   {
+    "id": "u-lowered",
+    "category": "verified",
+    "text": "המוזיקה הונמכה – נבדק בחדר המדרגות",
+    "when": {
+     "fact": "o-lowered"
+    }
+   },
+   {
+    "id": "u-agreement",
+    "category": "verified",
+    "text": "סוכם עם המארח לסיים את המוזיקה עד 23:30",
+    "when": {
+     "flag": "agreed"
+    }
+   },
+   {
+    "id": "u-documented",
+    "category": "verified",
+    "text": "עוצמת הרעש והשעה תועדו",
+    "when": {
+     "flag": "documented"
+    }
+   },
+   {
+    "id": "u-missing-source",
+    "category": "missing",
+    "text": "מקור הרעש עדיין בבירור",
+    "when": {
+     "not": {
+      "fact": "o-source"
+     }
+    }
+   },
+   {
+    "id": "u-weekly-claim",
+    "category": "missing",
+    "text": "טענת המדווחת לרעש חוזר בסופי שבוע – לא נבדקה",
+    "when": {
+     "fact": "c-rina-weekly"
+    }
+   },
+   {
+    "id": "u-followup",
+    "category": "assistance",
+    "text": "מבקש עדכון אם תתקבל פנייה נוספת מהכתובת"
+   },
+   {
+    "id": "u-no-assist",
+    "category": "assistance",
+    "text": "לא נדרש סיוע נוסף"
+   },
+   {
+    "id": "u-extra-unit",
+    "category": "assistance",
+    "text": "מבקש ניידת נוספת למקום"
+   },
+   {
+    "id": "u-reporter-named",
+    "category": "judgement",
+    "text": "המדווחת היא רינה מדירה 3 – אמרתי זאת למארח",
+    "when": {
+     "flag": "privacyBreached"
+    }
+   }
+  ],
+  "responses": [
+   {
+    "when": {
+     "inUpdate": "u-extra-unit"
+    },
+    "lines": [
+     {
+      "speaker": "dispatch",
+      "text": "מוקד: אין ניידת פנויה כרגע. האם יש סכנה או אלימות במקום?"
+     }
+    ],
+    "effects": {
+     "note": "התבקשה ניידת נוספת בלי שתואר צורך"
+    }
+   },
+   {
+    "when": {
+     "inUpdate": "u-followup"
+    },
+    "lines": [
+     {
+      "speaker": "dispatch",
+      "text": "מוקד: קיבלתי, נעדכן אם תתקבל פנייה נוספת."
+     }
+    ]
+   }
+  ]
+ },
+ "finish": {
+  "label": "סיום הטיפול במקום",
+  "confirm": "לסיים את הטיפול ולעבור לתחקיר? אפשר לשלוח עדכון אחרון למוקד לפני הסיום."
+ },
+ "endings": [
+  {
+   "id": "e-good",
+   "kind": "good",
+   "title": "הרעש טופל והמדווחת מוגנת",
+   "text": "מקור הרעש אומת, סוכם הסדר עם המארח, הירידה ברעש נבדקה בפועל ופרטי המדווחת לא נחשפו.",
+   "when": {
+    "all": [
+     {
+      "fact": "o-source"
+     },
+     {
+      "flag": "agreed"
+     },
+     {
+      "fact": "o-lowered"
+     },
+     {
+      "not": {
+       "flag": "privacyBreached"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "id": "e-partial",
+   "kind": "partial",
+   "title": "טיפול חלקי",
+   "text": "המוזיקה הונמכה, אך חלק מהמטרות לא הושגו במלואן – אימות המקור, בדיקה חוזרת, הסדר מוסכם או שמירה על פרטיות המדווחת.",
+   "when": {
+    "flag": "hostLowered"
+   }
+  },
+  {
+   "id": "e-retry",
+   "kind": "retry",
+   "title": "הזדמנות לתיקון: הרעש נמשך",
+   "text": "הצוות עזב לפני שהרעש הונמך. כעבור חצי שעה התקבלה במוקד פנייה נוספת מאותה כתובת.",
+   "when": {
+    "always": true
+   }
+  }
+ ],
+ "hints": [
+  {
+   "when": {
+    "all": [
+     {
+      "stage": [
+       "dispatch"
+      ]
+     },
+     {
+      "not": {
+       "countChosen": {
+        "ids": [
+         "f-reporter",
+         "f-history",
+         "f-voices"
+        ],
+        "gte": 1
+       }
+      }
+     }
+    ]
+   },
+   "text": "המדווחת ביקשה פרטיות. אפשר לשאול את המוקד איך לפגוש אותה בלי שהשכנים יראו."
+  },
+  {
+   "when": {
+    "flag": "garbled"
+   },
+   "text": "ההודעה נקטעה. אפשר לבקש מהמוקד לחזור עליה."
+  },
+  {
+   "when": {
+    "all": [
+     {
+      "stage": [
+       "scene"
+      ]
+     },
+     {
+      "not": {
+       "fact": "o-source"
+      }
+     }
+    ]
+   },
+   "text": "המידע מהמוקד מבוסס על מה שהמדווחת שמעה. לפני שדופקים בדלת – אפשר לבדוק בעצמך מאיפה מגיע הרעש."
+  },
+  {
+   "when": {
+    "flag": "harsh"
+   },
+   "text": "המארח מתגונן. אפשר לחזור לטון רגוע ולהציע פתרון."
+  },
+  {
+   "when": {
+    "all": [
+     {
+      "flag": "hostOpen"
+     },
+     {
+      "not": {
+       "flag": "hostLowered"
+      }
+     }
+    ]
+   },
+   "text": "הצעה קונקרטית (מה עושים עכשיו ועד מתי) עובדת טוב יותר מדרישה כללית."
+  },
+  {
+   "when": {
+    "all": [
+     {
+      "flag": "hostLowered"
+     },
+     {
+      "not": {
+       "fact": "o-lowered"
+      }
+     }
+    ]
+   },
+   "text": "המארח הנמיך – אבל האם זה נשמע כך גם בחדר המדרגות?"
+  },
+  {
+   "when": {
+    "not": {
+     "updatesGte": 1
+    }
+   },
+   "text": "עדכון קצר למוקד: מקום, מה אומת (או עדיין בבירור), מצב נוכחי וסיוע נדרש."
+  },
+  {
+   "when": {
+    "always": true
+   },
+   "text": "לפני הסיום: האם המוקד יודע מה הייתה התוצאה בפועל?"
+  }
+ ],
+ "scoring": {
+  "rules": [
+   {
+    "id": "n-info-dispatch",
+    "domain": "info",
+    "label": "השלמת פרטים מהמוקד",
+    "max": 5,
+    "required": false,
+    "anchor": [
+     "f-reporter",
+     "f-history",
+     "f-voices"
+    ],
+    "tiers": [
+     {
+      "when": {
+       "countChosen": {
+        "ids": [
+         "f-reporter",
+         "f-history",
+         "f-voices"
+        ],
+        "gte": 2
+       }
+      },
+      "points": 5,
+      "explain": "התבקשו לפחות שתי השלמות פרטים.",
+      "keep": "לפני היציאה שאלת את המוקד על המדווחת ועל רקע התלונה. כך ידעת איך לפגוש אותה בלי לחשוף אותה."
+     },
+     {
+      "when": {
+       "countChosen": {
+        "ids": [
+         "f-reporter",
+         "f-history",
+         "f-voices"
+        ],
+        "gte": 1
+       }
+      },
+      "points": 3,
+      "explain": "התבקשה השלמת פרטים אחת.",
+      "improve": "ביקשת השלמה אחת בלבד מהמוקד. בסבב הבא שאל גם על פניות קודמות ועל חשש לאלימות – זה משפיע על אופן הפנייה."
+     }
+    ],
+    "fallback": {
+     "explain": "לא התבקשו השלמות פרטים.",
+     "improve": "יצאת בלי לשאול את המוקד דבר. בסבב הבא בקש פרטים על המדווחת ועל אפשרות לפגוש אותה בדיסקרטיות."
+    }
+   },
+   {
+    "id": "n-info-source",
+    "domain": "info",
+    "label": "אימות מקור הרעש לפני פנייה לדיירים",
+    "max": 12,
+    "required": true,
+    "anchor": [
+     "s-listen",
+     "k7",
+     "k8"
+    ],
+    "tiers": [
+     {
+      "when": {
+       "all": [
+        {
+         "before": [
+          "s-listen",
+          "k7"
+         ]
+        },
+        {
+         "before": [
+          "s-listen",
+          "k8"
+         ]
+        }
+       ]
+      },
+      "points": 12,
+      "explain": "המקור אומת לפני שנדפקה דלת כלשהי.",
+      "keep": "עצרת להקשיב לפני שדפקת בדלת. כך זיהית שהמוזיקה מגיעה מדירה {{loudApt}}, {{sourceNote}}, ופנית ישר לדירה הנכונה."
+     },
+     {
+      "when": {
+       "fact": "o-source"
+      },
+      "points": 6,
+      "explain": "המקור אומת, אך רק אחרי שכבר נדפקה דלת.",
+      "improve": "זיהית את מקור הרעש רק אחרי שכבר דפקת בדלת. בסבב הבא הקשב ואמת את המקור לפני הפנייה – המידע שהגיע מהמוקד עשוי להיות לא מדויק."
+     },
+     {
+      "when": {
+       "flag": "hostOpen"
+      },
+      "points": 4,
+      "explain": "הגעת לדירה הנכונה בלי לאמת את המקור.",
+      "improve": "פנית לדירה בלי לאמת קודם מאיפה מגיע הרעש. הפעם זה הוביל לדירה הנכונה, אבל בסבב הבא הקשב בחדר המדרגות לפני שדופקים."
+     }
+    ],
+    "fallback": {
+     "explain": "מקור הרעש לא אומת.",
+     "improve": "מקור הרעש לא אומת במהלך הטיפול. בסבב הבא הקשב בחדר המדרגות וזהה את הדירה לפני כל פנייה."
+    }
+   },
+   {
+    "id": "n-info-reporter",
+    "domain": "info",
+    "label": "שמיעת המדווחת",
+    "max": 8,
+    "required": false,
+    "anchor": [
+     "r-meet",
+     "r-knock3"
+    ],
+    "tiers": [
+     {
+      "when": {
+       "flag": "metRina"
+      },
+      "points": 8,
+      "explain": "המדווחת נשמעה.",
+      "keep": "שוחחת עם המדווחת ושמעת ממנה על ההשפעה של הרעש (ילד שלא נרדם). כך יכולת להסביר למארח את ההשפעה בלי להזכיר אותה."
+     }
+    ],
+    "fallback": {
+     "explain": "לא נערכה שיחה עם המדווחת.",
+     "improve": "לא שוחחת עם המדווחת, ולכן לא ידעת על טענתה לרעש חוזר ועל ההשפעה עליה. בסבב הבא שאל את המוקד היכן לפגוש אותה בדיסקרטיות."
+    },
+    "alternative": "אפשר גם להסתפק בשאילתה למוקד אם המדווחת לא זמינה – ובלבד שמקור הרעש מאומת בשטח."
+   },
+   {
+    "id": "n-assess-door",
+    "domain": "assessment",
+    "label": "פנייה לדלת הנכונה",
+    "max": 8,
+    "required": false,
+    "appliesWhen": {
+     "any": [
+      {
+       "chosen": "k7"
+      },
+      {
+       "chosen": "k8"
+      }
+     ]
+    },
+    "anchor": [
+     "k7",
+     "k8"
+    ],
+    "tiers": [
+     {
+      "when": {
+       "not": {
+        "flag": "wrongDoor"
+       }
+      },
+      "points": 8,
+      "explain": "לא הוטרד דייר שאינו קשור.",
+      "keep": "פנית ישר לדירה שממנה הגיע הרעש ולא הטרדת דיירים אחרים בבניין."
+     },
+     {
+      "when": {
+       "chosen": "sh-sorry"
+      },
+      "points": 5,
+      "explain": "הוטרד דייר שאינו קשור, ונעשתה התנצלות.",
+      "improve": "דפקת בדלת של דייר שלא היה קשור לרעש והערת אותו. התנצלת והסברת – טוב. בסבב הבא אמת את המקור לפני שדופקים."
+     }
+    ],
+    "fallback": {
+     "explain": "הוטרד דייר שאינו קשור לרעש.",
+     "improve": "דפקת בדלת של דייר שלא היה קשור לרעש, והוא נשאר מוטרד. בסבב הבא אמת את המקור קודם, ואם טעית – התנצל והסבר."
+    }
+   },
+   {
+    "id": "n-assess-solution",
+    "domain": "assessment",
+    "label": "הגעה להסדר מעשי",
+    "max": 10,
+    "required": true,
+    "anchor": [
+     "h-agree",
+     "h-demand-low"
+    ],
+    "tiers": [
+     {
+      "when": {
+       "flag": "agreed"
+      },
+      "points": 10,
+      "explain": "סוכם הסדר: הנמכה מיידית וסיום בשעה מוסכמת.",
+      "keep": "הצעת למארח הסדר קונקרטי – הנמכה עכשיו, הרחקת הרמקול מהחלון ושעת סיום. כך הפתרון נשען על הסכמה ולא רק על דרישה."
+     },
+     {
+      "when": {
+       "flag": "partialLower"
+      },
+      "points": 4,
+      "explain": "המוזיקה הונמכה בלית ברירה, ללא הסכמה על המשך.",
+      "improve": "המארח הנמיך רק בלית ברירה ואמר שימשיך אחרי שתלכו. בסבב הבא בנה קודם שיתוף פעולה ואז הצע הסדר עם שעת סיום."
+     }
+    ],
+    "fallback": {
+     "explain": "לא הושג הסדר וההפרעה נמשכה.",
+     "improve": "הטיפול הסתיים בלי שהרעש הונמך. בסבב הבא פנה למארח והצע פתרון מעשי לפני שעוזבים."
+    }
+   },
+   {
+    "id": "n-assess-recheck",
+    "domain": "assessment",
+    "label": "בדיקה שהרעש ירד בפועל",
+    "max": 7,
+    "required": false,
+    "anchor": [
+     "s-recheck"
+    ],
+    "tiers": [
+     {
+      "when": {
+       "chosen": "s-recheck"
+      },
+      "points": 7,
+      "explain": "בוצעה בדיקה חוזרת בחדר המדרגות.",
+      "keep": "אחרי השיחה חזרת לחדר המדרגות ווידאת שהרעש ירד בפועל. כך העדכון למוקד נשען על תצפית ולא רק על הבטחה."
+     }
+    ],
+    "fallback": {
+     "explain": "לא נבדק שהרעש ירד בפועל.",
+     "improve": "לא בדקת אם הרעש ירד בפועל אחרי השיחה. בסבב הבא חזור לחדר המדרגות לדקה לפני הסיום."
+    }
+   },
+   {
+    "id": "n-comm-approach",
+    "domain": "communication",
+    "label": "פנייה מכבדת למארח",
+    "max": 10,
+    "required": true,
+    "anchor": [
+     "h-polite",
+     "h-order",
+     "h-repair"
+    ],
+    "tiers": [
+     {
+      "when": {
+       "all": [
+        {
+         "chosen": "h-polite"
+        },
+        {
+         "not": {
+          "chosen": "h-order"
+         }
+        }
+       ]
+      },
+      "points": 10,
+      "explain": "הפנייה למארח הייתה מכבדת לאורך כל השיחה.",
+      "keep": "פתחת בהצגה עצמית ובבקשה לדבר בצד, בלי האשמה. המארח שיתף פעולה, סיפר על האירוע והסכים להנמיך."
+     },
+     {
+      "when": {
+       "all": [
+        {
+         "chosen": "h-order"
+        },
+        {
+         "chosen": "h-repair"
+        }
+       ]
+      },
+      "points": 6,
+      "explain": "הפנייה התחילה בדרישה תקיפה, ואחר כך תוקנה.",
+      "improve": "פתחת בדרישה תקיפה והמארח התגונן. אחר כך חזרת לטון רגוע והצעת פתרון, והשיחה חזרה למסלול – תיקון נכון. בסבב הבא פתח בהצגה עצמית ובבקשה לדבר."
+     },
+     {
+      "when": {
+       "chosen": "h-order"
+      },
+      "points": 2,
+      "explain": "הפנייה התחילה בדרישה תקיפה ולא תוקנה.",
+      "improve": "הדרישה „תכבה עכשיו, יש עליך תלונות” גרמה למארח להתגונן ולשאול מי התלונן. בסבב הבא פתח בנימוס והסבר את מטרת ההגעה."
+     }
+    ],
+    "fallback": {
+     "explain": "לא התקיימה שיחה עם המארח.",
+     "improve": "לא התקיימה שיחה עם המארח. בסבב הבא אמת את הדירה ופנה אליו בכבוד."
+    }
+   },
+   {
+    "id": "n-comm-privacy",
+    "domain": "communication",
+    "label": "שמירה על פרטיות המדווחת",
+    "max": 6,
+    "required": true,
+    "anchor": [
+     "h-reveal",
+     "r-knock3",
+     "r-meet"
+    ],
+    "tiers": [
+     {
+      "when": {
+       "all": [
+        {
+         "not": {
+          "flag": "privacyBreached"
+         }
+        },
+        {
+         "not": {
+          "flag": "privacyExposed"
+         }
+        }
+       ]
+      },
+      "points": 6,
+      "explain": "פרטי המדווחת לא נחשפו.",
+      "keep": "שמרת על פרטיות המדווחת: לא הזכרת אותה בפני המארח, ואם נפגשתם – זה היה הרחק מהדירות."
+     },
+     {
+      "when": {
+       "not": {
+        "flag": "privacyBreached"
+       }
+      },
+      "points": 3,
+      "explain": "השיחה עם המדווחת התקיימה בטווח ראייה של השכנים.",
+      "improve": "שוחחת עם המדווחת בחדר המדרגות, ודלת בקומה השנייה נפתחה בזמן השיחה. בסבב הבא פגוש אותה בכניסה לבניין או בתוך דירתה."
+     }
+    ],
+    "fallback": {
+     "explain": "זהות המדווחת נחשפה בפני המארח.",
+     "improve": "אמרת למארח שהשכנה מדירה 3 התלוננה. הוא הגיב בכעס כלפיה, וזה עלול להחריף את היחסים בבניין. בסבב הבא הסבר את השפעת הרעש בלי לציין מי פנה."
+    }
+   },
+   {
+    "id": "n-comm-explain",
+    "domain": "communication",
+    "label": "הסבר ההשפעה בלי לחשוף מדווחים",
+    "max": 4,
+    "required": false,
+    "anchor": [
+     "h-explain"
+    ],
+    "tiers": [
+     {
+      "when": {
+       "chosen": "h-explain"
+      },
+      "points": 4,
+      "explain": "הוסברה ההשפעה של הרעש על הבניין.",
+      "keep": "הסברת למארח שהבס נשמע בכל חדר המדרגות ומפריע למשפחות – בלי לציין מי התלונן. ההסבר עזר לו להבין למה מבקשים להנמיך."
+     }
+    ],
+    "fallback": {
+     "explain": "לא הוסברה ההשפעה של הרעש.",
+     "improve": "לא הסברת למארח איך הרעש משפיע על השכנים. בסבב הבא תאר את מה שנשמע בחדר המדרגות – זה נותן סיבה עניינית לבקשה."
+    }
+   },
+   {
+    "id": "n-disp-first",
+    "domain": "dispatch",
+    "label": "עדכון ראשון למוקד",
+    "max": 10,
+    "required": true,
+    "anchor": [
+     "update:1"
+    ],
+    "tiers": [
+     {
+      "when": {
+       "update": {
+        "n": 1,
+        "has": [
+         "u-source"
+        ],
+        "hasCat": [
+         "location"
+        ]
+       }
+      },
+      "points": 10,
+      "explain": "בעדכון הראשון נמסרו מיקום ומקור רעש מאומת.",
+      "keep": "העדכון הראשון שלך כלל מיקום ואת מקור הרעש המאומת. המוקד ידע מיד שהדירה בפועל היא {{loudApt}}."
+     },
+     {
+      "when": {
+       "all": [
+        {
+         "update": {
+          "n": 1,
+          "hasCat": [
+           "location",
+           "situation"
+          ]
+         }
+        },
+        {
+         "update": {
+          "n": "any",
+          "has": [
+           "u-source"
+          ]
+         }
+        }
+       ]
+      },
+      "points": 7,
+      "explain": "בעדכון הראשון צוין שהמקור טרם אומת; המקור המאומת נמסר בעדכון הבא.",
+      "improve": "בעדכון הראשון מסרת את המקור לפי התלונה וציינת שטרם אומת. אחר כך עדכנת את המקור המאומת – תיקון נכון. בסבב הבא אמת לפני העדכון הראשון, או ציין במפורש מה עוד בבירור."
+     },
+     {
+      "when": {
+       "update": {
+        "n": 1,
+        "hasCat": [
+         "location"
+        ]
+       }
+      },
+      "points": 5,
+      "explain": "נמסר מיקום, אך מקור הרעש לא אומת באף עדכון.",
+      "improve": "העדכונים כללו מיקום, אך המוקד לא קיבל מקור רעש מאומת. בסבב הבא דווח מה נמצא בפועל."
+     },
+     {
+      "when": {
+       "updatesGte": 1
+      },
+      "points": 3,
+      "explain": "נשלח עדכון ללא מיקום.",
+      "improve": "בעדכון הראשון לא צוין מיקום. בסבב הבא פתח כל עדכון במקום שבו אתה נמצא."
+     }
+    ],
+    "fallback": {
+     "explain": "לא נשלח עדכון למוקד.",
+     "improve": "לא נשלח עדכון למוקד. בסבב הבא עדכן לפחות פעם אחת – בהגעה או בסיום."
+    }
+   },
+   {
+    "id": "n-disp-close",
+    "domain": "dispatch",
+    "label": "עדכון סיום עם תוצאה",
+    "max": 10,
+    "required": true,
+    "anchor": [
+     "update:last"
+    ],
+    "tiers": [
+     {
+      "when": {
+       "update": {
+        "n": "last",
+        "has": [
+         "u-lowered"
+        ]
+       }
+      },
+      "points": 10,
+      "explain": "העדכון האחרון כלל תוצאה שנבדקה בפועל.",
+      "keep": "העדכון האחרון שלך מסר שהמוזיקה הונמכה ושנבדק בחדר המדרגות. כך המוקד יודע שהטיפול הסתיים בתוצאה מאומתת."
+     },
+     {
+      "when": {
+       "update": {
+        "n": "last",
+        "has": [
+         "u-agreement"
+        ]
+       }
+      },
+      "points": 7,
+      "explain": "העדכון האחרון כלל את ההסדר, אך ללא בדיקה בפועל.",
+      "improve": "בעדכון האחרון מסרת על ההסדר, אבל לא שהרעש ירד בפועל. בסבב הבא בדוק בחדר המדרגות ועדכן את התוצאה."
+     },
+     {
+      "when": {
+       "updatesGte": 1
+      },
+      "points": 3,
+      "explain": "העדכון האחרון לא כלל את תוצאת הטיפול.",
+      "improve": "המוקד לא קיבל עדכון על תוצאת הטיפול. בסבב הבא סיים בעדכון קצר: מה נעשה ומה המצב עכשיו."
+     }
+    ],
+    "fallback": {
+     "explain": "לא נשלח עדכון למוקד.",
+     "improve": "לא נשלח עדכון סיום. בסבב הבא דווח למוקד על התוצאה לפני שעוזבים."
+    }
+   },
+   {
+    "id": "n-doc-observe",
+    "domain": "documentation",
+    "label": "תיעוד מה שנצפה",
+    "max": 5,
+    "required": true,
+    "anchor": [
+     "s-doc"
+    ],
+    "tiers": [
+     {
+      "when": {
+       "chosen": "s-doc"
+      },
+      "points": 5,
+      "explain": "תועדו עוצמת הרעש, השעה והמקור.",
+      "keep": "תיעדת את עוצמת הרעש ואת השעה כפי ששמעת אותם. בדוח יש עכשיו תצפית שלך ולא רק את דברי המדווחת."
+     }
+    ],
+    "fallback": {
+     "explain": "לא תועד מה נשמע בזירה.",
+     "improve": "לא תיעדת את מה ששמעת בחדר המדרגות. בסבב הבא רשום עוצמה, שעה ומקור לפני הפנייה לדיירים."
+    }
+   },
+   {
+    "id": "n-doc-claims",
+    "domain": "documentation",
+    "label": "הבחנה בין נצפה לנטען",
+    "max": 5,
+    "required": false,
+    "anchor": [
+     "sent:u-weekly-claim",
+     "update:last"
+    ],
+    "tiers": [
+     {
+      "when": {
+       "sent": "u-reporter-named"
+      },
+      "points": 0,
+      "explain": "בעדכון נכלל פרט מזהה על המדווחת שנמסר למארח.",
+      "improve": "בעדכון למוקד ציינת שאמרת למארח מי התלוננה. בסבב הבא שמור על פרטיות המדווחת גם בשיחה עם המעורבים."
+     },
+     {
+      "when": {
+       "sent": "u-weekly-claim"
+      },
+      "points": 5,
+      "explain": "טענת המדווחת על רעש חוזר סומנה כטענה שלא נבדקה.",
+      "keep": "סימנת בעדכון שטענת המדווחת על רעש חוזר עדיין לא נבדקה. כך הופרד בין מה שנצפה הערב לבין מה שנטען."
+     },
+     {
+      "when": {
+       "sent": "u-source"
+      },
+      "points": 3,
+      "explain": "העדכון כלל תצפית מאומתת, ללא הבחנה מפורשת לגבי טענות.",
+      "improve": "העדכונים כללו את מה שאומת, אבל לא ציינו אילו טענות עוד לא נבדקו. בסבב הבא הוסף „מה עדיין חסר”."
+     }
+    ],
+    "fallback": {
+     "explain": "העדכונים לא הבחינו בין נצפה לנטען.",
+     "improve": "העדכונים לא הבחינו בין מה שנצפה לבין מה שנטען. בסבב הבא סמן בעדכון מה אומת ומה רק נמסר."
+    }
+   }
+  ]
+ },
+ "challenges": [
+  "נסה את התרחיש במשמרת לילה וברמה מתקדמת – עם קטיעת קשר – ובדוק שאתה עדיין פוגש את המדווחת בדיסקרטיות.",
+  "נסה לנסח עדכון ראשון שמכסה מקום, מקור מאומת, מצב נוכחי ומה עוד חסר – בעדכון אחד.",
+  "שחק שוב עם זרע אחר ובדוק אם מקור הרעש משתנה – האם סדר הפעולות שלך מתאים לשני המקרים?"
+ ],
+ "report": {
+  "reason": "התקבלה משימה מהמוקד: תלונה על מוזיקה חזקה בבניין מגורים ברחוב התאנה 9.",
+  "checklist": [
+   {
+    "label": "מקור הרעש המאומת",
+    "when": {
+     "fact": "o-source"
+    }
+   },
+   {
+    "label": "עוצמה ושעה כפי שנצפו",
+    "when": {
+     "fact": "o-time"
+    }
+   },
+   {
+    "label": "דברי המדווחת",
+    "when": {
+     "fact": "c-rina-weekly"
+    }
+   },
+   {
+    "label": "דברי המארח",
+    "when": {
+     "any": [
+      {
+       "fact": "c-host-birthday"
+      },
+      {
+       "fact": "c-host-first"
+      }
+     ]
+    }
+   },
+   {
+    "label": "תוצאה שנבדקה בפועל",
+    "when": {
+     "fact": "o-lowered"
+    }
+   }
+  ]
+ },
+ "media": {
+  "images": [
+   "img/stairwell-day.webp",
+   "img/stairwell-night.webp"
+  ],
+  "audio": [
+   "audio/music-muffled.mp3",
+   "audio/building-hum.mp3",
+   "audio/engine-wipers.mp3",
+   "audio/knock.mp3",
+   "audio/radio-chirp.mp3"
+  ],
+  "voice": {},
+  "narrationMissing": "אין עדיין קריינות מוקלטת בעברית. הקבצים יתווספו לתיקייה public/audio/voice/noise-building/ וימופו בשדה media.voice."
+ }
+}
