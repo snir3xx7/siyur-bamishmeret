@@ -3006,8 +3006,22 @@
    "audio/alert.mp3",
    "audio/radio-chatter.mp3"
   ],
-  "voice": {},
-  "narrationMissing": "אין עדיין קריינות מוקלטת בעברית. הקבצים יתווספו לתיקייה public/audio/voice/accident-rain/ וימופו בשדה media.voice."
+  "voice": {
+   "dispatch": "audio/voice/accident-rain/dispatch.mp3",
+   "f-injuries": "audio/voice/accident-rain/f-injuries.mp3",
+   "f-hazard-repeat": "audio/voice/accident-rain/f-hazard-repeat.mp3",
+   "f-caller": "audio/voice/accident-rain/f-caller.mp3",
+   "o-confront": "audio/voice/accident-rain/o-confront.mp3",
+   "o-repair": "audio/voice/accident-rain/o-repair.mp3",
+   "o-blame": "audio/voice/accident-rain/o-blame.mp3",
+   "o-care": "audio/voice/accident-rain/o-care.mp3",
+   "o-worse": "audio/voice/accident-rain/o-worse.mp3",
+   "w-talk": "audio/voice/accident-rain/w-talk.mp3",
+   "w-phone": "audio/voice/accident-rain/w-phone.mp3",
+   "w-contact": "audio/voice/accident-rain/w-contact.mp3",
+   "r-eta": "audio/voice/accident-rain/r-eta.mp3"
+  },
+  "narrationMissing": "קריינות חלקית: חלק מהשורות מוקלטות (קול מסונתז מאתר הקראה), והשאר מוקראות בקול הדפדפן אם הופעל."
  },
  "events": [
   {

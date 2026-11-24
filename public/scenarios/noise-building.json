@@ -2199,7 +2199,22 @@
    "audio/radio-chirp.mp3",
    "audio/radio-chatter.mp3"
   ],
-  "voice": {},
-  "narrationMissing": "אין עדיין קריינות מוקלטת בעברית. הקבצים יתווספו לתיקייה public/audio/voice/noise-building/ וימופו בשדה media.voice."
+  "voice": {
+   "dispatch": "audio/voice/noise-building/dispatch.mp3",
+   "f-reporter-repeat": "audio/voice/noise-building/f-reporter-repeat.mp3",
+   "f-history": "audio/voice/noise-building/f-history.mp3",
+   "f-voices": "audio/voice/noise-building/f-voices.mp3",
+   "h-polite": "audio/voice/noise-building/h-polite.mp3",
+   "h-order": "audio/voice/noise-building/h-order.mp3",
+   "h-reveal": "audio/voice/noise-building/h-reveal.mp3",
+   "h-explain": "audio/voice/noise-building/h-explain.mp3",
+   "h-repair": "audio/voice/noise-building/h-repair.mp3",
+   "h-guests": "audio/voice/noise-building/h-guests.mp3",
+   "h-agree": "audio/voice/noise-building/h-agree.mp3",
+   "h-demand-low": "audio/voice/noise-building/h-demand-low.mp3",
+   "sh-sorry": "audio/voice/noise-building/sh-sorry.mp3",
+   "r-news": "audio/voice/noise-building/r-news.mp3"
+  },
+  "narrationMissing": "קריינות חלקית: חלק מהשורות מוקלטות (קול מסונתז מאתר הקראה), והשאר מוקראות בקול הדפדפן אם הופעל."
  }
 }

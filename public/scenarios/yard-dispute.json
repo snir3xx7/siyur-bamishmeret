@@ -2452,7 +2452,13 @@
    "audio/radio-chirp.mp3",
    "audio/radio-chatter.mp3"
   ],
-  "voice": {},
-  "narrationMissing": "אין עדיין קריינות מוקלטת בעברית. הקבצים יתווספו לתיקייה public/audio/voice/yard-dispute/ וימופו בשדה media.voice."
+  "voice": {
+   "dispatch": "audio/voice/yard-dispute/dispatch.mp3",
+   "f-violence-repeat": "audio/voice/yard-dispute/f-violence-repeat.mp3",
+   "f-caller": "audio/voice/yard-dispute/f-caller.mp3",
+   "f-crowd": "audio/voice/yard-dispute/f-crowd.mp3",
+   "m-feel": "audio/voice/yard-dispute/m-feel.mp3"
+  },
+  "narrationMissing": "קריינות חלקית: חלק מהשורות מוקלטות (קול מסונתז מאתר הקראה), והשאר מוקראות בקול הדפדפן אם הופעל."
  }
 }

@@ -79,6 +79,12 @@ describe('קבצי תרחישים', () => {
 
       it('כל נכסי המדיה קיימים', () => {
         for (const p of [...sc.media.images, ...sc.media.audio]) expect(existsSync(join(root, p)), p).toBe(true);
+        // קריינות מוקלטת: כל קובץ קיים, וכל מפתח הוא הודעת הפתיחה או בחירה בתרחיש
+        const ids = new Set(['dispatch', ...sc.dispatch.followUps.map((c) => c.id), ...sc.hotspots.flatMap((h) => h.choices.map((c) => c.id))]);
+        for (const [k, v] of Object.entries(sc.media.voice)) {
+          expect(existsSync(join(root, v)), v).toBe(true);
+          expect(ids.has(k), k).toBe(true);
+        }
         for (const a of [...sc.scene.ambience, ...sc.transition.ambience, ...(sc.scene.ambienceRules ?? []).flatMap((r) => r.ambience)]) {
           expect(existsSync(join(root, 'audio', `${a}.mp3`)), a).toBe(true);
           expect(sc.media.audio).toContain(`audio/${a}.mp3`);
