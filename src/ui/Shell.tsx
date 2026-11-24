@@ -16,6 +16,7 @@ export function Shell({ children }: { children: ReactNode }) {
           {SITE.name}
         </a>
         <span className="spacer" />
+        <a className="btn small help-link" href="#/help">❓ איך משחקים</a>
         <a className="btn small ghost" href="#/catalog">קטלוג</a>
         <a className="btn small ghost" href="#/history">היסטוריה</a>
         <a className="btn small ghost" href="#/instructor">למדריך</a>
@@ -27,7 +28,10 @@ export function Shell({ children }: { children: ReactNode }) {
       <main id="main" className="page" tabIndex={-1}>
         {children}
       </main>
-      <footer className="footer">{SITE.disclaimer}.</footer>
+      <footer className="footer">
+        <div className="footer-credit" data-testid="footer-credit">{SITE.creditLine}</div>
+        {SITE.disclaimer}.
+      </footer>
     </>
   );
 }

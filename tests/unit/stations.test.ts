@@ -11,7 +11,8 @@ describe('תחנות ואותות קריאה', () => {
   it('כפר סבא: הניידת „סבא 402”, ראש המשמרת „סבא 401”, קצין תורן „סבא 11”, משל״ט מרכז', () => {
     const p = radioProfile({ ...DEFAULT_RADIO, mode: 'station', district: 'center', station: 'kfar-saba', unit: '402' }, 'סייר 23');
     expect(p).toMatchObject({ real: true, unit: 'סבא 402', head: 'סבא 401', dutyOfficer: 'סבא 11', center: 'משל״ט מרכז' });
-    expect(radioize('סייר 23, כאן מוקד אלון. תלונה על רעש.', p)).toBe('סבא 402, כאן סבא 401. תלונה על רעש.');
+    expect(radioize('סייר 23, כאן מוקד אלון. תלונה על רעש.', p)).toBe('סבא 402 מ401. תלונה על רעש.');
+    expect(p.centerCall).toBe('מרכז');
     expect(radioize('מוקד: קיבלתי, רשמתי.', p)).toBe('סבא 401: קיבלתי, רשמתי.');
   });
 

@@ -56,10 +56,14 @@ export function Home() {
           <img className="cine-icon" src={assetUrl('icons/icon.svg')} alt="" />
           <h1>{SITE.name}</h1>
           <p className="cine-tag">{SITE.tagline}</p>
+          <p className="cine-credit" data-testid="home-credit">{SITE.creditLine}</p>
           <p className="cine-lead">מקבלים משימה מהמוקד, אוספים מידע, מגיעים לזירה, משוחחים עם המעורבים, מעדכנים את המוקד – ומסיימים בתחקיר ובטיוטת דוח פעולה.</p>
           <div className="btn-row">
             <a className="btn primary big" href="#/catalog">
               ▶ התחלת תרגול
+            </a>
+            <a className="btn glass" href="#/help" data-testid="home-help">
+              ❓ איך משחקים?
             </a>
             <a className="btn glass" href="#/shift" data-testid="home-shift">
               🚓 משמרת מלאה

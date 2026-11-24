@@ -16,24 +16,49 @@ export interface StationDef {
   shiftHead: string;
   patrols: string[];
   municipal: string[];
+  /** אות קריאה משוער (לא נמסר במפורש) – המדריך יכול לתקן */
+  approx?: boolean;
 }
 
 export interface DistrictDef {
   id: string;
   name: string;
-  /** שם המשל״ט בקשר, למשל „משל״ט מרכז” */
+  /** שם המשל״ט, למשל „משל״ט מרכז” */
   center: string;
+  /** איך פונים למשל״ט בקשר, למשל „מרכז” */
+  centerCall: string;
   stations: StationDef[];
 }
 
-const std = (id: string, name: string, prefix: string, municipal = true): StationDef => ({
-  id, name, prefix, dutyOfficer: '11', shiftHead: '401', patrols: ['402', '403', '404', '405'], municipal: municipal ? ['301', '302'] : [],
+const std = (id: string, name: string, prefix: string, approx = true): StationDef => ({
+  id, name, prefix, dutyOfficer: '11', shiftHead: '401', patrols: ['402', '403', '404', '405'], municipal: ['301', '302'], ...(approx ? { approx } : {}),
 });
 
+/**
+ * כפר סבא ונתניה – לפי מה שנמסר. שאר התחנות: אותו מבנה (11 קצין תורן, 401 ראש משמרת, 402–405 ניידות,
+ * 301–302 שיטור עירוני) וקידומת לפי שם העיר – הערכה הגיונית, מסומנת „משוער”, לתיקון המדריך.
+ */
 export const DISTRICTS: DistrictDef[] = [
-  { id: 'center', name: 'מחוז מרכז', center: 'משל״ט מרכז', stations: [std('kfar-saba', 'תחנת כפר סבא', 'סבא'), std('netanya', 'תחנת נתניה', 'נתניה')] },
-  { id: 'tel-aviv', name: 'מחוז תל אביב', center: 'משל״ט אביב', stations: [] },
-  { id: 'south', name: 'מחוז דרום', center: 'משל״ט דרום', stations: [] },
+  { id: 'center', name: 'מחוז מרכז', center: 'משל״ט מרכז', centerCall: 'מרכז', stations: [
+    std('kfar-saba', 'תחנת כפר סבא', 'סבא', false), std('netanya', 'תחנת נתניה', 'נתניה', false),
+    std('raanana', 'תחנת רעננה', 'רעננה'), std('herzliya', 'תחנת הרצליה', 'הרצליה'), std('petah-tikva', 'תחנת פתח תקווה', 'פתח תקווה'),
+    std('rishon', 'תחנת ראשון לציון', 'ראשון'), std('rehovot', 'תחנת רחובות', 'רחובות'), std('ramla', 'תחנת רמלה', 'רמלה'), std('lod', 'תחנת לוד', 'לוד'),
+  ] },
+  { id: 'tel-aviv', name: 'מחוז תל אביב', center: 'משל״ט אביב', centerCall: 'אביב', stations: [
+    std('yarkon', 'מרחב ירקון', 'ירקון'), std('ayalon', 'מרחב איילון', 'איילון'), std('yafo', 'מרחב יפו', 'יפו'), std('dan', 'מרחב דן', 'דן'),
+  ] },
+  { id: 'south', name: 'מחוז דרום', center: 'משל״ט דרום', centerCall: 'דרום', stations: [
+    std('beer-sheva', 'תחנת באר שבע', 'באר שבע'), std('ashdod', 'תחנת אשדוד', 'אשדוד'), std('ashkelon', 'תחנת אשקלון', 'אשקלון'), std('eilat', 'תחנת אילת', 'אילת'), std('dimona', 'תחנת דימונה', 'דימונה'),
+  ] },
+  { id: 'coast', name: 'מחוז חוף', center: 'משל״ט חוף', centerCall: 'חוף', stations: [
+    std('haifa', 'תחנת חיפה', 'חיפה'), std('hadera', 'תחנת חדרה', 'חדרה'), std('krayot', 'תחנת קריות', 'קריות'),
+  ] },
+  { id: 'north', name: 'מחוז צפון', center: 'משל״ט צפון', centerCall: 'צפון', stations: [
+    std('nazareth', 'תחנת נצרת', 'נצרת'), std('tiberias', 'תחנת טבריה', 'טבריה'), std('karmiel', 'תחנת כרמיאל', 'כרמיאל'), std('akko', 'תחנת עכו', 'עכו'),
+  ] },
+  { id: 'jerusalem', name: 'מחוז ירושלים', center: 'משל״ט ירושלים', centerCall: 'ירושלים', stations: [
+    std('moriah', 'מרחב מוריה', 'מוריה'), std('shalem', 'מרחב שלם', 'שלם'), std('david', 'מרחב דוד', 'דוד'), std('beit-shemesh', 'תחנת בית שמש', 'בית שמש'),
+  ] },
 ];
 
 export interface RadioSettings {
@@ -60,7 +85,16 @@ export interface RadioProfile {
   dutyOfficer: string;
   stationName: string;
   districtName: string;
+  /** איך פונים למשל״ט בקשר („מרכז”) */
+  centerCall: string;
+  /** מספרים בלבד – כך מדברים בקשר בתוך התחנה: „401 מ402” */
+  unitNum: string;
+  headNum: string;
+  dutyNum: string;
 }
+
+/** מי מקבל את השידור בעדכון: ראש המשמרת, המשל״ט או הקצין התורן */
+export type RadioTo = 'head' | 'center' | 'duty';
 
 export function stationOf(r: RadioSettings): { district?: DistrictDef; station?: StationDef } {
   const district = DISTRICTS.find((d) => d.id === r.district);
@@ -75,7 +109,8 @@ export function stationOf(r: RadioSettings): { district?: DistrictDef; station?:
 export function radioProfile(r: RadioSettings | undefined, fictionalUnit: string): RadioProfile {
   const { district, station } = r && r.mode !== 'fictional' ? stationOf(r) : {};
   if (!r || !district || !station) {
-    return { real: false, unit: fictionalUnit, head: 'מוקד אלון', center: 'מוקד אלון', dutyOfficer: 'קצין תורן', stationName: 'קריית אלון (בדוי)', districtName: '' };
+    return { real: false, unit: fictionalUnit, head: 'מוקד אלון', center: 'מוקד אלון', dutyOfficer: 'קצין תורן', stationName: 'קריית אלון (בדוי)', districtName: '',
+      centerCall: 'מוקד אלון', unitNum: fictionalUnit, headNum: 'מוקד אלון', dutyNum: 'קצין תורן' };
   }
   const call = (n: string) => `${station.prefix} ${n}`;
   return {
@@ -86,8 +121,21 @@ export function radioProfile(r: RadioSettings | undefined, fictionalUnit: string
     dutyOfficer: call(station.dutyOfficer),
     stationName: station.name,
     districtName: district.name,
+    centerCall: district.centerCall,
+    unitNum: r.unit || station.patrols[0],
+    headNum: station.shiftHead,
+    dutyNum: station.dutyOfficer,
   };
 }
+
+/** פתיחת שידור בנוהל: „למי מ־מי” (בתוך התחנה מספרים בלבד; למשל״ט – שם המשל״ט) */
+export function callTo(p: RadioProfile, to: RadioTo): string {
+  // מבנה: „למי מ־מי” – השולח תמיד באות קריאה מלא („מסבא 402”)
+  if (!p.real) return `${to === 'duty' ? 'קצין תורן' : 'מוקד אלון'} מ${p.unit}`;
+  const dest = to === 'center' ? p.centerCall : to === 'duty' ? p.dutyNum : p.headNum;
+  return `${dest} מ${p.unit}`;
+}
+export const RADIO_TO_LABEL: Record<RadioTo, string> = { head: 'ראש המשמרת (401)', center: 'המשל״ט', duty: 'הקצין התורן (11)' };
 
 /**
  * התאמת טקסט מהתרחיש לפרופיל: „סייר 23” → אות הקריאה שלך, „מוקד אלון” → ראש המשמרת,
@@ -96,6 +144,7 @@ export function radioProfile(r: RadioSettings | undefined, fictionalUnit: string
 export function radioize(text: string, p: RadioProfile): string {
   if (!p.real) return text;
   return text
+    .replace(/סייר \d+, כאן מוקד אלון\./g, `${p.unit} מ${p.headNum}.`)
     .replace(/סייר \d+/g, p.unit)
     .replace(/כאן מוקד אלון/g, `כאן ${p.head}`)
     .replace(/מוקד אלון/g, p.head)
@@ -113,11 +162,21 @@ export function unitOptions(r: RadioSettings): { value: string; label: string }[
 }
 
 /** הפרופיל של משחק שכבר התחיל: לפי אותות הקריאה שנשמרו בהגדרות המשחק, אחרת לפי ההגדרות הנוכחיות */
-export function gameProfile(config: { radio?: { unit: string; head: string; center: string } }, r: RadioSettings | undefined, fictionalUnit: string): RadioProfile {
+export function gameProfile(config: { radio?: GameRadio }, r: RadioSettings | undefined, fictionalUnit: string): RadioProfile {
   const cur = radioProfile(r, fictionalUnit);
   if (!config.radio) return { ...radioProfile(undefined, fictionalUnit) };
-  return { ...cur, real: true, unit: config.radio.unit, head: config.radio.head, center: config.radio.center };
+  const c = config.radio;
+  const num = (full: string) => full.split(' ').at(-1) ?? full;
+  return {
+    ...cur, real: true, unit: c.unit, head: c.head, center: c.center,
+    centerCall: c.centerCall ?? cur.centerCall, unitNum: num(c.unit), headNum: num(c.head), dutyNum: c.dutyNum ?? cur.dutyNum,
+    dutyOfficer: c.duty ?? cur.dutyOfficer,
+  };
 }
+
+/** מה שנשמר בהגדרות המשחק (ובשמירה) כדי שהקשר יישאר עקבי גם אם ההגדרות משתנות */
+export interface GameRadio { unit: string; head: string; center: string; centerCall?: string; duty?: string; dutyNum?: string }
+export const toGameRadio = (p: RadioProfile): GameRadio => ({ unit: p.unit, head: p.head, center: p.center, centerCall: p.centerCall, duty: p.dutyOfficer, dutyNum: p.dutyNum });
 
 /** תעבורת קשר של ניידות אחרות בתחנה – רקע בלבד, לא משפיע על התרחיש */
 export function chatterLines(p: RadioProfile): string[] {

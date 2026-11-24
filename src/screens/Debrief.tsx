@@ -86,7 +86,7 @@ export function DebriefScreen({ query }: { query: URLSearchParams }) {
   }
   const { sc, st } = game;
   const radio = gameProfile(st.config, settings.station, sc.dispatch.unit);
-  const proc = procedureReport(st);
+  const proc = procedureReport(st, sc);
   const shiftPlan = loadShift();
   const nb = notebookCheck(sc, st);
   const reportFinal = report.map((s) => ({ ...s, text: edits[s.id] ?? radioize(s.text.replace(`צוות: ${sc.dispatch.unit}`, `צוות: ${radio.unit}${radio.real ? ` | ${radio.stationName}, ${radio.districtName}` : ''}`), radio) }));

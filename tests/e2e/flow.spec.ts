@@ -97,7 +97,12 @@ test('רענון באמצע משחק משחזר את המצב', async ({ page })
   await page.waitForTimeout(400);
   await page.reload();
   await expect(page.getByTestId('dialogue')).toContainText('המוזיקה מגיעה מדירה');
-  await page.getByRole('tab', { name: 'יומן ותמליל' }).click();
+  // ב־WebKit מיד אחרי טעינה מחדש הלחיצה הראשונה לפעמים נבלעת – מנסים עד שהלשונית נבחרת
+  const logTab = page.getByRole('tab', { name: 'יומן ותמליל' });
+  await expect(async () => {
+    await logTab.click();
+    await expect(logTab).toHaveAttribute('aria-selected', 'true', { timeout: 1000 });
+  }).toPass({ timeout: 10000 });
   await expect(page.getByTestId('log')).toContainText('להקשיב מאיזו דלת');
   await expect(page.getByTestId('log')).toContainText('היו תלונות קודמות');
 });
@@ -158,7 +163,7 @@ test('תחנה ואות קריאה: כפר סבא – שרשרת קשר מהמש
   await page.getByRole('button', { name: /התחלת התרחיש/ }).click();
   await expect(page.getByTestId('radio-chain')).toContainText('משל״ט מרכז');
   await expect(page.getByTestId('radio-chain')).toContainText('סבא 401');
-  await expect(page.getByText(/סבא 403, כאן סבא 401/).first()).toBeVisible();
+  await expect(page.getByText(/סבא 403 מ401/).first()).toBeVisible();
 });
 
 test('משמרת מלאה: קישור מדריך, אירוע ראשון, תחקיר וחזרה למשמרת', async ({ page }) => {

@@ -10,7 +10,7 @@ test('פריסה: זירה, מגש פעולות ואין גלילה אופקית
   expect(scene).not.toBeNull();
   expect(tray).not.toBeNull();
   if (isMobile) {
-    expect(scene!.y).toBeLessThan(80); // הזירה בראש המסך
+    expect(scene!.y).toBeLessThan(160); // הזירה בראש המסך (מתחת להנחיית הסיבוב)
     expect(tray!.y + tray!.height).toBeGreaterThan(vp.height - 120); // מגש תחתון
   }
   const overflow = await page.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth);

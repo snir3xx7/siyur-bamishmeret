@@ -229,6 +229,36 @@ class AudioEngine {
     this.duckGain.gain.setTargetAtTime(1, this.ctx.currentTime, 0.5);
   }
 
+  private lineToken = 0;
+
+  /**
+   * השמעת שורות בקולות מוקלטים, אחת אחרי השנייה. שורות קשר (radio) עטופות בצפצוף פתיחה וסגירה.
+   * פעולה חדשה של השחקן מפסיקה את הרצף הקודם בין קטעים.
+   */
+  async playLines(items: { file: string; radio: boolean; who?: string }[]) {
+    const s = this.settings;
+    if (!s || s.muted || s.textOnly || this.status !== 'running' || !items.length) return;
+    const token = ++this.lineToken;
+    this.speaking++;
+    this.duck();
+    try {
+      for (let i = 0; i < items.length; i++) {
+        if (token !== this.lineToken) return;
+        const it = items[i];
+        const name = it.file.replace(/^audio\//, '').replace(/\.mp3$/, '');
+        // שידור חדש (צפצוף פתיחה/סגירה) בכל החלפת דובר בקשר
+        const startRadio = it.radio && (i === 0 || !items[i - 1].radio || items[i - 1].who !== it.who);
+        const endRadio = it.radio && (i === items.length - 1 || !items[i + 1].radio || items[i + 1].who !== it.who);
+        if (startRadio) await this.play('radio-chirp', 'radio');
+        await this.play(name, it.radio ? 'radio' : 'speech');
+        if (endRadio) await this.play('radio-end', 'radio');
+      }
+    } finally {
+      this.speaking = Math.max(0, this.speaking - 1);
+      if (this.speaking === 0) this.unduck();
+    }
+  }
+
   /** צליל קשר קצר ואז הקראה (הקלטה מקומית אם יש, אחרת הקראת דפדפן אם הופעלה) */
   async radioMessage(text: string, voiceFile?: string) {
     await this.play('radio-chirp', 'radio');

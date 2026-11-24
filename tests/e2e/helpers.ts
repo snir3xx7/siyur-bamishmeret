@@ -30,7 +30,7 @@ export async function act(page: Page, hotspot: RegExp | string, choice: RegExp |
 
 export async function sendUpdate(page: Page, items: (RegExp | string)[]) {
   await page.getByTestId('open-composer').click();
-  const dlg = page.getByRole('dialog', { name: 'עדכון למוקד' });
+  const dlg = page.getByRole('dialog', { name: 'שידור בקשר' });
   for (const i of items) await dlg.getByLabel(i).check();
   await dlg.getByRole('button', { name: /שליחת העדכון/ }).click();
   await expect(dlg).toBeHidden();

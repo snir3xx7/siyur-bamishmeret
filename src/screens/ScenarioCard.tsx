@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { audio } from '../audio/audio';
 import { shiftLabel } from '../engine/feedback';
 import { StationPicker } from '../ui/StationPicker';
-import { radioProfile } from '../config/stations';
+import { radioProfile, toGameRadio } from '../config/stations';
 import { parseSeed, randomSeed } from '../engine/rng';
 import type { Difficulty, Mode, Scenario, Shift } from '../engine/types';
 import { useApp } from '../ui/context';
@@ -52,7 +52,7 @@ export function ScenarioCard({ id, query }: { id: string; query: URLSearchParams
   const start = () => {
     audio.unlock();
     const p = radioProfile(settings.station, sc.dispatch.unit);
-    startGame(sc, { scenarioId: sc.id, version: sc.version, seed, shift, difficulty, mode, timeLimit, ...(p.real ? { radio: { unit: p.unit, head: p.head, center: p.center } } : {}) });
+    startGame(sc, { scenarioId: sc.id, version: sc.version, seed, shift, difficulty, mode, timeLimit, ...(p.real ? { radio: toGameRadio(p) } : {}) });
     go('#/play');
   };
 

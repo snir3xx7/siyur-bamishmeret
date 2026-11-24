@@ -391,7 +391,7 @@ body.projector .no-projector { display: none !important; }
 .anim-ok .drive-car { animation: carIn 6.5s cubic-bezier(.25, .6, .35, 1) forwards, carBob .45s ease-in-out infinite alternate; }
 .anim-ok .drive-car::after { opacity: 1; }
 @keyframes carIn { from { left: -30%; } to { left: 62%; } }
-.anim-ok @keyframes carBob { from { transform: translateX(-50%) translateY(0); } to { transform: translateX(-50%) translateY(-1.2%); } }
+@keyframes carBob { from { transform: translateX(-50%) translateY(0); } to { transform: translateX(-50%) translateY(-1.2%); } }
 .anim-ok .drive-car .bar-glow { animation: barflash 1.2s steps(2, jump-none) infinite; }
 .anim-ok .cab-led { animation: rxblink .6s steps(1) infinite; }
 .anim-ok .cab-led.blue { animation-delay: .3s; }
@@ -501,3 +501,36 @@ body.projector .no-projector { display: none !important; }
 .scene .pixi-layer canvas { width: 100% !important; height: 100% !important; display: block; }
 .scene.pixi-on .actor.has-sprite .sprite { opacity: 0; }
 .scene.pixi-on .actor.has-sprite .mood-wrap { animation: none !important; }
+
+/* כרטיס נוהל קשר */
+.radio-guide h3 { margin: 10px 0 4px; font-size: 1em; }
+.guide-table { width: 100%; border-collapse: collapse; font-size: .88em; }
+.guide-table th, .guide-table td { border: 1px solid var(--line); padding: 5px 7px; text-align: start; vertical-align: top; }
+.guide-table th { background: var(--panel2); }
+.composer-to .radio-row { flex-wrap: wrap; }
+
+/* קרדיט היוצר */
+.cine-credit { margin: 8px auto 0; display: inline-block; padding: 4px 14px; border-radius: 999px; background: #0b0f1acc; border: 1px solid #ffd98a66; color: #ffe2a8; font-weight: 700; letter-spacing: .3px; text-shadow: 0 1px 6px #000; }
+.footer-credit { font-weight: 700; color: var(--accent); margin-bottom: 4px; }
+
+/* התאמה למכשירים ונגישות */
+.rotate-hint { display: flex; align-items: center; gap: 8px; padding: 8px 10px; margin-bottom: 6px; border-radius: 10px; background: #2a2212; border: 1px solid #6b5530; color: #ffe2a8; font-size: .95em; }
+.rotate-hint .rot-icon { font-size: 1.4em; }
+.rotate-hint button { margin-inline-start: auto; min-width: 40px; min-height: 40px; }
+@media (prefers-reduced-motion: no-preference) { .rotate-hint .rot-icon { display: inline-block; animation: rotHint 2.4s ease-in-out infinite; } }
+@keyframes rotHint { 0%, 40% { transform: rotate(0); } 60%, 100% { transform: rotate(-90deg); } }
+.first-guide { position: absolute; inset: auto 8px 8px 8px; z-index: 6; background: #0d131bf2; border: 2px solid var(--accent); border-radius: 14px; padding: 12px 14px; box-shadow: 0 10px 30px #000c; }
+.first-guide h2 { margin: 0 0 6px; font-size: 1.15em; }
+.first-guide ol { margin: 0 0 10px; padding-inline-start: 1.2em; display: grid; gap: 4px; }
+@media (max-width: 600px) { .first-guide { position: fixed; z-index: 60; inset: 50% 10px auto 10px; transform: translateY(-50%); max-height: 80vh; overflow: auto; box-shadow: 0 0 0 100vmax #000a, 0 10px 30px #000c; } }
+@media (max-width: 600px) { .play-bar .fs-btn .fs-txt { display: none; } .rotate-hint { font-size: .85em; padding: 4px 8px; } }
+.help .lead { font-size: 1.1em; }
+.help .steps { display: grid; gap: 8px; padding-inline-start: 1.3em; }
+.help .devices { list-style: none; padding: 0; display: grid; gap: 8px; }
+.help .devices li span { font-size: 1.3em; }
+.credit-line { text-align: center; font-weight: 700; color: var(--accent); }
+.help-link { background: #2a2212; border-color: #6b5530; color: #ffe2a8; }
+/* אזור לחיצה גדול יותר למספרים שעל התמונה (גם כשהעיגול קטן בטלפון) */
+.marker::after { content: ''; position: absolute; inset: -9px; border-radius: 50%; }
+/* כפתורים בגודל נוח למגע */
+@media (pointer: coarse) { .btn { min-height: 44px; } .btn.small { min-height: 40px; } }

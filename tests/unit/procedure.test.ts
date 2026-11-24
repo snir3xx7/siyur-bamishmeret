@@ -19,9 +19,10 @@ describe('נוהל קשר – שכבה לכל התרחישים', () => {
   it('אותות הקריאה מהתחנה נכנסים לטקסט; ברירת מחדל בדויה', () => {
     const sc = withProcedure(loadScenario('noise-building'));
     const real = play(sc, ['rp-ack'], { radio: { unit: 'סבא 402', head: 'סבא 401', center: 'משל״ט מרכז' } });
-    expect(real.lastLines[0].text).toBe('סבא 401, כאן סבא 402. קיבלתי את האירוע, יוצא. עבור.');
+    expect(real.lastLines[0].text).toBe('401 מסבא 402, קיבלתי את האירוע, יוצא.');
+    expect(real.lastLines[1].text).toBe('סבא 402, קיבל.');
     const fict = play(sc, ['rp-ack']);
-    expect(fict.lastLines[0].text).toContain('כאן סייר 23');
+    expect(fict.lastLines[0].text).toContain('מוקד אלון מסייר 23');
   });
 
   it('אישור קצר, „פנוי” באמצע טיפול – נרשמים בנוהל הקשר, והציון לא משתנה', () => {
@@ -32,7 +33,7 @@ describe('נוהל קשר – שכבה לכל התרחישים', () => {
     const st = play(sc, steps, { seed });
     expect(st.flags['ev:rp-busy']).toBe(true);
     const busy = reduce(sc, st, { type: 'CHOOSE', choiceId: 'rp-busy-yes', turn: st.turn });
-    const rep = procedureReport(busy);
+    const rep = procedureReport(busy, sc);
     expect(rep.items.find((i) => i.label === 'אישור קבלת האירוע')!.ok).toBe(false);
     expect(rep.items.find((i) => i.label === 'מענה ל„אתה פנוי?”')!.ok).toBe(false);
     // הציון זהה למהלך בלי שכבת הקשר
@@ -54,5 +55,25 @@ describe('נוהל קשר – שכבה לכל התרחישים', () => {
     expect(check.find((c) => c.item.startsWith('מספר אירוע'))!.ok).toBe(false);
     const fresh = createGame(sc, cfg(sc));
     expect(fresh.notebook).toBeUndefined();
+  });
+});
+
+describe('למי משדרים: משל״ט, ראש משמרת, קצין תורן', () => {
+  it('בקשת מד״א מהמשל״ט – המשל״ט עונה, ונוהל הקשר תקין; מראש המשמרת – הערה', () => {
+    const sc = withProcedure(loadScenario('missing-elder'));
+    const seed = seedFor(loadScenario('missing-elder'), 'bench');
+    const base = play(sc, ['f-desc', 'GO', 'ARRIVE', 'o-calm', 'p-search'], { seed });
+    const toCenter = reduce(sc, base, { type: 'SEND_UPDATE', elements: ['u-loc', 'u-ems'], note: '', turn: base.turn, to: 'center' });
+    expect(toCenter.lastLines[0].speaker).toBe('center');
+    expect(toCenter.updates[0].to).toBe('center');
+    expect(procedureReport(toCenter, sc).items.find((i) => i.label === 'פנייה לגורם הנכון')!.ok).toBe(true);
+    const toHead = reduce(sc, base, { type: 'SEND_UPDATE', elements: ['u-loc', 'u-ems'], note: '', turn: base.turn });
+    expect(toHead.lastLines[0].speaker).toBe('dispatch');
+    expect(procedureReport(toHead, sc).items.find((i) => i.label === 'פנייה לגורם הנכון')!.ok).toBe(false);
+    // נפגע/מד״א → צריך לעדכן גם את הקצין התורן
+    expect(procedureReport(toCenter, sc).items.find((i) => i.label === 'עדכון הקצין התורן')!.ok).toBe(false);
+    const duty = reduce(sc, toCenter, { type: 'SEND_UPDATE', elements: ['u-loc', 'u-found'], note: '', turn: toCenter.turn, to: 'duty' });
+    expect(duty.lastLines[0].speaker).toBe('duty');
+    expect(procedureReport(duty, sc).items.find((i) => i.label === 'עדכון הקצין התורן')!.ok).toBe(true);
   });
 });

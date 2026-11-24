@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { audio } from '../audio/audio';
-import { radioProfile } from '../config/stations';
+import { radioProfile, toGameRadio } from '../config/stations';
 import { shiftLabel } from '../engine/feedback';
 import { randomSeed } from '../engine/rng';
 import type { CatalogEntry, Difficulty, Shift } from '../engine/types';
@@ -56,7 +56,7 @@ export function ShiftScreen({ query }: { query: URLSearchParams }) {
       audio.unlock();
       startGame(sc, {
         scenarioId: sc.id, version: sc.version, seed: it.seed, shift: shiftOk, difficulty: plan.difficulty, mode: 'practice', timeLimit: false,
-        ...(p.real ? { radio: { unit: p.unit, head: p.head, center: p.center } } : {}),
+        ...(p.real ? { radio: toGameRadio(p) } : {}),
       });
       go('#/play');
     } catch {

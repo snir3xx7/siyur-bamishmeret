@@ -1,0 +1,148 @@
+{
+ "_note": "ליהוק קולות BlueTTS (BlueV3) לדמויות. speed: 1 = קצב קריאה טבעי. pitch: חצאי טונים (לילד). radio: אפקט מכשיר קשר.",
+ "default": {
+  "m": "daniel",
+  "f": "noa"
+ },
+ "special": {
+  "dispatch": {
+   "voice": "jonathan",
+   "radio": true,
+   "speed": 1.05
+  },
+  "narrator": {
+   "voice": "sara",
+   "speed": 1.0
+  },
+  "center": {
+   "voice": "maya",
+   "radio": true,
+   "speed": 1.05
+  },
+  "player": {
+   "voice": "michael",
+   "radio": true,
+   "speed": 1.05
+  },
+  "duty": {
+   "voice": "david",
+   "radio": true,
+   "speed": 1.0
+  }
+ },
+ "characters": {
+  "oren": {
+   "voice": "daniel"
+  },
+  "dana": {
+   "voice": "noa"
+  },
+  "samir": {
+   "voice": "adam",
+   "speed": 0.95
+  },
+  "rina": {
+   "voice": "yael",
+   "speed": 0.95
+  },
+  "ido": {
+   "voice": "ethan"
+  },
+  "shmuel": {
+   "voice": "adam",
+   "speed": 0.92
+  },
+  "michael": {
+   "voice": "michael"
+  },
+  "ilana": {
+   "voice": "maya",
+   "speed": 0.97
+  },
+  "tamar": {
+   "voice": "tamar"
+  },
+  "n1": {
+   "voice": "ariel"
+  },
+  "n2": {
+   "voice": "shira"
+  },
+  "orit": {
+   "voice": "noa"
+  },
+  "avraham": {
+   "voice": "adam",
+   "speed": 0.88
+  },
+  "yossi": {
+   "voice": "david"
+  },
+  "noa": {
+   "voice": "lily"
+  },
+  "beni": {
+   "voice": "adam",
+   "speed": 0.95
+  },
+  "ruti": {
+   "voice": "tamar"
+  },
+  "roni": {
+   "voice": "ariel",
+   "speed": 1.08
+  },
+  "shiran": {
+   "voice": "emma"
+  },
+  "nissim": {
+   "voice": "david",
+   "speed": 0.95
+  },
+  "sigal": {
+   "voice": "noa",
+   "speed": 1.05
+  },
+  "haim": {
+   "voice": "adam"
+  },
+  "omri": {
+   "voice": "lily",
+   "pitch": 4,
+   "speed": 0.95
+  },
+  "alon": {
+   "voice": "ethan"
+  },
+  "dor": {
+   "voice": "ariel"
+  },
+  "maor": {
+   "voice": "daniel",
+   "speed": 1.05
+  },
+  "lilach": {
+   "voice": "shira"
+  },
+  "galit": {
+   "voice": "tamar"
+  },
+  "moshe": {
+   "voice": "david",
+   "speed": 0.92
+  },
+  "tomer": {
+   "voice": "ethan",
+   "speed": 1.05
+  },
+  "film1": {
+   "voice": "ariel"
+  },
+  "film2": {
+   "voice": "emma"
+  },
+  "film3": {
+   "voice": "ethan"
+  }
+ }
+}

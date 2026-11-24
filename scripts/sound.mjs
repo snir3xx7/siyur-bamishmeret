@@ -124,28 +124,34 @@ export function engineWipers() {
   return normalize(loopify(mix([engine, 1], [sw, 0.5], [roof, 0.08])), 0.6);
 }
 
+/**
+ * מכשיר קשר דיגיטלי (בסגנון רשתות קשר דיגיטליות): צליל „אישור דיבור” קצר וחד בתחילת שידור,
+ * בלי רחש אנלוגי ארוך; בסוף – צליל סגירה קצר. צלילים סינתטיים מקוריים, לא דגימות.
+ */
+function tone(out, t0, dur, f, amp) {
+  const s0 = Math.round(t0 * SR), n = Math.round(dur * SR), fade = Math.round(0.004 * SR);
+  for (let i = 0; i < n && s0 + i < out.length; i++) {
+    const env = Math.min(1, i / fade, (n - i) / fade);
+    const ph = (2 * Math.PI * f * i) / SR;
+    out[s0 + i] += amp * env * (0.75 * Math.sin(ph) + 0.25 * Math.sign(Math.sin(ph)));
+  }
+}
 export function radioChirp() {
-  const out = buf(0.62);
-  let p = 0;
-  for (let i = 0; i < out.length; i++) {
-    const t = i / SR;
-    const f = t < 0.1 ? 1250 : t < 0.2 ? 1650 : 0;
-    if (f) {
-      p += (2 * Math.PI * f) / SR;
-      out[i] = 0.5 * Math.sign(Math.sin(p)) * 0.6 + 0.4 * Math.sin(p);
-    }
-  }
-  const sq = bandpass(noise(0.62, 8), 2200, 0.6);
-  for (let i = Math.round(0.24 * SR); i < out.length; i++) {
-    const t = (i / SR - 0.24) / 0.38;
-    out[i] += sq[i] * 1.4 * (1 - t);
-  }
-  return normalize(bandpass(out, 1500, 0.5), 0.7);
+  const out = buf(0.24);
+  // נקישת מפתוח קצרה + צליל „מותר לדבר” כפול
+  const click = bandpass(noise(0.015, 8), 2500, 0.8);
+  for (let i = 0; i < click.length; i++) out[i] += click[i] * 0.8 * (1 - i / click.length);
+  tone(out, 0.03, 0.07, 1750, 0.55);
+  tone(out, 0.11, 0.07, 2200, 0.5);
+  return normalize(bandpass(out, 1800, 0.6), 0.6);
 }
 
 export function radioEnd() {
-  const n = bandpass(noise(0.3, 9), 2000, 0.6);
-  return normalize(n.map((v, i) => v * (1 - i / n.length)), 0.5);
+  const out = buf(0.2);
+  tone(out, 0.0, 0.09, 1250, 0.5);
+  const tail = bandpass(noise(0.06, 9), 2200, 0.7);
+  for (let i = 0; i < tail.length; i++) out[Math.round(0.1 * SR) + i] += tail[i] * 0.35 * (1 - i / tail.length);
+  return normalize(bandpass(out, 1500, 0.6), 0.5);
 }
 
 export function musicMuffled() {

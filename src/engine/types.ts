@@ -264,7 +264,14 @@ export interface Scenario {
     reason: string;
     checklist: { label: string; when: Cond }[];
   };
-  media: { images: string[]; audio: string[]; voice: Record<string, string>; narrationMissing?: string };
+  media: {
+    images: string[];
+    audio: string[];
+    voice: Record<string, string>;
+    /** קריינות לכל שורה: voiceKey(דובר, טקסט) → קובץ */
+    voiceLines?: Record<string, string>;
+    narrationMissing?: string;
+  };
 }
 
 export interface CatalogEntry {
@@ -287,6 +294,8 @@ export interface KnownFact {
 
 export interface SentUpdate {
   n: number;
+  /** למי נשלח: ראש המשמרת (ברירת מחדל), המשל״ט או הקצין התורן */
+  to?: 'head' | 'center' | 'duty';
   turn: number;
   t: number;
   elements: string[];
@@ -331,7 +340,7 @@ export interface GameConfig {
   mode: Mode;
   timeLimit: boolean;
   /** אותות הקריאה שנבחרו (תחנה) – אם חסר, השמות הבדויים מהתרחיש */
-  radio?: { unit: string; head: string; center: string };
+  radio?: { unit: string; head: string; center: string; centerCall?: string; duty?: string; dutyNum?: string };
 }
 
 export interface GameState {
@@ -365,7 +374,7 @@ export interface GameState {
 /** ms = זמן התרגול הפעיל ברגע הפעולה (נשמר לשחזור מדויק של זמני היומן) */
 export type GameAction = (
   | { type: 'CHOOSE'; choiceId: string; turn: number }
-  | { type: 'SEND_UPDATE'; elements: string[]; note: string; turn: number }
+  | { type: 'SEND_UPDATE'; elements: string[]; note: string; turn: number; to?: 'head' | 'center' | 'duty' }
   | { type: 'GO'; turn: number }
   | { type: 'ARRIVE'; turn: number; skipped: boolean }
   | { type: 'FINISH'; turn: number }

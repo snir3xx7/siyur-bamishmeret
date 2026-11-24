@@ -16,6 +16,7 @@ export function scenarioAssets(sc: Scenario): string[] {
   sc.media.images.forEach((i) => urls.add(i));
   sc.media.audio.forEach((a) => urls.add(a));
   Object.values(sc.media.voice).forEach((v) => urls.add(v));
+  Object.values(sc.media.voiceLines ?? {}).forEach((v) => urls.add(v));
   ['audio/radio-chirp.mp3', 'audio/radio-end.mp3', 'audio/ui-click.mp3', 'audio/sample.mp3'].forEach((a) => urls.add(a));
   return [...urls].map(assetUrl);
 }
