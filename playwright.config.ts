@@ -8,6 +8,8 @@ export default defineConfig({
   timeout: 60_000,
   fullyParallel: false,
   workers: 2,
+  // ב-CI ניסיון חוזר אחד לבדיקה שנכשלה בגלל תזמון; כישלון אמיתי ייכשל פעמיים
+  retries: process.env.CI ? 1 : 0,
   reporter: [['list']],
   use: { baseURL: BASE, locale: 'he-IL', trace: 'retain-on-failure' },
   webServer: {

@@ -79,7 +79,10 @@ test('שמירה חסומה: אפשר להשלים משחק ולייצא תחק�
 test('לחיצה כפולה מהירה לא משכפלת החלטה', async ({ page }) => {
   await startScenario(page, 'accident-rain', 6);
   const btn = page.getByRole('button', { name: /נמסר משהו על נפגעים/ });
-  await btn.dblclick();
+  await expect(btn).toBeEnabled();
+  // שתי לחיצות באותו רגע, לפני שהממשק מתעדכן – המקרה הקשה ביותר לשכפול.
+  // (dblclick של העכבר היה תלוי בתזמון ובשכבות צפות ונכשל לסירוגין ב-CI)
+  await btn.evaluate((b: HTMLElement) => { b.click(); b.click(); });
   await page.getByRole('button', { name: /תמליל/ }).click();
   await expect(page.getByTestId('log').getByText('לשאול: נמסר משהו על נפגעים?')).toHaveCount(1);
 });
