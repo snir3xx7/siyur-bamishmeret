@@ -44,9 +44,19 @@ export function SceneView({ sc, st, selected, onSelect, animate, lightsAnim, sho
   const props = (scene.props ?? []).filter((p) => evalCond(ctx, p.when));
   const chars = sc.characters.filter((c) => evalCond(ctx, c.when));
   const patrol = props.find((p) => p.kind === 'patrol');
+  const speakers = new Set(st.lastLines.map((l) => l.speaker));
+  const radioIn = speakers.has('dispatch');
+  const focus = hotspots.find((h) => h.id === selected);
+  const event = st.lastEvent ? sc.events?.find((e) => e.id === st.lastEvent) : undefined;
 
   return (
     <div className={`scene ${animate ? 'anim-ok' : ''}`} role="group" aria-label={`זירת האירוע: ${sc.location.name}`}>
+      {/* „מצלמה”: התקרבות עדינה לנקודה שנבחרה (רק כשתנועה מותרת) */}
+      <div
+        className={`cam ${animate && focus ? 'focused' : ''}`}
+        style={focus ? { transformOrigin: `${focus.x}% ${focus.y}%` } : undefined}
+        data-testid="scene-cam"
+      >
       {!imgFailed ? (
         <img className="bg" src={bgUrl(scene.background, shift)} alt="" onError={() => setImgFailed(true)} />
       ) : (
@@ -81,8 +91,18 @@ export function SceneView({ sc, st, selected, onSelect, animate, lightsAnim, sho
         const mood = moodOf(sc, st, c.id);
         const h = (c.look.height ?? 1) * (c.scale ?? 1);
         return (
-          <div key={c.id} className="actor" style={{ left: `${c.x}%`, top: `${c.y}%`, width: `${8.2 * h}%` }} data-mood={mood}>
-            <Person look={c.look} mood={mood} />
+          <div
+            key={c.id}
+            className={`actor person ${speakers.has(c.id) ? 'speaking' : ''}`}
+            style={{ left: `${c.x}%`, top: `${c.y}%`, width: `${8.2 * h}%` }}
+            data-mood={mood}
+            data-testid={`char-${c.id}`}
+          >
+            {speakers.has(c.id) && <span className="talk" aria-hidden="true">…</span>}
+            {/* מפתח לפי מצב: שינוי מצב רוח מפעיל תגובה קצרה של הדמות */}
+            <div className="mood-wrap" key={mood}>
+              <Person look={c.look} mood={mood} />
+            </div>
           </div>
         );
       })}
@@ -95,14 +115,6 @@ export function SceneView({ sc, st, selected, onSelect, animate, lightsAnim, sho
 
       <div className={`tint ${shift}`} />
       {scene.weather === 'rain' && <div className={`rain ${animate ? 'anim' : ''}`} />}
-
-      {lights !== 'off' && (
-        <div className="lights-label" role="status">
-          <span className="dot" style={{ background: 'var(--red)' }} />
-          <span className="dot" style={{ background: 'var(--blue)' }} />
-          {LIGHTS_LABEL[lights]}
-        </div>
-      )}
 
       {hotspots.map((h, i) => (
         <button
@@ -119,6 +131,27 @@ export function SceneView({ sc, st, selected, onSelect, animate, lightsAnim, sho
           {showLabels && <span className="lbl">{h.label.split(' – ')[0]}</span>}
         </button>
       ))}
+      </div>
+
+      <div className={`radio-led ${radioIn ? 'rx' : ''}`} data-testid="radio-led" aria-hidden="true">
+        <span className="led" />
+        {radioIn ? 'הודעת מוקד' : 'קשר'}
+      </div>
+
+      {event && (
+        <div className="event-banner" role="status" data-testid="event-banner">
+          ⚠ התפתחות בזירה
+        </div>
+      )}
+
+      {lights !== 'off' && (
+        <div className="lights-label" role="status">
+          <span className="dot" style={{ background: 'var(--red)' }} />
+          <span className="dot" style={{ background: 'var(--blue)' }} />
+          {LIGHTS_LABEL[lights]}
+        </div>
+      )}
+
     </div>
   );
 }

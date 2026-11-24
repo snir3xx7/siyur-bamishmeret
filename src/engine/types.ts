@@ -26,6 +26,7 @@ export type Cond =
   | { variant: string[] }
   | { sent: string }
   | { updatesGte: number }
+  | { minutesGte: number }
   | { update: UpdateCond }
   | { inUpdate: string }
   | { all: Cond[] }
@@ -220,6 +221,8 @@ export interface Scenario {
   /** עובדות שנצפות מיד בהגעה */
   arrivalFacts: string[];
   hotspots: Hotspot[];
+  /** אירועים מתפתחים בזירה (אופציונלי) */
+  events?: ScenarioEvent[];
   update: {
     elements: UpdateElement[];
     categories: Record<string, string>;
@@ -267,7 +270,18 @@ export interface SentUpdate {
   note: string;
 }
 
-export type LogKind = 'dispatch' | 'followup' | 'arrive' | 'choice' | 'update' | 'finish' | 'skip';
+export type LogKind = 'dispatch' | 'followup' | 'arrive' | 'choice' | 'update' | 'finish' | 'skip' | 'event';
+
+/** אירוע מתפתח: קורה מעצמו בזירה כשהתנאי מתקיים (פעם אחת), אחרי פעולה של השחקן */
+export interface ScenarioEvent {
+  id: string;
+  title: string;
+  when: Cond;
+  lines: Line[];
+  effects?: Effects;
+  branches?: { when: Cond; lines: Line[]; effects?: Effects }[];
+  sfx?: string;
+}
 
 export interface LogEntry {
   turn: number;
@@ -313,6 +327,8 @@ export interface GameState {
   activeMs: number;
   endingId?: string;
   lastLines: Line[];
+  /** אירוע מתפתח שקרה בתור האחרון (להצגה ולצליל) */
+  lastEvent?: string;
   /** הפעולות שהוזנו – מאפשר שחזור עד נקודת החלטה */
   actions: GameAction[];
   startedAt: string;

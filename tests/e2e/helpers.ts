@@ -1,7 +1,10 @@
 import { expect, type Page } from '@playwright/test';
 
+/** גרסאות התרחישים הנוכחיות (כמו ב-public/scenarios/index.json) */
+export const VERSIONS: Record<string, number> = { 'accident-rain': 2, 'noise-building': 1, 'yard-dispute': 1 };
+
 export async function startScenario(page: Page, id = 'accident-rain', seed = 4, opts: { mode?: 'learning' | 'practice' } = {}) {
-  await page.goto(`./#/s/${id}?v=1&seed=${seed}`);
+  await page.goto(`./#/s/${id}?v=${VERSIONS[id]}&seed=${seed}`);
   await expect(page.getByTestId('seed')).toHaveText(String(seed));
   if (opts.mode === 'practice') await page.getByLabel('תרגול עצמאי – משוב בסיום').check();
   await page.getByTestId('start').click();

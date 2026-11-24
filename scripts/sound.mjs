@@ -265,6 +265,19 @@ export function uiClick() {
   return normalize(out, 0.4);
 }
 
+export function alert() {
+  // צליל תשומת לב עדין לאירוע מתפתח: שני צלילים יורדים, רכים (לא סירנה)
+  const out = buf(0.8);
+  [740, 554].forEach((f, k) => {
+    const s0 = Math.round(k * 0.22 * SR);
+    for (let i = 0; i < 0.4 * SR; i++) {
+      const env = Math.min(1, i / (0.01 * SR)) * Math.exp(-i / (0.12 * SR));
+      out[s0 + i] += (Math.sin((2 * Math.PI * f * i) / SR) + 0.3 * Math.sin((2 * Math.PI * f * 2 * i) / SR)) * env;
+    }
+  });
+  return normalize(out, 0.5);
+}
+
 export function sample() {
   // צליל דוגמה להגדרות: שלושה צלילים עולים
   const out = buf(0.9);
@@ -288,5 +301,5 @@ export function toWav(samples) {
 export const SOUNDS = {
   rain, traffic, 'engine-wipers': engineWipers, 'radio-chirp': radioChirp, 'radio-end': radioEnd,
   'music-muffled': musicMuffled, 'building-hum': buildingHum, crowd, 'yard-evening': yardEvening,
-  'yard-morning': yardMorning, knock, 'ui-click': uiClick, sample,
+  'yard-morning': yardMorning, knock, 'ui-click': uiClick, sample, alert,
 };

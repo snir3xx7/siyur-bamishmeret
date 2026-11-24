@@ -58,6 +58,7 @@ export function evalCond(ctx: CondCtx, c: Cond | undefined): boolean {
   if ('variant' in c) return c.variant.includes(st.variant);
   if ('sent' in c) return st.updates.some((u) => u.elements.includes(c.sent)) || !!ctx.pending?.includes(c.sent);
   if ('updatesGte' in c) return st.updates.length >= c.updatesGte;
+  if ('minutesGte' in c) return st.simMinutes >= c.minutesGte;
   if ('update' in c) return matchUpdate(ctx, c.update);
   if ('inUpdate' in c) return !!ctx.pending?.includes(c.inUpdate);
   throw new Error('תנאי לא מוכר: ' + JSON.stringify(c));

@@ -12,7 +12,7 @@ const index = JSON.parse(readFileSync(join(root, 'scenarios/index.json'), 'utf8'
 const GOOD_PATHS: Record<string, { variant: string; steps: Step[] }> = {
   'accident-rain': {
     variant: 'oren-hurt',
-    steps: ['f-injuries', 'f-caller', 'GO', 'ARRIVE', 's-secure', 'o-feel', 'd-feel', ['UPDATE', 'u-loc', 'u-two-cars', 'u-status-pain', 'u-ems'], 'o-care', 'o-version', 'd-version', 'w-talk', 'o-phone', 'w-contact', 's-look', 's-move', ['UPDATE', 'u-loc', 'u-lane-clear', 'u-versions'], 'FINISH'],
+    steps: ['f-injuries', 'f-caller', 'GO', 'ARRIVE', 's-secure', 'o-feel', 'd-feel', ['UPDATE', 'u-loc', 'u-two-cars', 'u-status-pain', 'u-ems'], 'o-care', 'o-worse', ['UPDATE', 'u-worse'], 'o-version', 'd-version', 'w-talk', 'o-phone', 'w-contact', 's-look', 's-move', ['UPDATE', 'u-loc', 'u-lane-clear', 'u-versions'], 'FINISH'],
   },
   'noise-building': {
     variant: 'apt8',

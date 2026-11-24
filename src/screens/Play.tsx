@@ -25,7 +25,9 @@ export function Lines({ sc, lines }: { sc: Scenario; lines: Line[] }) {
   return (
     <>
       {lines.map((l, i) => {
-        const who = speakerName(sc, l.speaker);
+        const named = speakerName(sc, l.speaker);
+        // אם הטקסט כבר פותח בשם הדובר (למשל „מוקד: …”) – לא מכפילים
+        const who = named && l.text.startsWith(`${named}:`) ? '' : named;
         return (
           <p key={i} className={`line ${l.speaker === 'dispatch' || l.speaker === 'player' || l.speaker === 'narrator' ? l.speaker : ''}`}>
             {who && <span className="who">{who}: </span>}
@@ -293,6 +295,8 @@ export function Play() {
     const voice = ref ? sc.media.voice[ref] : undefined;
     const dispatchText = st.lastLines.filter((l) => l.speaker === 'dispatch').map((l) => l.text).join(' ');
     const other = st.lastLines.filter((l) => l.speaker !== 'dispatch' && l.speaker !== 'player').map((l) => l.text).join(' ');
+    const ev = st.lastEvent ? sc.events?.find((e) => e.id === st.lastEvent) : undefined;
+    if (ev?.sfx) void audio.play(ev.sfx);
     if (dispatchText) void audio.radioMessage(dispatchText, voice);
     else if (other) void audio.say(other, voice);
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -461,8 +465,24 @@ export function Play() {
           {stage === 'scene' && (
             <>
               <section className="dialog-box" aria-live="polite" aria-label="מה קרה עכשיו" data-testid="dialogue">
-                <Lines sc={sc} lines={st.lastLines} />
-                {st.log[st.log.length - 1]?.consequences.map((c) => (
+                {(() => {
+                  // אירוע מתפתח: מפרידים בין התגובה לבחירה לבין מה שקרה מעצמו בזירה
+                  const evEntry = st.lastEvent ? st.log[st.log.length - 1] : undefined;
+                  const evLines = evEntry?.kind === 'event' ? evEntry.lines.length : 0;
+                  const own = st.lastLines.slice(0, st.lastLines.length - evLines);
+                  return (
+                    <>
+                      <Lines sc={sc} lines={own} />
+                      {evEntry && evLines > 0 && (
+                        <>
+                          <p className="event-head" data-testid="event-head">⚠ {evEntry.label}</p>
+                          <Lines sc={sc} lines={st.lastLines.slice(own.length)} />
+                        </>
+                      )}
+                    </>
+                  );
+                })()}
+                {st.log.filter((l) => l.turn === st.turn).flatMap((l) => l.consequences).map((c) => (
                   <p key={c} className="consequence">
                     ⚑ {c}
                   </p>

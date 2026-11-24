@@ -33,12 +33,13 @@ export function buildReport(sc: Scenario, st: GameState): ReportSection[] {
   const reason = [fill(sc.report.reason, st.vars), ...dispatchFacts.map((id) => `– ${factText(sc, st, id)}${st.known[id].verified ? ' (אומת בזירה)' : ' (מסר המוקד, לא אומת)'}`)];
 
   const timeline = st.log
-    .filter((l) => ['dispatch', 'arrive', 'skip', 'update', 'finish'].includes(l.kind) || (l.kind === 'choice' && l.ref !== 'go' && reportOf(sc, l.ref)))
+    .filter((l) => ['dispatch', 'arrive', 'skip', 'update', 'finish', 'event'].includes(l.kind) || (l.kind === 'choice' && l.ref !== 'go' && reportOf(sc, l.ref)))
     .map((l) => {
       if (l.kind === 'dispatch') return `${time(l.t)} – התקבלה משימה מהמוקד`;
       if (l.kind === 'arrive' || l.kind === 'skip') return `${time(l.t)} – הגעה לזירה`;
       if (l.kind === 'finish') return `${time(l.t)} – סיום הטיפול בזירה`;
       if (l.kind === 'update') return `${time(l.t)} – ${l.label}`;
+      if (l.kind === 'event') return `${time(l.t)} – ${l.label}`;
       return `${time(l.t)} – ${fill(reportOf(sc, l.ref)!, st.vars)}`;
     });
 

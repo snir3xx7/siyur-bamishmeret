@@ -59,6 +59,31 @@ test('תאונה בגשם מקצה לקצה: קשר, זירה, יומן, עדכ�
   await expect(page.getByText('תאונת דרכים קלה בגשם').first()).toBeVisible();
 });
 
+test('אירוע מתפתח: החמרה באמצע הזירה, בדיקה חוזרת ועדכון', async ({ page }) => {
+  await startScenario(page, 'accident-rain', 4);
+  await toScene(page);
+  await expect(page.getByTestId('radio-led')).toContainText('קשר');
+  await act(page, /אזור התאונה/, /למקם את הניידת/);
+  await act(page, /אזור התאונה/, /לתעד מה ראיתי/);
+  await act(page, /אורן – נהג/, /איך הוא מרגיש/);
+  await expect(page.getByTestId('event-banner')).toHaveCount(0);
+  await act(page, /דנה – נהגת/, /איך היא מרגישה/);
+  // האירוע קורה מעצמו אחרי הפעולה הרביעית
+  await expect(page.getByTestId('event-banner')).toBeVisible();
+  await expect(page.getByTestId('event-head')).toContainText('החמרה');
+  await expect(page.getByTestId('dialogue')).toContainText('מסתובב לי הראש');
+  // המצלמה מתקרבת לנקודה שנבחרה
+  await expect(page.getByTestId('scene-cam')).toHaveClass(/focused/);
+  // הדובר בזירה מסומן
+  await expect(page.locator('.person.speaking')).toHaveCount(1);
+  await act(page, /אורן – נהג/, /לבדוק את אורן שוב/);
+  await expect(page.getByTestId('event-banner')).toHaveCount(0);
+  await sendUpdate(page, [/החמיר – סחרחורת/]);
+  await expect(page.getByTestId('radio-led')).toContainText('הודעת מוקד');
+  await expect(page.getByTestId('dialogue')).toContainText('העברתי לצוות הרפואי את ההחמרה');
+  await expect(page.getByTestId('dialogue')).not.toContainText('מוקד: מוקד:');
+});
+
 test('רענון באמצע משחק משחזר את המצב', async ({ page }) => {
   await startScenario(page, 'noise-building', 9, { mode: 'practice' });
   await page.getByRole('button', { name: /היו תלונות קודמות/ }).click();
@@ -104,7 +129,7 @@ test('מצב למידה: השהיה עוצרת את השעון וחוסמת פע
 test('עמוד למדריך: קישור קבוע ובדיקת מסלולים', async ({ page }) => {
   await page.goto('./#/instructor');
   await page.getByLabel('זרע (1–999999)').fill('777');
-  await expect(page.getByTestId('instructor-link')).toContainText('#/s/accident-rain?v=1&seed=777');
+  await expect(page.getByTestId('instructor-link')).toContainText('#/s/accident-rain?v=2&seed=777');
   await page.getByRole('button', { name: 'הרצת בדיקה' }).click();
   await expect(page.getByText('✓ לא נמצאו שגיאות')).toBeVisible({ timeout: 20000 });
 });

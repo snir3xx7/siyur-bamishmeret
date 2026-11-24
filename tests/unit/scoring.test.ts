@@ -11,7 +11,7 @@ const seed = seedFor(sc, 'dana-hurt');
 const FULL: Step[] = [
   'f-injuries', 'f-hazard', 'GO', 'ARRIVE', 's-secure', 'd-feel', 'o-feel',
   ['UPDATE', 'u-loc', 'u-two-cars', 'u-secured', 'u-status-pain', 'u-ems'], 'd-care',
-  'o-version', 'd-version', 'w-talk', 'w-phone', 'w-contact', 's-look', 's-move',
+  'd-worse', ['UPDATE', 'u-worse'], 'o-version', 'd-version', 'w-talk', 'w-phone', 'w-contact', 's-look', 's-move',
   ['UPDATE', 'u-loc', 'u-lane-clear', 'u-versions', 'u-documented', 'u-witness', 'u-missing-circ'], 'FINISH',
 ];
 /** ביצוע חלקי */
@@ -19,7 +19,7 @@ const PARTIAL: Step[] = ['GO', 'ARRIVE', 'o-version', 'd-version', 's-secure', [
 /** תיקון תוך כדי: עדכון ראשון בלי מצב מעורבים, ציטוט צד שני ואז תיקון, ועדכון שני עם הכאב */
 const CORRECTION: Step[] = [
   'f-injuries', 'GO', 'ARRIVE', 's-secure', ['UPDATE', 'u-loc', 'u-two-cars', 'u-lane'],
-  'o-version', 'd-confront', 'd-version', 'd-retry', 'd-feel', ['UPDATE', 'u-status-pain', 'u-ems'], 'd-care', 'FINISH',
+  'o-version', 'd-confront', 'd-version', 'd-retry', 'd-feel', ['UPDATE', 'u-status-pain', 'u-worse', 'u-ems'], 'd-care', 'FINISH',
 ];
 
 function sums(s: ReturnType<typeof computeScore>) {

@@ -3,7 +3,7 @@ import { expect, test } from '@playwright/test';
 test.skip(({ browserName }) => browserName !== 'chromium', 'service worker נבדק ב-Chromium');
 
 test('הורדת תרחיש ופתיחתו ללא רשת', async ({ page, context }) => {
-  await page.goto('./#/s/accident-rain?v=1&seed=11');
+  await page.goto('./#/s/accident-rain?v=2&seed=11');
   await page.waitForFunction(() => navigator.serviceWorker?.controller !== undefined);
   await page.evaluate(() => navigator.serviceWorker.ready);
   await page.getByRole('button', { name: /הורדת תרחיש לשימוש לא מקוון/ }).click();

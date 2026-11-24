@@ -163,6 +163,29 @@ function clone(st: GameState): GameState {
   };
 }
 
+/** מזהה הדגל שמסמן שאירוע מתפתח כבר קרה */
+export const eventFlag = (id: string) => `ev:${id}`;
+
+/**
+ * אירועים מתפתחים: אחרי כל פעולה בזירה בודקים אילו אירועים התנאי שלהם התקיים.
+ * כל אירוע קורה פעם אחת, נרשם ביומן ומתווסף לדיאלוג של אותו תור.
+ */
+function fireEvents(sc: Scenario, st: GameState) {
+  for (const ev of sc.events ?? []) {
+    if (st.flags[eventFlag(ev.id)] || !evalCond({ sc, st }, ev.when)) continue;
+    const before = { ...st, known: { ...st.known } };
+    const branch = ev.branches?.find((b) => evalCond({ sc, st }, b.when));
+    const lines = (branch ? branch.lines : ev.lines).map((l) => ({ ...l, text: fill(l.text, st.vars) }));
+    const revealed: string[] = [];
+    const consequences: string[] = [];
+    st.flags[eventFlag(ev.id)] = true;
+    applyEffects(sc, st, branch ? branch.effects : ev.effects, revealed, consequences);
+    st.lastLines = [...st.lastLines, ...lines];
+    st.lastEvent = ev.id;
+    pushLog(st, before, 'event', `event:${ev.id}`, fill(ev.title, st.vars), lines, revealed, consequences);
+  }
+}
+
 /* ---------- reducer ---------- */
 
 /**
@@ -177,6 +200,7 @@ export function reduce(sc: Scenario, prev: GameState, action: GameAction): GameS
   if (action.turn !== prev.turn || prev.stage === 'ended') return prev;
 
   const st = clone(prev);
+  st.lastEvent = undefined;
   action = { ...action, at: prev.activeMs };
   const revealed: string[] = [];
   const consequences: string[] = [];
@@ -199,6 +223,7 @@ export function reduce(sc: Scenario, prev: GameState, action: GameAction): GameS
       applyEffects(sc, st, { minutes: 1, ...(branch ? branch.effects : choice.effects) }, revealed, consequences);
       st.lastLines = lines;
       pushLog(st, prev, inDispatch ? 'followup' : 'choice', choice.id, fill(choice.label, st.vars), lines, revealed, consequences);
+      if (!inDispatch) fireEvents(sc, st);
       return st;
     }
     case 'GO': {
@@ -245,6 +270,7 @@ export function reduce(sc: Scenario, prev: GameState, action: GameAction): GameS
       st.lastLines = lines;
       const texts = elements.map((id) => fill(sc.update.elements.find((e) => e.id === id)!.text, st.vars));
       pushLog(st, prev, 'update', `update:${n}`, `עדכון ${n} למוקד: ${texts.join('; ')}${action.note ? ` (${action.note.slice(0, 280)})` : ''}`, lines, revealed, consequences);
+      fireEvents(sc, st);
       return st;
     }
     case 'FINISH': {

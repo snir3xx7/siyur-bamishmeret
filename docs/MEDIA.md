@@ -19,6 +19,7 @@
 | `public/audio/crowd.mp3` | קולות דיבור מרוחקים (ללא מילים) | `crowd()` | רישיון הפרויקט | סינתזה מקורית |
 | `public/audio/yard-evening.mp3`, `yard-morning.mp3` | צרצרים / ציפורים ורחוב רחוק | `yardEvening()`, `yardMorning()` | רישיון הפרויקט | סינתזה מקורית |
 | `public/audio/knock.mp3`, `ui-click.mp3`, `sample.mp3` | אפקטים קצרים | `knock()`, `uiClick()`, `sample()` | רישיון הפרויקט | סינתזה מקורית |
+| `public/audio/alert.mp3` | צליל תשומת לב עדין לאירוע מתפתח (לא סירנה) | `alert()` | רישיון הפרויקט | סינתזה מקורית |
 
 גופנים: המשחק משתמש בגופני המערכת בלבד (לא מוטמעים קבצי גופן).
 

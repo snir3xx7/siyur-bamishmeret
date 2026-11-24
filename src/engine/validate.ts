@@ -53,6 +53,11 @@ export function validateScenario(sc: Scenario, opts: { walks?: number } = {}): V
     c.branches?.forEach((b, i) => effectsList.push([`${c.id}#${i}`, b.effects]));
   }
   sc.update.responses.forEach((r, i) => effectsList.push([`תגובת-מוקד#${i}`, r.effects]));
+  for (const ev of sc.events ?? []) {
+    flagsSet.add(`ev:${ev.id}`);
+    effectsList.push([`אירוע ${ev.id}`, ev.effects]);
+    ev.branches?.forEach((b, i) => effectsList.push([`אירוע ${ev.id}#${i}`, b.effects]));
+  }
   for (const [, fx] of effectsList) Object.keys(fx?.set ?? {}).forEach((f) => flagsSet.add(f));
 
   const checkRefs = (where: string, c: Cond | undefined) => {
@@ -104,6 +109,17 @@ export function validateScenario(sc: Scenario, opts: { walks?: number } = {}): V
     checkRefs(`תגובת מוקד ${i}`, r.when);
     checkFx(`תגובת מוקד ${i}`, r.effects);
   });
+  dup('מזהה אירוע', (sc.events ?? []).map((e) => e.id));
+  for (const ev of sc.events ?? []) {
+    checkRefs(`אירוע ${ev.id}`, ev.when);
+    checkFx(`אירוע ${ev.id}`, ev.effects);
+    ev.lines.forEach((l) => checkSpeaker(`אירוע ${ev.id}`, l.speaker));
+    ev.branches?.forEach((b, i) => {
+      checkRefs(`אירוע ${ev.id} ענף ${i}`, b.when);
+      checkFx(`אירוע ${ev.id} ענף ${i}`, b.effects);
+      b.lines.forEach((l) => checkSpeaker(`אירוע ${ev.id}`, l.speaker));
+    });
+  }
   sc.endings.forEach((e) => checkRefs(`סיום ${e.id}`, e.when));
   if (sc.endings.length < 2) errors.push('נדרשים לפחות שני סיומים אפשריים');
   const lastEnding = sc.endings[sc.endings.length - 1];

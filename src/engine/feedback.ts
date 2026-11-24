@@ -119,7 +119,7 @@ export function buildDebrief(sc: Scenario, st: GameState): Debrief {
       knownVerified,
       knownClaims,
       rules,
-      significant: rules.length > 0 || entry.consequences.length > 0 || entry.kind === 'update' || entry.kind === 'finish',
+      significant: rules.length > 0 || entry.consequences.length > 0 || entry.kind === 'update' || entry.kind === 'finish' || entry.kind === 'event',
     };
   });
 
