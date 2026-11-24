@@ -1,3 +1,5 @@
+import { DEFAULT_RADIO, type RadioSettings } from '../config/stations';
+
 export interface Settings {
   master: number;
   speech: number;
@@ -11,6 +13,8 @@ export interface Settings {
   reduceMotion: 'system' | 'on' | 'off';
   textSize: 'normal' | 'large';
   showHotspotLabels: boolean;
+  /** תחנה ואות קריאה (ברירת מחדל: שמות בדויים) */
+  station: RadioSettings;
 }
 
 export const DEFAULT_SETTINGS: Settings = {
@@ -26,6 +30,7 @@ export const DEFAULT_SETTINGS: Settings = {
   reduceMotion: 'system',
   textSize: 'normal',
   showHotspotLabels: true,
+  station: DEFAULT_RADIO,
 };
 
 const KEY = 'siyur.settings.v1';
@@ -33,7 +38,10 @@ const KEY = 'siyur.settings.v1';
 export function loadSettings(): Settings {
   try {
     const raw = localStorage.getItem(KEY);
-    if (raw) return { ...DEFAULT_SETTINGS, ...JSON.parse(raw) };
+    if (raw) {
+      const s = JSON.parse(raw);
+      return { ...DEFAULT_SETTINGS, ...s, station: { ...DEFAULT_RADIO, ...(s.station ?? {}) } };
+    }
   } catch {
     /* אחסון חסום – ממשיכים עם ברירת מחדל */
   }

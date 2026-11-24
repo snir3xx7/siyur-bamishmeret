@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { audio } from '../audio/audio';
 import { shiftLabel } from '../engine/feedback';
+import { StationPicker } from '../ui/StationPicker';
 import { parseSeed, randomSeed } from '../engine/rng';
 import type { Difficulty, Mode, Scenario, Shift } from '../engine/types';
 import { useApp } from '../ui/context';
@@ -135,6 +136,7 @@ export function ScenarioCard({ id, query }: { id: string; query: URLSearchParams
           ) : (
             <p className="small muted">בתרחיש זה אין מגבלת זמן. משך התרגול מוצג בתחקיר ואינו משפיע על הציון.</p>
           )}
+          <StationPicker fictionalUnit={sc.dispatch.unit} />
           <fieldset>
             <legend>גרסת הגרלה (זרע)</legend>
             <p className="small">

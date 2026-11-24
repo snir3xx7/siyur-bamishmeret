@@ -144,3 +144,15 @@ test('סמכות: קטטה – דרישת הזדהות בלי הסבר נתקל�
   await expect(page.getByTestId('dialogue')).toContainText('בסדר. הנה');
   await expect(page.getByTestId('char-dor')).toBeVisible();
 });
+
+test('תחנה ואות קריאה: כפר סבא – שרשרת קשר מהמשל״ט דרך 401 אל הניידת', async ({ page }) => {
+  await page.goto(`./#/s/noise-building?v=${VERSIONS['noise-building']}&seed=9`);
+  const picker = page.getByTestId('station-picker');
+  await picker.getByText('התחנה שלי').click();
+  await picker.getByLabel('הניידת שלך').selectOption('403');
+  await expect(page.getByTestId('radio-summary')).toContainText('סבא 403');
+  await page.getByRole('button', { name: /התחלת התרחיש/ }).click();
+  await expect(page.getByTestId('radio-chain')).toContainText('משל״ט מרכז');
+  await expect(page.getByTestId('radio-chain')).toContainText('סבא 401');
+  await expect(page.getByText(/סבא 403, כאן סבא 401/).first()).toBeVisible();
+});

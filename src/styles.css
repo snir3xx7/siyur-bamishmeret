@@ -457,3 +457,17 @@ body.projector .no-projector { display: none !important; }
 .anim-ok .edge-flash.anim .b { animation: edgeB 1.2s steps(1) infinite; }
 .anim-ok .edge-flash.anim .r { animation: edgeB 1.2s steps(1) infinite .6s; }
 @keyframes edgeB { 0% { opacity: 1; } 50% { opacity: .1; } }
+
+/* תחנה ושרשרת קשר */
+.station-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 8px 12px; margin-top: 8px; }
+.station-grid label { display: flex; flex-direction: column; gap: 4px; font-size: .9em; }
+.station-grid select, .station-grid input { font: inherit; padding: 6px 8px; border-radius: 8px; border: 1px solid var(--line); background: var(--panel2); color: var(--text); }
+.radio-chain { list-style: none; display: flex; flex-wrap: wrap; gap: 6px; padding: 8px 0 4px; margin: 0; }
+.radio-chain li { display: flex; flex-direction: column; align-items: center; min-width: 74px; flex: 1; padding: 6px 4px; border-radius: 10px; background: #0d1a17; border: 1px solid #2b5c53; color: #8fe0d3; font-size: .78em; text-align: center; position: relative; }
+.radio-chain li b { color: #d8fff8; font-size: 1.05em; }
+.radio-chain li .ic { font-size: 1.3em; }
+.radio-chain li:last-child { border-color: var(--accent, #ffd98a); background: #2a2212; color: #ffe2a8; }
+.radio-chain li:last-child b { color: #ffd98a; }
+.line.relay { opacity: .85; }
+@media (prefers-reduced-motion: no-preference) { .radio-chain li { animation: chainIn .5s ease-out both; } }
+@keyframes chainIn { from { opacity: 0; transform: translateY(6px); } }

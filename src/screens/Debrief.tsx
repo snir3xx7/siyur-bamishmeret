@@ -2,6 +2,8 @@ import { useEffect, useMemo, useState } from 'react';
 import { buildDebrief, debriefText, shiftLabel } from '../engine/feedback';
 import { replay } from '../engine/game';
 import { buildReport, reportText, type ReportSection } from '../engine/report';
+import { radioProfile, radioize } from '../config/stations';
+import { RadioCtx } from '../ui/radio';
 import { randomSeed } from '../engine/rng';
 import { listHistory, updateHistory, type HistoryItem } from '../storage/db';
 import { useApp } from '../ui/context';
@@ -41,7 +43,7 @@ function printPart(part: 'debrief' | 'report') {
 }
 
 export function DebriefScreen({ query }: { query: URLSearchParams }) {
-  const { game, setGame, startGame, toast } = useApp();
+  const { game, setGame, startGame, toast, settings } = useApp();
   const [hist, setHist] = useState<HistoryItem | null>(null);
   const [edits, setEdits] = useState<Record<string, string>>({});
   const [projector, setProjector] = useState(false);
@@ -81,7 +83,8 @@ export function DebriefScreen({ query }: { query: URLSearchParams }) {
     );
   }
   const { sc, st } = game;
-  const reportFinal = report.map((s) => ({ ...s, text: edits[s.id] ?? s.text }));
+  const radio = radioProfile(settings.station, sc.dispatch.unit);
+  const reportFinal = report.map((s) => ({ ...s, text: edits[s.id] ?? radioize(s.text.replace(`צוות: ${sc.dispatch.unit}`, `צוות: ${radio.unit}${radio.real ? ` | ${radio.stationName}, ${radio.districtName}` : ''}`), radio) }));
 
   const saveEdits = (next: Record<string, string>) => {
     setEdits(next);
@@ -113,6 +116,7 @@ export function DebriefScreen({ query }: { query: URLSearchParams }) {
   const full = `${debriefText(sc, st, d)}\n\n${reportText(sc, reportFinal)}`;
 
   return (
+    <RadioCtx.Provider value={radio}>
     <div className="stack">
       <section className="card print-debrief" aria-labelledby="dbf-title">
         <div className="score-head">
@@ -327,5 +331,6 @@ export function DebriefScreen({ query }: { query: URLSearchParams }) {
         </div>
       </section>
     </div>
+    </RadioCtx.Provider>
   );
 }

@@ -12,26 +12,30 @@ import { addHistory, clearCurrent, loadCurrent, saveCurrent } from '../storage/d
 import { useApp } from '../ui/context';
 import { loadScenario } from '../ui/data';
 import { go } from '../ui/router';
+import { RadioChain, RadioCtx, useRadio } from '../ui/radio';
+import { radioProfile, radioize, type RadioProfile } from '../config/stations';
 import { Modal, useAudioStatus } from '../ui/SettingsDialog';
 
-export function speakerName(sc: Scenario, id: string): string {
-  if (id === 'player') return 'אתה (הסייר)';
-  if (id === 'dispatch') return 'מוקד';
+export function speakerName(sc: Scenario, id: string, p?: RadioProfile): string {
+  if (id === 'player') return p?.real ? `אתה (${p.unit})` : 'אתה (הסייר)';
+  if (id === 'dispatch') return p?.real ? p.head : 'מוקד';
   if (id === 'narrator') return '';
   return sc.characters.find((c) => c.id === id)?.name ?? id;
 }
 
 export function Lines({ sc, lines }: { sc: Scenario; lines: Line[] }) {
+  const p = useRadio();
   return (
     <>
       {lines.map((l, i) => {
-        const named = speakerName(sc, l.speaker);
+        const named = speakerName(sc, l.speaker, p);
+        const text = radioize(l.text, p);
         // אם הטקסט כבר פותח בשם הדובר (למשל „מוקד: …”) – לא מכפילים
-        const who = named && l.text.startsWith(`${named}:`) ? '' : named;
+        const who = named && text.startsWith(`${named}:`) ? '' : named;
         return (
           <p key={i} className={`line ${l.speaker === 'dispatch' || l.speaker === 'player' || l.speaker === 'narrator' ? l.speaker : ''}`}>
             {who && <span className="who">{who}: </span>}
-            {l.text}
+            {text}
           </p>
         );
       })}
@@ -110,7 +114,8 @@ function Composer({ sc, st, onSend, learning }: { sc: Scenario; st: GameState; o
   const cats = Object.keys(sc.update.categories).filter((c) => els.some((e) => e.category === c));
   const chosen = sc.update.elements.filter((e) => sel.includes(e.id));
   const covered = new Set(chosen.map((e) => e.category));
-  const preview = `${sc.dispatch.unit} למוקד: ${chosen.map((e) => fill(e.text, st.vars)).join('. ')}${note ? `. ${note}` : ''}`;
+  const p = useRadio();
+  const preview = `${p.unit} ${p.real ? `ל־${p.head}` : 'למוקד'}: ${chosen.map((e) => fill(e.text, st.vars)).join('. ')}${note ? `. ${note}` : ''}`;
   return (
     <div className="stack">
       <p className="small muted">בחרו רכיבים לעדכון קצר. כדאי לכלול: מקום, מצב נוכחי, מה אומת, מה עדיין חסר וסיוע נדרש. אפשר לשלוח עדכון נוסף בכל עת.</p>
@@ -342,8 +347,10 @@ export function Play() {
     );
 
   const sel = selected && hotspots.some((h) => h.id === selected) ? selected : null;
+  const radio = radioProfile(settings.station, sc.dispatch.unit);
 
   return (
+    <RadioCtx.Provider value={radio}>
     <div className="play">
       <header className="play-bar">
         <a href="#/" className="btn small ghost" onClick={(e) => { if (!confirm('לצאת מהתרגול? ההתקדמות נשמרת ואפשר להמשיך מאוחר יותר.')) e.preventDefault(); }} aria-label="יציאה למסך הבית">
@@ -351,7 +358,7 @@ export function Play() {
         </a>
         <span className="title">{sc.title}</span>
         <span className="chip">
-          צוות <bdi>{sc.dispatch.unit}</bdi>
+          צוות <bdi>{radio.unit}</bdi>
         </span>
         <span className="chip">
           אירוע <bdi className="ltr">{sc.dispatch.incident}</bdi>
@@ -416,14 +423,21 @@ export function Play() {
                   שעה <bdi className="ltr">{clock}</bdi>
                 </span>
                 <span>
-                  צוות <bdi>{sc.dispatch.unit}</bdi>
+                  צוות <bdi>{radio.unit}</bdi>
                 </span>
                 <span>
                   אירוע <bdi className="ltr">{sc.dispatch.incident}</bdi>
                 </span>
                 <span>📍 {sc.location.name}</span>
               </header>
+              <RadioChain p={radio} incident={sc.dispatch.incident} />
               <div aria-live="polite" ref={dialogRef}>
+                {radio.real && (
+                  <p className="line dispatch relay">
+                    <span className="who">{radio.center}: </span>
+                    {radio.head}, נפתח אירוע {sc.dispatch.incident} – {sc.title}, {sc.location.name}. מעביר אליך לטיפול.
+                  </p>
+                )}
                 <Lines sc={sc} lines={st.log[0].lines} />
                 {st.log.slice(1).filter((l) => l.kind === 'followup').map((l) => (
                   <div key={l.turn}>
@@ -432,7 +446,7 @@ export function Play() {
                 ))}
               </div>
               <div className="btn-row" style={{ margin: '8px 0' }}>
-                <button type="button" className="btn small" onClick={() => { audio.unlock(); void audio.radioMessage(st.log[0].lines.map((l) => l.text).join(' '), sc.media.voice.dispatch); }}>
+                <button type="button" className="btn small" onClick={() => { audio.unlock(); void audio.radioMessage(st.log[0].lines.map((l) => radioize(l.text, radio)).join(' '), sc.media.voice.dispatch); }}>
                   🔁 השמעה חוזרת
                 </button>
                 <button type="button" className="btn small" onClick={() => setTab(tab === 'log' ? 'actions' : 'log')} aria-pressed={tab === 'log'}>
@@ -607,5 +621,6 @@ export function Play() {
         </div>
       </Modal>
     </div>
+    </RadioCtx.Provider>
   );
 }

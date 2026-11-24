@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import type { Shift } from '../engine/types';
+import { useRadio } from '../ui/radio';
 
 const DURATION = 7000;
 const asset = (p: string) => `${import.meta.env.BASE_URL}${p}`;
@@ -34,6 +35,7 @@ export function Transition({ kind, shift, rain, text, animate, running, paused, 
   const [elapsed, setElapsed] = useState(0);
   const done = useRef(false);
   const [broken, setBroken] = useState(false);
+  const radio = useRadio();
   const skipRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
@@ -93,8 +95,8 @@ export function Transition({ kind, shift, rain, text, animate, running, paused, 
       {rain && <><span className="wiper-p" /><span className="wiper-p b" /></>}
       <img className="drive-cab" src={asset('img/drive/interior.webp')} alt="" onError={fail} />
       <div className="cab-screen">
-        <b>מוקד אלון</b>
-        <span>משימה בדרך · קשר פתוח</span>
+        <b>{radio.real ? radio.center : 'מוקד אלון'}</b>
+        <span>{radio.real ? `${radio.unit} · בדרך לאירוע` : 'משימה בדרך · קשר פתוח'}</span>
       </div>
       <span className="cab-led red" />
       <span className="cab-led blue" />
