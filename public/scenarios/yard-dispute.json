@@ -1,6 +1,6 @@
 {
  "id": "yard-dispute",
- "version": 1,
+ "version": 2,
  "title": "ויכוח בין שכנים בחצר משותפת",
  "category": "סדר ציבורי ויחסי שכנים",
  "summary": "ויכוח קולני על מחסן משותף שננעל במנעול חדש, ושכנים מתאספים סביב. יש להרגיע, לשמוע כל צד בנפרד, לזהות סתירות ולהימנע מקביעה מוקדמת.",
@@ -218,9 +218,15 @@
     "height": 1.03
    },
    "attitude": 0,
-   "x": 43,
+   "x": 40,
    "y": 97,
-   "scale": 1
+   "scale": 1.45,
+   "sprite": "img/chars/michael",
+   "spriteMoods": [
+    "calm",
+    "tense",
+    "upset"
+   ]
   },
   {
    "id": "ilana",
@@ -237,9 +243,15 @@
     "accessory": "bag"
    },
    "attitude": 0,
-   "x": 60,
+   "x": 57,
    "y": 97,
-   "scale": 1
+   "scale": 1.45,
+   "sprite": "img/chars/ilana",
+   "spriteMoods": [
+    "calm",
+    "tense",
+    "upset"
+   ]
   },
   {
    "id": "tamar",
@@ -255,9 +267,15 @@
     "height": 0.92
    },
    "attitude": 2,
-   "x": 91,
-   "y": 93,
-   "scale": 0.85
+   "x": 71,
+   "y": 95,
+   "scale": 1.45,
+   "sprite": "img/chars/tamar",
+   "spriteMoods": [
+    "calm",
+    "tense",
+    "upset"
+   ]
   },
   {
    "id": "n1",
@@ -273,14 +291,20 @@
     "height": 0.98
    },
    "attitude": 1,
-   "x": 14,
-   "y": 94,
-   "scale": 0.85,
+   "x": 9,
+   "y": 96,
+   "scale": 1.25,
    "when": {
     "not": {
      "flag": "crowdDispersed"
     }
-   }
+   },
+   "sprite": "img/chars/n1",
+   "spriteMoods": [
+    "calm",
+    "tense",
+    "upset"
+   ]
   },
   {
    "id": "n2",
@@ -296,14 +320,20 @@
     "height": 0.92
    },
    "attitude": 1,
-   "x": 25,
-   "y": 95,
-   "scale": 0.85,
+   "x": 20,
+   "y": 97,
+   "scale": 1.25,
    "when": {
     "not": {
      "flag": "crowdDispersed"
     }
-   }
+   },
+   "sprite": "img/chars/n2",
+   "spriteMoods": [
+    "calm",
+    "tense",
+    "upset"
+   ]
   }
  ],
  "dispatch": {
@@ -514,16 +544,30 @@
    {
     "id": "lock",
     "kind": "lock",
-    "x": 76.5,
-    "y": 63,
+    "x": 85.4,
+    "y": 60,
     "scale": 0.9,
     "when": {
      "not": {
       "flag": "interim"
      }
     }
+   },
+   {
+    "id": "sg-shed",
+    "kind": "sign",
+    "x": 85,
+    "y": 40,
+    "text": "מחסן משותף",
+    "sign": "shop",
+    "scale": 0.75
    }
-  ]
+  ],
+  "painted": true,
+  "bgByShift": {
+   "morning": "day",
+   "evening": "night"
+  }
  },
  "arrivalLines": [
   {
@@ -547,8 +591,8 @@
    "id": "h-yard",
    "label": "מרכז החצר",
    "kind": "area",
-   "x": 52,
-   "y": 90,
+   "x": 50,
+   "y": 92,
    "description": "החצר המשותפת: המחסן הנעול, לוח המודעות בכניסה והמקום שבו מתנהל הוויכוח.",
    "choices": [
     {
@@ -807,8 +851,8 @@
    "id": "h-crowd",
    "label": "השכנים הסקרנים",
    "kind": "area",
-   "x": 20,
-   "y": 64,
+   "x": 15,
+   "y": 58,
    "description": "שני שכנים שעומדים קרוב לוויכוח ומוסיפים הערות.",
    "when": {
     "not": {
@@ -850,8 +894,8 @@
    "label": "מיכאל – חבר ועד הבית",
    "kind": "character",
    "character": "michael",
-   "x": 43,
-   "y": 60,
+   "x": 40,
+   "y": 44,
    "description": "מיכאל אזולאי, השכן שהחליף את המנעול.",
    "choices": [
     {
@@ -1054,8 +1098,8 @@
    "label": "אילנה – שכנה מקומת הקרקע",
    "kind": "character",
    "character": "ilana",
-   "x": 60,
-   "y": 61,
+   "x": 57,
+   "y": 44,
    "description": "אילנה פרץ, שהחפצים שלה נמצאים במחסן.",
    "choices": [
     {
@@ -1221,8 +1265,8 @@
    "label": "תמר – השכנה שהתקשרה",
    "kind": "character",
    "character": "tamar",
-   "x": 91,
-   "y": 66,
+   "x": 71,
+   "y": 50,
    "description": "תמר שלום, מהבניין הסמוך. עומדת ליד השער.",
    "choices": [
     {
@@ -2379,7 +2423,22 @@
  "media": {
   "images": [
    "img/yard-day.webp",
-   "img/yard-night.webp"
+   "img/yard-night.webp",
+   "img/chars/michael-calm.webp",
+   "img/chars/michael-tense.webp",
+   "img/chars/michael-upset.webp",
+   "img/chars/ilana-calm.webp",
+   "img/chars/ilana-tense.webp",
+   "img/chars/ilana-upset.webp",
+   "img/chars/tamar-calm.webp",
+   "img/chars/tamar-tense.webp",
+   "img/chars/tamar-upset.webp",
+   "img/chars/n1-calm.webp",
+   "img/chars/n1-tense.webp",
+   "img/chars/n1-upset.webp",
+   "img/chars/n2-calm.webp",
+   "img/chars/n2-tense.webp",
+   "img/chars/n2-upset.webp"
   ],
   "audio": [
    "audio/crowd.mp3",

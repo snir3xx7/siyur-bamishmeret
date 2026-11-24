@@ -61,6 +61,23 @@ describe('קבצי תרחישים', () => {
         for (const v of ['day', 'night']) expect(existsSync(join(root, `${sc.scene.background}-${v}.webp`))).toBe(true);
       });
 
+      it('איורי דמויות ורכבים קיימים ונכללים בהורדה הלא מקוונת', () => {
+        for (const c of sc.characters.filter((x) => x.sprite)) {
+          expect(c.spriteMoods?.length, c.id).toBeGreaterThan(0);
+          for (const m of c.spriteMoods!) {
+            const f = `${c.sprite}-${m}.webp`;
+            expect(existsSync(join(root, f)), f).toBe(true);
+            expect(sc.media.images, f).toContain(f);
+          }
+        }
+        if (sc.scene.painted)
+          for (const k of new Set((sc.scene.props ?? []).map((p) => p.kind).filter((k) => ['car-red', 'car-silver', 'patrol'].includes(k)))) {
+            expect(existsSync(join(root, `img/props/${k}.webp`)), k).toBe(true);
+            expect(sc.media.images).toContain(`img/props/${k}.webp`);
+          }
+        for (const p of (sc.scene.props ?? []).filter((x) => x.kind === 'sign')) expect(p.text, p.id).toBeTruthy();
+      });
+
       it('לכל שכבת סביבה לכל היותר שתי שכבות', () => {
         expect(sc.scene.ambience.length).toBeLessThanOrEqual(2);
         for (const r of sc.scene.ambienceRules ?? []) expect(r.ambience.length).toBeLessThanOrEqual(2);

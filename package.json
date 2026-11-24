@@ -15,7 +15,8 @@
     "validate": "vitest run tests/unit/scenarios.test.ts",
     "assets": "node scripts/build-assets.mjs",
     "budget": "node scripts/check-budget.mjs",
-    "test:all": "npm run lint && npm test && npm run build && npm run budget && npm run test:e2e"
+    "test:all": "npm run lint && npm test && npm run build && npm run budget && npm run test:e2e",
+    "art": "node scripts/ai-art/generate.mjs"
   },
   "dependencies": {
     "react": "^18.3.1",

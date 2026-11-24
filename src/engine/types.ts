@@ -114,6 +114,10 @@ export interface Character {
   when?: Cond;
   /** מצב גוף לפי דגלים – הראשון שמתקיים */
   moodRules?: { when: Cond; mood: Mood }[];
+  /** דמות מאוירת: נתיב בסיס ל-<sprite>-<mood>.webp (אם חסר – ציור וקטורי מ-look) */
+  sprite?: string;
+  /** מצבים שיש להם איור; מצב חסר מוצג במצב הקרוב (hurt→tense) */
+  spriteMoods?: Mood[];
 }
 
 export interface Hotspot {
@@ -173,6 +177,21 @@ export interface ScoreRule {
   alternative?: string;
 }
 
+export type PropKind = 'car-red' | 'car-silver' | 'patrol' | 'speaker' | 'lock' | 'cone' | 'door-glow' | 'glow-dim' | 'sign';
+
+export interface ScenePropDef {
+  id: string;
+  kind: PropKind;
+  x: number;
+  y: number;
+  scale?: number;
+  when?: Cond;
+  flip?: boolean;
+  /** לשלט: הטקסט בעברית וסגנונו */
+  text?: string;
+  sign?: 'street' | 'stop' | 'shop' | 'plate' | 'notice';
+}
+
 export interface SceneDef {
   background: string;
   alt: string;
@@ -185,7 +204,11 @@ export interface SceneDef {
   reflect?: { x: number; y: number; w: number; h: number };
   weather?: 'rain' | 'none';
   patrolCar?: { x: number; y: number; scale?: number; when?: Cond };
-  props?: { id: string; kind: 'car-red' | 'car-silver' | 'patrol' | 'speaker' | 'lock' | 'cone' | 'door-glow' | 'glow-dim'; x: number; y: number; scale?: number; when?: Cond; flip?: boolean }[];
+  props?: ScenePropDef[];
+  /** רקע מאויר: לכל משמרת איזו גרסת תאורה של הרקע (day/night). ברירת מחדל: night רק בלילה */
+  bgByShift?: Partial<Record<Shift, 'day' | 'night'>>;
+  /** זירה מאוירת – רכבים מאוירים, ללא שכבת גוון על רקע שכבר מצויר בתאורה הנכונה */
+  painted?: boolean;
 }
 
 export interface Scenario {

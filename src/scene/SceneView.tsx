@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { evalCond } from '../engine/conditions';
 import { lightsOf, moodOf, visibleHotspots } from '../engine/game';
-import type { GameState, LightsMode, Mood, Scenario } from '../engine/types';
+import type { GameState, LightsMode, Mood, Scenario, SceneDef, ScenePropDef, Shift } from '../engine/types';
 import { Car, Patrol, Person, Prop } from './Figures';
 
 const MOOD_TEXT: Record<Mood, [string, string]> = {
@@ -20,8 +20,31 @@ export const LIGHTS_LABEL: Record<LightsMode, string> = {
   reflect: 'אורות ניידת פעילים – השתקפות על הכביש',
 };
 
-export function bgUrl(base: string, shift: string) {
-  return `${import.meta.env.BASE_URL}${base}-${shift === 'night' ? 'night' : 'day'}.webp`;
+/** גרסת התאורה של הרקע למשמרת */
+export function bgVariant(scene: Pick<SceneDef, 'bgByShift'>, shift: Shift): 'day' | 'night' {
+  return scene.bgByShift?.[shift] ?? (shift === 'night' ? 'night' : 'day');
+}
+export function bgUrl(base: string, shift: Shift, scene: Pick<SceneDef, 'bgByShift'> = {}) {
+  return `${import.meta.env.BASE_URL}${base}-${bgVariant(scene, shift)}.webp`;
+}
+const asset = (p: string) => `${import.meta.env.BASE_URL}${p}`;
+
+/** מצב שיש לו איור: hurt→tense→calm */
+function spriteMood(mood: Mood, have?: Mood[]): Mood {
+  if (!have || have.includes(mood)) return mood;
+  const order: Mood[] = mood === 'hurt' ? ['tense', 'upset', 'calm'] : mood === 'upset' ? ['tense', 'calm'] : ['calm', 'tense'];
+  return order.find((m) => have.includes(m)) ?? have[0];
+}
+
+const PAINTED_PROPS = new Set(['car-red', 'car-silver', 'patrol']);
+
+/** שלט בעברית מעל הרקע המאויר (מודלי ציור לא כותבים עברית) */
+function Sign({ text, kind }: { text: string; kind: NonNullable<ScenePropDef['sign']> }) {
+  return (
+    <div className={`sign sign-${kind}`} dir="rtl">
+      {kind === 'stop' ? <span>{text}</span> : text}
+    </div>
+  );
 }
 
 interface Props {
@@ -36,6 +59,9 @@ interface Props {
 
 export function SceneView({ sc, st, selected, onSelect, animate, lightsAnim, showLabels }: Props) {
   const [imgFailed, setImgFailed] = useState(false);
+  // איורים שלא נטענו – נופלים לציור הווקטורי
+  const [broken, setBroken] = useState<Record<string, boolean>>({});
+  const markBroken = (k: string) => setBroken((b) => (b[k] ? b : { ...b, [k]: true }));
   const shift = st.config.shift;
   const scene = sc.scene;
   const lights = lightsOf(sc, st);
@@ -50,7 +76,11 @@ export function SceneView({ sc, st, selected, onSelect, animate, lightsAnim, sho
   const event = st.lastEvent ? sc.events?.find((e) => e.id === st.lastEvent) : undefined;
 
   return (
-    <div className={`scene ${animate ? 'anim-ok' : ''}`} role="group" aria-label={`זירת האירוע: ${sc.location.name}`}>
+    <div
+      className={`scene ${animate ? 'anim-ok' : ''} ${scene.painted ? 'painted' : ''} light-${shift}`}
+      role="group"
+      aria-label={`זירת האירוע: ${sc.location.name}`}
+    >
       {/* „מצלמה”: התקרבות עדינה לנקודה שנבחרה (רק כשתנועה מותרת) */}
       <div
         className={`cam ${animate && focus ? 'focused' : ''}`}
@@ -58,7 +88,7 @@ export function SceneView({ sc, st, selected, onSelect, animate, lightsAnim, sho
         data-testid="scene-cam"
       >
       {!imgFailed ? (
-        <img className="bg" src={bgUrl(scene.background, shift)} alt="" onError={() => setImgFailed(true)} />
+        <img className="bg" src={bgUrl(scene.background, shift, scene)} alt="" onError={() => setImgFailed(true)} />
       ) : (
         <div className="bg-fallback" style={{ background: scene.fallbackColor }}>
           <p>
@@ -81,11 +111,23 @@ export function SceneView({ sc, st, selected, onSelect, animate, lightsAnim, sho
 
       {props
         .filter((p) => p.kind !== 'patrol')
-        .map((p) => (
-          <div key={p.id} className="actor" style={{ left: `${p.x}%`, top: `${p.y}%`, width: `${(p.kind.startsWith('car') ? 24 : p.kind.includes('glow') ? 14 : 4) * (p.scale ?? 1)}%`, transform: `translate(-50%, -100%) ${p.flip ? 'scaleX(-1)' : ''}` }}>
-            {p.kind === 'car-red' ? <Car color="#b3262e" dent="side" /> : p.kind === 'car-silver' ? <Car color="#b8bec6" dent="front" /> : <Prop kind={p.kind} />}
-          </div>
-        ))}
+        .map((p) => {
+          const painted = scene.painted && PAINTED_PROPS.has(p.kind) && !broken[p.kind];
+          const w = (p.kind.startsWith('car') ? 24 : p.kind.includes('glow') ? 14 : p.kind === 'sign' ? 0 : 4) * (p.scale ?? 1);
+          if (p.kind === 'sign')
+            return (
+              <div key={p.id} className="actor sign-wrap" style={{ left: `${p.x}%`, top: `${p.y}%`, fontSize: `${(p.scale ?? 1) * 1.05}cqw` }} aria-hidden="true">
+                <Sign text={p.text ?? ''} kind={p.sign ?? 'street'} />
+              </div>
+            );
+          return (
+            <div key={p.id} className={`actor ${painted ? 'painted-prop' : ''}`} style={{ left: `${p.x}%`, top: `${p.y}%`, width: `${w}%`, transform: `translate(-50%, -100%) ${p.flip ? 'scaleX(-1)' : ''}` }}>
+              {painted ? (
+                <img src={asset(`img/props/${p.kind}.webp`)} alt="" onError={() => markBroken(p.kind)} />
+              ) : p.kind === 'car-red' ? <Car color="#b3262e" dent="side" /> : p.kind === 'car-silver' ? <Car color="#b8bec6" dent="front" /> : <Prop kind={p.kind} />}
+            </div>
+          );
+        })}
 
       {chars.map((c) => {
         const mood = moodOf(sc, st, c.id);
@@ -93,27 +135,42 @@ export function SceneView({ sc, st, selected, onSelect, animate, lightsAnim, sho
         return (
           <div
             key={c.id}
-            className={`actor person ${speakers.has(c.id) ? 'speaking' : ''}`}
-            style={{ left: `${c.x}%`, top: `${c.y}%`, width: `${8.2 * h}%` }}
+            className={`actor person ${speakers.has(c.id) ? 'speaking' : ''} ${c.sprite && !broken[c.id] ? 'has-sprite' : ''}`}
+            // איור: גובה קבוע (כמו הדמות הווקטורית ‎8.2% רוחב × יחס 225/110 × 16/9 ≈ 29.8% גובה)
+            style={c.sprite && !broken[c.id]
+              ? { left: `${c.x}%`, top: `${c.y}%`, height: `${29.8 * h}%` }
+              : { left: `${c.x}%`, top: `${c.y}%`, width: `${8.2 * h}%` }}
             data-mood={mood}
             data-testid={`char-${c.id}`}
           >
             {speakers.has(c.id) && <span className="talk" aria-hidden="true">…</span>}
             {/* מפתח לפי מצב: שינוי מצב רוח מפעיל תגובה קצרה של הדמות */}
             <div className="mood-wrap" key={mood}>
-              <Person look={c.look} mood={mood} />
+              {c.sprite && !broken[c.id] ? (
+                <img className="sprite" src={asset(`${c.sprite}-${spriteMood(mood, c.spriteMoods)}.webp`)} alt="" onError={() => markBroken(c.id)} />
+              ) : (
+                <Person look={c.look} mood={mood} />
+              )}
             </div>
           </div>
         );
       })}
 
       {patrol && (
-        <div className="actor" style={{ left: `${patrol.x}%`, top: `${patrol.y}%`, width: `${25 * (patrol.scale ?? 1)}%` }}>
-          <Patrol lights={lights} />
+        <div className={`actor ${scene.painted && !broken.patrol ? 'painted-prop' : ''}`} style={{ left: `${patrol.x}%`, top: `${patrol.y}%`, width: `${25 * (patrol.scale ?? 1)}%`, transform: `translate(-50%, -100%) ${patrol.flip ? 'scaleX(-1)' : ''}` }}>
+          {scene.painted && !broken.patrol ? (
+            <>
+              <img src={asset('img/props/patrol.webp')} alt="" onError={() => markBroken('patrol')} />
+              {lights !== 'off' && <div className={`bar-glow ${lightsAnim ? 'anim' : ''}`} />}
+            </>
+          ) : (
+            <Patrol lights={lights} />
+          )}
         </div>
       )}
 
-      <div className={`tint ${shift}`} />
+      {/* ברקע מאויר התאורה כבר בציור; גוון רק כשמשתמשים בגרסת יום לערב */}
+      {(!scene.painted || (shift === 'evening' && bgVariant(scene, shift) === 'day')) && <div className={`tint ${shift}`} />}
       {scene.weather === 'rain' && <div className={`rain ${animate ? 'anim' : ''}`} />}
 
       {hotspots.map((h, i) => (

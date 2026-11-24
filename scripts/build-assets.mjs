@@ -1,6 +1,6 @@
 /**
  * מפיק את כל נכסי המדיה המקוריים של הפרויקט:
- *   public/img/*.webp      – רקעי זירות (יום/לילה)
+ *   (רקעי הזירות המאוירים נוצרים ב-npm run art – scripts/ai-art/. הרקעים הווקטוריים הישנים: npm run assets vector-img)
  *   public/icons/*         – אייקוני PWA
  *   public/audio/*.mp3     – צלילי סביבה ואפקטים מסונתזים
  * הרצה: npm run assets  (דורש ffmpeg להמרת אודיו ל-MP3)
@@ -19,7 +19,8 @@ for (const d of ['img', 'icons', 'audio']) mkdirSync(join(pub, d), { recursive: 
 
 const only = process.argv[2];
 
-if (!only || only === 'img') {
+// הרקעים הווקטוריים הוחלפו באיורים (npm run art) – נוצרים רק בבקשה מפורשת כדי לא לדרוס אותם
+if (only === 'vector-img') {
   const scenes = { 'accident-street': accidentStreet, stairwell, yard };
   for (const [name, fn] of Object.entries(scenes)) {
     for (const v of ['day', 'night']) {

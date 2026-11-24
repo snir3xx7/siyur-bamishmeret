@@ -23,7 +23,7 @@ test('כשל בטעינת תמונת רקע מציג תיאור טקסט', async
 test('מצב טקסט בלבד, הפחתת תנועה ומקלדת בלבד – משחק שלם', async ({ page }) => {
   await page.emulateMedia({ reducedMotion: 'reduce' });
   await page.addInitScript(() => localStorage.setItem('siyur.settings.v1', JSON.stringify({ textOnly: true })));
-  await page.goto('./#/s/noise-building?v=1&seed=12');
+  await page.goto('./#/s/noise-building?v=2&seed=12');
   // ניווט במקלדת בלבד: פוקוס ו-Enter
   const press = async (loc: ReturnType<typeof page.getByRole>) => {
     await loc.focus();

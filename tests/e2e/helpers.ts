@@ -1,7 +1,7 @@
 import { expect, type Page } from '@playwright/test';
 
 /** גרסאות התרחישים הנוכחיות (כמו ב-public/scenarios/index.json) */
-export const VERSIONS: Record<string, number> = { 'accident-rain': 2, 'noise-building': 1, 'yard-dispute': 1 };
+export const VERSIONS: Record<string, number> = { 'accident-rain': 3, 'noise-building': 2, 'yard-dispute': 2 };
 
 export async function startScenario(page: Page, id = 'accident-rain', seed = 4, opts: { mode?: 'learning' | 'practice' } = {}) {
   await page.goto(`./#/s/${id}?v=${VERSIONS[id]}&seed=${seed}`);

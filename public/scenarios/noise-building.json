@@ -1,6 +1,6 @@
 {
  "id": "noise-building",
- "version": 1,
+ "version": 2,
  "title": "דיווח על רעש בבניין מגורים",
  "category": "סדר ציבורי ויחסי שכנים",
  "summary": "תלונה על מוזיקה חזקה בשעת ערב. יש לאמת את מקור הרעש, לשמור על פרטיות המדווחת, לפנות למארח בכבוד ולתעד מה נצפה ומה רק נטען.",
@@ -178,12 +178,18 @@
     "height": 0.94
    },
    "attitude": 2,
-   "x": 21,
-   "y": 96,
-   "scale": 1,
+   "x": 22,
+   "y": 97,
+   "scale": 1.75,
    "when": {
     "flag": "metRina"
-   }
+   },
+   "sprite": "img/chars/rina",
+   "spriteMoods": [
+    "calm",
+    "tense",
+    "upset"
+   ]
   },
   {
    "id": "ido",
@@ -199,12 +205,18 @@
     "height": 1.03
    },
    "attitude": 1,
-   "x": 70,
-   "y": 96,
-   "scale": 1,
+   "x": 88,
+   "y": 97,
+   "scale": 1.75,
    "when": {
     "flag": "hostOpen"
-   }
+   },
+   "sprite": "img/chars/ido",
+   "spriteMoods": [
+    "calm",
+    "tense",
+    "upset"
+   ]
   },
   {
    "id": "shmuel",
@@ -220,12 +232,18 @@
     "height": 0.97
    },
    "attitude": 1,
-   "x": 46,
-   "y": 96,
-   "scale": 1,
+   "x": 42,
+   "y": 97,
+   "scale": 1.75,
    "when": {
     "flag": "shmuelOpen"
-   }
+   },
+   "sprite": "img/chars/shmuel",
+   "spriteMoods": [
+    "calm",
+    "tense",
+    "upset"
+   ]
   }
  ],
  "dispatch": {
@@ -410,8 +428,8 @@
    {
     "id": "glow-7",
     "kind": "door-glow",
-    "x": 57,
-    "y": 76,
+    "x": 61,
+    "y": 75,
     "when": {
      "all": [
       {
@@ -430,8 +448,8 @@
    {
     "id": "glow-8",
     "kind": "door-glow",
-    "x": 82,
-    "y": 76,
+    "x": 77.4,
+    "y": 75,
     "when": {
      "all": [
       {
@@ -450,8 +468,8 @@
    {
     "id": "dim-7",
     "kind": "glow-dim",
-    "x": 57,
-    "y": 76,
+    "x": 61,
+    "y": 75,
     "when": {
      "all": [
       {
@@ -468,8 +486,8 @@
    {
     "id": "dim-8",
     "kind": "glow-dim",
-    "x": 82,
-    "y": 76,
+    "x": 77.4,
+    "y": 75,
     "when": {
      "all": [
       {
@@ -482,8 +500,45 @@
       }
      ]
     }
+   },
+   {
+    "id": "sg-7",
+    "kind": "sign",
+    "x": 61,
+    "y": 37.8,
+    "text": "7",
+    "sign": "plate",
+    "scale": 1.1
+   },
+   {
+    "id": "sg-8",
+    "kind": "sign",
+    "x": 77.4,
+    "y": 37.4,
+    "text": "8",
+    "sign": "plate",
+    "scale": 1.1
+   },
+   {
+    "id": "sg-quiet",
+    "kind": "sign",
+    "x": 69.2,
+    "y": 24,
+    "text": "נא לשמור על השקט",
+    "sign": "notice",
+    "scale": 0.8
+   },
+   {
+    "id": "sg-vaad",
+    "kind": "sign",
+    "x": 46.2,
+    "y": 33.8,
+    "text": "ועד הבית",
+    "sign": "notice",
+    "scale": 0.65
    }
-  ]
+  ],
+  "painted": true
  },
  "arrivalLines": [
   {
@@ -499,8 +554,8 @@
    "id": "h-stair",
    "label": "חדר המדרגות",
    "kind": "area",
-   "x": 30,
-   "y": 62,
+   "x": 10,
+   "y": 50,
    "description": "חדר המדרגות של הקומה השנייה. המוזיקה נשמעת כאן בבירור.",
    "choices": [
     {
@@ -590,8 +645,8 @@
    "label": "רינה – המדווחת (דירה 3)",
    "kind": "character",
    "character": "rina",
-   "x": 21,
-   "y": 62,
+   "x": 22,
+   "y": 46,
    "description": "רינה מלכה, הדיירת שהתלוננה. גרה בקומה הראשונה.",
    "when": {
     "fact": "d-reporter"
@@ -696,8 +751,8 @@
    "id": "h-door7",
    "label": "דלת דירה 7",
    "kind": "item",
-   "x": 57,
-   "y": 40,
+   "x": 61,
+   "y": 52,
    "description": "דלת דירה 7 – הדירה שנמסרה בתלונה.",
    "when": {
     "not": {
@@ -782,8 +837,8 @@
    "id": "h-door8",
    "label": "דלת דירה 8",
    "kind": "item",
-   "x": 82,
-   "y": 40,
+   "x": 77.4,
+   "y": 52,
    "description": "דלת דירה 8, בצד ימין של חדר המדרגות.",
    "when": {
     "not": {
@@ -869,8 +924,8 @@
    "label": "עידו – המארח",
    "kind": "character",
    "character": "ido",
-   "x": 70,
-   "y": 62,
+   "x": 88,
+   "y": 46,
    "description": "עידו ברק, המארח. עומד בפתח הדירה, מאחוריו אורחים.",
    "when": {
     "flag": "hostOpen"
@@ -1100,8 +1155,8 @@
    "label": "שמואל – הדייר בדירה הסמוכה",
    "kind": "character",
    "character": "shmuel",
-   "x": 46,
-   "y": 62,
+   "x": 42,
+   "y": 46,
    "description": "שמואל דהן, דייר מבוגר בדירה {{quietApt}}. עומד בפתח דלתו בחלוק.",
    "when": {
     "flag": "shmuelOpen"
@@ -2121,7 +2176,16 @@
  "media": {
   "images": [
    "img/stairwell-day.webp",
-   "img/stairwell-night.webp"
+   "img/stairwell-night.webp",
+   "img/chars/rina-calm.webp",
+   "img/chars/rina-tense.webp",
+   "img/chars/rina-upset.webp",
+   "img/chars/ido-calm.webp",
+   "img/chars/ido-tense.webp",
+   "img/chars/ido-upset.webp",
+   "img/chars/shmuel-calm.webp",
+   "img/chars/shmuel-tense.webp",
+   "img/chars/shmuel-upset.webp"
   ],
   "audio": [
    "audio/music-muffled.mp3",

@@ -325,3 +325,29 @@ body.projector .no-projector { display: none !important; }
 .dialog-box .event-head { margin: 8px 0 2px; font-weight: 800; color: var(--warn, #f0a030); }
 @media (max-width: 600px) { .radio-led { font-size: .68em; padding: 1px 8px; } .event-banner { font-size: .75em; } }
 @media print { .radio-led, .event-banner { display: none; } }
+
+/* ---------- זירה מאוירת ---------- */
+.scene { container-type: inline-size; }
+.scene .actor.has-sprite { width: auto; }
+.scene .actor .sprite { display: block; height: 100%; width: auto; }
+.scene .actor.has-sprite .mood-wrap { height: 100%; }
+.scene .actor.has-sprite::before { content: ''; position: absolute; left: 8%; right: 8%; bottom: -1.5%; height: 5%; border-radius: 50%; background: radial-gradient(#000a, #0000 70%); }
+.scene .painted-prop img { display: block; width: 100%; height: auto; }
+/* התאמת הדמויות והרכבים לתאורת הציור */
+.scene.painted.light-night .sprite, .scene.painted.light-night .painted-prop img { filter: brightness(.66) saturate(.8) contrast(1.05) drop-shadow(0 0 1px #0008); }
+.scene.painted.light-evening .sprite, .scene.painted.light-evening .painted-prop img { filter: brightness(.86) sepia(.14) saturate(.95); }
+.scene.painted .person.speaking .sprite { filter: drop-shadow(0 0 6px #ffe7a8cc) brightness(.95); }
+.scene.painted.light-night .person.speaking .sprite { filter: brightness(.8) drop-shadow(0 0 6px #ffe7a8cc); }
+.scene .bar-glow { position: absolute; left: 38%; width: 26%; top: -14%; height: 30%; pointer-events: none; mix-blend-mode: screen;
+  background: radial-gradient(closest-side at 32% 50%, #ff3b46cc, #ff3b4600), radial-gradient(closest-side at 68% 50%, #3b7bffcc, #3b7bff00); }
+.anim-ok .bar-glow.anim { animation: barflash 1.2s steps(2, jump-none) infinite; }
+@keyframes barflash { 50% { background: radial-gradient(closest-side at 32% 50%, #ff3b4655, #ff3b4600), radial-gradient(closest-side at 68% 50%, #3b7bffff, #3b7bff00); } }
+/* שלטים בעברית */
+.scene .sign-wrap { transform: translate(-50%, -50%); pointer-events: none; }
+.sign { font-family: 'Arial Hebrew', Arial, sans-serif; font-weight: 700; white-space: nowrap; line-height: 1.15; box-shadow: 0 .15em .4em #0007; }
+.sign-street { background: #f4f6f8; color: #123d7a; border: .14em solid #123d7a; border-radius: .25em; padding: .1em .6em; }
+.sign-shop { background: #f6efd9; color: #2f6b3c; border-radius: .2em; padding: .12em .7em; font-size: 1.35em; border: .08em solid #2f6b3c55; }
+.sign-plate { background: #d9d6cf; color: #222; border-radius: .2em; padding: .05em .45em; }
+.sign-notice { background: #f3e7bf; color: #4a3b12; border: .08em solid #b39a4a; border-radius: .2em; padding: .15em .6em; }
+.sign-stop { width: 2.6em; height: 2.6em; display: grid; place-items: center; background: #c81e2a; color: #fff; font-size: .9em; clip-path: polygon(30% 0, 70% 0, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0 70%, 0 30%); box-shadow: none; outline: .12em solid #fff; outline-offset: -.3em; }
+.light-night .sign { filter: brightness(.72); }

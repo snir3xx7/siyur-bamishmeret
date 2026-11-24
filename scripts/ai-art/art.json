@@ -1,0 +1,169 @@
+{
+ "style": "semi-realistic digital painting, graphic novel illustration style, painterly brushwork, cinematic lighting.",
+ "figure": "Standing, front three-quarter view, the whole figure visible from head to shoes, centered.",
+ "greenScreen": "Full body character isolated on a vivid bright green screen backdrop (pure #00FF00 chroma key green), the entire background is flat saturated green.",
+ "moods": {
+  "calm": "Calm neutral relaxed expression, arms relaxed at the sides.",
+  "tense": "Tense worried frowning expression, arms crossed over the chest.",
+  "upset": "Angry upset expression, mouth open as if talking loudly, one arm raised and pointing forward with the index finger.",
+  "hurt": "In pain, pale face, slightly hunched, eyes squinting."
+ },
+ "backgrounds": [
+  {
+   "id": "accident",
+   "out": "accident-street",
+   "seed": 27,
+   "base": "night",
+   "prompt": "Wide street-level view of an empty Israeli city intersection at night in the rain. Background: a row of four- and five-story beige Jerusalem-stone apartment blocks with small balconies, solar water heaters and antennas on the flat roofs, many warmly lit windows. Center: a small neighborhood grocery store with a green and white striped awning and fruit crates, closed shutters of a barbershop next to it. Left: a red octagonal stop sign on a pole and a small tree. Two tall street lamps with warm orange light. Lower third: wide empty wet asphalt road with white dashed lane markings and a zebra crosswalk on the left, puddles reflecting the lights. Sidewalk with curb across the middle of the frame. No people, no cars, no vehicles, no text, no letters, no logos. Moody blue night palette with warm window light, rain streaks."
+  },
+  {
+   "id": "stairwell",
+   "out": "stairwell",
+   "seed": 43,
+   "base": "night",
+   "prompt": "Interior of an old Israeli apartment building stairwell landing at night, straight-on eye-level wide view of the back wall. Left quarter: concrete stairs going up with a dark metal railing. Back wall, left of center: grey metal mailboxes with a cork notice board below. Back wall, center and right: TWO identical closed brown wooden apartment doors side by side, evenly spaced, each with a small blank plate above it and a doormat in front; warm golden light leaking from under the right door. Ceiling lamp. Worn beige painted walls, speckled grey terrazzo floor in the bottom third. No people, no text, no letters, no numbers."
+  },
+  {
+   "id": "yard",
+   "out": "yard",
+   "seed": 52,
+   "base": "day",
+   "prompt": "Shared courtyard between two Israeli apartment blocks on a bright sunny morning, blue sky, soft morning sunlight and shadows. Laundry lines with colorful clothes strung between balconies. Left: a ficus tree in a raised stone planter. Center-left: three green municipal trash bins. Center: a wooden bench. Right: a small corrugated grey metal storage shed with a closed door and a padlock, two bicycles leaning next to it. A courtyard lamp post. Stone paving floor in the bottom third. No people, no text, no letters."
+  }
+ ],
+ "characters": [
+  {
+   "id": "oren",
+   "seed": 5,
+   "moods": [
+    "calm",
+    "tense",
+    "upset",
+    "hurt"
+   ],
+   "desc": "A man in his late thirties, short dark brown hair, light olive skin, wearing a navy blue zip jacket, dark grey trousers and black shoes, wet from rain.",
+   "hurt": "One hand pressed against the center of his chest."
+  },
+  {
+   "id": "dana",
+   "seed": 8,
+   "moods": [
+    "calm",
+    "tense",
+    "upset",
+    "hurt"
+   ],
+   "desc": "A woman in her early thirties, long straight black hair, tan skin, wearing a burgundy raincoat, dark jeans and ankle boots, holding a smartphone, wet from rain.",
+   "hurt": "One hand holding the side of her neck and shoulder."
+  },
+  {
+   "id": "samir",
+   "seed": 12,
+   "moods": [
+    "calm",
+    "tense",
+    "upset"
+   ],
+   "desc": "A man in his fifties, brown skin, short grey stubble, wearing a flat cap, a brown jacket and dark trousers, holding an open black umbrella above his head."
+  },
+  {
+   "id": "rina",
+   "seed": 14,
+   "moods": [
+    "calm",
+    "tense",
+    "upset"
+   ],
+   "desc": "A woman in her sixties, greying light brown hair tied in a bun, wearing a slate blue cardigan over a long grey house dress and slippers."
+  },
+  {
+   "id": "ido",
+   "seed": 15,
+   "moods": [
+    "calm",
+    "tense",
+    "upset"
+   ],
+   "desc": "A young man in his mid twenties, short dark hair, light skin, wearing an orange t-shirt, dark blue jeans and white sneakers."
+  },
+  {
+   "id": "shmuel",
+   "seed": 16,
+   "moods": [
+    "calm",
+    "tense",
+    "upset"
+   ],
+   "desc": "An elderly man in his seventies, short white hair, glasses, wearing a beige knitted sweater, brown trousers and house slippers."
+  },
+  {
+   "id": "michael",
+   "seed": 17,
+   "moods": [
+    "calm",
+    "tense",
+    "upset"
+   ],
+   "desc": "A man in his forties, bald head, short dark beard, light skin, wearing a steel blue polo shirt and grey trousers."
+  },
+  {
+   "id": "ilana",
+   "seed": 18,
+   "moods": [
+    "calm",
+    "tense",
+    "upset"
+   ],
+   "desc": "A woman in her fifties, long dark brown hair, tan skin, wearing a purple blouse, navy trousers and a brown shoulder bag."
+  },
+  {
+   "id": "tamar",
+   "seed": 19,
+   "moods": [
+    "calm",
+    "tense",
+    "upset"
+   ],
+   "desc": "A woman in her thirties, auburn hair in a bun, fair skin, wearing a dusty pink cardigan, white top and grey trousers."
+  },
+  {
+   "id": "n1",
+   "seed": 20,
+   "moods": [
+    "calm",
+    "tense",
+    "upset"
+   ],
+   "desc": "A man in his thirties, short black hair, brown skin, wearing a mustard yellow t-shirt and dark trousers."
+  },
+  {
+   "id": "n2",
+   "seed": 21,
+   "moods": [
+    "calm",
+    "tense",
+    "upset"
+   ],
+   "desc": "A woman in her forties, blonde shoulder-length hair, fair skin, wearing a red top and black trousers."
+  }
+ ],
+ "props": [
+  {
+   "id": "car-red",
+   "seed": 31,
+   "desc": "Side view profile of a small red hatchback car facing right, the whole car visible, a dent on the passenger door, wet from rain."
+  },
+  {
+   "id": "car-silver",
+   "seed": 32,
+   "desc": "Side view profile of a silver family sedan facing right, the whole car visible, a cracked front bumper, wet from rain.",
+   "desaturate": 0.12
+  },
+  {
+   "id": "patrol",
+   "seed": 33,
+   "desc": "Side view profile of a white patrol car facing right, the whole car visible, a blue horizontal stripe along the side, a red and blue light bar on the roof, no text, no lettering, no emblem."
+  }
+ ],
+ "propsBackdrop": "Isolated on a vivid bright green screen backdrop (pure #00FF00 chroma key green), the entire background is flat saturated green."
+}

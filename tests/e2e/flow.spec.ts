@@ -99,13 +99,13 @@ test('רענון באמצע משחק משחזר את המצב', async ({ page })
 });
 
 test('קישור ישיר לתרחיש עם זרע קבוע מוביל לכרטיס ומתחיל מיד', async ({ page }) => {
-  await page.goto('./#/s/yard-dispute?v=1&seed=321');
+  await page.goto('./#/s/yard-dispute?v=2&seed=321');
   await expect(page.getByRole('heading', { name: 'ויכוח בין שכנים בחצר משותפת' })).toBeVisible();
   await expect(page.getByTestId('seed')).toHaveText('321');
   await page.getByTestId('start').click();
   await expect(page.getByTestId('go')).toBeVisible();
   // גרסה ישנה בקישור מציגה אזהרה
-  await page.goto('./#/s/yard-dispute?v=2&seed=321');
+  await page.goto('./#/s/yard-dispute?v=1&seed=321');
   await expect(page.getByRole('alert')).toContainText('גרסה');
 });
 
@@ -129,7 +129,7 @@ test('מצב למידה: השהיה עוצרת את השעון וחוסמת פע
 test('עמוד למדריך: קישור קבוע ובדיקת מסלולים', async ({ page }) => {
   await page.goto('./#/instructor');
   await page.getByLabel('זרע (1–999999)').fill('777');
-  await expect(page.getByTestId('instructor-link')).toContainText('#/s/accident-rain?v=2&seed=777');
+  await expect(page.getByTestId('instructor-link')).toContainText('#/s/accident-rain?v=3&seed=777');
   await page.getByRole('button', { name: 'הרצת בדיקה' }).click();
   await expect(page.getByText('✓ לא נמצאו שגיאות')).toBeVisible({ timeout: 20000 });
 });

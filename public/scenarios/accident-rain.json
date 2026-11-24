@@ -1,6 +1,6 @@
 {
  "id": "accident-rain",
- "version": 2,
+ "version": 3,
  "title": "תאונת דרכים קלה בגשם",
  "category": "תנועה ובטיחות בדרך",
  "summary": "שני כלי רכב מעורבים בצומת רטוב והתנועה ממשיכה לעבור לידם. יש לאבטח, לברר את מצב המעורבים, לשמוע גרסאות ולעדכן את המוקד.",
@@ -314,6 +314,13 @@
      },
      "mood": "hurt"
     }
+   ],
+   "sprite": "img/chars/oren",
+   "spriteMoods": [
+    "calm",
+    "tense",
+    "upset",
+    "hurt"
    ]
   },
   {
@@ -349,6 +356,13 @@
      },
      "mood": "hurt"
     }
+   ],
+   "sprite": "img/chars/dana",
+   "spriteMoods": [
+    "calm",
+    "tense",
+    "upset",
+    "hurt"
    ]
   },
   {
@@ -366,8 +380,14 @@
    },
    "attitude": 2,
    "x": 82,
-   "y": 57,
-   "scale": 0.9
+   "y": 63,
+   "scale": 0.9,
+   "sprite": "img/chars/samir",
+   "spriteMoods": [
+    "calm",
+    "tense",
+    "upset"
+   ]
   }
  ],
  "dispatch": {
@@ -623,8 +643,54 @@
     "when": {
      "flag": "secured"
     }
+   },
+   {
+    "id": "sg-stop",
+    "kind": "sign",
+    "x": 20.8,
+    "y": 49.6,
+    "text": "עצור",
+    "sign": "stop",
+    "scale": 1.3
+   },
+   {
+    "id": "sg-shop",
+    "kind": "sign",
+    "x": 53.7,
+    "y": 43.6,
+    "text": "מכולת הגפן",
+    "sign": "shop",
+    "scale": 0.95
+   },
+   {
+    "id": "sg-kalanit",
+    "kind": "sign",
+    "x": 20.8,
+    "y": 56.5,
+    "text": "רח׳ הכלנית",
+    "sign": "street",
+    "scale": 0.8
+   },
+   {
+    "id": "sg-barber",
+    "kind": "sign",
+    "x": 90,
+    "y": 52,
+    "text": "מספרה רון",
+    "sign": "plate",
+    "scale": 0.7
+   },
+   {
+    "id": "sg-zait",
+    "kind": "sign",
+    "x": 91.5,
+    "y": 60,
+    "text": "שד׳ הזית",
+    "sign": "street",
+    "scale": 0.8
    }
-  ]
+  ],
+  "painted": true
  },
  "arrivalLines": [
   {
@@ -2889,7 +2955,21 @@
  "media": {
   "images": [
    "img/accident-street-day.webp",
-   "img/accident-street-night.webp"
+   "img/accident-street-night.webp",
+   "img/chars/oren-calm.webp",
+   "img/chars/oren-tense.webp",
+   "img/chars/oren-upset.webp",
+   "img/chars/oren-hurt.webp",
+   "img/chars/dana-calm.webp",
+   "img/chars/dana-tense.webp",
+   "img/chars/dana-upset.webp",
+   "img/chars/dana-hurt.webp",
+   "img/chars/samir-calm.webp",
+   "img/chars/samir-tense.webp",
+   "img/chars/samir-upset.webp",
+   "img/props/car-red.webp",
+   "img/props/car-silver.webp",
+   "img/props/patrol.webp"
   ],
   "audio": [
    "audio/rain.mp3",

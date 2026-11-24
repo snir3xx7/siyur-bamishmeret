@@ -110,6 +110,9 @@
 - הרקע נטען כ־`<background>-day.webp` (בוקר וערב, הערב מקבל שכבת גוון) או `-night.webp`.
 - `ambience` – עד שתי שכבות; קבצים ב־`public/audio/<שם>.mp3`.
 - `lights`: `off`, `steady` (אדום־כחול קבוע) או `reflect` (השתקפות על הכביש). אנימציה עדינה רק אם הופעלה בהגדרות.
+- `painted: true` – זירה מאוירת: רכבים מ־`img/props/<kind>.webp`, בלי שכבת גוון על רקע שכבר מצויר בתאורה הנכונה. `bgByShift` – איזו גרסת רקע (`day`/`night`) לכל משמרת.
+- דמות מאוירת: `"sprite": "img/chars/<id>"` ו־`"spriteMoods": ["calm","tense","upset"]` (קבצים `<sprite>-<mood>.webp`). מצב שאין לו איור מוצג במצב הקרוב; איור שלא נטען נופל לציור הווקטורי מ־`look`.
+- שלט בעברית: `{ "kind": "sign", "text": "מכולת הגפן", "sign": "shop", "x": 53, "y": 43 }` – סגנונות `street`, `stop`, `shop`, `plate`, `notice`. מודלי ציור לא כותבים עברית, ולכן השלטים הם שכבת טקסט.
 - `props.kind`: `car-red`, `car-silver`, `patrol`, `cone`, `speaker`, `lock`, `door-glow`, `glow-dim`. `x`/`y` באחוזים (נקודת הבסיס התחתונה).
 
 נקודות עניין (`hotspots`) מופיעות גם בתמונה וגם ברשימה, באותו סדר. `x`/`y` באחוזים, `description` חובה (נגישות).
