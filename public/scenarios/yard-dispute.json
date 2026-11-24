@@ -489,7 +489,8 @@
   "text": "נסיעה לרחוב השקמה. בחצר שבין שני הבניינים כבר שומעים קולות מתווכחים מהרחוב.",
   "travelMinutes": 4,
   "ambience": [
-   "engine-wipers"
+   "engine-wipers",
+   "radio-chatter"
   ]
  },
  "scene": {
@@ -2438,14 +2439,18 @@
    "img/chars/n1-upset.webp",
    "img/chars/n2-calm.webp",
    "img/chars/n2-tense.webp",
-   "img/chars/n2-upset.webp"
+   "img/chars/n2-upset.webp",
+   "img/drive/side-day.webp",
+   "img/drive/side-night.webp",
+   "img/props/patrol.webp"
   ],
   "audio": [
    "audio/crowd.mp3",
    "audio/yard-evening.mp3",
    "audio/yard-morning.mp3",
    "audio/engine-wipers.mp3",
-   "audio/radio-chirp.mp3"
+   "audio/radio-chirp.mp3",
+   "audio/radio-chatter.mp3"
   ],
   "voice": {},
   "narrationMissing": "אין עדיין קריינות מוקלטת בעברית. הקבצים יתווספו לתיקייה public/audio/voice/yard-dispute/ וימופו בשדה media.voice."

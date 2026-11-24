@@ -1,0 +1,1864 @@
+{
+ "id": "lost-child",
+ "version": 1,
+ "title": "ילד שהלך לאיבוד בשוק",
+ "category": "נעדרים ואוכלוסיות פגיעות",
+ "summary": "אם בבהלה מדווחת שבנה בן השש נעלם בין הדוכנים. יש להרגיע ולקבל תיאור, להשאיר את האם בנקודה קבועה, לגייס את הסוחרים, לגשת לילד בגובה העיניים ולוודא זהות לפני מסירה.",
+ "estimatedMinutes": 10,
+ "difficultyLabel": "בינונית",
+ "skills": [
+  "תיאור מהיר ומדויק",
+  "הרגעת הורה בבהלה",
+  "גיוס הציבור לחיפוש",
+  "שיחה עם ילד",
+  "וידוא זהות לפני מסירה"
+ ],
+ "shifts": [
+  "morning",
+  "evening"
+ ],
+ "defaultShift": "morning",
+ "location": {
+  "name": "שוק העיר, סמטת הדוכנים",
+  "area": "מרכז קריית אלון (בדוי)"
+ },
+ "objectives": [
+  "לקבל תיאור מדויק ונקודת היעלמות",
+  "להשאיר את האם בנקודה קבועה",
+  "לגייס סוחרים ושומרים לחיפוש",
+  "לגשת לילד ברגישות ולוודא את זהותו",
+  "למסור את הילד לאמו ולעדכן את המוקד"
+ ],
+ "variants": [
+  {
+   "id": "balloons",
+   "label": "הילד עומד לבד ליד דוכן הבלונים בסוף הסמטה",
+   "set": {
+    "where": "balloons"
+   },
+   "vars": {
+    "foundPlace": "דוכן הבלונים בסוף הסמטה",
+    "foundWith": "לבד"
+   }
+  },
+  {
+   "id": "haim",
+   "label": "הסוחר חיים מצא את הילד והושיב אותו בדוכן שלו",
+   "set": {
+    "where": "haim"
+   },
+   "vars": {
+    "foundPlace": "דוכן הירקות של חיים",
+    "foundWith": "עם הסוחר חיים"
+   }
+  }
+ ],
+ "scoring": {
+  "weights": {
+   "info": 20,
+   "assessment": 20,
+   "communication": 20,
+   "authority": 15,
+   "dispatch": 15,
+   "documentation": 10
+  },
+  "rules": [
+   {
+    "id": "lc-info-desc",
+    "domain": "info",
+    "label": "תיאור הילד לפני החיפוש",
+    "max": 10,
+    "required": true,
+    "anchor": [
+     "f-desc",
+     "s-calm"
+    ],
+    "tiers": [
+     {
+      "when": {
+       "any": [
+        {
+         "chosen": "f-desc"
+        },
+        {
+         "all": [
+          {
+           "chosen": "s-calm"
+          },
+          {
+           "before": [
+            "s-calm",
+            "a-search"
+           ]
+          },
+          {
+           "before": [
+            "s-calm",
+            "h-ask"
+           ]
+          }
+         ]
+        }
+       ]
+      },
+      "points": 10,
+      "explain": "התיאור התקבל לפני החיפוש.",
+      "keep": "לפני שחיפשת ידעת בדיוק מה הוא לובש. בשוק צפוף זה מה שמבדיל ילד אחד ממאות."
+     },
+     {
+      "when": {
+       "fact": "d-desc"
+      },
+      "points": 5,
+      "explain": "התיאור התקבל רק אחרי שהחיפוש התחיל.",
+      "improve": "התחלת לחפש או לשאול סוחרים לפני שידעת איך הילד נראה. בסבב הבא קבל תיאור קודם."
+     }
+    ],
+    "fallback": {
+     "explain": "לא התקבל תיאור.",
+     "improve": "לא קיבלת תיאור של הילד. בסבב הבא שאל את המוקד או את האם מה הוא לובש."
+    }
+   },
+   {
+    "id": "lc-info-habits",
+    "domain": "info",
+    "label": "נקודה אחרונה והרגלים",
+    "max": 5,
+    "required": false,
+    "tiers": [
+     {
+      "when": {
+       "fact": "c-sigal-balloons"
+      },
+      "points": 5,
+      "explain": "התברר מה הילד אוהב ולאן עשוי ללכת.",
+      "keep": "שאלת מה עומרי אוהב, ושמעת על הבלונים. זה כיוון ברור לחיפוש."
+     },
+     {
+      "when": {
+       "fact": "d-where"
+      },
+      "points": 3,
+      "explain": "התבררה הנקודה האחרונה בלבד.",
+      "improve": "ידעת איפה נעלם, אבל לא לאן היה הולך. בסבב הבא שאל את האם מה מושך אותו."
+     }
+    ],
+    "fallback": {
+     "explain": "לא התבררה נקודת ההיעלמות.",
+     "improve": "לא שאלת איפה ראו אותו לאחרונה. בסבב הבא התחל משם."
+    }
+   },
+   {
+    "id": "lc-info-photo",
+    "domain": "info",
+    "label": "תמונה עדכנית",
+    "max": 5,
+    "required": false,
+    "tiers": [
+     {
+      "when": {
+       "chosen": "s-photo"
+      },
+      "points": 5,
+      "explain": "התקבלה תמונה עדכנית.",
+      "keep": "ביקשת תמונה מהבוקר. כך יכולת להראות לסוחרים ולוודא את זהות הילד."
+     }
+    ],
+    "fallback": {
+     "explain": "לא התבקשה תמונה.",
+     "improve": "לא ביקשת תמונה. בסבב הבא בקש תמונה מהיום – היא עוזרת גם בחיפוש וגם בווידוא."
+    }
+   },
+   {
+    "id": "lc-assess-search",
+    "domain": "assessment",
+    "label": "חיפוש שיטתי",
+    "max": 10,
+    "required": true,
+    "anchor": [
+     "a-search",
+     "h-ask"
+    ],
+    "tiers": [
+     {
+      "when": {
+       "flag": "found"
+      },
+      "points": 10,
+      "explain": "הילד נמצא.",
+      "keep": "חיפשת לפי מה ששמעת – בכיוון הבלונים ובעזרת הסוחרים – ומצאת אותו."
+     }
+    ],
+    "fallback": {
+     "explain": "הילד לא נמצא.",
+     "improve": "הילד לא נמצא לפני שעזבת. בסבב הבא חפש לפי מה שהאם סיפרה ושאל את הסוחרים."
+    }
+   },
+   {
+    "id": "lc-assess-post",
+    "domain": "assessment",
+    "label": "האם נשארת בנקודה קבועה",
+    "max": 5,
+    "required": true,
+    "tiers": [
+     {
+      "when": {
+       "all": [
+        {
+         "chosen": "s-stay"
+        },
+        {
+         "not": {
+          "flag": "ev:panic"
+         }
+        }
+       ]
+      },
+      "points": 5,
+      "explain": "האם נשארה בנקודת ההיעלמות.",
+      "keep": "השארת את סיגל במקום שבו עומרי נעלם. אם היה חוזר – אמא שלו הייתה שם."
+     },
+     {
+      "when": {
+       "chosen": "s-hold"
+      },
+      "points": 5,
+      "explain": "האם נעצרה והוחזרה לנקודה הקבועה.",
+      "keep": "כשסיגל התחילה לרוץ, עצרת אותה והסברת למה להישאר. זה החזיר לה שליטה."
+     },
+     {
+      "when": {
+       "chosen": "s-stay"
+      },
+      "points": 3,
+      "explain": "האם התבקשה להישאר, אך עזבה בבהלה ולא הוחזרה.",
+      "improve": "ביקשת מסיגל להישאר – טוב – אבל כשהיא רצה לקהל לא עצרת אותה. בסבב הבא עצור והסבר שוב."
+     }
+    ],
+    "fallback": {
+     "explain": "לא נקבעה נקודה קבועה.",
+     "improve": "סיגל לא נשארה בנקודה קבועה. בסבב הבא בקש ממנה להישאר במקום שבו הילד נעלם."
+    }
+   },
+   {
+    "id": "lc-assess-exits",
+    "domain": "assessment",
+    "label": "השגחה על היציאות",
+    "max": 5,
+    "required": false,
+    "tiers": [
+     {
+      "when": {
+       "any": [
+        {
+         "flag": "announced"
+        },
+        {
+         "flag": "unitsAlerted"
+        }
+       ]
+      },
+      "points": 5,
+      "explain": "הסוחרים, השומרים או הניידות עודכנו.",
+      "keep": "דאגת שהתיאור יגיע לסוחרים, לשומרים או לניידות. כך יותר עיניים מחפשות, גם ביציאות."
+     }
+    ],
+    "fallback": {
+     "explain": "לא גויס סיוע לחיפוש.",
+     "improve": "חיפשת לבד. בסבב הבא גייס את הסוחרים, את הנהלת השוק או את המוקד."
+    }
+   },
+   {
+    "id": "lc-comm-sigal",
+    "domain": "communication",
+    "label": "שיח עם האם",
+    "max": 10,
+    "required": true,
+    "tiers": [
+     {
+      "when": {
+       "all": [
+        {
+         "chosen": "s-calm"
+        },
+        {
+         "not": {
+          "chosen": "s-blame"
+         }
+        }
+       ]
+      },
+      "points": 10,
+      "explain": "השיחה עם האם הייתה רגועה ומכוונת.",
+      "keep": "דיברת עם סיגל לאט ובשאלות קצרות. היא נרגעה מספיק כדי לתת לך תיאור מדויק."
+     },
+     {
+      "when": {
+       "chosen": "s-blame"
+      },
+      "points": 3,
+      "explain": "האם הואשמה.",
+      "improve": "השאלה „למה לא החזקת לו את היד” הגבירה את הבהלה ולא קידמה את החיפוש. בסבב הבא התמקד במה שעוזר למצוא אותו."
+     }
+    ],
+    "fallback": {
+     "explain": "לא התקיימה שיחה עם האם.",
+     "improve": "לא שוחחת עם סיגל. בסבב הבא שמע ממנה מה הוא לובש ומה הוא אוהב."
+    }
+   },
+   {
+    "id": "lc-comm-child",
+    "domain": "communication",
+    "label": "שיחה עם הילד",
+    "max": 10,
+    "required": true,
+    "appliesWhen": {
+     "flag": "found"
+    },
+    "tiers": [
+     {
+      "when": {
+       "all": [
+        {
+         "chosen": "o-kneel"
+        },
+        {
+         "not": {
+          "chosen": "o-grab"
+         }
+        }
+       ]
+      },
+      "points": 10,
+      "explain": "הילד קיבל גישה רגועה בגובה העיניים.",
+      "keep": "ירדת לגובה של עומרי, הצגת את עצמך ושאלת לשמו. הוא נרגע מספיק כדי לענות."
+     },
+     {
+      "when": {
+       "chosen": "o-soothe"
+      },
+      "points": 5,
+      "explain": "הילד הורם בבהלה ואחר כך הורגע.",
+      "improve": "הרמת הילד בלי הסבר הבהילה אותו מול כולם. הרגעת אותו אחר כך – טוב. בסבב הבא התחל בגובה העיניים."
+     }
+    ],
+    "fallback": {
+     "explain": "לא התקיימה שיחה עם הילד.",
+     "improve": "לא דיברת עם עומרי. בסבב הבא גש אליו, כרע והצג את עצמך."
+    }
+   },
+   {
+    "id": "lc-auth-verify",
+    "domain": "authority",
+    "label": "וידוא זהות לפני מסירה",
+    "max": 9,
+    "required": true,
+    "appliesWhen": {
+     "flag": "found"
+    },
+    "anchor": [
+     "o-verify",
+     "s-handfast"
+    ],
+    "tiers": [
+     {
+      "when": {
+       "all": [
+        {
+         "chosen": "o-verify"
+        },
+        {
+         "not": {
+          "flag": "handedFast"
+         }
+        }
+       ]
+      },
+      "points": 9,
+      "explain": "זהות הילד אומתה לפני המסירה.",
+      "keep": "לפני שמסרת את עומרי, השווית לתמונה ווידאת שהוא מזהה את אמו. ילד נמסר רק למי שבטוח שהוא ההורה."
+     }
+    ],
+    "fallback": {
+     "explain": "הילד נמסר בלי וידוא.",
+     "improve": "מסרת את הילד בלי לבדוק שזה הוא ושזו אמו. כאן זה הסתדר, אבל בסבב הבא וודא – תמונה, שם, וזיהוי של הילד."
+    }
+   },
+   {
+    "id": "lc-auth-hold",
+    "domain": "authority",
+    "label": "עצירת האם בהוראה ברורה ומוסברת",
+    "max": 6,
+    "required": true,
+    "appliesWhen": {
+     "flag": "ev:panic"
+    },
+    "anchor": [
+     "s-hold"
+    ],
+    "tiers": [
+     {
+      "when": {
+       "chosen": "s-hold"
+      },
+      "points": 6,
+      "explain": "האם נעצרה בעדינות, עם הסבר.",
+      "keep": "עצרת את סיגל בלי לצעוק והסברת למה עליה להישאר. הוראה ברורה מול אדם בבהלה – עם סיבה ועם הבטחה לעדכן."
+     }
+    ],
+    "fallback": {
+     "explain": "האם לא נעצרה.",
+     "improve": "סיגל רצה לתוך הקהל ולא חזרה לנקודה. בסבב הבא עצור אותה בעדינות והסבר למה להישאר."
+    }
+   },
+   {
+    "id": "lc-disp-first",
+    "domain": "dispatch",
+    "label": "הפצת תיאור בזמן החיפוש",
+    "max": 8,
+    "required": false,
+    "anchor": [
+     "sent:u-units"
+    ],
+    "tiers": [
+     {
+      "when": {
+       "sent": "u-units"
+      },
+      "points": 8,
+      "explain": "התבקשה הפצת התיאור.",
+      "keep": "ביקשת להעביר את התיאור לניידות ולשומרים. אם הילד יצא מהשוק – גם שם מחפשים."
+     },
+     {
+      "when": {
+       "sent": "u-desc"
+      },
+      "points": 4,
+      "explain": "התיאור נמסר, ללא בקשת הפצה.",
+      "improve": "מסרת את התיאור, אבל לא ביקשת שיעבירו אותו הלאה. בסבב הבא בקש במפורש."
+     }
+    ],
+    "fallback": {
+     "explain": "התיאור לא נמסר למוקד.",
+     "improve": "המוקד לא קיבל תיאור בזמן החיפוש. בסבב הבא שלח עדכון עם תיאור מוקדם ככל האפשר."
+    }
+   },
+   {
+    "id": "lc-disp-close",
+    "domain": "dispatch",
+    "label": "עדכון מציאה וביטול חיפוש",
+    "max": 7,
+    "required": true,
+    "anchor": [
+     "update:last"
+    ],
+    "tiers": [
+     {
+      "when": {
+       "all": [
+        {
+         "sent": "u-reunited"
+        },
+        {
+         "sent": "u-verified"
+        }
+       ]
+      },
+      "points": 7,
+      "explain": "נמסר שהילד אומת ונמסר לאמו.",
+      "keep": "עדכנת שהזהות אומתה ושהילד נמסר, והמוקד ביטל את החיפוש."
+     },
+     {
+      "when": {
+       "any": [
+        {
+         "sent": "u-reunited"
+        },
+        {
+         "sent": "u-found"
+        }
+       ]
+      },
+      "points": 4,
+      "explain": "נמסרה מציאה, ללא וידוא או ביטול.",
+      "improve": "העדכון לא כלל את וידוא הזהות או את המסירה. בסבב הבא סגור את המעגל."
+     }
+    ],
+    "fallback": {
+     "explain": "לא נמסר עדכון מציאה.",
+     "improve": "המוקד לא יודע שהילד נמצא. בסבב הבא עדכן מיד ובקש לבטל את החיפוש."
+    }
+   },
+   {
+    "id": "lc-doc",
+    "domain": "documentation",
+    "label": "תיעוד המציאה",
+    "max": 5,
+    "required": true,
+    "tiers": [
+     {
+      "when": {
+       "chosen": "a-doc"
+      },
+      "points": 5,
+      "explain": "תועדו שעה, מקום ומצב הילד.",
+      "keep": "תיעדת איפה ועם מי נמצא עומרי ובאיזה מצב."
+     }
+    ],
+    "fallback": {
+     "explain": "המציאה לא תועדה.",
+     "improve": "לא תיעדת את פרטי המציאה. בסבב הבא רשום שעה, מקום, מצב ועם מי היה."
+    }
+   },
+   {
+    "id": "lc-doc-story",
+    "domain": "documentation",
+    "label": "שמיעת הילד",
+    "max": 5,
+    "required": false,
+    "tiers": [
+     {
+      "when": {
+       "chosen": "o-story"
+      },
+      "points": 5,
+      "explain": "נשמע מהילד מה קרה.",
+      "keep": "שאלת את עומרי מה קרה. בדוח יש עכשיו גם את הגרסה שלו."
+     }
+    ],
+    "fallback": {
+     "explain": "לא נשמע מהילד מה קרה.",
+     "improve": "לא שאלת את עומרי מה קרה. בסבב הבא, כשהוא רגוע, שאל בשאלה פשוטה."
+    }
+   }
+  ]
+ },
+ "facts": [
+  {
+   "id": "d-report",
+   "kind": "dispatch",
+   "text": "עומרי, בן 6, נעלם בשוק לפני כעשר דקות"
+  },
+  {
+   "id": "d-caller",
+   "kind": "dispatch",
+   "text": "המדווחת: סיגל, אמו, בכניסה לסמטת הדוכנים"
+  },
+  {
+   "id": "d-desc",
+   "kind": "dispatch",
+   "text": "תיאור: חולצה צהובה עם כוכב, מכנסיים קצרים אדומים, נעלי ספורט כחולות"
+  },
+  {
+   "id": "d-where",
+   "kind": "dispatch",
+   "text": "נראה לאחרונה ליד דוכן התבלינים בכניסה"
+  },
+  {
+   "id": "c-sigal-balloons",
+   "kind": "claim",
+   "text": "הוא אוהב בלונים, וכל הבוקר ביקש לראות את דוכן הצעצועים",
+   "source": "sigal"
+  },
+  {
+   "id": "c-haim-saw",
+   "kind": "claim",
+   "text": "ראה ילד בצהוב הולך לבד לכיוון סוף הסמטה",
+   "source": "haim"
+  },
+  {
+   "id": "o-found",
+   "kind": "observation",
+   "text": "ילד שתואם לתיאור נמצא ב{{foundPlace}}, {{foundWith}}"
+  },
+  {
+   "id": "o-child-ok",
+   "kind": "observation",
+   "text": "הילד לא פצוע, בוכה ומבוהל"
+  },
+  {
+   "id": "c-omri-story",
+   "kind": "claim",
+   "text": "הלך אחרי בלון שעף ולא מצא את אמא",
+   "source": "omri"
+  },
+  {
+   "id": "o-verified",
+   "kind": "observation",
+   "text": "הילד אמר ששמו עומרי ושאמא שלו סיגל; התמונה בטלפון של האם תואמת"
+  },
+  {
+   "id": "o-reunited",
+   "kind": "observation",
+   "text": "עומרי נמסר לאמו"
+  }
+ ],
+ "characters": [
+  {
+   "id": "sigal",
+   "name": "סיגל ברגר",
+   "role": "האם המדווחת",
+   "gender": "f",
+   "look": {
+    "skin": "#d6a57c",
+    "hair": "#3a2a20",
+    "hairStyle": "short",
+    "top": "#555",
+    "bottom": "#333"
+   },
+   "attitude": 0,
+   "x": 17,
+   "y": 96,
+   "scale": 1.4,
+   "moodRules": [
+    {
+     "when": {
+      "all": [
+       {
+        "flag": "ev:panic"
+       },
+       {
+        "not": {
+         "flag": "held"
+        }
+       }
+      ]
+     },
+     "mood": "upset"
+    },
+    {
+     "when": {
+      "not": {
+       "flag": "reunited"
+      }
+     },
+     "mood": "tense"
+    }
+   ],
+   "sprite": "img/chars/sigal",
+   "spriteMoods": [
+    "calm",
+    "tense",
+    "upset"
+   ]
+  },
+  {
+   "id": "haim",
+   "name": "חיים טביב",
+   "role": "סוחר בשוק",
+   "gender": "m",
+   "look": {
+    "skin": "#d6a57c",
+    "hair": "#3a2a20",
+    "hairStyle": "short",
+    "top": "#555",
+    "bottom": "#333"
+   },
+   "attitude": 1,
+   "x": 84,
+   "y": 96,
+   "scale": 1.4,
+   "sprite": "img/chars/haim",
+   "spriteMoods": [
+    "calm",
+    "tense",
+    "upset"
+   ]
+  },
+  {
+   "id": "omri",
+   "name": "עומרי ברגר",
+   "role": "הילד",
+   "gender": "m",
+   "look": {
+    "skin": "#d6a57c",
+    "hair": "#3a2a20",
+    "hairStyle": "short",
+    "top": "#555",
+    "bottom": "#333"
+   },
+   "attitude": 0,
+   "x": 62,
+   "y": 92,
+   "scale": 0.75,
+   "when": {
+    "flag": "found"
+   },
+   "moodRules": [
+    {
+     "when": {
+      "flag": "grabbed"
+     },
+     "mood": "upset"
+    },
+    {
+     "when": {
+      "not": {
+       "flag": "childCalm"
+      }
+     },
+     "mood": "tense"
+    }
+   ],
+   "sprite": "img/chars/omri",
+   "spriteMoods": [
+    "calm",
+    "tense",
+    "upset"
+   ]
+  }
+ ],
+ "dispatch": {
+  "time": {
+   "morning": "10:24",
+   "evening": "17:48"
+  },
+  "unit": "סייר 9",
+  "incident": "3086",
+  "lines": [
+   {
+    "speaker": "dispatch",
+    "text": "סייר 9, כאן מוקד אלון. ילד בן שש נעלם בשוק העיר לפני כעשר דקות. האם, סיגל, ממתינה בכניסה לסמטת הדוכנים. אשר קבלה."
+   }
+  ],
+  "initialFacts": [
+   "d-report",
+   "d-caller"
+  ],
+  "basicExtraFacts": [
+   "d-desc"
+  ],
+  "followUps": [
+   {
+    "id": "f-desc",
+    "label": "לשאול: מה התיאור של הילד?",
+    "when": {
+     "not": {
+      "fact": "d-desc"
+     }
+    },
+    "lines": [
+     {
+      "speaker": "player",
+      "text": "מוקד, יש תיאור של הילד?"
+     },
+     {
+      "speaker": "dispatch",
+      "text": "עומרי, בן 6. חולצה צהובה עם כוכב, מכנסיים קצרים אדומים, נעלי ספורט כחולות."
+     }
+    ],
+    "effects": {
+     "reveal": [
+      "d-desc"
+     ]
+    },
+    "report": "קבלת תיאור הילד"
+   },
+   {
+    "id": "f-where",
+    "label": "לשאול: איפה נראה לאחרונה?",
+    "lines": [
+     {
+      "speaker": "player",
+      "text": "איפה ראו אותו לאחרונה?"
+     },
+     {
+      "speaker": "dispatch",
+      "text": "ליד דוכן התבלינים בכניסה לסמטה."
+     }
+    ],
+    "effects": {
+     "reveal": [
+      "d-where"
+     ]
+    },
+    "report": "בירור נקודת ההיעלמות"
+   }
+  ],
+  "goLabel": "אישור קבלה ויציאה לשוק"
+ },
+ "transition": {
+  "kind": "street",
+  "text": "חונים בקצה השוק וממשיכים ברגל. הסמטה צפופה בעגלות, ארגזים וקולות של סוחרים.",
+  "travelMinutes": 3,
+  "ambience": [
+   "crowd",
+   "radio-chatter"
+  ]
+ },
+ "scene": {
+  "background": "img/market",
+  "alt": "סמטת שוק צבעונית: דוכנים עם סוככים מפוספסים, ארגזי פירות וירקות, שקי תבלינים, שרשראות נורות ודוכן צעצועים ובלונים מימין.",
+  "fallbackColor": "#8a6a45",
+  "ambience": [
+   "crowd"
+  ],
+  "lights": "off",
+  "weather": "none",
+  "bgByShift": {
+   "morning": "day",
+   "evening": "night"
+  },
+  "props": [
+   {
+    "id": "sg-spice",
+    "kind": "sign",
+    "x": 17,
+    "y": 35,
+    "text": "תבלינים",
+    "sign": "shop",
+    "scale": 1.2
+   },
+   {
+    "id": "sg-haim",
+    "kind": "sign",
+    "x": 93.5,
+    "y": 42.5,
+    "text": "ירקות חיים",
+    "sign": "shop",
+    "scale": 1.15
+   },
+   {
+    "id": "sg-toys",
+    "kind": "sign",
+    "x": 61,
+    "y": 30,
+    "text": "צעצועים ובלונים",
+    "sign": "shop",
+    "scale": 0.95
+   },
+   {
+    "id": "sg-alley",
+    "kind": "sign",
+    "x": 41,
+    "y": 22,
+    "text": "סמטת הדוכנים",
+    "sign": "street",
+    "scale": 0.9
+   }
+  ],
+  "painted": true
+ },
+ "arrivalLines": [
+  {
+   "speaker": "narrator",
+   "text": "כניסה לסמטת הדוכנים. רעש, צפיפות, ריח תבלינים. סיגל עומדת ליד דוכן התבלינים, הטלפון רועד בידה, ועיניה סורקות את הקהל. בדוכן הירקות הסמוך מסדר חיים ארגזים."
+  },
+  {
+   "speaker": "sigal",
+   "text": "הוא היה פה! רק הסתובבתי לשלם!"
+  }
+ ],
+ "arrivalFacts": [],
+ "hotspots": [
+  {
+   "id": "h-sigal",
+   "label": "סיגל – האם",
+   "kind": "character",
+   "x": 17,
+   "y": 44,
+   "description": "סיגל ברגר, אמו של עומרי. בבהלה.",
+   "choices": [
+    {
+     "id": "s-calm",
+     "label": "לעמוד מולה, לדבר לאט ולשאול: מה הוא לובש, איפה היה ומה הוא אוהב",
+     "lines": [
+      {
+       "speaker": "player",
+       "text": "סיגל, תסתכלי עליי. אנחנו נמצא אותו. מה הוא לובש? איפה בדיוק הוא היה? ומה הוא אוהב – לאן הוא היה הולך?"
+      },
+      {
+       "speaker": "sigal",
+       "text": "חולצה צהובה עם כוכב ומכנסיים אדומים. הוא עמד פה, ליד התבלינים. הוא משוגע על בלונים – כל הבוקר ביקש ללכת לדוכן הצעצועים."
+      }
+     ],
+     "effects": {
+      "reveal": [
+       "d-desc",
+       "d-where",
+       "c-sigal-balloons"
+      ],
+      "verify": [
+       "d-report"
+      ],
+      "attitude": {
+       "sigal": 2
+      },
+      "set": {
+       "heardSigal": true
+      }
+     },
+     "report": "שיחה מרגיעה עם האם: תיאור, נקודה אחרונה והרגלים"
+    },
+    {
+     "id": "s-blame",
+     "label": "לשאול: „למה לא החזקת לו את היד?”",
+     "lines": [
+      {
+       "speaker": "player",
+       "text": "למה לא החזקת לו את היד?"
+      },
+      {
+       "speaker": "sigal",
+       "text": "(פורצת בבכי) אתה חושב שאני לא יודעת?!"
+      }
+     ],
+     "effects": {
+      "attitude": {
+       "sigal": -2
+      },
+      "set": {
+       "sigalHurt": true
+      },
+      "note": "ההאשמה הגבירה את הבהלה של האם"
+     }
+    },
+    {
+     "id": "s-photo",
+     "label": "לבקש תמונה עדכנית שלו מהטלפון",
+     "lines": [
+      {
+       "speaker": "player",
+       "text": "יש לך תמונה שלו מהיום?"
+      },
+      {
+       "speaker": "sigal",
+       "text": "כן, הנה – צילמתי אותו הבוקר בכניסה."
+      },
+      {
+       "speaker": "narrator",
+       "text": "בתמונה ילד מחייך בחולצה צהובה עם כוכב."
+      }
+     ],
+     "effects": {
+      "set": {
+       "photo": true
+      },
+      "verify": [
+       "d-desc"
+      ]
+     },
+     "report": "קבלת תמונה עדכנית של הילד"
+    },
+    {
+     "id": "s-stay",
+     "label": "לבקש מסיגל להישאר כאן, בנקודה שבה נעלם, עם הטלפון פתוח",
+     "when": {
+      "not": {
+       "flag": "found"
+      }
+     },
+     "lines": [
+      {
+       "speaker": "player",
+       "text": "הכי חשוב שתישארי כאן, ליד התבלינים. ילדים חוזרים לנקודה האחרונה שבה ראו את ההורה. אני מחפש, ואת פה בשבילו."
+      },
+      {
+       "speaker": "sigal",
+       "text": "בסדר… אני פה. רק תמצא אותו."
+      }
+     ],
+     "effects": {
+      "set": {
+       "sigalPost": true
+      }
+     },
+     "report": "השארת האם בנקודת ההיעלמות"
+    },
+    {
+     "id": "s-hold",
+     "label": "לעצור את סיגל בעדינות, להסביר למה עליה להישאר ולהבטיח שאתה בקשר איתה",
+     "when": {
+      "all": [
+       {
+        "flag": "ev:panic"
+       },
+       {
+        "not": {
+         "flag": "held"
+        }
+       }
+      ]
+     },
+     "lines": [
+      {
+       "speaker": "player",
+       "text": "סיגל, עצרי. אם תרוצי לתוך הקהל, הוא יחזור לכאן ולא ימצא אף אחד. תישארי פה – אני רץ במקומך, ואני מעדכן אותך."
+      },
+      {
+       "speaker": "sigal",
+       "text": "(נושמת עמוק) …אני נשארת."
+      }
+     ],
+     "effects": {
+      "set": {
+       "held": true,
+       "sigalPost": true
+      },
+      "attitude": {
+       "sigal": 1
+      }
+     },
+     "report": "עצירת האם מריצה לקהל והסבר הסיבה"
+    },
+    {
+     "id": "s-reunite",
+     "label": "למסור את עומרי לאמו אחרי שזהותו אומתה",
+     "when": {
+      "all": [
+       {
+        "flag": "found"
+       },
+       {
+        "flag": "verifiedChild"
+       },
+       {
+        "not": {
+         "flag": "reunited"
+        }
+       }
+      ]
+     },
+     "lines": [
+      {
+       "speaker": "sigal",
+       "text": "עומרי! (מחבקת אותו) אל תעשה לי את זה שוב."
+      },
+      {
+       "speaker": "omri",
+       "text": "הבלון עף, אמא…"
+      }
+     ],
+     "effects": {
+      "set": {
+       "reunited": true
+      },
+      "reveal": [
+       "o-reunited"
+      ]
+     },
+     "report": "מסירת הילד לאמו לאחר וידוא זהות"
+    },
+    {
+     "id": "s-handfast",
+     "label": "לקרוא לסיגל ולמסור לה את הילד מיד",
+     "when": {
+      "all": [
+       {
+        "flag": "found"
+       },
+       {
+        "not": {
+         "flag": "verifiedChild"
+        }
+       },
+       {
+        "not": {
+         "flag": "reunited"
+        }
+       }
+      ]
+     },
+     "lines": [
+      {
+       "speaker": "narrator",
+       "text": "סיגל רצה ומחבקת את הילד. זה נראה בסדר – אבל לא שאלת את הילד דבר, ולא בדקת שזה באמת עומרי."
+      }
+     ],
+     "effects": {
+      "set": {
+       "reunited": true,
+       "handedFast": true
+      },
+      "reveal": [
+       "o-reunited"
+      ],
+      "note": "הילד נמסר בלי וידוא זהות"
+     }
+    }
+   ],
+   "character": "sigal"
+  },
+  {
+   "id": "h-haim",
+   "label": "חיים – סוחר",
+   "kind": "character",
+   "x": 84,
+   "y": 44,
+   "description": "חיים טביב, סוחר ירקות ותיק. רואה את כל מי שעובר בסמטה.",
+   "choices": [
+    {
+     "id": "h-ask",
+     "label": "לתאר לחיים את הילד ולשאול אם ראה אותו",
+     "lines": [
+      {
+       "speaker": "haim",
+       "text": "ילד? עוברים פה מאות ילדים ביום… איך הוא נראה?"
+      }
+     ],
+     "branches": [
+      {
+       "when": {
+        "all": [
+         {
+          "fact": "d-desc"
+         },
+         {
+          "variant": [
+           "haim"
+          ]
+         }
+        ]
+       },
+       "lines": [
+        {
+         "speaker": "haim",
+         "text": "בצהוב עם כוכב? הוא אצלי! מצאתי אותו בוכה ליד הארגזים והושבתי אותו מאחורי הדוכן, שלא ילך לאיבוד עוד יותר."
+        }
+       ],
+       "effects": {
+        "set": {
+         "found": true
+        },
+        "reveal": [
+         "o-found"
+        ],
+        "minutes": 1
+       }
+      },
+      {
+       "when": {
+        "fact": "d-desc"
+       },
+       "lines": [
+        {
+         "speaker": "haim",
+         "text": "ילד קטן בצהוב? כן, לפני כמה דקות הוא עבר פה לבד, הולך לכיוון סוף הסמטה, איפה שהבלונים."
+        }
+       ],
+       "effects": {
+        "reveal": [
+         "c-haim-saw"
+        ]
+       }
+      }
+     ],
+     "report": "שיחה עם סוחר בשוק"
+    },
+    {
+     "id": "h-describe",
+     "label": "לחזור לחיים עם התיאור והתמונה",
+     "when": {
+      "all": [
+       {
+        "chosen": "h-ask"
+       },
+       {
+        "fact": "d-desc"
+       },
+       {
+        "not": {
+         "flag": "found"
+        }
+       },
+       {
+        "not": {
+         "fact": "c-haim-saw"
+        }
+       }
+      ]
+     },
+     "lines": [
+      {
+       "speaker": "haim",
+       "text": "כן, זה הילד שעבר פה! הלך לכיוון הבלונים."
+      }
+     ],
+     "effects": {
+      "reveal": [
+       "c-haim-saw"
+      ]
+     },
+     "branches": [
+      {
+       "when": {
+        "variant": [
+         "haim"
+        ]
+       },
+       "lines": [
+        {
+         "speaker": "haim",
+         "text": "זה הוא! הוא יושב אצלי מאחורי הדוכן."
+        }
+       ],
+       "effects": {
+        "set": {
+         "found": true
+        },
+        "reveal": [
+         "o-found"
+        ],
+        "minutes": 1
+       }
+      }
+     ],
+     "report": "הצגת התיאור לסוחר"
+    },
+    {
+     "id": "h-announce",
+     "label": "לבקש מחיים להעביר את התיאור לסוחרים ולשומר השוק ולהשגיח על היציאות",
+     "when": {
+      "not": {
+       "flag": "found"
+      }
+     },
+     "lines": [
+      {
+       "speaker": "player",
+       "text": "אפשר לבקש שתעביר לסוחרים ולשומר השוק: ילד בן שש בחולצה צהובה עם כוכב. שישימו עין על היציאות ויעכבו אותו בעדינות אם רואים."
+      },
+      {
+       "speaker": "haim",
+       "text": "מיד. (צועק לדוכנים) „חבר׳ה! ילד קטן בצהוב, עם כוכב! מי שרואה – שומר עליו ומודיע!”"
+      }
+     ],
+     "effects": {
+      "set": {
+       "announced": true
+      }
+     },
+     "report": "גיוס הסוחרים ושומר השוק לחיפוש"
+    }
+   ],
+   "character": "haim"
+  },
+  {
+   "id": "h-alley",
+   "label": "סמטת הדוכנים",
+   "kind": "area",
+   "x": 48,
+   "y": 76,
+   "description": "הסמטה הראשית של השוק. צפופה ורועשת.",
+   "choices": [
+    {
+     "id": "a-search",
+     "label": "לחפש בשיטתיות לאורך הסמטה לכיוון דוכן הצעצועים",
+     "when": {
+      "not": {
+       "flag": "found"
+      }
+     },
+     "lines": [
+      {
+       "speaker": "narrator",
+       "text": "הלכת לאורך הסמטה עד דוכן הבלונים ובדקת בין הארגזים. אין ילד בצהוב. אולי מישהו מהסוחרים ראה אותו?"
+      }
+     ],
+     "effects": {
+      "minutes": 3
+     },
+     "branches": [
+      {
+       "when": {
+        "variant": [
+         "balloons"
+        ]
+       },
+       "lines": [
+        {
+         "speaker": "narrator",
+         "text": "עברת דוכן אחרי דוכן לכיוון סוף הסמטה. ליד דוכן הבלונים עומד ילד קטן בחולצה צהובה, מחזיק חוט של בלון, ובוכה בשקט."
+        }
+       ],
+       "effects": {
+        "set": {
+         "found": true
+        },
+        "reveal": [
+         "o-found"
+        ],
+        "minutes": 3
+       }
+      }
+     ],
+     "report": "חיפוש שיטתי בסמטה"
+    },
+    {
+     "id": "a-doc",
+     "label": "לתעד: שעת המציאה, המקום, מצב הילד ועם מי היה",
+     "when": {
+      "flag": "found"
+     },
+     "lines": [
+      {
+       "speaker": "narrator",
+       "text": "תיעדת: הילד נמצא ב{{foundPlace}}, {{foundWith}}, לא פצוע. שעה ומיקום נרשמו."
+      }
+     ],
+     "effects": {
+      "set": {
+       "documented": true
+      }
+     },
+     "report": "תיעוד פרטי המציאה"
+    }
+   ]
+  },
+  {
+   "id": "h-omri",
+   "label": "עומרי – הילד",
+   "kind": "character",
+   "x": 60,
+   "y": 52,
+   "description": "ילד קטן בחולצה צהובה עם כוכב. בוכה.",
+   "choices": [
+    {
+     "id": "o-kneel",
+     "label": "לרדת לגובה העיניים, להציג את עצמך בקול רך ולשאול לשמו ולשם אמו",
+     "lines": [
+      {
+       "speaker": "player",
+       "text": "היי, אני מהמשטרה. אתה בטוח עכשיו. איך קוראים לך? ואיך קוראים לאמא שלך?"
+      },
+      {
+       "speaker": "omri",
+       "text": "(מנגב את האף) עומרי… אמא שלי זה סיגל."
+      }
+     ],
+     "effects": {
+      "set": {
+       "childCalm": true,
+       "named": true
+      },
+      "attitude": {
+       "omri": 2
+      },
+      "reveal": [
+       "o-child-ok"
+      ]
+     },
+     "report": "שיחה עם הילד בגובה העיניים"
+    },
+    {
+     "id": "o-grab",
+     "label": "להרים אותו מיד על הידיים וללכת מהר לכניסה",
+     "when": {
+      "not": {
+       "flag": "childCalm"
+      }
+     },
+     "lines": [
+      {
+       "speaker": "narrator",
+       "text": "הרמת את הילד. הוא נבהל, בועט ובוכה בקול: „אני לא מכיר אותך!” אנשים מסתובבים להסתכל."
+      }
+     ],
+     "effects": {
+      "set": {
+       "grabbed": true
+      },
+      "attitude": {
+       "omri": -2
+      },
+      "note": "הרמת הילד בלי הסבר הבהילה אותו"
+     }
+    },
+    {
+     "id": "o-soothe",
+     "label": "להוריד אותו בעדינות, לכרוע ולהסביר בשקט מי אתה",
+     "when": {
+      "flag": "grabbed"
+     },
+     "lines": [
+      {
+       "speaker": "player",
+       "text": "סליחה, הבהלתי אותך. אני מהמשטרה, באתי לעזור לך למצוא את אמא. איך קוראים לך?"
+      },
+      {
+       "speaker": "omri",
+       "text": "…עומרי."
+      }
+     ],
+     "effects": {
+      "set": {
+       "childCalm": true,
+       "named": true,
+       "grabbed": false
+      },
+      "attitude": {
+       "omri": 2
+      },
+      "reveal": [
+       "o-child-ok"
+      ]
+     },
+     "report": "הרגעת הילד אחרי שנבהל"
+    },
+    {
+     "id": "o-story",
+     "label": "לשאול את עומרי מה קרה",
+     "when": {
+      "flag": "childCalm"
+     },
+     "lines": [
+      {
+       "speaker": "omri",
+       "text": "היה לי בלון והוא עף, ורצתי אחריו… ואז לא ראיתי את אמא."
+      }
+     ],
+     "effects": {
+      "reveal": [
+       "c-omri-story"
+      ]
+     },
+     "report": "שמיעת הילד על מה שקרה"
+    },
+    {
+     "id": "o-verify",
+     "label": "להשוות לתמונה בטלפון של האם ולוודא שהילד מזהה אותה",
+     "when": {
+      "all": [
+       {
+        "flag": "named"
+       },
+       {
+        "flag": "photo"
+       }
+      ]
+     },
+     "lines": [
+      {
+       "speaker": "narrator",
+       "text": "הילד תואם לתמונה. כשאתה מצביע לכיוון הכניסה, הוא קורא: „אמא!” וסיגל מנופפת אליו."
+      }
+     ],
+     "effects": {
+      "set": {
+       "verifiedChild": true
+      },
+      "reveal": [
+       "o-verified"
+      ]
+     },
+     "report": "וידוא זהות הילד לפני מסירה"
+    }
+   ],
+   "character": "omri",
+   "when": {
+    "flag": "found"
+   }
+  },
+  {
+   "id": "h-radio",
+   "label": "מכשיר הקשר – שאילתה למוקד",
+   "kind": "radio",
+   "x": 8,
+   "y": 14,
+   "description": "מכשיר הקשר האישי. לשליחת עדכון השתמש בכפתור „עדכון למוקד”.",
+   "choices": [
+    {
+     "id": "r-guard",
+     "label": "לבקש מהמוקד ליצור קשר עם הנהלת השוק כדי להפעיל כריזה",
+     "when": {
+      "not": {
+       "flag": "found"
+      }
+     },
+     "lines": [
+      {
+       "speaker": "player",
+       "text": "מוקד, אפשר ליצור קשר עם הנהלת השוק לכריזה על ילד אבוד?"
+      },
+      {
+       "speaker": "dispatch",
+       "text": "יצרנו קשר. הכריזה תופעל בעוד כמה דקות."
+      }
+     ],
+     "effects": {
+      "set": {
+       "announced": true
+      }
+     },
+     "report": "בקשת כריזה דרך הנהלת השוק"
+    }
+   ]
+  }
+ ],
+ "events": [
+  {
+   "id": "panic",
+   "title": "התפתחות: האם מתחילה לרוץ לתוך הקהל",
+   "when": {
+    "all": [
+     {
+      "not": {
+       "flag": "found"
+      }
+     },
+     {
+      "countChosen": {
+       "ids": [
+        "s-calm",
+        "s-blame",
+        "s-photo",
+        "s-stay",
+        "h-ask",
+        "h-describe",
+        "h-announce",
+        "a-search",
+        "r-guard"
+       ],
+       "gte": 3
+      }
+     }
+    ]
+   },
+   "lines": [
+    {
+     "speaker": "sigal",
+     "text": "(צורחת) עומרי! עומרי!"
+    },
+    {
+     "speaker": "narrator",
+     "text": "סיגל עוזבת את דוכן התבלינים ומתחילה לרוץ לתוך הקהל, דוחפת עגלות."
+    }
+   ],
+   "effects": {
+    "note": "האם עזבה את נקודת ההיעלמות ורצה לתוך הקהל"
+   },
+   "sfx": "alert"
+  }
+ ],
+ "update": {
+  "categories": {
+   "location": "מקום",
+   "situation": "מצב נוכחי",
+   "status": "מצב המעורבים",
+   "verified": "מה אומת",
+   "missing": "מה עדיין חסר",
+   "assistance": "סיוע נדרש",
+   "judgement": "קביעה"
+  },
+  "elements": [
+   {
+    "id": "u-loc",
+    "category": "location",
+    "text": "נמצא בשוק העיר, סמטת הדוכנים"
+   },
+   {
+    "id": "u-desc",
+    "category": "situation",
+    "text": "ילד אבוד: עומרי, 6, חולצה צהובה עם כוכב, מכנסיים אדומים",
+    "when": {
+     "fact": "d-desc"
+    }
+   },
+   {
+    "id": "u-searching",
+    "category": "situation",
+    "text": "מבצע חיפוש בסמטה, הסוחרים מעודכנים",
+    "when": {
+     "not": {
+      "flag": "found"
+     }
+    }
+   },
+   {
+    "id": "u-units",
+    "category": "assistance",
+    "text": "מבקש להעביר את התיאור לניידות ולשומרי היציאות",
+    "when": {
+     "all": [
+      {
+       "fact": "d-desc"
+      },
+      {
+       "not": {
+        "flag": "found"
+       }
+      }
+     ]
+    }
+   },
+   {
+    "id": "u-found",
+    "category": "verified",
+    "text": "הילד נמצא ב{{foundPlace}}, לא פצוע",
+    "when": {
+     "flag": "found"
+    }
+   },
+   {
+    "id": "u-verified",
+    "category": "verified",
+    "text": "זהות הילד אומתה מול האם",
+    "when": {
+     "flag": "verifiedChild"
+    }
+   },
+   {
+    "id": "u-reunited",
+    "category": "verified",
+    "text": "הילד נמסר לאמו – ניתן לבטל את החיפוש",
+    "when": {
+     "flag": "reunited"
+    }
+   },
+   {
+    "id": "u-no-assist",
+    "category": "assistance",
+    "text": "לא נדרש סיוע נוסף"
+   }
+  ],
+  "responses": [
+   {
+    "when": {
+     "inUpdate": "u-units"
+    },
+    "lines": [
+     {
+      "speaker": "dispatch",
+      "text": "מוקד: התיאור הועבר לניידות באזור ולאבטחת השוק."
+     }
+    ],
+    "effects": {
+     "set": {
+      "unitsAlerted": true
+     }
+    }
+   },
+   {
+    "when": {
+     "inUpdate": "u-reunited"
+    },
+    "lines": [
+     {
+      "speaker": "dispatch",
+      "text": "מוקד: קיבלתי, מבטל את החיפוש. כל הכבוד."
+     }
+    ],
+    "effects": {
+     "set": {
+      "cancelled": true
+     }
+    }
+   }
+  ]
+ },
+ "finish": {
+  "label": "סיום הטיפול במקום",
+  "confirm": "לסיים את הטיפול ולעבור לתחקיר? אפשר לשלוח עדכון אחרון למוקד לפני הסיום."
+ },
+ "endings": [
+  {
+   "id": "e-good",
+   "kind": "good",
+   "title": "עומרי חזר לאמו בבטחה",
+   "text": "הילד נמצא בחיפוש מסודר, נוצר איתו קשר רגוע, זהותו אומתה לפני המסירה, והמוקד ביטל את החיפוש.",
+   "when": {
+    "all": [
+     {
+      "flag": "reunited"
+     },
+     {
+      "not": {
+       "flag": "handedFast"
+      }
+     },
+     {
+      "flag": "cancelled"
+     },
+     {
+      "any": [
+       {
+        "not": {
+         "flag": "ev:panic"
+        }
+       },
+       {
+        "flag": "held"
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "e-partial",
+   "kind": "partial",
+   "title": "הילד נמצא – בדרך היו פערים",
+   "text": "עומרי נמצא, אבל לא הכול נעשה: וידוא זהות לפני מסירה, הרגעת האם, שיחה רגועה עם הילד או ביטול החיפוש.",
+   "when": {
+    "flag": "found"
+   }
+  },
+  {
+   "id": "e-retry",
+   "kind": "retry",
+   "title": "הזדמנות לתיקון: הילד עדיין לא נמצא",
+   "text": "הצוות עזב לפני שהילד נמצא. שומר השוק מצא אותו מאוחר יותר, מבוהל, ליד היציאה.",
+   "when": {
+    "always": true
+   }
+  }
+ ],
+ "hints": [
+  {
+   "when": {
+    "all": [
+     {
+      "stage": [
+       "scene"
+      ]
+     },
+     {
+      "not": {
+       "flag": "heardSigal"
+      }
+     }
+    ]
+   },
+   "text": "האם בבהלה. דיבור איטי ושאלות קצרות יעזרו לך לקבל תיאור."
+  },
+  {
+   "when": {
+    "all": [
+     {
+      "stage": [
+       "scene"
+      ]
+     },
+     {
+      "not": {
+       "flag": "sigalPost"
+      }
+     },
+     {
+      "not": {
+       "flag": "found"
+      }
+     }
+    ]
+   },
+   "text": "ילדים שהולכים לאיבוד חוזרים לא פעם לנקודה האחרונה. מי יחכה שם?"
+  },
+  {
+   "when": {
+    "all": [
+     {
+      "flag": "ev:panic"
+     },
+     {
+      "not": {
+       "flag": "held"
+      }
+     }
+    ]
+   },
+   "text": "האם רצה לתוך הקהל. צריך לעצור אותה – בעדינות ועם הסבר."
+  },
+  {
+   "when": {
+    "all": [
+     {
+      "flag": "found"
+     },
+     {
+      "not": {
+       "flag": "childCalm"
+      }
+     }
+    ]
+   },
+   "text": "ילד מבוהל. בגובה העיניים, קול רך והצגה עצמית."
+  },
+  {
+   "when": {
+    "all": [
+     {
+      "flag": "found"
+     },
+     {
+      "not": {
+       "flag": "verifiedChild"
+      }
+     }
+    ]
+   },
+   "text": "לפני שמוסרים ילד – מוודאים שזה הוא ושזו אמו."
+  },
+  {
+   "when": {
+    "always": true
+   },
+   "text": "לפני הסיום: האם המוקד יודע שאפשר לבטל את החיפוש?"
+  }
+ ],
+ "challenges": [
+  "שחק עם זרע אחר – האם הילד נמצא לבד או אצל סוחר? בדוק שהחיפוש שלך מוצא אותו בשני המקרים.",
+  "נסה להגיע לילד לפני שהאם מתחילה לרוץ לקהל.",
+  "נסח עדכון אחד שמכסה מציאה, וידוא זהות, מסירה וביטול חיפוש."
+ ],
+ "report": {
+  "reason": "התקבלה משימה מהמוקד: ילד בן 6 שנעלם בשוק העיר.",
+  "checklist": [
+   {
+    "label": "תיאור הילד",
+    "when": {
+     "fact": "d-desc"
+    }
+   },
+   {
+    "label": "נקודת ההיעלמות",
+    "when": {
+     "fact": "d-where"
+    }
+   },
+   {
+    "label": "מקום המציאה",
+    "when": {
+     "fact": "o-found"
+    }
+   },
+   {
+    "label": "וידוא זהות",
+    "when": {
+     "fact": "o-verified"
+    }
+   },
+   {
+    "label": "מה סיפר הילד",
+    "when": {
+     "fact": "c-omri-story"
+    }
+   }
+  ]
+ },
+ "media": {
+  "images": [
+   "img/market-day.webp",
+   "img/market-night.webp",
+   "img/chars/sigal-calm.webp",
+   "img/chars/sigal-tense.webp",
+   "img/chars/sigal-upset.webp",
+   "img/chars/haim-calm.webp",
+   "img/chars/haim-tense.webp",
+   "img/chars/haim-upset.webp",
+   "img/chars/omri-calm.webp",
+   "img/chars/omri-tense.webp",
+   "img/chars/omri-upset.webp",
+   "img/drive/side-day.webp",
+   "img/drive/side-night.webp",
+   "img/props/patrol.webp"
+  ],
+  "audio": [
+   "audio/crowd.mp3",
+   "audio/radio-chirp.mp3",
+   "audio/alert.mp3",
+   "audio/radio-chatter.mp3"
+  ],
+  "voice": {},
+  "narrationMissing": "אין עדיין קריינות מוקלטת בעברית. הקבצים יתווספו לתיקייה public/audio/voice/lost-child/ וימופו בשדה media.voice."
+ }
+}

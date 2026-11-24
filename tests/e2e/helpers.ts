@@ -1,7 +1,10 @@
 import { expect, type Page } from '@playwright/test';
 
 /** גרסאות התרחישים הנוכחיות (כמו ב-public/scenarios/index.json) */
-export const VERSIONS: Record<string, number> = { 'accident-rain': 3, 'noise-building': 2, 'yard-dispute': 2 };
+export const VERSIONS: Record<string, number> = {
+  'accident-rain': 3, 'noise-building': 2, 'yard-dispute': 2,
+  'missing-elder': 1, 'suspicious-object': 1, 'blocked-parking': 1, 'lost-child': 1, 'bar-fight': 1, 'gas-smell': 1,
+};
 
 export async function startScenario(page: Page, id = 'accident-rain', seed = 4, opts: { mode?: 'learning' | 'practice' } = {}) {
   await page.goto(`./#/s/${id}?v=${VERSIONS[id]}&seed=${seed}`);

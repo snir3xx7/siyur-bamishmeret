@@ -298,8 +298,38 @@ export function toWav(samples) {
   return Buffer.concat([h, data]);
 }
 
+
+/** תעבורת קשר ברקע: פרצי „דיבור” עמום ובלתי מובן (רעש מסונן עם מעטפת הברות), רחש פתיחת סקוולץ' וצפצופי סיום – בלי מילים */
+export function radioChatter() {
+  const T = 12;
+  const out = buf(T);
+  const r = rng(41);
+  const hiss = bandpass(noise(T, 42), 2400, 0.5);
+  let t = 0.6;
+  while (t < T - 2.2) {
+    const len = 0.9 + r() * 1.6;
+    const s0 = Math.round(t * SR), n = Math.round(len * SR);
+    // רחש פתיחה קצר
+    for (let i = 0; i < 0.07 * SR; i++) out[s0 + i] += hiss[s0 + i] * 0.5;
+    // „דיבור”: רעש בפס הקול עם מעטפת הברות 4–6 בשנייה
+    const voice = bandpass(noise(len, 50 + Math.floor(t * 10)), 900 + r() * 500, 1.2);
+    const syl = 4 + r() * 2.5;
+    for (let i = 0; i < n; i++) {
+      const tt = i / SR;
+      const env = Math.max(0, Math.sin(Math.PI * syl * tt + r() * 0.02)) ** 0.6 * (0.7 + 0.3 * Math.sin(2 * Math.PI * 0.7 * tt));
+      out[s0 + 3000 + i] += voice[i] * env * 1.6 + hiss[(s0 + i) % hiss.length] * 0.06;
+    }
+    // צפצוף סיום קצר ורחש סגירה
+    const e0 = s0 + 3000 + n;
+    for (let i = 0; i < 0.06 * SR; i++) out[e0 + i] += Math.sin((2 * Math.PI * 1450 * i) / SR) * 0.25;
+    for (let i = 0; i < 0.12 * SR; i++) out[e0 + 0.07 * SR + i | 0] += hiss[(e0 + i) % hiss.length] * 0.35 * (1 - i / (0.12 * SR));
+    t += len + 1.2 + r() * 2.2;
+  }
+  return normalize(loopify(highpass(out, 300), 0.4), 0.5);
+}
+
 export const SOUNDS = {
   rain, traffic, 'engine-wipers': engineWipers, 'radio-chirp': radioChirp, 'radio-end': radioEnd,
   'music-muffled': musicMuffled, 'building-hum': buildingHum, crowd, 'yard-evening': yardEvening,
-  'yard-morning': yardMorning, knock, 'ui-click': uiClick, sample, alert,
+  'yard-morning': yardMorning, knock, 'ui-click': uiClick, sample, alert, 'radio-chatter': radioChatter,
 };

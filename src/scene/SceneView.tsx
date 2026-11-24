@@ -36,7 +36,7 @@ function spriteMood(mood: Mood, have?: Mood[]): Mood {
   return order.find((m) => have.includes(m)) ?? have[0];
 }
 
-const PAINTED_PROPS = new Set(['car-red', 'car-silver', 'patrol']);
+const PAINTED_PROPS = new Set(['car-red', 'car-silver', 'patrol', 'bag']);
 
 /** שלט בעברית מעל הרקע המאויר (מודלי ציור לא כותבים עברית) */
 function Sign({ text, kind }: { text: string; kind: NonNullable<ScenePropDef['sign']> }) {
@@ -113,7 +113,7 @@ export function SceneView({ sc, st, selected, onSelect, animate, lightsAnim, sho
         .filter((p) => p.kind !== 'patrol')
         .map((p) => {
           const painted = scene.painted && PAINTED_PROPS.has(p.kind) && !broken[p.kind];
-          const w = (p.kind.startsWith('car') ? 24 : p.kind.includes('glow') ? 14 : p.kind === 'sign' ? 0 : 4) * (p.scale ?? 1);
+          const w = (p.kind.startsWith('car') ? 24 : p.kind.includes('glow') ? 14 : p.kind === 'sign' ? 0 : p.kind === 'bag' ? 7 : p.kind === 'tape' ? 30 : 4) * (p.scale ?? 1);
           if (p.kind === 'sign')
             return (
               <div key={p.id} className="actor sign-wrap" style={{ left: `${p.x}%`, top: `${p.y}%`, fontSize: `${(p.scale ?? 1) * 1.05}cqw` }} aria-hidden="true">
@@ -172,6 +172,13 @@ export function SceneView({ sc, st, selected, onSelect, animate, lightsAnim, sho
       {/* ברקע מאויר התאורה כבר בציור; גוון רק כשמשתמשים בגרסת יום לערב */}
       {(!scene.painted || (shift === 'evening' && bgVariant(scene, shift) === 'day')) && <div className={`tint ${shift}`} />}
       {scene.weather === 'rain' && <div className={`rain ${animate ? 'anim' : ''}`} />}
+      {/* בערב ובלילה: אור כחול־אדום מהניידת נשפך על צד הזירה */}
+      {patrol && lights !== 'off' && shift !== 'morning' && (
+        <div className={`edge-flash ${patrol.x < 50 ? 'left' : 'right'} ${lightsAnim ? 'anim' : ''}`} data-testid="edge-flash" aria-hidden="true">
+          <span className="b" />
+          <span className="r" />
+        </div>
+      )}
 
       {hotspots.map((h, i) => (
         <button

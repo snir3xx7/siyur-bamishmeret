@@ -1,0 +1,1931 @@
+{
+ "id": "missing-elder",
+ "version": 1,
+ "title": "קשיש שלא חזר הביתה",
+ "category": "נעדרים ואוכלוסיות פגיעות",
+ "summary": "בת מודאגת מדווחת שאביה בן ה־82 יצא לטיול ערב ולא חזר. יש לאסוף תיאור ורקע רפואי, לחפש בשיטתיות, לגשת אליו ברגישות ולוודא טיפול רפואי.",
+ "estimatedMinutes": 11,
+ "difficultyLabel": "בינונית",
+ "skills": [
+  "איסוף תיאור נעדר",
+  "בירור רקע רפואי",
+  "חיפוש שיטתי",
+  "גישה רגישה לאדם מבולבל",
+  "עדכון וביטול חיפוש"
+ ],
+ "shifts": [
+  "evening",
+  "night"
+ ],
+ "defaultShift": "evening",
+ "location": {
+  "name": "גן הברוש, רחוב הדקל",
+  "area": "שכונת נווה אורן, קריית אלון (בדוי)"
+ },
+ "objectives": [
+  "לאסוף תיאור מלא ורקע רפואי לפני החיפוש",
+  "לחפש בשיטתיות ולהיעזר באנשים במקום",
+  "לגשת לנעדר בעדינות ולוודא את זהותו",
+  "לזהות סימני מצוקה רפואית ולהזמין סיוע",
+  "לעדכן את המוקד במציאה ולהשיב את האב לבתו"
+ ],
+ "variants": [
+  {
+   "id": "bench",
+   "label": "האב יושב על ספסל בפינת הגן",
+   "set": {
+    "where": "bench"
+   },
+   "vars": {
+    "foundPlace": "ספסל בפינת הגן ליד המגלשה"
+   }
+  },
+  {
+   "id": "kiosk",
+   "label": "בעל הקיוסק הושיב את האב לידו",
+   "set": {
+    "where": "kiosk"
+   },
+   "vars": {
+    "foundPlace": "ליד הקיוסק, אצל יוסי"
+   }
+  }
+ ],
+ "facts": [
+  {
+   "id": "d-missing",
+   "kind": "dispatch",
+   "text": "אברהם כהן, בן 82, יצא לטיול לפני כשעתיים ולא חזר"
+  },
+  {
+   "id": "d-caller",
+   "kind": "dispatch",
+   "text": "המדווחת: אורית, בתו. מחכה בכניסה לגן הברוש"
+  },
+  {
+   "id": "d-desc",
+   "kind": "dispatch",
+   "text": "תיאור: קרדיגן חום, כובע מצחייה אפור, משקפיים, הולך עם מקל"
+  },
+  {
+   "id": "d-medical",
+   "kind": "dispatch",
+   "text": "רקע רפואי: סוכרת ותחילת בלבול (שכחה). לא נטל את זריקת הערב"
+  },
+  {
+   "id": "d-phone",
+   "kind": "dispatch",
+   "text": "הטלפון שלו נשאר בבית"
+  },
+  {
+   "id": "c-orit-route",
+   "kind": "claim",
+   "text": "בדרך כלל הולך לקיוסק ויושב על ספסל ליד מגרש המשחקים",
+   "source": "orit"
+  },
+  {
+   "id": "c-orit-insulin",
+   "kind": "claim",
+   "text": "לא אכל ארוחת ערב ולא קיבל את זריקת האינסולין",
+   "source": "orit"
+  },
+  {
+   "id": "c-yossi-saw",
+   "kind": "claim",
+   "text": "ראה אותו לפני כשעה קונה מים והולך לכיוון מגרש המשחקים",
+   "source": "yossi"
+  },
+  {
+   "id": "o-park-empty",
+   "kind": "observation",
+   "text": "בשבילי הגן ובמגרש המשחקים אין איש שתואם לתיאור"
+  },
+  {
+   "id": "o-found",
+   "kind": "observation",
+   "text": "אדם מבוגר שתואם לתיאור נמצא ב{{foundPlace}}"
+  },
+  {
+   "id": "o-identified",
+   "kind": "observation",
+   "text": "האדם אישר ששמו אברהם כהן ושהוא גר ברחוב הדקל"
+  },
+  {
+   "id": "o-shaky",
+   "kind": "observation",
+   "text": "אברהם רועד, מזיע ומבולבל – סימנים אפשריים לירידת סוכר"
+  },
+  {
+   "id": "o-reunited",
+   "kind": "observation",
+   "text": "אברהם הושב בחזרה עם בתו"
+  }
+ ],
+ "characters": [
+  {
+   "id": "orit",
+   "name": "אורית כהן",
+   "role": "הבת המדווחת",
+   "gender": "f",
+   "look": {
+    "skin": "#d6a57c",
+    "hair": "#3a2a20",
+    "hairStyle": "short",
+    "top": "#555",
+    "bottom": "#333"
+   },
+   "attitude": 1,
+   "x": 17,
+   "y": 96,
+   "scale": 1.4,
+   "moodRules": [
+    {
+     "when": {
+      "flag": "oritHurt"
+     },
+     "mood": "upset"
+    },
+    {
+     "when": {
+      "all": [
+       {
+        "flag": "urgent"
+       },
+       {
+        "not": {
+         "flag": "reunited"
+        }
+       }
+      ]
+     },
+     "mood": "tense"
+    }
+   ],
+   "sprite": "img/chars/orit",
+   "spriteMoods": [
+    "calm",
+    "tense",
+    "upset"
+   ]
+  },
+  {
+   "id": "yossi",
+   "name": "יוסי עזרא",
+   "role": "בעל הקיוסק",
+   "gender": "m",
+   "look": {
+    "skin": "#d6a57c",
+    "hair": "#3a2a20",
+    "hairStyle": "short",
+    "top": "#555",
+    "bottom": "#333"
+   },
+   "attitude": 1,
+   "x": 86,
+   "y": 96,
+   "scale": 1.4,
+   "sprite": "img/chars/yossi",
+   "spriteMoods": [
+    "calm",
+    "tense",
+    "upset"
+   ]
+  },
+  {
+   "id": "avraham",
+   "name": "אברהם כהן",
+   "role": "הנעדר",
+   "gender": "m",
+   "look": {
+    "skin": "#d6a57c",
+    "hair": "#3a2a20",
+    "hairStyle": "short",
+    "top": "#555",
+    "bottom": "#333"
+   },
+   "attitude": 0,
+   "x": 56,
+   "y": 95,
+   "scale": 1.3,
+   "when": {
+    "flag": "found"
+   },
+   "moodRules": [
+    {
+     "when": {
+      "flag": "grabbed"
+     },
+     "mood": "upset"
+    },
+    {
+     "when": {
+      "not": {
+       "flag": "calmed"
+      }
+     },
+     "mood": "tense"
+    }
+   ],
+   "sprite": "img/chars/avraham",
+   "spriteMoods": [
+    "calm",
+    "tense",
+    "upset"
+   ]
+  }
+ ],
+ "dispatch": {
+  "time": {
+   "evening": "19:52",
+   "night": "22:31"
+  },
+  "unit": "סייר 14",
+  "incident": "6230",
+  "lines": [
+   {
+    "speaker": "dispatch",
+    "text": "סייר 14, כאן מוקד אלון. דיווח על נעדר: אברהם כהן, בן 82, יצא לטיול מביתו ברחוב הדקל 4 לפני כשעתיים ולא חזר. הבת, אורית, מחכה בכניסה לגן הברוש. אשר קבלה."
+   }
+  ],
+  "initialFacts": [
+   "d-missing",
+   "d-caller"
+  ],
+  "basicExtraFacts": [
+   "d-desc"
+  ],
+  "followUps": [
+   {
+    "id": "f-desc",
+    "label": "לשאול: מה התיאור שלו – לבוש, מראה, אמצעי עזר?",
+    "when": {
+     "not": {
+      "fact": "d-desc"
+     }
+    },
+    "lines": [
+     {
+      "speaker": "player",
+      "text": "מוקד, יש תיאור? לבוש, מראה, משהו שבולט?"
+     },
+     {
+      "speaker": "dispatch",
+      "text": "קרדיגן חום, כובע מצחייה אפור, משקפיים. הולך עם מקל הליכה."
+     }
+    ],
+    "effects": {
+     "reveal": [
+      "d-desc"
+     ]
+    },
+    "report": "קבלת תיאור הנעדר מהמוקד"
+   },
+   {
+    "id": "f-medical",
+    "label": "לשאול: יש רקע רפואי או בעיית זיכרון?",
+    "lines": [
+     {
+      "speaker": "player",
+      "text": "יש רקע רפואי? תרופות, בעיות זיכרון?"
+     },
+     {
+      "speaker": "dispatch",
+      "text": "לפי הבת: סוכרת ותחילת בלבול. הוא לא נטל את זריקת הערב."
+     }
+    ],
+    "effects": {
+     "reveal": [
+      "d-medical"
+     ]
+    },
+    "report": "בירור רקע רפואי של הנעדר"
+   },
+   {
+    "id": "f-phone",
+    "label": "לשאול: יש לו טלפון נייד?",
+    "lines": [
+     {
+      "speaker": "player",
+      "text": "יש לו טלפון? ניסו להתקשר?"
+     },
+     {
+      "speaker": "dispatch",
+      "text": "הטלפון שלו נשאר בבית. אין דרך ליצור איתו קשר."
+     }
+    ],
+    "effects": {
+     "reveal": [
+      "d-phone"
+     ]
+    },
+    "report": "בירור אפשרות קשר עם הנעדר"
+   }
+  ],
+  "goLabel": "אישור קבלה ויציאה לגן הברוש"
+ },
+ "transition": {
+  "kind": "car",
+  "text": "נסיעה איטית ברחובות השכונה. אתה סורק את המדרכות ואת תחנות האוטובוס בדרך – אין סימן לאדם עם מקל.",
+  "travelMinutes": 4,
+  "ambience": [
+   "engine-wipers",
+   "radio-chatter"
+  ]
+ },
+ "scene": {
+  "background": "img/park",
+  "alt": "גן שכונתי בשעת ערב: שביל מרוצף עם ספסלי עץ ופנסים, מגרש משחקים עם מגלשה ונדנדות משמאל, קיוסק סגור ועצים מימין ובנייני אבן ברקע.",
+  "fallbackColor": "#1f2a3a",
+  "ambience": [
+   "yard-evening"
+  ],
+  "lights": "steady",
+  "weather": "none",
+  "bgByShift": {
+   "evening": "night",
+   "night": "night"
+  },
+  "props": [
+   {
+    "id": "patrol",
+    "kind": "patrol",
+    "x": 33,
+    "y": 88,
+    "scale": 0.75
+   },
+   {
+    "id": "sg-park",
+    "kind": "sign",
+    "x": 34,
+    "y": 52,
+    "text": "גן הברוש",
+    "sign": "shop",
+    "scale": 0.85
+   },
+   {
+    "id": "sg-street",
+    "kind": "sign",
+    "x": 8,
+    "y": 57,
+    "text": "רח׳ הדקל",
+    "sign": "street",
+    "scale": 0.8
+   },
+   {
+    "id": "sg-kiosk",
+    "kind": "sign",
+    "x": 87,
+    "y": 47,
+    "text": "קיוסק יוסי",
+    "sign": "plate",
+    "scale": 0.75
+   }
+  ],
+  "painted": true
+ },
+ "arrivalLines": [
+  {
+   "speaker": "narrator",
+   "text": "כניסה לגן הברוש. אורית ממתינה ליד השער, הטלפון ביד. הגן שקט: שבילים מוארים, מגרש משחקים ריק, וקיוסק קטן בקצה. יוסי, בעל הקיוסק, סוגר את התריס."
+  }
+ ],
+ "arrivalFacts": [],
+ "hotspots": [
+  {
+   "id": "h-orit",
+   "label": "אורית – הבת המדווחת",
+   "kind": "character",
+   "x": 17,
+   "y": 44,
+   "description": "אורית כהן, בתו של אברהם. מודאגת מאוד.",
+   "choices": [
+    {
+     "id": "o-calm",
+     "label": "להרגיע את אורית ולשאול בסבלנות: מתי יצא, מה לבש ולאן הוא נוהג ללכת?",
+     "lines": [
+      {
+       "speaker": "player",
+       "text": "אורית, אני כאן כדי למצוא אותו. בואי נעבור על זה ביחד: מתי הוא יצא, מה הוא לבש ולאן הוא בדרך כלל הולך?"
+      },
+      {
+       "speaker": "orit",
+       "text": "לפני שעתיים בערך. קרדיגן חום וכובע אפור, עם המקל. הוא תמיד הולך לקיוסק של יוסי ויושב על ספסל ליד מגרש המשחקים."
+      }
+     ],
+     "effects": {
+      "reveal": [
+       "d-desc",
+       "c-orit-route"
+      ],
+      "verify": [
+       "d-missing"
+      ],
+      "attitude": {
+       "orit": 1
+      },
+      "set": {
+       "heardOrit": true
+      }
+     },
+     "report": "שיחה רגועה עם הבת: שעת יציאה, תיאור ומסלול קבוע"
+    },
+    {
+     "id": "o-blame",
+     "label": "לשאול: „איך זה שאף אחד לא שם לב שהוא יצא לבד?”",
+     "lines": [
+      {
+       "speaker": "player",
+       "text": "איך זה שאף אחד לא שם לב שהוא יצא לבד?"
+      },
+      {
+       "speaker": "orit",
+       "text": "אתה חושב שאני לא מאשימה את עצמי מספיק? באתי לבקש עזרה, לא נזיפה."
+      }
+     ],
+     "effects": {
+      "attitude": {
+       "orit": -2
+      },
+      "set": {
+       "oritHurt": true
+      },
+      "note": "השאלה המאשימה פגעה באמון של הבת"
+     }
+    },
+    {
+     "id": "o-repair",
+     "label": "להתנצל ולהבהיר שהמטרה אחת – למצוא אותו",
+     "when": {
+      "flag": "oritHurt"
+     },
+     "lines": [
+      {
+       "speaker": "player",
+       "text": "סליחה, זה לא היה במקום. את עשית בדיוק את הדבר הנכון כשהתקשרת. בואי נתמקד במציאה שלו."
+      },
+      {
+       "speaker": "orit",
+       "text": "…בסדר. מה אתה צריך ממני?"
+      }
+     ],
+     "effects": {
+      "attitude": {
+       "orit": 2
+      },
+      "set": {
+       "oritHurt": false,
+       "repaired": true
+      }
+     },
+     "report": "תיקון הטון מול הבת"
+    },
+    {
+     "id": "o-stay",
+     "label": "לבקש מאורית להישאר בשער כנקודת קשר ולעדכן אם אביה חוזר הביתה",
+     "when": {
+      "not": {
+       "flag": "found"
+      }
+     },
+     "lines": [
+      {
+       "speaker": "player",
+       "text": "חשוב שתישארי כאן בשער, עם הטלפון פתוח. אם מישהו מהמשפחה רואה אותו בבית – תודיעי לי מיד."
+      },
+      {
+       "speaker": "orit",
+       "text": "בסדר. אחי בבית, אני אומרת לו להתקשר אם הוא מגיע."
+      }
+     ],
+     "effects": {
+      "set": {
+       "oritPost": true
+      }
+     },
+     "report": "הגדרת הבת כנקודת קשר במקום"
+    },
+    {
+     "id": "o-reunite",
+     "label": "לקרוא לאורית ולהשיב את אברהם אליה בנחת",
+     "when": {
+      "all": [
+       {
+        "flag": "found"
+       },
+       {
+        "flag": "identified"
+       }
+      ]
+     },
+     "lines": [
+      {
+       "speaker": "player",
+       "text": "אורית, מצאנו אותו. הוא בסדר, רק קצת מבולבל. בואי לאט, שלא ייבהל."
+      },
+      {
+       "speaker": "orit",
+       "text": "אבא! (מתיישבת לידו ומחזיקה את ידו) הבהלת אותנו."
+      },
+      {
+       "speaker": "avraham",
+       "text": "אוריתי… הלכתי לקנות מים, ואז לא זכרתי מאיזה צד הבית."
+      }
+     ],
+     "effects": {
+      "set": {
+       "reunited": true
+      },
+      "reveal": [
+       "o-reunited"
+      ]
+     },
+     "report": "השבת הנעדר לבתו"
+    }
+   ]
+  },
+  {
+   "id": "h-yossi",
+   "label": "יוסי – בעל הקיוסק",
+   "kind": "character",
+   "x": 86,
+   "y": 44,
+   "description": "יוסי עזרא, בעל הקיוסק בקצה הגן. מכיר את רוב תושבי השכונה.",
+   "choices": [
+    {
+     "id": "y-ask",
+     "label": "לשאול את יוסי אם ראה אדם מבוגר עם מקל",
+     "lines": [
+      {
+       "speaker": "yossi",
+       "text": "אדם מבוגר עם מקל? עוברים פה הרבה כאלה בערב… איך הוא נראה?"
+      }
+     ],
+     "branches": [
+      {
+       "when": {
+        "all": [
+         {
+          "fact": "d-desc"
+         },
+         {
+          "variant": [
+           "kiosk"
+          ]
+         }
+        ]
+       },
+       "lines": [
+        {
+         "speaker": "yossi",
+         "text": "עם קרדיגן חום וכובע אפור? הוא פה! ישב לי על הארגזים מאחורה, נראה מבולבל, אז הושבתי אותו ונתתי לו מים."
+        }
+       ],
+       "effects": {
+        "set": {
+         "found": true
+        },
+        "reveal": [
+         "o-found"
+        ],
+        "minutes": 1
+       }
+      },
+      {
+       "when": {
+        "fact": "d-desc"
+       },
+       "lines": [
+        {
+         "speaker": "yossi",
+         "text": "קרדיגן חום וכובע אפור? כן, לפני שעה בערך הוא קנה ממני מים והלך לכיוון מגרש המשחקים."
+        }
+       ],
+       "effects": {
+        "reveal": [
+         "c-yossi-saw"
+        ]
+       }
+      }
+     ],
+     "report": "שיחה עם בעל הקיוסק"
+    },
+    {
+     "id": "y-describe",
+     "label": "לתאר ליוסי את אברהם לפי הפרטים שקיבלת",
+     "when": {
+      "all": [
+       {
+        "chosen": "y-ask"
+       },
+       {
+        "fact": "d-desc"
+       },
+       {
+        "not": {
+         "flag": "found"
+        }
+       },
+       {
+        "not": {
+         "fact": "c-yossi-saw"
+        }
+       }
+      ]
+     },
+     "lines": [
+      {
+       "speaker": "yossi",
+       "text": "אה, הוא! קנה ממני מים לפני שעה והלך לכיוון מגרש המשחקים."
+      }
+     ],
+     "effects": {
+      "reveal": [
+       "c-yossi-saw"
+      ]
+     },
+     "branches": [
+      {
+       "when": {
+        "variant": [
+         "kiosk"
+        ]
+       },
+       "lines": [
+        {
+         "speaker": "yossi",
+         "text": "רגע, זה האיש שיושב לי פה מאחורה! הושבתי אותו כי הוא נראה מבולבל."
+        }
+       ],
+       "effects": {
+        "set": {
+         "found": true
+        },
+        "reveal": [
+         "o-found"
+        ],
+        "minutes": 1
+       }
+      }
+     ],
+     "report": "תיאור הנעדר לבעל הקיוסק"
+    },
+    {
+     "id": "y-watch",
+     "label": "לבקש מיוסי להשאיר את הקיוסק פתוח ולהתקשר למוקד אם יראה אותו",
+     "when": {
+      "not": {
+       "flag": "found"
+      }
+     },
+     "lines": [
+      {
+       "speaker": "player",
+       "text": "אפשר לבקש שתשאיר עין פתוחה? אם אתה רואה אותו – תתקשר מיד למוקד."
+      },
+      {
+       "speaker": "yossi",
+       "text": "בטח. אני מכיר את אברהם מהשכונה, אני אשים לב."
+      }
+     ],
+     "effects": {
+      "set": {
+       "yossiWatch": true
+      }
+     },
+     "report": "גיוס בעל הקיוסק לתצפית"
+    }
+   ]
+  },
+  {
+   "id": "h-path",
+   "label": "שבילי הגן ומגרש המשחקים",
+   "kind": "area",
+   "x": 40,
+   "y": 74,
+   "description": "שבילים מרוצפים, ספסלים ומגרש משחקים. התאורה חלקית.",
+   "choices": [
+    {
+     "id": "p-search",
+     "label": "לחפש בשיטתיות: מגרש המשחקים, הספסלים ומאחורי השיחים",
+     "when": {
+      "not": {
+       "flag": "found"
+      }
+     },
+     "lines": [
+      {
+       "speaker": "narrator",
+       "text": "סרקת את מגרש המשחקים, את הספסלים ואת השיחים לאורך הגדר. אין איש שתואם לתיאור. אולי מישהו בגן ראה אותו?"
+      }
+     ],
+     "effects": {
+      "reveal": [
+       "o-park-empty"
+      ],
+      "minutes": 4
+     },
+     "branches": [
+      {
+       "when": {
+        "variant": [
+         "bench"
+        ]
+       },
+       "lines": [
+        {
+         "speaker": "narrator",
+         "text": "הלכת לאורך השביל ובדקת כל ספסל. בפינת הגן, ליד המגלשה, יושב אדם מבוגר בכובע אפור, מקל מונח לצדו. הוא מביט סביבו בבלבול."
+        }
+       ],
+       "effects": {
+        "set": {
+         "found": true
+        },
+        "reveal": [
+         "o-found"
+        ],
+        "minutes": 4
+       }
+      }
+     ],
+     "report": "חיפוש שיטתי בגן"
+    },
+    {
+     "id": "p-shout",
+     "label": "לרוץ בין השבילים ולקרוא בקול „אברהם!”",
+     "when": {
+      "not": {
+       "flag": "found"
+      }
+     },
+     "lines": [
+      {
+       "speaker": "narrator",
+       "text": "קראת בקול ורצת בין השבילים. כמה חלונות נפתחו בבניינים, אבל איש לא ענה."
+      }
+     ],
+     "effects": {
+      "minutes": 2
+     },
+     "branches": [
+      {
+       "when": {
+        "variant": [
+         "bench"
+        ]
+       },
+       "lines": [
+        {
+         "speaker": "narrator",
+         "text": "קראת בקול ורצת בין השבילים. בפינת הגן אדם מבוגר מתכווץ על הספסל ונבהל מהצעקות."
+        }
+       ],
+       "effects": {
+        "set": {
+         "found": true,
+         "startled": true
+        },
+        "reveal": [
+         "o-found"
+        ],
+        "attitude": {
+         "avraham": -1
+        },
+        "minutes": 2,
+        "note": "הקריאות בקול הבהילו את הנעדר המבולבל"
+       }
+      }
+     ],
+     "report": "חיפוש מהיר בקריאות"
+    },
+    {
+     "id": "p-note",
+     "label": "לתעד: שעת המציאה, המקום, מצבו ומי היה איתו",
+     "when": {
+      "flag": "found"
+     },
+     "lines": [
+      {
+       "speaker": "narrator",
+       "text": "תיעדת: האב נמצא ב{{foundPlace}}, מצבו כפי שנצפה, ומי היה איתו ברגע המציאה."
+      }
+     ],
+     "effects": {
+      "set": {
+       "documented": true
+      }
+     },
+     "report": "תיעוד שעת המציאה, המקום ומצב הנעדר"
+    }
+   ]
+  },
+  {
+   "id": "h-avraham",
+   "label": "אברהם – הנעדר",
+   "kind": "character",
+   "x": 56,
+   "y": 45,
+   "description": "אדם מבוגר בקרדיגן חום ובכובע אפור, מקל הליכה לצדו.",
+   "choices": [
+    {
+     "id": "a-gentle",
+     "label": "להתקרב לאט, להציג את עצמך ולשאול בעדינות לשמו",
+     "lines": [
+      {
+       "speaker": "player",
+       "text": "ערב טוב, אדוני. אני מצוות הסיור. אני יכול לשבת רגע לידך? איך קוראים לך?"
+      },
+      {
+       "speaker": "avraham",
+       "text": "אברהם… אברהם כהן. אני גר פה, ברחוב הדקל. רק שכחתי לאיזה כיוון."
+      }
+     ],
+     "effects": {
+      "set": {
+       "identified": true,
+       "calmed": true
+      },
+      "reveal": [
+       "o-identified"
+      ],
+      "verify": [
+       "d-desc"
+      ],
+      "attitude": {
+       "avraham": 2
+      }
+     },
+     "report": "גישה רגועה לנעדר ואימות זהותו"
+    },
+    {
+     "id": "a-grab",
+     "label": "לאחוז בזרועו ולומר: „בוא, הבת שלך מחכה, הולכים”",
+     "when": {
+      "not": {
+       "flag": "identified"
+      }
+     },
+     "lines": [
+      {
+       "speaker": "player",
+       "text": "בוא, הבת שלך מחכה. הולכים."
+      },
+      {
+       "speaker": "avraham",
+       "text": "מי אתה? עזוב אותי! אני לא הולך עם אנשים שאני לא מכיר!"
+      }
+     ],
+     "effects": {
+      "set": {
+       "grabbed": true
+      },
+      "attitude": {
+       "avraham": -2
+      },
+      "note": "האחיזה בלי הסבר הבהילה אדם מבולבל"
+     }
+    },
+    {
+     "id": "a-soothe",
+     "label": "להרפות, להתיישב לידו ולהסביר בשקט מי אתה",
+     "when": {
+      "any": [
+       {
+        "flag": "grabbed"
+       },
+       {
+        "flag": "startled"
+       }
+      ]
+     },
+     "lines": [
+      {
+       "speaker": "player",
+       "text": "סליחה, הבהלתי אותך. אני מהסיור, אני כאן לעזור. איך קוראים לך?"
+      },
+      {
+       "speaker": "avraham",
+       "text": "…אברהם כהן. מרחוב הדקל."
+      }
+     ],
+     "effects": {
+      "set": {
+       "identified": true,
+       "calmed": true,
+       "grabbed": false
+      },
+      "reveal": [
+       "o-identified"
+      ],
+      "attitude": {
+       "avraham": 2
+      }
+     },
+     "report": "הרגעת הנעדר אחרי שנבהל"
+    },
+    {
+     "id": "a-check",
+     "label": "לשאול איך הוא מרגיש ולהתבונן: נשימה, הזעה, רעד",
+     "lines": [
+      {
+       "speaker": "player",
+       "text": "איך אתה מרגיש? אכלת משהו הערב?"
+      },
+      {
+       "speaker": "avraham",
+       "text": "לא… קצת חלש לי. הידיים רועדות."
+      },
+      {
+       "speaker": "narrator",
+       "text": "מצחו מכוסה זיעה למרות הקרירות, והוא מתקשה למקד מבט."
+      }
+     ],
+     "effects": {
+      "reveal": [
+       "o-shaky"
+      ],
+      "set": {
+       "checked": true
+      }
+     },
+     "report": "בדיקת מצבו של הנעדר וזיהוי סימני מצוקה"
+    }
+   ],
+   "character": "avraham",
+   "when": {
+    "flag": "found"
+   }
+  },
+  {
+   "id": "h-radio",
+   "label": "מכשיר הקשר – שאילתה למוקד",
+   "kind": "radio",
+   "x": 8,
+   "y": 14,
+   "description": "מכשיר הקשר האישי. לשליחת עדכון השתמש בכפתור „עדכון למוקד”.",
+   "choices": [
+    {
+     "id": "r-home",
+     "label": "לבקש מהמוקד לוודא שהוא לא חזר הביתה בינתיים",
+     "when": {
+      "not": {
+       "flag": "found"
+      }
+     },
+     "lines": [
+      {
+       "speaker": "player",
+       "text": "מוקד, אפשר לוודא מול הבית שהוא לא חזר בינתיים?"
+      },
+      {
+       "speaker": "dispatch",
+       "text": "בדקנו עם הבן בבית – הוא לא חזר."
+      }
+     ],
+     "effects": {
+      "verify": [
+       "d-missing"
+      ]
+     },
+     "report": "וידוא מול הבית שהנעדר לא חזר"
+    }
+   ]
+  }
+ ],
+ "events": [
+  {
+   "id": "insulin",
+   "title": "התפתחות: הזמן לוחץ",
+   "when": {
+    "all": [
+     {
+      "not": {
+       "flag": "found"
+      }
+     },
+     {
+      "countChosen": {
+       "ids": [
+        "o-calm",
+        "o-blame",
+        "o-repair",
+        "o-stay",
+        "y-ask",
+        "y-describe",
+        "y-watch",
+        "p-search",
+        "p-shout",
+        "r-home"
+       ],
+       "gte": 3
+      }
+     }
+    ]
+   },
+   "lines": [
+    {
+     "speaker": "orit",
+     "text": "(מתקרבת בבהלה, הטלפון ביד) אחי התקשר – אבא לא אכל ארוחת ערב, והזריקה שלו עדיין על השולחן. הוא בלי אינסולין כבר שעות!"
+    }
+   ],
+   "effects": {
+    "set": {
+     "urgent": true
+    },
+    "reveal": [
+     "c-orit-insulin"
+    ],
+    "note": "התברר שהנעדר בלי אוכל ובלי תרופה – החיפוש הפך דחוף"
+   },
+   "sfx": "alert"
+  }
+ ],
+ "update": {
+  "categories": {
+   "location": "מקום",
+   "situation": "מצב נוכחי",
+   "status": "מצב המעורבים",
+   "verified": "מה אומת",
+   "missing": "מה עדיין חסר",
+   "assistance": "סיוע נדרש",
+   "judgement": "קביעה"
+  },
+  "elements": [
+   {
+    "id": "u-loc",
+    "category": "location",
+    "text": "נמצא בגן הברוש, רחוב הדקל"
+   },
+   {
+    "id": "u-desc",
+    "category": "situation",
+    "text": "נעדר: אברהם כהן, 82, קרדיגן חום, כובע אפור, מקל הליכה",
+    "when": {
+     "fact": "d-desc"
+    }
+   },
+   {
+    "id": "u-medical",
+    "category": "status",
+    "text": "רקע רפואי: סוכרת ובלבול, לא קיבל אינסולין",
+    "when": {
+     "any": [
+      {
+       "fact": "d-medical"
+      },
+      {
+       "fact": "c-orit-insulin"
+      }
+     ]
+    }
+   },
+   {
+    "id": "u-searching",
+    "category": "situation",
+    "text": "מבצע חיפוש בגן ובסביבתו",
+    "when": {
+     "not": {
+      "flag": "found"
+     }
+    }
+   },
+   {
+    "id": "u-seen",
+    "category": "verified",
+    "text": "נראה לפני כשעה ליד הקיוסק",
+    "when": {
+     "fact": "c-yossi-saw"
+    }
+   },
+   {
+    "id": "u-broadcast",
+    "category": "assistance",
+    "text": "מבקש להפיץ את התיאור לכל הניידות באזור",
+    "when": {
+     "all": [
+      {
+       "fact": "d-desc"
+      },
+      {
+       "not": {
+        "flag": "found"
+       }
+      }
+     ]
+    }
+   },
+   {
+    "id": "u-found",
+    "category": "verified",
+    "text": "הנעדר נמצא ב{{foundPlace}} וזהותו אומתה",
+    "when": {
+     "flag": "identified"
+    }
+   },
+   {
+    "id": "u-found-unverified",
+    "category": "situation",
+    "text": "נמצא אדם שתואם לתיאור – זהות טרם אומתה",
+    "when": {
+     "all": [
+      {
+       "flag": "found"
+      },
+      {
+       "not": {
+        "flag": "identified"
+       }
+      }
+     ]
+    }
+   },
+   {
+    "id": "u-shaky",
+    "category": "status",
+    "text": "רועד, מזיע ומבולבל – חשש לירידת סוכר",
+    "when": {
+     "fact": "o-shaky"
+    }
+   },
+   {
+    "id": "u-ems",
+    "category": "assistance",
+    "text": "מבקש צוות רפואי למקום",
+    "when": {
+     "flag": "found"
+    }
+   },
+   {
+    "id": "u-reunited",
+    "category": "verified",
+    "text": "הנעדר הושב לבתו",
+    "when": {
+     "flag": "reunited"
+    }
+   },
+   {
+    "id": "u-cancel",
+    "category": "assistance",
+    "text": "ניתן לבטל את החיפוש בשאר הניידות",
+    "when": {
+     "flag": "identified"
+    }
+   },
+   {
+    "id": "u-no-assist",
+    "category": "assistance",
+    "text": "לא נדרש סיוע נוסף"
+   }
+  ],
+  "responses": [
+   {
+    "when": {
+     "inUpdate": "u-broadcast"
+    },
+    "lines": [
+     {
+      "speaker": "dispatch",
+      "text": "מוקד: התיאור הופץ לכל הניידות באזור."
+     }
+    ],
+    "effects": {
+     "set": {
+      "broadcast": true
+     }
+    }
+   },
+   {
+    "when": {
+     "inUpdate": "u-ems"
+    },
+    "lines": [
+     {
+      "speaker": "dispatch",
+      "text": "מוקד: צוות רפואי בדרך אליכם, כשמונה דקות."
+     }
+    ],
+    "effects": {
+     "set": {
+      "ems": true
+     }
+    }
+   },
+   {
+    "when": {
+     "inUpdate": "u-cancel"
+    },
+    "lines": [
+     {
+      "speaker": "dispatch",
+      "text": "מוקד: קיבלתי, מבטל את החיפוש בשאר הניידות."
+     }
+    ],
+    "effects": {
+     "set": {
+      "cancelled": true
+     }
+    }
+   }
+  ]
+ },
+ "finish": {
+  "label": "סיום הטיפול במקום",
+  "confirm": "לסיים את הטיפול ולעבור לתחקיר? אפשר לשלוח עדכון אחרון למוקד לפני הסיום."
+ },
+ "endings": [
+  {
+   "id": "e-good",
+   "kind": "good",
+   "title": "אברהם נמצא, נבדק והושב לבתו",
+   "text": "החיפוש היה שיטתי, הנעדר זוהה בעדינות, סימני המצוקה זוהו וצוות רפואי הוזמן. המוקד עודכן וביטל את החיפוש.",
+   "when": {
+    "all": [
+     {
+      "flag": "reunited"
+     },
+     {
+      "flag": "ems"
+     },
+     {
+      "flag": "checked"
+     },
+     {
+      "flag": "cancelled"
+     }
+    ]
+   }
+  },
+  {
+   "id": "e-partial",
+   "kind": "partial",
+   "title": "הנעדר נמצא – הטיפול לא הושלם",
+   "text": "אברהם נמצא, אבל חלק מהצעדים לא בוצעו: בדיקת מצבו, הזמנת סיוע רפואי, השבה לבת או עדכון וביטול החיפוש.",
+   "when": {
+    "flag": "found"
+   }
+  },
+  {
+   "id": "e-retry",
+   "kind": "retry",
+   "title": "הזדמנות לתיקון: אברהם עדיין לא נמצא",
+   "text": "הצוות עזב לפני שאברהם נמצא. כעבור חצי שעה מצאה אותו ניידת אחרת, מבולבל וחלש.",
+   "when": {
+    "always": true
+   }
+  }
+ ],
+ "hints": [
+  {
+   "when": {
+    "all": [
+     {
+      "stage": [
+       "dispatch"
+      ]
+     },
+     {
+      "not": {
+       "fact": "d-desc"
+      }
+     }
+    ]
+   },
+   "text": "בלי תיאור קשה לחפש. אפשר לשאול את המוקד איך הוא נראה ומה לבש."
+  },
+  {
+   "when": {
+    "all": [
+     {
+      "stage": [
+       "dispatch"
+      ]
+     },
+     {
+      "not": {
+       "chosen": "f-medical"
+      }
+     }
+    ]
+   },
+   "text": "אצל אדם מבוגר שנעדר, רקע רפואי משנה את רמת הדחיפות."
+  },
+  {
+   "when": {
+    "all": [
+     {
+      "stage": [
+       "scene"
+      ]
+     },
+     {
+      "not": {
+       "flag": "heardOrit"
+      }
+     }
+    ]
+   },
+   "text": "הבת מכירה את ההרגלים שלו. לאן הוא נוהג ללכת?"
+  },
+  {
+   "when": {
+    "fact": "o-park-empty"
+   },
+   "text": "בגן לא מצאת אותו. מי עוד נמצא כאן ועשוי לראות אותו?"
+  },
+  {
+   "when": {
+    "all": [
+     {
+      "flag": "found"
+     },
+     {
+      "not": {
+       "flag": "identified"
+      }
+     }
+    ]
+   },
+   "text": "אדם מבולבל עלול להיבהל. גישה איטית והצגה עצמית עובדות טוב יותר מאחיזה."
+  },
+  {
+   "when": {
+    "all": [
+     {
+      "flag": "identified"
+     },
+     {
+      "not": {
+       "flag": "checked"
+      }
+     }
+    ]
+   },
+   "text": "הוא נמצא – אבל איך הוא מרגיש? חשוב על הרקע הרפואי."
+  },
+  {
+   "when": {
+    "all": [
+     {
+      "flag": "identified"
+     },
+     {
+      "not": {
+       "flag": "cancelled"
+      }
+     }
+    ]
+   },
+   "text": "ניידות אחרות אולי עדיין מחפשות. המוקד צריך לדעת שהוא נמצא."
+  },
+  {
+   "when": {
+    "always": true
+   },
+   "text": "לפני הסיום: האם הוא בידיים טובות, והאם המוקד יודע מה קרה?"
+  }
+ ],
+ "scoring": {
+  "rules": [
+   {
+    "id": "m-info-desc",
+    "domain": "info",
+    "label": "קבלת תיאור הנעדר לפני החיפוש",
+    "max": 10,
+    "required": true,
+    "anchor": [
+     "f-desc",
+     "o-calm"
+    ],
+    "tiers": [
+     {
+      "when": {
+       "any": [
+        {
+         "chosen": "f-desc"
+        },
+        {
+         "all": [
+          {
+           "chosen": "o-calm"
+          },
+          {
+           "before": [
+            "o-calm",
+            "p-search"
+           ]
+          },
+          {
+           "before": [
+            "o-calm",
+            "p-shout"
+           ]
+          }
+         ]
+        }
+       ]
+      },
+      "points": 10,
+      "explain": "התיאור התקבל לפני תחילת החיפוש.",
+      "keep": "לפני שהתחלת לחפש כבר ידעת מה הוא לובש ושהוא הולך עם מקל. כך יכולת לזהות אותו ולתאר אותו לאחרים."
+     },
+     {
+      "when": {
+       "fact": "d-desc"
+      },
+      "points": 5,
+      "explain": "התיאור התקבל רק אחרי שהחיפוש התחיל.",
+      "improve": "התחלת לחפש לפני שידעת איך הנעדר נראה. בסבב הבא קבל תיאור מהמוקד או מהבת לפני החיפוש."
+     }
+    ],
+    "fallback": {
+     "explain": "לא התקבל תיאור.",
+     "improve": "לא קיבלת תיאור של הנעדר. בסבב הבא שאל את המוקד או את הבת מה הוא לבש ואיך הוא נראה."
+    }
+   },
+   {
+    "id": "m-info-medical",
+    "domain": "info",
+    "label": "בירור רקע רפואי",
+    "max": 8,
+    "required": true,
+    "anchor": [
+     "f-medical"
+    ],
+    "tiers": [
+     {
+      "when": {
+       "chosen": "f-medical"
+      },
+      "points": 8,
+      "explain": "הרקע הרפואי התברר כבר בשלב המוקד.",
+      "keep": "שאלת את המוקד על רקע רפואי וידעת מראש על סוכרת ובלבול. זה הפך את החיפוש לדחוף והכין אותך לגשת אליו בעדינות."
+     },
+     {
+      "when": {
+       "fact": "c-orit-insulin"
+      },
+      "points": 4,
+      "explain": "הרקע הרפואי התברר רק כשהבת סיפרה.",
+      "improve": "שמעת על הסוכרת רק כשהבת חזרה בבהלה. בסבב הבא שאל על רקע רפואי כבר בקבלת המשימה – אצל נעדר מבוגר זה קובע את הדחיפות."
+     }
+    ],
+    "fallback": {
+     "explain": "הרקע הרפואי לא התברר.",
+     "improve": "לא בירת אם יש לנעדר רקע רפואי. בסבב הבא שאל על תרופות, מחלות ובלבול."
+    }
+   },
+   {
+    "id": "m-info-witness",
+    "domain": "info",
+    "label": "היעזרות באנשים במקום",
+    "max": 7,
+    "required": false,
+    "tiers": [
+     {
+      "when": {
+       "any": [
+        {
+         "fact": "c-yossi-saw"
+        },
+        {
+         "all": [
+          {
+           "variant": [
+            "kiosk"
+           ]
+          },
+          {
+           "flag": "found"
+          }
+         ]
+        }
+       ]
+      },
+      "points": 7,
+      "explain": "בעל הקיוסק נשאל עם תיאור מדויק.",
+      "keep": "תיארת ליוסי את אברהם במדויק, והוא נתן לך כיוון ברור. אנשים קבועים במקום הם מקור מידע חשוב."
+     },
+     {
+      "when": {
+       "chosen": "y-ask"
+      },
+      "points": 3,
+      "explain": "בעל הקיוסק נשאל, אך בלי תיאור.",
+      "improve": "שאלת את יוסי בלי לתאר את הנעדר, והתשובה הייתה כללית. בסבב הבא תאר לבוש ומקל – זה עוזר להיזכר."
+     }
+    ],
+    "fallback": {
+     "explain": "לא נעשתה היעזרות באנשים במקום.",
+     "improve": "לא שאלת את האנשים בגן. בסבב הבא פנה למי שנמצא שם באופן קבוע, כמו בעל הקיוסק."
+    }
+   },
+   {
+    "id": "m-assess-search",
+    "domain": "assessment",
+    "label": "חיפוש שיטתי",
+    "max": 9,
+    "required": true,
+    "anchor": [
+     "p-search",
+     "p-shout",
+     "y-ask"
+    ],
+    "tiers": [
+     {
+      "when": {
+       "all": [
+        {
+         "flag": "found"
+        },
+        {
+         "not": {
+          "chosen": "p-shout"
+         }
+        }
+       ]
+      },
+      "points": 9,
+      "explain": "הנעדר נמצא בחיפוש מסודר.",
+      "keep": "חיפשת בשיטתיות – ספסל אחרי ספסל, ושאלת את מי שבמקום. כך מצאת אותו בלי להבהיל אותו."
+     },
+     {
+      "when": {
+       "flag": "found"
+      },
+      "points": 5,
+      "explain": "הנעדר נמצא, אך בחיפוש רועש.",
+      "improve": "קריאות בקול וריצה בין השבילים מבהילות אדם מבולבל. בסבב הבא חפש בשקט ובשיטתיות."
+     }
+    ],
+    "fallback": {
+     "explain": "הנעדר לא נמצא.",
+     "improve": "הנעדר לא נמצא לפני שעזבת. בסבב הבא חפש במקומות שהבת תיארה ושאל את האנשים במקום."
+    }
+   },
+   {
+    "id": "m-assess-check",
+    "domain": "assessment",
+    "label": "זיהוי מצוקה רפואית",
+    "max": 10,
+    "required": true,
+    "anchor": [
+     "a-check"
+    ],
+    "tiers": [
+     {
+      "when": {
+       "chosen": "a-check"
+      },
+      "points": 10,
+      "explain": "מצבו נבדק וזוהו סימני מצוקה.",
+      "keep": "שאלת איך הוא מרגיש והתבוננת – רעד, הזעה ובלבול. בשילוב הסוכרת זה סימן לקרוא לצוות רפואי מיד."
+     }
+    ],
+    "fallback": {
+     "explain": "מצבו לא נבדק.",
+     "improve": "לא בדקת איך הנעדר מרגיש. אצל אדם עם סוכרת שלא אכל – בדוק נשימה, הזעה ורעד והזמן סיוע."
+    }
+   },
+   {
+    "id": "m-assess-post",
+    "domain": "assessment",
+    "label": "נקודת קשר עם המשפחה",
+    "max": 6,
+    "required": false,
+    "tiers": [
+     {
+      "when": {
+       "any": [
+        {
+         "chosen": "o-stay"
+        },
+        {
+         "chosen": "r-home"
+        }
+       ]
+      },
+      "points": 6,
+      "explain": "הוגדרה נקודת קשר או נבדק שהוא לא חזר הביתה.",
+      "keep": "דאגת שמישהו יבדוק אם הוא חזר הביתה. כך לא מחפשים אדם שכבר בבית."
+     }
+    ],
+    "fallback": {
+     "explain": "לא נבדק אם חזר הביתה.",
+     "improve": "לא וידאת שהנעדר לא חזר הביתה בינתיים. בסבב הבא בקש מהבת להישאר בקשר עם הבית או שאל את המוקד."
+    }
+   },
+   {
+    "id": "m-comm-orit",
+    "domain": "communication",
+    "label": "שיח עם הבת המודאגת",
+    "max": 10,
+    "required": true,
+    "tiers": [
+     {
+      "when": {
+       "all": [
+        {
+         "chosen": "o-calm"
+        },
+        {
+         "not": {
+          "chosen": "o-blame"
+         }
+        }
+       ]
+      },
+      "points": 10,
+      "explain": "השיחה עם הבת הייתה רגועה ומכבדת.",
+      "keep": "דיברת עם אורית בסבלנות, בלי האשמה. היא נתנה לך את כל המידע שהיה צריך."
+     },
+     {
+      "when": {
+       "all": [
+        {
+         "chosen": "o-blame"
+        },
+        {
+         "chosen": "o-repair"
+        }
+       ]
+      },
+      "points": 6,
+      "explain": "נשאלה שאלה מאשימה, ואחר כך הטון תוקן.",
+      "improve": "השאלה „איך אף אחד לא שם לב” פגעה בבת. התנצלת וחזרת למסלול – טוב. בסבב הבא הימנע מהאשמה מלכתחילה."
+     },
+     {
+      "when": {
+       "chosen": "o-blame"
+      },
+      "points": 2,
+      "explain": "נשאלה שאלה מאשימה ולא תוקנה.",
+      "improve": "אורית נשארה פגועה מהשאלה המאשימה. בני משפחה של נעדר צריכים תחושה שעוזרים להם."
+     }
+    ],
+    "fallback": {
+     "explain": "לא התקיימה שיחה עם הבת.",
+     "improve": "לא שוחחת עם הבת. בסבב הבא שמע ממנה על ההרגלים שלו – זה המידע הכי שימושי לחיפוש."
+    }
+   },
+   {
+    "id": "m-comm-elder",
+    "domain": "communication",
+    "label": "גישה רגישה לנעדר",
+    "max": 10,
+    "required": true,
+    "tiers": [
+     {
+      "when": {
+       "all": [
+        {
+         "chosen": "a-gentle"
+        },
+        {
+         "not": {
+          "flag": "startled"
+         }
+        }
+       ]
+      },
+      "points": 10,
+      "explain": "הגישה לנעדר הייתה איטית ומרגיעה.",
+      "keep": "התקרבת לאט, הצגת את עצמך ושאלת לשמו. כך אישרת את זהותו בלי להבהיל אדם מבולבל."
+     },
+     {
+      "when": {
+       "chosen": "a-soothe"
+      },
+      "points": 5,
+      "explain": "הנעדר נבהל, ואחר כך הורגע.",
+      "improve": "אחיזה בלי הסבר או קריאות בקול הבהילו את אברהם. הרגעת אותו אחר כך – טוב. בסבב הבא התחל בהצגה עצמית ובקול רגוע."
+     },
+     {
+      "when": {
+       "chosen": "a-gentle"
+      },
+      "points": 7,
+      "explain": "הגישה הייתה רגועה, אך הנעדר כבר נבהל מהחיפוש הרועש.",
+      "improve": "הקריאות בקול בגן הבהילו את אברהם עוד לפני שהגעת אליו. בסבב הבא חפש בשקט."
+     }
+    ],
+    "fallback": {
+     "explain": "לא התקיימה שיחה עם הנעדר.",
+     "improve": "לא דיברת עם אברהם ולא אימתת את זהותו. בסבב הבא גש אליו בעדינות ושאל לשמו."
+    }
+   },
+   {
+    "id": "m-disp-desc",
+    "domain": "dispatch",
+    "label": "הפצת התיאור ועדכון בזמן החיפוש",
+    "max": 8,
+    "required": false,
+    "anchor": [
+     "sent:u-broadcast"
+    ],
+    "tiers": [
+     {
+      "when": {
+       "sent": "u-broadcast"
+      },
+      "points": 8,
+      "explain": "התבקשה הפצת התיאור לניידות.",
+      "keep": "ביקשת להפיץ את התיאור לכל הניידות. כך יותר עיניים מחפשות בזמן שאתה בגן."
+     },
+     {
+      "when": {
+       "sent": "u-desc"
+      },
+      "points": 4,
+      "explain": "התיאור נמסר למוקד, ללא בקשת הפצה.",
+      "improve": "מסרת את התיאור, אבל לא ביקשת להפיץ אותו. בסבב הבא בקש במפורש שגם ניידות אחרות יחפשו."
+     }
+    ],
+    "fallback": {
+     "explain": "התיאור לא נמסר למוקד בזמן החיפוש.",
+     "improve": "לא עדכנת את המוקד בזמן החיפוש. בסבב הבא בקש להפיץ את התיאור כבר בהתחלה."
+    }
+   },
+   {
+    "id": "m-disp-found",
+    "domain": "dispatch",
+    "label": "עדכון מציאה, סיוע וביטול חיפוש",
+    "max": 12,
+    "required": true,
+    "anchor": [
+     "update:last"
+    ],
+    "tiers": [
+     {
+      "when": {
+       "all": [
+        {
+         "sent": "u-found"
+        },
+        {
+         "sent": "u-ems"
+        },
+        {
+         "sent": "u-cancel"
+        }
+       ]
+      },
+      "points": 12,
+      "explain": "נמסרה מציאה מאומתת, הוזמן צוות רפואי ובוטל החיפוש.",
+      "keep": "עדכנת שהנעדר נמצא וזהותו אומתה, הזמנת צוות רפואי וביקשת לבטל את החיפוש. כל המעגל נסגר."
+     },
+     {
+      "when": {
+       "all": [
+        {
+         "sent": "u-found"
+        },
+        {
+         "sent": "u-ems"
+        }
+       ]
+      },
+      "points": 8,
+      "explain": "נמסרה מציאה והוזמן סיוע, ללא ביטול חיפוש.",
+      "improve": "לא ביקשת לבטל את החיפוש – ניידות אחרות המשיכו לחפש. בסבב הבא סגור את המעגל."
+     },
+     {
+      "when": {
+       "any": [
+        {
+         "sent": "u-found"
+        },
+        {
+         "sent": "u-found-unverified"
+        }
+       ]
+      },
+      "points": 5,
+      "explain": "נמסרה מציאה בלבד.",
+      "improve": "עדכנת על המציאה, אבל לא הזמנת צוות רפואי. אצל נעדר עם סוכרת שלא אכל – בקש סיוע."
+     }
+    ],
+    "fallback": {
+     "explain": "לא נמסר עדכון מציאה.",
+     "improve": "המוקד לא קיבל עדכון שהנעדר נמצא. בסבב הבא עדכן מיד, בקש סיוע ובטל את החיפוש."
+    }
+   },
+   {
+    "id": "m-doc-note",
+    "domain": "documentation",
+    "label": "תיעוד המציאה",
+    "max": 5,
+    "required": true,
+    "tiers": [
+     {
+      "when": {
+       "chosen": "p-note"
+      },
+      "points": 5,
+      "explain": "תועדו שעה, מקום ומצב.",
+      "keep": "תיעדת איפה ומתי נמצא ובאיזה מצב. המידע הזה חשוב אם זה יקרה שוב."
+     }
+    ],
+    "fallback": {
+     "explain": "המציאה לא תועדה.",
+     "improve": "לא תיעדת את פרטי המציאה. בסבב הבא רשום שעה, מקום, מצב ומי היה איתו."
+    }
+   },
+   {
+    "id": "m-doc-medical",
+    "domain": "documentation",
+    "label": "העברת הרקע הרפואי",
+    "max": 5,
+    "required": false,
+    "tiers": [
+     {
+      "when": {
+       "sent": "u-medical"
+      },
+      "points": 5,
+      "explain": "הרקע הרפואי נמסר למוקד.",
+      "keep": "מסרת למוקד את הרקע הרפואי. הצוות הרפואי מגיע מוכן."
+     }
+    ],
+    "fallback": {
+     "explain": "הרקע הרפואי לא נמסר.",
+     "improve": "לא מסרת את הרקע הרפואי בעדכון. בסבב הבא כלול סוכרת וזריקה שלא ניתנה – זה מכין את הצוות הרפואי."
+    }
+   }
+  ]
+ },
+ "challenges": [
+  "שחק שוב עם זרע אחר – האם אברהם נמצא באותו מקום? בדוק שהחיפוש שלך מתאים לשני המקרים.",
+  "נסה לשאול את כל השאלות הנכונות כבר בשלב המוקד, לפני שאתה יוצא.",
+  "נסח עדכון אחד שמכסה: מציאה, זהות מאומתת, מצב רפואי, סיוע נדרש וביטול חיפוש."
+ ],
+ "report": {
+  "reason": "התקבלה משימה מהמוקד: דיווח על נעדר מבוגר שלא חזר מטיול ערב, אזור גן הברוש.",
+  "checklist": [
+   {
+    "label": "תיאור הנעדר",
+    "when": {
+     "fact": "d-desc"
+    }
+   },
+   {
+    "label": "רקע רפואי",
+    "when": {
+     "any": [
+      {
+       "fact": "d-medical"
+      },
+      {
+       "fact": "c-orit-insulin"
+      }
+     ]
+    }
+   },
+   {
+    "label": "מקום המציאה",
+    "when": {
+     "fact": "o-found"
+    }
+   },
+   {
+    "label": "אימות זהות",
+    "when": {
+     "fact": "o-identified"
+    }
+   },
+   {
+    "label": "מצבו בעת המציאה",
+    "when": {
+     "fact": "o-shaky"
+    }
+   }
+  ]
+ },
+ "media": {
+  "images": [
+   "img/park-day.webp",
+   "img/park-night.webp",
+   "img/chars/orit-calm.webp",
+   "img/chars/orit-tense.webp",
+   "img/chars/orit-upset.webp",
+   "img/chars/yossi-calm.webp",
+   "img/chars/yossi-tense.webp",
+   "img/chars/yossi-upset.webp",
+   "img/chars/avraham-calm.webp",
+   "img/chars/avraham-tense.webp",
+   "img/chars/avraham-upset.webp",
+   "img/props/patrol.webp",
+   "img/drive/interior.webp",
+   "img/drive/road-day.webp",
+   "img/drive/road-night.webp"
+  ],
+  "audio": [
+   "audio/yard-evening.mp3",
+   "audio/engine-wipers.mp3",
+   "audio/radio-chirp.mp3",
+   "audio/alert.mp3",
+   "audio/radio-chatter.mp3"
+  ],
+  "voice": {},
+  "narrationMissing": "אין עדיין קריינות מוקלטת בעברית. הקבצים יתווספו לתיקייה public/audio/voice/missing-elder/ וימופו בשדה media.voice."
+ }
+}

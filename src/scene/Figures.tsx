@@ -196,6 +196,29 @@ export function Prop({ kind }: { kind: string }) {
         <rect x="55" y="288" width="90" height="8" rx="3" fill="#ffd18a" opacity={kind === 'door-glow' ? 0.95 : 0.35} />
       </svg>
     );
+  if (kind === 'bag')
+    return (
+      <svg viewBox="0 0 80 50" aria-hidden="true">
+        <rect x="4" y="14" width="72" height="34" rx="12" fill="#23365a" />
+        <path d="M24 16 Q40 -2 56 16" fill="none" stroke="#1a2740" strokeWidth="5" />
+        <rect x="10" y="24" width="60" height="3" fill="#8a96ad" />
+      </svg>
+    );
+  if (kind === 'tape')
+    // סרט סימון כללי (פסים צהוב־שחור, ללא כיתוב) בין שני עמודים
+    return (
+      <svg viewBox="0 0 300 60" aria-hidden="true">
+        <defs>
+          <pattern id="tape-stripes" width="16" height="10" patternUnits="userSpaceOnUse" patternTransform="skewX(-30)">
+            <rect width="16" height="10" fill="#ffd21a" />
+            <rect width="8" height="10" fill="#222" />
+          </pattern>
+        </defs>
+        <rect x="4" y="10" width="6" height="50" fill="#ff7a1a" />
+        <rect x="290" y="10" width="6" height="50" fill="#ff7a1a" />
+        <path d="M8 18 Q150 30 292 18 L292 28 Q150 40 8 28 Z" fill="url(#tape-stripes)" />
+      </svg>
+    );
   if (kind === 'cone')
     return (
       <svg viewBox="0 0 40 50" aria-hidden="true">

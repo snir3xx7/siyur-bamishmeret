@@ -3,6 +3,7 @@ import { join } from 'node:path';
 import { describe, expect, it } from 'vitest';
 import { computeScore } from '../../src/engine/scoring';
 import { validateScenario } from '../../src/engine/validate';
+import { transitionImages } from '../../src/scene/Transition';
 import { loadScenario, play, seedFor, type Step } from './helpers';
 
 const root = join(__dirname, '../../public');
@@ -21,6 +22,30 @@ const GOOD_PATHS: Record<string, { variant: string; steps: Step[] }> = {
   'yard-dispute': {
     variant: 'no-notice',
     steps: ['f-violence', 'f-caller', 'GO', 'ARRIVE', 'y-calm', 'c-disperse', 'm-feel', 'i-feel', 'm-private', 'i-private', 'm-key', 'y-board', 't-talk', 't-contact', 'r-history', 'y-shed', 'y-doc', ['UPDATE', 'u-loc', 'u-argue', 'u-calm', 'u-no-violence'], 'y-interim', 'y-refer', ['UPDATE', 'u-loc', 'u-opened', 'u-referred', 'u-versions', 'u-notice'], 'FINISH'],
+  },
+  'missing-elder': {
+    variant: 'bench',
+    steps: ['f-desc', 'f-medical', 'GO', 'ARRIVE', 'o-calm', 'o-stay', ['UPDATE', 'u-loc', 'u-desc', 'u-medical', 'u-searching', 'u-broadcast'], 'y-ask', 'p-search', 'a-gentle', 'a-check', 'p-note', ['UPDATE', 'u-loc', 'u-found', 'u-shaky', 'u-ems', 'u-cancel', 'u-medical'], 'o-reunite', 'FINISH'],
+  },
+  'suspicious-object': {
+    variant: 'owner',
+    steps: ['f-desc', 'f-caller', 'GO', 'ARRIVE', 'b-explain', 's-observe', 's-isolate', ['UPDATE', 'u-loc', 'u-bag', 'u-isolated', 'u-expert', 'u-divert'], 'n-witness', 's-doc', 's-shops', 'rt-explain', 'rt-verify', ['UPDATE', 'u-owner'], 'rt-return', ['UPDATE', 'u-loc', 'u-cleared'], 'FINISH'],
+  },
+  'blocked-parking': {
+    variant: 'nonote',
+    steps: ['f-mood', 'GO', 'ARRIVE', 'r-listen', 'c-plate', 'c-photo', 'r-warn', ['UPDATE', 'u-loc', 'u-blocked', 'u-tension'], 'r-alt', 'n-ask', 'n-knock', 's-hear', 's-move', 's-mediate', ['UPDATE', 'u-loc', 'u-moved'], 'FINISH'],
+  },
+  'lost-child': {
+    variant: 'balloons',
+    steps: ['f-desc', 'f-where', 'GO', 'ARRIVE', 's-calm', 's-photo', 's-stay', 's-hold', ['UPDATE', 'u-loc', 'u-desc', 'u-searching', 'u-units'], 'h-ask', 'h-announce', 'a-search', 'o-kneel', 'o-story', 'o-verify', 'a-doc', 's-reunite', ['UPDATE', 'u-loc', 'u-found', 'u-verified', 'u-reunited'], 'FINISH'],
+  },
+  'bar-fight': {
+    variant: 'dor-first',
+    steps: ['f-hurt', 'f-suspect', 'f-backup', 'GO', 'ARRIVE', 'z-separate', 'a-check', ['UPDATE', 'u-loc', 'u-injured', 'u-separated'], 'm-calm', 'l-saw', 'a-version', 'd-identify', 'd-version', 'd-detain', 'l-camera', 'z-preserve', 'z-doc', ['UPDATE', 'u-loc', 'u-suspect', 'u-detained', 'u-footage', 'u-versions'], 'FINISH'],
+  },
+  'gas-smell': {
+    variant: 'meter',
+    steps: ['f-people', 'f-fire', 'GO', 'ARRIVE', 'z-smell', ['UPDATE', 'u-loc', 'u-smell'], 'z-noflame', 'g-hear', 'mo-explain', 'z-knock', 'z-perimeter', 'g-help', 'g-update', 't-explain', 'z-doc', 'z-handover', ['UPDATE', 'u-loc', 'u-evacuated', 'u-handed'], 'FINISH'],
   },
 };
 
@@ -76,6 +101,13 @@ describe('קבצי תרחישים', () => {
             expect(sc.media.images).toContain(`img/props/${k}.webp`);
           }
         for (const p of (sc.scene.props ?? []).filter((x) => x.kind === 'sign')) expect(p.text, p.id).toBeTruthy();
+      });
+
+      it('איורי קטע המעבר (ניידת מבפנים/מבחוץ) קיימים ונכללים בהורדה', () => {
+        for (const f of transitionImages(sc.transition.kind)) {
+          expect(existsSync(join(root, f)), f).toBe(true);
+          expect(sc.media.images).toContain(f);
+        }
       });
 
       it('לכל שכבת סביבה לכל היותר שתי שכבות', () => {

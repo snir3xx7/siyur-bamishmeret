@@ -401,7 +401,8 @@
   "text": "נסיעה קצרה לשכונת גבעת הרימון. בתאורת הערב החנויות נסגרות, ובבניין ברחוב התאנה רואים חלונות מוארים בקומה השנייה.",
   "travelMinutes": 5,
   "ambience": [
-   "engine-wipers"
+   "engine-wipers",
+   "radio-chatter"
   ]
  },
  "scene": {
@@ -2185,14 +2186,18 @@
    "img/chars/ido-upset.webp",
    "img/chars/shmuel-calm.webp",
    "img/chars/shmuel-tense.webp",
-   "img/chars/shmuel-upset.webp"
+   "img/chars/shmuel-upset.webp",
+   "img/drive/side-day.webp",
+   "img/drive/side-night.webp",
+   "img/props/patrol.webp"
   ],
   "audio": [
    "audio/music-muffled.mp3",
    "audio/building-hum.mp3",
    "audio/engine-wipers.mp3",
    "audio/knock.mp3",
-   "audio/radio-chirp.mp3"
+   "audio/radio-chirp.mp3",
+   "audio/radio-chatter.mp3"
   ],
   "voice": {},
   "narrationMissing": "אין עדיין קריינות מוקלטת בעברית. הקבצים יתווספו לתיקייה public/audio/voice/noise-building/ וימופו בשדה media.voice."

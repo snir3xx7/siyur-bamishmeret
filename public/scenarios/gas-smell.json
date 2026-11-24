@@ -1,0 +1,1807 @@
+{
+ "id": "gas-smell",
+ "version": 1,
+ "title": "ריח גז בבניין מגורים",
+ "category": "אירועים חריגים ובטיחות",
+ "summary": "דיירת מדווחת על ריח גז חזק בכניסה לבניין. יש לפנות את הדיירים בלי ליצור ניצוץ, לתת הוראות פינוי ברורות גם למי שמסרב, למנוע אש ועישון, להרחיק את כולם ולהעביר את הזירה לכבאות.",
+ "estimatedMinutes": 11,
+ "difficultyLabel": "מתקדמת",
+ "skills": [
+  "פינוי בלי מקורות הצתה",
+  "הוראת פינוי מחייבת ומוסברת",
+  "מניעת חזרה לבניין",
+  "הרחקה ושמירת גישה",
+  "העברת אחריות לכבאות"
+ ],
+ "shifts": [
+  "morning",
+  "evening",
+  "night"
+ ],
+ "defaultShift": "evening",
+ "location": {
+  "name": "רחוב השקד 8",
+  "area": "שכונת גני האלון, קריית אלון (בדוי)"
+ },
+ "objectives": [
+  "לאמת את הריח בלי להיכנס עמוק לבניין",
+  "לפנות את הדיירים בדפיקות – בלי פעמונים ומתגים",
+  "לתת הוראות ברורות ומוסברות גם למי שמסרב",
+  "למנוע עישון, אש וחזרה לבניין",
+  "להזמין כבאות והצלה ולהעביר להם תמונת מצב"
+ ],
+ "variants": [
+  {
+   "id": "meter",
+   "label": "הריח חזק ליד ארון מוני הגז",
+   "set": {
+    "src": "meter"
+   },
+   "vars": {
+    "smellAt": "ליד ארון מוני הגז בחזית",
+    "fireFound": "דליפה בצנרת שליד ארון המונים"
+   }
+  },
+  {
+   "id": "flat2",
+   "label": "הריח חזק בקומת הכניסה, ליד דירה 2",
+   "set": {
+    "src": "flat2"
+   },
+   "vars": {
+    "smellAt": "בקומת הכניסה, ליד דירה 2",
+    "fireFound": "כיריים שנשארו פתוחות בדירה 2 הריקה"
+   }
+  }
+ ],
+ "scoring": {
+  "weights": {
+   "info": 15,
+   "assessment": 25,
+   "communication": 15,
+   "authority": 20,
+   "dispatch": 15,
+   "documentation": 10
+  },
+  "rules": [
+   {
+    "id": "gs-info-dispatch",
+    "domain": "info",
+    "label": "השלמת פרטים מהמוקד",
+    "max": 5,
+    "required": false,
+    "anchor": [
+     "f-people"
+    ],
+    "tiers": [
+     {
+      "when": {
+       "chosen": "f-people"
+      },
+      "points": 5,
+      "explain": "התברר כמה דירות ודיירים יש בבניין.",
+      "keep": "ידעת מראש כמה דירות יש ושיש דיירים מבוגרים. זה עזר לתכנן את הפינוי."
+     }
+    ],
+    "fallback": {
+     "explain": "לא התברר היקף הבניין.",
+     "improve": "לא שאלת כמה דירות יש בבניין. בסבב הבא שאל – זה קובע כמה זמן ייקח הפינוי."
+    }
+   },
+   {
+    "id": "gs-info-smell",
+    "domain": "info",
+    "label": "אימות הריח בלי להיכנס",
+    "max": 5,
+    "required": true,
+    "anchor": [
+     "z-smell"
+    ],
+    "tiers": [
+     {
+      "when": {
+       "chosen": "z-smell"
+      },
+      "points": 5,
+      "explain": "הריח אומת מהפתח.",
+      "keep": "אימתת את הריח מהפתח בלי להיכנס עמוק ובלי לגעת במתגים."
+     }
+    ],
+    "fallback": {
+     "explain": "הריח לא אומת.",
+     "improve": "לא אימתת את הריח. בסבב הבא בדוק מהפתח בלבד – בלי להיכנס ובלי לגעת בכלום."
+    }
+   },
+   {
+    "id": "gs-info-galit",
+    "domain": "info",
+    "label": "שמיעת המדווחת",
+    "max": 5,
+    "required": false,
+    "tiers": [
+     {
+      "when": {
+       "chosen": "g-hear"
+      },
+      "points": 5,
+      "explain": "המדווחת נשמעה.",
+      "keep": "שמעת מגלית ממתי הריח ואיפה הוא הכי חזק. המידע הזה עבר לכבאים."
+     }
+    ],
+    "fallback": {
+     "explain": "המדווחת לא נשמעה.",
+     "improve": "לא שאלת את גלית מה הרגישה. בסבב הבא שמע ממנה ממתי ואיפה."
+    }
+   },
+   {
+    "id": "gs-assess-sparks",
+    "domain": "assessment",
+    "label": "פינוי בלי מקורות הצתה",
+    "max": 8,
+    "required": true,
+    "anchor": [
+     "z-bell",
+     "z-knock"
+    ],
+    "tiers": [
+     {
+      "when": {
+       "all": [
+        {
+         "not": {
+          "flag": "sparked"
+         }
+        },
+        {
+         "flag": "evacuated"
+        }
+       ]
+      },
+      "points": 8,
+      "explain": "הפינוי נעשה בלי פעמונים ומתגים.",
+      "keep": "לא לחצת על אינטרקום, פעמון או מתג. בסביבת גז, ניצוץ חשמלי אחד מספיק."
+     },
+     {
+      "when": {
+       "not": {
+        "flag": "sparked"
+       }
+      },
+      "points": 3,
+      "explain": "לא נוצר ניצוץ, אך הבניין לא פונה.",
+      "improve": "לא נגעת במתגים – טוב – אבל הדיירים נשארו בפנים. בסבב הבא פנה בדפיקות."
+     }
+    ],
+    "fallback": {
+     "explain": "נעשה שימוש באינטרקום.",
+     "improve": "לחצת על כפתורי האינטרקום. בסביבת גז כל מתג חשמלי הוא מקור ניצוץ אפשרי. בסבב הבא דפוק בדלתות."
+    }
+   },
+   {
+    "id": "gs-assess-evac",
+    "domain": "assessment",
+    "label": "פינוי הדיירים",
+    "max": 9,
+    "required": true,
+    "anchor": [
+     "z-knock"
+    ],
+    "tiers": [
+     {
+      "when": {
+       "chosen": "z-knock"
+      },
+      "points": 9,
+      "explain": "הדיירים פונו.",
+      "keep": "עלית ודפקת בכל דלת עם הוראה ברורה: „יוצאים עכשיו, בלי להדליק כלום”. כולם יצאו."
+     }
+    ],
+    "fallback": {
+     "explain": "הבניין לא פונה.",
+     "improve": "הדיירים נשארו בבניין. בסבב הבא פנה אותם בדפיקות, בלי מתגים."
+    }
+   },
+   {
+    "id": "gs-assess-perimeter",
+    "domain": "assessment",
+    "label": "הרחקה ושמירת גישה",
+    "max": 4,
+    "required": false,
+    "tiers": [
+     {
+      "when": {
+       "chosen": "z-perimeter"
+      },
+      "points": 4,
+      "explain": "הציבור הורחק והגישה נשמרה.",
+      "keep": "הרחקת את כולם לצד השני של הרחוב והשארת את הכניסה פנויה לכבאות."
+     }
+    ],
+    "fallback": {
+     "explain": "הציבור לא הורחק.",
+     "improve": "הדיירים התקבצו ליד הכניסה. בסבב הבא הרחק אותם ושמור על גישה לכבאות."
+    }
+   },
+   {
+    "id": "gs-assess-handover",
+    "domain": "assessment",
+    "label": "העברה לכבאות",
+    "max": 4,
+    "required": true,
+    "anchor": [
+     "z-handover"
+    ],
+    "tiers": [
+     {
+      "when": {
+       "chosen": "z-handover"
+      },
+      "points": 4,
+      "explain": "הכבאים קיבלו תמונת מצב.",
+      "keep": "תדרכת את קצין הכבאות: איפה הריח, מי בחוץ ומה נעשה. הם נכנסו ממוקדים."
+     }
+    ],
+    "fallback": {
+     "explain": "לא הועברה תמונת מצב לכבאות.",
+     "improve": "לא תדרכת את הכבאים. בסבב הבא הזמן אותם מוקדם, וכשהם מגיעים – מסור מה ידוע."
+    }
+   },
+   {
+    "id": "gs-comm-moshe",
+    "domain": "communication",
+    "label": "שיח עם הדייר המסרב",
+    "max": 8,
+    "required": true,
+    "tiers": [
+     {
+      "when": {
+       "all": [
+        {
+         "chosen": "mo-explain"
+        },
+        {
+         "not": {
+          "chosen": "mo-order"
+         }
+        }
+       ]
+      },
+      "points": 8,
+      "explain": "הדייר שוכנע בהסבר רגוע.",
+      "keep": "הסברת למשה את הסכנה בלי לבטל את הניסיון שלו, והבטחת שיחזור כשיהיה בטוח. הוא יצא בלי ויכוח."
+     },
+     {
+      "when": {
+       "all": [
+        {
+         "chosen": "mo-order"
+        },
+        {
+         "chosen": "mo-firm"
+        }
+       ]
+      },
+      "points": 4,
+      "explain": "הצעקה תוקנה בהסבר.",
+      "improve": "הצעקה גרמה למשה להתבצר. אחר כך הנמכת קול והסברת, והוא יצא. בסבב הבא פתח בהסבר."
+     }
+    ],
+    "fallback": {
+     "explain": "הדייר לא שוכנע.",
+     "improve": "משה נשאר בבניין. בסבב הבא הסבר לו את הסכנה גם לשכנים."
+    }
+   },
+   {
+    "id": "gs-comm-update",
+    "domain": "communication",
+    "label": "עדכון הדיירים המפונים",
+    "max": 7,
+    "required": false,
+    "appliesWhen": {
+     "flag": "evacuated"
+    },
+    "tiers": [
+     {
+      "when": {
+       "chosen": "g-update"
+      },
+      "points": 7,
+      "explain": "הדיירים עודכנו במה שקורה.",
+      "keep": "עדכנת את הדיירים שהכבאות בדרך ולמה ממתינים. אנשים מעודכנים משתפים פעולה."
+     }
+    ],
+    "fallback": {
+     "explain": "הדיירים לא עודכנו.",
+     "improve": "הדיירים חיכו בחוץ בלי לדעת מה קורה. בסבב הבא עדכן אותם בקצרה."
+    }
+   },
+   {
+    "id": "gs-auth-evac",
+    "domain": "authority",
+    "label": "הוראת פינוי מחייבת ומוסברת",
+    "max": 10,
+    "required": true,
+    "anchor": [
+     "mo-explain",
+     "mo-order",
+     "mo-firm"
+    ],
+    "tiers": [
+     {
+      "when": {
+       "chosen": "mo-explain"
+      },
+      "points": 10,
+      "explain": "הוראת הפינוי ניתנה עם הסבר וקוימה.",
+      "keep": "נתת למשה הוראת פינוי שנשענת על הסבר – מה הסכנה, לאן לזוז ומתי יחזור. הוא קיים אותה."
+     },
+     {
+      "when": {
+       "chosen": "mo-firm"
+      },
+      "points": 7,
+      "explain": "אחרי סירוב, ההוראה הובהרה כמחייבת וקוימה.",
+      "improve": "משה סירב אחרי הצעקה. הבהרת שזו הוראה מחייבת לשמירה על חיים – והוא יצא. בסבב הבא תן את ההסבר כבר בפעם הראשונה."
+     }
+    ],
+    "fallback": {
+     "explain": "הוראת הפינוי לא קוימה.",
+     "improve": "משה נשאר בבניין. בסבב הבא הסבר את הסכנה והבהר שזו הוראת פינוי מחייבת."
+    }
+   },
+   {
+    "id": "gs-auth-flame",
+    "domain": "authority",
+    "label": "מניעת אש ועישון",
+    "max": 6,
+    "required": true,
+    "anchor": [
+     "z-noflame",
+     "mo-stop"
+    ],
+    "tiers": [
+     {
+      "when": {
+       "all": [
+        {
+         "chosen": "z-noflame"
+        },
+        {
+         "not": {
+          "flag": "ev:lighter"
+         }
+        }
+       ]
+      },
+      "points": 6,
+      "explain": "איסור אש ועישון הוכרז מראש.",
+      "keep": "הכרזת מראש שאסור לעשן ולהדליק אש. אף אחד לא שלף מצית."
+     },
+     {
+      "when": {
+       "chosen": "mo-stop"
+      },
+      "points": 4,
+      "explain": "הדלקת המצית נעצרה ברגע האחרון.",
+      "improve": "משה כמעט הדליק סיגריה ליד הבניין. עצרת אותו – טוב. בסבב הבא הכרז מראש על איסור אש ועישון."
+     }
+    ],
+    "fallback": {
+     "explain": "לא נמנעה הדלקת אש.",
+     "improve": "משה הדליק מצית ליד בניין עם ריח גז. בסבב הבא הכרז מראש ועצור מיד כל ניסיון."
+    }
+   },
+   {
+    "id": "gs-auth-reentry",
+    "domain": "authority",
+    "label": "מניעת כניסה חוזרת",
+    "max": 4,
+    "required": true,
+    "anchor": [
+     "t-explain",
+     "t-allow"
+    ],
+    "tiers": [
+     {
+      "when": {
+       "chosen": "t-explain"
+      },
+      "points": 4,
+      "explain": "נמנעה כניסה חוזרת לבניין.",
+      "keep": "לא נתת לתומר לחזור לקחת את המחשב, והסברת למה. רכוש לא שווה סיכון."
+     }
+    ],
+    "fallback": {
+     "explain": "דייר חזר לבניין.",
+     "improve": "תומר חזר לבניין לקחת מחשב. בסבב הבא הבהר שאף אחד לא נכנס עד אישור הכבאות."
+    }
+   },
+   {
+    "id": "gs-disp-first",
+    "domain": "dispatch",
+    "label": "עדכון ראשון והזמנת כבאות",
+    "max": 10,
+    "required": true,
+    "anchor": [
+     "update:1"
+    ],
+    "tiers": [
+     {
+      "when": {
+       "all": [
+        {
+         "update": {
+          "n": 1,
+          "has": [
+           "u-smell"
+          ],
+          "hasCat": [
+           "location"
+          ]
+         }
+        },
+        {
+         "any": [
+          {
+           "chosen": "f-fire"
+          },
+          {
+           "update": {
+            "n": 1,
+            "has": [
+             "u-fire"
+            ]
+           }
+          }
+         ]
+        }
+       ]
+      },
+      "points": 10,
+      "explain": "בעדכון הראשון נמסר ריח מאומת וכבאות הוזמנו.",
+      "keep": "עדכנת מיד שהריח אומת ומאיפה הוא מגיע, וכבאות היו בדרך כבר מההתחלה."
+     },
+     {
+      "when": {
+       "any": [
+        {
+         "flag": "fireCalled"
+        },
+        {
+         "flag": "fireReq"
+        }
+       ]
+      },
+      "points": 6,
+      "explain": "כבאות הוזמנו, אך העדכון הראשון חלקי.",
+      "improve": "הכבאות הוזמנו, אבל העדכון הראשון לא כלל ריח מאומת ומיקום. בסבב הבא אמת ועדכן מיד."
+     },
+     {
+      "when": {
+       "updatesGte": 1
+      },
+      "points": 2,
+      "explain": "נשלח עדכון בלי להזמין כבאות.",
+      "improve": "המוקד קיבל עדכון, אבל אף אחד לא הזמין כבאות. בסבב הבא בקש אותם מיד."
+     }
+    ],
+    "fallback": {
+     "explain": "לא נשלח עדכון ולא הוזמנו כבאות.",
+     "improve": "לא עדכנת את המוקד ולא וידאת שכבאות בדרך. בסבב הבא זה הצעד הראשון."
+    }
+   },
+   {
+    "id": "gs-disp-close",
+    "domain": "dispatch",
+    "label": "עדכון סיום",
+    "max": 5,
+    "required": true,
+    "anchor": [
+     "update:last"
+    ],
+    "tiers": [
+     {
+      "when": {
+       "update": {
+        "n": "last",
+        "has": [
+         "u-evacuated"
+        ]
+       }
+      },
+      "points": 5,
+      "explain": "העדכון האחרון מסר שהבניין פונה וכל הדירות דווחו.",
+      "keep": "סגרת בעדכון שהבניין פונה לפי רשימה – המוקד יודע שאין אף אחד בפנים."
+     }
+    ],
+    "fallback": {
+     "explain": "לא נמסר שהבניין פונה.",
+     "improve": "המוקד לא יודע אם כולם בחוץ. בסבב הבא סיים בעדכון מבוסס רשימה."
+    }
+   },
+   {
+    "id": "gs-doc",
+    "domain": "documentation",
+    "label": "תיעוד הפינוי",
+    "max": 5,
+    "required": true,
+    "tiers": [
+     {
+      "when": {
+       "chosen": "z-doc"
+      },
+      "points": 5,
+      "explain": "מהלך הפינוי תועד.",
+      "keep": "תיעדת שעות, מי פונה, מי סירב ומה נאמר לו."
+     }
+    ],
+    "fallback": {
+     "explain": "הפינוי לא תועד.",
+     "improve": "לא תיעדת את מהלך הפינוי. בסבב הבא רשום מי פונה, מי סירב ומה נעשה."
+    }
+   },
+   {
+    "id": "gs-doc-count",
+    "domain": "documentation",
+    "label": "ספירת דיירים לפי דירות",
+    "max": 5,
+    "required": true,
+    "appliesWhen": {
+     "flag": "evacuated"
+    },
+    "tiers": [
+     {
+      "when": {
+       "chosen": "g-help"
+      },
+      "points": 5,
+      "explain": "הדיירים נספרו לפי דירות.",
+      "keep": "עברת עם גלית על הדירות אחת־אחת. ידעת שדירה 2 ריקה ושכל השאר בחוץ."
+     }
+    ],
+    "fallback": {
+     "explain": "הדיירים לא נספרו.",
+     "improve": "לא וידאת שכל הדירות בחוץ. בסבב הבא עבור על רשימת הדירות עם מי שמכיר את הבניין."
+    }
+   }
+  ]
+ },
+ "facts": [
+  {
+   "id": "d-report",
+   "kind": "dispatch",
+   "text": "ריח גז חזק בכניסה לבניין ברחוב השקד 8"
+  },
+  {
+   "id": "d-caller",
+   "kind": "dispatch",
+   "text": "המדווחת: גלית, דיירת בקומה 1, יצאה מהבניין"
+  },
+  {
+   "id": "d-people",
+   "kind": "dispatch",
+   "text": "בבניין 12 דירות; ייתכן שיש דיירים מבוגרים"
+  },
+  {
+   "id": "d-fire",
+   "kind": "dispatch",
+   "text": "כבאות והצלה וחברת הגז הוזנקו"
+  },
+  {
+   "id": "o-smell",
+   "kind": "observation",
+   "text": "ריח גז חזק מורגש כבר בפתח, חזק במיוחד {{smellAt}}"
+  },
+  {
+   "id": "c-galit-time",
+   "kind": "claim",
+   "text": "הריח התחיל לפני כעשרים דקות וחזק {{smellAt}}",
+   "source": "galit"
+  },
+  {
+   "id": "c-moshe-nothing",
+   "kind": "claim",
+   "text": "טוען ש„זה תמיד ככה” ושאין סיבה לצאת",
+   "source": "moshe"
+  },
+  {
+   "id": "o-evacuated",
+   "kind": "observation",
+   "text": "הדיירים פונו לצד השני של הרחוב; לפי הרשימה כל הדירות דווחו"
+  },
+  {
+   "id": "o-fire-found",
+   "kind": "observation",
+   "text": "הכבאים איתרו: {{fireFound}}"
+  }
+ ],
+ "characters": [
+  {
+   "id": "galit",
+   "name": "גלית נחום",
+   "role": "הדיירת המדווחת",
+   "gender": "f",
+   "look": {
+    "skin": "#d6a57c",
+    "hair": "#3a2a20",
+    "hairStyle": "short",
+    "top": "#555",
+    "bottom": "#333"
+   },
+   "attitude": 1,
+   "x": 13,
+   "y": 97,
+   "scale": 1.3,
+   "moodRules": [
+    {
+     "when": {
+      "not": {
+       "flag": "evacuated"
+      }
+     },
+     "mood": "tense"
+    }
+   ],
+   "sprite": "img/chars/galit",
+   "spriteMoods": [
+    "calm",
+    "tense",
+    "upset"
+   ]
+  },
+  {
+   "id": "moshe",
+   "name": "משה פרידמן",
+   "role": "דייר ותיק",
+   "gender": "m",
+   "look": {
+    "skin": "#d6a57c",
+    "hair": "#3a2a20",
+    "hairStyle": "short",
+    "top": "#555",
+    "bottom": "#333"
+   },
+   "attitude": 0,
+   "x": 50,
+   "y": 92,
+   "scale": 1.25,
+   "moodRules": [
+    {
+     "when": {
+      "any": [
+       {
+        "flag": "mosheAngry"
+       },
+       {
+        "all": [
+         {
+          "flag": "ev:lighter"
+         },
+         {
+          "not": {
+           "flag": "lighterStopped"
+          }
+         }
+        ]
+       }
+      ]
+     },
+     "mood": "upset"
+    },
+    {
+     "when": {
+      "not": {
+       "flag": "mosheOut"
+      }
+     },
+     "mood": "tense"
+    }
+   ],
+   "sprite": "img/chars/moshe",
+   "spriteMoods": [
+    "calm",
+    "tense",
+    "upset"
+   ]
+  },
+  {
+   "id": "tomer",
+   "name": "תומר בן חיים",
+   "role": "נער, דייר בקומה 3",
+   "gender": "m",
+   "look": {
+    "skin": "#d6a57c",
+    "hair": "#3a2a20",
+    "hairStyle": "short",
+    "top": "#555",
+    "bottom": "#333"
+   },
+   "attitude": 1,
+   "x": 80,
+   "y": 95,
+   "scale": 1.25,
+   "moodRules": [
+    {
+     "when": {
+      "all": [
+       {
+        "flag": "evacuated"
+       },
+       {
+        "not": {
+         "flag": "tomerStays"
+        }
+       }
+      ]
+     },
+     "mood": "tense"
+    }
+   ],
+   "sprite": "img/chars/tomer",
+   "spriteMoods": [
+    "calm",
+    "tense",
+    "upset"
+   ]
+  }
+ ],
+ "dispatch": {
+  "time": {
+   "morning": "07:55",
+   "evening": "19:32",
+   "night": "23:10"
+  },
+  "unit": "סייר 17",
+  "incident": "8821",
+  "lines": [
+   {
+    "speaker": "dispatch",
+    "text": "סייר 17, כאן מוקד אלון. דיווח על ריח גז חזק בכניסה לבניין ברחוב השקד 8. המדווחת, גלית, יצאה מהבניין וממתינה בחוץ. אשר קבלה."
+   }
+  ],
+  "initialFacts": [
+   "d-report",
+   "d-caller"
+  ],
+  "basicExtraFacts": [
+   "d-people"
+  ],
+  "followUps": [
+   {
+    "id": "f-people",
+    "label": "לשאול: כמה דירות יש בבניין, והאם יש דיירים שזקוקים לעזרה?",
+    "when": {
+     "not": {
+      "fact": "d-people"
+     }
+    },
+    "lines": [
+     {
+      "speaker": "player",
+      "text": "מוקד, כמה דירות בבניין? יש דיירים שיתקשו לצאת?"
+     },
+     {
+      "speaker": "dispatch",
+      "text": "12 דירות. לפי המדווחת יש דיירים מבוגרים בקומות העליונות."
+     }
+    ],
+    "effects": {
+     "reveal": [
+      "d-people"
+     ]
+    },
+    "report": "בירור מספר הדיירים"
+   },
+   {
+    "id": "f-fire",
+    "label": "לבקש לוודא שכבאות והצלה וחברת הגז בדרך",
+    "lines": [
+     {
+      "speaker": "player",
+      "text": "מוקד, אפשר לוודא שכבאות והצלה וחברת הגז הוזנקו?"
+     },
+     {
+      "speaker": "dispatch",
+      "text": "הוזנקו. כבאות בעוד כעשר דקות."
+     }
+    ],
+    "effects": {
+     "reveal": [
+      "d-fire"
+     ],
+     "set": {
+      "fireCalled": true
+     }
+    },
+    "report": "וידוא הזנקת כבאות וחברת הגז"
+   }
+  ],
+  "goLabel": "אישור קבלה ויציאה לבניין"
+ },
+ "transition": {
+  "kind": "car",
+  "text": "עוצרים כמה עשרות מטרים מהבניין, לא מול הכניסה, ומכבים את המנוע. ממשיכים ברגל.",
+  "travelMinutes": 3,
+  "ambience": [
+   "engine-wipers",
+   "radio-chatter"
+  ]
+ },
+ "scene": {
+  "background": "img/building-entrance",
+  "alt": "כניסה לבניין מגורים: דלת זכוכית ואינטרקום, תיבות דואר בלובי, ארון מוני גז אפור על הקיר משמאל עם צנרת צהובה, גינה קטנה וספסל מימין.",
+  "fallbackColor": "#8d8576",
+  "ambience": [
+   "building-hum"
+  ],
+  "ambienceRules": [
+   {
+    "when": {
+     "flag": "evacuated"
+    },
+    "ambience": [
+     "crowd"
+    ]
+   }
+  ],
+  "lights": "steady",
+  "weather": "none",
+  "bgByShift": {
+   "morning": "day",
+   "evening": "night",
+   "night": "night"
+  },
+  "props": [
+   {
+    "id": "tape",
+    "kind": "tape",
+    "x": 50,
+    "y": 99,
+    "scale": 2.2,
+    "when": {
+     "flag": "perimeter"
+    }
+   },
+   {
+    "id": "patrol",
+    "kind": "patrol",
+    "x": 92,
+    "y": 99,
+    "scale": 0.7,
+    "flip": true
+   },
+   {
+    "id": "sg-num",
+    "kind": "sign",
+    "x": 37.5,
+    "y": 31.5,
+    "text": "השקד 8",
+    "sign": "plate",
+    "scale": 1.1
+   },
+   {
+    "id": "sg-gas",
+    "kind": "sign",
+    "x": 18.5,
+    "y": 52.5,
+    "text": "ארון גז",
+    "sign": "notice",
+    "scale": 1.25
+   }
+  ],
+  "painted": true
+ },
+ "arrivalLines": [
+  {
+   "speaker": "narrator",
+   "text": "כבר במדרכה מורגש ריח גז חריף. גלית ממתינה ליד הגדר. בפתח הבניין עומד דייר מבוגר בגופייה, סיגריה לא דלוקה בפה. נער עם אוזניות יורד במדרגות ומסתכל בטלפון."
+  },
+  {
+   "speaker": "moshe",
+   "text": "מה כל הרעש? זה תמיד מריח ככה פה, מה קרה."
+  }
+ ],
+ "arrivalFacts": [],
+ "hotspots": [
+  {
+   "id": "h-entrance",
+   "label": "כניסת הבניין",
+   "kind": "area",
+   "x": 30,
+   "y": 84,
+   "description": "דלת הכניסה, האינטרקום, ארון מוני הגז והלובי.",
+   "choices": [
+    {
+     "id": "z-smell",
+     "label": "לאמת את הריח מהפתח בלבד, בלי להיכנס עמוק ובלי לגעת במתגים",
+     "lines": [
+      {
+       "speaker": "narrator",
+       "text": "עמדת בפתח, לא נכנסת פנימה. הריח חריף וחזק במיוחד {{smellAt}}. לא נגעת באור ולא באינטרקום."
+      }
+     ],
+     "effects": {
+      "reveal": [
+       "o-smell"
+      ],
+      "verify": [
+       "d-report"
+      ]
+     },
+     "report": "אימות הריח מהפתח, בלי להיכנס"
+    },
+    {
+     "id": "z-bell",
+     "label": "לצלצל באינטרקום לכל הדירות כדי להזעיק את הדיירים",
+     "lines": [
+      {
+       "speaker": "narrator",
+       "text": "לחצת על כפתורי האינטרקום אחד אחרי השני. כמה דיירים עונים, מבולבלים. רק אחר כך אתה נזכר שמתג חשמלי עלול ליצור ניצוץ."
+      }
+     ],
+     "effects": {
+      "set": {
+       "sparked": true
+      },
+      "note": "נעשה שימוש באינטרקום – מקור ניצוץ אפשרי בסביבת גז"
+     }
+    },
+    {
+     "id": "z-knock",
+     "label": "לעלות ולדפוק בדלתות בקול, בלי פעמונים ובלי אור, ולהוציא את הדיירים",
+     "when": {
+      "not": {
+       "flag": "evacuated"
+      }
+     },
+     "lines": [
+      {
+       "speaker": "narrator",
+       "text": "עלית במדרגות בחושך, דפקת בכל דלת וקראת: „דליפת גז – יוצאים עכשיו, בלי להדליק כלום!” הדיירים יוצאים ויורדים. שכנים עוזרים לגברת מבוגרת מקומה 4."
+      }
+     ],
+     "effects": {
+      "set": {
+       "evacuated": true
+      },
+      "reveal": [
+       "o-evacuated"
+      ],
+      "minutes": 5
+     },
+     "report": "פינוי הדיירים בדפיקות, בלי מתגים",
+     "sfx": "knock"
+    },
+    {
+     "id": "z-noflame",
+     "label": "להודיע בקול לכל מי שבחוץ: אסור לעשן, להדליק אש, ללחוץ על מתגים או להתקרב לכניסה",
+     "lines": [
+      {
+       "speaker": "player",
+       "text": "תקשיבו כולם: יש ריח גז. אסור לעשן, אסור להדליק שום אש, ולא לוחצים על אף מתג או פעמון. כולם מתרחקים מהכניסה."
+      }
+     ],
+     "effects": {
+      "set": {
+       "smokeBanned": true
+      }
+     },
+     "report": "הכרזה על איסור עישון ומקורות הצתה"
+    },
+    {
+     "id": "z-perimeter",
+     "label": "להרחיק את כולם לצד השני של הרחוב ולהשאיר את הכניסה פנויה לכבאות",
+     "lines": [
+      {
+       "speaker": "narrator",
+       "text": "הובלת את הדיירים לצד השני של הרחוב, הרחק מהכניסה, ומתחת סרט סימון. הגישה לבניין פנויה לרכב הכבאות."
+      }
+     ],
+     "effects": {
+      "set": {
+       "perimeter": true
+      }
+     },
+     "report": "הרחקת הציבור ושמירת גישה לכבאות"
+    },
+    {
+     "id": "z-doc",
+     "label": "לתעד: שעת ההגעה, מקום הריח, מי פונה, מי סירב ומה נעשה",
+     "lines": [
+      {
+       "speaker": "narrator",
+       "text": "תיעדת: שעת ההגעה, מקום הריח, הדירות שפונו, מי סירב ומה נאמר לו, ומה נעשה עד הגעת הכבאות."
+      }
+     ],
+     "effects": {
+      "set": {
+       "documented": true
+      }
+     },
+     "report": "תיעוד מהלך הפינוי"
+    },
+    {
+     "id": "z-handover",
+     "label": "לתדרך את קצין הכבאות: מקום הריח, הדיירים שפונו, מי חסר ומה נעשה",
+     "when": {
+      "flag": "ev:fire"
+     },
+     "lines": [
+      {
+       "speaker": "player",
+       "text": "הריח הכי חזק {{smellAt}}. הבניין פונה, לפי הרשימה כל הדירות בחוץ. אף אחד לא הדליק אור או אש מאז שהגענו."
+      },
+      {
+       "speaker": "narrator",
+       "text": "הכבאים נכנסים עם מכשירי מדידה. כעבור כמה דקות קצין הכבאות חוזר: „איתרנו – {{fireFound}}. סגרנו. נאוורר את הבניין.”"
+      }
+     ],
+     "effects": {
+      "set": {
+       "handedOver": true
+      },
+      "reveal": [
+       "o-fire-found"
+      ],
+      "minutes": 8
+     },
+     "report": "העברת תמונת מצב לכבאות"
+    }
+   ]
+  },
+  {
+   "id": "h-galit",
+   "label": "גלית – המדווחת",
+   "kind": "character",
+   "x": 13,
+   "y": 48,
+   "description": "גלית נחום, דיירת בקומה 1. התקשרה למוקד.",
+   "choices": [
+    {
+     "id": "g-hear",
+     "label": "לשאול את גלית ממתי הריח ואיפה הוא הכי חזק",
+     "lines": [
+      {
+       "speaker": "galit",
+       "text": "בערך עשרים דקות. כשירדתי לזרוק זבל זה היכה בי. הכי חזק {{smellAt}}."
+      }
+     ],
+     "effects": {
+      "reveal": [
+       "c-galit-time"
+      ]
+     },
+     "report": "שיחה עם המדווחת"
+    },
+    {
+     "id": "g-help",
+     "label": "לבקש מגלית לעזור לעבור על רשימת הדירות ולוודא שכולם בחוץ",
+     "when": {
+      "flag": "evacuated"
+     },
+     "lines": [
+      {
+       "speaker": "player",
+       "text": "את מכירה את הדיירים? בואי נעבור על הדירות אחת־אחת ונראה שכולם בחוץ."
+      },
+      {
+       "speaker": "galit",
+       "text": "כן. דירה 2 ריקה – הם בחו״ל. כל השאר… כן, כולם פה."
+      }
+     ],
+     "effects": {
+      "set": {
+       "counted": true
+      }
+     },
+     "report": "ספירת הדיירים לפי דירות"
+    },
+    {
+     "id": "g-update",
+     "label": "לעדכן את הדיירים מה קורה ולמה מחכים",
+     "when": {
+      "flag": "evacuated"
+     },
+     "lines": [
+      {
+       "speaker": "player",
+       "text": "הכבאות בדרך. עד שהם בודקים – כולם נשארים פה, רחוק מהכניסה. אני מעדכן ברגע שיש חדש."
+      },
+      {
+       "speaker": "galit",
+       "text": "תודה. טוב לדעת מה קורה."
+      }
+     ],
+     "effects": {
+      "set": {
+       "residentsUpdated": true
+      }
+     },
+     "report": "עדכון הדיירים"
+    }
+   ],
+   "character": "galit"
+  },
+  {
+   "id": "h-moshe",
+   "label": "משה – דייר ותיק",
+   "kind": "character",
+   "x": 50,
+   "y": 46,
+   "description": "משה פרידמן, דייר ותיק. עומד בפתח הבניין עם סיגריה לא דלוקה.",
+   "choices": [
+    {
+     "id": "mo-explain",
+     "label": "להסביר למשה ברוגע מה הסכנה ולבקש שיעבור איתך לצד השני של הרחוב",
+     "when": {
+      "all": [
+       {
+        "not": {
+         "flag": "mosheOut"
+        }
+       },
+       {
+        "not": {
+         "flag": "mosheAngry"
+        }
+       }
+      ]
+     },
+     "lines": [
+      {
+       "speaker": "player",
+       "text": "משה, יש פה ריח גז חזק, וגם אם זה קרה בעבר – הפעם הכבאות צריכים לבדוק. בוא איתי לצד השני של הרחוב, וכשיגידו שזה בטוח – חוזרים."
+      },
+      {
+       "speaker": "moshe",
+       "text": "(נאנח) נו, טוב. אם ככה צריך."
+      }
+     ],
+     "effects": {
+      "set": {
+       "mosheOut": true
+      },
+      "reveal": [
+       "c-moshe-nothing"
+      ],
+      "attitude": {
+       "moshe": 2
+      }
+     },
+     "report": "הסבר והוראת פינוי לדייר"
+    },
+    {
+     "id": "mo-order",
+     "label": "לצעוק עליו: „החוצה! עכשיו!”",
+     "when": {
+      "all": [
+       {
+        "not": {
+         "flag": "mosheOut"
+        }
+       },
+       {
+        "not": {
+         "flag": "mosheAngry"
+        }
+       }
+      ]
+     },
+     "lines": [
+      {
+       "speaker": "player",
+       "text": "החוצה! עכשיו!"
+      },
+      {
+       "speaker": "moshe",
+       "text": "אל תצעק עליי בבית שלי! אני גר פה ארבעים שנה, אני לא זז!"
+      }
+     ],
+     "effects": {
+      "set": {
+       "mosheAngry": true
+      },
+      "attitude": {
+       "moshe": -2
+      },
+      "reveal": [
+       "c-moshe-nothing"
+      ],
+      "note": "צעקה בלי הסבר גרמה לדייר לסרב להתפנות"
+     }
+    },
+    {
+     "id": "mo-firm",
+     "label": "להנמיך את הקול, להסביר את הסכנה גם לשכנים ולהבהיר שזו הוראת פינוי מחייבת",
+     "when": {
+      "flag": "mosheAngry"
+     },
+     "lines": [
+      {
+       "speaker": "player",
+       "text": "משה, אני מבין שזה הבית שלך. אבל דליפת גז מסכנת את כל הבניין – גם את השכנים שלך. זו הוראת פינוי לשמירה על חיים, ואני צריך שתמלא אותה עכשיו. ברגע שהכבאים יאשרו – תחזור."
+      },
+      {
+       "speaker": "moshe",
+       "text": "…טוב. בשביל השכנים."
+      }
+     ],
+     "effects": {
+      "set": {
+       "mosheOut": true,
+       "mosheAngry": false
+      },
+      "attitude": {
+       "moshe": 1
+      }
+     },
+     "report": "הוראת פינוי מחייבת ומוסברת לאחר סירוב"
+    },
+    {
+     "id": "mo-stop",
+     "label": "לעצור את משה מיד: להוריד את המצית, ולהסביר בקצרה למה",
+     "when": {
+      "all": [
+       {
+        "flag": "ev:lighter"
+       },
+       {
+        "not": {
+         "flag": "lighterStopped"
+        }
+       }
+      ]
+     },
+     "lines": [
+      {
+       "speaker": "player",
+       "text": "משה, תוריד את המצית! עכשיו! יש פה גז – ניצוץ אחד וכל הבניין בסכנה."
+      },
+      {
+       "speaker": "moshe",
+       "text": "(קופא, מחזיר את המצית לכיס) …לא חשבתי."
+      }
+     ],
+     "effects": {
+      "set": {
+       "lighterStopped": true
+      }
+     },
+     "report": "עצירת הדלקת אש בסביבת גז"
+    }
+   ],
+   "character": "moshe"
+  },
+  {
+   "id": "h-tomer",
+   "label": "תומר – נער מקומה 3",
+   "kind": "character",
+   "x": 80,
+   "y": 48,
+   "description": "תומר בן חיים, בן 16. ירד עם הטלפון ביד.",
+   "choices": [
+    {
+     "id": "t-explain",
+     "label": "כשתומר רוצה לחזור לקחת את המחשב – להסביר שאף אחד לא נכנס עד אישור הכבאות",
+     "when": {
+      "not": {
+       "flag": "reentered"
+      }
+     },
+     "lines": [
+      {
+       "speaker": "tomer",
+       "text": "רגע, המחשב שלי למעלה! אני רק עולה ויורד בשנייה."
+      },
+      {
+       "speaker": "player",
+       "text": "תומר, אף אחד לא נכנס לבניין עד שהכבאים מאשרים – גם לא לשנייה. המחשב יחכה. אתה לא."
+      },
+      {
+       "speaker": "tomer",
+       "text": "אוף… בסדר."
+      }
+     ],
+     "effects": {
+      "set": {
+       "tomerStays": true
+      },
+      "attitude": {
+       "tomer": 1
+      }
+     },
+     "report": "מניעת כניסה חוזרת לבניין"
+    },
+    {
+     "id": "t-allow",
+     "label": "לאפשר לתומר לרוץ למעלה מהר ולחזור",
+     "when": {
+      "not": {
+       "flag": "tomerStays"
+      }
+     },
+     "lines": [
+      {
+       "speaker": "narrator",
+       "text": "תומר רץ למעלה. אחרי דקה ארוכה הוא חוזר עם המחשב. אנשים מסתכלים – אם הוא נכנס, למה לא הם?"
+      }
+     ],
+     "effects": {
+      "set": {
+       "reentered": true
+      },
+      "minutes": 2,
+      "note": "דייר חזר לבניין בזמן חשד לדליפת גז"
+     }
+    }
+   ],
+   "character": "tomer"
+  }
+ ],
+ "events": [
+  {
+   "id": "lighter",
+   "title": "התפתחות: דייר מוציא מצית",
+   "when": {
+    "all": [
+     {
+      "not": {
+       "flag": "smokeBanned"
+      }
+     },
+     {
+      "countChosen": {
+       "ids": [
+        "z-smell",
+        "z-bell",
+        "z-knock",
+        "z-noflame",
+        "z-perimeter",
+        "z-doc",
+        "g-hear",
+        "g-help",
+        "g-update",
+        "mo-explain",
+        "mo-order",
+        "mo-firm",
+        "t-explain",
+        "t-allow"
+       ],
+       "gte": 3
+      }
+     }
+    ]
+   },
+   "lines": [
+    {
+     "speaker": "moshe",
+     "text": "אם אני כבר צריך לחכות בחוץ, לפחות אעשן."
+    },
+    {
+     "speaker": "narrator",
+     "text": "משה מוציא מצית מהכיס ומקרב אותו לסיגריה – כמה מטרים מהכניסה."
+    }
+   ],
+   "effects": {
+    "note": "דייר עמד להדליק אש בקרבת הבניין"
+   },
+   "sfx": "alert"
+  },
+  {
+   "id": "fire",
+   "title": "כבאות והצלה הגיעו",
+   "when": {
+    "all": [
+     {
+      "any": [
+       {
+        "flag": "fireCalled"
+       },
+       {
+        "flag": "fireReq"
+       }
+      ]
+     },
+     {
+      "countChosen": {
+       "ids": [
+        "z-smell",
+        "z-bell",
+        "z-knock",
+        "z-noflame",
+        "z-perimeter",
+        "z-doc",
+        "g-hear",
+        "g-help",
+        "g-update",
+        "mo-explain",
+        "mo-order",
+        "mo-firm",
+        "t-explain",
+        "t-allow"
+       ],
+       "gte": 4
+      }
+     }
+    ]
+   },
+   "lines": [
+    {
+     "speaker": "narrator",
+     "text": "רכב כבאות נעצר בקצה הרחוב. קצין הכבאות ניגש אליך: „מה יש לנו?”"
+    }
+   ],
+   "effects": {
+    "set": {
+     "fireHere": true
+    }
+   }
+  }
+ ],
+ "update": {
+  "categories": {
+   "location": "מקום",
+   "situation": "מצב נוכחי",
+   "status": "מצב המעורבים",
+   "verified": "מה אומת",
+   "missing": "מה עדיין חסר",
+   "assistance": "סיוע נדרש",
+   "judgement": "קביעה"
+  },
+  "elements": [
+   {
+    "id": "u-loc",
+    "category": "location",
+    "text": "נמצא ברחוב השקד 8"
+   },
+   {
+    "id": "u-smell",
+    "category": "verified",
+    "text": "ריח גז חזק {{smellAt}}",
+    "when": {
+     "fact": "o-smell"
+    }
+   },
+   {
+    "id": "u-smell-claim",
+    "category": "situation",
+    "text": "דיווח על ריח גז – טרם אומת",
+    "when": {
+     "not": {
+      "fact": "o-smell"
+     }
+    }
+   },
+   {
+    "id": "u-fire",
+    "category": "assistance",
+    "text": "מבקש כבאות והצלה וחברת הגז",
+    "when": {
+     "not": {
+      "flag": "fireHere"
+     }
+    }
+   },
+   {
+    "id": "u-evacuating",
+    "category": "situation",
+    "text": "מפנה את הדיירים",
+    "when": {
+     "not": {
+      "flag": "evacuated"
+     }
+    }
+   },
+   {
+    "id": "u-evacuated",
+    "category": "verified",
+    "text": "הבניין פונה, כל הדירות דווחו",
+    "when": {
+     "all": [
+      {
+       "flag": "evacuated"
+      },
+      {
+       "flag": "counted"
+      }
+     ]
+    }
+   },
+   {
+    "id": "u-refusal",
+    "category": "status",
+    "text": "דייר מסרב להתפנות",
+    "when": {
+     "all": [
+      {
+       "flag": "mosheAngry"
+      },
+      {
+       "not": {
+        "flag": "mosheOut"
+       }
+      }
+     ]
+    }
+   },
+   {
+    "id": "u-handed",
+    "category": "verified",
+    "text": "הזירה הועברה לכבאות; הדליפה אותרה ונסגרה",
+    "when": {
+     "flag": "handedOver"
+    }
+   },
+   {
+    "id": "u-no-assist",
+    "category": "assistance",
+    "text": "לא נדרש סיוע נוסף"
+   }
+  ],
+  "responses": [
+   {
+    "when": {
+     "inUpdate": "u-fire"
+    },
+    "lines": [
+     {
+      "speaker": "dispatch",
+      "text": "מוקד: כבאות והצלה וחברת הגז הוזנקו, כעשר דקות."
+     }
+    ],
+    "effects": {
+     "set": {
+      "fireReq": true
+     }
+    }
+   },
+   {
+    "when": {
+     "inUpdate": "u-refusal"
+    },
+    "lines": [
+     {
+      "speaker": "dispatch",
+      "text": "מוקד: קיבלתי. הסבירו לו שזו הוראת פינוי מחייבת, ועדכנו את הכבאות כשיגיעו."
+     }
+    ]
+   }
+  ]
+ },
+ "finish": {
+  "label": "סיום הטיפול במקום",
+  "confirm": "לסיים את הטיפול ולעבור לתחקיר? אפשר לשלוח עדכון אחרון למוקד לפני הסיום."
+ },
+ "endings": [
+  {
+   "id": "e-good",
+   "kind": "good",
+   "title": "הבניין פונה בבטחה והדליפה נסגרה",
+   "text": "הדיירים פונו בלי ניצוץ ובלי אש, גם הדייר המסרב יצא אחרי הוראה מוסברת, איש לא חזר פנימה, והזירה הועברה לכבאות עם תמונת מצב מלאה.",
+   "when": {
+    "all": [
+     {
+      "flag": "evacuated"
+     },
+     {
+      "flag": "mosheOut"
+     },
+     {
+      "not": {
+       "flag": "sparked"
+      }
+     },
+     {
+      "not": {
+       "flag": "reentered"
+      }
+     },
+     {
+      "flag": "handedOver"
+     },
+     {
+      "any": [
+       {
+        "not": {
+         "flag": "ev:lighter"
+        }
+       },
+       {
+        "flag": "lighterStopped"
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "e-partial",
+   "kind": "partial",
+   "title": "הבניין פונה – עם סיכונים בדרך",
+   "text": "הדיירים בחוץ, אבל בדרך נלקחו סיכונים: מתג או פעמון, אש בקרבת הבניין, דייר שחזר פנימה, דייר שנשאר בפנים או העברה חסרה לכבאות.",
+   "when": {
+    "flag": "evacuated"
+   }
+  },
+  {
+   "id": "e-retry",
+   "kind": "retry",
+   "title": "הזדמנות לתיקון: הבניין לא פונה",
+   "text": "הצוות עזב לפני שהבניין פונה. הכבאים מצאו דיירים בדירות כשהריח כבר התפשט בחדר המדרגות.",
+   "when": {
+    "always": true
+   }
+  }
+ ],
+ "hints": [
+  {
+   "when": {
+    "all": [
+     {
+      "stage": [
+       "dispatch"
+      ]
+     },
+     {
+      "not": {
+       "chosen": "f-fire"
+      }
+     }
+    ]
+   },
+   "text": "בדליפת גז הסייר לא סוגר את הדליפה בעצמו. מי צריך להגיע?"
+  },
+  {
+   "when": {
+    "all": [
+     {
+      "stage": [
+       "scene"
+      ]
+     },
+     {
+      "not": {
+       "flag": "evacuated"
+      }
+     }
+    ]
+   },
+   "text": "צריך להוציא את הדיירים – אבל פעמון, אינטרקום ומתג אור יכולים ליצור ניצוץ."
+  },
+  {
+   "when": {
+    "all": [
+     {
+      "stage": [
+       "scene"
+      ]
+     },
+     {
+      "not": {
+       "flag": "smokeBanned"
+      }
+     }
+    ]
+   },
+   "text": "יש כאן אנשים עם סיגריות. מה הם צריכים לשמוע ממך?"
+  },
+  {
+   "when": {
+    "all": [
+     {
+      "flag": "ev:lighter"
+     },
+     {
+      "not": {
+       "flag": "lighterStopped"
+      }
+     }
+    ]
+   },
+   "text": "משה מדליק מצית ליד הבניין. עצור אותו עכשיו."
+  },
+  {
+   "when": {
+    "flag": "mosheAngry"
+   },
+   "text": "משה מסרב. הסבר את הסכנה גם לשכנים שלו, והבהר שזו הוראה מחייבת."
+  },
+  {
+   "when": {
+    "all": [
+     {
+      "flag": "evacuated"
+     },
+     {
+      "not": {
+       "flag": "counted"
+      }
+     }
+    ]
+   },
+   "text": "כולם בחוץ? איך תדע? מי מכיר את הדיירים?"
+  },
+  {
+   "when": {
+    "flag": "ev:fire"
+   },
+   "text": "הכבאים הגיעו. מה הם צריכים לדעת ממך?"
+  },
+  {
+   "when": {
+    "always": true
+   },
+   "text": "לפני הסיום: האם המוקד יודע שהבניין פונה ושהזירה בידי הכבאות?"
+  }
+ ],
+ "challenges": [
+  "שחק עם זרע אחר – מקור הריח משתנה. בדוק שהתדריך לכבאים מדויק בכל מקרה.",
+  "נסה למנוע את המצית לגמרי – מה צריך להיאמר, ומתי?",
+  "נסה לתת למשה הוראת פינוי שהוא מקבל כבר בפעם הראשונה."
+ ],
+ "report": {
+  "reason": "התקבלה משימה מהמוקד: ריח גז חזק בכניסה לבניין ברחוב השקד 8.",
+  "checklist": [
+   {
+    "label": "מקום הריח",
+    "when": {
+     "fact": "o-smell"
+    }
+   },
+   {
+    "label": "פינוי הדיירים",
+    "when": {
+     "fact": "o-evacuated"
+    }
+   },
+   {
+    "label": "ספירת דירות",
+    "when": {
+     "flag": "counted"
+    }
+   },
+   {
+    "label": "סירוב ומה נאמר",
+    "when": {
+     "fact": "c-moshe-nothing"
+    }
+   },
+   {
+    "label": "ממצאי הכבאות",
+    "when": {
+     "fact": "o-fire-found"
+    }
+   }
+  ]
+ },
+ "media": {
+  "images": [
+   "img/building-entrance-day.webp",
+   "img/building-entrance-night.webp",
+   "img/chars/galit-calm.webp",
+   "img/chars/galit-tense.webp",
+   "img/chars/galit-upset.webp",
+   "img/chars/moshe-calm.webp",
+   "img/chars/moshe-tense.webp",
+   "img/chars/moshe-upset.webp",
+   "img/chars/tomer-calm.webp",
+   "img/chars/tomer-tense.webp",
+   "img/chars/tomer-upset.webp",
+   "img/props/patrol.webp",
+   "img/drive/interior.webp",
+   "img/drive/road-day.webp",
+   "img/drive/road-night.webp"
+  ],
+  "audio": [
+   "audio/building-hum.mp3",
+   "audio/crowd.mp3",
+   "audio/engine-wipers.mp3",
+   "audio/knock.mp3",
+   "audio/radio-chirp.mp3",
+   "audio/alert.mp3",
+   "audio/radio-chatter.mp3"
+  ],
+  "voice": {},
+  "narrationMissing": "אין עדיין קריינות מוקלטת בעברית. הקבצים יתווספו לתיקייה public/audio/voice/gas-smell/ וימופו בשדה media.voice."
+ }
+}

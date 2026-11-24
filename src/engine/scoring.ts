@@ -2,12 +2,14 @@ import { evalCond } from './conditions';
 import { fill } from './text';
 import type { Domain, GameState, Scenario, ScoreRule } from './types';
 
-export const DOMAINS: Domain[] = ['info', 'assessment', 'communication', 'dispatch', 'documentation'];
+export const DOMAINS: Domain[] = ['info', 'assessment', 'communication', 'authority', 'dispatch', 'documentation'];
 
 export const DEFAULT_WEIGHTS: Record<Domain, number> = {
   info: 25,
   assessment: 25,
   communication: 20,
+  /** תחום שנכלל רק בתרחישים שמגדירים לו משקל */
+  authority: 0,
   dispatch: 20,
   documentation: 10,
 };
@@ -16,6 +18,7 @@ export const DOMAIN_LABELS: Record<Domain, string> = {
   info: 'איסוף ואימות מידע',
   assessment: 'הערכת מצב ותעדוף פעולות',
   communication: 'תקשורת עם המעורבים',
+  authority: 'הפעלת סמכות ונהלים',
   dispatch: 'עדכון מוקד ותיאום סיוע',
   documentation: 'תיעוד וסיכום האירוע',
 };
@@ -116,7 +119,7 @@ export function computeScore(sc: Scenario, st: GameState): ScoreResult {
   const weights = { ...DEFAULT_WEIGHTS, ...(sc.scoring.weights ?? {}) };
   const rules = allRules(sc, st).map((r) => evaluateRule(sc, st, r));
   const relevant = DOMAINS.filter((d) => weights[d] > 0 && rules.some((r) => r.rule.domain === d && r.applicable));
-  const excludedDomains = DOMAINS.filter((d) => !relevant.includes(d));
+  const excludedDomains = DOMAINS.filter((d) => weights[d] > 0 && !relevant.includes(d));
   const W = relevant.reduce((s, d) => s + weights[d], 0) || 1;
   const exactWeights = relevant.map((d) => (weights[d] * 100) / W);
   const raws = relevant.map((d) => {

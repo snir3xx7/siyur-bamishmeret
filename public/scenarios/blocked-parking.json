@@ -1,0 +1,1677 @@
+{
+ "id": "blocked-parking",
+ "version": 1,
+ "title": "רכב חוסם בחניון הבניין",
+ "category": "סדר ציבורי ויחסי שכנים",
+ "summary": "אח במשמרת בוקר חסום בחניון על ידי רכב זר ומאיים „לטפל בזה לבד”. יש להקשיב ללחץ, לאמת את פרטי הרכב, למצות דרכים לאיתור הבעלים, לעצור פגיעה ברכוש באזהרה ברורה ולתווך.",
+ "estimatedMinutes": 10,
+ "difficultyLabel": "קלה–בינונית",
+ "skills": [
+  "הקשבה לאדם לחוץ",
+  "אימות פרטי רכב",
+  "איתור בעלים",
+  "אזהרה ברורה מפני פגיעה ברכוש",
+  "תיווך בין הצדדים"
+ ],
+ "shifts": [
+  "morning",
+  "evening"
+ ],
+ "defaultShift": "morning",
+ "location": {
+  "name": "חניון רחוב האלה 14",
+  "area": "שכונת רמת התמר, קריית אלון (בדוי)"
+ },
+ "objectives": [
+  "להקשיב למתלונן ולהכיר בלחץ שלו",
+  "לאמת את פרטי הרכב החוסם",
+  "לאתר את הבעלים לפני שיקול של גרירה",
+  "למנוע פגיעה ברכוש באזהרה ברורה",
+  "לשחרר את החסימה ולסיים בשיחה רגועה בין הצדדים"
+ ],
+ "variants": [
+  {
+   "id": "note",
+   "label": "על לוח המחוונים פתק עם מספר טלפון",
+   "set": {
+    "note": true
+   },
+   "vars": {
+    "dash": "פתק בכתב יד: „אורחת בדירה 12, לכל בעיה – להתקשר”, ומספר טלפון"
+   }
+  },
+  {
+   "id": "nonote",
+   "label": "אין פרטים ברכב",
+   "set": {
+    "note": false
+   },
+   "vars": {
+    "dash": "שום פתק או מספר טלפון"
+   }
+  }
+ ],
+ "scoring": {
+  "weights": {
+   "info": 20,
+   "assessment": 20,
+   "communication": 25,
+   "authority": 15,
+   "dispatch": 10,
+   "documentation": 10
+  },
+  "rules": [
+   {
+    "id": "bp-info-dispatch",
+    "domain": "info",
+    "label": "השלמת פרטים מהמוקד",
+    "max": 5,
+    "required": false,
+    "anchor": [
+     "f-mood"
+    ],
+    "tiers": [
+     {
+      "when": {
+       "chosen": "f-mood"
+      },
+      "points": 5,
+      "explain": "התברר מה אמר המתלונן ואם יש חשש לעימות.",
+      "keep": "שאלת מה בדיוק אמר רוני. ידעת מראש שהוא עלול „לטפל בזה לבד”."
+     }
+    ],
+    "fallback": {
+     "explain": "לא התבררה רמת המתח.",
+     "improve": "לא שאלת מה אמר המתלונן. בסבב הבא בקש מהמוקד פרטים על המתח במקום – זה מכין אותך."
+    }
+   },
+   {
+    "id": "bp-info-plate",
+    "domain": "info",
+    "label": "אימות פרטי הרכב",
+    "max": 8,
+    "required": true,
+    "anchor": [
+     "c-plate"
+    ],
+    "tiers": [
+     {
+      "when": {
+       "chosen": "c-plate"
+      },
+      "points": 8,
+      "explain": "מספר הרכב אומת מול הדיווח.",
+      "keep": "בדקת שמספר הרכב תואם לדיווח ושמת לב למה שמונח על לוח המחוונים – בלי לגעת ברכב."
+     }
+    ],
+    "fallback": {
+     "explain": "פרטי הרכב לא אומתו.",
+     "improve": "לא בדקת את מספר הרכב. בסבב הבא אמת אותו לפני כל פנייה לאיתור הבעלים."
+    }
+   },
+   {
+    "id": "bp-info-neighbor",
+    "domain": "info",
+    "label": "היעזרות בוועד הבית",
+    "max": 7,
+    "required": false,
+    "tiers": [
+     {
+      "when": {
+       "chosen": "n-ask"
+      },
+      "points": 7,
+      "explain": "ועד הבית נשאל על הרכב.",
+      "keep": "שאלת את ניסים, שמכיר את הדיירים, וקיבלת כיוון מהיר לבעלים."
+     }
+    ],
+    "fallback": {
+     "explain": "ועד הבית לא נשאל.",
+     "improve": "לא פנית לוועד הבית. בסבב הבא היעזר במי שמכיר את המקום."
+    }
+   },
+   {
+    "id": "bp-assess-moved",
+    "domain": "assessment",
+    "label": "שחרור החסימה",
+    "max": 12,
+    "required": true,
+    "anchor": [
+     "s-move"
+    ],
+    "tiers": [
+     {
+      "when": {
+       "flag": "moved"
+      },
+      "points": 12,
+      "explain": "הרכב הוזז והיציאה שוחררה.",
+      "keep": "הרכב הוזז ורוני יכול היה לצאת למשמרת."
+     }
+    ],
+    "fallback": {
+     "explain": "החסימה לא שוחררה.",
+     "improve": "הטיפול הסתיים כשרוני עדיין חסום. בסבב הבא אתר את הבעלים והזז את הרכב."
+    }
+   },
+   {
+    "id": "bp-assess-alt",
+    "domain": "assessment",
+    "label": "פתרון ביניים בזמן ההמתנה",
+    "max": 8,
+    "required": false,
+    "tiers": [
+     {
+      "when": {
+       "chosen": "r-alt"
+      },
+      "points": 8,
+      "explain": "הוצע למתלונן פתרון ביניים.",
+      "keep": "הצעת לרוני לעדכן את המחלקה. כך הלחץ ירד גם לפני שהרכב הוזז."
+     }
+    ],
+    "fallback": {
+     "explain": "לא הוצע פתרון ביניים.",
+     "improve": "רוני חיכה בלי שום דבר לעשות. בסבב הבא הצע לו צעד ביניים, כמו לעדכן את מקום העבודה."
+    }
+   },
+   {
+    "id": "bp-comm-roni",
+    "domain": "communication",
+    "label": "שיח עם המתלונן הלחוץ",
+    "max": 10,
+    "required": true,
+    "tiers": [
+     {
+      "when": {
+       "all": [
+        {
+         "chosen": "r-listen"
+        },
+        {
+         "not": {
+          "chosen": "r-dismiss"
+         }
+        }
+       ]
+      },
+      "points": 10,
+      "explain": "המתלונן הרגיש שמקשיבים לו.",
+      "keep": "הכרת בלחץ של רוני והסברת מה אתה עושה. כשהוא הרגיש שמטפלים בו – הוא נרגע."
+     },
+     {
+      "when": {
+       "all": [
+        {
+         "chosen": "r-dismiss"
+        },
+        {
+         "chosen": "r-repair"
+        }
+       ]
+      },
+      "points": 5,
+      "explain": "ביטול הלחץ תוקן בהמשך.",
+      "improve": "„זה לא מקרה חירום” הגביר את הכעס. תיקנת – טוב. בסבב הבא התחל בהכרה בלחץ."
+     }
+    ],
+    "fallback": {
+     "explain": "המתלונן לא הרגיש שמקשיבים לו.",
+     "improve": "רוני נשאר כועס ומתוסכל. בסבב הבא הכר בלחץ שלו והסבר מה הצעד הבא."
+    }
+   },
+   {
+    "id": "bp-comm-shiran",
+    "domain": "communication",
+    "label": "פנייה לבעלת הרכב",
+    "max": 8,
+    "required": true,
+    "appliesWhen": {
+     "flag": "ownerHere"
+    },
+    "tiers": [
+     {
+      "when": {
+       "all": [
+        {
+         "chosen": "s-hear"
+        },
+        {
+         "not": {
+          "chosen": "s-threat"
+         }
+        }
+       ]
+      },
+      "points": 8,
+      "explain": "בעלת הרכב נשמעה בלי האשמה.",
+      "keep": "שאלת את שירן מה קרה בלי להאשים. היא התנצלה והזיזה את הרכב מיד."
+     },
+     {
+      "when": {
+       "chosen": "s-threat"
+      },
+      "points": 3,
+      "explain": "בעלת הרכב אוימה בדוח.",
+      "improve": "האיום בדוח הפך את שירן למתגוננת. בסבב הבא שאל מה קרה ובקש להזיז – זה מספיק."
+     }
+    ],
+    "fallback": {
+     "explain": "לא התקיימה שיחה עם בעלת הרכב.",
+     "improve": "לא דיברת עם שירן. בסבב הבא שמע אותה – גם לה יש גרסה."
+    }
+   },
+   {
+    "id": "bp-comm-mediate",
+    "domain": "communication",
+    "label": "סיום בתיווך",
+    "max": 7,
+    "required": false,
+    "appliesWhen": {
+     "flag": "moved"
+    },
+    "tiers": [
+     {
+      "when": {
+       "chosen": "s-mediate"
+      },
+      "points": 7,
+      "explain": "הצדדים נפרדו בהסכמה.",
+      "keep": "קירבת בין רוני לשירן וסיכמתם מה עושים בפעם הבאה. השכנים לא נשארים עם כעס."
+     }
+    ],
+    "fallback": {
+     "explain": "לא נערך תיווך.",
+     "improve": "רוני ושירן נפרדו בלי לדבר. בסבב הבא סיים בשיחה קצרה ובסיכום לפעם הבאה."
+    }
+   },
+   {
+    "id": "bp-auth-warn",
+    "domain": "authority",
+    "label": "עצירת פגיעה ברכוש באזהרה ברורה",
+    "max": 8,
+    "required": true,
+    "appliesWhen": {
+     "flag": "ev:tire"
+    },
+    "anchor": [
+     "r-warn"
+    ],
+    "tiers": [
+     {
+      "when": {
+       "chosen": "r-warn"
+      },
+      "points": 8,
+      "explain": "הפגיעה נעצרה באזהרה ברורה ומוסברת.",
+      "keep": "עצרת את רוני מיד: אמרת לו מה לעשות (להתרחק), למה (פגיעה ברכוש היא עבירה) ושאתה מטפל. אזהרה ברורה בלי השפלה."
+     }
+    ],
+    "fallback": {
+     "explain": "הפגיעה ברכוש לא נעצרה.",
+     "improve": "רוני המשיך לשחרר את האוויר מהגלגל. בסבב הבא עצור אותו מיד באמירה ברורה עם סיבה."
+    }
+   },
+   {
+    "id": "bp-auth-tow",
+    "domain": "authority",
+    "label": "מיצוי איתור הבעלים לפני גרירה",
+    "max": 7,
+    "required": true,
+    "tiers": [
+     {
+      "when": {
+       "all": [
+        {
+         "flag": "ownerHere"
+        },
+        {
+         "not": {
+          "sent": "u-tow"
+         }
+        }
+       ]
+      },
+      "points": 7,
+      "explain": "הבעלים אותרה בלי צורך בגרר.",
+      "keep": "מיצית את הדרכים לאיתור הבעלים – פתק, ועד הבית או המוקד – לפני ששקלת גרר. זה מהיר יותר ופוגע פחות."
+     },
+     {
+      "when": {
+       "flag": "ownerHere"
+      },
+      "points": 4,
+      "explain": "הבעלים אותרה, אך התבקש גרר מוקדם מדי.",
+      "improve": "ביקשת גרר לפני שמיצית את איתור הבעלים. בסבב הבא נסה קודם את הדרכים המהירות."
+     },
+     {
+      "when": {
+       "sent": "u-tow"
+      },
+      "points": 2,
+      "explain": "התבקש גרר בלי לאתר את הבעלים.",
+      "improve": "גרר לוקח זמן רב ופוגע בבעלים. בסבב הבא נסה קודם לאתר את בעלת הרכב."
+     }
+    ],
+    "fallback": {
+     "explain": "הבעלים לא אותרה.",
+     "improve": "לא איתרת את בעלת הרכב. בסבב הבא בדוק את לוח המחוונים, שאל את ועד הבית או בקש מהמוקד איתור לפי מספר מאומת."
+    }
+   },
+   {
+    "id": "bp-disp-first",
+    "domain": "dispatch",
+    "label": "עדכון ראשון",
+    "max": 5,
+    "required": false,
+    "anchor": [
+     "update:1"
+    ],
+    "tiers": [
+     {
+      "when": {
+       "update": {
+        "n": 1,
+        "has": [
+         "u-blocked"
+        ],
+        "hasCat": [
+         "location"
+        ]
+       }
+      },
+      "points": 5,
+      "explain": "בעדכון הראשון נמסרו מקום ורכב מאומת.",
+      "keep": "העדכון הראשון כלל מקום ומספר רכב מאומת."
+     },
+     {
+      "when": {
+       "updatesGte": 1
+      },
+      "points": 2,
+      "explain": "נשלח עדכון חלקי.",
+      "improve": "העדכון הראשון לא כלל מספר רכב מאומת. בסבב הבא אמת לפני העדכון."
+     }
+    ],
+    "fallback": {
+     "explain": "לא נשלח עדכון.",
+     "improve": "לא עדכנת את המוקד. בסבב הבא שלח עדכון קצר בהגעה."
+    }
+   },
+   {
+    "id": "bp-disp-close",
+    "domain": "dispatch",
+    "label": "עדכון סיום",
+    "max": 5,
+    "required": true,
+    "anchor": [
+     "update:last"
+    ],
+    "tiers": [
+     {
+      "when": {
+       "update": {
+        "n": "last",
+        "has": [
+         "u-moved"
+        ]
+       }
+      },
+      "points": 5,
+      "explain": "העדכון האחרון מסר שהחסימה שוחררה.",
+      "keep": "סגרת את האירוע בעדכון שהרכב הוזז."
+     }
+    ],
+    "fallback": {
+     "explain": "לא נמסר שהחסימה שוחררה.",
+     "improve": "המוקד לא יודע שהאירוע הסתיים. בסבב הבא סיים בעדכון קצר."
+    }
+   },
+   {
+    "id": "bp-doc-photo",
+    "domain": "documentation",
+    "label": "תיעוד החסימה",
+    "max": 5,
+    "required": true,
+    "tiers": [
+     {
+      "when": {
+       "chosen": "c-photo"
+      },
+      "points": 5,
+      "explain": "החסימה תועדה בצילום.",
+      "keep": "צילמת את מיקום הרכב ורשמת שעה. אם תהיה תלונה – יש תיעוד."
+     }
+    ],
+    "fallback": {
+     "explain": "החסימה לא תועדה.",
+     "improve": "לא תיעדת את מיקום הרכב החוסם. בסבב הבא צלם ורשום שעה לפני שהוא זז."
+    }
+   },
+   {
+    "id": "bp-doc-versions",
+    "domain": "documentation",
+    "label": "שמיעת שני הצדדים",
+    "max": 5,
+    "required": false,
+    "tiers": [
+     {
+      "when": {
+       "all": [
+        {
+         "chosen": "r-listen"
+        },
+        {
+         "chosen": "s-hear"
+        }
+       ]
+      },
+      "points": 5,
+      "explain": "נשמעו שני הצדדים.",
+      "keep": "שמעת גם את רוני וגם את שירן. הסיכום שלך מבוסס על שתי הגרסאות."
+     }
+    ],
+    "fallback": {
+     "explain": "נשמע רק צד אחד.",
+     "improve": "שמעת רק צד אחד. בסבב הבא שאל גם את הצד השני מה קרה."
+    }
+   }
+  ]
+ },
+ "facts": [
+  {
+   "id": "d-report",
+   "kind": "dispatch",
+   "text": "רכב כסוף חוסם את יציאתו של המתלונן מהחניון"
+  },
+  {
+   "id": "d-plate",
+   "kind": "dispatch",
+   "text": "מספר הרכב שנמסר: 45-218-63"
+  },
+  {
+   "id": "d-urgent",
+   "kind": "dispatch",
+   "text": "המתלונן, רוני, אח במשמרת בוקר, צריך לצאת בדחיפות"
+  },
+  {
+   "id": "d-threat",
+   "kind": "dispatch",
+   "text": "המתלונן אמר שאם לא יגיעו „יטפל בזה לבד”"
+  },
+  {
+   "id": "o-blocked",
+   "kind": "observation",
+   "text": "הרכב הכסוף חונה בניצב מאחורי הרכב האדום וחוסם אותו לחלוטין"
+  },
+  {
+   "id": "o-plate",
+   "kind": "observation",
+   "text": "מספר הרכב החוסם תואם למספר שנמסר: 45-218-63"
+  },
+  {
+   "id": "o-dash",
+   "kind": "observation",
+   "text": "על לוח המחוונים: {{dash}}"
+  },
+  {
+   "id": "c-roni-shift",
+   "kind": "claim",
+   "text": "המשמרת שלו בטיפול נמרץ מתחילה בשבע, ואין מי שיחליף אותו",
+   "source": "roni"
+  },
+  {
+   "id": "c-nissim-guest",
+   "kind": "claim",
+   "text": "הרכב שייך לאורחת של דירה 12, שהגיעה מאוחר בלילה",
+   "source": "nissim"
+  },
+  {
+   "id": "c-shiran-dark",
+   "kind": "claim",
+   "text": "הגיעה בחושך, חשבה שהמקום פנוי ולא ראתה שהיא חוסמת",
+   "source": "shiran"
+  },
+  {
+   "id": "o-moved",
+   "kind": "observation",
+   "text": "הרכב הכסוף הוזז והיציאה פנויה"
+  }
+ ],
+ "characters": [
+  {
+   "id": "roni",
+   "name": "רוני אזולאי",
+   "role": "המתלונן",
+   "gender": "m",
+   "look": {
+    "skin": "#d6a57c",
+    "hair": "#3a2a20",
+    "hairStyle": "short",
+    "top": "#555",
+    "bottom": "#333"
+   },
+   "attitude": 0,
+   "x": 16,
+   "y": 96,
+   "scale": 1.4,
+   "moodRules": [
+    {
+     "when": {
+      "any": [
+       {
+        "flag": "roniAngry"
+       },
+       {
+        "all": [
+         {
+          "flag": "ev:tire"
+         },
+         {
+          "not": {
+           "flag": "warned"
+          }
+         }
+        ]
+       }
+      ]
+     },
+     "mood": "upset"
+    },
+    {
+     "when": {
+      "not": {
+       "flag": "moved"
+      }
+     },
+     "mood": "tense"
+    }
+   ],
+   "sprite": "img/chars/roni",
+   "spriteMoods": [
+    "calm",
+    "tense",
+    "upset"
+   ]
+  },
+  {
+   "id": "nissim",
+   "name": "ניסים דוד",
+   "role": "ועד הבית",
+   "gender": "m",
+   "look": {
+    "skin": "#d6a57c",
+    "hair": "#3a2a20",
+    "hairStyle": "short",
+    "top": "#555",
+    "bottom": "#333"
+   },
+   "attitude": 1,
+   "x": 80,
+   "y": 88,
+   "scale": 1.25,
+   "sprite": "img/chars/nissim",
+   "spriteMoods": [
+    "calm",
+    "tense",
+    "upset"
+   ]
+  },
+  {
+   "id": "shiran",
+   "name": "שירן לוי",
+   "role": "בעלת הרכב החוסם",
+   "gender": "f",
+   "look": {
+    "skin": "#d6a57c",
+    "hair": "#3a2a20",
+    "hairStyle": "short",
+    "top": "#555",
+    "bottom": "#333"
+   },
+   "attitude": 1,
+   "x": 64,
+   "y": 90,
+   "scale": 1.25,
+   "when": {
+    "flag": "ownerHere"
+   },
+   "moodRules": [
+    {
+     "when": {
+      "flag": "threatened"
+     },
+     "mood": "upset"
+    },
+    {
+     "when": {
+      "not": {
+       "flag": "heardShiran"
+      }
+     },
+     "mood": "tense"
+    }
+   ],
+   "sprite": "img/chars/shiran",
+   "spriteMoods": [
+    "calm",
+    "tense",
+    "upset"
+   ]
+  }
+ ],
+ "dispatch": {
+  "time": {
+   "morning": "06:38",
+   "evening": "19:05"
+  },
+  "unit": "סייר 22",
+  "incident": "4417",
+  "lines": [
+   {
+    "speaker": "dispatch",
+    "text": "סייר 22, כאן מוקד אלון. תלונה על רכב שחוסם יציאה בחניון רחוב האלה 14. המתלונן, רוני, צריך לצאת בדחיפות ונשמע נסער. אשר קבלה."
+   }
+  ],
+  "initialFacts": [
+   "d-report",
+   "d-urgent"
+  ],
+  "basicExtraFacts": [
+   "d-plate"
+  ],
+  "followUps": [
+   {
+    "id": "f-plate",
+    "label": "לשאול: מה מספר הרכב החוסם?",
+    "when": {
+     "not": {
+      "fact": "d-plate"
+     }
+    },
+    "lines": [
+     {
+      "speaker": "player",
+      "text": "מוקד, נמסר מספר רכב?"
+     },
+     {
+      "speaker": "dispatch",
+      "text": "45-218-63, רכב כסוף."
+     }
+    ],
+    "effects": {
+     "reveal": [
+      "d-plate"
+     ]
+    },
+    "report": "קבלת מספר הרכב החוסם"
+   },
+   {
+    "id": "f-mood",
+    "label": "לשאול: מה בדיוק אמר המתלונן? יש חשש לעימות?",
+    "lines": [
+     {
+      "speaker": "player",
+      "text": "מה בדיוק אמר המתלונן? יש חשש לעימות?"
+     },
+     {
+      "speaker": "dispatch",
+      "text": "הוא אמר שאם לא נגיע מהר הוא „יטפל בזה לבד”. אין אנשים נוספים במקום לפי הדיווח."
+     }
+    ],
+    "effects": {
+     "reveal": [
+      "d-threat"
+     ]
+    },
+    "report": "בירור רמת המתח וחשש לעימות"
+   }
+  ],
+  "goLabel": "אישור קבלה ויציאה לחניון"
+ },
+ "transition": {
+  "kind": "car",
+  "text": "נסיעה קצרה ברחובות השכונה. הבניינים עוד שקטים, ורק כמה דיירים יוצאים לעבודה.",
+  "travelMinutes": 4,
+  "ambience": [
+   "engine-wipers",
+   "radio-chatter"
+  ]
+ },
+ "scene": {
+  "background": "img/parking",
+  "alt": "חניון פתוח מאחורי בניין מגורים על עמודים: קווי חנייה לבנים, שער הזזה משמאל, חומת אבן עם בוגנוויליה מימין ופחי אשפה ליד הכניסה.",
+  "fallbackColor": "#9a9384",
+  "ambience": [
+   "yard-morning"
+  ],
+  "ambienceRules": [
+   {
+    "when": {
+     "shift": [
+      "evening"
+     ]
+    },
+    "ambience": [
+     "yard-evening"
+    ]
+   }
+  ],
+  "lights": "off",
+  "weather": "none",
+  "bgByShift": {
+   "morning": "day",
+   "evening": "night"
+  },
+  "props": [
+   {
+    "id": "car-red",
+    "kind": "car-red",
+    "x": 33,
+    "y": 82,
+    "scale": 1.05
+   },
+   {
+    "id": "car-silver",
+    "kind": "car-silver",
+    "x": 40,
+    "y": 97,
+    "scale": 1.2,
+    "flip": true,
+    "when": {
+     "not": {
+      "flag": "moved"
+     }
+    }
+   },
+   {
+    "id": "car-silver-moved",
+    "kind": "car-silver",
+    "x": 66,
+    "y": 70,
+    "scale": 0.8,
+    "flip": true,
+    "when": {
+     "flag": "moved"
+    }
+   },
+   {
+    "id": "patrol",
+    "kind": "patrol",
+    "x": 93,
+    "y": 99,
+    "scale": 0.7,
+    "flip": true
+   },
+   {
+    "id": "sg-street",
+    "kind": "sign",
+    "x": 10,
+    "y": 46,
+    "text": "רח׳ האלה 14",
+    "sign": "street",
+    "scale": 0.85
+   },
+   {
+    "id": "sg-private",
+    "kind": "sign",
+    "x": 46,
+    "y": 40,
+    "text": "חניה לדיירי הבניין בלבד",
+    "sign": "notice",
+    "scale": 0.7
+   }
+  ],
+  "painted": true
+ },
+ "arrivalLines": [
+  {
+   "speaker": "narrator",
+   "text": "החניון מאחורי הבניין. רכב כסוף חונה בניצב מאחורי רכב אדום וחוסם אותו לגמרי. לידו מתהלך גבר במדי בית חולים, מסתכל בשעון. בפינה עומד דייר מבוגר עם פנקס – מוועד הבית."
+  },
+  {
+   "speaker": "roni",
+   "text": "סוף סוף! אני צריך להיות בטיפול נמרץ בעוד עשרים דקות!"
+  }
+ ],
+ "arrivalFacts": [
+  "o-blocked"
+ ],
+ "hotspots": [
+  {
+   "id": "h-roni",
+   "label": "רוני – המתלונן",
+   "kind": "character",
+   "x": 16,
+   "y": 44,
+   "description": "רוני אזולאי, אח במדי בית חולים. הרכב האדום שלו חסום.",
+   "choices": [
+    {
+     "id": "r-listen",
+     "label": "להקשיב לרוני, להכיר בלחץ ולהסביר מה אתה עושה עכשיו",
+     "lines": [
+      {
+       "speaker": "player",
+       "text": "אני מבין שאתה בלחץ ושיש לך משמרת. אני כאן כדי לשחרר אותך כמה שיותר מהר. תן לי שתי דקות לאתר את בעל הרכב."
+      },
+      {
+       "speaker": "roni",
+       "text": "המשמרת שלי בטיפול נמרץ מתחילה בשבע, ואין מי שיחליף אותי. בסדר… רק מהר."
+      }
+     ],
+     "effects": {
+      "reveal": [
+       "c-roni-shift"
+      ],
+      "attitude": {
+       "roni": 2
+      },
+      "set": {
+       "roniHeard": true
+      }
+     },
+     "report": "הקשבה למתלונן והסבר מהלך הטיפול"
+    },
+    {
+     "id": "r-dismiss",
+     "label": "להגיד לרוני: „זה לא מקרה חירום, תצטרך לחכות”",
+     "lines": [
+      {
+       "speaker": "player",
+       "text": "תירגע, זה לא מקרה חירום. תצטרך לחכות כמו כולם."
+      },
+      {
+       "speaker": "roni",
+       "text": "לא מקרה חירום? יש לי מטופלים מונשמים! אתם לא עושים כלום!"
+      }
+     ],
+     "effects": {
+      "attitude": {
+       "roni": -2
+      },
+      "set": {
+       "roniAngry": true
+      },
+      "note": "הביטול של הלחץ הגביר את הכעס של המתלונן"
+     }
+    },
+    {
+     "id": "r-repair",
+     "label": "להתנצל ולהבהיר שהמטרה לשחרר אותו מהר",
+     "when": {
+      "flag": "roniAngry"
+     },
+     "lines": [
+      {
+       "speaker": "player",
+       "text": "סליחה, ניסחתי את זה לא טוב. אני מבין שזה דחוף לך, ואני מטפל בזה עכשיו."
+      },
+      {
+       "speaker": "roni",
+       "text": "…אוקיי. תודה."
+      }
+     ],
+     "effects": {
+      "attitude": {
+       "roni": 2
+      },
+      "set": {
+       "roniAngry": false
+      }
+     },
+     "report": "תיקון הטון מול המתלונן"
+    },
+    {
+     "id": "r-warn",
+     "label": "לעצור את רוני באזהרה ברורה: לא לגעת ברכב, פגיעה ברכוש היא עבירה, ואתה מטפל",
+     "when": {
+      "all": [
+       {
+        "flag": "ev:tire"
+       },
+       {
+        "not": {
+         "flag": "warned"
+        }
+       }
+      ]
+     },
+     "lines": [
+      {
+       "speaker": "player",
+       "text": "רוני, עצור. תתרחק מהגלגל. פגיעה ברכב של מישהו אחר היא עבירה, ואני לא אאפשר אותה. אני מטפל בזה – תן לי לעשות את העבודה."
+      },
+      {
+       "speaker": "roni",
+       "text": "(מתרחק) …בסדר. אני פשוט לא יודע מה לעשות."
+      }
+     ],
+     "effects": {
+      "set": {
+       "warned": true
+      },
+      "attitude": {
+       "roni": 1
+      }
+     },
+     "report": "אזהרה ברורה מפני פגיעה ברכוש"
+    },
+    {
+     "id": "r-alt",
+     "label": "להציע לרוני לעדכן את המחלקה שהוא מתעכב בכמה דקות",
+     "when": {
+      "not": {
+       "flag": "moved"
+      }
+     },
+     "lines": [
+      {
+       "speaker": "player",
+       "text": "בינתיים, אולי כדאי להתקשר למחלקה ולהודיע שאתה מתעכב בכמה דקות?"
+      },
+      {
+       "speaker": "roni",
+       "text": "כן… אני מתקשר לאחראית משמרת."
+      }
+     ],
+     "effects": {
+      "set": {
+       "roniAlt": true
+      },
+      "attitude": {
+       "roni": 1
+      }
+     },
+     "report": "הצעת פתרון ביניים למתלונן"
+    }
+   ],
+   "character": "roni"
+  },
+  {
+   "id": "h-car",
+   "label": "הרכב הכסוף",
+   "kind": "item",
+   "x": 40,
+   "y": 82,
+   "description": "רכב כסוף שחונה בניצב מאחורי הרכב האדום.",
+   "choices": [
+    {
+     "id": "c-plate",
+     "label": "לבדוק את מספר הרכב מול מה שנמסר ולהציץ בלוח המחוונים מבחוץ",
+     "lines": [
+      {
+       "speaker": "narrator",
+       "text": "מספר הרכב 45-218-63 – תואם למה שנמסר. מבעד לשמשה הקדמית רואים על לוח המחוונים {{dash}}."
+      }
+     ],
+     "effects": {
+      "reveal": [
+       "o-plate",
+       "o-dash"
+      ],
+      "verify": [
+       "d-plate",
+       "d-report"
+      ]
+     },
+     "report": "אימות מספר הרכב ובדיקה חיצונית"
+    },
+    {
+     "id": "c-call",
+     "label": "להתקשר למספר שבפתק",
+     "when": {
+      "all": [
+       {
+        "variant": [
+         "note"
+        ]
+       },
+       {
+        "chosen": "c-plate"
+       },
+       {
+        "not": {
+         "flag": "ownerHere"
+        }
+       }
+      ]
+     },
+     "lines": [
+      {
+       "speaker": "narrator",
+       "text": "אחרי שני צלצולים עונה קול מנומנם. כשאתה מסביר, היא אומרת: „אוי, אני יורדת מיד!”"
+      }
+     ],
+     "effects": {
+      "set": {
+       "ownerHere": true
+      },
+      "minutes": 3
+     },
+     "report": "יצירת קשר עם בעלת הרכב לפי הפתק"
+    },
+    {
+     "id": "c-photo",
+     "label": "לתעד: צילום מיקום הרכב, שעה ומספר רכב",
+     "when": {
+      "not": {
+       "flag": "moved"
+      }
+     },
+     "lines": [
+      {
+       "speaker": "narrator",
+       "text": "צילמת את מיקום הרכב החוסם ואת מספרו, ורשמת את השעה."
+      }
+     ],
+     "effects": {
+      "set": {
+       "documented": true
+      }
+     },
+     "report": "תיעוד החסימה בצילום"
+    }
+   ]
+  },
+  {
+   "id": "h-nissim",
+   "label": "ניסים – ועד הבית",
+   "kind": "character",
+   "x": 80,
+   "y": 50,
+   "description": "ניסים דוד, חבר ועד הבית. מכיר את הדיירים ואת הרכבים.",
+   "choices": [
+    {
+     "id": "n-ask",
+     "label": "לשאול את ניסים אם הוא מכיר את הרכב הכסוף",
+     "lines": [
+      {
+       "speaker": "nissim",
+       "text": "זה לא של דייר. אני חושב שזו האורחת של משפחת לוי מדירה 12 – הגיעה מאוחר בלילה."
+      }
+     ],
+     "effects": {
+      "reveal": [
+       "c-nissim-guest"
+      ]
+     },
+     "report": "שיחה עם ועד הבית על הרכב"
+    },
+    {
+     "id": "n-knock",
+     "label": "לבקש מניסים לקרוא למשפחה בדירה 12 באינטרקום",
+     "when": {
+      "all": [
+       {
+        "fact": "c-nissim-guest"
+       },
+       {
+        "not": {
+         "flag": "ownerHere"
+        }
+       }
+      ]
+     },
+     "lines": [
+      {
+       "speaker": "narrator",
+       "text": "ניסים מצלצל באינטרקום. אחרי רגע נשמע: „אוי, זה האוטו שלי? אני יורדת!”"
+      }
+     ],
+     "effects": {
+      "set": {
+       "ownerHere": true
+      },
+      "minutes": 3
+     },
+     "report": "איתור בעלת הרכב דרך ועד הבית"
+    }
+   ],
+   "character": "nissim"
+  },
+  {
+   "id": "h-shiran",
+   "label": "שירן – בעלת הרכב",
+   "kind": "character",
+   "x": 64,
+   "y": 50,
+   "description": "שירן לוי, ירדה מהבניין בריצה עם מפתחות.",
+   "choices": [
+    {
+     "id": "s-hear",
+     "label": "לשאול את שירן מה קרה, בלי להאשים",
+     "lines": [
+      {
+       "speaker": "player",
+       "text": "בוקר טוב. הרכב שלך חוסם את היציאה. מה קרה?"
+      },
+      {
+       "speaker": "shiran",
+       "text": "הגעתי באחת בלילה, היה חושך ולא היה מקום. חשבתי שהמקום פנוי – לא ראיתי שאני חוסמת. אני ממש מצטערת."
+      }
+     ],
+     "effects": {
+      "reveal": [
+       "c-shiran-dark"
+      ],
+      "set": {
+       "heardShiran": true
+      },
+      "attitude": {
+       "shiran": 1
+      }
+     },
+     "report": "שמיעת גרסת בעלת הרכב"
+    },
+    {
+     "id": "s-threat",
+     "label": "לומר לשירן: „את תקבלי על זה דוח”",
+     "lines": [
+      {
+       "speaker": "player",
+       "text": "את מבינה שאת יכולה לקבל על זה דוח?"
+      },
+      {
+       "speaker": "shiran",
+       "text": "דוח? ירדתי תוך שתי דקות! למה אתה מדבר אליי ככה?"
+      }
+     ],
+     "effects": {
+      "set": {
+       "threatened": true
+      },
+      "attitude": {
+       "shiran": -2
+      },
+      "note": "האיום בדוח הפך את בעלת הרכב מתנצלת למתגוננת"
+     }
+    },
+    {
+     "id": "s-move",
+     "label": "לבקש משירן להזיז את הרכב עכשיו ולהכווין אותה ביציאה",
+     "when": {
+      "not": {
+       "flag": "moved"
+      }
+     },
+     "lines": [
+      {
+       "speaker": "player",
+       "text": "בואי נזיז את הרכב עכשיו. אני אכווין אותך."
+      },
+      {
+       "speaker": "narrator",
+       "text": "שירן מזיזה את הרכב למקום פנוי ליד החומה. היציאה של רוני פנויה."
+      }
+     ],
+     "effects": {
+      "set": {
+       "moved": true
+      },
+      "reveal": [
+       "o-moved"
+      ],
+      "minutes": 2
+     },
+     "report": "הזזת הרכב החוסם"
+    },
+    {
+     "id": "s-mediate",
+     "label": "לקרב בין השניים: שירן מתנצלת, רוני יוצא, וסיכום לפעם הבאה",
+     "when": {
+      "flag": "moved"
+     },
+     "lines": [
+      {
+       "speaker": "shiran",
+       "text": "רוני, נכון? אני מצטערת, באמת לא ראיתי."
+      },
+      {
+       "speaker": "roni",
+       "text": "בסדר… רק בפעם הבאה תשאירי מספר טלפון."
+      },
+      {
+       "speaker": "player",
+       "text": "סיכמנו: בפעם הבאה – חונים רק במקום מסומן או משאירים פתק עם טלפון. רוני, סע בזהירות."
+      }
+     ],
+     "effects": {
+      "set": {
+       "reconciled": true
+      },
+      "attitude": {
+       "roni": 1,
+       "shiran": 1
+      }
+     },
+     "report": "תיווך וסיכום בין הצדדים"
+    }
+   ],
+   "character": "shiran",
+   "when": {
+    "flag": "ownerHere"
+   }
+  },
+  {
+   "id": "h-radio",
+   "label": "מכשיר הקשר – שאילתה למוקד",
+   "kind": "radio",
+   "x": 8,
+   "y": 14,
+   "description": "מכשיר הקשר האישי. לשליחת עדכון השתמש בכפתור „עדכון למוקד”.",
+   "choices": [
+    {
+     "id": "r-lookup",
+     "label": "לבקש מהמוקד לאתר את בעל הרכב הרשום לפי המספר שאומת",
+     "when": {
+      "all": [
+       {
+        "chosen": "c-plate"
+       },
+       {
+        "not": {
+         "flag": "ownerHere"
+        }
+       }
+      ]
+     },
+     "lines": [
+      {
+       "speaker": "player",
+       "text": "מוקד, אימתתי את המספר 45-218-63. אפשר לאתר את הבעלים הרשומים וליצור קשר?"
+      },
+      {
+       "speaker": "dispatch",
+       "text": "הרכב רשום על שם שירן לוי. יצרנו איתה קשר – היא בבניין ויורדת עכשיו."
+      }
+     ],
+     "effects": {
+      "set": {
+       "ownerHere": true,
+       "lookedUp": true
+      },
+      "minutes": 4
+     },
+     "report": "בקשת איתור בעלים רשום לאחר אימות המספר"
+    }
+   ]
+  }
+ ],
+ "events": [
+  {
+   "id": "tire",
+   "title": "התפתחות: המתלונן מאבד סבלנות",
+   "when": {
+    "all": [
+     {
+      "not": {
+       "flag": "moved"
+      }
+     },
+     {
+      "countChosen": {
+       "ids": [
+        "r-listen",
+        "r-dismiss",
+        "r-repair",
+        "r-alt",
+        "c-plate",
+        "c-call",
+        "c-photo",
+        "n-ask",
+        "n-knock",
+        "r-lookup"
+       ],
+       "gte": 3
+      }
+     }
+    ]
+   },
+   "lines": [
+    {
+     "speaker": "narrator",
+     "text": "רוני ניגש בצעדים מהירים לרכב הכסוף, מתכופף ליד הגלגל הקדמי ומתחיל לשחרר את פקק השסתום."
+    },
+    {
+     "speaker": "roni",
+     "text": "אם היא לא יורדת – שתלמד לקח!"
+    }
+   ],
+   "effects": {
+    "note": "המתלונן התחיל לפגוע ברכב החוסם"
+   },
+   "sfx": "alert"
+  }
+ ],
+ "update": {
+  "categories": {
+   "location": "מקום",
+   "situation": "מצב נוכחי",
+   "status": "מצב המעורבים",
+   "verified": "מה אומת",
+   "missing": "מה עדיין חסר",
+   "assistance": "סיוע נדרש",
+   "judgement": "קביעה"
+  },
+  "elements": [
+   {
+    "id": "u-loc",
+    "category": "location",
+    "text": "נמצא בחניון רחוב האלה 14"
+   },
+   {
+    "id": "u-blocked",
+    "category": "situation",
+    "text": "רכב כסוף 45-218-63 חוסם רכב של דייר",
+    "when": {
+     "fact": "o-plate"
+    }
+   },
+   {
+    "id": "u-blocked-claimed",
+    "category": "situation",
+    "text": "רכב חוסם – מספר טרם אומת",
+    "when": {
+     "not": {
+      "fact": "o-plate"
+     }
+    }
+   },
+   {
+    "id": "u-tension",
+    "category": "status",
+    "text": "המתלונן לחוץ, ניסה לפגוע ברכב – הוזהר והתרחק",
+    "when": {
+     "flag": "warned"
+    }
+   },
+   {
+    "id": "u-owner-found",
+    "category": "verified",
+    "text": "בעלת הרכב אותרה ונמצאת במקום",
+    "when": {
+     "flag": "ownerHere"
+    }
+   },
+   {
+    "id": "u-tow",
+    "category": "assistance",
+    "text": "מבקש פקח עירוני וגרר",
+    "when": {
+     "not": {
+      "flag": "moved"
+     }
+    }
+   },
+   {
+    "id": "u-moved",
+    "category": "verified",
+    "text": "הרכב הוזז, היציאה פנויה",
+    "when": {
+     "flag": "moved"
+    }
+   },
+   {
+    "id": "u-no-assist",
+    "category": "assistance",
+    "text": "לא נדרש סיוע נוסף"
+   }
+  ],
+  "responses": [
+   {
+    "when": {
+     "all": [
+      {
+       "inUpdate": "u-tow"
+      },
+      {
+       "not": {
+        "flag": "ownerHere"
+       }
+      }
+     ]
+    },
+    "lines": [
+     {
+      "speaker": "dispatch",
+      "text": "מוקד: פקח עירוני יכול להגיע בעוד כ־40 דקות. ניסיתם לאתר את הבעלים?"
+     }
+    ],
+    "effects": {
+     "set": {
+      "towReq": true
+     }
+    }
+   },
+   {
+    "when": {
+     "inUpdate": "u-tow"
+    },
+    "lines": [
+     {
+      "speaker": "dispatch",
+      "text": "מוקד: הבעלים כבר במקום – אין צורך בגרר."
+     }
+    ],
+    "effects": {
+     "set": {
+      "towReq": true
+     }
+    }
+   }
+  ]
+ },
+ "finish": {
+  "label": "סיום הטיפול במקום",
+  "confirm": "לסיים את הטיפול ולעבור לתחקיר? אפשר לשלוח עדכון אחרון למוקד לפני הסיום."
+ },
+ "endings": [
+  {
+   "id": "e-good",
+   "kind": "good",
+   "title": "היציאה שוחררה והצדדים נפרדו בשקט",
+   "text": "הרכב זוהה ואומת, הבעלים אותרה, פגיעה ברכוש נמנעה באזהרה ברורה, ושני הצדדים יצאו בהסכמה.",
+   "when": {
+    "all": [
+     {
+      "flag": "moved"
+     },
+     {
+      "flag": "reconciled"
+     },
+     {
+      "not": {
+       "flag": "threatened"
+      }
+     },
+     {
+      "any": [
+       {
+        "not": {
+         "flag": "ev:tire"
+        }
+       },
+       {
+        "flag": "warned"
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "e-partial",
+   "kind": "partial",
+   "title": "החסימה שוחררה – המתח נשאר",
+   "text": "הרכב הוזז, אבל משהו בדרך נשאר פתוח: פגיעה ברכוש שלא נעצרה, שיח מתלהם או צדדים שנפרדו בכעס.",
+   "when": {
+    "flag": "moved"
+   }
+  },
+  {
+   "id": "e-retry",
+   "kind": "retry",
+   "title": "הזדמנות לתיקון: רוני עדיין חסום",
+   "text": "הצוות עזב לפני שהרכב הוזז. רוני איחר למשמרת, והמוקד קיבל פנייה נוספת.",
+   "when": {
+    "always": true
+   }
+  }
+ ],
+ "hints": [
+  {
+   "when": {
+    "all": [
+     {
+      "stage": [
+       "scene"
+      ]
+     },
+     {
+      "not": {
+       "chosen": "r-listen"
+      }
+     },
+     {
+      "not": {
+       "chosen": "r-dismiss"
+      }
+     }
+    ]
+   },
+   "text": "רוני בלחץ. הכרה בלחץ שלו והסבר קצר מה אתה עושה יקנו לך זמן."
+  },
+  {
+   "when": {
+    "all": [
+     {
+      "stage": [
+       "scene"
+      ]
+     },
+     {
+      "not": {
+       "chosen": "c-plate"
+      }
+     }
+    ]
+   },
+   "text": "לפני שמבקשים מהמוקד לאתר בעלים – כדאי לוודא שזה באמת הרכב שנמסר."
+  },
+  {
+   "when": {
+    "all": [
+     {
+      "flag": "ev:tire"
+     },
+     {
+      "not": {
+       "flag": "warned"
+      }
+     }
+    ]
+   },
+   "text": "רוני פוגע ברכב. צריך לעצור את זה מיד – באמירה ברורה, עם סיבה."
+  },
+  {
+   "when": {
+    "all": [
+     {
+      "stage": [
+       "scene"
+      ]
+     },
+     {
+      "not": {
+       "flag": "ownerHere"
+      }
+     }
+    ]
+   },
+   "text": "יש כמה דרכים לאתר את הבעלים: מה שרואים ברכב, מי שמכיר את הדיירים, והמוקד."
+  },
+  {
+   "when": {
+    "flag": "moved"
+   },
+   "text": "הרכב הוזז. אפשר לסיים את המפגש כך שהשכנים לא ייפרדו בכעס."
+  },
+  {
+   "when": {
+    "always": true
+   },
+   "text": "לפני הסיום: האם המוקד יודע שהחסימה שוחררה?"
+  }
+ ],
+ "challenges": [
+  "שחק עם זרע אחר – האם יש פתק ברכב? מצא את הדרך המהירה לבעלים בכל מקרה.",
+  "נסה לשמור על רוני רגוע כך שהוא לא יגיע לגלגל בכלל.",
+  "נסח אזהרה שכוללת: מה לעשות, למה, ומה אתה עושה במקום."
+ ],
+ "report": {
+  "reason": "התקבלה משימה מהמוקד: רכב חוסם יציאה בחניון רחוב האלה 14.",
+  "checklist": [
+   {
+    "label": "מספר הרכב המאומת",
+    "when": {
+     "fact": "o-plate"
+    }
+   },
+   {
+    "label": "דברי המתלונן",
+    "when": {
+     "fact": "c-roni-shift"
+    }
+   },
+   {
+    "label": "גרסת בעלת הרכב",
+    "when": {
+     "fact": "c-shiran-dark"
+    }
+   },
+   {
+    "label": "אזהרה שניתנה",
+    "when": {
+     "flag": "warned"
+    }
+   },
+   {
+    "label": "שחרור החסימה",
+    "when": {
+     "fact": "o-moved"
+    }
+   }
+  ]
+ },
+ "media": {
+  "images": [
+   "img/parking-day.webp",
+   "img/parking-night.webp",
+   "img/chars/roni-calm.webp",
+   "img/chars/roni-tense.webp",
+   "img/chars/roni-upset.webp",
+   "img/chars/nissim-calm.webp",
+   "img/chars/nissim-tense.webp",
+   "img/chars/nissim-upset.webp",
+   "img/chars/shiran-calm.webp",
+   "img/chars/shiran-tense.webp",
+   "img/chars/shiran-upset.webp",
+   "img/props/car-red.webp",
+   "img/props/car-silver.webp",
+   "img/props/patrol.webp",
+   "img/drive/interior.webp",
+   "img/drive/road-day.webp",
+   "img/drive/road-night.webp"
+  ],
+  "audio": [
+   "audio/yard-morning.mp3",
+   "audio/yard-evening.mp3",
+   "audio/engine-wipers.mp3",
+   "audio/radio-chirp.mp3",
+   "audio/alert.mp3",
+   "audio/radio-chatter.mp3"
+  ],
+  "voice": {},
+  "narrationMissing": "אין עדיין קריינות מוקלטת בעברית. הקבצים יתווספו לתיקייה public/audio/voice/blocked-parking/ וימופו בשדה media.voice."
+ }
+}

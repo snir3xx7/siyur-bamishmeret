@@ -538,7 +538,8 @@
   "travelMinutes": 4,
   "ambience": [
    "engine-wipers",
-   "rain"
+   "rain",
+   "radio-chatter"
   ]
  },
  "scene": {
@@ -2969,14 +2970,18 @@
    "img/chars/samir-upset.webp",
    "img/props/car-red.webp",
    "img/props/car-silver.webp",
-   "img/props/patrol.webp"
+   "img/props/patrol.webp",
+   "img/drive/interior.webp",
+   "img/drive/road-day.webp",
+   "img/drive/road-night.webp"
   ],
   "audio": [
    "audio/rain.mp3",
    "audio/traffic.mp3",
    "audio/engine-wipers.mp3",
    "audio/radio-chirp.mp3",
-   "audio/alert.mp3"
+   "audio/alert.mp3",
+   "audio/radio-chatter.mp3"
   ],
   "voice": {},
   "narrationMissing": "אין עדיין קריינות מוקלטת בעברית. הקבצים יתווספו לתיקייה public/audio/voice/accident-rain/ וימופו בשדה media.voice."

@@ -161,6 +161,66 @@ for (const pr of cfg.props) {
   if (pr.flip) img = img.flop();
   // רכב כסוף מחזיר את הירוק של המסך – מורידים רוויה
   if (pr.desaturate) img = sharp(await img.png().toBuffer()).modulate({ saturation: pr.desaturate });
-  await img.resize({ width: 720 }).webp({ quality: 80, alphaQuality: 90 }).toFile(join(OUT, 'props', `${pr.id}.webp`));
+  img = img.resize({ width: 720 });
+  // כיסוי כיתוב מקרי שהמודל צייר (למשל על דלת הניידת) – [x, y, רוחב, גובה, צבע] בפיקסלים אחרי שינוי הגודל
+  if (pr.patch) {
+    const buf = await img.png().toBuffer();
+    const { width, height } = await sharp(buf).metadata();
+    const rects = pr.patch.map(([x, y, w, h, c]) => `<rect x="${x}" y="${y}" width="${w}" height="${h}" rx="3" fill="${c}"/>`).join('');
+    img = sharp(buf).composite([{ input: Buffer.from(`<svg width="${width}" height="${height}">${rects}</svg>`), blend: 'atop' }]);
+  }
+  await img.webp({ quality: 80, alphaQuality: 90 }).toFile(join(OUT, 'props', `${pr.id}.webp`));
+}
+
+/** הסרת מסך ירוק בכל התמונה (לא רק מהשוליים) – לחלון הקדמי של הניידת */
+async function keyAllGreen(png) {
+  const { data, info } = await sharp(png).ensureAlpha().raw().toBuffer({ resolveWithObject: true });
+  for (let i = 0; i < data.length; i += 4) {
+    const g = data[i + 1] - Math.max(data[i], data[i + 2]);
+    if (g > 70) data[i + 3] = 0;
+    else if (g > 35) { data[i + 3] = Math.round(255 * (70 - g) / 35); data[i + 1] = Math.max(data[i], data[i + 2]); }
+  }
+  return sharp(data, { raw: { width: info.width, height: info.height, channels: 4 } });
+}
+
+// קטע המעבר: פנים הניידת (חלון שקוף), כביש מנקודת מבט הנהג, ורחוב במבט צד לנסיעה החיצונית
+if (cfg.drive) {
+  mkdirSync(join(OUT, 'drive'), { recursive: true });
+  for (const [id, d] of Object.entries(cfg.drive)) {
+    if (!want(`drive-${id}`) && !want('drive')) continue;
+    const src = join(SRC, `drive-${id}${d.base ? '-' + d.base : ''}.png`);
+    if (force || !existsSync(src)) {
+      console.log('מעבר', id);
+      const prompt = id === 'interior' ? `${d.prompt} ${cfg.style}` : `${cfg.style} ${d.prompt}`;
+      writeFileSync(src, await render({ prompt, w: 1344, h: 768, seed: d.seed }));
+    }
+    if (id === 'interior') {
+      await (await keyAllGreen(src)).resize(1600, 900, { fit: 'cover' }).webp({ quality: 80, alphaQuality: 90 }).toFile(join(OUT, 'drive', 'interior.webp'));
+      continue;
+    }
+    const other = d.base === 'night' ? 'day' : 'night';
+    await sharp(src).resize(1600, 900, { fit: 'cover' }).webp({ quality: 76 }).toFile(join(OUT, 'drive', `${id}-${d.base}.webp`));
+    await (await regrade(src, other)).webp({ quality: 76 }).toFile(join(OUT, 'drive', `${id}-${other}.webp`));
+  }
+}
+
+// מסך הפתיחה: כמה זרעים לבחירה, הנבחר (pick) נשמר כ-public/img/hero.webp
+if (cfg.hero && (want('hero') || (only && only.includes('hero')))) {
+  for (const seed of cfg.hero.seeds) {
+    const src = join(SRC, `hero-${seed}.png`);
+    if (force || !existsSync(src)) {
+      console.log('פתיחה', seed);
+      writeFileSync(src, await render({ prompt: `${cfg.style} ${cfg.hero.prompt}`, w: 1344, h: 768, seed }));
+    }
+  }
+  // „חותמת שכפול”: מכסים כיתוב או סמל שהמודל צייר בצבע מאזור סמוך – [x, y, w, h, dx, dy] בפיקסלי המקור
+  const pickSrc = join(SRC, `hero-${cfg.hero.pick}.png`);
+  const patches = [];
+  for (const [x, y, w, h, dx, dy] of cfg.hero.clone ?? []) {
+    const piece = await sharp(pickSrc).extract({ left: x + dx, top: y + dy, width: w, height: h }).blur(0.6).png().toBuffer();
+    patches.push({ input: piece, left: x, top: y });
+  }
+  const cleaned = await sharp(pickSrc).composite(patches).png().toBuffer();
+  await sharp(cleaned).resize(1600, 900, { fit: 'cover' }).webp({ quality: 78 }).toFile(join(OUT, 'hero.webp'));
 }
 console.log('הסתיים');

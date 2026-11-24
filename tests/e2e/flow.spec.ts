@@ -1,12 +1,12 @@
 import { expect, test } from '@playwright/test';
-import { act, finish, sendUpdate, startScenario, toScene } from './helpers';
+import { act, finish, sendUpdate, startScenario, toScene, VERSIONS } from './helpers';
 
 test('קטלוג, דף מידע וכיווניות', async ({ page }) => {
   await page.goto('./');
   await expect(page.locator('html')).toHaveAttribute('dir', 'rtl');
   await expect(page.locator('html')).toHaveAttribute('lang', 'he');
   await page.getByRole('link', { name: /התחלת תרגול/ }).click();
-  for (const id of ['accident-rain', 'noise-building', 'yard-dispute']) await expect(page.getByTestId(`scn-${id}`)).toBeVisible();
+  for (const id of Object.keys(VERSIONS)) await expect(page.getByTestId(`scn-${id}`)).toBeVisible();
   await expect(page.getByTestId('scn-accident-rain')).toContainText('דקות');
   await page.goto('./#/about');
   await expect(page.getByText('סימולציה עצמאית לצורכי תרגול. במצב חירום אמיתי יש לפנות למוקד 100').first()).toBeVisible();
@@ -132,4 +132,15 @@ test('עמוד למדריך: קישור קבוע ובדיקת מסלולים', a
   await expect(page.getByTestId('instructor-link')).toContainText('#/s/accident-rain?v=3&seed=777');
   await page.getByRole('button', { name: 'הרצת בדיקה' }).click();
   await expect(page.getByText('✓ לא נמצאו שגיאות')).toBeVisible({ timeout: 20000 });
+});
+
+test('סמכות: קטטה – דרישת הזדהות בלי הסבר נתקלת בסירוב, הסבר פותר', async ({ page }) => {
+  await startScenario(page, 'bar-fight', 4, { mode: 'practice' });
+  await toScene(page);
+  await act(page, /^המדרכה מול הבר/, /להפריד/);
+  await act(page, /^דור – החשוד/, /תעודת זהות. עכשיו/);
+  await expect(page.getByTestId('dialogue')).toContainText('אני לא חייב לתת לך כלום');
+  await act(page, /^דור – החשוד/, /להסביר לדור בשקט/);
+  await expect(page.getByTestId('dialogue')).toContainText('בסדר. הנה');
+  await expect(page.getByTestId('char-dor')).toBeVisible();
 });

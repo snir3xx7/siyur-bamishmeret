@@ -1,0 +1,2028 @@
+{
+ "id": "suspicious-object",
+ "version": 1,
+ "title": "חפץ חשוד בתחנת אוטובוס",
+ "category": "ביטחון שוטף וחפצים חשודים",
+ "summary": "תיק סגור נשכח על ספסל בתחנה, ואזרח סקרן כבר מתכונן להציץ בו. יש לא לגעת, לבודד את המקום, להרחיק אנשים בהוראה ברורה ומוסברת, לחפש את הבעלים ולהזמין גורם מוסמך.",
+ "estimatedMinutes": 10,
+ "difficultyLabel": "בינונית",
+ "skills": [
+  "אי־נגיעה בחפץ",
+  "בידוד זירה",
+  "הוראה ברורה ומוסברת לציבור",
+  "אימות בעלות",
+  "עדכון מוקד"
+ ],
+ "shifts": [
+  "morning",
+  "evening"
+ ],
+ "defaultShift": "morning",
+ "location": {
+  "name": "תחנת האוטובוס „הנרקיס”, שדרות הזית",
+  "area": "מרכז קריית אלון (בדוי)"
+ },
+ "objectives": [
+  "לא לגעת בחפץ ולא להזיז אותו",
+  "לבודד את המקום ולהרחיק אנשים",
+  "לתת הוראה ברורה ולהסביר את הסיבה",
+  "לברר מי הבעלים ולאמת לפני החזרה",
+  "להזמין גורם מוסמך ולעדכן את המוקד"
+ ],
+ "variants": [
+  {
+   "id": "owner",
+   "label": "הבעלים נמצאת בבית המרקחת הסמוך",
+   "set": {
+    "owner": "ruti"
+   },
+   "vars": {
+    "contents": "בגדי ספורט ובקבוק מים"
+   }
+  },
+  {
+   "id": "unknown",
+   "label": "הבעלים לא נמצאו",
+   "set": {
+    "owner": "none"
+   },
+   "vars": {
+    "contents": "בגדי ספורט, מגבת ונעלי ריצה"
+   }
+  }
+ ],
+ "scoring": {
+  "weights": {
+   "info": 20,
+   "assessment": 25,
+   "communication": 10,
+   "authority": 20,
+   "dispatch": 15,
+   "documentation": 10
+  },
+  "rules": [
+   {
+    "id": "so-info-dispatch",
+    "domain": "info",
+    "label": "השלמת פרטים מהמוקד",
+    "max": 5,
+    "required": false,
+    "anchor": [
+     "f-desc",
+     "f-caller",
+     "f-bus"
+    ],
+    "tiers": [
+     {
+      "when": {
+       "countChosen": {
+        "ids": [
+         "f-desc",
+         "f-caller",
+         "f-bus"
+        ],
+        "gte": 2
+       }
+      },
+      "points": 5,
+      "explain": "התבקשו לפחות שתי השלמות.",
+      "keep": "שאלת על החפץ, על המדווחת ועל האוטובוסים. הגעת לתחנה עם תמונה מלאה."
+     },
+     {
+      "when": {
+       "countChosen": {
+        "ids": [
+         "f-desc",
+         "f-caller",
+         "f-bus"
+        ],
+        "gte": 1
+       }
+      },
+      "points": 3,
+      "explain": "התבקשה השלמה אחת.",
+      "improve": "שאלת שאלה אחת בלבד. בסבב הבא שאל גם על אנשים בסביבה ועל תנועת אוטובוסים."
+     }
+    ],
+    "fallback": {
+     "explain": "לא התבקשו השלמות.",
+     "improve": "יצאת בלי לשאול את המוקד. בסבב הבא בקש תיאור החפץ ומיקום המדווחת."
+    }
+   },
+   {
+    "id": "so-info-observe",
+    "domain": "info",
+    "label": "תצפית על החפץ ממרחק",
+    "max": 5,
+    "required": true,
+    "anchor": [
+     "s-observe"
+    ],
+    "tiers": [
+     {
+      "when": {
+       "all": [
+        {
+         "chosen": "s-observe"
+        },
+        {
+         "not": {
+          "flag": "touched"
+         }
+        }
+       ]
+      },
+      "points": 5,
+      "explain": "החפץ תואר מתצפית, בלי נגיעה.",
+      "keep": "התבוננת בתיק מכמה מטרים ותיארת אותו בלי לגעת בו."
+     }
+    ],
+    "fallback": {
+     "explain": "לא נערכה תצפית מרחוק.",
+     "improve": "לא תיעדת איך החפץ נראה מבלי לגעת בו. בסבב הבא התבונן ממרחק ותאר: גודל, מצב, סימנים."
+    }
+   },
+   {
+    "id": "so-info-owner",
+    "domain": "info",
+    "label": "בירור הבעלים בסביבה",
+    "max": 10,
+    "required": true,
+    "anchor": [
+     "s-shops"
+    ],
+    "tiers": [
+     {
+      "when": {
+       "chosen": "s-shops"
+      },
+      "points": 10,
+      "explain": "נערך בירור בחנויות הסמוכות.",
+      "keep": "שאלת בחנויות הסמוכות. לפעמים הבעלים נמצאים במרחק עשרה מטרים – ואם לא, זה מידע חשוב לגורם המוסמך."
+     }
+    ],
+    "fallback": {
+     "explain": "לא נערך בירור על הבעלים.",
+     "improve": "לא שאלת אם מישהו בסביבה שכח את התיק. בסבב הבא שאל בחנויות ובתחנה – בלי לגעת בחפץ."
+    }
+   },
+   {
+    "id": "so-assess-touch",
+    "domain": "assessment",
+    "label": "אי־נגיעה בחפץ",
+    "max": 10,
+    "required": true,
+    "anchor": [
+     "s-touch"
+    ],
+    "tiers": [
+     {
+      "when": {
+       "all": [
+        {
+         "not": {
+          "flag": "touched"
+         }
+        },
+        {
+         "flag": "isolated"
+        }
+       ]
+      },
+      "points": 10,
+      "explain": "החפץ לא נפתח ולא הוזז.",
+      "keep": "לא נגעת בתיק ולא הזזת אותו, גם כשהיה מפתה לחפש פרטי בעלים. זה הכלל הראשון מול חפץ חשוד."
+     },
+     {
+      "when": {
+       "not": {
+        "flag": "touched"
+       }
+      },
+      "points": 4,
+      "explain": "החפץ לא נפתח, אך המקום לא בודד.",
+      "improve": "לא נגעת בחפץ – טוב – אבל אנשים המשיכו לעבור לידו. בסבב הבא בודד את המקום."
+     }
+    ],
+    "fallback": {
+     "explain": "החפץ נפתח לפני שנבדק.",
+     "improve": "פתחת את התיק כדי לחפש פרטים. מול חפץ חשוד לא נוגעים, לא פותחים ולא מזיזים – ממתינים לגורם המוסמך."
+    }
+   },
+   {
+    "id": "so-assess-isolate",
+    "domain": "assessment",
+    "label": "בידוד המקום",
+    "max": 10,
+    "required": true,
+    "anchor": [
+     "s-isolate"
+    ],
+    "tiers": [
+     {
+      "when": {
+       "all": [
+        {
+         "flag": "isolated"
+        },
+        {
+         "not": {
+          "chosen": "s-wait"
+         }
+        }
+       ]
+      },
+      "points": 10,
+      "explain": "המקום בודד.",
+      "keep": "הרחקת את הממתינים ומתחת סרט סימון. כך אף אחד לא נמצא ליד החפץ."
+     },
+     {
+      "when": {
+       "all": [
+        {
+         "flag": "isolated"
+        },
+        {
+         "before": [
+          "s-isolate",
+          "s-wait"
+         ]
+        }
+       ]
+      },
+      "points": 10,
+      "explain": "המקום בודד לפני הגעת הגורם המוסמך.",
+      "keep": "הרחקת את הממתינים ומתחת סרט סימון. כשהגורם המוסמך הגיע, הזירה כבר הייתה מוכנה."
+     },
+     {
+      "when": {
+       "flag": "isolated"
+      },
+      "points": 4,
+      "explain": "המקום בודד רק כשהגורם המוסמך הגיע.",
+      "improve": "הגורם המוסמך נאלץ לבודד את המקום בעצמו. בסבב הבא בודד מיד עם ההגעה."
+     }
+    ],
+    "fallback": {
+     "explain": "המקום לא בודד.",
+     "improve": "אנשים נשארו ליד החפץ לאורך כל האירוע. בסבב הבא הרחק את הציבור ומתח סרט סימון."
+    }
+   },
+   {
+    "id": "so-assess-bus",
+    "domain": "assessment",
+    "label": "טיפול באוטובוס המתקרב",
+    "max": 5,
+    "required": true,
+    "appliesWhen": {
+     "flag": "ev:bus"
+    },
+    "tiers": [
+     {
+      "when": {
+       "any": [
+        {
+         "flag": "busDiverted"
+        },
+        {
+         "flag": "diverted"
+        }
+       ]
+      },
+      "points": 5,
+      "explain": "האוטובוס לא עצר ליד החפץ.",
+      "keep": "כשהאוטובוס התקרב, דאגת שלא יעצור ושנוסעים לא ירדו ליד החפץ."
+     }
+    ],
+    "fallback": {
+     "explain": "האוטובוס עצר בתחנה.",
+     "improve": "האוטובוס עצר ונוסעים ירדו ליד החפץ. בסבב הבא סמן לנהג להמשיך או בקש מהמוקד להסיט את הקווים."
+    }
+   },
+   {
+    "id": "so-comm-noa",
+    "domain": "communication",
+    "label": "שיחה עם המדווחת",
+    "max": 5,
+    "required": false,
+    "tiers": [
+     {
+      "when": {
+       "chosen": "n-witness"
+      },
+      "points": 5,
+      "explain": "המדווחת נשמעה והתבקשה להמתין במרחק בטוח.",
+      "keep": "הודית לנועה, שמעת ממנה ממתי התיק שם וביקשת שתמתין במרחק. היא עדה חשובה."
+     }
+    ],
+    "fallback": {
+     "explain": "לא שוחחת עם המדווחת.",
+     "improve": "לא שוחחת עם נועה. בסבב הבא שמע ממנה ממתי התיק שם ובקש שתמתין במקום בטוח."
+    }
+   },
+   {
+    "id": "so-comm-ruti",
+    "domain": "communication",
+    "label": "הרגעת בעלת התיק",
+    "max": 5,
+    "required": false,
+    "appliesWhen": {
+     "flag": "ownerHere"
+    },
+    "tiers": [
+     {
+      "when": {
+       "chosen": "rt-explain"
+      },
+      "points": 5,
+      "explain": "הוסבר לבעלת התיק למה התחנה סגורה.",
+      "keep": "הסברת לרותי בלי להאשים שזה נוהל לביטחון כולם. היא הבינה ושיתפה פעולה."
+     }
+    ],
+    "fallback": {
+     "explain": "לא הוסבר לבעלת התיק מה קורה.",
+     "improve": "רותי נשארה נבוכה ולחוצה. בסבב הבא הסבר בקצרה שזה נוהל ולא האשמה."
+    }
+   },
+   {
+    "id": "so-auth-beni",
+    "domain": "authority",
+    "label": "הוראה ברורה ומוסברת להתרחק",
+    "max": 12,
+    "required": true,
+    "anchor": [
+     "b-explain",
+     "b-order",
+     "b-warn"
+    ],
+    "tiers": [
+     {
+      "when": {
+       "all": [
+        {
+         "chosen": "b-explain"
+        },
+        {
+         "not": {
+          "chosen": "b-order"
+         }
+        }
+       ]
+      },
+      "points": 12,
+      "explain": "ההוראה ניתנה בבירור, עם הצגה עצמית והסבר.",
+      "keep": "הצגת את עצמך, הסברת שיש חפץ שלא נבדק ונתת הוראה ברורה לאן לזוז. בני שיתף פעולה מיד – סמכות שנשענת על הסבר."
+     },
+     {
+      "when": {
+       "all": [
+        {
+         "chosen": "b-order"
+        },
+        {
+         "chosen": "b-warn"
+        }
+       ]
+      },
+      "points": 7,
+      "explain": "ההוראה התחילה בצעקה, ואחר כך הוסברה והובהרה.",
+      "improve": "הצעקה בלי הסבר עוררה התנגדות. אחר כך הנמכת קול, הסברת והבהרת שזו הוראה מחייבת – והיא בוצעה. בסבב הבא פתח בהסבר."
+     },
+     {
+      "when": {
+       "flag": "beniMoved"
+      },
+      "points": 6,
+      "explain": "האזרח הורחק, אך ההוראה לא הוסברה לו ישירות.",
+      "improve": "בני זז רק כשהזירה כבר בודדה, בלי שדיברת איתו. בסבב הבא פנה אליו ישירות, הסבר ותן הוראה ברורה."
+     },
+     {
+      "when": {
+       "chosen": "b-order"
+      },
+      "points": 2,
+      "explain": "ניתנה הוראה בצעקה בלבד.",
+      "improve": "צעקת „תזוז” בלי להסביר, ובני התנגד ונשאר ליד החפץ. הוראה טובה כוללת הצגה עצמית, סיבה ומה בדיוק לעשות."
+     }
+    ],
+    "fallback": {
+     "explain": "לא ניתנה הוראה לאזרח שליד החפץ.",
+     "improve": "בני נשאר לשבת ליד החפץ. בסבב הבא תן לו הוראה ברורה ומוסברת להתרחק."
+    }
+   },
+   {
+    "id": "so-auth-owner",
+    "domain": "authority",
+    "label": "אימות בעלות לפני החזרה",
+    "max": 8,
+    "required": true,
+    "appliesWhen": {
+     "flag": "ownerHere"
+    },
+    "anchor": [
+     "rt-verify",
+     "rt-letgo"
+    ],
+    "tiers": [
+     {
+      "when": {
+       "all": [
+        {
+         "chosen": "rt-verify"
+        },
+        {
+         "not": {
+          "flag": "handedEarly"
+         }
+        }
+       ]
+      },
+      "points": 8,
+      "explain": "הבעלות אומתה לפני שהחפץ הוחזר.",
+      "keep": "לא נתת לרותי לגשת עד שתיארה את התיק ואת תוכנו והציגה קבלה. אימות לפני החזרה מגן גם עליה."
+     }
+    ],
+    "fallback": {
+     "explain": "החפץ הוחזר בלי אימות.",
+     "improve": "רותי לקחה את התיק לפני שאימתת שהוא שלה ולפני שהמוקד אישר. בסבב הבא בקש תיאור ותוכן לפני כל החזרה."
+    }
+   },
+   {
+    "id": "so-disp-first",
+    "domain": "dispatch",
+    "label": "עדכון ראשון והזמנת גורם מוסמך",
+    "max": 10,
+    "required": true,
+    "anchor": [
+     "update:1"
+    ],
+    "tiers": [
+     {
+      "when": {
+       "update": {
+        "n": 1,
+        "has": [
+         "u-bag",
+         "u-expert"
+        ],
+        "hasCat": [
+         "location"
+        ]
+       }
+      },
+      "points": 10,
+      "explain": "בעדכון הראשון נמסרו מיקום, תיאור והזמנת גורם מוסמך.",
+      "keep": "העדכון הראשון שלך כלל מקום, תיאור החפץ ובקשה לגורם מוסמך. המוקד יכול היה להתחיל לפעול מיד."
+     },
+     {
+      "when": {
+       "any": [
+        {
+         "sent": "u-expert"
+        },
+        {
+         "sent": "u-owner"
+        }
+       ]
+      },
+      "points": 6,
+      "explain": "הסיוע התבקש, אך לא בעדכון הראשון.",
+      "improve": "ביקשת גורם מוסמך או אישור רק בהמשך. בסבב הבא כלול את הבקשה כבר בעדכון הראשון."
+     },
+     {
+      "when": {
+       "updatesGte": 1
+      },
+      "points": 3,
+      "explain": "נשלח עדכון בלי בקשת סיוע.",
+      "improve": "המוקד קיבל עדכון, אבל אף אחד לא התבקש לבדוק את החפץ. בסבב הבא בקש גורם מוסמך."
+     }
+    ],
+    "fallback": {
+     "explain": "לא נשלח עדכון למוקד.",
+     "improve": "לא עדכנת את המוקד. בסבב הבא דווח מקום, תיאור ובקשה לגורם מוסמך."
+    }
+   },
+   {
+    "id": "so-disp-close",
+    "domain": "dispatch",
+    "label": "עדכון סיום",
+    "max": 5,
+    "required": true,
+    "anchor": [
+     "update:last"
+    ],
+    "tiers": [
+     {
+      "when": {
+       "update": {
+        "n": "last",
+        "has": [
+         "u-cleared"
+        ]
+       }
+      },
+      "points": 5,
+      "explain": "העדכון האחרון מסר שהתחנה נפתחה.",
+      "keep": "סגרת את האירוע בעדכון שהחפץ אינו חשוד והתחנה נפתחה."
+     }
+    ],
+    "fallback": {
+     "explain": "לא נמסר שהאירוע הסתיים.",
+     "improve": "המוקד לא יודע שהתחנה נפתחה. בסבב הבא סיים בעדכון קצר."
+    }
+   },
+   {
+    "id": "so-doc",
+    "domain": "documentation",
+    "label": "תיעוד פרטי החפץ",
+    "max": 5,
+    "required": true,
+    "anchor": [
+     "s-doc"
+    ],
+    "tiers": [
+     {
+      "when": {
+       "chosen": "s-doc"
+      },
+      "points": 5,
+      "explain": "תועדו שעה, תיאור ומיקום.",
+      "keep": "תיעדת שעה, תיאור ומיקום מדויק של החפץ ואת פרטי המדווחת."
+     }
+    ],
+    "fallback": {
+     "explain": "פרטי החפץ לא תועדו.",
+     "improve": "לא תיעדת את פרטי החפץ. בסבב הבא רשום שעה, תיאור, מיקום ומי דיווח."
+    }
+   },
+   {
+    "id": "so-doc-honest",
+    "domain": "documentation",
+    "label": "דיווח מלא גם על טעות",
+    "max": 5,
+    "required": false,
+    "tiers": [
+     {
+      "when": {
+       "all": [
+        {
+         "flag": "touched"
+        },
+        {
+         "sent": "u-touched"
+        }
+       ]
+      },
+      "points": 5,
+      "explain": "הנגיעה בחפץ דווחה למוקד.",
+      "keep": "טעית ופתחת את התיק – אבל דיווחת על כך מיד. הגורם המוסמך צריך לדעת."
+     },
+     {
+      "when": {
+       "all": [
+        {
+         "not": {
+          "flag": "touched"
+         }
+        },
+        {
+         "sent": "u-bag"
+        }
+       ]
+      },
+      "points": 5,
+      "explain": "תיאור החפץ נמסר כפי שנצפה.",
+      "keep": "מסרת למוקד תיאור מדויק של מה שראית – בלי להוסיף הנחות."
+     }
+    ],
+    "fallback": {
+     "explain": "התיאור או הנגיעה לא דווחו.",
+     "improve": "לא מסרת למוקד את פרטי החפץ או שנגעת בו. בסבב הבא דווח בדיוק מה ראית ומה עשית."
+    }
+   }
+  ]
+ },
+ "facts": [
+  {
+   "id": "d-report",
+   "kind": "dispatch",
+   "text": "תיק סגור מונח על ספסל בתחנת „הנרקיס” כ־20 דקות, אין איש לידו"
+  },
+  {
+   "id": "d-caller",
+   "kind": "dispatch",
+   "text": "המדווחת: נועה, ממתינה ליד המאפייה הסמוכה"
+  },
+  {
+   "id": "d-desc",
+   "kind": "dispatch",
+   "text": "תיק ספורט כחול כהה, סגור ברוכסן"
+  },
+  {
+   "id": "d-bus",
+   "kind": "dispatch",
+   "text": "קווים 12 ו־30 עוצרים בתחנה, אוטובוס כל כעשר דקות"
+  },
+  {
+   "id": "o-bag",
+   "kind": "observation",
+   "text": "תיק ספורט כחול כהה, סגור, ללא תווית, מונח לבדו בקצה הספסל"
+  },
+  {
+   "id": "o-beni",
+   "kind": "observation",
+   "text": "אדם מבוגר עומד ליד הספסל ומתכונן לפתוח את התיק"
+  },
+  {
+   "id": "o-no-owner",
+   "kind": "observation",
+   "text": "במאפייה ובבית המרקחת איש לא מכיר את התיק"
+  },
+  {
+   "id": "c-ruti-owner",
+   "kind": "claim",
+   "text": "טוענת שהתיק שלה ושכחה אותו כשנכנסה לבית המרקחת",
+   "source": "ruti"
+  },
+  {
+   "id": "o-ruti-match",
+   "kind": "observation",
+   "text": "רותי תיארה במדויק את התיק ואת תוכנו והציגה קבלה מבית המרקחת"
+  },
+  {
+   "id": "o-cleared",
+   "kind": "observation",
+   "text": "התיק נבדק ונמצא שאינו חשוד ({{contents}})"
+  },
+  {
+   "id": "c-noa-time",
+   "kind": "claim",
+   "text": "התיק היה שם כבר כשהגיעה לתחנה, לפני כחצי שעה",
+   "source": "noa"
+  }
+ ],
+ "characters": [
+  {
+   "id": "noa",
+   "name": "נועה פרץ",
+   "role": "המדווחת",
+   "gender": "f",
+   "look": {
+    "skin": "#d6a57c",
+    "hair": "#3a2a20",
+    "hairStyle": "short",
+    "top": "#555",
+    "bottom": "#333"
+   },
+   "attitude": 1,
+   "x": 12,
+   "y": 80,
+   "scale": 1.1,
+   "sprite": "img/chars/noa",
+   "spriteMoods": [
+    "calm",
+    "tense",
+    "upset"
+   ]
+  },
+  {
+   "id": "beni",
+   "name": "בני גבאי",
+   "role": "אזרח ממתין בתחנה",
+   "gender": "m",
+   "look": {
+    "skin": "#d6a57c",
+    "hair": "#3a2a20",
+    "hairStyle": "short",
+    "top": "#555",
+    "bottom": "#333"
+   },
+   "attitude": 0,
+   "x": 39,
+   "y": 81,
+   "scale": 1.15,
+   "moodRules": [
+    {
+     "when": {
+      "flag": "beniAngry"
+     },
+     "mood": "upset"
+    },
+    {
+     "when": {
+      "all": [
+       {
+        "flag": "beniMoved"
+       },
+       {
+        "not": {
+         "flag": "beniCalm"
+        }
+       }
+      ]
+     },
+     "mood": "tense"
+    }
+   ],
+   "sprite": "img/chars/beni",
+   "spriteMoods": [
+    "calm",
+    "tense",
+    "upset"
+   ]
+  },
+  {
+   "id": "ruti",
+   "name": "רותי שמעוני",
+   "role": "אומרת שהתיק שלה",
+   "gender": "f",
+   "look": {
+    "skin": "#d6a57c",
+    "hair": "#3a2a20",
+    "hairStyle": "short",
+    "top": "#555",
+    "bottom": "#333"
+   },
+   "attitude": 1,
+   "x": 76,
+   "y": 80,
+   "scale": 1.1,
+   "when": {
+    "flag": "ownerHere"
+   },
+   "moodRules": [
+    {
+     "when": {
+      "all": [
+       {
+        "flag": "ownerHere"
+       },
+       {
+        "not": {
+         "flag": "rutiCalm"
+        }
+       }
+      ]
+     },
+     "mood": "tense"
+    }
+   ],
+   "sprite": "img/chars/ruti",
+   "spriteMoods": [
+    "calm",
+    "tense",
+    "upset"
+   ]
+  }
+ ],
+ "dispatch": {
+  "time": {
+   "morning": "08:12",
+   "evening": "18:40"
+  },
+  "unit": "סייר 31",
+  "incident": "7714",
+  "lines": [
+   {
+    "speaker": "dispatch",
+    "text": "סייר 31, כאן מוקד אלון. דיווח על תיק שנשכח בתחנת האוטובוס „הנרקיס” בשדרות הזית. לפי המדווחת התיק שם כ־20 דקות ואין איש לידו. אשר קבלה."
+   }
+  ],
+  "initialFacts": [
+   "d-report"
+  ],
+  "basicExtraFacts": [
+   "d-desc"
+  ],
+  "followUps": [
+   {
+    "id": "f-desc",
+    "label": "לשאול: איך נראה התיק?",
+    "when": {
+     "not": {
+      "fact": "d-desc"
+     }
+    },
+    "lines": [
+     {
+      "speaker": "player",
+      "text": "מוקד, יש תיאור של התיק?"
+     },
+     {
+      "speaker": "dispatch",
+      "text": "תיק ספורט כחול כהה, סגור ברוכסן. המדווחת לא נגעה בו."
+     }
+    ],
+    "effects": {
+     "reveal": [
+      "d-desc"
+     ]
+    },
+    "report": "קבלת תיאור החפץ"
+   },
+   {
+    "id": "f-caller",
+    "label": "לשאול: איפה המדווחת, והאם יש אנשים ליד התיק?",
+    "lines": [
+     {
+      "speaker": "player",
+      "text": "איפה המדווחת? יש אנשים ליד התיק?"
+     },
+     {
+      "speaker": "dispatch",
+      "text": "המדווחת, נועה, ממתינה ליד המאפייה. לדבריה יש אנשים שממתינים בתחנה."
+     }
+    ],
+    "effects": {
+     "reveal": [
+      "d-caller"
+     ]
+    },
+    "report": "בירור מיקום המדווחת והאנשים בתחנה"
+   },
+   {
+    "id": "f-bus",
+    "label": "לשאול: אילו קווים עוצרים בתחנה ובאיזו תדירות?",
+    "lines": [
+     {
+      "speaker": "player",
+      "text": "אילו קווי אוטובוס עוצרים שם?"
+     },
+     {
+      "speaker": "dispatch",
+      "text": "קווים 12 ו־30, אוטובוס כל כעשר דקות בערך."
+     }
+    ],
+    "effects": {
+     "reveal": [
+      "d-bus"
+     ]
+    },
+    "report": "בירור תנועת אוטובוסים בתחנה"
+   }
+  ],
+  "goLabel": "אישור קבלה ויציאה לתחנה"
+ },
+ "transition": {
+  "kind": "car",
+  "text": "נסיעה קצרה לשדרות הזית. השדרה עמוסה בהולכי רגל, ובתחנה ממתינים כמה אנשים.",
+  "travelMinutes": 3,
+  "ambience": [
+   "engine-wipers",
+   "radio-chatter"
+  ]
+ },
+ "scene": {
+  "background": "img/busstop",
+  "alt": "תחנת אוטובוס בשדרה עירונית: סככה עם ספסל מתכת, מאחוריה חנויות עם סוככים – מאפייה ובית מרקחת – ובנייני אבן עם מרפסות ודקל.",
+  "fallbackColor": "#8a8f86",
+  "ambience": [
+   "traffic"
+  ],
+  "lights": "steady",
+  "weather": "none",
+  "props": [
+   {
+    "id": "bag",
+    "kind": "bag",
+    "x": 58,
+    "y": 71,
+    "scale": 1,
+    "when": {
+     "not": {
+      "flag": "cleared"
+     }
+    }
+   },
+   {
+    "id": "tape",
+    "kind": "tape",
+    "x": 58,
+    "y": 86,
+    "scale": 1.6,
+    "when": {
+     "all": [
+      {
+       "flag": "isolated"
+      },
+      {
+       "not": {
+        "flag": "cleared"
+       }
+      }
+     ]
+    }
+   },
+   {
+    "id": "patrol",
+    "kind": "patrol",
+    "x": 90,
+    "y": 99,
+    "scale": 0.8
+   },
+   {
+    "id": "sg-stop",
+    "kind": "sign",
+    "x": 50,
+    "y": 33,
+    "text": "הנרקיס",
+    "sign": "street",
+    "scale": 0.9
+   },
+   {
+    "id": "sg-bakery",
+    "kind": "sign",
+    "x": 7,
+    "y": 40.5,
+    "text": "מאפיית השדרה",
+    "sign": "shop",
+    "scale": 1.05
+   },
+   {
+    "id": "sg-ad1",
+    "kind": "sign",
+    "x": 31.5,
+    "y": 50.5,
+    "text": "קווים 12 · 30",
+    "sign": "notice",
+    "scale": 1.05
+   },
+   {
+    "id": "sg-ad2",
+    "kind": "sign",
+    "x": 54.5,
+    "y": 49,
+    "text": "מכבסת הזית",
+    "sign": "shop",
+    "scale": 0.9
+   },
+   {
+    "id": "sg-pharm",
+    "kind": "sign",
+    "x": 83,
+    "y": 40,
+    "text": "בית מרקחת",
+    "sign": "shop",
+    "scale": 0.8
+   }
+  ],
+  "painted": true
+ },
+ "arrivalLines": [
+  {
+   "speaker": "narrator",
+   "text": "התחנה בשדרות הזית. בקצה הספסל מונח תיק ספורט כחול, סגור. לידו עומד אדם מבוגר בטרנינג, מתבונן בתיק ומושיט אליו יד. נועה, המדווחת, עומדת ליד המאפייה ומסמנת לך."
+  }
+ ],
+ "arrivalFacts": [
+  "o-beni"
+ ],
+ "hotspots": [
+  {
+   "id": "h-bag",
+   "label": "התיק על הספסל",
+   "kind": "item",
+   "x": 58,
+   "y": 62,
+   "description": "תיק ספורט כחול כהה, סגור, מונח לבדו בקצה הספסל.",
+   "choices": [
+    {
+     "id": "s-observe",
+     "label": "להתבונן בתיק ממרחק, בלי לגעת: גודל, מצב, סימנים מזהים",
+     "lines": [
+      {
+       "speaker": "narrator",
+       "text": "מכמה מטרים: תיק ספורט כחול כהה, סגור ברוכסן, בלי תווית או שם. אין סביבו איש שנראה קשור אליו."
+      }
+     ],
+     "effects": {
+      "reveal": [
+       "o-bag"
+      ],
+      "verify": [
+       "d-desc"
+      ]
+     },
+     "report": "תצפית על החפץ ממרחק, ללא נגיעה"
+    },
+    {
+     "id": "s-touch",
+     "label": "לפתוח את הרוכסן ולחפש תעודה או שם של הבעלים",
+     "lines": [
+      {
+       "speaker": "narrator",
+       "text": "פתחת מעט את הרוכסן. בפנים בד כהה. אנשים בתחנה מתקרבים לראות מה קורה."
+      }
+     ],
+     "effects": {
+      "set": {
+       "touched": true
+      },
+      "note": "החפץ נפתח לפני שנבדק בידי גורם מוסמך"
+     }
+    },
+    {
+     "id": "s-doc",
+     "label": "לתעד: שעת ההגעה, תיאור החפץ, מיקומו ומי דיווח",
+     "lines": [
+      {
+       "speaker": "narrator",
+       "text": "תיעדת: שעת ההגעה, תיאור התיק ומיקומו המדויק בקצה הספסל, ופרטי המדווחת."
+      }
+     ],
+     "effects": {
+      "set": {
+       "documented": true
+      }
+     },
+     "report": "תיעוד פרטי החפץ והזירה"
+    }
+   ],
+   "when": {
+    "not": {
+     "flag": "cleared"
+    }
+   }
+  },
+  {
+   "id": "h-stop",
+   "label": "התחנה והמדרכה",
+   "kind": "area",
+   "x": 30,
+   "y": 80,
+   "description": "המדרכה סביב הסככה. אנשים עוברים וממתינים.",
+   "choices": [
+    {
+     "id": "s-isolate",
+     "label": "לבודד את המקום: להרחיק את הממתינים לכמה עשרות מטרים ולמתוח סרט סימון",
+     "lines": [
+      {
+       "speaker": "player",
+       "text": "אני מבקש מכולם להתרחק מהתחנה עד הפינה – יש כאן חפץ שצריך לבדוק."
+      },
+      {
+       "speaker": "narrator",
+       "text": "הממתינים מתרחקים. אתה מותח סרט סימון ומכוון את העוברים לצד השני של השדרה."
+      }
+     ],
+     "effects": {
+      "set": {
+       "isolated": true
+      },
+      "minutes": 2
+     },
+     "branches": [
+      {
+       "when": {
+        "not": {
+         "flag": "beniMoved"
+        }
+       },
+       "lines": [
+        {
+         "speaker": "player",
+         "text": "אני מבקש מכולם להתרחק מהתחנה עד הפינה – יש כאן חפץ שצריך לבדוק."
+        },
+        {
+         "speaker": "narrator",
+         "text": "הממתינים מתרחקים ואתה מותח סרט סימון. רק האיש בטרנינג נשאר על הספסל ולא זז."
+        }
+       ],
+       "effects": {
+        "set": {
+         "isolated": true
+        },
+        "minutes": 2
+       }
+      }
+     ],
+     "report": "בידוד המקום והרחקת הציבור"
+    },
+    {
+     "id": "s-shops",
+     "label": "לשאול במאפייה ובבית המרקחת אם מישהו שכח תיק",
+     "when": {
+      "not": {
+       "flag": "ownerHere"
+      }
+     },
+     "lines": [
+      {
+       "speaker": "narrator",
+       "text": "במאפייה ובבית המרקחת איש לא מכיר את התיק. המוכרת במאפייה אומרת שהוא שם לפחות חצי שעה."
+      }
+     ],
+     "effects": {
+      "reveal": [
+       "o-no-owner"
+      ],
+      "minutes": 2
+     },
+     "branches": [
+      {
+       "when": {
+        "variant": [
+         "owner"
+        ]
+       },
+       "lines": [
+        {
+         "speaker": "narrator",
+         "text": "במאפייה לא יודעים. בבית המרקחת אישה מרימה את הראש: „תיק כחול? רגע… זה שלי!” והיא ממהרת החוצה."
+        }
+       ],
+       "effects": {
+        "set": {
+         "ownerHere": true
+        },
+        "reveal": [
+         "c-ruti-owner"
+        ],
+        "minutes": 2
+       }
+      }
+     ],
+     "report": "בירור בחנויות הסמוכות על בעלי התיק"
+    },
+    {
+     "id": "s-bus",
+     "label": "לסמן לנהג האוטובוס להמשיך בלי לעצור ולא לפתוח דלתות",
+     "when": {
+      "all": [
+       {
+        "flag": "ev:bus"
+       },
+       {
+        "not": {
+         "flag": "busDiverted"
+        }
+       }
+      ]
+     },
+     "lines": [
+      {
+       "speaker": "narrator",
+       "text": "הרמת יד וסימנת לנהג להמשיך. האוטובוס מאט, הנהג מהנהן וממשיך לתחנה הבאה בלי לעצור."
+      }
+     ],
+     "effects": {
+      "set": {
+       "busDiverted": true
+      }
+     },
+     "report": "הכוונת האוטובוס להמשיך בלי לעצור בתחנה"
+    },
+    {
+     "id": "s-wait",
+     "label": "להמתין לגורם המוסמך ולשמור על טבעת הבידוד",
+     "when": {
+      "all": [
+       {
+        "flag": "expertCalled"
+       },
+       {
+        "not": {
+         "flag": "cleared"
+        }
+       }
+      ]
+     },
+     "lines": [
+      {
+       "speaker": "narrator",
+       "text": "כעבור כעשר דקות מגיע הגורם המוסמך. הוא בודק את התיק בזמן שאתה שומר על הטבעת: {{contents}}. „לא חשוד. אפשר לפתוח את התחנה.”"
+      }
+     ],
+     "effects": {
+      "set": {
+       "cleared": true
+      },
+      "reveal": [
+       "o-cleared"
+      ],
+      "minutes": 10
+     },
+     "branches": [
+      {
+       "when": {
+        "not": {
+         "flag": "isolated"
+        }
+       },
+       "lines": [
+        {
+         "speaker": "narrator",
+         "text": "הגורם המוסמך מגיע ומבקש קודם להרחיק את האנשים מהתחנה. אחרי בידוד מהיר הוא בודק את התיק: {{contents}}. „לא חשוד. אפשר לפתוח את התחנה.”"
+        }
+       ],
+       "effects": {
+        "set": {
+         "cleared": true,
+         "isolated": true
+        },
+        "reveal": [
+         "o-cleared"
+        ],
+        "minutes": 12,
+        "note": "הגורם המוסמך נאלץ לבודד את המקום בעצמו"
+       }
+      }
+     ],
+     "report": "המתנה לגורם המוסמך ושמירה על הבידוד"
+    }
+   ]
+  },
+  {
+   "id": "h-beni",
+   "label": "בני – ליד הספסל",
+   "kind": "character",
+   "x": 39,
+   "y": 52,
+   "description": "בני גבאי, אדם מבוגר בטרנינג. עומד ליד הספסל, קרוב לתיק.",
+   "choices": [
+    {
+     "id": "b-explain",
+     "label": "להציג את עצמך, להסביר שיש חפץ חשוד ולבקש ממנו בבירור לעבור אל מעבר לפינה",
+     "when": {
+      "not": {
+       "flag": "beniMoved"
+      }
+     },
+     "lines": [
+      {
+       "speaker": "player",
+       "text": "בוקר טוב, אדוני, אני מצוות הסיור. התיק הזה לא שייך לאף אחד כאן, ועד שייבדק אסור לגעת בו. אני מבקש ממך לקום עכשיו ולעבור איתי עד הפינה – זה לביטחון שלך."
+      },
+      {
+       "speaker": "beni",
+       "text": "אה… חשבתי שאולי יש בפנים ארנק ואמצא את הבעלים. בסדר, הבנתי."
+      }
+     ],
+     "effects": {
+      "set": {
+       "beniMoved": true,
+       "beniCalm": true
+      },
+      "attitude": {
+       "beni": 2
+      }
+     },
+     "report": "הוראה ברורה ומוסברת לאזרח להתרחק"
+    },
+    {
+     "id": "b-order",
+     "label": "לצעוק עליו: „תזוז משם! עכשיו!”",
+     "when": {
+      "all": [
+       {
+        "not": {
+         "flag": "beniMoved"
+        }
+       },
+       {
+        "not": {
+         "flag": "beniAngry"
+        }
+       }
+      ]
+     },
+     "lines": [
+      {
+       "speaker": "player",
+       "text": "תזוז משם! עכשיו!"
+      },
+      {
+       "speaker": "beni",
+       "text": "מה אתה צועק עליי? אני מחכה פה לאוטובוס, זכותי! מה כבר יש בתיק?"
+      }
+     ],
+     "effects": {
+      "set": {
+       "beniAngry": true
+      },
+      "attitude": {
+       "beni": -2
+      },
+      "note": "הוראה בצעקה ובלי הסבר העלתה את ההתנגדות"
+     }
+    },
+    {
+     "id": "b-warn",
+     "label": "להנמיך את הקול, להסביר את הסיבה ולהבהיר שזו הוראה מחייבת לשמירה על הציבור",
+     "when": {
+      "flag": "beniAngry"
+     },
+     "lines": [
+      {
+       "speaker": "player",
+       "text": "אני מבין שזה מרגיז. יש כאן חפץ שלא ברור מה הוא, ועד שייבדק אני מרחיק את כולם – גם אותך. זו הוראה לשמירה על ביטחון הציבור, ואני צריך שתמלא אותה עכשיו."
+      },
+      {
+       "speaker": "beni",
+       "text": "…טוב, טוב. הולך. אבל לא היית צריך לצעוק."
+      }
+     ],
+     "effects": {
+      "set": {
+       "beniMoved": true,
+       "beniAngry": false
+      },
+      "attitude": {
+       "beni": 1
+      }
+     },
+     "report": "הבהרת ההוראה והסיבה לאחר התנגדות"
+    },
+    {
+     "id": "b-calm",
+     "label": "להודות לבני על שיתוף הפעולה ולשאול אם ראה מי השאיר את התיק",
+     "when": {
+      "all": [
+       {
+        "flag": "beniMoved"
+       },
+       {
+        "not": {
+         "chosen": "b-explain"
+        }
+       }
+      ]
+     },
+     "lines": [
+      {
+       "speaker": "player",
+       "text": "תודה ששיתפת פעולה. ראית מי השאיר את התיק?"
+      },
+      {
+       "speaker": "beni",
+       "text": "לא, כשהגעתי הוא כבר היה פה. סליחה שכמעט פתחתי אותו."
+      }
+     ],
+     "effects": {
+      "set": {
+       "beniCalm": true
+      },
+      "attitude": {
+       "beni": 1
+      }
+     },
+     "report": "שיחה עם האזרח לאחר ההרחקה"
+    }
+   ],
+   "character": "beni"
+  },
+  {
+   "id": "h-noa",
+   "label": "נועה – המדווחת",
+   "kind": "character",
+   "x": 12,
+   "y": 54,
+   "description": "נועה פרץ, סטודנטית. היא זו שהתקשרה למוקד.",
+   "choices": [
+    {
+     "id": "n-witness",
+     "label": "לגשת לנועה: להודות, לשאול ממתי התיק שם ולבקש שתמתין במרחק בטוח",
+     "lines": [
+      {
+       "speaker": "player",
+       "text": "תודה שדיווחת. ממתי התיק שם? ואפשר לבקש שתחכי כאן ליד המאפייה, במרחק, למקרה שנצטרך פרטים?"
+      },
+      {
+       "speaker": "noa",
+       "text": "הוא היה שם כבר כשהגעתי, לפני חצי שעה בערך. אף אחד לא התקרב אליו. בטח, אני מחכה."
+      }
+     ],
+     "effects": {
+      "reveal": [
+       "c-noa-time"
+      ],
+      "verify": [
+       "d-report"
+      ],
+      "set": {
+       "witness": true
+      }
+     },
+     "report": "שיחה עם המדווחת ושמירתה כעדה"
+    }
+   ],
+   "character": "noa"
+  },
+  {
+   "id": "h-ruti",
+   "label": "רותי – אומרת שהתיק שלה",
+   "kind": "character",
+   "x": 76,
+   "y": 54,
+   "description": "רותי שמעוני. יצאה בריצה מבית המרקחת.",
+   "choices": [
+    {
+     "id": "rt-explain",
+     "label": "להרגיע את רותי ולהסביר למה התחנה סגורה",
+     "lines": [
+      {
+       "speaker": "player",
+       "text": "הכול בסדר, אף אחד לא כועס. תיק שנשאר לבד בתחנה אנחנו חייבים לבדוק – זה נוהל לביטחון כולם."
+      },
+      {
+       "speaker": "ruti",
+       "text": "אוי, אני כל כך מצטערת. נכנסתי רק לרגע לקנות תרופה."
+      }
+     ],
+     "effects": {
+      "set": {
+       "rutiCalm": true
+      },
+      "attitude": {
+       "ruti": 1
+      }
+     },
+     "report": "הסבר מרגיע לבעלת התיק"
+    },
+    {
+     "id": "rt-verify",
+     "label": "לא לתת לה לגשת לתיק: לבקש תיאור מדויק של התיק ושל תוכנו ומה עשתה כאן",
+     "when": {
+      "not": {
+       "flag": "cleared"
+      }
+     },
+     "lines": [
+      {
+       "speaker": "player",
+       "text": "לפני שמתקרבים – תתארי לי בדיוק את התיק ומה יש בו, ואיפה היית בחצי השעה האחרונה."
+      },
+      {
+       "speaker": "ruti",
+       "text": "תיק ספורט כחול, רוכסן אחד. בפנים {{contents}}. הייתי בבית המרקחת – הנה הקבלה."
+      }
+     ],
+     "effects": {
+      "reveal": [
+       "o-ruti-match"
+      ],
+      "set": {
+       "ownerVerified": true
+      }
+     },
+     "report": "אימות בעלות לפני החזרת החפץ"
+    },
+    {
+     "id": "rt-letgo",
+     "label": "לאפשר לה לגשת ולקחת את התיק מיד",
+     "when": {
+      "not": {
+       "flag": "cleared"
+      }
+     },
+     "lines": [
+      {
+       "speaker": "narrator",
+       "text": "רותי ניגשת, חוטפת את התיק ומתנצלת. אתה לא בטוח שזה באמת התיק שלה, והמוקד עוד לא יודע שהאירוע הסתיים."
+      }
+     ],
+     "effects": {
+      "set": {
+       "cleared": true,
+       "handedEarly": true
+      },
+      "note": "החפץ נמסר בלי אימות בעלות ובלי אישור"
+     }
+    },
+    {
+     "id": "rt-return",
+     "label": "אחרי אישור המוקד – לאפשר לרותי לקחת את התיק",
+     "when": {
+      "all": [
+       {
+        "flag": "ownerApproved"
+       },
+       {
+        "not": {
+         "flag": "cleared"
+        }
+       }
+      ]
+     },
+     "lines": [
+      {
+       "speaker": "narrator",
+       "text": "רותי לוקחת את התיק, מודה לך ומתנצלת בפני הממתינים. אתה מסיר את סרט הסימון."
+      }
+     ],
+     "effects": {
+      "set": {
+       "cleared": true
+      },
+      "reveal": [
+       "o-cleared"
+      ]
+     },
+     "report": "החזרת החפץ לבעלים אחרי אימות ואישור"
+    }
+   ],
+   "character": "ruti",
+   "when": {
+    "flag": "ownerHere"
+   }
+  },
+  {
+   "id": "h-radio",
+   "label": "מכשיר הקשר – שאילתה למוקד",
+   "kind": "radio",
+   "x": 8,
+   "y": 14,
+   "description": "מכשיר הקשר האישי. לשליחת עדכון השתמש בכפתור „עדכון למוקד”.",
+   "choices": [
+    {
+     "id": "r-eta",
+     "label": "לשאול את המוקד מתי יגיע הגורם המוסמך",
+     "when": {
+      "flag": "expertCalled"
+     },
+     "lines": [
+      {
+       "speaker": "player",
+       "text": "מוקד, מה זמן ההגעה של הגורם המוסמך?"
+      },
+      {
+       "speaker": "dispatch",
+       "text": "כעשר דקות. שמרו על הבידוד ואל תתקרבו לחפץ."
+      }
+     ],
+     "report": "בירור זמן הגעה של הגורם המוסמך"
+    }
+   ]
+  }
+ ],
+ "events": [
+  {
+   "id": "bus",
+   "title": "התפתחות: אוטובוס מתקרב לתחנה",
+   "when": {
+    "all": [
+     {
+      "not": {
+       "flag": "cleared"
+      }
+     },
+     {
+      "countChosen": {
+       "ids": [
+        "s-observe",
+        "s-touch",
+        "s-doc",
+        "s-isolate",
+        "s-shops",
+        "b-explain",
+        "b-order",
+        "b-warn",
+        "b-calm",
+        "n-witness",
+        "rt-explain",
+        "rt-verify"
+       ],
+       "gte": 3
+      }
+     }
+    ]
+   },
+   "lines": [
+    {
+     "speaker": "narrator",
+     "text": "אוטובוס קו 12 מתקרב לתחנה ומאותת לעצירה. בתוכו נוסעים עומדים ליד הדלת, מוכנים לרדת."
+    }
+   ],
+   "effects": {
+    "note": "אוטובוס עם נוסעים התקרב לתחנה בזמן שהחפץ עוד לא נבדק"
+   },
+   "sfx": "alert"
+  }
+ ],
+ "update": {
+  "categories": {
+   "location": "מקום",
+   "situation": "מצב נוכחי",
+   "status": "מצב המעורבים",
+   "verified": "מה אומת",
+   "missing": "מה עדיין חסר",
+   "assistance": "סיוע נדרש",
+   "judgement": "קביעה"
+  },
+  "elements": [
+   {
+    "id": "u-loc",
+    "category": "location",
+    "text": "נמצא בתחנת „הנרקיס”, שדרות הזית"
+   },
+   {
+    "id": "u-bag",
+    "category": "situation",
+    "text": "תיק ספורט כחול סגור על הספסל, ללא בעלים בסביבה",
+    "when": {
+     "any": [
+      {
+       "fact": "o-bag"
+      },
+      {
+       "fact": "d-desc"
+      }
+     ]
+    }
+   },
+   {
+    "id": "u-isolated",
+    "category": "verified",
+    "text": "המקום בודד והאנשים הורחקו",
+    "when": {
+     "flag": "isolated"
+    }
+   },
+   {
+    "id": "u-expert",
+    "category": "assistance",
+    "text": "מבקש גורם מוסמך לבדיקת חפץ חשוד",
+    "when": {
+     "not": {
+      "flag": "cleared"
+     }
+    }
+   },
+   {
+    "id": "u-divert",
+    "category": "assistance",
+    "text": "מבקש להסיט את קווי האוטובוס מהתחנה",
+    "when": {
+     "not": {
+      "flag": "cleared"
+     }
+    }
+   },
+   {
+    "id": "u-no-owner",
+    "category": "missing",
+    "text": "הבעלים לא אותרו בחנויות הסמוכות",
+    "when": {
+     "fact": "o-no-owner"
+    }
+   },
+   {
+    "id": "u-owner",
+    "category": "verified",
+    "text": "אותרה בעלת התיק – התיאור והתוכן תואמים",
+    "when": {
+     "flag": "ownerVerified"
+    }
+   },
+   {
+    "id": "u-owner-claim",
+    "category": "situation",
+    "text": "אישה טוענת שהתיק שלה – טרם אומת",
+    "when": {
+     "all": [
+      {
+       "flag": "ownerHere"
+      },
+      {
+       "not": {
+        "flag": "ownerVerified"
+       }
+      }
+     ]
+    }
+   },
+   {
+    "id": "u-touched",
+    "category": "judgement",
+    "text": "פתחתי את התיק כדי לחפש פרטי בעלים",
+    "when": {
+     "flag": "touched"
+    }
+   },
+   {
+    "id": "u-cleared",
+    "category": "verified",
+    "text": "החפץ אינו חשוד, התחנה נפתחה",
+    "when": {
+     "flag": "cleared"
+    }
+   },
+   {
+    "id": "u-no-assist",
+    "category": "assistance",
+    "text": "לא נדרש סיוע נוסף"
+   }
+  ],
+  "responses": [
+   {
+    "when": {
+     "inUpdate": "u-expert"
+    },
+    "lines": [
+     {
+      "speaker": "dispatch",
+      "text": "מוקד: גורם מוסמך בדרך, כעשר דקות. שמרו על הבידוד ואל תתקרבו לחפץ."
+     }
+    ],
+    "effects": {
+     "set": {
+      "expertCalled": true
+     }
+    }
+   },
+   {
+    "when": {
+     "inUpdate": "u-divert"
+    },
+    "lines": [
+     {
+      "speaker": "dispatch",
+      "text": "מוקד: עדכנו את חברת האוטובוסים, הקווים יעקפו את התחנה."
+     }
+    ],
+    "effects": {
+     "set": {
+      "diverted": true
+     }
+    }
+   },
+   {
+    "when": {
+     "inUpdate": "u-owner"
+    },
+    "lines": [
+     {
+      "speaker": "dispatch",
+      "text": "מוקד: הגורם המוסמך מאשר – כשהתיאור והתוכן תואמים, הבעלים רשאית לקחת את התיק. עדכנו בסיום."
+     }
+    ],
+    "effects": {
+     "set": {
+      "ownerApproved": true
+     }
+    }
+   },
+   {
+    "when": {
+     "inUpdate": "u-touched"
+    },
+    "lines": [
+     {
+      "speaker": "dispatch",
+      "text": "מוקד: אל תיגעו בחפץ שוב. הרחיקו את כולם והמתינו לגורם המוסמך."
+     }
+    ]
+   }
+  ]
+ },
+ "finish": {
+  "label": "סיום הטיפול במקום",
+  "confirm": "לסיים את הטיפול ולעבור לתחקיר? אפשר לשלוח עדכון אחרון למוקד לפני הסיום."
+ },
+ "endings": [
+  {
+   "id": "e-good",
+   "kind": "good",
+   "title": "החפץ נבדק בבטחה והתחנה נפתחה",
+   "text": "איש לא נגע בחפץ, המקום בודד, הציבור הורחק בהוראה ברורה, והחפץ נבדק או הוחזר רק אחרי אימות ואישור.",
+   "when": {
+    "all": [
+     {
+      "flag": "cleared"
+     },
+     {
+      "flag": "isolated"
+     },
+     {
+      "not": {
+       "flag": "touched"
+      }
+     },
+     {
+      "not": {
+       "flag": "handedEarly"
+      }
+     },
+     {
+      "flag": "beniMoved"
+     },
+     {
+      "any": [
+       {
+        "not": {
+         "flag": "ev:bus"
+        }
+       },
+       {
+        "flag": "busDiverted"
+       },
+       {
+        "flag": "diverted"
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "e-partial",
+   "kind": "partial",
+   "title": "האירוע הסתיים – בסיכון מיותר",
+   "text": "התיק לא היה חשוד, אבל בדרך נלקחו סיכונים: נגיעה בחפץ, אזרחים בקרבתו, אוטובוס שעצר בתחנה או החזרה בלי אימות.",
+   "when": {
+    "flag": "cleared"
+   }
+  },
+  {
+   "id": "e-retry",
+   "kind": "retry",
+   "title": "הזדמנות לתיקון: החפץ נשאר בלי טיפול",
+   "text": "הצוות עזב לפני שהחפץ נבדק. התחנה נשארה פתוחה ואנשים המשיכו לשבת ליד התיק.",
+   "when": {
+    "always": true
+   }
+  }
+ ],
+ "hints": [
+  {
+   "when": {
+    "all": [
+     {
+      "stage": [
+       "scene"
+      ]
+     },
+     {
+      "not": {
+       "flag": "beniMoved"
+      }
+     }
+    ]
+   },
+   "text": "מישהו עומד ליד החפץ. הוראה ברורה עם הסבר קצר עובדת טוב יותר מצעקה."
+  },
+  {
+   "when": {
+    "flag": "beniAngry"
+   },
+   "text": "בני מתנגד. הנמכת קול והסבר הסיבה – בלי לוותר על ההוראה – יכולים להחזיר אותו לשיתוף פעולה."
+  },
+  {
+   "when": {
+    "all": [
+     {
+      "stage": [
+       "scene"
+      ]
+     },
+     {
+      "not": {
+       "flag": "isolated"
+      }
+     }
+    ]
+   },
+   "text": "כל עוד אנשים עוברים ליד החפץ, הזירה לא בטוחה."
+  },
+  {
+   "when": {
+    "all": [
+     {
+      "flag": "ev:bus"
+     },
+     {
+      "not": {
+       "flag": "busDiverted"
+      }
+     },
+     {
+      "not": {
+       "flag": "diverted"
+      }
+     }
+    ]
+   },
+   "text": "אוטובוס עם נוסעים מתקרב לתחנה. אפשר לסמן לנהג להמשיך, ואפשר לבקש מהמוקד להסיט את הקווים."
+  },
+  {
+   "when": {
+    "all": [
+     {
+      "flag": "ownerHere"
+     },
+     {
+      "not": {
+       "flag": "ownerVerified"
+      }
+     }
+    ]
+   },
+   "text": "מישהי טוענת שהתיק שלה. איך תדע שזה נכון לפני שהיא ניגשת?"
+  },
+  {
+   "when": {
+    "all": [
+     {
+      "stage": [
+       "scene"
+      ]
+     },
+     {
+      "not": {
+       "flag": "expertCalled"
+      }
+     },
+     {
+      "not": {
+       "flag": "ownerApproved"
+      }
+     }
+    ]
+   },
+   "text": "בדיקת חפץ חשוד היא לא תפקיד הסייר. מי צריך לבדוק אותו?"
+  },
+  {
+   "when": {
+    "always": true
+   },
+   "text": "לפני הסיום: האם המוקד יודע שהתחנה נפתחה?"
+  }
+ ],
+ "challenges": [
+  "שחק עם זרע אחר – האם הבעלים מופיעים? בדוק שהבידוד שלך נכון בשני המקרים.",
+  "נסה לתת לבני הוראה שהוא מבצע כבר בפעם הראשונה – מה צריך לכלול בה?",
+  "נסח עדכון ראשון אחד שמכסה מקום, תיאור, בידוד וסיוע נדרש."
+ ],
+ "report": {
+  "reason": "התקבלה משימה מהמוקד: תיק שנשכח בתחנת אוטובוס בשדרות הזית.",
+  "checklist": [
+   {
+    "label": "תיאור החפץ",
+    "when": {
+     "fact": "o-bag"
+    }
+   },
+   {
+    "label": "בידוד המקום",
+    "when": {
+     "flag": "isolated"
+    }
+   },
+   {
+    "label": "בירור בעלים",
+    "when": {
+     "any": [
+      {
+       "fact": "o-no-owner"
+      },
+      {
+       "fact": "c-ruti-owner"
+      }
+     ]
+    }
+   },
+   {
+    "label": "אימות בעלות",
+    "when": {
+     "fact": "o-ruti-match"
+    }
+   },
+   {
+    "label": "תוצאת הבדיקה",
+    "when": {
+     "fact": "o-cleared"
+    }
+   }
+  ]
+ },
+ "media": {
+  "images": [
+   "img/busstop-day.webp",
+   "img/busstop-night.webp",
+   "img/chars/noa-calm.webp",
+   "img/chars/noa-tense.webp",
+   "img/chars/noa-upset.webp",
+   "img/chars/beni-calm.webp",
+   "img/chars/beni-tense.webp",
+   "img/chars/beni-upset.webp",
+   "img/chars/ruti-calm.webp",
+   "img/chars/ruti-tense.webp",
+   "img/chars/ruti-upset.webp",
+   "img/props/bag.webp",
+   "img/props/patrol.webp",
+   "img/drive/interior.webp",
+   "img/drive/road-day.webp",
+   "img/drive/road-night.webp"
+  ],
+  "audio": [
+   "audio/traffic.mp3",
+   "audio/engine-wipers.mp3",
+   "audio/radio-chirp.mp3",
+   "audio/alert.mp3",
+   "audio/radio-chatter.mp3"
+  ],
+  "voice": {},
+  "narrationMissing": "אין עדיין קריינות מוקלטת בעברית. הקבצים יתווספו לתיקייה public/audio/voice/suspicious-object/ וימופו בשדה media.voice."
+ }
+}

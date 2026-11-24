@@ -6,7 +6,7 @@
 export type Shift = 'morning' | 'evening' | 'night';
 export type Difficulty = 'basic' | 'standard' | 'advanced';
 export type Mode = 'learning' | 'practice';
-export type Domain = 'info' | 'assessment' | 'communication' | 'dispatch' | 'documentation';
+export type Domain = 'info' | 'assessment' | 'communication' | 'authority' | 'dispatch' | 'documentation';
 export type Stage = 'dispatch' | 'transition' | 'scene' | 'ended';
 export type LightsMode = 'off' | 'steady' | 'reflect';
 export type Mood = 'calm' | 'tense' | 'upset' | 'hurt';
@@ -177,7 +177,7 @@ export interface ScoreRule {
   alternative?: string;
 }
 
-export type PropKind = 'car-red' | 'car-silver' | 'patrol' | 'speaker' | 'lock' | 'cone' | 'door-glow' | 'glow-dim' | 'sign';
+export type PropKind = 'car-red' | 'car-silver' | 'patrol' | 'speaker' | 'lock' | 'cone' | 'door-glow' | 'glow-dim' | 'sign' | 'bag' | 'tape';
 
 export interface ScenePropDef {
   id: string;

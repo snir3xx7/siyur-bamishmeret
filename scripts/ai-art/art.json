@@ -29,6 +29,48 @@
    "seed": 52,
    "base": "day",
    "prompt": "Shared courtyard between two Israeli apartment blocks on a bright sunny morning, blue sky, soft morning sunlight and shadows. Laundry lines with colorful clothes strung between balconies. Left: a ficus tree in a raised stone planter. Center-left: three green municipal trash bins. Center: a wooden bench. Right: a small corrugated grey metal storage shed with a closed door and a padlock, two bicycles leaning next to it. A courtyard lamp post. Stone paving floor in the bottom third. No people, no text, no letters."
+  },
+  {
+   "id": "park",
+   "out": "park",
+   "seed": 61,
+   "base": "night",
+   "prompt": "Wide eye-level view of a small Israeli neighborhood public park in the evening after sunset, deep blue dusk sky. Background: beige stone apartment blocks with lit windows and balconies. Left: a small children's playground with a slide and swings on soft rubber flooring. Center: a curving paved footpath with two wooden park benches and warm street lamps. Right: a small closed kiosk with a rolled-down shutter and a few pine and olive trees. Grass and low bushes. Paved path in the bottom third. No people, no cars, no vehicles, no text, no letters, no logos."
+  },
+  {
+   "id": "busstop",
+   "out": "busstop",
+   "seed": 62,
+   "base": "day",
+   "prompt": "Wide eye-level street view of an Israeli city bus stop on a sunny morning. Center: a modern bus shelter with a glass back panel, a metal roof and a long metal bench. Background: a row of small shops with awnings and shutters, a pharmacy and a bakery, beige stone apartment buildings above them with balconies and solar water heaters, palm tree on the right. Lower third: wide sidewalk with grey paving stones and a curb, part of an empty asphalt road with lane markings at the bottom. No people, no cars, no vehicles, no text, no letters, no logos."
+  },
+  {
+   "id": "parking",
+   "out": "parking",
+   "seed": 63,
+   "base": "day",
+   "prompt": "Wide eye-level view of the open-air parking lot behind an Israeli apartment building in early morning sunlight. Background: a four-story apartment block on pillars (pilotis) with balconies, an entrance with a glass door, green trash bins. Painted white parking space lines on cracked asphalt, a low stone wall with bougainvillea flowers on the right, a metal sliding gate on the left. Empty parking spaces in the bottom half. No people, no cars, no vehicles, no text, no letters, no logos."
+  },
+  {
+   "id": "market",
+   "out": "market",
+   "seed": 64,
+   "base": "day",
+   "prompt": "Wide eye-level view down a busy-looking colorful open-air Middle Eastern food market alley in daylight, without people. Both sides: market stalls with striped canvas awnings and tarps, wooden crates piled with oranges, tomatoes, peppers, bananas and herbs, sacks of spices, hanging lamps, a toy and balloon stall on the right. Strings of light bulbs across the alley. Old stone buildings above. Paved stone floor in the bottom third with a few scattered cardboard boxes. No people, no cars, no vehicles, no text, no letters, no logos."
+  },
+  {
+   "id": "pub",
+   "out": "pub-street",
+   "seed": 65,
+   "base": "night",
+   "prompt": "Wide eye-level view of a city sidewalk outside a small neighborhood bar at night. Center: the bar's wide glass front with warm amber light inside, wooden counter and bottles visible through the glass, an open door. Outside: a few tall wooden stools and two small round high tables, a wooden bench, a tree with string lights. Left: a closed shop with a rolled-down metal shutter and a street lamp. Right: a security camera mounted on the corner of the building. Wet-looking dark paving sidewalk in the bottom third. No people, no cars, no vehicles, no text, no letters, no logos."
+  },
+  {
+   "id": "gas",
+   "out": "building-entrance",
+   "seed": 66,
+   "base": "day",
+   "prompt": "Wide eye-level view of the outside entrance of an Israeli apartment building in daylight. Center: a glass and aluminium building entrance door with an intercom panel, open lobby inside with mailboxes. Left: a grey metal gas meter cabinet on the wall with yellow gas pipes running up the facade. Right: a small front garden with shrubs and a low fence, a bench. Beige stone facade with balconies above. Paved entrance path and sidewalk in the bottom third. No people, no cars, no vehicles, no text, no letters, no logos."
   }
  ],
  "characters": [
@@ -145,6 +187,198 @@
     "upset"
    ],
    "desc": "A woman in her forties, blonde shoulder-length hair, fair skin, wearing a red top and black trousers."
+  },
+  {
+   "id": "orit",
+   "seed": 101,
+   "moods": [
+    "calm",
+    "tense",
+    "upset"
+   ],
+   "desc": "A woman in her mid forties, shoulder-length curly brown hair, light olive skin, wearing a mustard yellow cardigan over a white blouse, dark jeans and flat shoes, holding a smartphone."
+  },
+  {
+   "id": "avraham",
+   "seed": 102,
+   "moods": [
+    "calm",
+    "tense",
+    "upset"
+   ],
+   "desc": "A frail elderly man in his early eighties, white hair under a grey flat cap, glasses, wearing a brown buttoned cardigan over a checked shirt, beige trousers and house slippers, holding a wooden walking cane."
+  },
+  {
+   "id": "yossi",
+   "seed": 103,
+   "moods": [
+    "calm",
+    "tense",
+    "upset"
+   ],
+   "desc": "A heavyset man in his fifties, short greying black hair, tan skin, mustache, wearing a dark red polo shirt, black trousers and a white shopkeeper apron."
+  },
+  {
+   "id": "noa",
+   "seed": 104,
+   "moods": [
+    "calm",
+    "tense",
+    "upset"
+   ],
+   "desc": "A young woman around twenty, long light brown hair in a ponytail, fair skin, wearing a light blue hoodie, black leggings and white sneakers, a backpack on her shoulders."
+  },
+  {
+   "id": "beni",
+   "seed": 105,
+   "moods": [
+    "calm",
+    "tense",
+    "upset"
+   ],
+   "desc": "A man in his sixties, balding with grey hair at the sides, tan skin, wearing a dark blue tracksuit jacket and trousers and grey sneakers."
+  },
+  {
+   "id": "ruti",
+   "seed": 106,
+   "moods": [
+    "calm",
+    "tense",
+    "upset"
+   ],
+   "desc": "A woman in her thirties, short black bob haircut, light skin, wearing a lilac blouse, grey office trousers and black flats, holding car keys."
+  },
+  {
+   "id": "roni",
+   "seed": 107,
+   "moods": [
+    "calm",
+    "tense",
+    "upset"
+   ],
+   "desc": "A man in his early thirties, short black hair, olive skin, light stubble, wearing teal blue hospital scrubs and white sneakers, a lanyard around his neck."
+  },
+  {
+   "id": "shiran",
+   "seed": 108,
+   "moods": [
+    "calm",
+    "tense",
+    "upset"
+   ],
+   "desc": "A young woman in her mid twenties, long wavy dark blond hair, fair skin, wearing a coral pink t-shirt, light denim jacket, white jeans and sandals."
+  },
+  {
+   "id": "nissim",
+   "seed": 109,
+   "moods": [
+    "calm",
+    "tense",
+    "upset"
+   ],
+   "desc": "A man in his late sixties, short white hair, brown skin, glasses on a cord, wearing a light grey short-sleeved button shirt, navy trousers and brown leather shoes, holding a small notebook."
+  },
+  {
+   "id": "sigal",
+   "seed": 110,
+   "moods": [
+    "calm",
+    "tense",
+    "upset"
+   ],
+   "desc": "A woman in her early thirties, long dark brown hair, tan skin, wearing a denim shirt over a white t-shirt, black trousers and sneakers, a tote bag on her shoulder."
+  },
+  {
+   "id": "haim",
+   "seed": 111,
+   "moods": [
+    "calm",
+    "tense",
+    "upset"
+   ],
+   "desc": "A market vendor man in his sixties, grey hair, sun-tanned brown skin, short grey beard, wearing a navy blue t-shirt, a brown canvas apron, beige trousers."
+  },
+  {
+   "id": "omri",
+   "seed": 112,
+   "moods": [
+    "calm",
+    "tense",
+    "upset"
+   ],
+   "desc": "A young boy about six years old, short brown hair, light skin, wearing a yellow t-shirt with a star, red shorts and blue sneakers, holding a small balloon string."
+  },
+  {
+   "id": "alon",
+   "seed": 113,
+   "moods": [
+    "calm",
+    "tense",
+    "upset",
+    "hurt"
+   ],
+   "desc": "A young man in his mid twenties, short light brown hair, light skin, wearing a white t-shirt with a small stain, dark jeans and sneakers.",
+   "hurt": "Holding a folded white cloth napkin pressed against his forehead with one hand."
+  },
+  {
+   "id": "dor",
+   "seed": 114,
+   "moods": [
+    "calm",
+    "tense",
+    "upset"
+   ],
+   "desc": "A young man in his late twenties, black hair with shaved sides, tan skin, short beard, wearing a black t-shirt, black jeans and dark sneakers."
+  },
+  {
+   "id": "maor",
+   "seed": 115,
+   "moods": [
+    "calm",
+    "tense",
+    "upset"
+   ],
+   "desc": "A young man in his mid twenties, curly black hair, olive skin, wearing a maroon hooded sweatshirt, grey jogging trousers and white sneakers."
+  },
+  {
+   "id": "lilach",
+   "seed": 116,
+   "moods": [
+    "calm",
+    "tense",
+    "upset"
+   ],
+   "desc": "A woman in her thirties, red hair in a messy bun, fair skin with freckles, wearing a black t-shirt, a dark brown bartender apron and black trousers, holding a dish towel."
+  },
+  {
+   "id": "galit",
+   "seed": 117,
+   "moods": [
+    "calm",
+    "tense",
+    "upset"
+   ],
+   "desc": "A woman in her forties, short dark hair, light skin, wearing a navy blue blouse, beige trousers and sandals, holding a house key."
+  },
+  {
+   "id": "moshe",
+   "seed": 118,
+   "moods": [
+    "calm",
+    "tense",
+    "upset"
+   ],
+   "desc": "A stubborn-looking man in his seventies, white hair, tan skin, bushy white eyebrows, wearing a white tank undershirt under an open blue button shirt, brown trousers and house slippers."
+  },
+  {
+   "id": "tomer",
+   "seed": 119,
+   "moods": [
+    "calm",
+    "tense",
+    "upset"
+   ],
+   "desc": "A teenage boy about sixteen, messy dark hair, light skin, wearing a grey t-shirt, black shorts, white socks and slides, headphones around his neck, holding a smartphone."
   }
  ],
  "props": [
@@ -162,8 +396,72 @@
   {
    "id": "patrol",
    "seed": 33,
-   "desc": "Side view profile of a white patrol car facing right, the whole car visible, a blue horizontal stripe along the side, a red and blue light bar on the roof, no text, no lettering, no emblem."
+   "desc": "Side view profile of a white patrol car facing right, the whole car visible, a blue horizontal stripe along the side, a red and blue light bar on the roof, no text, no lettering, no emblem.",
+   "patch": [
+    [
+     213,
+     105,
+     30,
+     11,
+     "#c6d7d0"
+    ]
+   ]
+  },
+  {
+   "id": "bag",
+   "seed": 34,
+   "desc": "A single unattended dark blue fabric sports duffel bag with a zipper, standing alone, seen from the front three-quarter view, the whole object visible, no text, no logos."
   }
  ],
- "propsBackdrop": "Isolated on a vivid bright green screen backdrop (pure #00FF00 chroma key green), the entire background is flat saturated green."
+ "propsBackdrop": "Isolated on a vivid bright green screen backdrop (pure #00FF00 chroma key green), the entire background is flat saturated green.",
+ "drive": {
+  "interior": {
+   "seed": 71,
+   "prompt": "The windshield and all windows are filled with a flat vivid bright pure green screen (#00FF00 chroma key), nothing visible outside. Interior of a white patrol car seen from just behind the driver's seat, looking forward. Left: steering wheel and instrument cluster with softly glowing gauges (left-hand drive). Center console: a mounted two-way radio handset with a curly cord, a small rugged laptop on a swivel stand, a compact control panel with small blue and red buttons. Dark grey dashboard, rear-view mirror at the top center, sun visors. Wide cinematic framing, the windshield occupies the upper half of the image. No text, no letters, no logos, no emblems, no people."
+  },
+  "road": {
+   "seed": 72,
+   "base": "night",
+   "prompt": "Driver's eye view looking straight ahead down an Israeli city street at night, one-point perspective with the vanishing point in the center. Two-lane asphalt road with white dashed center markings receding into the distance, beige Jerusalem-stone apartment buildings with balconies and lit windows on both sides, warm orange street lamps in a row on both sides, a few parked cars along the curbs, a green traffic light in the far distance. No people, no text, no letters."
+  },
+  "side": {
+   "seed": 73,
+   "base": "day",
+   "prompt": "Flat side view of an Israeli city street seen straight-on from across the road on a sunny day, wide horizontal panorama composition: a continuous row of small shops with awnings and rolled shutters at street level, beige stone apartment buildings with balconies and solar water heaters above, ficus trees and street lamps along the sidewalk, curb and empty asphalt lane in the bottom fifth. No people, no cars, no text, no letters, no logos."
+  }
+ },
+ "hero": {
+  "seeds": [
+   81,
+   82
+  ],
+  "pick": 81,
+  "prompt": "Cinematic wide establishing shot of an Israeli city street at blue hour just after sunset, seen from a slightly low angle at a street corner. Right third of the frame: a white patrol car with a blue side stripe and a roof light bar parked at the curb, the light bar glowing blue and red and casting colored reflections on the wet asphalt. Left and center: beige Jerusalem-stone apartment buildings with balconies and warm lit windows, tall palm trees, glowing orange street lamps, a distant city skyline with soft lights under a dramatic purple, magenta and deep orange sky. Puddles reflecting the lights, light mist, atmospheric depth. No people, no text, no letters, no numbers, no logos, no emblems, no badges.",
+  "clone": [
+   [
+    1120,
+    477,
+    38,
+    27,
+    -40,
+    0
+   ],
+   [
+    899,
+    523,
+    29,
+    62,
+    28,
+    0
+   ],
+   [
+    1290,
+    524,
+    36,
+    22,
+    0,
+    20
+   ]
+  ]
+ }
 }

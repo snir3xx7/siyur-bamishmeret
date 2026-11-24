@@ -2,6 +2,14 @@ import { useEffect, useRef, useState } from 'react';
 import type { Shift } from '../engine/types';
 
 const DURATION = 7000;
+const asset = (p: string) => `${import.meta.env.BASE_URL}${p}`;
+
+/** איורי המעבר (נכללים בהורדה הלא מקוונת של כל תרחיש) */
+export function transitionImages(kind: 'car' | 'street'): string[] {
+  return kind === 'car'
+    ? ['img/drive/interior.webp', 'img/drive/road-day.webp', 'img/drive/road-night.webp']
+    : ['img/drive/side-day.webp', 'img/drive/side-night.webp', 'img/props/patrol.webp'];
+}
 
 interface Props {
   kind: 'car' | 'street';
@@ -25,6 +33,7 @@ const SKY: Record<Shift, [string, string]> = {
 export function Transition({ kind, shift, rain, text, animate, running, paused, onDone }: Props) {
   const [elapsed, setElapsed] = useState(0);
   const done = useRef(false);
+  const [broken, setBroken] = useState(false);
   const skipRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
@@ -66,9 +75,46 @@ export function Transition({ kind, shift, rain, text, animate, running, paused, 
     </g>
   );
 
+  const light = shift === 'morning' ? 'day' : 'night';
+  const fail = () => setBroken(true);
+  const drops = rain && (
+    <div className="drive-rain" aria-hidden="true">
+      {Array.from({ length: 40 }, (_, i) => (
+        <i key={i} style={{ left: `${(i * 37) % 100}%`, top: `${(i * 53) % 60}%`, animationDelay: `${(i % 7) * 0.23}s` }} />
+      ))}
+    </div>
+  );
+
+  const painted = !broken && (kind === 'car' ? (
+    <div className={`drive drive-in ${light}`} aria-hidden="true">
+      <div className="drive-road" style={{ backgroundImage: `url(${asset(`img/drive/road-${light}.webp`)})` }} />
+      {light === 'night' && <><span className="pass l" /><span className="pass r" /></>}
+      {drops}
+      {rain && <><span className="wiper-p" /><span className="wiper-p b" /></>}
+      <img className="drive-cab" src={asset('img/drive/interior.webp')} alt="" onError={fail} />
+      <div className="cab-screen">
+        <b>מוקד אלון</b>
+        <span>משימה בדרך · קשר פתוח</span>
+      </div>
+      <span className="cab-led red" />
+      <span className="cab-led blue" />
+      <img hidden src={asset(`img/drive/road-${light}.webp`)} alt="" onError={fail} />
+    </div>
+  ) : (
+    <div className={`drive drive-out ${light}`} aria-hidden="true">
+      <div className="drive-side" style={{ backgroundImage: `url(${asset(`img/drive/side-${light}.webp`)})` }} />
+      <div className="drive-car">
+        <img src={asset('img/props/patrol.webp')} alt="" onError={fail} />
+        <span className="bar-glow" />
+      </div>
+      {drops}
+      <img hidden src={asset(`img/drive/side-${light}.webp`)} alt="" onError={fail} />
+    </div>
+  ));
+
   return (
-    <div className={`transition ${animate ? 'anim-ok' : ''}`} role="region" aria-label="מעבר לזירה">
-      {kind === 'car' ? (
+    <div className={`transition ${animate ? 'anim-ok' : ''} ${painted && kind === 'street' ? 'cap-top' : ''}`} role="region" aria-label="מעבר לזירה">
+      {painted || (kind === 'car' ? (
         <svg viewBox="0 0 800 450" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
           <defs>
             <linearGradient id="tsky" x1="0" y1="0" x2="0" y2="1">
@@ -135,7 +181,7 @@ export function Transition({ kind, shift, rain, text, animate, running, paused, 
             <circle cx="206" cy="82" r="18" fill="#1a1a1a" />
           </g>
         </svg>
-      )}
+      ))}
       {running && <div className="progress" style={{ width: `${Math.min(100, (elapsed / DURATION) * 100)}%` }} aria-hidden="true" />}
       <p className="caption">{text}</p>
       {running && (

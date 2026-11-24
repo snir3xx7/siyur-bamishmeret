@@ -11,6 +11,9 @@
 | `public/img/stairwell-night.webp` (ו־`-day`) | רקע מאויר – חדר מדרגות, שתי דלתות | FLUX.1 schnell, זרע 43 | רישיון הפרויקט | צוות „סיור במשמרת” |
 | `public/img/yard-day.webp` (ו־`-night` – ערב, בתיקון צבע) | רקע מאויר – חצר משותפת ומחסן | FLUX.1 schnell, זרע 52 | רישיון הפרויקט | צוות „סיור במשמרת” |
 | `public/img/chars/<דמות>-<מצב>.webp` | 11 דמויות בדויות, 3–4 מצבי גוף (רגוע/מתוח/נסער/כואב) | FLUX.1 schnell על מסך ירוק, הסרת רקע ב־`generate.mjs` | רישיון הפרויקט | צוות „סיור במשמרת” |
+| `public/img/park-*.webp`, `busstop-*`, `parking-*`, `market-*`, `pub-street-*`, `building-entrance-*` | רקעים מאוירים לתרחישים החדשים (גן, תחנה, חניון, שוק, בר, כניסת בניין) | FLUX.1 schnell, זרעים 61–66 | רישיון הפרויקט | צוות „סיור במשמרת” |
+| `public/img/chars/` (orit, avraham, yossi, noa, beni, ruti, roni, shiran, nissim, sigal, haim, omri, alon, dor, maor, lilach, galit, moshe, tomer) | 19 דמויות בדויות נוספות | FLUX.1 schnell על מסך ירוק, זרעים 101–119 | רישיון הפרויקט | צוות „סיור במשמרת” |
+| `public/img/props/bag.webp` | תיק ספורט (חפץ חשוד) | FLUX.1 schnell, זרע 34 | רישיון הפרויקט | צוות „סיור במשמרת” |
 | `public/img/props/car-red.webp`, `car-silver.webp`, `patrol.webp` | רכבים מאוירים (ניידת ללא כיתוב או סמל של גוף אמיתי) | FLUX.1 schnell | רישיון הפרויקט | צוות „סיור במשמרת” |
 
 ### נכסים וקטוריים ומסונתזים
@@ -44,5 +47,6 @@
 | תאונת דרכים קלה בגשם | הודעת המוקד, תגובות המוקד, דיאלוגים | `public/audio/voice/accident-rain/` |
 | רעש בבניין מגורים | הודעת המוקד, דיאלוגים | `public/audio/voice/noise-building/` |
 | ויכוח בחצר משותפת | הודעת המוקד, דיאלוגים | `public/audio/voice/yard-dispute/` |
+| שישה התרחישים החדשים | הודעת המוקד, דיאלוגים | `public/audio/voice/<מזהה תרחיש>/` |
 
 הוספה: שמרו קובץ MP3 (למשל `dispatch.mp3`), מפו אותו בשדה `media.voice` של התרחיש – המפתח `dispatch` להודעת הפתיחה או מזהה בחירה (למשל `"o-feel": "audio/voice/accident-rain/o-feel.mp3"`) – והוסיפו שורה לטבלה למעלה עם מקור, רישיון ושם הקריין/ית. קובץ שהוגדר מושמע במקום הקראת הדפדפן.
