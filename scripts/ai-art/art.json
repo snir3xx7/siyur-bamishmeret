@@ -379,6 +379,30 @@
     "upset"
    ],
    "desc": "A teenage boy about sixteen, messy dark hair, light skin, wearing a grey t-shirt, black shorts, white socks and slides, headphones around his neck, holding a smartphone."
+  },
+  {
+   "id": "film1",
+   "seed": 121,
+   "moods": [
+    "calm"
+   ],
+   "desc": "A young man in his twenties, short curly hair, olive skin, wearing a grey hoodie, black jeans and white sneakers, holding a smartphone up with both hands at chest height, filming, looking at the phone screen, the phone screen glowing."
+  },
+  {
+   "id": "film2",
+   "seed": 122,
+   "moods": [
+    "calm"
+   ],
+   "desc": "A woman in her thirties, straight dark hair in a ponytail, light skin, wearing a navy blue jacket, light jeans and sneakers, a handbag on her shoulder, holding a smartphone up with one hand, filming, looking at the phone screen, the phone screen glowing."
+  },
+  {
+   "id": "film3",
+   "seed": 123,
+   "moods": [
+    "calm"
+   ],
+   "desc": "A teenage boy about sixteen, black hair, tan skin, wearing a red t-shirt, black shorts and sneakers, holding a smartphone up in one hand, filming, curious expression, the phone screen glowing."
   }
  ],
  "props": [

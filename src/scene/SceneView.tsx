@@ -55,9 +55,11 @@ interface Props {
   animate: boolean;
   lightsAnim: boolean;
   showLabels: boolean;
+  /** שורת קשר של ניידת אחרת (רקע) */
+  chatter?: string;
 }
 
-export function SceneView({ sc, st, selected, onSelect, animate, lightsAnim, showLabels }: Props) {
+export function SceneView({ sc, st, selected, onSelect, animate, lightsAnim, showLabels, chatter }: Props) {
   const [imgFailed, setImgFailed] = useState(false);
   // איורים שלא נטענו – נופלים לציור הווקטורי
   const [broken, setBroken] = useState<Record<string, boolean>>({});
@@ -201,10 +203,15 @@ export function SceneView({ sc, st, selected, onSelect, animate, lightsAnim, sho
         <span className="led" />
         {radioIn ? 'הודעת מוקד' : 'קשר'}
       </div>
+      {chatter && !radioIn && (
+        <div className="radio-feed" key={chatter} data-testid="radio-feed" aria-hidden="true">
+          📻 {chatter}
+        </div>
+      )}
 
       {event && (
         <div className="event-banner" role="status" data-testid="event-banner">
-          ⚠ התפתחות בזירה
+          {event.id.startsWith('rp-') ? '📻 קריאה בקשר' : '⚠ התפתחות בזירה'}
         </div>
       )}
 

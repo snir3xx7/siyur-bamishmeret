@@ -1,3 +1,4 @@
+import { withProcedure } from '../engine/procedure';
 import type { CatalogEntry, Scenario } from '../engine/types';
 
 const cache = new Map<string, Promise<Scenario>>();
@@ -20,7 +21,7 @@ export function loadScenario(id: string): Promise<Scenario> {
     p = fetch(assetUrl(`scenarios/${id}.json`), { cache: 'no-cache' }).then((r) => {
       if (!r.ok) throw new Error(String(r.status));
       return r.json() as Promise<Scenario>;
-    });
+    }).then(withProcedure);
     p.catch(() => cache.delete(id));
     cache.set(id, p);
   }

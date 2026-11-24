@@ -111,3 +111,30 @@ export function unitOptions(r: RadioSettings): { value: string; label: string }[
     ...station.municipal.map((n) => ({ value: n, label: `${station.prefix} ${n} – שיטור עירוני` })),
   ];
 }
+
+/** הפרופיל של משחק שכבר התחיל: לפי אותות הקריאה שנשמרו בהגדרות המשחק, אחרת לפי ההגדרות הנוכחיות */
+export function gameProfile(config: { radio?: { unit: string; head: string; center: string } }, r: RadioSettings | undefined, fictionalUnit: string): RadioProfile {
+  const cur = radioProfile(r, fictionalUnit);
+  if (!config.radio) return { ...radioProfile(undefined, fictionalUnit) };
+  return { ...cur, real: true, unit: config.radio.unit, head: config.radio.head, center: config.radio.center };
+}
+
+/** תעבורת קשר של ניידות אחרות בתחנה – רקע בלבד, לא משפיע על התרחיש */
+export function chatterLines(p: RadioProfile): string[] {
+  const prefix = p.real ? p.unit.split(' ').slice(0, -1).join(' ') : '';
+  const own = p.unit.split(' ').at(-1);
+  const others = p.real ? ['403', '404', '405', '302'].filter((n) => n !== own).map((n) => `${prefix} ${n}`) : ['סייר 12', 'סייר 31', 'סייר 40'];
+  const [a, b, c] = others;
+  const head = p.head;
+  const duty = p.real ? p.dutyOfficer : 'הקצין התורן';
+  return [
+    `${a} ל־${head}: סיימתי באירוע ברחוב הרימון, פנוי.`,
+    `${head} ל־${b}: גש לרחוב הנרקיס 12, אזעקה ברכב חונה.`,
+    `${b} ל־${head}: קיבלתי, בדרך.`,
+    `${head} לכל הניידות: רכב לבן מסוג מסחרי עזב בפראות את צומת הזית לכיוון צפון. מי שמזהה – מדווח, לא מתקרב לבד.`,
+    `${c} ל־${head}: אני בעצירת רכב בשדרות הזית, הכול תקין, ממשיך.`,
+    `${duty} ל־${head}: עדכן אותי כשנסגרים האירועים הפתוחים.`,
+    `${a} ל־${head}: מבקש הפסקת התרעננות בתחנה, עשר דקות.`,
+    `${head} ל־${a}: חיובי.`,
+  ];
+}

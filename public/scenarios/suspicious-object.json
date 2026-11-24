@@ -1,6 +1,6 @@
 {
  "id": "suspicious-object",
- "version": 1,
+ "version": 2,
  "title": "חפץ חשוד בתחנת אוטובוס",
  "category": "ביטחון שוטף וחפצים חשודים",
  "summary": "תיק סגור נשכח על ספסל בתחנה, ואזרח סקרן כבר מתכונן להציץ בו. יש לא לגעת, לבודד את המקום, להרחיק אנשים בהוראה ברורה ומוסברת, לחפש את הבעלים ולהזמין גורם מוסמך.",
@@ -774,6 +774,56 @@
     "tense",
     "upset"
    ]
+  },
+  {
+   "id": "film3",
+   "name": "עובר אורח",
+   "role": "מצלם בטלפון",
+   "gender": "m",
+   "look": {
+    "skin": "#d6a57c",
+    "hair": "#2a1d14",
+    "hairStyle": "short",
+    "top": "#666",
+    "bottom": "#333",
+    "accessory": "phone"
+   },
+   "attitude": 0,
+   "x": 94,
+   "y": 78,
+   "scale": 0.95,
+   "sprite": "img/chars/film3",
+   "spriteMoods": [
+    "calm"
+   ],
+   "when": {
+    "flag": "isolated"
+   }
+  },
+  {
+   "id": "film2",
+   "name": "עוברת אורח",
+   "role": "מצלמת בטלפון",
+   "gender": "f",
+   "look": {
+    "skin": "#d6a57c",
+    "hair": "#2a1d14",
+    "hairStyle": "short",
+    "top": "#666",
+    "bottom": "#333",
+    "accessory": "phone"
+   },
+   "attitude": 0,
+   "x": 2,
+   "y": 79,
+   "scale": 0.95,
+   "sprite": "img/chars/film2",
+   "spriteMoods": [
+    "calm"
+   ],
+   "when": {
+    "flag": "isolated"
+   }
   }
  ],
  "dispatch": {
@@ -2013,7 +2063,9 @@
    "img/props/patrol.webp",
    "img/drive/interior.webp",
    "img/drive/road-day.webp",
-   "img/drive/road-night.webp"
+   "img/drive/road-night.webp",
+   "img/chars/film3-calm.webp",
+   "img/chars/film2-calm.webp"
   ],
   "audio": [
    "audio/traffic.mp3",

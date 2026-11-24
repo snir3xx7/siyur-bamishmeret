@@ -1,6 +1,6 @@
 {
  "id": "accident-rain",
- "version": 3,
+ "version": 4,
  "title": "תאונת דרכים קלה בגשם",
  "category": "תנועה ובטיחות בדרך",
  "summary": "שני כלי רכב מעורבים בצומת רטוב והתנועה ממשיכה לעבור לידם. יש לאבטח, לברר את מצב המעורבים, לשמוע גרסאות ולעדכן את המוקד.",
@@ -387,6 +387,28 @@
     "calm",
     "tense",
     "upset"
+   ]
+  },
+  {
+   "id": "film1",
+   "name": "עובר אורח",
+   "role": "מצלם בטלפון",
+   "gender": "m",
+   "look": {
+    "skin": "#d6a57c",
+    "hair": "#2a1d14",
+    "hairStyle": "short",
+    "top": "#666",
+    "bottom": "#333",
+    "accessory": "phone"
+   },
+   "attitude": 0,
+   "x": 66,
+   "y": 62,
+   "scale": 0.62,
+   "sprite": "img/chars/film1",
+   "spriteMoods": [
+    "calm"
    ]
   }
  ],
@@ -2973,7 +2995,8 @@
    "img/props/patrol.webp",
    "img/drive/interior.webp",
    "img/drive/road-day.webp",
-   "img/drive/road-night.webp"
+   "img/drive/road-night.webp",
+   "img/chars/film1-calm.webp"
   ],
   "audio": [
    "audio/rain.mp3",

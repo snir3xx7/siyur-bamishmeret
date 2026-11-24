@@ -61,6 +61,9 @@ export function Home() {
             <a className="btn primary big" href="#/catalog">
               ▶ התחלת תרגול
             </a>
+            <a className="btn glass" href="#/shift" data-testid="home-shift">
+              🚓 משמרת מלאה
+            </a>
             {saved && (
               <button type="button" className="btn glass" onClick={resume}>
                 ↺ המשך תרגול: {saved.title}

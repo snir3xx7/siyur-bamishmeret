@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { audio } from '../audio/audio';
 import { shiftLabel } from '../engine/feedback';
 import { StationPicker } from '../ui/StationPicker';
+import { radioProfile } from '../config/stations';
 import { parseSeed, randomSeed } from '../engine/rng';
 import type { Difficulty, Mode, Scenario, Shift } from '../engine/types';
 import { useApp } from '../ui/context';
@@ -16,7 +17,7 @@ const DIFF: [Difficulty, string, string][] = [
 ];
 
 export function ScenarioCard({ id, query }: { id: string; query: URLSearchParams }) {
-  const { startGame, toast } = useApp();
+  const { startGame, toast, settings } = useApp();
   const [sc, setSc] = useState<Scenario | null>(null);
   const [err, setErr] = useState(false);
   const linkSeed = parseSeed(query.get('seed'));
@@ -50,7 +51,8 @@ export function ScenarioCard({ id, query }: { id: string; query: URLSearchParams
   const link = scenarioLink(sc.id, sc.version, seed);
   const start = () => {
     audio.unlock();
-    startGame(sc, { scenarioId: sc.id, version: sc.version, seed, shift, difficulty, mode, timeLimit });
+    const p = radioProfile(settings.station, sc.dispatch.unit);
+    startGame(sc, { scenarioId: sc.id, version: sc.version, seed, shift, difficulty, mode, timeLimit, ...(p.real ? { radio: { unit: p.unit, head: p.head, center: p.center } } : {}) });
     go('#/play');
   };
 

@@ -330,6 +330,8 @@ export interface GameConfig {
   difficulty: Difficulty;
   mode: Mode;
   timeLimit: boolean;
+  /** אותות הקריאה שנבחרו (תחנה) – אם חסר, השמות הבדויים מהתרחיש */
+  radio?: { unit: string; head: string; center: string };
 }
 
 export interface GameState {
@@ -352,6 +354,8 @@ export interface GameState {
   lastLines: Line[];
   /** אירוע מתפתח שקרה בתור האחרון (להצגה ולצליל) */
   lastEvent?: string;
+  /** פנקס השטח של החניך (טקסט חופשי) */
+  notebook?: string;
   /** הפעולות שהוזנו – מאפשר שחזור עד נקודת החלטה */
   actions: GameAction[];
   startedAt: string;
@@ -366,4 +370,5 @@ export type GameAction = (
   | { type: 'ARRIVE'; turn: number; skipped: boolean }
   | { type: 'FINISH'; turn: number }
   | { type: 'TICK'; ms: number }
+  | { type: 'NOTE'; text: string }
 ) & { at?: number };

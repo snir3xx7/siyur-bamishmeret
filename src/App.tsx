@@ -1,3 +1,4 @@
+import { ShiftScreen } from './screens/Shift';
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { audio } from './audio/audio';
 import { createGame, reduce, replay } from './engine/game';
@@ -85,6 +86,7 @@ export default function App() {
   else if (p0 === 'history') screen = <History />;
   else if (p0 === 'instructor') screen = <Instructor />;
   else if (p0 === 'about') screen = <About />;
+  else if (p0 === 'shift') screen = <ShiftScreen query={route.query} />;
   else screen = <Home />;
 
   return (

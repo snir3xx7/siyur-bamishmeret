@@ -471,3 +471,27 @@ body.projector .no-projector { display: none !important; }
 .line.relay { opacity: .85; }
 @media (prefers-reduced-motion: no-preference) { .radio-chain li { animation: chainIn .5s ease-out both; } }
 @keyframes chainIn { from { opacity: 0; transform: translateY(6px); } }
+
+/* נוהל קשר ופנקס */
+.proc-list { list-style: none; padding: 0; margin: 8px 0 0; display: grid; gap: 6px; }
+.proc-list li { display: flex; flex-direction: column; gap: 2px; padding: 6px 10px; border-radius: 8px; background: var(--panel2); border-inline-start: 4px solid var(--line); }
+.proc-list li.ok { border-color: var(--ok); }
+.proc-list li.bad { border-color: var(--bad); }
+.proc-list li span { font-size: .9em; color: var(--muted); }
+.notebook textarea { width: 100%; font: inherit; font-family: var(--mono); line-height: 1.5; padding: 10px; border-radius: 10px; border: 1px solid var(--line);
+  background: repeating-linear-gradient(#f6efd9 0 26px, #d9cfb2 26px 27px); color: #2a2418; }
+.notebook-view { white-space: pre-wrap; font-family: var(--mono); background: #f6efd9; color: #2a2418; padding: 10px; border-radius: 10px; max-height: 220px; overflow: auto; }
+.radio-feed { position: absolute; bottom: 36px; inset-inline-start: 8px; max-width: min(70%, 520px); z-index: 4; background: #0d1a17ee; color: #9fe8da; border: 1px solid #2b5c53; border-radius: 8px; padding: 4px 10px; font-size: .78em; box-shadow: 0 4px 12px #0008; }
+@media (prefers-reduced-motion: no-preference) { .radio-feed { animation: feedIn .35s ease-out, feedOut .6s ease-in 6.4s forwards; } }
+@keyframes feedIn { from { opacity: 0; transform: translateY(-6px); } }
+@keyframes feedOut { to { opacity: 0; } }
+
+/* משמרת מלאה */
+.shift-list { list-style: none; padding: 0; margin: 0; display: grid; gap: 8px; counter-reset: none; }
+.shift-list li { display: flex; flex-direction: column; gap: 2px; padding: 10px 12px; border-radius: 10px; background: var(--panel2); border-inline-start: 4px solid var(--line); }
+.shift-list li.now { border-color: var(--accent); background: #2a2212; }
+.shift-list li.done { border-color: var(--ok); }
+.shift-list li span { font-size: .9em; color: var(--muted); }
+.shift-next { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; border: 1px solid var(--accent); }
+.shift-summary h2 { margin: 0 0 4px; }
+.chips-pick { display: flex; flex-wrap: wrap; gap: 6px; }

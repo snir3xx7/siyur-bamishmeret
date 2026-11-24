@@ -77,6 +77,10 @@ test('אירוע מתפתח: החמרה באמצע הזירה, בדיקה חוז
   // הדובר בזירה מסומן
   await expect(page.locator('.person.speaking')).toHaveCount(1);
   await act(page, /אורן – נהג/, /לבדוק את אורן שוב/);
+  // אחרי חמש פעולות ראש המשמרת קורא בקשר: „אתה פנוי?”
+  await expect(page.getByTestId('event-banner')).toContainText('קריאה בקשר');
+  await expect(page.getByTestId('dialogue')).toContainText('אתה פנוי?');
+  await act(page, /מכשיר הקשר/, /שלילי/);
   await expect(page.getByTestId('event-banner')).toHaveCount(0);
   await sendUpdate(page, [/החמיר – סחרחורת/]);
   await expect(page.getByTestId('radio-led')).toContainText('הודעת מוקד');
@@ -129,7 +133,7 @@ test('מצב למידה: השהיה עוצרת את השעון וחוסמת פע
 test('עמוד למדריך: קישור קבוע ובדיקת מסלולים', async ({ page }) => {
   await page.goto('./#/instructor');
   await page.getByLabel('זרע (1–999999)').fill('777');
-  await expect(page.getByTestId('instructor-link')).toContainText('#/s/accident-rain?v=3&seed=777');
+  await expect(page.getByTestId('instructor-link')).toContainText('#/s/accident-rain?v=4&seed=777');
   await page.getByRole('button', { name: 'הרצת בדיקה' }).click();
   await expect(page.getByText('✓ לא נמצאו שגיאות')).toBeVisible({ timeout: 20000 });
 });
@@ -155,4 +159,27 @@ test('תחנה ואות קריאה: כפר סבא – שרשרת קשר מהמש
   await expect(page.getByTestId('radio-chain')).toContainText('משל״ט מרכז');
   await expect(page.getByTestId('radio-chain')).toContainText('סבא 401');
   await expect(page.getByText(/סבא 403, כאן סבא 401/).first()).toBeVisible();
+});
+
+test('משמרת מלאה: קישור מדריך, אירוע ראשון, תחקיר וחזרה למשמרת', async ({ page }) => {
+  await page.goto('./#/shift?shift=evening&d=standard&s=noise-building:9,yard-dispute:5');
+  await expect(page.getByTestId('shift-plan')).toContainText('אירוע 1');
+  await page.getByTestId('shift-next').click();
+  await toScene(page);
+  await finish(page);
+  await expect(page.getByTestId('shift-continue')).toBeVisible();
+  await expect(page.getByTestId('procedure')).toContainText('נוהל קשר');
+  await page.getByTestId('shift-continue').getByRole('link').click();
+  await expect(page.getByTestId('shift-plan')).toContainText('ציון');
+  await expect(page.getByTestId('shift-next')).toContainText('האירוע הבא');
+});
+
+test('פנקס שטח: רישום בזמן המשחק ובדיקה בתחקיר', async ({ page }) => {
+  await startScenario(page, 'noise-building', 9, { mode: 'practice' });
+  await toScene(page);
+  await page.getByTestId('tab-notes').click();
+  await page.getByTestId('notebook').fill('20:52 הגעה. אירוע 5108. רינה – דירה 3');
+  await page.getByTestId('notebook').blur();
+  await finish(page);
+  await expect(page.getByTestId('notebook-check')).toContainText('מספר אירוע 5108');
 });

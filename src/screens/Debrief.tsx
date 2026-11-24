@@ -2,8 +2,10 @@ import { useEffect, useMemo, useState } from 'react';
 import { buildDebrief, debriefText, shiftLabel } from '../engine/feedback';
 import { replay } from '../engine/game';
 import { buildReport, reportText, type ReportSection } from '../engine/report';
-import { radioProfile, radioize } from '../config/stations';
+import { gameProfile, radioize } from '../config/stations';
+import { notebookCheck, procedureReport } from '../engine/procedure';
 import { RadioCtx } from '../ui/radio';
+import { loadShift } from '../ui/shift';
 import { randomSeed } from '../engine/rng';
 import { listHistory, updateHistory, type HistoryItem } from '../storage/db';
 import { useApp } from '../ui/context';
@@ -83,7 +85,10 @@ export function DebriefScreen({ query }: { query: URLSearchParams }) {
     );
   }
   const { sc, st } = game;
-  const radio = radioProfile(settings.station, sc.dispatch.unit);
+  const radio = gameProfile(st.config, settings.station, sc.dispatch.unit);
+  const proc = procedureReport(st);
+  const shiftPlan = loadShift();
+  const nb = notebookCheck(sc, st);
   const reportFinal = report.map((s) => ({ ...s, text: edits[s.id] ?? radioize(s.text.replace(`צוות: ${sc.dispatch.unit}`, `צוות: ${radio.unit}${radio.real ? ` | ${radio.stationName}, ${radio.districtName}` : ''}`), radio) }));
 
   const saveEdits = (next: Record<string, string>) => {
@@ -187,6 +192,46 @@ export function DebriefScreen({ query }: { query: URLSearchParams }) {
             <div className="point challenge" data-testid="challenge">
               {d.challenge}
             </div>
+          )}
+        </section>
+      </div>
+
+      {shiftPlan && shiftPlan.items.some((i) => i.result?.historyId === game.historyId) && (
+        <section className="card shift-next" data-testid="shift-continue">
+          <b>🚓 משמרת: {shiftPlan.items.filter((i) => i.result).length} מתוך {shiftPlan.items.length} אירועים</b>
+          <a className="btn primary" href="#/shift">
+            {shiftPlan.items.every((i) => i.result) ? 'לסיכום המשמרת ▶' : '📻 חזרה למשמרת – האירוע הבא ▶'}
+          </a>
+        </section>
+      )}
+
+      <div className="grid2">
+        <section className="card print-debrief" aria-labelledby="rp-title" data-testid="procedure">
+          <h2 id="rp-title">📻 נוהל קשר <span className="small muted">({proc.score}/{proc.max} – לא נכלל בציון)</span></h2>
+          <ul className="proc-list">
+            {proc.items.map((i) => (
+              <li key={i.label} className={i.ok === null ? '' : i.ok ? 'ok' : 'bad'}>
+                <b>{i.ok === null ? '–' : i.ok ? '✓' : '✗'} {i.label}</b>
+                <span>{i.detail}</span>
+              </li>
+            ))}
+          </ul>
+        </section>
+        <section className="card print-debrief" aria-labelledby="nb-title" data-testid="notebook-check">
+          <h2 id="nb-title">📒 פנקס השטח</h2>
+          {st.notebook?.trim() ? (
+            <>
+              <pre className="notebook-view">{st.notebook}</pre>
+              <ul className="proc-list">
+                {nb.map((x) => (
+                  <li key={x.item} className={x.ok ? 'ok' : 'bad'}>
+                    <b>{x.ok ? '✓' : '✗'} {x.item}</b>
+                  </li>
+                ))}
+              </ul>
+            </>
+          ) : (
+            <p className="small muted">לא נרשם דבר בפנקס. בשטח, פנקס מסודר (שמות, מספרי רכב, שעות, מי אמר מה) הוא הבסיס לדוח הפעולה.</p>
           )}
         </section>
       </div>

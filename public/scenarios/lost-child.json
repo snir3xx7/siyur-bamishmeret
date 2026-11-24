@@ -1,6 +1,6 @@
 {
  "id": "lost-child",
- "version": 1,
+ "version": 2,
  "title": "ילד שהלך לאיבוד בשוק",
  "category": "נעדרים ואוכלוסיות פגיעות",
  "summary": "אם בבהלה מדווחת שבנה בן השש נעלם בין הדוכנים. יש להרגיע ולקבל תיאור, להשאיר את האם בנקודה קבועה, לגייס את הסוחרים, לגשת לילד בגובה העיניים ולוודא זהות לפני מסירה.",
@@ -706,6 +706,31 @@
     "tense",
     "upset"
    ]
+  },
+  {
+   "id": "film2",
+   "name": "עוברת אורח",
+   "role": "מצלמת בטלפון",
+   "gender": "f",
+   "look": {
+    "skin": "#d6a57c",
+    "hair": "#2a1d14",
+    "hairStyle": "short",
+    "top": "#666",
+    "bottom": "#333",
+    "accessory": "phone"
+   },
+   "attitude": 0,
+   "x": 36,
+   "y": 84,
+   "scale": 0.85,
+   "sprite": "img/chars/film2",
+   "spriteMoods": [
+    "calm"
+   ],
+   "when": {
+    "flag": "found"
+   }
   }
  ],
  "dispatch": {
@@ -1850,7 +1875,8 @@
    "img/chars/omri-upset.webp",
    "img/drive/side-day.webp",
    "img/drive/side-night.webp",
-   "img/props/patrol.webp"
+   "img/props/patrol.webp",
+   "img/chars/film2-calm.webp"
   ],
   "audio": [
    "audio/crowd.mp3",

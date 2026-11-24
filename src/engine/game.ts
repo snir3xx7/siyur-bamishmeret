@@ -1,3 +1,4 @@
+import { radioVars } from './procedure';
 import { evalCond } from './conditions';
 import { mulberry32, pickWeighted } from './rng';
 import { fill } from './text';
@@ -14,7 +15,7 @@ export function simNow(st: GameState): number {
 export function createGame(sc: Scenario, config: GameConfig): GameState {
   const rnd = mulberry32(config.seed);
   const variant = pickWeighted(sc.variants, rnd);
-  const vars = { ...variant.vars };
+  const vars = { ...radioVars(sc, config.radio), ...variant.vars };
   const known: GameState['known'] = {};
   const initial = [...sc.dispatch.initialFacts, ...(config.difficulty === 'basic' ? sc.dispatch.basicExtraFacts ?? [] : [])];
   for (const id of initial) known[id] = { t: 0, verified: false };
@@ -196,6 +197,14 @@ export function reduce(sc: Scenario, prev: GameState, action: GameAction): GameS
   if (action.type === 'TICK') {
     if (prev.stage !== 'dispatch' && prev.stage !== 'scene') return prev;
     return { ...prev, activeMs: prev.activeMs + Math.max(0, action.ms) };
+  }
+  if (action.type === 'NOTE') {
+    // הפנקס לא צורך תור ולא משנה את מהלך התרחיש; נשמר ברשימת הפעולות לשחזור
+    const text = action.text.slice(0, 4000);
+    if (prev.stage === 'ended' || text === (prev.notebook ?? '')) return prev;
+    const last = prev.actions[prev.actions.length - 1];
+    const actions = last?.type === 'NOTE' ? [...prev.actions.slice(0, -1), { type: 'NOTE' as const, text }] : [...prev.actions, { type: 'NOTE' as const, text }];
+    return { ...prev, notebook: text, actions };
   }
   if (action.turn !== prev.turn || prev.stage === 'ended') return prev;
 

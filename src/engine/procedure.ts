@@ -1,0 +1,244 @@
+/**
+ * נוהל קשר – שכבה שנוספת לכל תרחיש בזמן הטעינה:
+ * - אישור קבלת האירוע בנוהל („401, כאן 402, קיבלתי, יוצא. עבור.”)
+ * - דיווח הגעה למקום
+ * - פתיחה וסיום בנוהל בעדכונים למוקד
+ * - ראש המשמרת קורא לך באמצע הטיפול („אתה פנוי?”) – צריך לענות נכון
+ *
+ * לא משנה את ציון התרחיש (100): מוצג בתחקיר כמדד נפרד „נוהל קשר”.
+ */
+import type { Choice, GameState, Hotspot, Scenario, ScenarioEvent, UpdateElement } from './types';
+
+const augmented = new WeakMap<Scenario, Scenario>();
+
+export const PROC_IDS = ['rp-ack', 'rp-ack-short', 'rp-arrive', 'rp-busy-no', 'rp-busy-yes', 'rt-main', 'rt-side', 'fm-distance', 'fm-stop'];
+
+export function withProcedure(sc: Scenario): Scenario {
+  const hit = augmented.get(sc);
+  if (hit) return hit;
+  if (sc.hotspots.some((h) => h.choices.some((c) => c.id === 'rp-arrive'))) return sc;
+
+  const followUps: Choice[] = [
+    {
+      id: 'rp-ack',
+      label: 'לאשר קבלה בנוהל: „{{headCall}}, כאן {{unitCall}}, קיבלתי, יוצא. עבור.”',
+      when: { not: { flag: 'rpAck' } },
+      lines: [
+        { speaker: 'player', text: '{{headCall}}, כאן {{unitCall}}. קיבלתי את האירוע, יוצא. עבור.' },
+        { speaker: 'dispatch', text: '{{unitCall}}, כאן {{headCall}}. קיבלתי, סוף.' },
+      ],
+      effects: { set: { rpAck: 'good' }, minutes: 0 },
+      report: 'אישור קבלת האירוע בקשר',
+    },
+    {
+      id: 'rp-ack-short',
+      label: 'לענות בקשר רק „קיבלתי”',
+      when: { not: { flag: 'rpAck' } },
+      lines: [
+        { speaker: 'player', text: 'קיבלתי.' },
+        { speaker: 'dispatch', text: 'מי ענה? {{unitCall}}, אשר שאתה לוקח את האירוע.' },
+      ],
+      effects: { set: { rpAck: 'short' }, minutes: 0 },
+    },
+    {
+      id: 'rt-main',
+      label: 'מסלול: הציר הראשי (שדרות הזית) – קצר, אבל עלול להיות עמוס',
+      when: { not: { flag: 'route' } },
+      branches: [
+        { when: { shift: ['morning'] }, lines: [{ speaker: 'narrator', text: 'בשדרות הזית פקק של שעת בוקר. הניידת מתקדמת לאט בין הרכבים.' }], effects: { set: { route: 'main', routeOk: false }, minutes: 6 } },
+        { when: { shift: ['evening'] }, lines: [{ speaker: 'narrator', text: 'השדרה עמוסה מעט בשעת הערב, אבל זורמת.' }], effects: { set: { route: 'main', routeOk: true }, minutes: 2 } },
+      ],
+      lines: [{ speaker: 'narrator', text: 'השדרה ריקה בשעת הלילה. הדרך הקצרה היא גם המהירה.' }],
+      effects: { set: { route: 'main', routeOk: true }, minutes: 0 },
+      report: 'בחירת מסלול: הציר הראשי',
+    },
+    {
+      id: 'rt-side',
+      label: 'מסלול: דרך השכונה – ארוך יותר, בדרך כלל פנוי',
+      when: { not: { flag: 'route' } },
+      branches: [
+        { when: { shift: ['morning'] }, lines: [{ speaker: 'narrator', text: 'עוקפים את הפקק בשדרה דרך רחובות השכונה. ארוך יותר – אבל זורם.' }], effects: { set: { route: 'side', routeOk: true }, minutes: 2 } },
+      ],
+      lines: [{ speaker: 'narrator', text: 'רחובות השכונה צרים ומפותלים. בשעה הזו השדרה הייתה פנויה – הדרך ארכה יותר.' }],
+      effects: { set: { route: 'side', routeOk: false }, minutes: 3 },
+      report: 'בחירת מסלול: דרך השכונה',
+    },
+  ];
+
+  const sceneChoiceIds = sc.hotspots.flatMap((h) => h.choices.map((c) => c.id));
+  const radioChoices: Choice[] = [
+    {
+      id: 'rp-arrive',
+      label: 'לדווח הגעה: „{{headCall}}, כאן {{unitCall}}, הגעתי למקום. עבור.”',
+      lines: [
+        { speaker: 'player', text: '{{headCall}}, כאן {{unitCall}}. הגעתי למקום. עבור.' },
+        { speaker: 'dispatch', text: '{{unitCall}}, קיבלתי. עדכן כשיש תמונת מצב.' },
+      ],
+      effects: { set: { rpArrive: true }, minutes: 0 },
+      report: 'דיווח הגעה למקום בקשר',
+    },
+    {
+      id: 'rp-busy-no',
+      label: 'לענות ל־{{headCall}}: „שלילי, {{unitCall}} עדיין בטיפול. אעדכן כשאתפנה.”',
+      when: { all: [{ flag: 'ev:rp-busy' }, { not: { flag: 'rpBusy' } }] },
+      lines: [
+        { speaker: 'player', text: '{{headCall}}, כאן {{unitCall}}. שלילי, עדיין בטיפול באירוע. אעדכן כשאתפנה. עבור.' },
+        { speaker: 'dispatch', text: 'קיבלתי, מעביר לניידת אחרת. סוף.' },
+      ],
+      effects: { set: { rpBusy: 'good' }, minutes: 0 },
+      report: 'מענה לראש המשמרת: עדיין בטיפול',
+    },
+    {
+      id: 'rp-busy-yes',
+      label: 'לענות „חיובי, פנוי” ולהתכונן לעזוב',
+      when: { all: [{ flag: 'ev:rp-busy' }, { not: { flag: 'rpBusy' } }] },
+      lines: [
+        { speaker: 'player', text: 'חיובי, פנוי.' },
+        { speaker: 'dispatch', text: 'רגע – סיימת שם? המעורבים עדיין במקום לפי הדיווח שלך. תשלים קודם, ותעדכן. סוף.' },
+      ],
+      effects: { set: { rpBusy: 'bad' }, minutes: 0, note: 'דיווח „פנוי” בזמן שהטיפול בזירה עוד לא הסתיים' },
+    },
+  ];
+
+  let hotspots: Hotspot[];
+  const radio = sc.hotspots.find((h) => h.kind === 'radio');
+  if (radio) {
+    hotspots = sc.hotspots.map((h) => (h === radio ? { ...h, choices: [...radioChoices, ...h.choices] } : h));
+  } else {
+    hotspots = [
+      ...sc.hotspots,
+      { id: 'h-radio', label: 'מכשיר הקשר', kind: 'radio', x: 8, y: 14, description: 'מכשיר הקשר האישי. לשליחת עדכון השתמש בכפתור „עדכון למוקד”.', choices: radioChoices },
+    ];
+  }
+
+  // צופים שמצלמים בטלפון: מותר לצלם במרחב ציבורי; מבקשים לשמור מרחק ולא להפריע – לא דורשים להפסיק לצלם
+  const filmers = sc.characters.filter((c) => c.id.startsWith('film'));
+  if (filmers.length) {
+    const f0 = filmers[0];
+    const anyFilmer = filmers.length === 1 ? f0.when : { any: filmers.map((c) => c.when ?? { always: true as const }) };
+    hotspots.push({
+      id: 'h-filmers', label: 'צופים שמצלמים', kind: 'area', x: f0.x, y: Math.max(8, f0.y - 40),
+      description: 'עוברים ושבים עומדים ומצלמים את האירוע בטלפון.',
+      ...(anyFilmer ? { when: anyFilmer } : {}),
+      choices: [
+        {
+          id: 'fm-distance', label: 'לפנות בנימוס: „מותר לצלם – אבל מאחורי הקו, ובלי להפריע לטיפול.”',
+          lines: [
+            { speaker: 'player', text: 'אתם יכולים לצלם, זה בסדר – רק תעמדו מאחורי הקו ואל תתקרבו למעורבים. אנחנו באמצע טיפול.' },
+            { speaker: 'narrator', text: 'הצופים זזים כמה צעדים אחורה וממשיכים לצלם מרחוק. אף אחד לא מתווכח.' },
+          ],
+          effects: { set: { filmers: 'good' }, minutes: 0 },
+          report: 'בקשה מהצופים לשמור מרחק ולא להפריע',
+        },
+        {
+          id: 'fm-stop', label: 'לדרוש מהצופים להפסיק לצלם ולמחוק את הסרטון',
+          lines: [
+            { speaker: 'player', text: 'תפסיקו לצלם! ותמחקו את זה עכשיו!' },
+            { speaker: 'narrator', text: 'אחד הצופים מרים את הטלפון גבוה יותר: „מותר לי לצלם ברחוב!” הוויכוח מושך עוד אנשים לזירה.' },
+          ],
+          effects: { set: { filmers: 'bad' }, minutes: 1, note: 'נדרש מצופים להפסיק לצלם ולמחוק – דרישה בלי סמכות שהגבירה את המתח' },
+        },
+      ],
+    });
+  }
+
+  const busy: ScenarioEvent = {
+    id: 'rp-busy',
+    title: 'קריאה בקשר מ־{{headCall}}',
+    when: { countChosen: { ids: sceneChoiceIds, gte: 5 } },
+    lines: [{ speaker: 'dispatch', text: '{{unitCall}}, כאן {{headCall}}. אתה פנוי? יש אירוע נוסף באזור. עבור.' }],
+    sfx: 'radio-chirp',
+  };
+
+  const elements: UpdateElement[] = [
+    { id: 'rp-open', category: 'procedure', text: 'פתיחה: „{{headCall}}, כאן {{unitCall}}”' },
+    { id: 'rp-over', category: 'procedure', text: 'סיום: „עבור”' },
+  ];
+
+  const out: Scenario = {
+    ...sc,
+    dispatch: { ...sc.dispatch, followUps: [...followUps, ...sc.dispatch.followUps] },
+    hotspots,
+    events: [...(sc.events ?? []), busy],
+    update: { ...sc.update, categories: { procedure: 'נוהל קשר', ...sc.update.categories }, elements: [...elements, ...sc.update.elements] },
+  };
+  augmented.set(sc, out);
+  return out;
+}
+
+export interface ProcItem {
+  label: string;
+  ok: boolean | null;
+  detail: string;
+}
+
+/** מדד „נוהל קשר” לתחקיר (לא נכלל בציון) */
+export function procedureReport(st: GameState): { items: ProcItem[]; score: number; max: number } {
+  const items: ProcItem[] = [];
+  const ack = st.flags.rpAck;
+  items.push({
+    label: 'אישור קבלת האירוע',
+    ok: ack === 'good',
+    detail: ack === 'good' ? 'אישרת בנוהל: למי, מי מדבר, מה עושים, „עבור”.' : ack === 'short' ? 'ענית רק „קיבלתי” – בלי לזהות את עצמך. ראש המשמרת לא יודע מי לקח את האירוע.' : 'לא אישרת קבלה בקשר לפני היציאה.',
+  });
+  items.push({
+    label: 'דיווח הגעה למקום',
+    ok: !!st.flags.rpArrive,
+    detail: st.flags.rpArrive ? 'דיווחת הגעה – ראש המשמרת יודע שאתה בזירה.' : 'לא דיווחת הגעה. דיווח קצר („הגעתי למקום”) מעדכן את כולם שהניידת בזירה.',
+  });
+  if (st.flags.route) {
+    items.push({
+      label: 'בחירת מסלול',
+      ok: st.flags.routeOk === true,
+      detail: st.flags.routeOk ? 'בחרת מסלול שמתאים לשעה – הגעת מהר.' : st.flags.route === 'main' ? 'בשעות הבוקר השדרה הראשית פקוקה; דרך השכונה הייתה מהירה יותר.' : 'בשעה הזו הציר הראשי היה פנוי ומהיר יותר.',
+    });
+  }
+  if (st.flags.filmers) {
+    items.push({
+      label: 'התנהלות מול צופים מצלמים',
+      ok: st.flags.filmers === 'good',
+      detail: st.flags.filmers === 'good' ? 'ביקשת לשמור מרחק בלי לאסור צילום – הצופים התרחקו והטיפול נמשך.' : 'דרשת להפסיק לצלם ולמחוק. צילום במרחב ציבורי מותר; מה שאפשר לבקש הוא שמירת מרחק ואי־הפרעה.',
+    });
+  }
+  const ups = st.updates.length;
+  const opened = st.updates.filter((u) => u.elements.includes('rp-open')).length;
+  items.push({
+    label: 'פתיחה בנוהל בעדכונים',
+    ok: ups ? opened === ups : null,
+    detail: ups ? `${opened} מתוך ${ups} עדכונים נפתחו ב„למי, מי מדבר”.` : 'לא נשלחו עדכונים.',
+  });
+  if (st.flags['ev:rp-busy']) {
+    const b = st.flags.rpBusy;
+    items.push({
+      label: 'מענה ל„אתה פנוי?”',
+      ok: b === 'good',
+      detail: b === 'good' ? 'ענית שאתה עדיין בטיפול – ראש המשמרת העביר את האירוע לניידת אחרת.' : b === 'bad' ? 'דיווחת „פנוי” באמצע הטיפול. ראש המשמרת עלול לשלוח אותך ולהשאיר את הזירה בלי מענה.' : 'לא ענית לראש המשמרת. קריאה בקשר דורשת מענה, גם כשאתה עסוק.',
+    });
+  }
+  const scored = items.filter((i) => i.ok !== null);
+  return { items, score: scored.filter((i) => i.ok).length, max: scored.length };
+}
+
+/** משתני הקשר לטקסטים ({{unitCall}}, {{headCall}}) */
+export function radioVars(sc: Scenario, radio?: { unit: string; head: string }): Record<string, string> {
+  return { unitCall: radio?.unit ?? sc.dispatch.unit, headCall: radio?.head ?? 'מוקד אלון' };
+}
+
+export const isProcChoice = (id: string) => PROC_IDS.includes(id);
+
+/** בדיקת הפנקס: אילו פרטים מזהים שהחניך פגש נרשמו בפנקס */
+export function notebookCheck(sc: Scenario, st: GameState): { item: string; ok: boolean }[] {
+  const text = (st.notebook ?? '').replace(/[״"׳']/g, '');
+  if (!text.trim()) return [];
+  const met = new Set(st.log.flatMap((l) => l.lines.map((x) => x.speaker)));
+  const out: { item: string; ok: boolean }[] = [];
+  for (const c of sc.characters.filter((x) => met.has(x.id))) {
+    const first = c.name.split(' ')[0];
+    out.push({ item: `שם: ${c.name} (${c.role})`, ok: text.includes(first) });
+  }
+  const knownText = Object.keys(st.known).map((id) => sc.facts.find((f) => f.id === id)?.text ?? '').join(' ');
+  for (const plate of new Set(knownText.match(/\d{2}-\d{3}-\d{2}/g) ?? [])) out.push({ item: `מספר רכב ${plate}`, ok: text.replace(/[\s-]/g, '').includes(plate.replace(/-/g, '')) });
+  out.push({ item: `מספר אירוע ${sc.dispatch.incident}`, ok: text.includes(sc.dispatch.incident) });
+  out.push({ item: 'שעה (למשל שעת הגעה)', ok: /\b\d{1,2}:\d{2}\b/.test(text) });
+  return out;
+}

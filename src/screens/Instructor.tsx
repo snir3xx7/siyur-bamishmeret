@@ -5,6 +5,9 @@ import { validateScenario, type ValidationResult } from '../engine/validate';
 import { useApp } from '../ui/context';
 import { loadCatalog, loadScenario } from '../ui/data';
 import { scenarioLink } from '../ui/router';
+import { shiftLink } from '../ui/shift';
+import type { Difficulty, Shift } from '../engine/types';
+import { shiftLabel } from '../engine/feedback';
 
 export function Instructor() {
   const { toast } = useApp();
@@ -13,6 +16,9 @@ export function Instructor() {
   const [seed, setSeed] = useState(() => randomSeed());
   const [result, setResult] = useState<ValidationResult | null>(null);
   const [checking, setChecking] = useState(false);
+  const [sShift, setSShift] = useState<Shift>('night');
+  const [sDiff, setSDiff] = useState<Difficulty>('standard');
+  const [sPick, setSPick] = useState<{ id: string; seed: number }[]>([]);
 
   useEffect(() => {
     void loadCatalog().then((c) => {
@@ -61,6 +67,48 @@ export function Instructor() {
             פתיחת הכרטיס
           </a>
         </div>
+      </section>
+
+      <section className="card stack" aria-labelledby="shiftlink-title" data-testid="shift-builder">
+        <h2 id="shiftlink-title">קישור למשמרת לכיתה</h2>
+        <p className="small muted">בחרו משמרת ואירועים לפי הסדר. כל חניך שפותח את הקישור מקבל את אותה משמרת, באותו סדר ובאותן נסיבות – ובסוף סיכום משמרת. אות הקריאה נקבע לפי התחנה שכל חניך בוחר.</p>
+        <div className="radio-row" role="radiogroup" aria-label="משמרת">
+          {(['morning', 'evening', 'night'] as Shift[]).map((x) => (
+            <label key={x}>
+              <input type="radio" name="s-shift" checked={sShift === x} onChange={() => { setSShift(x); setSPick([]); }} />
+              <span>{shiftLabel(x)}</span>
+            </label>
+          ))}
+        </div>
+        <div className="radio-row" role="radiogroup" aria-label="רמת קושי">
+          {([['basic', 'בסיסית'], ['standard', 'רגילה'], ['advanced', 'מתקדמת']] as [Difficulty, string][]).map(([d, l]) => (
+            <label key={d}>
+              <input type="radio" name="s-diff" checked={sDiff === d} onChange={() => setSDiff(d)} />
+              <span>{l}</span>
+            </label>
+          ))}
+        </div>
+        <div className="chips-pick">
+          {cat.filter((c) => c.shifts.includes(sShift)).map((c) => {
+            const i = sPick.findIndex((p) => p.id === c.id);
+            return (
+              <button key={c.id} type="button" className={`btn small ${i >= 0 ? 'primary' : ''}`} aria-pressed={i >= 0}
+                onClick={() => setSPick(i >= 0 ? sPick.filter((p) => p.id !== c.id) : [...sPick, { id: c.id, seed: randomSeed() }].slice(0, 6))}>
+                {i >= 0 ? `${i + 1}. ` : ''}{c.title}
+              </button>
+            );
+          })}
+        </div>
+        {sPick.length > 0 && (
+          <>
+            <p className="small muted ltr" style={{ wordBreak: 'break-all' }} data-testid="shift-link">{shiftLink(sShift, sDiff, sPick)}</p>
+            <div className="btn-row">
+              <button type="button" className="btn small" onClick={() => navigator.clipboard?.writeText(shiftLink(sShift, sDiff, sPick)).then(() => toast('הקישור הועתק'), () => toast('העתיקו את הקישור מהשורה למעלה'))}>
+                העתקת קישור המשמרת
+              </button>
+            </div>
+          </>
+        )}
       </section>
 
       <section className="card stack" aria-labelledby="check-title">

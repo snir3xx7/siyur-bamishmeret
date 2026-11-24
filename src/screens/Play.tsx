@@ -12,8 +12,10 @@ import { addHistory, clearCurrent, loadCurrent, saveCurrent } from '../storage/d
 import { useApp } from '../ui/context';
 import { loadScenario } from '../ui/data';
 import { go } from '../ui/router';
+import { currentShiftItem, loadShift, saveShift } from '../ui/shift';
+import { procedureReport } from '../engine/procedure';
 import { RadioChain, RadioCtx, useRadio } from '../ui/radio';
-import { radioProfile, radioize, type RadioProfile } from '../config/stations';
+import { chatterLines, gameProfile, radioize, type RadioProfile } from '../config/stations';
 import { Modal, useAudioStatus } from '../ui/SettingsDialog';
 
 export function speakerName(sc: Scenario, id: string, p?: RadioProfile): string {
@@ -107,6 +109,34 @@ function LogPanel({ sc, st }: { sc: Scenario; st: GameState }) {
   );
 }
 
+/** פנקס שטח: החניך רושם בעצמו שמות, מספרי רכב, שעות וגרסאות. נבדק בתחקיר */
+function Notebook({ st, onChange }: { st: GameState; onChange: (text: string) => void }) {
+  const [text, setText] = useState(st.notebook ?? '');
+  const timer = useRef<number | undefined>(undefined);
+  useEffect(() => () => window.clearTimeout(timer.current), []);
+  const ended = st.stage === 'ended';
+  return (
+    <div className="notebook">
+      <p className="small muted">כמו בשטח: רשמו בעצמכם שמות, מספרי רכב, שעות ומה כל אחד אמר. בתחקיר נבדוק אילו פרטים חשובים נרשמו.</p>
+      <textarea
+        data-testid="notebook"
+        value={text}
+        readOnly={ended}
+        rows={9}
+        maxLength={4000}
+        placeholder={'21:14 – הגעה. נהגת: …\nרכב: …\nלדבריו: …'}
+        onChange={(e) => {
+          const v = e.target.value;
+          setText(v);
+          window.clearTimeout(timer.current);
+          timer.current = window.setTimeout(() => onChange(v), 500);
+        }}
+        onBlur={() => { window.clearTimeout(timer.current); onChange(text); }}
+      />
+    </div>
+  );
+}
+
 function Composer({ sc, st, onSend, learning }: { sc: Scenario; st: GameState; onSend: (els: string[], note: string) => void; learning: boolean }) {
   const els = availableElements(sc, st);
   const [sel, setSel] = useState<string[]>([]);
@@ -164,7 +194,9 @@ export function Play() {
   const { game, dispatch, settings, settingsOpen, openSettings, reducedMotion, storageOk, startGame, setGame, toast } = useApp();
   const [paused, setPaused] = useState(false);
   const [hidden, setHidden] = useState(() => document.hidden);
-  const [tab, setTab] = useState<'actions' | 'info' | 'log'>('actions');
+  const [tab, setTab] = useState<'actions' | 'info' | 'log' | 'notes'>('actions');
+  const [chatter, setChatter] = useState<string | undefined>();
+  const chatterIdx = useRef(0);
   const [selected, setSelected] = useState<string | null>(null);
   const [composer, setComposer] = useState(false);
   const [finishing, setFinishing] = useState(false);
@@ -271,6 +303,15 @@ export function Play() {
         durationMs: st.activeMs, config: st.config, actions: st.actions, activeMs: st.activeMs, startedAt: st.startedAt,
       });
       await clearCurrent();
+      // משמרת מלאה: רישום התוצאה לאירוע הנוכחי
+      const plan = loadShift();
+      const it = currentShiftItem(plan, sc.id, st.config.seed);
+      if (plan && it) {
+        const pr = procedureReport(st);
+        it.result = { score: d.score.total, proc: `${pr.score}/${pr.max}`, title: sc.title, historyId: id ?? undefined };
+        plan.idx = Math.min(plan.idx + 1, plan.items.length);
+        saveShift(plan);
+      }
       setGame({ ...game, historyId: id ?? undefined });
       go('#/debrief');
     })();
@@ -321,6 +362,21 @@ export function Play() {
   const dialogRef = useRef<HTMLDivElement>(null);
   const hotspots = useMemo(() => (sc && st ? visibleHotspots(sc, st) : []), [sc, st]);
 
+  // תעבורת קשר של ניידות אחרות ברקע (כל ~38 שניות תרגול פעיל בזירה)
+  const stage0 = st?.stage;
+  const cfg0 = st?.config;
+  useEffect(() => {
+    if (!sc || !cfg0 || stage0 !== 'scene' || paused || settingsOpen || hidden) return;
+    const lines = chatterLines(gameProfile(cfg0, settings.station, sc.dispatch.unit));
+    let hide: number | undefined;
+    const id = window.setInterval(() => {
+      setChatter(lines[chatterIdx.current++ % lines.length]);
+      if (!settings.textOnly) audio.play('radio-chirp', 'radio');
+      hide = window.setTimeout(() => setChatter(undefined), 7000);
+    }, 38000);
+    return () => { window.clearInterval(id); window.clearTimeout(hide); };
+  }, [sc, cfg0, stage0, paused, settingsOpen, hidden, settings.station, settings.textOnly]);
+
   if (!game || !sc || !st) return <p className="page" aria-busy="true">{loading ? 'טוען תרגול…' : ''}</p>;
 
   const t0 = startTimeOf(sc, st.config.shift);
@@ -332,7 +388,7 @@ export function Play() {
 
   const sceneArea =
     stage === 'scene' || stage === 'ended' ? (
-      <SceneView sc={sc} st={st} selected={selected} onSelect={(id) => { setSelected(id); setTab('actions'); }} animate={animate} lightsAnim={settings.lightsAnim && !reducedMotion} showLabels={settings.showHotspotLabels} />
+      <SceneView sc={sc} st={st} selected={selected} onSelect={(id) => { setSelected(id); setTab('actions'); }} animate={animate} lightsAnim={settings.lightsAnim && !reducedMotion} showLabels={settings.showHotspotLabels} chatter={chatter} />
     ) : (
       <Transition
         kind={sc.transition.kind}
@@ -347,7 +403,7 @@ export function Play() {
     );
 
   const sel = selected && hotspots.some((h) => h.id === selected) ? selected : null;
-  const radio = radioProfile(settings.station, sc.dispatch.unit);
+  const radio = gameProfile(st.config, settings.station, sc.dispatch.unit);
 
   return (
     <RadioCtx.Provider value={radio}>
@@ -489,7 +545,7 @@ export function Play() {
                       <Lines sc={sc} lines={own} />
                       {evEntry && evLines > 0 && (
                         <>
-                          <p className="event-head" data-testid="event-head">⚠ {evEntry.label}</p>
+                          <p className="event-head" data-testid="event-head">{evEntry.ref.startsWith('event:rp-') ? '📻' : '⚠'} {evEntry.label}</p>
                           <Lines sc={sc} lines={st.lastLines.slice(own.length)} />
                         </>
                       )}
@@ -520,10 +576,14 @@ export function Play() {
                 <button role="tab" aria-selected={tab === 'log'} onClick={() => setTab('log')}>
                   יומן ותמליל
                 </button>
+                <button role="tab" aria-selected={tab === 'notes'} onClick={() => setTab('notes')} data-testid="tab-notes">
+                  📒 פנקס
+                </button>
               </div>
               <div role="tabpanel" style={{ paddingTop: 10 }}>
                 {tab === 'info' && <FactsPanel sc={sc} st={st} />}
                 {tab === 'log' && <LogPanel sc={sc} st={st} />}
+                {tab === 'notes' && <Notebook st={st} onChange={(text) => dispatch({ type: 'NOTE', text })} />}
                 {tab === 'actions' && stage === 'scene' && (
                   <div className="hotspot-list" data-testid="hotspots">
                     {hotspots.map((h, i) => {

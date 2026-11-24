@@ -1,6 +1,6 @@
 {
  "id": "bar-fight",
- "version": 1,
+ "version": 2,
  "title": "אחרי קטטה מחוץ לבר",
  "category": "אלימות ותקיפה – טיפול לאחר האירוע",
  "summary": "מגיעים לבר שכונתי דקות אחרי קטטה: צעיר עם חתך במצח, חבר נסער שרוצה „לסגור חשבון”, והחשוד עדיין במקום. יש להפריד, לדאוג לטיפול רפואי, לדרוש הזדהות ולעכב בהסבר ובבסיס עובדתי, לשמוע את כל הגרסאות ולשמור ראיות.",
@@ -768,6 +768,50 @@
     "calm",
     "tense",
     "upset"
+   ]
+  },
+  {
+   "id": "film1",
+   "name": "עובר אורח",
+   "role": "מצלם בטלפון",
+   "gender": "m",
+   "look": {
+    "skin": "#d6a57c",
+    "hair": "#2a1d14",
+    "hairStyle": "short",
+    "top": "#666",
+    "bottom": "#333",
+    "accessory": "phone"
+   },
+   "attitude": 0,
+   "x": 68,
+   "y": 86,
+   "scale": 0.95,
+   "sprite": "img/chars/film1",
+   "spriteMoods": [
+    "calm"
+   ]
+  },
+  {
+   "id": "film3",
+   "name": "עובר אורח",
+   "role": "מצלם בטלפון",
+   "gender": "m",
+   "look": {
+    "skin": "#d6a57c",
+    "hair": "#2a1d14",
+    "hairStyle": "short",
+    "top": "#666",
+    "bottom": "#333",
+    "accessory": "phone"
+   },
+   "attitude": 0,
+   "x": 96,
+   "y": 88,
+   "scale": 0.95,
+   "sprite": "img/chars/film3",
+   "spriteMoods": [
+    "calm"
    ]
   }
  ],
@@ -1946,7 +1990,9 @@
    "img/props/patrol.webp",
    "img/drive/interior.webp",
    "img/drive/road-day.webp",
-   "img/drive/road-night.webp"
+   "img/drive/road-night.webp",
+   "img/chars/film1-calm.webp",
+   "img/chars/film3-calm.webp"
   ],
   "audio": [
    "audio/music-muffled.mp3",

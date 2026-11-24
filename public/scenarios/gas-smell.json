@@ -1,6 +1,6 @@
 {
  "id": "gas-smell",
- "version": 1,
+ "version": 2,
  "title": "ריח גז בבניין מגורים",
  "category": "אירועים חריגים ובטיחות",
  "summary": "דיירת מדווחת על ריח גז חזק בכניסה לבניין. יש לפנות את הדיירים בלי ליצור ניצוץ, לתת הוראות פינוי ברורות גם למי שמסרב, למנוע אש ועישון, להרחיק את כולם ולהעביר את הזירה לכב״ה.",
@@ -743,6 +743,31 @@
     "tense",
     "upset"
    ]
+  },
+  {
+   "id": "film2",
+   "name": "עוברת אורח",
+   "role": "מצלמת בטלפון",
+   "gender": "f",
+   "look": {
+    "skin": "#d6a57c",
+    "hair": "#2a1d14",
+    "hairStyle": "short",
+    "top": "#666",
+    "bottom": "#333",
+    "accessory": "phone"
+   },
+   "attitude": 0,
+   "x": 66,
+   "y": 90,
+   "scale": 0.95,
+   "sprite": "img/chars/film2",
+   "spriteMoods": [
+    "calm"
+   ],
+   "when": {
+    "flag": "evacuated"
+   }
   }
  ],
  "dispatch": {
@@ -1790,7 +1815,8 @@
    "img/props/patrol.webp",
    "img/drive/interior.webp",
    "img/drive/road-day.webp",
-   "img/drive/road-night.webp"
+   "img/drive/road-night.webp",
+   "img/chars/film2-calm.webp"
   ],
   "audio": [
    "audio/building-hum.mp3",
