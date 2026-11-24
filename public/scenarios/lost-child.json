@@ -1884,7 +1884,12 @@
    "audio/alert.mp3",
    "audio/radio-chatter.mp3"
   ],
-  "voice": {},
-  "narrationMissing": "אין עדיין קריינות מוקלטת בעברית. הקבצים יתווספו לתיקייה public/audio/voice/lost-child/ וימופו בשדה media.voice."
+  "voice": {
+   "dispatch": "audio/voice/lost-child/dispatch.mp3",
+   "f-desc": "audio/voice/lost-child/f-desc.mp3",
+   "f-where": "audio/voice/lost-child/f-where.mp3",
+   "r-guard": "audio/voice/lost-child/r-guard.mp3"
+  },
+  "narrationMissing": "קריינות חלקית: חלק מהשורות מוקלטות (קול מסונתז מאתר הקראה), והשאר מוקראות בקול הדפדפן אם הופעל."
  }
 }

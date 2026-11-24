@@ -2074,7 +2074,13 @@
    "audio/alert.mp3",
    "audio/radio-chatter.mp3"
   ],
-  "voice": {},
-  "narrationMissing": "אין עדיין קריינות מוקלטת בעברית. הקבצים יתווספו לתיקייה public/audio/voice/suspicious-object/ וימופו בשדה media.voice."
+  "voice": {
+   "dispatch": "audio/voice/suspicious-object/dispatch.mp3",
+   "f-desc": "audio/voice/suspicious-object/f-desc.mp3",
+   "f-caller": "audio/voice/suspicious-object/f-caller.mp3",
+   "f-bus": "audio/voice/suspicious-object/f-bus.mp3",
+   "r-eta": "audio/voice/suspicious-object/r-eta.mp3"
+  },
+  "narrationMissing": "קריינות חלקית: חלק מהשורות מוקלטות (קול מסונתז מאתר הקראה), והשאר מוקראות בקול הדפדפן אם הופעל."
  }
 }

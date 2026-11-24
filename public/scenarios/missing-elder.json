@@ -1925,7 +1925,13 @@
    "audio/alert.mp3",
    "audio/radio-chatter.mp3"
   ],
-  "voice": {},
-  "narrationMissing": "אין עדיין קריינות מוקלטת בעברית. הקבצים יתווספו לתיקייה public/audio/voice/missing-elder/ וימופו בשדה media.voice."
+  "voice": {
+   "dispatch": "audio/voice/missing-elder/dispatch.mp3",
+   "f-desc": "audio/voice/missing-elder/f-desc.mp3",
+   "f-medical": "audio/voice/missing-elder/f-medical.mp3",
+   "f-phone": "audio/voice/missing-elder/f-phone.mp3",
+   "r-home": "audio/voice/missing-elder/r-home.mp3"
+  },
+  "narrationMissing": "קריינות חלקית: חלק מהשורות מוקלטות (קול מסונתז מאתר הקראה), והשאר מוקראות בקול הדפדפן אם הופעל."
  }
 }
