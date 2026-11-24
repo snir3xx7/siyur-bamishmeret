@@ -183,3 +183,15 @@ test('פנקס שטח: רישום בזמן המשחק ובדיקה בתחקיר'
   await finish(page);
   await expect(page.getByTestId('notebook-check')).toContainText('מספר אירוע 5108');
 });
+
+test('הנפשת דמויות (PixiJS): השכבה רצה, הדמויות מצוירות בה ותמונות ה־DOM מוסתרות', async ({ page, browserName }) => {
+  test.skip(browserName === 'webkit', 'WebGL בדפדפן WebKit ללא מסך אינו יציב בסביבת הבדיקות');
+  await page.goto(`./?pixi=1#/s/bar-fight?v=${VERSIONS['bar-fight']}&seed=9`);
+  await page.getByRole('button', { name: /התחלת התרחיש/ }).click();
+  await toScene(page);
+  const layer = page.getByTestId('pixi-layer');
+  await expect(layer.locator('canvas')).toHaveCount(1);
+  await expect(page.locator('.scene.pixi-on')).toHaveCount(1);
+  await expect.poll(async () => Number(await layer.getAttribute('data-frames'))).toBeGreaterThan(30);
+  await expect(page.locator('.scene.pixi-on .actor.has-sprite .sprite').first()).toHaveCSS('opacity', '0');
+});

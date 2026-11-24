@@ -495,3 +495,9 @@ body.projector .no-projector { display: none !important; }
 .shift-next { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; border: 1px solid var(--accent); }
 .shift-summary h2 { margin: 0 0 4px; }
 .chips-pick { display: flex; flex-wrap: wrap; gap: 6px; }
+
+/* שכבת הנפשה (PixiJS) – מעל הדמויות, מתחת לניידת, לגוון ולסמנים */
+.scene .pixi-layer { position: absolute; inset: 0; pointer-events: none; }
+.scene .pixi-layer canvas { width: 100% !important; height: 100% !important; display: block; }
+.scene.pixi-on .actor.has-sprite .sprite { opacity: 0; }
+.scene.pixi-on .actor.has-sprite .mood-wrap { animation: none !important; }

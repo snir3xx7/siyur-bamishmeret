@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { useRef, useState } from 'react';
+import { PixiLayer, pixiWanted } from './PixiLayer';
 import { evalCond } from '../engine/conditions';
 import { lightsOf, moodOf, visibleHotspots } from '../engine/game';
 import type { GameState, LightsMode, Mood, Scenario, SceneDef, ScenePropDef, Shift } from '../engine/types';
@@ -61,6 +62,9 @@ interface Props {
 
 export function SceneView({ sc, st, selected, onSelect, animate, lightsAnim, showLabels, chatter }: Props) {
   const [imgFailed, setImgFailed] = useState(false);
+  const camRef = useRef<HTMLDivElement>(null);
+  const [pixiOn, setPixiOn] = useState(false);
+
   // איורים שלא נטענו – נופלים לציור הווקטורי
   const [broken, setBroken] = useState<Record<string, boolean>>({});
   const markBroken = (k: string) => setBroken((b) => (b[k] ? b : { ...b, [k]: true }));
@@ -76,15 +80,17 @@ export function SceneView({ sc, st, selected, onSelect, animate, lightsAnim, sho
   const radioIn = speakers.has('dispatch');
   const focus = hotspots.find((h) => h.id === selected);
   const event = st.lastEvent ? sc.events?.find((e) => e.id === st.lastEvent) : undefined;
+  const usePixi = !!scene.painted && pixiWanted(animate);
 
   return (
     <div
-      className={`scene ${animate ? 'anim-ok' : ''} ${scene.painted ? 'painted' : ''} light-${shift}`}
+      className={`scene ${animate ? 'anim-ok' : ''} ${scene.painted ? 'painted' : ''} light-${shift} ${usePixi && pixiOn ? 'pixi-on' : ''}`}
       role="group"
       aria-label={`זירת האירוע: ${sc.location.name}`}
     >
       {/* „מצלמה”: התקרבות עדינה לנקודה שנבחרה (רק כשתנועה מותרת) */}
       <div
+        ref={camRef}
         className={`cam ${animate && focus ? 'focused' : ''}`}
         style={focus ? { transformOrigin: `${focus.x}% ${focus.y}%` } : undefined}
         data-testid="scene-cam"
@@ -157,6 +163,18 @@ export function SceneView({ sc, st, selected, onSelect, animate, lightsAnim, sho
           </div>
         );
       })}
+
+      {usePixi && (
+        <PixiLayer
+          camRef={camRef}
+          night={shift === 'night' || (shift === 'evening' && bgVariant(scene, shift) === 'night')}
+          evening={shift === 'evening' && bgVariant(scene, shift) === 'day'}
+          lightSide={patrol && lights !== 'off' && shift !== 'morning' ? (patrol.x < 50 ? 'left' : 'right') : null}
+          flash={lightsAnim}
+          rain={scene.weather === 'rain'}
+          onActive={setPixiOn}
+        />
+      )}
 
       {patrol && (
         <div className={`actor ${scene.painted && !broken.patrol ? 'painted-prop' : ''}`} style={{ left: `${patrol.x}%`, top: `${patrol.y}%`, width: `${25 * (patrol.scale ?? 1)}%`, transform: `translate(-50%, -100%) ${patrol.flip ? 'scaleX(-1)' : ''}` }}>
