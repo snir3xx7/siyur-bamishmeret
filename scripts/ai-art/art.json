@@ -643,39 +643,41 @@
  "officers": {
   "m": {
    "seeds": [
-    301,
-    302,
-    303
+    421,
+    422,
+    423,
+    424
    ],
-   "pick": 302,
-   "prompt": "Heroic three-quarter body portrait, slightly low angle, of a fit Israeli man in his early thirties with short dark hair and light stubble, a patrol police officer in a plain dark navy-blue uniform shirt and tactical duty vest with a radio on the shoulder, confident calm expression, looking slightly past the viewer. Background: a dramatic Israeli city street at night after rain, a patrol car behind with its roof light bar glowing intense blue and red, colored light rim-lighting the figure, wet asphalt reflections, glowing street lamps, palm trees, bokeh, light haze, deep teal and magenta sky. Premium video game character select art, high detail face, sharp focus on the figure. No text, no letters, no numbers, no logos, no emblems, no badges, no patches, no insignia, no weapons visible.",
+   "pick": 424,
+   "prompt": "Heroic three-quarter body portrait, slightly low angle, of a fit Israeli man in his early thirties with short dark hair and a short trimmed beard, an Israeli patrol police officer wearing the Israeli police uniform: a dark navy-blue long-sleeve uniform shirt with sleeves neatly rolled up to the elbow, two chest pockets with button flaps, shoulder epaulettes with small silver rank bars, a small black body camera clipped to the center of the chest, a black radio microphone clipped near the collar, dark navy cargo uniform trousers, and a black tactical duty belt with pouches, a handcuff pouch and a radio. On the upper left sleeve, clearly visible: a shield-shaped embroidered shoulder patch with a gold yellow stitched border on dark navy, containing a small horizontal white and blue stripe with a tiny blue Star of David in the top half, and below it a white embroidered six-pointed star inside a white laurel wreath. The patch has no text and no letters. Body turned slightly so the left sleeve faces the viewer. Neat, professional, confident calm expression, looking slightly past the viewer. Background: a dramatic Israeli city street at night after rain, a white patrol car with a blue stripe behind with its roof light bar glowing intense blue and red, colored rim light on the figure, wet asphalt reflections, glowing street lamps, palm trees, bokeh, light haze, deep teal and magenta sky. Premium video game character select art, high detail face, sharp focus on the figure. No readable text, no letters, no numbers, no logos, no name tags with writing, no flags, no weapons drawn."
+  },
+  "f": {
+   "seeds": [
+    431,
+    432,
+    433,
+    434
+   ],
+   "pick": 432,
+   "prompt": "Heroic three-quarter body portrait, slightly low angle, of a fit Israeli woman in her late twenties with dark hair tied back in a ponytail, an Israeli patrol police officer wearing the Israeli police uniform: a dark navy-blue long-sleeve uniform shirt with sleeves neatly rolled up to the elbow, two chest pockets with button flaps, shoulder epaulettes with small silver rank bars, a small black body camera clipped to the center of the chest, a black radio microphone clipped near the collar, dark navy cargo uniform trousers, and a black tactical duty belt with pouches, a handcuff pouch and a radio. On the upper left sleeve, clearly visible: a shield-shaped embroidered shoulder patch with a gold yellow stitched border on dark navy, containing a small horizontal white and blue stripe with a tiny blue Star of David in the top half, and below it a white embroidered six-pointed star inside a white laurel wreath. The patch has no text and no letters. Body turned slightly so the left sleeve faces the viewer. Neat, professional, confident calm expression, looking slightly past the viewer. Background: a dramatic Israeli city street at night after rain, a white patrol car with a blue stripe behind with its roof light bar glowing intense blue and red, colored rim light on the figure, wet asphalt reflections, glowing street lamps, palm trees, bokeh, light haze, deep teal and magenta sky. Premium video game character select art, high detail face, sharp focus on the figure. No readable text, no letters, no numbers, no logos, no name tags with writing, no flags, no weapons drawn.",
    "clone": [
     [
-     222,
-     494,
-     72,
-     72,
+     588,
+     702,
+     118,
+     50,
      0,
      0
     ],
     [
-     292,
-     500,
-     30,
-     56,
+     596,
+     862,
+     120,
+     50,
      0,
      0
     ]
    ]
-  },
-  "f": {
-   "seeds": [
-    311,
-    312,
-    313
-   ],
-   "pick": 312,
-   "prompt": "Heroic three-quarter body portrait, slightly low angle, of a fit Israeli woman in her early thirties with dark hair tied back in a low bun, a patrol police officer in a plain dark navy-blue uniform shirt and tactical duty vest with a radio on the shoulder, confident calm expression, looking slightly past the viewer. Background: a dramatic Israeli city street at night after rain, a patrol car behind with its roof light bar glowing intense blue and red, colored light rim-lighting the figure, wet asphalt reflections, glowing street lamps, palm trees, bokeh, light haze, deep teal and magenta sky. Premium video game character select art, high detail face, sharp focus on the figure. No text, no letters, no numbers, no logos, no emblems, no badges, no patches, no insignia, no weapons visible."
   }
  }
 }
