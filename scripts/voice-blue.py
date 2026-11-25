@@ -98,7 +98,8 @@ def openings(sc):
 def officer(ls):
     out = []
     for x in ls or []:
-        if x['speaker'] == 'player' and not x['text'].startswith('{{'):
+        # שידור בקשר מתחיל בפתיחת נוהל („{{toCenter}}, …”); כל משתנה אחר בתחילת שורה – דיבור רגיל בזירה
+        if x['speaker'] == 'player' and not x['text'].startswith('{{to'):
             out += [{**x, 'speaker': 'officer'}, {**x, 'speaker': 'officerF'}]
         else:
             out.append(x)

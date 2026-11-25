@@ -76,7 +76,7 @@ describe('קול לכל שידור בקשר (כפר סבא, ניידת 402)', ()
       for (const v of sc.variants) for (const h of sc.hotspots) for (const c of h.choices) {
         if (c.id.startsWith('rp-')) continue;
         for (const l of [...(c.lines ?? []), ...(c.branches ?? []).flatMap((b) => b.lines)]) {
-          if (l.speaker !== 'player' || l.text.startsWith('{{')) continue;
+          if (l.speaker !== 'player' || l.text.startsWith('{{to')) continue;
           const t = fill(l.text, v.vars);
           for (const sp of ['officer', 'officerF']) if (!vl[voiceKey(sp, t)]) missing.push(`${e.id} ${sp}: ${t}`);
         }
@@ -127,7 +127,7 @@ describe('קול לכל שורה – כל דובר, כל גרסה, כל תרחי
           const text = fill(l.text, vars);
           // הוראות במה בלבד – אין מה להשמיע (גם במשחק הן לא חוסמות את שאר השורות)
           if (!/[א-ת]/.test(text.replace(/\([^)]*\)/g, '').replace(/\[[^\]]*\]/g, '').replace(/^[^:]{0,20}:\s*/, ''))) continue;
-          const sp = l.speaker === 'player' && !l.text.startsWith('{{') && text !== 'קיבלתי.' ? 'officer' : l.speaker;
+          const sp = l.speaker === 'player' && !l.text.startsWith('{{to') && text !== 'קיבלתי.' ? 'officer' : l.speaker;
           if (!voiced(vl, sp, l.text, text, vars.backup)) missing.push(`${sp}: ${text.slice(0, 70)}`);
         }
       }
