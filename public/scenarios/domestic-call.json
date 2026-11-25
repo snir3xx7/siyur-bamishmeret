@@ -1,6 +1,6 @@
 {
  "id": "domestic-call",
- "version": 5,
+ "version": 6,
  "title": "קריאה על צעקות בבית – חשד לאלימות במשפחה",
  "category": "עבירות נגד אדם",
  "summary": "נערה בת 15 התקשרה בשקט: צעקות ורעש שבירה, ואמה בוכה. בפתח האב אומר ש„הכול בסדר”. יש לראות את כל בני הבית, להפריד, לשוחח עם האם בנפרד, להגן על הנערה, להעריך סיכון ולפעול – בלי „לעשות שלום”.",
@@ -34,20 +34,39 @@
    "id": "mark",
    "label": "על זרוע האישה סימן אדום טרי",
    "set": {
-    "mark": true
+    "mark": true,
+    "order": false
    },
    "vars": {
-    "ronit_tell": "הוא תפס לי את היד חזק ודחף אותי. האגרטל נפל כשנתקלתי בשולחן. זו לא הפעם הראשונה."
+    "ronit_tell": "הוא תפס לי את היד חזק ודחף אותי. האגרטל נפל כשנתקלתי בשולחן. זו לא הפעם הראשונה.",
+    "order_info": "אין צו הגנה בתוקף בכתובת.",
+    "order_explain": "את יכולה לבקש צו הגנה מבית המשפט ולהגיש תלונה בתחנה. נעזור לך בזה, ועד אז מוקד הסיוע זמין כל שעות היממה."
    }
   },
   {
    "id": "threats",
    "label": "אין סימן; היו איומים קשים",
    "set": {
-    "mark": false
+    "mark": false,
+    "order": false
    },
    "vars": {
-    "ronit_tell": "הוא לא נגע בי הפעם. הוא שבר את האגרטל וצעק שאם אעזוב – אני אצטער. אני מפחדת ממנו."
+    "ronit_tell": "הוא לא נגע בי הפעם. הוא שבר את האגרטל וצעק שאם אעזוב – אני אצטער. אני מפחדת ממנו.",
+    "order_info": "אין צו הגנה בתוקף בכתובת.",
+    "order_explain": "גם איומים הם עבירה. את יכולה לבקש צו הגנה מבית המשפט ולהגיש תלונה בתחנה – נעזור לך בזה."
+   }
+  },
+  {
+   "id": "order",
+   "label": "יש צו הגנה בתוקף נגד האב – והוא בדירה",
+   "set": {
+    "mark": false,
+    "order": true
+   },
+   "vars": {
+    "ronit_tell": "יש לי צו הגנה נגדו. הוא בא הערב בלי להודיע, צעק ואיים שאם לא אבטל את הצו אני אצטער.",
+    "order_info": "יש צו הגנה בתוקף נגד גיל אלמוג – אסור לו להימצא בדירה.",
+    "order_explain": "הצו שלך בתוקף, והוא הפר אותו – זו עבירה. אנחנו מטפלים בזה עכשיו, ואת לא צריכה לבטל שום דבר."
    }
   }
  ],
@@ -707,6 +726,26 @@
     "report": "בירור היסטוריה בכתובת"
    },
    {
+    "id": "f-order",
+    "label": "לשאול: יש צו הגנה בתוקף נגד מישהו בכתובת?",
+    "lines": [
+     {
+      "speaker": "player",
+      "text": "יש צו הגנה בתוקף נגד מישהו בכתובת?"
+     },
+     {
+      "speaker": "dispatch",
+      "text": "{{order_info}}"
+     }
+    ],
+    "effects": {
+     "set": {
+      "askedOrder": true
+     }
+    },
+    "report": "בירור צו הגנה"
+   },
+   {
     "id": "f-backup",
     "label": "לבקש ניידת נוספת לכתובת",
     "lines": [
@@ -1124,6 +1163,29 @@
       }
      },
      "report": "הפניה לסיוע ותכנון בטיחות"
+    },
+    {
+     "id": "r-order",
+     "label": "להסביר לרונית על צו הגנה, על הזכות להגיש תלונה ועל הסיוע הזמין לה",
+     "when": {
+      "flag": "heardRonit"
+     },
+     "lines": [
+      {
+       "speaker": "player",
+       "text": "{{order_explain}}"
+      },
+      {
+       "speaker": "ronit",
+       "text": "אני לא יודעת אם יש לי כוח לזה עכשיו… אבל אני רוצה לשמוע איך זה עובד."
+      }
+     ],
+     "effects": {
+      "set": {
+       "orderExplained": true
+      },
+      "minutes": 1
+     }
     }
    ],
    "character": "ronit"
@@ -1157,6 +1219,33 @@
       ]
      },
      "report": "בדיקת שלום כל בני הבית"
+    },
+    {
+     "id": "z-weapon",
+     "label": "לברר אם יש בבית נשק או כלי שעלול לשמש לפגיעה – ולהרחיק אותו",
+     "when": {
+      "flag": "entered"
+     },
+     "lines": [
+      {
+       "speaker": "player",
+       "text": "יש בבית נשק, גם בלי רישיון? אני צריך לדעת."
+      },
+      {
+       "speaker": "ronit",
+       "text": "אין נשק. רק הסכינים במטבח."
+      },
+      {
+       "speaker": "narrator",
+       "text": "סגרת את מגירת הסכינים, והקפדת שגיל יישאר בצד השני של החדר."
+      }
+     ],
+     "effects": {
+      "set": {
+       "weaponChecked": true
+      },
+      "minutes": 1
+     }
     },
     {
      "id": "z-doc",
@@ -1727,6 +1816,10 @@
    "4fb70c0f": "audio/voice/domestic-call/l-4fb70c0f.mp3",
    "047f6471": "audio/voice/domestic-call/l-047f6471.mp3",
    "419ee934": "audio/voice/domestic-call/l-419ee934.mp3",
+   "26e1e98f": "audio/voice/domestic-call/l-26e1e98f.mp3",
+   "19ebd375": "audio/voice/domestic-call/l-19ebd375.mp3",
+   "f9f9be5e": "audio/voice/domestic-call/l-f9f9be5e.mp3",
+   "943022f4": "audio/voice/domestic-call/l-943022f4.mp3",
    "d0e9b5df": "audio/voice/domestic-call/l-d0e9b5df.mp3",
    "f35ac661": "audio/voice/domestic-call/l-f35ac661.mp3",
    "22285ed3": "audio/voice/domestic-call/l-22285ed3.mp3",
@@ -1750,8 +1843,8 @@
    "c15157d4": "audio/voice/domestic-call/l-c15157d4.mp3",
    "88f9f8b0": "audio/voice/domestic-call/l-88f9f8b0.mp3",
    "19a47209": "audio/voice/domestic-call/l-19a47209.mp3",
-   "6d54a6f8": "audio/voice/domestic-call/l-6d54a6f8.mp3",
-   "22dbc014": "audio/voice/domestic-call/l-22dbc014.mp3",
+   "2e35bae4": "audio/voice/domestic-call/l-2e35bae4.mp3",
+   "d1d3a758": "audio/voice/domestic-call/l-d1d3a758.mp3",
    "af2fd424": "audio/voice/domestic-call/l-af2fd424.mp3",
    "5b32a4dc": "audio/voice/domestic-call/l-5b32a4dc.mp3",
    "33f72470": "audio/voice/domestic-call/l-33f72470.mp3",
@@ -1760,8 +1853,8 @@
    "299d6eae": "audio/voice/domestic-call/l-299d6eae.mp3",
    "9e3403f2": "audio/voice/domestic-call/l-9e3403f2.mp3",
    "d38ae571": "audio/voice/domestic-call/l-d38ae571.mp3",
-   "91cc71f6": "audio/voice/domestic-call/l-91cc71f6.mp3",
-   "a43e2892": "audio/voice/domestic-call/l-a43e2892.mp3",
+   "7e844faa": "audio/voice/domestic-call/l-7e844faa.mp3",
+   "a141743e": "audio/voice/domestic-call/l-a141743e.mp3",
    "24804887": "audio/voice/domestic-call/l-24804887.mp3",
    "e2b33b41": "audio/voice/domestic-call/l-e2b33b41.mp3",
    "620432ad": "audio/voice/domestic-call/l-620432ad.mp3",
@@ -1775,6 +1868,7 @@
    "457638d3": "audio/voice/domestic-call/l-457638d3.mp3",
    "3d7589d3": "audio/voice/domestic-call/l-3d7589d3.mp3",
    "30d61840": "audio/voice/domestic-call/l-30d61840.mp3",
+   "c45f9781": "audio/voice/domestic-call/l-c45f9781.mp3",
    "43666708": "audio/voice/domestic-call/l-43666708.mp3",
    "f0a1ce4e": "audio/voice/domestic-call/l-f0a1ce4e.mp3",
    "8a2f0f2c": "audio/voice/domestic-call/l-8a2f0f2c.mp3",
@@ -1783,7 +1877,18 @@
    "1598810a": "audio/voice/domestic-call/l-1598810a.mp3",
    "6dfa960e": "audio/voice/domestic-call/l-6dfa960e.mp3",
    "5a1721e6": "audio/voice/domestic-call/l-5a1721e6.mp3",
+   "dc87d151": "audio/voice/domestic-call/l-dc87d151.mp3",
+   "a10658aa": "audio/voice/domestic-call/l-a10658aa.mp3",
+   "2ded731a": "audio/voice/domestic-call/l-2ded731a.mp3",
+   "e39a822b": "audio/voice/domestic-call/l-e39a822b.mp3",
+   "ccd9e750": "audio/voice/domestic-call/l-ccd9e750.mp3",
+   "ad63d2a0": "audio/voice/domestic-call/l-ad63d2a0.mp3",
+   "54bc6134": "audio/voice/domestic-call/l-54bc6134.mp3",
    "484ac99f": "audio/voice/domestic-call/l-484ac99f.mp3",
+   "9e31df13": "audio/voice/domestic-call/l-9e31df13.mp3",
+   "b2962ad7": "audio/voice/domestic-call/l-b2962ad7.mp3",
+   "254f94c4": "audio/voice/domestic-call/l-254f94c4.mp3",
+   "43601546": "audio/voice/domestic-call/l-43601546.mp3",
    "3d5e47e3": "audio/voice/domestic-call/l-3d5e47e3.mp3",
    "a1a87bba": "audio/voice/domestic-call/l-a1a87bba.mp3",
    "97e90e96": "audio/voice/domestic-call/l-97e90e96.mp3",
@@ -1840,14 +1945,28 @@
   {
    "char": "gil",
    "hotspot": "h-gil",
-   "offence": "תקיפה של בת זוגו",
+   "offence": "תקיפה או איומים כלפי בת זוגו",
    "arrestOk": {
-    "all": [
+    "any": [
      {
-      "flag": "detainedProper"
+      "all": [
+       {
+        "flag": "detainedProper"
+       },
+       {
+        "flag": "heardRonit"
+       }
+      ]
      },
      {
-      "flag": "heardRonit"
+      "all": [
+       {
+        "flag": "order"
+       },
+       {
+        "flag": "entered"
+       }
+      ]
      }
     ]
    },

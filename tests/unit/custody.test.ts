@@ -46,4 +46,15 @@ describe('עיכוב, מעצר וחיפוש', () => {
     expect(custodyStatus(sc, freed, 'gil')).toBe('שוחרר');
     expect(item(report(sc, freed), 'החלטה לגבי')!.ok).toBe(true);
   });
+
+  it('הפרת צו הגנה: המעצר מוצדק גם בלי עדות על תקיפה', () => {
+    const raw = loadScenario('domestic-call');
+    const sc = withProcedure(raw);
+    const seed = seedFor(raw, 'order');
+    const st = play(sc, ['f-order', 'GO', 'ARRIVE', 'g-enter', 'g-detain', 'cs-arrest-gil'], { seed });
+    expect(st.lastLines.length).toBeGreaterThan(0);
+    expect(item(report(sc, st), 'עילה למעצר')!.ok).toBe(true);
+    const mark = play(sc, ['GO', 'ARRIVE', 'g-enter', 'g-detain', 'cs-arrest-gil'], { seed: seedFor(raw, 'mark') });
+    expect(item(report(sc, mark), 'עילה למעצר')!.ok).toBe(false);
+  });
 });
