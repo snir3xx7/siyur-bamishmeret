@@ -1,11 +1,13 @@
 import { useEffect, useRef, useState } from 'react';
 import { assetUrl } from './data';
+import { SITE } from '../config/site';
 
 const KEY = 'siyur.intro.seen';
 
 /**
- * טריילר פתיחה: מוצג כשפותחים את הקישור (פעם אחת בכל ביקור), מסתיים בהחשכה איטית ונפתח למסך הכניסה.
- * מתחיל מושתק (דפדפנים חוסמים ניגון עם קול בלי לחיצה); כפתור „עם קול” ו„דילוג”.
+ * טריילר פתיחה בסגנון סרט: מסך מלא (גם בטלפון לאורך – הפריים ממלא את המסך עם תנועת מצלמה איטית לרוחב),
+ * שכבות ערפל נעות, גרעיניות של פילם, וינייטה ופסי קולנוע. בסוף – כותרת המשחק עולה מתוך הערפל,
+ * ואז החשכה ומעבר למסך הכניסה. מתחיל מושתק (דפדפנים חוסמים קול בלי לחיצה); „עם קול” ו„דילוג”.
  */
 export function IntroVideo() {
   const [show, setShow] = useState(() => {
@@ -17,53 +19,63 @@ export function IntroVideo() {
     const h = location.hash.replace(/^#\/?/, '');
     return h === '' || h === 'officer';
   });
-  const [leaving, setLeaving] = useState(false);
+  const [phase, setPhase] = useState<'play' | 'title' | 'out'>('play');
   const [muted, setMuted] = useState(true);
-  const ref = useRef<HTMLVideoElement>(null);
+  const fg = useRef<HTMLVideoElement>(null);
 
-  const close = () => {
-    if (leaving) return;
+  const finish = () => {
     try {
       sessionStorage.setItem(KEY, '1');
     } catch {
       /* ignore */
     }
-    setLeaving(true);
-    window.setTimeout(() => setShow(false), 900);
+    setPhase('out');
+    window.setTimeout(() => setShow(false), 1200);
+  };
+  // סוף הסרטון: כותרת מתוך הערפל, ואחריה מעבר למסך הכניסה
+  const toTitle = () => {
+    if (phase !== 'play') return;
+    setPhase('title');
+    window.setTimeout(finish, 3400);
   };
 
   useEffect(() => {
     if (!show) return;
-    const v = ref.current;
-    if (!v) return;
-    v.muted = true;
-    void v.play().catch(() => undefined);
-    const onKey = (e: KeyboardEvent) => e.key === 'Escape' && close();
+    const v = fg.current;
+    if (v) {
+      v.muted = true;
+      void v.play().catch(() => undefined);
+    }
+    const onKey = (e: KeyboardEvent) => e.key === 'Escape' && finish();
     window.addEventListener('keydown', onKey);
     return () => window.removeEventListener('keydown', onKey);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [show]);
 
   if (!show) return null;
+  const src = assetUrl('video/intro.mp4');
   return (
-    <div className={`intro ${leaving ? 'leaving' : ''}`} role="dialog" aria-label="טריילר פתיחה" data-testid="intro">
-      <video
-        ref={ref}
-        src={assetUrl('video/intro.mp4')}
-        poster={assetUrl('video/intro-poster.jpg')}
-        playsInline
-        muted={muted}
-        autoPlay
-        preload="auto"
-        onEnded={close}
-        onError={close}
-      />
+    <div className={`intro film ${phase}`} role="dialog" aria-label="טריילר פתיחה" data-testid="intro">
+      <div className="intro-frame">
+        <video ref={fg} className="intro-fg" src={src} poster={assetUrl('video/intro-poster.jpg')} playsInline muted={muted} autoPlay preload="auto" onEnded={toTitle} onError={finish} />
+      </div>
+      <span className="fog f1" aria-hidden="true" />
+      <span className="fog f2" aria-hidden="true" />
+      <span className="fog f3" aria-hidden="true" />
+      <span className="grain" aria-hidden="true" />
+      <span className="vignette" aria-hidden="true" />
+      <span className="bars" aria-hidden="true" />
+      <div className="intro-title" aria-live="polite">
+        <p>{SITE.creditLine}</p>
+        <h2>{SITE.name}</h2>
+        <span>סימולטור אימון לשוטרי סיור</span>
+      </div>
       <div className="intro-bar">
         <button
           type="button"
           className="btn glass"
           onClick={() => {
-            const v = ref.current;
+            const v = fg.current;
             if (!v) return;
             v.muted = !muted;
             setMuted(!muted);
@@ -72,7 +84,7 @@ export function IntroVideo() {
         >
           {muted ? '🔊 עם קול' : '🔇 השתקה'}
         </button>
-        <button type="button" className="btn glass" onClick={close} data-testid="intro-skip">
+        <button type="button" className="btn glass" onClick={finish} data-testid="intro-skip">
           דילוג ⏭
         </button>
       </div>
