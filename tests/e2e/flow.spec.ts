@@ -209,10 +209,16 @@ test('בחירת דמות: שוטרת – נשמר, ומופיע במסך הפת
   await page.goto('./#/officer');
   await page.getByTestId('officer-f').click();
   await expect(page.getByTestId('officer-f')).toHaveAttribute('aria-checked', 'true');
+  // חובה לבחור מחוז ותחנה לפני היציאה לסיור
+  await expect(page.getByTestId('officer-confirm')).toBeDisabled();
+  await page.getByTestId('district-select').selectOption('center');
+  await page.getByTestId('unit-select').selectOption('רעננה|301');
+  await expect(page.getByTestId('radio-summary')).toContainText('רעננה 301');
   await page.getByTestId('officer-confirm').click();
   await expect(page).toHaveURL(/#\/catalog/);
   await page.goto('./#/');
   await expect(page.getByTestId('home-officer')).toContainText('שוטרת');
+  await expect(page.getByTestId('home-callsign')).toContainText('רעננה 301');
 });
 
 test('עיכוב ומעצר: תג סטטוס, חיפוש, אזיקה והוצאה מהזירה', async ({ page }) => {

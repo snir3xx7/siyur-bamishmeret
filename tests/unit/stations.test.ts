@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { DEFAULT_RADIO, headRouteText, radioProfile, radioize, unitOptions } from '../../src/config/stations';
+import { DEFAULT_RADIO, DISTRICTS, headRouteText, parseUnit, radioProfile, radioize, unitOptions } from '../../src/config/stations';
 
 describe('תחנות ואותות קריאה', () => {
   it('ברירת המחדל בדויה – הטקסט לא משתנה', () => {
@@ -17,10 +17,22 @@ describe('תחנות ואותות קריאה', () => {
     expect(radioize('מוקד: קיבלתי, רשמתי.', p)).toBe('משל״ט מרכז: קיבלתי, רשמתי.');
   });
 
-  it('נתניה ושיטור עירוני: „נתניה 301”', () => {
-    const r = { ...DEFAULT_RADIO, mode: 'station' as const, district: 'center', station: 'netanya', unit: '301' };
-    expect(radioProfile(r, 'סייר 9').unit).toBe('נתניה 301');
-    expect(unitOptions(r).map((u) => u.value)).toEqual(['402', '403', '404', '405', '301', '302']);
+  it('שיטור עירוני: „סבא 301” בכפר סבא, „רעננה 301” בתחום התחנה, „קל 301” בטייבה, „קדימה/כפר 301” בשדות', () => {
+    const ks = { ...DEFAULT_RADIO, mode: 'station' as const, district: 'center', station: 'kfar-saba', unit: '301' };
+    expect(radioProfile(ks, 'סייר 9').unit).toBe('סבא 301');
+    expect(unitOptions(ks).map((u) => u.value)).toEqual(['402', '403', '404', '405', '301', '302', 'רעננה|301', 'רעננה|302']);
+    const ra = radioProfile({ ...ks, ...parseUnit('רעננה|301') }, 'סייר 9');
+    expect(ra).toMatchObject({ unit: 'רעננה 301', head: 'סבא 401', center: 'משל״ט מרכז' });
+    const ty = radioProfile({ ...ks, station: 'tayibe', unit: '301', unitPrefix: 'קל' }, 'סייר 9');
+    expect(ty.unit).toBe('קל 301');
+    const sd = unitOptions({ ...ks, station: 'sdot' }).map((u) => u.value);
+    expect(sd).toContain('קדימה|301');
+    expect(sd).toContain('כפר|301');
+  });
+
+  it('7 מחוזות ושמות המשל״ט בקשר', () => {
+    expect(DISTRICTS.map((d) => d.centerCall).sort()).toEqual(['אביב', 'דרום', 'חוף', 'ים', 'מרכז', 'צפון', 'שי'].sort());
+    expect(radioProfile({ ...DEFAULT_RADIO, mode: 'station', district: 'center', station: 'petah-tikva', unit: '402' }, 'x').unit).toBe('פ״ת 402');
   });
 
   it('תחנה שהוזנה ידנית במחוז אחר – משל״ט לפי המחוז', () => {

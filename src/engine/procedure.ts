@@ -290,7 +290,8 @@ export function radioVars(sc: Scenario, radio?: { unit: string; head: string; ce
   }
   const h = radio.head.split(' ').at(-1) ?? radio.head;
   const c = radio.centerCall ?? 'מרכז';
-  const prefix = radio.unit.split(' ').slice(0, -1).join(' ');
+  // קידומת התחנה (מאות הקריאה של 401) – גם כשהניידת היא שיטור עירוני בעיר אחרת („רעננה 301”)
+  const prefix = radio.head.split(' ').slice(0, -1).join(' ');
   const own = radio.unit.split(' ').at(-1);
   // ניידת התגבור: ניידת אחרת מאותה תחנה
   const backup = `${prefix} ${own === '404' ? '403' : '404'}`;

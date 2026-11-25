@@ -4,6 +4,7 @@ import { assetUrl } from '../ui/data';
 import { audio } from '../audio/audio';
 import { loadRadioIndex, voiceKey } from '../audio/voiceKey';
 import { callTo, radioProfile } from '../config/stations';
+import { StationPicker } from '../ui/StationPicker';
 
 const CHOICES = [
   { id: 'm', title: 'שוטר', who: 'player', line: 'הקול שלך בקשר ובזירה – גבר.' },
@@ -47,7 +48,7 @@ export function Officer() {
         <span className="os-flash red" />
       </div>
       <header className="os-head">
-        <p className="os-kicker">משמרת ערב · {prof.real ? prof.stationName : 'קריית אלון (בדוי)'}</p>
+        <p className="os-kicker">משמרת ערב · {prof.real ? `${prof.stationName} · ${prof.center}` : 'בחרו מחוז ותחנה'}</p>
         <h1 id="officer-title">מי יוצא לסיור הערב?</h1>
         <p className="os-sub">הבחירה קובעת את הקול שלך בקשר ובשיחה עם המעורבים, ואת לשון הפנייה אליך. אפשר להחליף בכל רגע.</p>
       </header>
@@ -74,15 +75,20 @@ export function Officer() {
               <b>{c.title}</b>
               <span>{c.line}</span>
               <span className="os-call">
-                <span aria-hidden="true">📻</span> <bdi>{prof.unit}</bdi>
+                <span aria-hidden="true">📻</span> <bdi>{prof.real ? prof.unit : '402'}</bdi>
               </span>
             </span>
             {sel === c.id && <span className="os-check" aria-hidden="true">✓</span>}
           </button>
         ))}
       </div>
+      <div className="os-station">
+        <h2>📻 המחוז, התחנה ואות הקריאה שלך</h2>
+        <StationPicker fictionalUnit="402" required />
+        {!prof.real && <p className="os-need" role="status">כדי לצאת לסיור – בחרו מחוז ותחנה. עד אז בקשר: „משל״ט מ402”.</p>}
+      </div>
       <div className="os-actions">
-        <button type="button" className="btn primary big" onClick={confirm} data-testid="officer-confirm">
+        <button type="button" className="btn primary big" onClick={confirm} data-testid="officer-confirm" disabled={!prof.real}>
           יוצא{sel === 'f' ? 'ת' : ''} לסיור ▶
         </button>
         <button type="button" className="btn glass" onClick={() => preview(sel)}>

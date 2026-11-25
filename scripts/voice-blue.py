@@ -49,10 +49,15 @@ def feminize(text: str) -> str:
     return _FEM_RE.sub(lambda m: m.group(1) + _FEM.get(m.group(2), m.group(2)), text)
 
 
+_PREFIX_SPEECH = json.load(open(ROOT / 'src/config/prefix-speech.json'))
+
+
 def speech_text(speaker: str, text: str) -> str:
     """הטקסט כפי שיוקרא: בלי אותות קריאה (משתנים לפי תחנה), בלי מירכאות, מספרים בקריאה נכונה"""
     if speaker in ('playerF', 'officerF'):
         text = feminize(text)
+    for k, v in _PREFIX_SPEECH.items():
+        text = text.replace(k, v)
     t = re.sub(r'^סייר \d+, כאן מוקד אלון\.\s*', '', text)
     t = re.sub(r'^מוקד:\s*', '', t)
     t = re.sub(r'^\([^)]*\)\s*', '', t)  # הוראות במה בסוגריים: „(מתקרבת בבהלה)”
@@ -192,8 +197,7 @@ def main():
         for d in districts:
             for st in d['stations']:
                 pre = st['prefix']
-                for n in st['patrols'] + st['municipal']:
-                    u = f'{pre} {n}'
+                for u in [f'{pre} {n}' for n in st['patrols'] + st['municipal']] + [f"{c['prefix']} {n}" for c in st.get('cityUnits', []) for n in c['nums']]:
                     for dest in (st['shiftHead'], st['dutyOfficer'], d['centerCall']):
                         jobs.append((st['id'], 'player', f'{dest} מ{u}'))
                         jobs.append((st['id'], 'playerF', f'{dest} מ{u}'))
@@ -214,8 +218,7 @@ def main():
             ctr = d['centerCall']
             for st in d['stations']:
                 pre, h = st['prefix'], st['shiftHead']
-                for n in st['patrols'] + st['municipal']:
-                    u = f'{pre} {n}'
+                for u in [f'{pre} {n}' for n in st['patrols'] + st['municipal']] + [f"{c['prefix']} {n}" for c in st.get('cityUnits', []) for n in c['nums']]:
                     for who in ('unitB', 'unitC'):
                         jobs.append((st['id'], who, f'{ctr} מ{u}'))
                     jobs.append((st['id'], 'unitB', f'{h} מ{u}'))

@@ -1,3 +1,5 @@
+import prefixSpeech from './prefix-speech.json';
+
 /**
  * מחוזות, תחנות ואותות קריאה.
  *
@@ -15,7 +17,10 @@ export interface StationDef {
   dutyOfficer: string;
   shiftHead: string;
   patrols: string[];
+  /** שיטור עירוני בקידומת התחנה (למשל „סבא 301”) */
   municipal: string[];
+  /** שיטור עירוני בעיר אחרת שבתחום התחנה, בקידומת משלה (למשל „רעננה 301” בתחנת כפר סבא) */
+  cityUnits?: { prefix: string; city: string; nums: string[] }[];
   /** אות קריאה משוער (לא נמסר במפורש) – המדריך יכול לתקן */
   approx?: boolean;
 }
@@ -30,19 +35,34 @@ export interface DistrictDef {
   stations: StationDef[];
 }
 
-const std = (id: string, name: string, prefix: string, approx = true): StationDef => ({
-  id, name, prefix, dutyOfficer: '11', shiftHead: '401', patrols: ['402', '403', '404', '405'], municipal: ['301', '302'], ...(approx ? { approx } : {}),
+const MUNI = ['301', '302'];
+const std = (id: string, name: string, prefix: string, approx = true, extra: Partial<StationDef> = {}): StationDef => ({
+  id, name, prefix, dutyOfficer: '11', shiftHead: '401', patrols: ['402', '403', '404', '405'], municipal: [], ...(approx ? { approx } : {}), ...extra,
 });
+const city = (prefix: string, c: string) => ({ prefix, city: c, nums: MUNI });
 
 /**
- * כפר סבא ונתניה – לפי מה שנמסר. שאר התחנות: אותו מבנה (11 קצין תורן, 401 ראש משמרת, 402–405 ניידות,
- * 301–302 שיטור עירוני) וקידומת לפי שם העיר – הערכה הגיונית, מסומנת „משוער”, לתיקון המדריך.
+ * 7 מחוזות ושמות המשל״ט בקשר – לפי מה שנמסר. תחנות מחוז מרכז – לפי מה שנמסר (קידומות ושיטור עירוני).
+ * שאר התחנות: לפי מחקר ברשת; הקידומת לפי שם העיר – הערכה, מסומנת „משוער”, לתיקון המדריך.
+ * מבנה בכל תחנה: 11 קצין תורן, 401 ראש משמרת, 402–405 ניידות סיור; שיטור עירוני 301–302 לפי עיר.
  */
 export const DISTRICTS: DistrictDef[] = [
   { id: 'center', name: 'מחוז מרכז', center: 'משל״ט מרכז', centerCall: 'מרכז', stations: [
-    std('kfar-saba', 'תחנת כפר סבא', 'סבא', false), std('netanya', 'תחנת נתניה', 'נתניה', false),
-    std('raanana', 'תחנת רעננה', 'רעננה'), std('herzliya', 'תחנת הרצליה', 'הרצליה'), std('petah-tikva', 'תחנת פתח תקווה', 'פתח תקווה'),
-    std('rishon', 'תחנת ראשון לציון', 'ראשון'), std('rehovot', 'תחנת רחובות', 'רחובות'), std('ramla', 'תחנת רמלה', 'רמלה'), std('lod', 'תחנת לוד', 'לוד'),
+    std('kfar-saba', 'תחנת כפר סבא', 'סבא', false, { municipal: MUNI, cityUnits: [city('רעננה', 'רעננה')] }),
+    std('netanya', 'תחנת נתניה', 'נתניה', false),
+    std('petah-tikva', 'תחנת פתח תקווה', 'פ״ת', false),
+    std('rishon', 'תחנת ראשון לציון', 'ראשון', false),
+    std('rehovot', 'תחנת רחובות', 'רחובות', false),
+    std('yavne', 'תחנת יבנה', 'יבנה', false),
+    std('ramla', 'תחנת רמלה', 'רמלה', false),
+    std('lod', 'תחנת לוד', 'לוד', false),
+    std('masubim', 'תחנת מסובים', 'מסובים', false),
+    std('glilot', 'תחנת גלילות', 'גלילות', false),
+    std('rosh-haayin', 'תחנת ראש העין', 'עין', false),
+    std('kafr-qasim', 'תחנת כפר קאסם', 'קאסם', false),
+    std('tira', 'תחנת טירה', 'טירה', false),
+    std('tayibe', 'תחנת טייבה', 'טייבה', false, { cityUnits: [city('קל', 'קלנסווה')] }),
+    std('sdot', 'תחנת שדות', 'שדות', false, { cityUnits: [city('קדימה', 'קדימה־צורן'), city('כפר', 'כפר יונה')] }),
   ] },
   { id: 'tel-aviv', name: 'מחוז תל אביב', center: 'משל״ט אביב', centerCall: 'אביב', stations: [
     std('yarkon', 'מרחב ירקון', 'ירקון'), std('ayalon', 'מרחב איילון', 'איילון'), std('yafo', 'מרחב יפו', 'יפו'), std('dan', 'מרחב דן', 'דן'),
@@ -56,10 +76,16 @@ export const DISTRICTS: DistrictDef[] = [
   { id: 'north', name: 'מחוז צפון', center: 'משל״ט צפון', centerCall: 'צפון', stations: [
     std('nazareth', 'תחנת נצרת', 'נצרת'), std('tiberias', 'תחנת טבריה', 'טבריה'), std('karmiel', 'תחנת כרמיאל', 'כרמיאל'), std('akko', 'תחנת עכו', 'עכו'),
   ] },
-  { id: 'jerusalem', name: 'מחוז ירושלים', center: 'משל״ט ירושלים', centerCall: 'ירושלים', stations: [
+  { id: 'jerusalem', name: 'מחוז ירושלים', center: 'משל״ט ים', centerCall: 'ים', stations: [
     std('moriah', 'מרחב מוריה', 'מוריה'), std('shalem', 'מרחב שלם', 'שלם'), std('david', 'מרחב דוד', 'דוד'), std('beit-shemesh', 'תחנת בית שמש', 'בית שמש'),
   ] },
+  { id: 'judea-samaria', name: 'מחוז ש״י', center: 'משל״ט שי', centerCall: 'שי', stations: [
+    std('ariel', 'תחנת אריאל', 'אריאל'), std('binyamin', 'תחנת בנימין', 'בנימין'), std('hebron', 'תחנת חברון', 'חברון'),
+  ] },
 ];
+
+/** קידומות מקוצרות בכתב – ואיך הן נשמעות בקשר (למשחק ולכלי הקריינות) */
+export const PREFIX_SPEECH: Record<string, string> = prefixSpeech;
 
 export interface RadioSettings {
   /** 'fictional' = שמות בדויים מהתרחיש; 'station' = תחנה מוגדרת; 'custom' = תחנה שהוזנה ידנית */
@@ -70,6 +96,8 @@ export interface RadioSettings {
   customPrefix: string;
   /** אות הקריאה של הניידת שלך (מספר בלבד) */
   unit: string;
+  /** שיטור עירוני בעיר אחרת בתחום התחנה – הקידומת שלה (למשל „רעננה”) */
+  unitPrefix?: string;
 }
 
 export const DEFAULT_RADIO: RadioSettings = { mode: 'fictional', district: 'center', station: 'kfar-saba', customName: '', customPrefix: '', unit: '402' };
@@ -115,9 +143,10 @@ export function radioProfile(r: RadioSettings | undefined, fictionalUnit: string
       centerCall: 'מוקד אלון', unitNum: fictionalUnit, headNum: 'מוקד אלון', dutyNum: 'קצין תורן' };
   }
   const call = (n: string) => `${station.prefix} ${n}`;
+  const own = r.unitPrefix && station.cityUnits?.some((c) => c.prefix === r.unitPrefix) ? r.unitPrefix : station.prefix;
   return {
     real: true,
-    unit: call(r.unit || station.patrols[0]),
+    unit: `${own} ${r.unit || station.patrols[0]}`,
     head: call(station.shiftHead),
     center: district.center,
     dutyOfficer: call(station.dutyOfficer),
@@ -165,7 +194,14 @@ export function unitOptions(r: RadioSettings): { value: string; label: string }[
   return [
     ...station.patrols.map((n) => ({ value: n, label: `${station.prefix} ${n} – ניידת סיור` })),
     ...station.municipal.map((n) => ({ value: n, label: `${station.prefix} ${n} – שיטור עירוני` })),
+    ...(station.cityUnits ?? []).flatMap((c) => c.nums.map((n) => ({ value: `${c.prefix}|${n}`, label: `${c.prefix} ${n} – שיטור עירוני ${c.city}` }))),
   ];
+}
+
+/** בחירת יחידה מהרשימה: „402” או „רעננה|301” → מספר וקידומת */
+export function parseUnit(v: string): { unit: string; unitPrefix?: string } {
+  const [a, b] = v.split('|');
+  return b ? { unit: b, unitPrefix: a } : { unit: a, unitPrefix: undefined };
 }
 
 /** הפרופיל של משחק שכבר התחיל: לפי אותות הקריאה שנשמרו בהגדרות המשחק, אחרת לפי ההגדרות הנוכחיות */
@@ -211,8 +247,8 @@ export const CHATTER_BODIES: { body: string; who: ChatterLine['who'] }[] = [
 /** הניידות האחרות בתחנה (לא אתה): שלוש הראשונות משתתפות בתעבורת הרקע */
 export function otherUnits(p: RadioProfile): [string, string, string] {
   if (!p.real) return ['סייר 12', 'סייר 31', 'סייר 40'];
-  const prefix = p.unit.split(' ').slice(0, -1).join(' ');
-  const own = p.unit.split(' ').at(-1);
+  const prefix = p.head.split(' ').slice(0, -1).join(' ');
+  const own = p.unit.startsWith(`${prefix} `) ? p.unit.split(' ').at(-1) : undefined;
   const o = ['403', '404', '405', '302', '402'].filter((n) => n !== own).slice(0, 3).map((n) => `${prefix} ${n}`);
   return [o[0], o[1], o[2]];
 }

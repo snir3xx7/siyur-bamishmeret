@@ -12,8 +12,9 @@ export function Home() {
   const ticker = chatterLines(prof).map((l) => l.text);
   // כניסה ראשונה: קודם בוחרים דמות (לא בבדיקות אוטומטיות)
   useEffect(() => {
-    if (!settings.officerChosen && !navigator.webdriver) location.replace('#/officer');
-  }, [settings.officerChosen]);
+    // בכניסה: חובה לבחור דמות ותחנה (לא בבדיקות אוטומטיות)
+    if ((!settings.officerChosen || settings.station.mode === 'fictional') && !navigator.webdriver) location.replace('#/officer');
+  }, [settings.officerChosen, settings.station.mode]);
   const [saved, setSaved] = useState<SavedGame | null>(null);
   const [count, setCount] = useState<number | null>(null);
   const [heroOk, setHeroOk] = useState(true);
@@ -68,7 +69,9 @@ export function Home() {
         <div className="cine-content">
           <p className="cine-kicker">סימולטור אימון לשוטרי סיור</p>
           <h1 className="cine-title" data-text={SITE.name}>{SITE.name}</h1>
-          <div className="cine-rule"><span>📻 <bdi>{prof.unit}</bdi> · מוכן לקבל אירוע</span></div>
+          <div className="cine-rule">
+            <a href="#/officer" data-testid="home-callsign">📻 {prof.real ? <><bdi>{prof.unit}</bdi> · {prof.center} · החלפה</> : <>משל״ט מ402 · בחרו מחוז ותחנה</>}</a>
+          </div>
           <p className="cine-tag">{SITE.tagline}</p>
           <p className="cine-credit" data-testid="home-credit">{SITE.creditLine}</p>
           <a className="cine-officer" href="#/officer" data-testid="home-officer">
