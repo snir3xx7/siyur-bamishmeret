@@ -577,3 +577,18 @@ body.projector .no-projector { display: none !important; }
 .cine-officer small { color: #c9d3e2; font-size: .72rem; }
 .cine-officer em { font-style: normal; font-size: .8rem; color: var(--accent); }
 .cine-officer:hover, .cine-officer:focus-visible { border-color: var(--accent); }
+
+/* ===== מפת איכון ===== */
+.locate-map { margin: 0 0 12px; display: grid; gap: 6px; }
+.locate-map svg { width: 100%; max-width: 420px; height: auto; display: block; }
+.lm-ground { fill: #16202c; }
+.lm-street { stroke: #3a4a5e; stroke-width: 12; fill: none; stroke-linecap: round; }
+.lm-avenue { stroke: #44586f; stroke-width: 16; }
+.lm-name { direction: rtl; unicode-bidi: plaintext; fill: #c9d3e2; font-size: 10px; font-weight: 600; }
+.lm-park { fill: #1f4a35; stroke: #2f6b4d; }
+.lm-park-name { fill: #dff3e8; font-size: 10px; font-weight: 700; }
+.lm-poly { fill: #ff3b4a33; stroke: #ff5a66; stroke-width: 2; stroke-dasharray: 6 4; }
+.lm-dot { fill: #ff5a66; }
+@media (prefers-reduced-motion: no-preference) { .lm-dot { animation: lmPulse 1.4s ease-in-out infinite; transform-origin: 171px 111px; } }
+@keyframes lmPulse { 0%, 100% { r: 5; opacity: 1; } 50% { r: 11; opacity: .35; } }
+.locate-map figcaption { font-size: .85rem; color: var(--muted, #9aa8b8); }

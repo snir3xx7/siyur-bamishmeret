@@ -19,6 +19,7 @@ import { RadioChain, RadioCtx, useRadio } from '../ui/radio';
 import { RadioGuide } from '../ui/RadioGuide';
 import { FirstSceneGuide, FullscreenButton, RotateHint } from '../ui/DeviceHints';
 import { custodyStatus } from '../engine/custody';
+import { LocateMap } from '../ui/LocateMap';
 import { callTo, chatterLines, gameProfile, headRouteText, radioize, RADIO_TO_LABEL, type RadioProfile, type RadioTo } from '../config/stations';
 import { Modal, useAudioStatus } from '../ui/SettingsDialog';
 
@@ -598,6 +599,7 @@ export function Play() {
                 <span>📍 {sc.location.name}</span>
               </header>
               <RadioChain p={radio} incident={sc.dispatch.incident} />
+              {st.flags.located && sc.media.locateMap && <LocateMap {...sc.media.locateMap} />}
               <div aria-live="polite" ref={dialogRef}>
                 {radio.real && (
                   <p className="line dispatch relay">
@@ -701,7 +703,13 @@ export function Play() {
                 </button>
               </div>
               <div role="tabpanel" style={{ paddingTop: 10 }}>
-                {tab === 'info' && <FactsPanel sc={sc} st={st} />}
+                {st.flags.located && sc.media.locateMap && tab !== 'info' && <LocateMap {...sc.media.locateMap} />}
+                {tab === 'info' && (
+                  <>
+                    {st.flags.located && sc.media.locateMap && <LocateMap {...sc.media.locateMap} />}
+                    <FactsPanel sc={sc} st={st} />
+                  </>
+                )}
                 {tab === 'log' && <LogPanel sc={sc} st={st} />}
                 {tab === 'notes' && <Notebook st={st} onChange={(text) => dispatch({ type: 'NOTE', text })} />}
                 {tab === 'actions' && stage === 'scene' && (

@@ -1,6 +1,6 @@
 {
  "id": "missing-elder",
- "version": 5,
+ "version": 6,
  "title": "קשיש שלא חזר הביתה",
  "category": "נעדרים ואוכלוסיות פגיעות",
  "summary": "בת מודאגת מדווחת שאביה בן ה־82 יצא לטיול ערב ולא חזר. יש לאסוף תיאור ורקע רפואי, לחפש בשיטתיות, לגשת אליו ברגישות ולוודא טיפול רפואי.",
@@ -34,20 +34,24 @@
    "id": "bench",
    "label": "האב יושב על ספסל בפינת הגן",
    "set": {
-    "where": "bench"
+    "where": "bench",
+    "phoneWith": true
    },
    "vars": {
-    "foundPlace": "ספסל בפינת הגן ליד המגלשה"
+    "foundPlace": "ספסל בפינת הגן ליד המגלשה",
+    "phone_info": "הטלפון איתו – הוא דלוק ויש צלצול, אבל הוא לא עונה."
    }
   },
   {
    "id": "kiosk",
    "label": "בעל הקיוסק הושיב את האב לידו",
    "set": {
-    "where": "kiosk"
+    "where": "kiosk",
+    "phoneWith": false
    },
    "vars": {
-    "foundPlace": "ליד הקיוסק, אצל יוסי"
+    "foundPlace": "ליד הקיוסק, אצל יוסי",
+    "phone_info": "הטלפון שלו נשאר בבית. אין דרך ליצור איתו קשר."
    }
   }
  ],
@@ -75,7 +79,7 @@
   {
    "id": "d-phone",
    "kind": "dispatch",
-   "text": "הטלפון שלו נשאר בבית"
+   "text": "{{phone_info}}"
   },
   {
    "id": "c-orit-route",
@@ -310,7 +314,7 @@
      },
      {
       "speaker": "dispatch",
-      "text": "הטלפון שלו נשאר בבית. אין דרך ליצור איתו קשר."
+      "text": "{{phone_info}}"
      }
     ],
     "effects": {
@@ -319,6 +323,101 @@
      ]
     },
     "report": "בירור אפשרות קשר עם הנעדר"
+   },
+   {
+    "id": "f-locate",
+    "label": "לבקש מהמשל״ט איכון בחירום: בן 82, סוכרתי, לא נטל את הזריקה ומבולבל – יש סכנת חיים",
+    "when": {
+     "all": [
+      {
+       "fact": "d-medical"
+      },
+      {
+       "fact": "d-phone"
+      },
+      {
+       "not": {
+        "flag": "located"
+       }
+      }
+     ]
+    },
+    "lines": [
+     {
+      "speaker": "player",
+      "text": "מבקש איכון בחירום לטלפון של אברהם כהן. בן 82, סוכרתי, לא נטל את הזריקה ומבולבל – יש חשש לחייו."
+     }
+    ],
+    "branches": [
+     {
+      "when": {
+       "flag": "phoneWith"
+      },
+      "lines": [
+       {
+        "speaker": "dispatch",
+        "text": "האיכון אושר. המכשיר מאוכן באזור גן הברוש, ברדיוס של כשלושה רחובות: הדקל, הברוש והאלון. מעבירה אליך פוליגון לסריקה."
+       }
+      ],
+      "effects": {
+       "set": {
+        "located": true
+       }
+      }
+     },
+     {
+      "when": {
+       "not": {
+        "flag": "phoneWith"
+       }
+      },
+      "lines": [
+       {
+        "speaker": "dispatch",
+        "text": "הטלפון שלו נשאר בבית, ואיכון יראה רק את הבית. אין טעם באיכון. ממשיכים בסריקה ובהפצת התיאור."
+       }
+      ],
+      "effects": {
+       "set": {
+        "locateUseless": true
+       }
+      }
+     }
+    ],
+    "report": "איכון בחירום"
+   },
+   {
+    "id": "f-locate-weak",
+    "label": "לבקש מהמשל״ט איכון לטלפון של אברהם, ליתר ביטחון",
+    "when": {
+     "all": [
+      {
+       "not": {
+        "fact": "d-medical"
+       }
+      },
+      {
+       "not": {
+        "flag": "located"
+       }
+      }
+     ]
+    },
+    "lines": [
+     {
+      "speaker": "player",
+      "text": "מבקש איכון לטלפון של אברהם, ליתר ביטחון."
+     },
+     {
+      "speaker": "dispatch",
+      "text": "איכון בחירום מאושר רק כשיש סכנת חיים, ובתנאי שהטלפון אצלו, דלוק וזמין ולא עונה. מה המצב הרפואי שלו? יש לו טלפון?"
+     }
+    ],
+    "effects": {
+     "set": {
+      "locateWeak": true
+     }
+    }
    }
   ],
   "goLabel": "אישור קבלה ויציאה לגן הברוש"
@@ -1949,7 +2048,15 @@
    "c8b43083": "audio/voice/missing-elder/l-c8b43083.mp3",
    "9684b611": "audio/voice/missing-elder/l-9684b611.mp3",
    "52813c17": "audio/voice/missing-elder/l-52813c17.mp3",
+   "2723092e": "audio/voice/missing-elder/l-2723092e.mp3",
    "09100ba3": "audio/voice/missing-elder/l-09100ba3.mp3",
+   "58780720": "audio/voice/missing-elder/l-58780720.mp3",
+   "bd007c4e": "audio/voice/missing-elder/l-bd007c4e.mp3",
+   "c40def7e": "audio/voice/missing-elder/l-c40def7e.mp3",
+   "2e2ae7c1": "audio/voice/missing-elder/l-2e2ae7c1.mp3",
+   "62887b28": "audio/voice/missing-elder/l-62887b28.mp3",
+   "a4681fe2": "audio/voice/missing-elder/l-a4681fe2.mp3",
+   "52e3bb7d": "audio/voice/missing-elder/l-52e3bb7d.mp3",
    "79fb9888": "audio/voice/missing-elder/l-79fb9888.mp3",
    "f350458c": "audio/voice/missing-elder/l-f350458c.mp3",
    "9c7e0588": "audio/voice/missing-elder/l-9c7e0588.mp3",
@@ -2047,6 +2154,15 @@
    "2374e826": "audio/voice/missing-elder/l-2374e826.mp3",
    "3bcc191c": "audio/voice/missing-elder/l-3bcc191c.mp3",
    "f35f4a12": "audio/voice/missing-elder/l-f35f4a12.mp3"
+  },
+  "locateMap": {
+   "center": "גן הברוש",
+   "streets": [
+    "רחוב הדקל",
+    "רחוב הברוש",
+    "רחוב האלון",
+    "שדרות הזית"
+   ]
   }
  }
 }

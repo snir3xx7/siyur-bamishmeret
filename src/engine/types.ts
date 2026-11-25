@@ -273,6 +273,8 @@ export interface Scenario {
     /** קריינות לכל שורה: voiceKey(דובר, טקסט) → קובץ */
     voiceLines?: Record<string, string>;
     narrationMissing?: string;
+    /** מפת סריקה לאחר איכון בחירום (מוצגת כשהדגל located פעיל) */
+    locateMap?: { center: string; streets: string[] };
   };
 }
 
