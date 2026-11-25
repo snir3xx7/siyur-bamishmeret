@@ -80,7 +80,7 @@ test('אירוע מתפתח: החמרה באמצע הזירה, בדיקה חוז
   // אחרי חמש פעולות ראש המשמרת קורא בקשר: „אתה פנוי?”
   await expect(page.getByTestId('event-banner')).toContainText('קריאה בקשר');
   await expect(page.getByTestId('dialogue')).toContainText('אתה פנוי?');
-  await act(page, /מכשיר הקשר/, /שלילי/);
+  await act(page, /מכשיר הקשר/, /ממשיך לתחקר/);
   await expect(page.getByTestId('event-banner')).toHaveCount(0);
   await sendUpdate(page, [/החמיר – סחרחורת/]);
   await expect(page.getByTestId('radio-led')).toContainText('הודעת מוקד');
