@@ -194,12 +194,12 @@ export function procedureReport(st: GameState, sc?: Scenario): { items: ProcItem
   items.push({
     label: 'אישור קבלת האירוע',
     ok: ack === 'good',
-    detail: ack === 'good' ? 'אישרת בנוהל: למי, מי מדבר, מה עושים, „עבור”.' : ack === 'short' ? 'ענית רק „קיבלתי” – בלי לזהות את עצמך. ראש המשמרת לא יודע מי לקח את האירוע.' : 'לא אישרת קבלה בקשר לפני היציאה.',
+    detail: ack === 'good' ? 'אישרת בנוהל: למי, מי מדבר, מה עושים, „עבור”.' : ack === 'short' ? 'ענית רק „קיבלתי” – בלי לזהות את עצמך. המשל״ט לא יודע מי לקח את האירוע.' : 'לא אישרת קבלה בקשר לפני היציאה.',
   });
   items.push({
     label: 'דיווח הגעה למקום',
     ok: !!st.flags.rpArrive,
-    detail: st.flags.rpArrive ? 'דיווחת הגעה – ראש המשמרת יודע שאתה בזירה.' : 'לא דיווחת הגעה. דיווח קצר („הגעתי למקום”) מעדכן את כולם שהניידת בזירה.',
+    detail: st.flags.rpArrive ? 'דיווחת הגעה – המשל״ט יודע שאתה בזירה.' : 'לא דיווחת הגעה. דיווח קצר („הגעתי למקום”) מעדכן את כולם שהניידת בזירה.',
   });
   if (st.flags.route) {
     items.push({
@@ -255,20 +255,51 @@ export function procedureReport(st: GameState, sc?: Scenario): { items: ProcItem
 }
 
 /** משתני הקשר לטקסטים ({{unitCall}}, {{headCall}}) */
-export function radioVars(sc: Scenario, radio?: { unit: string; head: string; centerCall?: string }): Record<string, string> {
+export function radioVars(sc: Scenario, radio?: { unit: string; head: string; centerCall?: string; dutyNum?: string }): Record<string, string> {
   // הניידת עובדת מול המשל״ט: „מרכז מסבא 402, …” / „סבא 402 ממרכז, …”; תשובה: „סבא 402, קיבלתי.”
   if (!radio) {
     const u = sc.dispatch.unit;
-    return { unitCall: u, headCall: 'מוקד אלון', toCenter: `מוקד אלון מ${u}`, centerToMe: `${u} ממוקד אלון`, toHead: `מוקד אלון מ${u}`, headToMe: `${u} ממוקד אלון`, unitShort: u };
+    const backup = u === 'סייר 31' ? 'סייר 12' : 'סייר 31';
+    return { unitCall: u, headCall: 'מוקד אלון', toCenter: `מוקד אלון מ${u}`, centerToMe: `${u} ממוקד אלון`, toHead: `מוקד אלון מ${u}`, headToMe: `${u} ממוקד אלון`,
+      dutyToMe: `${u} מקצין תורן`, unitShort: u, backup };
   }
   const h = radio.head.split(' ').at(-1) ?? radio.head;
   const c = radio.centerCall ?? 'מרכז';
+  const prefix = radio.unit.split(' ').slice(0, -1).join(' ');
+  const own = radio.unit.split(' ').at(-1);
+  // ניידת התגבור: ניידת אחרת מאותה תחנה
+  const backup = `${prefix} ${own === '404' ? '403' : '404'}`;
   return { unitCall: radio.unit, headCall: radio.head, toCenter: `${c} מ${radio.unit}`, centerToMe: `${radio.unit} מ${c}`,
-    toHead: `${h} מ${radio.unit}`, headToMe: `${radio.unit} מ${h}`, unitShort: radio.unit };
+    toHead: `${h} מ${radio.unit}`, headToMe: `${radio.unit} מ${h}`, dutyToMe: `${radio.unit} מ${radio.dutyNum ?? '11'}`, unitShort: radio.unit, backup };
+}
+
+/** תשובות ראש המשמרת והקצין התורן לעדכון – לפי התפקיד שלהם, לא נוסח המשל״ט (משותף לכל התרחישים, גם לכלי הקריינות) */
+export const RECIPIENT_BODIES = {
+  head: {
+    backup: 'קיבלתי, שולח אליך ניידת נוספת.',
+    external: 'קיבלתי, מעביר למשל״ט. את הכוחות תזמין ישירות דרכה.',
+    status: 'קיבלתי. תמשיך לעדכן את המשל״ט.',
+  },
+  duty: {
+    external: 'קיבלתי. את הכוחות מזמינים דרך המשל״ט, ואותי תעדכן בכל שינוי.',
+    backup: 'קיבלתי. תגבור תבקש מ־401, ואותי תעדכן בסיום.',
+    status: 'קיבלתי. תעדכן אותי בכל שינוי ובסיום האירוע.',
+  },
+} as const;
+const BACKUP_RE = /ניידת נוספת|תגבור/;
+
+/** מה עונה 401 או 11 לעדכון, לפי תוכנו */
+export function recipientReply(sc: Scenario, elements: string[], to: 'head' | 'duty', vars: Record<string, string>): Line {
+  const els = elements.map((id) => sc.update.elements.find((e) => e.id === id)).filter((e): e is UpdateElement => !!e);
+  const backup = els.some((e) => BACKUP_RE.test(e.text));
+  const ext = els.some((e) => e.category === 'assistance' && EXTERNAL.test(e.text));
+  const b = RECIPIENT_BODIES[to];
+  const body = to === 'head' ? (backup ? b.backup : ext ? b.external : b.status) : (ext ? b.external : backup ? b.backup : b.status);
+  return { speaker: to, text: `${to === 'head' ? vars.headToMe : vars.dutyToMe}, ${body}` };
 }
 
 /** בקשות שעוברות דרך המשל״ט (שירותים חיצוניים וגורמים מוסמכים) */
-const EXTERNAL = /מד״א|כב״ה|כיבוי|גורם מוסמך|גרר|פקח|חברת הגז|קווי האוטובוס|הנהלת השוק|לאתר|להפיץ|ניידות/;
+export const EXTERNAL = /מד״א|כב״ה|כיבוי|גורם מוסמך|גרר|פקח|חברת הגז|קווי האוטובוס|הנהלת השוק|לאתר|להפיץ|ניידות/;
 
 export const isProcChoice = (id: string) => PROC_IDS.includes(id);
 

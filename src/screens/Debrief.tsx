@@ -86,7 +86,7 @@ export function DebriefScreen({ query }: { query: URLSearchParams }) {
     );
   }
   const { sc, st } = game;
-  const radio = gameProfile(st.config, settings.station, sc.dispatch.unit);
+  const radio = { ...gameProfile(st.config, settings.station, sc.dispatch.unit), fem: settings.officerVoice === 'f' };
   const proc = procedureReport(st, sc);
   const shiftPlan = loadShift();
   const nb = notebookCheck(sc, st);

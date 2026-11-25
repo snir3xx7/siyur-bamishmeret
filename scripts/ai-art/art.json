@@ -639,5 +639,43 @@
     20
    ]
   ]
+ },
+ "officers": {
+  "m": {
+   "seeds": [
+    301,
+    302,
+    303
+   ],
+   "pick": 302,
+   "prompt": "Heroic three-quarter body portrait, slightly low angle, of a fit Israeli man in his early thirties with short dark hair and light stubble, a patrol police officer in a plain dark navy-blue uniform shirt and tactical duty vest with a radio on the shoulder, confident calm expression, looking slightly past the viewer. Background: a dramatic Israeli city street at night after rain, a patrol car behind with its roof light bar glowing intense blue and red, colored light rim-lighting the figure, wet asphalt reflections, glowing street lamps, palm trees, bokeh, light haze, deep teal and magenta sky. Premium video game character select art, high detail face, sharp focus on the figure. No text, no letters, no numbers, no logos, no emblems, no badges, no patches, no insignia, no weapons visible.",
+   "clone": [
+    [
+     222,
+     494,
+     72,
+     72,
+     0,
+     0
+    ],
+    [
+     292,
+     500,
+     30,
+     56,
+     0,
+     0
+    ]
+   ]
+  },
+  "f": {
+   "seeds": [
+    311,
+    312,
+    313
+   ],
+   "pick": 312,
+   "prompt": "Heroic three-quarter body portrait, slightly low angle, of a fit Israeli woman in her early thirties with dark hair tied back in a low bun, a patrol police officer in a plain dark navy-blue uniform shirt and tactical duty vest with a radio on the shoulder, confident calm expression, looking slightly past the viewer. Background: a dramatic Israeli city street at night after rain, a patrol car behind with its roof light bar glowing intense blue and red, colored light rim-lighting the figure, wet asphalt reflections, glowing street lamps, palm trees, bokeh, light haze, deep teal and magenta sky. Premium video game character select art, high detail face, sharp focus on the figure. No text, no letters, no numbers, no logos, no emblems, no badges, no patches, no insignia, no weapons visible."
+  }
  }
 }

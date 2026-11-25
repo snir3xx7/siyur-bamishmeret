@@ -57,6 +57,15 @@ export function SettingsDialog() {
             <label className="radio-row">
               <input type="checkbox" checked={s.muted} onChange={(e) => set({ muted: e.target.checked })} /> השתקה כוללת
             </label>
+            <div role="radiogroup" aria-label="הקול שלך בזירה" className="radio-row">
+              <span>הקול שלך בזירה:</span>
+              {([['m', 'שוטר'], ['f', 'שוטרת']] as const).map(([v, l]) => (
+                <label key={v}>
+                  <input type="radio" name="officer-voice" checked={(s.officerVoice ?? 'm') === v} onChange={() => set({ officerVoice: v })} />
+                  <span>{l}</span>
+                </label>
+              ))}
+            </div>
             <label className="radio-row">
               <input type="checkbox" checked={s.textOnly} onChange={(e) => set({ textOnly: e.target.checked })} /> טקסט בלבד (ללא שמע כלל, כל ההודעות מוצגות כתמליל)
             </label>

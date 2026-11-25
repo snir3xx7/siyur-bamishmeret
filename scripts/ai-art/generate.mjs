@@ -223,4 +223,26 @@ if (cfg.hero && (want('hero') || (only && only.includes('hero')))) {
   const cleaned = await sharp(pickSrc).composite(patches).png().toBuffer();
   await sharp(cleaned).resize(1600, 900, { fit: 'cover' }).webp({ quality: 78 }).toFile(join(OUT, 'hero.webp'));
 }
+
+// בחירת דמות: שוטר ושוטרת – דיוקן לגובה, כמה זרעים לבחירה; הנבחר נשמר כ-public/img/officer-<m|f>.webp
+if (cfg.officers && (want('officers') || (only && only.includes('officers')))) {
+  for (const [id, o] of Object.entries(cfg.officers)) {
+    for (const seed of o.seeds) {
+      const src = join(SRC, `officer-${id}-${seed}.png`);
+      if (force || !existsSync(src)) {
+        console.log('דמות', id, seed);
+        writeFileSync(src, await render({ prompt: `${cfg.style} ${o.prompt}`, w: 832, h: 1216, seed }));
+      }
+    }
+    const src = join(SRC, `officer-${id}-${o.pick}.png`);
+    const patches = [];
+    for (const [x, y, w, h, dx, dy] of o.clone ?? []) {
+      // dx=dy=0: טשטוש במקום (שומר על צבע הזוהר, מעלים אותיות); אחרת – חותמת שכפול מאזור סמוך
+      const blur = dx === 0 && dy === 0 ? 9 : 0.8;
+      patches.push({ input: await sharp(src).extract({ left: x + dx, top: y + dy, width: w, height: h }).blur(blur).png().toBuffer(), left: x, top: y });
+    }
+    const cleaned = await sharp(src).composite(patches).png().toBuffer();
+    await sharp(cleaned).resize(720, 1052, { fit: 'cover' }).webp({ quality: 80 }).toFile(join(OUT, `officer-${id}.webp`));
+  }
+}
 console.log('הסתיים');

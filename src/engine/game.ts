@@ -1,4 +1,4 @@
-import { radioVars } from './procedure';
+import { radioVars, recipientReply } from './procedure';
 import { evalCond } from './conditions';
 import { mulberry32, pickWeighted } from './rng';
 import { fill } from './text';
@@ -278,7 +278,9 @@ export function reduce(sc: Scenario, prev: GameState, action: GameAction): GameS
       // ברירת מחדל: המשל״ט (הדובר 'dispatch'). לראש המשמרת או לקצין התורן – הם עונים בקולם
       const to = action.to ?? 'center';
       if (to !== 'center') {
-        for (let i = 0; i < lines.length; i++) if (lines[i].speaker === 'dispatch') lines[i] = { ...lines[i], speaker: to };
+        // ראש המשמרת והקצין התורן עונים לפי התפקיד שלהם; שורות שאינן של המשל״ט (דמויות, קריין) נשארות
+        const rest = lines.filter((l) => l.speaker !== 'dispatch');
+        lines.splice(0, lines.length, recipientReply(sc, elements, to, st.vars), ...rest);
       }
       st.updates.push({ n, turn: st.turn, t: simNow(prev), elements, note: action.note.slice(0, 280), ...(to !== 'center' ? { to } : {}) });
       st.simMinutes += 1;

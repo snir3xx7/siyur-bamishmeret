@@ -76,6 +76,8 @@ export const DEFAULT_RADIO: RadioSettings = { mode: 'fictional', district: 'cent
 
 export interface RadioProfile {
   real: boolean;
+  /** השחקנית בחרה „שוטרת” – פנייה בלשון נקבה */
+  fem?: boolean;
   /** אות הקריאה המלא של השחקן */
   unit: string;
   /** ראש המשמרת שמנתב את האירועים */

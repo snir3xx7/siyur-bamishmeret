@@ -6,7 +6,11 @@ import { assetUrl, loadCatalog, loadScenario } from '../ui/data';
 import { go } from '../ui/router';
 
 export function Home() {
-  const { startGame, toast } = useApp();
+  const { startGame, toast, settings } = useApp();
+  // כניסה ראשונה: קודם בוחרים דמות (לא בבדיקות אוטומטיות)
+  useEffect(() => {
+    if (!settings.officerChosen && !navigator.webdriver) location.replace('#/officer');
+  }, [settings.officerChosen]);
   const [saved, setSaved] = useState<SavedGame | null>(null);
   const [count, setCount] = useState<number | null>(null);
   const [heroOk, setHeroOk] = useState(true);
@@ -57,6 +61,14 @@ export function Home() {
           <h1>{SITE.name}</h1>
           <p className="cine-tag">{SITE.tagline}</p>
           <p className="cine-credit" data-testid="home-credit">{SITE.creditLine}</p>
+          <a className="cine-officer" href="#/officer" data-testid="home-officer">
+            <img src={assetUrl(`img/officer-${settings.officerVoice ?? 'm'}.webp`)} alt="" />
+            <span>
+              <small>הדמות שלך</small>
+              <b>{settings.officerVoice === 'f' ? 'שוטרת' : 'שוטר'}</b>
+            </span>
+            <em>החלפה</em>
+          </a>
           <p className="cine-lead">מקבלים משימה מהמוקד, אוספים מידע, מגיעים לזירה, משוחחים עם המעורבים, מעדכנים את המוקד – ומסיימים בתחקיר ובטיוטת דוח פעולה.</p>
           <div className="btn-row">
             <a className="btn primary big" href="#/catalog">

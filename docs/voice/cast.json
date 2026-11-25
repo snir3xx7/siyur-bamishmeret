@@ -43,6 +43,19 @@
    "voice": "adam",
    "radio": true,
    "speed": 1.05
+  },
+  "officer": {
+   "voice": "michael",
+   "speed": 1.0
+  },
+  "officerF": {
+   "voice": "shira",
+   "speed": 1.0
+  },
+  "playerF": {
+   "voice": "shira",
+   "radio": true,
+   "speed": 1.05
   }
  },
  "characters": {

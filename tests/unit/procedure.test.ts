@@ -70,11 +70,15 @@ describe('למי משדרים: משל״ט, ראש משמרת, קצין תורן'
     expect(procedureReport(toCenter, sc).items.find((i) => i.label === 'פנייה לגורם הנכון')!.ok).toBe(true);
     const toHead = reduce(sc, base, { type: 'SEND_UPDATE', elements: ['u-loc', 'u-ems'], note: '', turn: base.turn, to: 'head' });
     expect(toHead.lastLines[0].speaker).toBe('head');
+    // 401 לא מזמין מד״א – מעביר למשל״ט ומפנה אליו
+    expect(toHead.lastLines[0].text).toContain('מעביר למשל״ט');
     expect(procedureReport(toHead, sc).items.find((i) => i.label === 'פנייה לגורם הנכון')!.ok).toBe(false);
     // נפגע/מד״א → צריך לעדכן גם את הקצין התורן
     expect(procedureReport(toCenter, sc).items.find((i) => i.label === 'עדכון הקצין התורן')!.ok).toBe(false);
     const duty = reduce(sc, toCenter, { type: 'SEND_UPDATE', elements: ['u-loc', 'u-found'], note: '', turn: toCenter.turn, to: 'duty' });
     expect(duty.lastLines[0].speaker).toBe('duty');
+    expect(duty.lastLines[0].text).toContain('תעדכן אותי');
+    expect(duty.lastLines.some((l) => l.speaker === 'dispatch')).toBe(false);
     expect(procedureReport(duty, sc).items.find((i) => i.label === 'עדכון הקצין התורן')!.ok).toBe(true);
   });
 });

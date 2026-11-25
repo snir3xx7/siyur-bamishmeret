@@ -534,3 +534,46 @@ body.projector .no-projector { display: none !important; }
 .marker::after { content: ''; position: absolute; inset: -9px; border-radius: 50%; }
 /* כפתורים בגודל נוח למגע */
 @media (pointer: coarse) { .btn { min-height: 44px; } .btn.small { min-height: 40px; } }
+
+/* ===== בחירת דמות: שוטר / שוטרת ===== */
+.officer-select { position: relative; isolation: isolate; overflow: hidden; border-radius: 18px; padding: clamp(20px, 4vw, 44px) clamp(14px, 3vw, 36px) 28px; display: grid; gap: 22px;
+  background: radial-gradient(120% 80% at 50% 0%, #1a2b47 0%, #0b111a 55%, #070a10 100%); color: #f4f6fa; }
+.os-bg { position: absolute; inset: 0; z-index: -1; pointer-events: none; }
+.os-flash { position: absolute; top: -20%; width: 70%; height: 90%; filter: blur(70px); opacity: .55; }
+.os-flash.blue { inset-inline-start: -15%; background: radial-gradient(closest-side, #2f6bff, transparent); }
+.os-flash.red { inset-inline-end: -15%; background: radial-gradient(closest-side, #ff2d3b, transparent); }
+@media (prefers-reduced-motion: no-preference) {
+  .os-flash.blue { animation: osBlue 1.6s ease-in-out infinite; }
+  .os-flash.red { animation: osRed 1.6s ease-in-out infinite; }
+}
+@keyframes osBlue { 0%, 100% { opacity: .6; } 50% { opacity: .18; } }
+@keyframes osRed { 0%, 100% { opacity: .18; } 50% { opacity: .6; } }
+.os-head { text-align: center; display: grid; gap: 6px; justify-items: center; }
+.os-kicker { margin: 0; font-size: .82rem; letter-spacing: .08em; color: #9fb4d6; }
+.os-head h1 { margin: 0; font-size: clamp(1.7rem, 5vw, 2.8rem); text-wrap: balance; text-shadow: 0 2px 18px #000a; }
+.os-sub { margin: 0; max-width: 56ch; color: #c9d3e2; }
+.os-cards { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(10px, 2.4vw, 26px); max-width: 880px; width: 100%; margin: 0 auto; }
+.os-card { position: relative; appearance: none; border: 2px solid #ffffff22; border-radius: 18px; padding: 0; overflow: hidden; cursor: pointer; background: #0d1522; color: inherit; text-align: start;
+  display: grid; grid-template-rows: auto auto; box-shadow: 0 18px 40px #0008; transition: transform .25s ease, border-color .25s, box-shadow .25s; }
+.os-card:hover { transform: translateY(-4px); border-color: #ffffff55; }
+.os-card:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+.os-card.on { border-color: var(--accent); box-shadow: 0 0 0 1px var(--accent), 0 22px 60px #e8c15a33, 0 18px 40px #0009; transform: translateY(-6px); }
+.os-portrait { position: relative; display: block; width: 100%; height: clamp(260px, 58vh, 660px); overflow: hidden; }
+.os-portrait img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 15%; display: block; transition: transform .6s ease, filter .3s; filter: saturate(.85) brightness(.85); }
+.os-card.on .os-portrait img, .os-card:hover .os-portrait img { transform: scale(1.04); filter: none; }
+.os-shade { position: absolute; inset: 0; background: linear-gradient(180deg, transparent 55%, #0d1522 100%); }
+.os-fallback { display: grid; place-items: center; height: 100%; font-size: 5rem; background: #142033; }
+.os-label { display: grid; gap: 2px; padding: 12px 16px 16px; margin-top: -42px; position: relative; }
+.os-label b { font-size: clamp(1.3rem, 3.6vw, 1.9rem); }
+.os-label > span { color: #c9d3e2; font-size: .9rem; }
+.os-call { display: inline-flex; gap: 6px; align-items: center; margin-top: 6px; color: var(--accent) !important; font-weight: 700; }
+.os-check { position: absolute; top: 12px; inset-inline-end: 12px; width: 38px; height: 38px; border-radius: 50%; display: grid; place-items: center; background: var(--accent); color: var(--accent-ink); font-weight: 800; font-size: 1.2rem; box-shadow: 0 4px 14px #0008; }
+.os-actions { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
+@media (max-width: 520px) { .os-label > span:not(.os-call) { display: none; } .os-portrait { height: clamp(220px, 44vh, 420px); } }
+
+.cine-officer { display: inline-flex; align-items: center; gap: 10px; padding: 6px 14px 6px 8px; border-radius: 999px; background: #0008; border: 1px solid #ffffff33; color: #fff; text-decoration: none; margin-block: 6px; }
+.cine-officer img { width: 42px; height: 42px; border-radius: 50%; object-fit: cover; object-position: 50% 12%; border: 2px solid var(--accent); }
+.cine-officer span { display: grid; line-height: 1.15; }
+.cine-officer small { color: #c9d3e2; font-size: .72rem; }
+.cine-officer em { font-style: normal; font-size: .8rem; color: var(--accent); }
+.cine-officer:hover, .cine-officer:focus-visible { border-color: var(--accent); }

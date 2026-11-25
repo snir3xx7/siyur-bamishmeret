@@ -1,6 +1,6 @@
 {
  "id": "domestic-call",
- "version": 3,
+ "version": 4,
  "title": "קריאה על צעקות בבית – חשד לאלימות במשפחה",
  "category": "עבירות נגד אדם",
  "summary": "נערה בת 15 התקשרה בשקט: צעקות ורעש שבירה, ואמה בוכה. בפתח האב אומר ש„הכול בסדר”. יש לראות את כל בני הבית, להפריד, לשוחח עם האם בנפרד, להגן על הנערה, להעריך סיכון ולפעול – בלי „לעשות שלום”.",
@@ -716,7 +716,7 @@
      },
      {
       "speaker": "dispatch",
-      "text": "ניידת 23 בדרך, כשבע דקות."
+      "text": "{{backup}} בדרך, כשבע דקות."
      }
     ],
     "effects": {
@@ -1316,7 +1316,7 @@
    "lines": [
     {
      "speaker": "narrator",
-     "text": "ניידת 23 הגיעה. שוטרת נכנסת ונשארת ליד המטבח."
+     "text": "ניידת התגבור הגיעה. שוטרת נכנסת ונשארת ליד המטבח."
     }
    ],
    "effects": {
@@ -1426,7 +1426,7 @@
     "lines": [
      {
       "speaker": "dispatch",
-      "text": "מוקד: ניידת 23 בדרך."
+      "text": "מוקד: {{backup}} בדרך."
      }
     ],
     "effects": {
@@ -1714,8 +1714,10 @@
    "9e880dae": "audio/voice/domestic-call/l-9e880dae.mp3",
    "975458f6": "audio/voice/domestic-call/l-975458f6.mp3",
    "0e01a700": "audio/voice/domestic-call/l-0e01a700.mp3",
+   "c675d78a": "audio/voice/domestic-call/l-c675d78a.mp3",
    "5a7fa6a9": "audio/voice/domestic-call/l-5a7fa6a9.mp3",
    "e45f91ee": "audio/voice/domestic-call/l-e45f91ee.mp3",
+   "b1d2b164": "audio/voice/domestic-call/l-b1d2b164.mp3",
    "59ad1f64": "audio/voice/domestic-call/l-59ad1f64.mp3",
    "bc4ef680": "audio/voice/domestic-call/l-bc4ef680.mp3",
    "dec6b838": "audio/voice/domestic-call/l-dec6b838.mp3",
@@ -1723,41 +1725,65 @@
    "0bb6cb73": "audio/voice/domestic-call/l-0bb6cb73.mp3",
    "29b547b9": "audio/voice/domestic-call/l-29b547b9.mp3",
    "4fb70c0f": "audio/voice/domestic-call/l-4fb70c0f.mp3",
+   "047f6471": "audio/voice/domestic-call/l-047f6471.mp3",
    "419ee934": "audio/voice/domestic-call/l-419ee934.mp3",
    "d0e9b5df": "audio/voice/domestic-call/l-d0e9b5df.mp3",
-   "57f43af6": "audio/voice/domestic-call/l-57f43af6.mp3",
+   "f35ac661": "audio/voice/domestic-call/l-f35ac661.mp3",
+   "22285ed3": "audio/voice/domestic-call/l-22285ed3.mp3",
    "36b1f7d6": "audio/voice/domestic-call/l-36b1f7d6.mp3",
+   "83c8b010": "audio/voice/domestic-call/l-83c8b010.mp3",
    "93bf16c0": "audio/voice/domestic-call/l-93bf16c0.mp3",
+   "a5cf6d83": "audio/voice/domestic-call/l-a5cf6d83.mp3",
+   "03470607": "audio/voice/domestic-call/l-03470607.mp3",
    "ce411832": "audio/voice/domestic-call/l-ce411832.mp3",
    "8bb3f3ea": "audio/voice/domestic-call/l-8bb3f3ea.mp3",
+   "21963500": "audio/voice/domestic-call/l-21963500.mp3",
+   "2619551c": "audio/voice/domestic-call/l-2619551c.mp3",
    "23015bb8": "audio/voice/domestic-call/l-23015bb8.mp3",
    "f365cf8a": "audio/voice/domestic-call/l-f365cf8a.mp3",
+   "b92938b8": "audio/voice/domestic-call/l-b92938b8.mp3",
+   "39ca89fc": "audio/voice/domestic-call/l-39ca89fc.mp3",
    "e55646eb": "audio/voice/domestic-call/l-e55646eb.mp3",
+   "f5174a0e": "audio/voice/domestic-call/l-f5174a0e.mp3",
+   "0d87b082": "audio/voice/domestic-call/l-0d87b082.mp3",
    "265db0bb": "audio/voice/domestic-call/l-265db0bb.mp3",
+   "c15157d4": "audio/voice/domestic-call/l-c15157d4.mp3",
+   "88f9f8b0": "audio/voice/domestic-call/l-88f9f8b0.mp3",
    "19a47209": "audio/voice/domestic-call/l-19a47209.mp3",
    "3d7589d3": "audio/voice/domestic-call/l-3d7589d3.mp3",
    "30d61840": "audio/voice/domestic-call/l-30d61840.mp3",
    "43666708": "audio/voice/domestic-call/l-43666708.mp3",
    "f0a1ce4e": "audio/voice/domestic-call/l-f0a1ce4e.mp3",
    "8a2f0f2c": "audio/voice/domestic-call/l-8a2f0f2c.mp3",
+   "e0fb975b": "audio/voice/domestic-call/l-e0fb975b.mp3",
+   "6fb55437": "audio/voice/domestic-call/l-6fb55437.mp3",
+   "1598810a": "audio/voice/domestic-call/l-1598810a.mp3",
+   "6dfa960e": "audio/voice/domestic-call/l-6dfa960e.mp3",
    "5a1721e6": "audio/voice/domestic-call/l-5a1721e6.mp3",
    "484ac99f": "audio/voice/domestic-call/l-484ac99f.mp3",
    "3d5e47e3": "audio/voice/domestic-call/l-3d5e47e3.mp3",
+   "a1a87bba": "audio/voice/domestic-call/l-a1a87bba.mp3",
+   "97e90e96": "audio/voice/domestic-call/l-97e90e96.mp3",
    "715b7240": "audio/voice/domestic-call/l-715b7240.mp3",
+   "d2722de4": "audio/voice/domestic-call/l-d2722de4.mp3",
+   "f471f190": "audio/voice/domestic-call/l-f471f190.mp3",
    "5c28e3c7": "audio/voice/domestic-call/l-5c28e3c7.mp3",
    "eb03ec08": "audio/voice/domestic-call/l-eb03ec08.mp3",
+   "cda9652e": "audio/voice/domestic-call/l-cda9652e.mp3",
    "ec463fb2": "audio/voice/domestic-call/l-ec463fb2.mp3",
    "6c920960": "audio/voice/domestic-call/l-6c920960.mp3",
+   "9ef192d6": "audio/voice/domestic-call/l-9ef192d6.mp3",
    "a7433af7": "audio/voice/domestic-call/l-a7433af7.mp3",
    "1734ec94": "audio/voice/domestic-call/l-1734ec94.mp3",
+   "2bec06ca": "audio/voice/domestic-call/l-2bec06ca.mp3",
    "64c2f217": "audio/voice/domestic-call/l-64c2f217.mp3",
    "bf8d7099": "audio/voice/domestic-call/l-bf8d7099.mp3",
    "da3f073c": "audio/voice/domestic-call/l-da3f073c.mp3",
-   "f86b4099": "audio/voice/domestic-call/l-f86b4099.mp3",
+   "58edc2da": "audio/voice/domestic-call/l-58edc2da.mp3",
    "c814ac74": "audio/voice/domestic-call/l-c814ac74.mp3",
-   "3f4dde5f": "audio/voice/domestic-call/l-3f4dde5f.mp3",
-   "25431cc7": "audio/voice/domestic-call/l-25431cc7.mp3",
-   "cf483c1d": "audio/voice/domestic-call/l-cf483c1d.mp3",
+   "d09446c9": "audio/voice/domestic-call/l-d09446c9.mp3",
+   "14a24ac1": "audio/voice/domestic-call/l-14a24ac1.mp3",
+   "4c960e73": "audio/voice/domestic-call/l-4c960e73.mp3",
    "222e3847": "audio/voice/domestic-call/l-222e3847.mp3",
    "76374fff": "audio/voice/domestic-call/l-76374fff.mp3",
    "4a159aa5": "audio/voice/domestic-call/l-4a159aa5.mp3",
@@ -1768,14 +1794,23 @@
    "74d70b6d": "audio/voice/domestic-call/l-74d70b6d.mp3",
    "170f5e23": "audio/voice/domestic-call/l-170f5e23.mp3",
    "e3d7e961": "audio/voice/domestic-call/l-e3d7e961.mp3",
+   "58e8ce23": "audio/voice/domestic-call/l-58e8ce23.mp3",
    "9c07163b": "audio/voice/domestic-call/l-9c07163b.mp3",
+   "d0b2d039": "audio/voice/domestic-call/l-d0b2d039.mp3",
    "ae5e06b7": "audio/voice/domestic-call/l-ae5e06b7.mp3",
+   "56ac545d": "audio/voice/domestic-call/l-56ac545d.mp3",
    "44ee31a8": "audio/voice/domestic-call/l-44ee31a8.mp3",
+   "086828ca": "audio/voice/domestic-call/l-086828ca.mp3",
    "09ff2ed7": "audio/voice/domestic-call/l-09ff2ed7.mp3",
+   "7396c055": "audio/voice/domestic-call/l-7396c055.mp3",
    "c9c84747": "audio/voice/domestic-call/l-c9c84747.mp3",
+   "0cb9ce6d": "audio/voice/domestic-call/l-0cb9ce6d.mp3",
    "a14fc80a": "audio/voice/domestic-call/l-a14fc80a.mp3",
+   "faa4e3ac": "audio/voice/domestic-call/l-faa4e3ac.mp3",
    "77ec350c": "audio/voice/domestic-call/l-77ec350c.mp3",
-   "3a2cd3bc": "audio/voice/domestic-call/l-3a2cd3bc.mp3"
+   "da8a091a": "audio/voice/domestic-call/l-da8a091a.mp3",
+   "3a2cd3bc": "audio/voice/domestic-call/l-3a2cd3bc.mp3",
+   "a93825da": "audio/voice/domestic-call/l-a93825da.mp3"
   }
  }
 }

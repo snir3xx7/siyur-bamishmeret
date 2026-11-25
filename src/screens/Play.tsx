@@ -22,7 +22,7 @@ import { callTo, chatterLines, gameProfile, headRouteText, radioize, RADIO_TO_LA
 import { Modal, useAudioStatus } from '../ui/SettingsDialog';
 
 export function speakerName(sc: Scenario, id: string, p?: RadioProfile): string {
-  if (id === 'player') return p?.real ? `אתה (${p.unit})` : 'אתה (הסייר)';
+  if (id === 'player') return p?.fem ? (p?.real ? `את (${p.unit})` : 'את (הסיירת)') : p?.real ? `אתה (${p.unit})` : 'אתה (הסייר)';
   if (id === 'dispatch' || id === 'center') return p?.real ? p.center : 'מוקד';
   if (id === 'head') return p?.real ? p.head : 'ראש המשמרת';
   if (id === 'duty') return p?.dutyOfficer ?? 'קצין תורן';
@@ -379,12 +379,20 @@ export function Play() {
     if (ev?.sfx) void audio.play(ev.sfx);
     // קריינות לכל שורה (BlueTTS): אם לכל השורות המדוברות יש קטע – משמיעים אותם בקולות הדמויות
     const vl = sc.media.voiceLines ?? {};
-    const clip = (sp: string, text: string) => vl[voiceKey(sp, text)];
-    const addr = (sp: string, text: string) => radioIdx?.[voiceKey(sp, text)];
+    const clip = (sp: string, text: string) => (sp === 'player' ? pl(text) : vl[voiceKey(sp, text)]);
+    const addr = (sp: string, text: string) => (sp === 'player' && settings.officerVoice === 'f' && radioIdx?.[voiceKey('playerF', text)]) || radioIdx?.[voiceKey(sp, text)];
     const isRadio = (sp: string) => ['dispatch', 'center', 'duty', 'head', 'player'].includes(sp);
     const prof = gameProfile(st.config, settings.station, sc.dispatch.unit);
-    // שורות השחקן נשמעות רק כשהן שידור בקשר שהוקלט (נוהל קשר)
-    const spoken = st.lastLines.filter((l) => l.speaker !== 'player' || clip('player', l.text) || clip('player', l.text.slice(l.text.indexOf(', ') + 2)));
+    // שורות השחקן: שידור בקשר (קול השחקן עם אפקט קשר) או דיבור בזירה (קול השוטר/השוטרת, בלי אפקט)
+    const off = settings.officerVoice === 'f' ? 'officerF' : 'officer';
+    const fem = settings.officerVoice === 'f';
+    // שוטרת: השידורים שלך בקשר בקול נשי (playerF), אם הוקלטו
+    const pl = (text: string) => (fem && vl[voiceKey('playerF', text)] ? vl[voiceKey('playerF', text)] : vl[voiceKey('player', text)]);
+    const spoken = st.lastLines
+      .map((l) => (l.speaker === 'player' && !clip('player', l.text) && clip(off, l.text) ? { ...l, speaker: off } : l))
+      .filter((l) => l.speaker !== 'player' || clip('player', l.text) || clip('player', l.text.slice(l.text.indexOf(', ') + 2)))
+      // הוראות במה בלבד („(שותקת, מורידה את העיניים)”) – אין מה להשמיע, ולא חוסמות את שאר השורות
+      .filter((l) => /[א-ת]/.test(l.text.replace(/\([^)]*\)/g, '').replace(/\[[^\]]*\]/g, '').replace(/^[^:]{0,20}:\s*/, '')));
     const items: { file: string; radio: boolean; who: string }[] = [];
     // פתיחת אירוע בתחנה: ראש המשמרת מבקש מהמשל״ט „מרכז מסבא 401, תעבירי את האירוע ל־402”, ואז המשל״ט (קול נשי) מעדכן אותך
     if (st.turn === 0 && prof.real) {
@@ -414,6 +422,13 @@ export function Play() {
           if (a) items.push({ file: a, radio: true, who });
         }
         items.push({ file: full, radio: isRadio(who), who });
+        continue;
+      }
+      // שורה שפותחת באות הקריאה של ניידת התגבור: „סבא 404 בדרך אליכם.” → אות קריאה + גוף ההודעה
+      const bk = st.vars.backup;
+      const t0 = l.text.replace(/^מוקד:\s*/, '');
+      if (bk && t0.startsWith(`${bk} `) && clip(who, t0.slice(bk.length + 1)) && addr(who, bk)) {
+        items.push({ file: addr(who, bk)!, radio: true, who }, { file: clip(who, t0.slice(bk.length + 1))!, radio: isRadio(who), who });
         continue;
       }
       // שורה עם פתיחה בנוהל: „401 מסבא 402, …” → פתיחה (לפי תחנה) + גוף ההודעה
@@ -495,7 +510,7 @@ export function Play() {
     );
 
   const sel = selected && hotspots.some((h) => h.id === selected) ? selected : null;
-  const radio = gameProfile(st.config, settings.station, sc.dispatch.unit);
+  const radio = { ...gameProfile(st.config, settings.station, sc.dispatch.unit), fem: settings.officerVoice === 'f' };
 
   return (
     <RadioCtx.Provider value={radio}>

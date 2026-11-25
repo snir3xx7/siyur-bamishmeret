@@ -1,6 +1,6 @@
 {
  "id": "burglary",
- "version": 3,
+ "version": 4,
  "title": "פריצה לדירה",
  "category": "עבירות רכוש",
  "summary": "דיירת חזרה הביתה ומצאה את הדלת פרוצה. יש לשמור על הזירה בלי לגעת, למנוע כניסה, לא להיכנס לבד, לגבות גרסאות מהדיירת ומהשכן, לאתר מצלמות ולהזמין מז״פ.",
@@ -669,7 +669,7 @@
      },
      {
       "speaker": "dispatch",
-      "text": "ניידת 14 בדרך, כעשר דקות."
+      "text": "{{backup}} בדרך, כעשר דקות."
      }
     ],
     "effects": {
@@ -1143,7 +1143,7 @@
    "lines": [
     {
      "speaker": "narrator",
-     "text": "ניידת 14 עוצרת למטה. שוטר עולה במדרגות ומצטרף אליך."
+     "text": "ניידת התגבור עוצרת למטה. שוטר עולה במדרגות ומצטרף אליך."
     }
    ],
    "effects": {
@@ -1283,7 +1283,7 @@
     "lines": [
      {
       "speaker": "dispatch",
-      "text": "מוקד: ניידת 14 בדרך אליכם."
+      "text": "מוקד: {{backup}} בדרך אליכם."
      }
     ],
     "effects": {
@@ -1539,8 +1539,10 @@
    "757679e0": "audio/voice/burglary/l-757679e0.mp3",
    "9ed1f317": "audio/voice/burglary/l-9ed1f317.mp3",
    "0e01a700": "audio/voice/burglary/l-0e01a700.mp3",
+   "c675d78a": "audio/voice/burglary/l-c675d78a.mp3",
    "5a7fa6a9": "audio/voice/burglary/l-5a7fa6a9.mp3",
    "e45f91ee": "audio/voice/burglary/l-e45f91ee.mp3",
+   "b1d2b164": "audio/voice/burglary/l-b1d2b164.mp3",
    "59ad1f64": "audio/voice/burglary/l-59ad1f64.mp3",
    "bc4ef680": "audio/voice/burglary/l-bc4ef680.mp3",
    "dec6b838": "audio/voice/burglary/l-dec6b838.mp3",
@@ -1548,41 +1550,59 @@
    "0bb6cb73": "audio/voice/burglary/l-0bb6cb73.mp3",
    "29b547b9": "audio/voice/burglary/l-29b547b9.mp3",
    "5f936a76": "audio/voice/burglary/l-5f936a76.mp3",
+   "8badcaac": "audio/voice/burglary/l-8badcaac.mp3",
    "7b58190e": "audio/voice/burglary/l-7b58190e.mp3",
    "7dfbe444": "audio/voice/burglary/l-7dfbe444.mp3",
+   "84e81e4e": "audio/voice/burglary/l-84e81e4e.mp3",
    "df977769": "audio/voice/burglary/l-df977769.mp3",
    "89690a01": "audio/voice/burglary/l-89690a01.mp3",
-   "6f3abff3": "audio/voice/burglary/l-6f3abff3.mp3",
+   "65ba163b": "audio/voice/burglary/l-65ba163b.mp3",
+   "fa7360c8": "audio/voice/burglary/l-fa7360c8.mp3",
    "7c34abc3": "audio/voice/burglary/l-7c34abc3.mp3",
+   "4540a6d4": "audio/voice/burglary/l-4540a6d4.mp3",
+   "e203d928": "audio/voice/burglary/l-e203d928.mp3",
    "07db620c": "audio/voice/burglary/l-07db620c.mp3",
    "b8f07973": "audio/voice/burglary/l-b8f07973.mp3",
    "733e88ba": "audio/voice/burglary/l-733e88ba.mp3",
    "ed3dad02": "audio/voice/burglary/l-ed3dad02.mp3",
+   "b96a1697": "audio/voice/burglary/l-b96a1697.mp3",
+   "33651663": "audio/voice/burglary/l-33651663.mp3",
    "22eb3705": "audio/voice/burglary/l-22eb3705.mp3",
    "95c9cfda": "audio/voice/burglary/l-95c9cfda.mp3",
+   "27cceaea": "audio/voice/burglary/l-27cceaea.mp3",
+   "fbb9a4f6": "audio/voice/burglary/l-fbb9a4f6.mp3",
    "ab52b455": "audio/voice/burglary/l-ab52b455.mp3",
+   "791c728a": "audio/voice/burglary/l-791c728a.mp3",
+   "d80252c6": "audio/voice/burglary/l-d80252c6.mp3",
    "68002460": "audio/voice/burglary/l-68002460.mp3",
+   "1ac8c703": "audio/voice/burglary/l-1ac8c703.mp3",
+   "5d160587": "audio/voice/burglary/l-5d160587.mp3",
    "6637e6a7": "audio/voice/burglary/l-6637e6a7.mp3",
    "56d0842f": "audio/voice/burglary/l-56d0842f.mp3",
    "19086cce": "audio/voice/burglary/l-19086cce.mp3",
    "0bb7656c": "audio/voice/burglary/l-0bb7656c.mp3",
+   "3beadaf5": "audio/voice/burglary/l-3beadaf5.mp3",
+   "cb3db1c1": "audio/voice/burglary/l-cb3db1c1.mp3",
    "a31b79bb": "audio/voice/burglary/l-a31b79bb.mp3",
    "eb03ec08": "audio/voice/burglary/l-eb03ec08.mp3",
+   "cda9652e": "audio/voice/burglary/l-cda9652e.mp3",
    "ec463fb2": "audio/voice/burglary/l-ec463fb2.mp3",
    "6c920960": "audio/voice/burglary/l-6c920960.mp3",
+   "9ef192d6": "audio/voice/burglary/l-9ef192d6.mp3",
    "a7433af7": "audio/voice/burglary/l-a7433af7.mp3",
    "1734ec94": "audio/voice/burglary/l-1734ec94.mp3",
+   "2bec06ca": "audio/voice/burglary/l-2bec06ca.mp3",
    "64c2f217": "audio/voice/burglary/l-64c2f217.mp3",
    "ebbc8af8": "audio/voice/burglary/l-ebbc8af8.mp3",
    "4e9bfee4": "audio/voice/burglary/l-4e9bfee4.mp3",
-   "149dddc7": "audio/voice/burglary/l-149dddc7.mp3",
+   "261def54": "audio/voice/burglary/l-261def54.mp3",
    "c814ac74": "audio/voice/burglary/l-c814ac74.mp3",
    "e687981b": "audio/voice/burglary/l-e687981b.mp3",
    "638896d3": "audio/voice/burglary/l-638896d3.mp3",
    "3c9e7f01": "audio/voice/burglary/l-3c9e7f01.mp3",
-   "e172c581": "audio/voice/burglary/l-e172c581.mp3",
-   "ad4fb599": "audio/voice/burglary/l-ad4fb599.mp3",
-   "a7acd05b": "audio/voice/burglary/l-a7acd05b.mp3",
+   "c046a8b9": "audio/voice/burglary/l-c046a8b9.mp3",
+   "c1c87301": "audio/voice/burglary/l-c1c87301.mp3",
+   "2c65da2f": "audio/voice/burglary/l-2c65da2f.mp3",
    "54e8ec4a": "audio/voice/burglary/l-54e8ec4a.mp3",
    "ff934812": "audio/voice/burglary/l-ff934812.mp3",
    "80c9a350": "audio/voice/burglary/l-80c9a350.mp3",
@@ -1590,15 +1610,25 @@
    "74d70b6d": "audio/voice/burglary/l-74d70b6d.mp3",
    "170f5e23": "audio/voice/burglary/l-170f5e23.mp3",
    "e2b591c4": "audio/voice/burglary/l-e2b591c4.mp3",
+   "7c6457fa": "audio/voice/burglary/l-7c6457fa.mp3",
    "aa51b8cb": "audio/voice/burglary/l-aa51b8cb.mp3",
+   "d51c346d": "audio/voice/burglary/l-d51c346d.mp3",
    "64dd38cb": "audio/voice/burglary/l-64dd38cb.mp3",
+   "b111fef9": "audio/voice/burglary/l-b111fef9.mp3",
    "11e9b13c": "audio/voice/burglary/l-11e9b13c.mp3",
+   "4544707e": "audio/voice/burglary/l-4544707e.mp3",
    "8fd15bdb": "audio/voice/burglary/l-8fd15bdb.mp3",
+   "416e585d": "audio/voice/burglary/l-416e585d.mp3",
    "34a5cad1": "audio/voice/burglary/l-34a5cad1.mp3",
+   "8e7efc27": "audio/voice/burglary/l-8e7efc27.mp3",
    "3b3bd087": "audio/voice/burglary/l-3b3bd087.mp3",
+   "58e72169": "audio/voice/burglary/l-58e72169.mp3",
    "b29c5b3e": "audio/voice/burglary/l-b29c5b3e.mp3",
+   "e8f04614": "audio/voice/burglary/l-e8f04614.mp3",
    "54fb62ff": "audio/voice/burglary/l-54fb62ff.mp3",
-   "3bcc191c": "audio/voice/burglary/l-3bcc191c.mp3"
+   "0d43738d": "audio/voice/burglary/l-0d43738d.mp3",
+   "3bcc191c": "audio/voice/burglary/l-3bcc191c.mp3",
+   "f35f4a12": "audio/voice/burglary/l-f35f4a12.mp3"
   }
  }
 }

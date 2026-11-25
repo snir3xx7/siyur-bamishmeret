@@ -15,6 +15,10 @@ export interface Settings {
   showHotspotLabels: boolean;
   /** תחנה ואות קריאה (ברירת מחדל: שמות בדויים) */
   station: RadioSettings;
+  /** הקול של השוטר בזירה (השחקן): גבר או אישה */
+  officerVoice?: 'm' | 'f';
+  /** בחר כבר דמות (מסך הבחירה לא מוצג שוב אוטומטית) */
+  officerChosen?: boolean;
   /** גרסת כיול השמע (להעברת הגדרות ישנות לברירות המחדל החדשות) */
   audioV?: number;
 }
@@ -33,6 +37,7 @@ export const DEFAULT_SETTINGS: Settings = {
   textSize: 'normal',
   showHotspotLabels: true,
   station: DEFAULT_RADIO,
+  officerVoice: 'm',
   audioV: 2,
 };
 
