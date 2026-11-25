@@ -9,6 +9,7 @@
  */
 import { addCustody } from './custody';
 import { addCamAnnounce } from './bodycam';
+import { addRecords } from './records';
 import type { Choice, GameState, Hotspot, Line, Scenario, ScenarioEvent, UpdateElement } from './types';
 
 const augmented = new WeakMap<Scenario, Scenario>();
@@ -175,7 +176,7 @@ export function withProcedure(sc: Scenario): Scenario {
   const out: Scenario = {
     ...sc,
     dispatch: { ...sc.dispatch, followUps: [...followUps, ...sc.dispatch.followUps.map((c) => radioChoice(c, true))] },
-    hotspots: addCamAnnounce(sc, addCustody(sc, hotspots)).map((h) => ({ ...h, choices: h.choices.map((c) => radioChoice(c, false)) })),
+    hotspots: addRecords(sc, addCamAnnounce(sc, addCustody(sc, hotspots))).map((h) => ({ ...h, choices: h.choices.map((c) => radioChoice(c, false)) })),
     events: [...(sc.events ?? []), busy],
     update: { ...sc.update, categories: { procedure: 'נוהל קשר', ...sc.update.categories }, elements: [...elements, ...sc.update.elements] },
   };

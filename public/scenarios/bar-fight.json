@@ -1,6 +1,6 @@
 {
  "id": "bar-fight",
- "version": 7,
+ "version": 8,
  "title": "אחרי קטטה מחוץ לבר",
  "category": "אלימות ותקיפה – טיפול לאחר האירוע",
  "summary": "מגיעים לבר שכונתי דקות אחרי קטטה: צעיר עם חתך במצח, חבר נסער שרוצה „לסגור חשבון”, והחשוד עדיין במקום. יש להפריד, לדאוג לטיפול רפואי, לדרוש הזדהות ולעכב בהסבר ובבסיס עובדתי, לשמוע את כל הגרסאות ולשמור ראיות.",
@@ -2086,6 +2086,10 @@
    "c2de2e35": "audio/voice/bar-fight/l-c2de2e35.mp3",
    "c4d640f1": "audio/voice/bar-fight/l-c4d640f1.mp3",
    "7bf40aa0": "audio/voice/bar-fight/l-7bf40aa0.mp3",
+   "e571acd9": "audio/voice/bar-fight/l-e571acd9.mp3",
+   "62dbaf9d": "audio/voice/bar-fight/l-62dbaf9d.mp3",
+   "31f27477": "audio/voice/bar-fight/l-31f27477.mp3",
+   "cdc45853": "audio/voice/bar-fight/l-cdc45853.mp3",
    "7b5fc481": "audio/voice/bar-fight/l-7b5fc481.mp3",
    "e054fcca": "audio/voice/bar-fight/l-e054fcca.mp3",
    "fdac6fbe": "audio/voice/bar-fight/l-fdac6fbe.mp3",
@@ -2165,6 +2169,16 @@
    "risk": {
     "flag": "dorAngry"
    }
+  }
+ ],
+ "records": [
+  {
+   "char": "dor",
+   "hotspot": "h-dor",
+   "after": {
+    "flag": "identified"
+   },
+   "text": "דור אלמוג, בן 24. לא מבוקש. רישום קודם אחד – תגרה לפני שנתיים."
   }
  ]
 }

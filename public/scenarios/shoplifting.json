@@ -1,6 +1,6 @@
 {
  "id": "shoplifting",
- "version": 4,
+ "version": 5,
  "title": "חשד לגניבה ממינימרקט",
  "category": "עבירות רכוש",
  "summary": "מאבטח במינימרקט עיכב נער בן 17 בחשד שגנב, ובעלת החנות כועסת ורוצה „ללמד אותו לקח”. יש לאמת לפני שמאשימים, להרחיק מעיני הלקוחות, לזהות, לערב הורה של קטין ולמנוע פרסום תמונתו.",
@@ -1469,6 +1469,10 @@
    "e281e7e8": "audio/voice/shoplifting/l-e281e7e8.mp3",
    "831eb5d4": "audio/voice/shoplifting/l-831eb5d4.mp3",
    "608d2f70": "audio/voice/shoplifting/l-608d2f70.mp3",
+   "e571acd9": "audio/voice/shoplifting/l-e571acd9.mp3",
+   "dbc59fef": "audio/voice/shoplifting/l-dbc59fef.mp3",
+   "37f810ed": "audio/voice/shoplifting/l-37f810ed.mp3",
+   "348e9815": "audio/voice/shoplifting/l-348e9815.mp3",
    "1f45764a": "audio/voice/shoplifting/l-1f45764a.mp3",
    "eb03ec08": "audio/voice/shoplifting/l-eb03ec08.mp3",
    "cda9652e": "audio/voice/shoplifting/l-cda9652e.mp3",
@@ -1503,5 +1507,15 @@
    "dae3614f": "audio/voice/shoplifting/l-dae3614f.mp3",
    "3ddc3279": "audio/voice/shoplifting/l-3ddc3279.mp3"
   }
- }
+ },
+ "records": [
+  {
+   "char": "itay",
+   "hotspot": "h-itay",
+   "after": {
+    "flag": "identified"
+   },
+   "text": "איתי כהן, בן 15. אין רישום. כתובת ההורים: רחוב הרימון 12 – אפשר ליצור קשר עם האם."
+  }
+ ]
 }

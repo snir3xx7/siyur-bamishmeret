@@ -214,6 +214,8 @@ export interface SceneDef {
 export interface Scenario {
   /** חשודים: שכבת עיכוב/מעצר (engine/custody.ts) */
   custody?: import('./custody').CustodyDef[];
+  /** בדיקת פרטים במערכת (engine/records.ts) */
+  records?: import('./records').RecordDef[];
   /** האירוע כולל כניסה לבית (רשות היחיד) – חובה להודיע על צילום במצלמת הגוף */
   privateHome?: boolean;
   id: string;

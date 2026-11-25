@@ -20,6 +20,7 @@ import { RadioGuide } from '../ui/RadioGuide';
 import { FirstSceneGuide, FullscreenButton, RotateHint } from '../ui/DeviceHints';
 import { custodyStatus } from '../engine/custody';
 import { LocateMap } from '../ui/LocateMap';
+import { feminize } from '../config/feminize';
 import { CamLed } from '../ui/CamLed';
 import { callTo, chatterLines, gameProfile, headRouteText, radioize, RADIO_TO_LABEL, type RadioProfile, type RadioTo } from '../config/stations';
 import { Modal, useAudioStatus } from '../ui/SettingsDialog';
@@ -39,7 +40,7 @@ export function Lines({ sc, lines }: { sc: Scenario; lines: Line[] }) {
     <>
       {lines.map((l, i) => {
         const named = speakerName(sc, l.speaker, p);
-        const text = radioize(l.text, p);
+        const text = l.speaker === 'player' && p.fem ? feminize(radioize(l.text, p)) : radioize(l.text, p);
         // אם הטקסט כבר פותח בשם הדובר (למשל „מוקד: …”) – לא מכפילים
         const who = named && text.startsWith(`${named}:`) ? '' : named;
         return (
@@ -160,7 +161,8 @@ function Composer({ sc, st, onSend, learning, summon }: { sc: Scenario; st: Game
   const [to, setTo] = useState<RadioTo>('center');
   const opened = sel.includes('rp-open');
   const body = chosen.filter((e) => e.id !== 'rp-open').map((e) => fill(e.text, st.vars)).join('. ');
-  const preview = `${opened ? `${callTo(p, to)}, ` : ''}${body}${note ? `. ${note}` : ''}`;
+  const preview0 = `${opened ? `${callTo(p, to)}, ` : ''}${body}${note ? `. ${note}` : ''}`;
+  const preview = p.fem ? feminize(preview0) : preview0;
   return (
     <div className="stack">
       {summon && (

@@ -18,6 +18,8 @@ FORCE = '--force' in args
 REVIEW = '--review' in args
 ONLY = args[args.index('--only') + 1] if '--only' in args else None
 RADIO = '--radio' in args
+# --refem: מקליט מחדש שורות של השוטרת שהנוסח הנקבי שלהן שונה מהזכרי
+REFEM = '--refem' in args
 
 cast = json.load(open(ROOT / 'docs/voice/cast.json'))
 lex = {k: v for k, v in json.load(open(ROOT / 'docs/voice/lexicon.json')).items() if not k.startswith('_')}
@@ -38,8 +40,19 @@ def line_key(speaker: str, text: str) -> str:
 HEB_DIGITS = ['אפס', 'אחת', 'שתיים', 'שלוש', 'ארבע', 'חמש', 'שש', 'שבע', 'שמונה', 'תשע']
 
 
+_FEM = json.load(open(ROOT / 'src/config/feminize.json'))['words']
+_FEM_RE = re.compile(r'(^|[.,!?–]\s+|ו?אני\s+(?:לא\s+|גם\s+|רק\s+)?)(' + '|'.join(map(re.escape, _FEM)) + r')(?=[\s.,!?–]|$)')
+
+
+def feminize(text: str) -> str:
+    """שוטרת: פעלים בגוף ראשון בלשון נקבה (זהה ל-src/config/feminize.ts)"""
+    return _FEM_RE.sub(lambda m: m.group(1) + _FEM.get(m.group(2), m.group(2)), text)
+
+
 def speech_text(speaker: str, text: str) -> str:
     """הטקסט כפי שיוקרא: בלי אותות קריאה (משתנים לפי תחנה), בלי מירכאות, מספרים בקריאה נכונה"""
+    if speaker in ('playerF', 'officerF'):
+        text = feminize(text)
     t = re.sub(r'^סייר \d+, כאן מוקד אלון\.\s*', '', text)
     t = re.sub(r'^מוקד:\s*', '', t)
     t = re.sub(r'^\([^)]*\)\s*', '', t)  # הוראות במה בסוגריים: „(מתקרבת בבהלה)”
@@ -276,7 +289,7 @@ def main():
                 if REVIEW:
                     review.append(f'[{sid}] {sp}: {say}\n    {ipa}')
                 out = ROOT / 'public' / rel
-                if out.exists() and not FORCE:
+                if out.exists() and not FORCE and not (REFEM and sp in ('playerF', 'officerF') and feminize(text) != text):
                     continue
                 render(ipa, cfg, out)
                 made += 1
