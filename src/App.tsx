@@ -1,6 +1,7 @@
 import { ShiftScreen } from './screens/Shift';
 import { Help } from './screens/Help';
 import { Officer } from './screens/Officer';
+import { IntroVideo } from './ui/IntroVideo';
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { audio } from './audio/audio';
 import { createGame, reduce, replay } from './engine/game';
@@ -97,6 +98,7 @@ export default function App() {
     <Ctx.Provider value={ctx}>
       {p0 === 'play' ? screen : <Shell>{screen}</Shell>}
       <SettingsDialog />
+      <IntroVideo />
       {toastMsg && (
         <div className="toast" role="status">
           {toastMsg}

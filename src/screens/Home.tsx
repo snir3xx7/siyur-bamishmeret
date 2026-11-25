@@ -2,11 +2,14 @@ import { useEffect, useState } from 'react';
 import { SITE } from '../config/site';
 import { loadCurrent, type SavedGame } from '../storage/db';
 import { useApp } from '../ui/context';
+import { chatterLines, radioProfile } from '../config/stations';
 import { assetUrl, loadCatalog, loadScenario } from '../ui/data';
 import { go } from '../ui/router';
 
 export function Home() {
   const { startGame, toast, settings } = useApp();
+  const prof = radioProfile(settings.station, 'סייר 23');
+  const ticker = chatterLines(prof).map((l) => l.text);
   // כניסה ראשונה: קודם בוחרים דמות (לא בבדיקות אוטומטיות)
   useEffect(() => {
     if (!settings.officerChosen && !navigator.webdriver) location.replace('#/officer');
@@ -56,9 +59,16 @@ export function Home() {
           </div>
           <span className="cine-mist" />
         </div>
+        <span className="cine-rain" aria-hidden="true" />
+        <div className="cine-hud" aria-hidden="true">
+          <span className="hud-c tl" /><span className="hud-c tr" /><span className="hud-c bl" /><span className="hud-c br" />
+          <span className="hud-live"><i /> בשידור · {prof.real ? prof.stationName : 'משמרת ערב'}</span>
+          <span className="hud-wave">{Array.from({ length: 14 }, (_, i) => <i key={i} style={{ animationDelay: `${(i * 0.13) % 1}s` }} />)}</span>
+        </div>
         <div className="cine-content">
-          <img className="cine-icon" src={assetUrl('icons/icon.svg')} alt="" />
-          <h1>{SITE.name}</h1>
+          <p className="cine-kicker">סימולטור אימון לשוטרי סיור</p>
+          <h1 className="cine-title" data-text={SITE.name}>{SITE.name}</h1>
+          <div className="cine-rule"><span>📻 <bdi>{prof.unit}</bdi> · מוכן לקבל אירוע</span></div>
           <p className="cine-tag">{SITE.tagline}</p>
           <p className="cine-credit" data-testid="home-credit">{SITE.creditLine}</p>
           <a className="cine-officer" href="#/officer" data-testid="home-officer">
@@ -72,7 +82,7 @@ export function Home() {
           <p className="cine-lead">מקבלים משימה מהמוקד, אוספים מידע, מגיעים לזירה, משוחחים עם המעורבים, מעדכנים את המוקד – ומסיימים בתחקיר ובטיוטת דוח פעולה.</p>
           <div className="btn-row">
             <a className="btn primary big" href="#/catalog">
-              ▶ התחלת תרגול
+              ▶ יציאה לסיור
             </a>
             <a className="btn glass" href="#/help" data-testid="home-help">
               ❓ איך משחקים?
@@ -91,6 +101,11 @@ export function Home() {
             <li><b>3</b> משמרות</li>
             <li><b>100</b> נקודות בתחקיר</li>
           </ul>
+        </div>
+        <div className="cine-ticker" aria-hidden="true">
+          <div className="ticker-track">
+            {[...ticker, ...ticker].map((t, i) => <span key={i}>📻 {t}</span>)}
+          </div>
         </div>
       </section>
       <div className="grid2">

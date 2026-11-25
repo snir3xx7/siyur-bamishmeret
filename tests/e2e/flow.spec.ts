@@ -5,7 +5,7 @@ test('קטלוג, דף מידע וכיווניות', async ({ page }) => {
   await page.goto('./');
   await expect(page.locator('html')).toHaveAttribute('dir', 'rtl');
   await expect(page.locator('html')).toHaveAttribute('lang', 'he');
-  await page.getByRole('link', { name: /התחלת תרגול/ }).click();
+  await page.getByRole('link', { name: /יציאה לסיור/ }).click();
   for (const id of Object.keys(VERSIONS)) await expect(page.getByTestId(`scn-${id}`)).toBeVisible();
   await expect(page.getByTestId('scn-accident-rain')).toContainText('דקות');
   await page.goto('./#/about');
