@@ -212,6 +212,8 @@ export interface SceneDef {
 }
 
 export interface Scenario {
+  /** חשודים: שכבת עיכוב/מעצר (engine/custody.ts) */
+  custody?: import('./custody').CustodyDef[];
   id: string;
   version: number;
   title: string;

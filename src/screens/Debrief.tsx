@@ -5,6 +5,8 @@ import { replay } from '../engine/game';
 import { buildReport, reportText, type ReportSection } from '../engine/report';
 import { gameProfile, radioize } from '../config/stations';
 import { notebookCheck, procedureReport } from '../engine/procedure';
+import { custodyReport } from '../engine/custody';
+import { evalCond } from '../engine/conditions';
 import { RadioCtx } from '../ui/radio';
 import { loadShift } from '../ui/shift';
 import { randomSeed } from '../engine/rng';
@@ -88,6 +90,7 @@ export function DebriefScreen({ query }: { query: URLSearchParams }) {
   const { sc, st } = game;
   const radio = { ...gameProfile(st.config, settings.station, sc.dispatch.unit), fem: settings.officerVoice === 'f' };
   const proc = procedureReport(st, sc);
+  const custody = custodyReport(st, sc, (c) => evalCond({ sc, st }, c));
   const shiftPlan = loadShift();
   const nb = notebookCheck(sc, st);
   const reportFinal = report.map((s) => ({ ...s, text: edits[s.id] ?? radioize(s.text.replace(`צוות: ${sc.dispatch.unit}`, `צוות: ${radio.unit}${radio.real ? ` | ${radio.stationName}, ${radio.districtName}` : ''}`), radio) }));
@@ -218,6 +221,19 @@ export function DebriefScreen({ query }: { query: URLSearchParams }) {
             ))}
           </ul>
         </section>
+        {custody.length > 0 && (
+          <section className="card print-debrief" aria-labelledby="cs-title" data-testid="custody">
+            <h2 id="cs-title">🚔 עיכוב, מעצר וחיפוש <span className="small muted">(לא נכלל בציון)</span></h2>
+            <ul className="proc-list">
+              {custody.map((i) => (
+                <li key={i.label} className={i.ok ? 'ok' : 'bad'}>
+                  <b>{i.ok ? '✓' : '✗'} {i.label}</b>
+                  <span>{i.detail}</span>
+                </li>
+              ))}
+            </ul>
+          </section>
+        )}
         <section className="card print-debrief" aria-labelledby="nb-title" data-testid="notebook-check">
           <h2 id="nb-title">📒 פנקס השטח</h2>
           {st.notebook?.trim() ? (

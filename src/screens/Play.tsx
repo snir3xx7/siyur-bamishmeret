@@ -18,6 +18,7 @@ import { procedureReport } from '../engine/procedure';
 import { RadioChain, RadioCtx, useRadio } from '../ui/radio';
 import { RadioGuide } from '../ui/RadioGuide';
 import { FirstSceneGuide, FullscreenButton, RotateHint } from '../ui/DeviceHints';
+import { custodyStatus } from '../engine/custody';
 import { callTo, chatterLines, gameProfile, headRouteText, radioize, RADIO_TO_LABEL, type RadioProfile, type RadioTo } from '../config/stations';
 import { Modal, useAudioStatus } from '../ui/SettingsDialog';
 
@@ -722,6 +723,7 @@ export function Play() {
                             </span>
                             <span>
                               {fill(h.label, st.vars)}
+                              {h.character && custodyStatus(sc, st, h.character) && <span className="chip warn cs-chip" data-testid="custody-status">{custodyStatus(sc, st, h.character)}</span>}
                               <span className="small muted" style={{ display: 'block' }}>
                                 {mood ? `שפת גוף: ${mood}` : fill(h.description, st.vars)}
                                 {choices.length === 0 && ' · אין פעולות נוספות כאן'}

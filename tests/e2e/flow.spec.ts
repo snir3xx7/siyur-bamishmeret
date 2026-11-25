@@ -214,3 +214,17 @@ test('בחירת דמות: שוטרת – נשמר, ומופיע במסך הפת
   await page.goto('./#/');
   await expect(page.getByTestId('home-officer')).toContainText('שוטרת');
 });
+
+test('עיכוב ומעצר: תג סטטוס, חיפוש, אזיקה והוצאה מהזירה', async ({ page }) => {
+  await startScenario(page, 'domestic-call', 4, { mode: 'practice' });
+  await toScene(page);
+  await act(page, /^גיל – האב/, /לא עוזבים לפני/);
+  await act(page, /^גיל – האב/, /מעוכב לבירור/);
+  await expect(page.getByTestId('custody-status').first()).toContainText('מעוכב');
+  await act(page, /^גיל – האב/, /חיפוש מוגבל/);
+  await act(page, /^גיל – האב/, /שהוא עצור/);
+  await act(page, /^גיל – האב/, /^לאזוק/);
+  await expect(page.getByTestId('custody-status').first()).toContainText('עצור · אזוק');
+  await act(page, /^גיל – האב/, /לניידת התגבור/);
+  await expect(page.getByTestId('hotspots').getByRole('button', { name: /^גיל – האב/ })).toHaveCount(0);
+});

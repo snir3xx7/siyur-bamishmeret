@@ -1,6 +1,6 @@
 {
  "id": "bar-fight",
- "version": 6,
+ "version": 7,
  "title": "אחרי קטטה מחוץ לבר",
  "category": "אלימות ותקיפה – טיפול לאחר האירוע",
  "summary": "מגיעים לבר שכונתי דקות אחרי קטטה: צעיר עם חתך במצח, חבר נסער שרוצה „לסגור חשבון”, והחשוד עדיין במקום. יש להפריד, לדאוג לטיפול רפואי, לדרוש הזדהות ולעכב בהסבר ובבסיס עובדתי, לשמוע את כל הגרסאות ולשמור ראיות.",
@@ -2063,6 +2063,29 @@
    "433daa8d": "audio/voice/bar-fight/l-433daa8d.mp3",
    "0e8b4821": "audio/voice/bar-fight/l-0e8b4821.mp3",
    "9445cae0": "audio/voice/bar-fight/l-9445cae0.mp3",
+   "511937c3": "audio/voice/bar-fight/l-511937c3.mp3",
+   "dae20317": "audio/voice/bar-fight/l-dae20317.mp3",
+   "a70dbd21": "audio/voice/bar-fight/l-a70dbd21.mp3",
+   "28d822a1": "audio/voice/bar-fight/l-28d822a1.mp3",
+   "1f6a1b95": "audio/voice/bar-fight/l-1f6a1b95.mp3",
+   "c7171cfd": "audio/voice/bar-fight/l-c7171cfd.mp3",
+   "299a7f0e": "audio/voice/bar-fight/l-299a7f0e.mp3",
+   "299d6eae": "audio/voice/bar-fight/l-299d6eae.mp3",
+   "9e3403f2": "audio/voice/bar-fight/l-9e3403f2.mp3",
+   "901870bc": "audio/voice/bar-fight/l-901870bc.mp3",
+   "b19a7b35": "audio/voice/bar-fight/l-b19a7b35.mp3",
+   "d1343799": "audio/voice/bar-fight/l-d1343799.mp3",
+   "03352026": "audio/voice/bar-fight/l-03352026.mp3",
+   "b492ed0e": "audio/voice/bar-fight/l-b492ed0e.mp3",
+   "233e2baa": "audio/voice/bar-fight/l-233e2baa.mp3",
+   "10b4d069": "audio/voice/bar-fight/l-10b4d069.mp3",
+   "e7044d39": "audio/voice/bar-fight/l-e7044d39.mp3",
+   "44e1b6b5": "audio/voice/bar-fight/l-44e1b6b5.mp3",
+   "82727dfd": "audio/voice/bar-fight/l-82727dfd.mp3",
+   "a0e00c9b": "audio/voice/bar-fight/l-a0e00c9b.mp3",
+   "c2de2e35": "audio/voice/bar-fight/l-c2de2e35.mp3",
+   "c4d640f1": "audio/voice/bar-fight/l-c4d640f1.mp3",
+   "7bf40aa0": "audio/voice/bar-fight/l-7bf40aa0.mp3",
    "7b5fc481": "audio/voice/bar-fight/l-7b5fc481.mp3",
    "e054fcca": "audio/voice/bar-fight/l-e054fcca.mp3",
    "fdac6fbe": "audio/voice/bar-fight/l-fdac6fbe.mp3",
@@ -2123,5 +2146,25 @@
    "c78bba01": "audio/voice/bar-fight/l-c78bba01.mp3",
    "f1bc0c27": "audio/voice/bar-fight/l-f1bc0c27.mp3"
   }
- }
+ },
+ "custody": [
+  {
+   "char": "dor",
+   "hotspot": "h-dor",
+   "offence": "תקיפה",
+   "arrestOk": {
+    "all": [
+     {
+      "flag": "detainedProper"
+     },
+     {
+      "flag": "footage"
+     }
+    ]
+   },
+   "risk": {
+    "flag": "dorAngry"
+   }
+  }
+ ]
 }

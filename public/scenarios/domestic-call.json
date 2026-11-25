@@ -1,6 +1,6 @@
 {
  "id": "domestic-call",
- "version": 4,
+ "version": 5,
  "title": "קריאה על צעקות בבית – חשד לאלימות במשפחה",
  "category": "עבירות נגד אדם",
  "summary": "נערה בת 15 התקשרה בשקט: צעקות ורעש שבירה, ואמה בוכה. בפתח האב אומר ש„הכול בסדר”. יש לראות את כל בני הבית, להפריד, לשוחח עם האם בנפרד, להגן על הנערה, להעריך סיכון ולפעול – בלי „לעשות שלום”.",
@@ -1750,6 +1750,29 @@
    "c15157d4": "audio/voice/domestic-call/l-c15157d4.mp3",
    "88f9f8b0": "audio/voice/domestic-call/l-88f9f8b0.mp3",
    "19a47209": "audio/voice/domestic-call/l-19a47209.mp3",
+   "6d54a6f8": "audio/voice/domestic-call/l-6d54a6f8.mp3",
+   "22dbc014": "audio/voice/domestic-call/l-22dbc014.mp3",
+   "af2fd424": "audio/voice/domestic-call/l-af2fd424.mp3",
+   "5b32a4dc": "audio/voice/domestic-call/l-5b32a4dc.mp3",
+   "33f72470": "audio/voice/domestic-call/l-33f72470.mp3",
+   "bd96790c": "audio/voice/domestic-call/l-bd96790c.mp3",
+   "299a7f0e": "audio/voice/domestic-call/l-299a7f0e.mp3",
+   "299d6eae": "audio/voice/domestic-call/l-299d6eae.mp3",
+   "9e3403f2": "audio/voice/domestic-call/l-9e3403f2.mp3",
+   "d38ae571": "audio/voice/domestic-call/l-d38ae571.mp3",
+   "91cc71f6": "audio/voice/domestic-call/l-91cc71f6.mp3",
+   "a43e2892": "audio/voice/domestic-call/l-a43e2892.mp3",
+   "24804887": "audio/voice/domestic-call/l-24804887.mp3",
+   "e2b33b41": "audio/voice/domestic-call/l-e2b33b41.mp3",
+   "620432ad": "audio/voice/domestic-call/l-620432ad.mp3",
+   "e0c450f4": "audio/voice/domestic-call/l-e0c450f4.mp3",
+   "e7044d39": "audio/voice/domestic-call/l-e7044d39.mp3",
+   "44e1b6b5": "audio/voice/domestic-call/l-44e1b6b5.mp3",
+   "9331f24a": "audio/voice/domestic-call/l-9331f24a.mp3",
+   "10403fc6": "audio/voice/domestic-call/l-10403fc6.mp3",
+   "496d6bd8": "audio/voice/domestic-call/l-496d6bd8.mp3",
+   "440163a4": "audio/voice/domestic-call/l-440163a4.mp3",
+   "457638d3": "audio/voice/domestic-call/l-457638d3.mp3",
    "3d7589d3": "audio/voice/domestic-call/l-3d7589d3.mp3",
    "30d61840": "audio/voice/domestic-call/l-30d61840.mp3",
    "43666708": "audio/voice/domestic-call/l-43666708.mp3",
@@ -1812,5 +1835,25 @@
    "3a2cd3bc": "audio/voice/domestic-call/l-3a2cd3bc.mp3",
    "a93825da": "audio/voice/domestic-call/l-a93825da.mp3"
   }
- }
+ },
+ "custody": [
+  {
+   "char": "gil",
+   "hotspot": "h-gil",
+   "offence": "תקיפה של בת זוגו",
+   "arrestOk": {
+    "all": [
+     {
+      "flag": "detainedProper"
+     },
+     {
+      "flag": "heardRonit"
+     }
+    ]
+   },
+   "risk": {
+    "flag": "gilAngry"
+   }
+  }
+ ]
 }

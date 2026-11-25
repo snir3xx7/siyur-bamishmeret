@@ -7,6 +7,7 @@
  *
  * לא משנה את ציון התרחיש (100): מוצג בתחקיר כמדד נפרד „נוהל קשר”.
  */
+import { addCustody } from './custody';
 import type { Choice, GameState, Hotspot, Line, Scenario, ScenarioEvent, UpdateElement } from './types';
 
 const augmented = new WeakMap<Scenario, Scenario>();
@@ -173,7 +174,7 @@ export function withProcedure(sc: Scenario): Scenario {
   const out: Scenario = {
     ...sc,
     dispatch: { ...sc.dispatch, followUps: [...followUps, ...sc.dispatch.followUps.map((c) => radioChoice(c, true))] },
-    hotspots: hotspots.map((h) => ({ ...h, choices: h.choices.map((c) => radioChoice(c, false)) })),
+    hotspots: addCustody(sc, hotspots).map((h) => ({ ...h, choices: h.choices.map((c) => radioChoice(c, false)) })),
     events: [...(sc.events ?? []), busy],
     update: { ...sc.update, categories: { procedure: 'נוהל קשר', ...sc.update.categories }, elements: [...elements, ...sc.update.elements] },
   };
