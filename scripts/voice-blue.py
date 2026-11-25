@@ -92,7 +92,8 @@ def all_lines(sc):
     for h in sc['hotspots']:
         for c in h['choices']:
             # שורות השחקן מוקלטות רק כשהן שידור בקשר (נוהל קשר)
-            keep = (lambda ls: ls) if c['id'].startswith('rp-') else (lambda ls: [x for x in (ls or []) if x['speaker'] != 'player'])
+            # שורות השחקן מוקלטות כשהן שידור בקשר: בחירות נוהל קשר, או שידור למשל״ט („{{toCenter}}, …”)
+            keep = (lambda ls: ls) if c['id'].startswith('rp-') else (lambda ls: [x for x in (ls or []) if x['speaker'] != 'player' or x['text'].startswith('{{toCenter}}')])
             add(keep(c.get('lines'))); [add(keep(b['lines'])) for b in c.get('branches', [])]
     for e in sc.get('events', []):
         add(e['lines']); [add(b['lines']) for b in e.get('branches', [])]
@@ -172,6 +173,26 @@ def main():
                 jobs.append((st['id'], 'head', f'{d["centerCall"]} מ{pre} {st["shiftHead"]}'))
         for n in UNITS:
             jobs.append(('common', 'head', f'תעבירי את האירוע ל{n}.'))
+        # תעבורת קשר ברקע (ניידות אחרות, המשל״ט, 401, 11): פתיחות לפי תחנה + גופי הודעות משותפים
+        chatter = json.loads(subprocess.run(['npx', 'vite-node', 'scripts/dump-chatter.ts'], cwd=ROOT, capture_output=True, text=True, check=True).stdout)
+        for x in chatter:
+            jobs.append(('common', x['who'], x['body']))
+        for d in districts:
+            ctr = d['centerCall']
+            for st in d['stations']:
+                pre, h = st['prefix'], st['shiftHead']
+                for n in st['patrols'] + st['municipal']:
+                    u = f'{pre} {n}'
+                    for who in ('unitB', 'unitC'):
+                        jobs.append((st['id'], who, f'{ctr} מ{u}'))
+                    jobs.append((st['id'], 'unitB', f'{h} מ{u}'))
+                    jobs.append((st['id'], 'head', f'{u} מ{h}'))
+                jobs.append((st['id'], 'dispatch', f'לכל הניידות מ{ctr}'))
+                jobs.append((st['id'], 'duty', f'{h} מ{pre} {st["dutyOfficer"]}'))
+        for u in ('סייר 12', 'סייר 31', 'סייר 40'):
+            jobs += [('fictional', 'unitB', f'מוקד אלון מ{u}'), ('fictional', 'unitC', f'מוקד אלון מ{u}'),
+                     ('fictional', 'dispatch', f'{u} ממוקד אלון'), ('fictional', 'head', f'{u} ממוקד אלון')]
+        jobs += [('fictional', 'dispatch', 'לכל הניידות ממוקד אלון'), ('fictional', 'duty', 'מוקד אלון מקצין תורן')]
         for sc in scenarios:  # בדוי: „מוקד אלון מסייר 23”
             u = sc['dispatch']['unit']
             jobs += [('fictional', 'player', f'מוקד אלון מ{u}'), ('fictional', 'player', f'קצין תורן מ{u}'),

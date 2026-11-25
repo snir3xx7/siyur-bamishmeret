@@ -7,11 +7,27 @@
  *
  * לא משנה את ציון התרחיש (100): מוצג בתחקיר כמדד נפרד „נוהל קשר”.
  */
-import type { Choice, GameState, Hotspot, Scenario, ScenarioEvent, UpdateElement } from './types';
+import type { Choice, GameState, Hotspot, Line, Scenario, ScenarioEvent, UpdateElement } from './types';
 
 const augmented = new WeakMap<Scenario, Scenario>();
 
 export const PROC_IDS = ['rp-ack', 'rp-ack-short', 'rp-arrive', 'rp-busy-no', 'rp-busy-yes', 'rt-main', 'rt-side', 'fm-distance', 'fm-stop'];
+
+/**
+ * שידור של הניידת בנוהל: „מוקד, כאן סייר 23. …” / „מוקד, …” → „{{toCenter}}, …” („מרכז מסבא 402, …”).
+ * בשלב קבלת הפרטים כל שאלה של השחקן היא שידור למשל״ט; בזירה – רק שורות שפונות ל„מוקד”.
+ */
+const MOKED = /^מוקד,\s*(?:כאן סייר \d+\.\s*)?/;
+export function radioPlayerText(t: string, always: boolean): string {
+  const m = t.match(MOKED);
+  if (m) return `{{toCenter}}, ${t.slice(m[0].length)}`;
+  if (always && !t.startsWith('{{') && t !== 'קיבלתי.') return `{{toCenter}}, ${t}`;
+  return t;
+}
+function radioChoice(c: Choice, always: boolean): Choice {
+  const fix = (ls?: Line[]) => ls?.map((l) => (l.speaker === 'player' ? { ...l, text: radioPlayerText(l.text, always) } : l));
+  return { ...c, ...(c.lines ? { lines: fix(c.lines) } : {}), ...(c.branches ? { branches: c.branches.map((b) => ({ ...b, lines: fix(b.lines)! })) } : {}) };
+}
 
 export function withProcedure(sc: Scenario): Scenario {
   const hit = augmented.get(sc);
@@ -36,7 +52,7 @@ export function withProcedure(sc: Scenario): Scenario {
       when: { not: { flag: 'rpAck' } },
       lines: [
         { speaker: 'player', text: 'קיבלתי.' },
-        { speaker: 'dispatch', text: 'מי ענה? {{unitShort}}, אשר שאתה לוקח את האירוע.' },
+        { speaker: 'dispatch', text: '{{unitShort}}, לא ברור מי ענה. אשר בנוהל שאתה לוקח את האירוע.' },
       ],
       effects: { set: { rpAck: 'short' }, minutes: 0 },
     },
@@ -93,7 +109,7 @@ export function withProcedure(sc: Scenario): Scenario {
       label: 'לענות „חיובי, פנוי” ולהתכונן לעזוב',
       when: { all: [{ flag: 'ev:rp-busy' }, { not: { flag: 'rpBusy' } }] },
       lines: [
-        { speaker: 'player', text: 'חיובי, פנוי.' },
+        { speaker: 'player', text: '{{toCenter}}, חיובי, פנוי.' },
         { speaker: 'dispatch', text: 'רגע – סיימת שם? המעורבים עדיין במקום לפי הדיווח שלך. תשלים קודם ותעדכן.' },
       ],
       effects: { set: { rpBusy: 'bad' }, minutes: 0, note: 'דיווח „פנוי” בזמן שהטיפול בזירה עוד לא הסתיים' },
@@ -156,8 +172,8 @@ export function withProcedure(sc: Scenario): Scenario {
 
   const out: Scenario = {
     ...sc,
-    dispatch: { ...sc.dispatch, followUps: [...followUps, ...sc.dispatch.followUps] },
-    hotspots,
+    dispatch: { ...sc.dispatch, followUps: [...followUps, ...sc.dispatch.followUps.map((c) => radioChoice(c, true))] },
+    hotspots: hotspots.map((h) => ({ ...h, choices: h.choices.map((c) => radioChoice(c, false)) })),
     events: [...(sc.events ?? []), busy],
     update: { ...sc.update, categories: { procedure: 'נוהל קשר', ...sc.update.categories }, elements: [...elements, ...sc.update.elements] },
   };

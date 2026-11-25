@@ -33,6 +33,16 @@
    "voice": "jonathan",
    "radio": true,
    "speed": 1.05
+  },
+  "unitB": {
+   "voice": "ethan",
+   "radio": true,
+   "speed": 1.05
+  },
+  "unitC": {
+   "voice": "adam",
+   "radio": true,
+   "speed": 1.05
   }
  },
  "characters": {

@@ -1,6 +1,6 @@
 {
  "id": "accident-rain",
- "version": 6,
+ "version": 7,
  "title": "תאונת דרכים קלה בגשם",
  "category": "תנועה ובטיחות בדרך",
  "summary": "שני כלי רכב מעורבים בצומת רטוב והתנועה ממשיכה לעבור לידם. יש לאבטח, לברר את מצב המעורבים, לשמוע גרסאות ולעדכן את המוקד.",
@@ -512,11 +512,11 @@
     "lines": [
      {
       "speaker": "player",
-      "text": "מוקד, ההודעה נקטעה. חזור בבקשה."
+      "text": "מוקד, ההודעה נקטעה. חזרי בבקשה."
      },
      {
       "speaker": "dispatch",
-      "text": "חוזר: אחד הרכבים עומד חלקית בנתיב הימני. אין דיווח על דליפה."
+      "text": "חוזרת: אחד הרכבים עומד חלקית בנתיב הימני. אין דיווח על דליפה."
      }
     ],
     "effects": {
@@ -3014,18 +3014,19 @@
    "0e01a700": "audio/voice/accident-rain/l-0e01a700.mp3",
    "5a7fa6a9": "audio/voice/accident-rain/l-5a7fa6a9.mp3",
    "e45f91ee": "audio/voice/accident-rain/l-e45f91ee.mp3",
+   "59ad1f64": "audio/voice/accident-rain/l-59ad1f64.mp3",
    "bc4ef680": "audio/voice/accident-rain/l-bc4ef680.mp3",
    "dec6b838": "audio/voice/accident-rain/l-dec6b838.mp3",
    "39c2e3ce": "audio/voice/accident-rain/l-39c2e3ce.mp3",
    "0bb6cb73": "audio/voice/accident-rain/l-0bb6cb73.mp3",
    "29b547b9": "audio/voice/accident-rain/l-29b547b9.mp3",
-   "dca73576": "audio/voice/accident-rain/l-dca73576.mp3",
+   "cb4b6578": "audio/voice/accident-rain/l-cb4b6578.mp3",
    "affcba12": "audio/voice/accident-rain/l-affcba12.mp3",
-   "07ac54cf": "audio/voice/accident-rain/l-07ac54cf.mp3",
+   "6209a2ec": "audio/voice/accident-rain/l-6209a2ec.mp3",
    "f74a9f88": "audio/voice/accident-rain/l-f74a9f88.mp3",
    "54cd1e0d": "audio/voice/accident-rain/l-54cd1e0d.mp3",
-   "88dbf9ec": "audio/voice/accident-rain/l-88dbf9ec.mp3",
-   "e5aba4b1": "audio/voice/accident-rain/l-e5aba4b1.mp3",
+   "325a728b": "audio/voice/accident-rain/l-325a728b.mp3",
+   "161cc386": "audio/voice/accident-rain/l-161cc386.mp3",
    "af834387": "audio/voice/accident-rain/l-af834387.mp3",
    "47c55f85": "audio/voice/accident-rain/l-47c55f85.mp3",
    "8d0b6dda": "audio/voice/accident-rain/l-8d0b6dda.mp3",
@@ -3069,8 +3070,10 @@
    "a7433af7": "audio/voice/accident-rain/l-a7433af7.mp3",
    "1734ec94": "audio/voice/accident-rain/l-1734ec94.mp3",
    "64c2f217": "audio/voice/accident-rain/l-64c2f217.mp3",
+   "6dfe0419": "audio/voice/accident-rain/l-6dfe0419.mp3",
    "b0a4b09a": "audio/voice/accident-rain/l-b0a4b09a.mp3",
    "3f30de69": "audio/voice/accident-rain/l-3f30de69.mp3",
+   "2629bdac": "audio/voice/accident-rain/l-2629bdac.mp3",
    "0c888924": "audio/voice/accident-rain/l-0c888924.mp3",
    "5004ef65": "audio/voice/accident-rain/l-5004ef65.mp3",
    "952de53c": "audio/voice/accident-rain/l-952de53c.mp3",

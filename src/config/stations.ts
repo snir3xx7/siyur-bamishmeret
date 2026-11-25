@@ -183,23 +183,45 @@ export function gameProfile(config: { radio?: GameRadio }, r: RadioSettings | un
 export interface GameRadio { unit: string; head: string; center: string; centerCall?: string; duty?: string; dutyNum?: string }
 export const toGameRadio = (p: RadioProfile): GameRadio => ({ unit: p.unit, head: p.head, center: p.center, centerCall: p.centerCall, duty: p.dutyOfficer, dutyNum: p.dutyNum });
 
-/** תעבורת קשר של ניידות אחרות בתחנה – רקע בלבד, לא משפיע על התרחיש */
-export function chatterLines(p: RadioProfile): string[] {
-  const prefix = p.real ? p.unit.split(' ').slice(0, -1).join(' ') : '';
-  const own = p.unit.split(' ').at(-1);
-  const others = p.real ? ['403', '404', '405', '302'].filter((n) => n !== own).map((n) => `${prefix} ${n}`) : ['סייר 12', 'סייר 31', 'סייר 40'];
-  const [a, b, c] = others;
-  const ctr = p.real ? p.centerCall : 'מוקד אלון';
-  const head = p.head;
-  const duty = p.real ? p.dutyOfficer : 'הקצין התורן';
-  return [
-    `${ctr} מ${a}: סיימתי באירוע ברחוב הרימון, פנוי.`,
-    `${b} מ${ctr}: גש לרחוב הנרקיס 12, אזעקה ברכב חונה.`,
-    `${ctr} מ${b}: קיבלתי, בדרך.`,
-    `${ctr} לכל הניידות: רכב לבן מסוג מסחרי עזב בפראות את צומת הזית לכיוון צפון. מי שמזהה – מדווח, לא מתקרב לבד.`,
-    `${ctr} מ${c}: אני בעצירת רכב בשדרות הזית, הכול תקין, ממשיך.`,
-    `${head} מ${duty}: עדכן אותי כשנסגרים האירועים הפתוחים.`,
-    `${head} מ${a}: מבקש הפסקת התרעננות בתחנה, עשר דקות.`,
-    `${a} מ${head}: חיובי.`,
-  ];
+/** שידור רקע: מה מוצג, ואיך הוא מושמע (פתיחה לפי התחנה + גוף ההודעה, בקול הדובר) */
+export interface ChatterLine {
+  text: string;
+  /** פתיחת השידור („מרכז מסבא 403”) */
+  open: string;
+  /** גוף ההודעה – זהה בכל התחנות, מוקלט פעם אחת */
+  body: string;
+  /** הקול: unitB / unitC (ניידות אחרות), dispatch (המשל״ט), head (401), duty (11) */
+  who: 'unitB' | 'unitC' | 'dispatch' | 'head' | 'duty';
 }
+
+/** גופי ההודעות של תעבורת הרקע (משותפים לכל התחנות, גם לכלי הקריינות) */
+export const CHATTER_BODIES: { body: string; who: ChatterLine['who'] }[] = [
+  { body: 'סיימתי באירוע ברחוב הרימון, פנוי.', who: 'unitB' },
+  { body: 'גש לרחוב הנרקיס 12, אזעקה ברכב חונה.', who: 'dispatch' },
+  { body: 'קיבלתי, בדרך.', who: 'unitC' },
+  { body: 'רכב לבן מסוג מסחרי עזב בפראות את צומת הזית לכיוון צפון. מי שמזהה – מדווח, לא מתקרב לבד.', who: 'dispatch' },
+  { body: 'אני בעצירת רכב בשדרות הזית, הכול תקין, ממשיך.', who: 'unitB' },
+  { body: 'עדכן אותי כשנסגרים האירועים הפתוחים.', who: 'duty' },
+  { body: 'מבקש הפסקת התרעננות בתחנה, עשר דקות.', who: 'unitB' },
+  { body: 'חיובי.', who: 'head' },
+];
+
+/** הניידות האחרות בתחנה (לא אתה): שלוש הראשונות משתתפות בתעבורת הרקע */
+export function otherUnits(p: RadioProfile): [string, string, string] {
+  if (!p.real) return ['סייר 12', 'סייר 31', 'סייר 40'];
+  const prefix = p.unit.split(' ').slice(0, -1).join(' ');
+  const own = p.unit.split(' ').at(-1);
+  const o = ['403', '404', '405', '302', '402'].filter((n) => n !== own).slice(0, 3).map((n) => `${prefix} ${n}`);
+  return [o[0], o[1], o[2]];
+}
+
+/** תעבורת קשר של ניידות אחרות בתחנה – רקע בלבד, לא משפיע על התרחיש. בנוהל: „למי מ־מי, מה” */
+export function chatterLines(p: RadioProfile): ChatterLine[] {
+  const [a, b, c] = otherUnits(p);
+  const ctr = p.real ? p.centerCall : 'מוקד אלון';
+  const head = p.real ? p.headNum : 'מוקד אלון';
+  const duty = p.real ? p.dutyOfficer : 'קצין תורן';
+  const opens = [`${ctr} מ${a}`, `${b} מ${ctr}`, `${ctr} מ${b}`, `לכל הניידות מ${ctr}`, `${ctr} מ${c}`, `${head} מ${duty}`, `${head} מ${a}`, `${a} מ${head}`];
+  return CHATTER_BODIES.map((x, i) => ({ ...x, open: opens[i], text: `${opens[i]}, ${x.body}` }));
+}
+

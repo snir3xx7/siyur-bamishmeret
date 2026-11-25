@@ -1,6 +1,6 @@
 {
  "id": "noise-building",
- "version": 4,
+ "version": 5,
  "title": "דיווח על רעש בבניין מגורים",
  "category": "סדר ציבורי ויחסי שכנים",
  "summary": "תלונה על מוזיקה חזקה בשעת ערב. יש לאמת את מקור הרעש, לשמור על פרטיות המדווחת, לפנות למארח בכבוד ולתעד מה נצפה ומה רק נטען.",
@@ -334,11 +334,11 @@
     "lines": [
      {
       "speaker": "player",
-      "text": "מוקד, ההודעה נקטעה. חזור בבקשה."
+      "text": "מוקד, ההודעה נקטעה. חזרי בבקשה."
      },
      {
       "speaker": "dispatch",
-      "text": "חוזר: המדווחת, רינה, גרה בדירה 3 בקומה הראשונה. מוכנה לפגוש בכניסה לבניין."
+      "text": "חוזרת: המדווחת, רינה, גרה בדירה 3 בקומה הראשונה. מוכנה לפגוש בכניסה לבניין."
      }
     ],
     "effects": {
@@ -2207,16 +2207,17 @@
    "0e01a700": "audio/voice/noise-building/l-0e01a700.mp3",
    "5a7fa6a9": "audio/voice/noise-building/l-5a7fa6a9.mp3",
    "e45f91ee": "audio/voice/noise-building/l-e45f91ee.mp3",
+   "59ad1f64": "audio/voice/noise-building/l-59ad1f64.mp3",
    "bc4ef680": "audio/voice/noise-building/l-bc4ef680.mp3",
    "dec6b838": "audio/voice/noise-building/l-dec6b838.mp3",
    "39c2e3ce": "audio/voice/noise-building/l-39c2e3ce.mp3",
    "0bb6cb73": "audio/voice/noise-building/l-0bb6cb73.mp3",
    "29b547b9": "audio/voice/noise-building/l-29b547b9.mp3",
-   "9a9ee112": "audio/voice/noise-building/l-9a9ee112.mp3",
+   "ea4fc05b": "audio/voice/noise-building/l-ea4fc05b.mp3",
    "9dd6b814": "audio/voice/noise-building/l-9dd6b814.mp3",
    "a3e5828c": "audio/voice/noise-building/l-a3e5828c.mp3",
-   "88dbf9ec": "audio/voice/noise-building/l-88dbf9ec.mp3",
-   "8ba2dd46": "audio/voice/noise-building/l-8ba2dd46.mp3",
+   "325a728b": "audio/voice/noise-building/l-325a728b.mp3",
+   "64845c31": "audio/voice/noise-building/l-64845c31.mp3",
    "cb26cfb4": "audio/voice/noise-building/l-cb26cfb4.mp3",
    "79da8fa6": "audio/voice/noise-building/l-79da8fa6.mp3",
    "fac34e8e": "audio/voice/noise-building/l-fac34e8e.mp3",
@@ -2255,6 +2256,7 @@
    "a7433af7": "audio/voice/noise-building/l-a7433af7.mp3",
    "1734ec94": "audio/voice/noise-building/l-1734ec94.mp3",
    "64c2f217": "audio/voice/noise-building/l-64c2f217.mp3",
+   "2a6f40cc": "audio/voice/noise-building/l-2a6f40cc.mp3",
    "f25568ab": "audio/voice/noise-building/l-f25568ab.mp3",
    "c814ac74": "audio/voice/noise-building/l-c814ac74.mp3",
    "5aec0dfc": "audio/voice/noise-building/l-5aec0dfc.mp3",

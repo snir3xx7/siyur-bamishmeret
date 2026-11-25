@@ -371,6 +371,20 @@ class AudioEngine {
     }
   }
 
+  /** שידור רקע (ניידות אחרות): רק אם אין דיבור או שידור באוויר, ושקט יותר משידור אליך */
+  async background(items: { file: string; radio: boolean; who?: string }[]) {
+    if (this.speaking > 0 || this.active.size > 0) return;
+    const bus = this.buses.radio;
+    if (!this.ctx || !bus) return;
+    const prev = bus.gain.value;
+    bus.gain.setTargetAtTime(prev * 0.55, this.ctx.currentTime, 0.02);
+    try {
+      await this.playLines(items);
+    } finally {
+      if (this.ctx && this.settings) bus.gain.setTargetAtTime(this.settings.radio, this.ctx.currentTime, 0.1);
+    }
+  }
+
   /** צליל קשר קצר ואז הקראה (הקלטה מקומית אם יש, אחרת הקראת דפדפן אם הופעלה) */
   async radioMessage(text: string, voiceFile?: string) {
     await this.play('radio-chirp', 'radio');

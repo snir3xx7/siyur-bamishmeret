@@ -1,6 +1,6 @@
 {
  "id": "yard-dispute",
- "version": 4,
+ "version": 5,
  "title": "ויכוח בין שכנים בחצר משותפת",
  "category": "סדר ציבורי ויחסי שכנים",
  "summary": "ויכוח קולני על מחסן משותף שננעל במנעול חדש, ושכנים מתאספים סביב. יש להרגיע, לשמוע כל צד בנפרד, לזהות סתירות ולהימנע מקביעה מוקדמת.",
@@ -427,11 +427,11 @@
     "lines": [
      {
       "speaker": "player",
-      "text": "מוקד, ההודעה נקטעה. חזור בבקשה."
+      "text": "מוקד, ההודעה נקטעה. חזרי בבקשה."
      },
      {
       "speaker": "dispatch",
-      "text": "חוזר: לא דווח על אלימות או על חפצים מסוכנים. צעקות בלבד."
+      "text": "חוזרת: לא דווח על אלימות או על חפצים מסוכנים. צעקות בלבד."
      }
     ],
     "effects": {
@@ -2462,16 +2462,17 @@
    "0e01a700": "audio/voice/yard-dispute/l-0e01a700.mp3",
    "5a7fa6a9": "audio/voice/yard-dispute/l-5a7fa6a9.mp3",
    "e45f91ee": "audio/voice/yard-dispute/l-e45f91ee.mp3",
+   "59ad1f64": "audio/voice/yard-dispute/l-59ad1f64.mp3",
    "bc4ef680": "audio/voice/yard-dispute/l-bc4ef680.mp3",
    "dec6b838": "audio/voice/yard-dispute/l-dec6b838.mp3",
    "39c2e3ce": "audio/voice/yard-dispute/l-39c2e3ce.mp3",
    "0bb6cb73": "audio/voice/yard-dispute/l-0bb6cb73.mp3",
    "29b547b9": "audio/voice/yard-dispute/l-29b547b9.mp3",
-   "03252e78": "audio/voice/yard-dispute/l-03252e78.mp3",
+   "2d301f83": "audio/voice/yard-dispute/l-2d301f83.mp3",
    "8bd9758a": "audio/voice/yard-dispute/l-8bd9758a.mp3",
    "b500db29": "audio/voice/yard-dispute/l-b500db29.mp3",
-   "88dbf9ec": "audio/voice/yard-dispute/l-88dbf9ec.mp3",
-   "4d17005c": "audio/voice/yard-dispute/l-4d17005c.mp3",
+   "325a728b": "audio/voice/yard-dispute/l-325a728b.mp3",
+   "fb44f2df": "audio/voice/yard-dispute/l-fb44f2df.mp3",
    "9c4eafaf": "audio/voice/yard-dispute/l-9c4eafaf.mp3",
    "2d383fa4": "audio/voice/yard-dispute/l-2d383fa4.mp3",
    "c66065ca": "audio/voice/yard-dispute/l-c66065ca.mp3",
@@ -2519,6 +2520,7 @@
    "a7433af7": "audio/voice/yard-dispute/l-a7433af7.mp3",
    "1734ec94": "audio/voice/yard-dispute/l-1734ec94.mp3",
    "64c2f217": "audio/voice/yard-dispute/l-64c2f217.mp3",
+   "1ea9ebca": "audio/voice/yard-dispute/l-1ea9ebca.mp3",
    "987c9bb3": "audio/voice/yard-dispute/l-987c9bb3.mp3",
    "c814ac74": "audio/voice/yard-dispute/l-c814ac74.mp3",
    "40f68f81": "audio/voice/yard-dispute/l-40f68f81.mp3",

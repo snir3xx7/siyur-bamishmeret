@@ -455,12 +455,19 @@ export function Play() {
     const lines = chatterLines(gameProfile(cfg0, settings.station, sc.dispatch.unit));
     let hide: number | undefined;
     const id = window.setInterval(() => {
-      setChatter(lines[chatterIdx.current++ % lines.length]);
-      if (!settings.textOnly) audio.play('radio-chirp', 'radio');
+      const l = lines[chatterIdx.current++ % lines.length];
+      setChatter(l.text);
+      // שידור רקע בקול (פתיחה לפי התחנה + גוף ההודעה) – רק כשאין שידור אחר באוויר
+      const open = radioIdx?.[voiceKey(l.who, l.open)];
+      const body = radioIdx?.[voiceKey(l.who, l.body)];
+      if (!settings.textOnly) {
+        if (open && body) void audio.background([{ file: open, radio: true, who: l.who }, { file: body, radio: true, who: l.who }]);
+        else void audio.play('radio-chirp', 'radio');
+      }
       hide = window.setTimeout(() => setChatter(undefined), 7000);
     }, 38000);
     return () => { window.clearInterval(id); window.clearTimeout(hide); };
-  }, [sc, cfg0, stage0, paused, settingsOpen, hidden, settings.station, settings.textOnly]);
+  }, [sc, cfg0, stage0, paused, settingsOpen, hidden, settings.station, settings.textOnly, radioIdx]);
 
   if (!game || !sc || !st) return <p className="page" aria-busy="true">{loading ? 'טוען תרגול…' : ''}</p>;
 
