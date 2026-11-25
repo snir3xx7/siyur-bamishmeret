@@ -11,7 +11,10 @@ export type AudioStatus = 'idle' | 'running' | 'blocked' | 'unsupported';
 
 type Listener = () => void;
 
-const DUCK = 0.25;
+/** עוצמת הרקע בזמן דיבור/קשר */
+const DUCK = 0.12;
+/** קבצי הסביבה מוקלטים חזק יחסית לקולות – כיול קבוע לערוץ הסביבה */
+const AMB_TRIM = 0.6;
 
 class AudioEngine {
   private ctx: AudioContext | null = null;
@@ -114,7 +117,7 @@ class AudioEngine {
     this.master.gain.setTargetAtTime(silent ? 0 : s.master, now, 0.05);
     this.buses.speech?.gain.setTargetAtTime(s.speech, now, 0.05);
     this.buses.radio?.gain.setTargetAtTime(s.radio, now, 0.05);
-    this.buses.ambience?.gain.setTargetAtTime(s.ambience, now, 0.05);
+    this.buses.ambience?.gain.setTargetAtTime(s.ambience * AMB_TRIM, now, 0.05);
     this.buses.sfx?.gain.setTargetAtTime(s.sfx, now, 0.05);
     if (silent) window.speechSynthesis?.cancel();
   }
@@ -223,7 +226,7 @@ class AudioEngine {
   private duck() {
     if (!this.ctx || !this.duckGain) return;
     this.duckGain.gain.cancelScheduledValues(this.ctx.currentTime);
-    this.duckGain.gain.setTargetAtTime(DUCK, this.ctx.currentTime, 0.12);
+    this.duckGain.gain.setTargetAtTime(DUCK, this.ctx.currentTime, 0.06);
   }
   private unduck() {
     if (!this.ctx || !this.duckGain) return;

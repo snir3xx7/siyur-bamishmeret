@@ -15,13 +15,15 @@ export interface Settings {
   showHotspotLabels: boolean;
   /** תחנה ואות קריאה (ברירת מחדל: שמות בדויים) */
   station: RadioSettings;
+  /** גרסת כיול השמע (להעברת הגדרות ישנות לברירות המחדל החדשות) */
+  audioV?: number;
 }
 
 export const DEFAULT_SETTINGS: Settings = {
   master: 0.8,
   speech: 1,
-  radio: 0.8,
-  ambience: 0.5,
+  radio: 1,
+  ambience: 0.3,
   sfx: 0.7,
   muted: false,
   textOnly: false,
@@ -31,6 +33,7 @@ export const DEFAULT_SETTINGS: Settings = {
   textSize: 'normal',
   showHotspotLabels: true,
   station: DEFAULT_RADIO,
+  audioV: 2,
 };
 
 const KEY = 'siyur.settings.v1';
@@ -40,6 +43,12 @@ export function loadSettings(): Settings {
     const raw = localStorage.getItem(KEY);
     if (raw) {
       const s = JSON.parse(raw);
+      // כיול 2: רעשי הרקע היו חזקים מדי מול הקשר – מי שלא שינה את העוצמות מקבל את החדשות
+      if (!s.audioV) {
+        if (s.ambience === 0.5) s.ambience = DEFAULT_SETTINGS.ambience;
+        if (s.radio === 0.8) s.radio = DEFAULT_SETTINGS.radio;
+        s.audioV = 2;
+      }
       return { ...DEFAULT_SETTINGS, ...s, station: { ...DEFAULT_RADIO, ...(s.station ?? {}) } };
     }
   } catch {
