@@ -144,11 +144,15 @@ function Notebook({ st, onChange }: { st: GameState; onChange: (text: string) =>
   );
 }
 
-function Composer({ sc, st, onSend, learning }: { sc: Scenario; st: GameState; onSend: (els: string[], note: string, to: RadioTo) => void; learning: boolean }) {
+function Composer({ sc, st, onSend, learning, summon }: { sc: Scenario; st: GameState; onSend: (els: string[], note: string, to: RadioTo) => void; learning: boolean; summon?: boolean }) {
   const els = availableElements(sc, st);
-  const [sel, setSel] = useState<string[]>([]);
+  // זימון כוחות: פתיחה בנוהל ומיקום מסומנים מראש; „סיוע נדרש” ראשון
+  const [sel, setSel] = useState<string[]>(() =>
+    summon ? ['rp-open', els.find((e) => e.category === 'location')?.id].filter((x): x is string => !!x && els.some((e) => e.id === x)) : [],
+  );
   const [note, setNote] = useState('');
-  const cats = Object.keys(sc.update.categories).filter((c) => els.some((e) => e.category === c));
+  const cats0 = Object.keys(sc.update.categories).filter((c) => els.some((e) => e.category === c));
+  const cats = summon ? [...cats0.filter((c) => c === 'procedure'), ...cats0.filter((c) => c === 'assistance'), ...cats0.filter((c) => c !== 'assistance' && c !== 'procedure')] : cats0;
   const chosen = sc.update.elements.filter((e) => sel.includes(e.id));
   const covered = new Set(chosen.map((e) => e.category));
   const p = useRadio();
@@ -158,6 +162,11 @@ function Composer({ sc, st, onSend, learning }: { sc: Scenario; st: GameState; o
   const preview = `${opened ? `${callTo(p, to)}, ` : ''}${body}${note ? `. ${note}` : ''}`;
   return (
     <div className="stack">
+      {summon && (
+        <p className="point challenge small" data-testid="summon-hint">
+          📞 זימון כוחות דרך המשל״ט: בחרו את הכוח ב„סיוע נדרש”, ומסרו את מה שהמוקד צריך – מיקום מדויק, מה קרה, נפגעים ומצבם, סכנות בדרך.
+        </p>
+      )}
       <fieldset className="composer-to" data-testid="composer-to">
         <legend>למי משדרים</legend>
         <div className="radio-row" role="radiogroup">
@@ -220,6 +229,7 @@ export function Play() {
   const [chatter, setChatter] = useState<string | undefined>();
   const chatterIdx = useRef(0);
   const [selected, setSelected] = useState<string | null>(null);
+  const [summon, setSummon] = useState(false);
   const [composer, setComposer] = useState(false);
   const [finishing, setFinishing] = useState(false);
   const [hint, setHint] = useState<string | null>(null);
@@ -759,8 +769,11 @@ export function Play() {
 
           {stage === 'scene' && (
             <div className="tray" role="toolbar" aria-label="פעולות עיקריות">
-              <button type="button" className="btn" onClick={() => setComposer(true)} data-testid="open-composer">
+              <button type="button" className="btn" onClick={() => { setSummon(false); setComposer(true); }} data-testid="open-composer">
                 📻 עדכון למוקד
+              </button>
+              <button type="button" className="btn" onClick={() => { setSummon(true); setComposer(true); }} data-testid="open-summon">
+                📞 זימון כוחות
               </button>
               <button type="button" className="btn" onClick={() => setTab('info')}>
                 ℹ מה ידוע
@@ -787,8 +800,10 @@ export function Play() {
       <Modal open={guide} title="נוהל קשר" onClose={() => setGuide(false)} labelId="guide-title">
         <RadioGuide p={radio} />
       </Modal>
-      <Modal open={composer} title="שידור בקשר" onClose={() => setComposer(false)} labelId="composer-title">
+      <Modal open={composer} title={summon ? 'זימון כוחות' : 'שידור בקשר'} onClose={() => setComposer(false)} labelId="composer-title">
         <Composer
+          key={summon ? 'summon' : 'update'}
+          summon={summon}
           sc={sc}
           st={st}
           learning={learning}

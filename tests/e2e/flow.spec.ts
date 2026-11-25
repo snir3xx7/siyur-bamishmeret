@@ -228,3 +228,15 @@ test('עיכוב ומעצר: תג סטטוס, חיפוש, אזיקה והוצא�
   await act(page, /^גיל – האב/, /לניידת התגבור/);
   await expect(page.getByTestId('hotspots').getByRole('button', { name: /^גיל – האב/ })).toHaveCount(0);
 });
+
+test('זימון כוחות: גרר לתאונה דרך המשל״ט, עם פתיחה בנוהל ומיקום מסומנים מראש', async ({ page }) => {
+  await startScenario(page, 'accident-rain', 4, { mode: 'practice' });
+  await toScene(page);
+  await page.getByTestId('open-summon').click();
+  const dlg = page.getByRole('dialog', { name: 'זימון כוחות' });
+  await expect(dlg.getByTestId('summon-hint')).toBeVisible();
+  await expect(dlg.getByLabel(/פתיחה בנוהל/)).toBeChecked();
+  await dlg.getByLabel(/מבקש גרר/).check();
+  await dlg.getByRole('button', { name: /שליחת העדכון/ }).click();
+  await expect(page.getByText(/גרר הוזמן/).first()).toBeVisible();
+});
