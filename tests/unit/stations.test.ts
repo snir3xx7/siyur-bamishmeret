@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { DEFAULT_RADIO, radioProfile, radioize, unitOptions } from '../../src/config/stations';
+import { DEFAULT_RADIO, headRouteText, radioProfile, radioize, unitOptions } from '../../src/config/stations';
 
 describe('תחנות ואותות קריאה', () => {
   it('ברירת המחדל בדויה – הטקסט לא משתנה', () => {
@@ -11,9 +11,10 @@ describe('תחנות ואותות קריאה', () => {
   it('כפר סבא: הניידת „סבא 402”, ראש המשמרת „סבא 401”, קצין תורן „סבא 11”, משל״ט מרכז', () => {
     const p = radioProfile({ ...DEFAULT_RADIO, mode: 'station', district: 'center', station: 'kfar-saba', unit: '402' }, 'סייר 23');
     expect(p).toMatchObject({ real: true, unit: 'סבא 402', head: 'סבא 401', dutyOfficer: 'סבא 11', center: 'משל״ט מרכז' });
-    expect(radioize('סייר 23, כאן מוקד אלון. תלונה על רעש.', p)).toBe('סבא 402 מ401. תלונה על רעש.');
+    expect(radioize('סייר 23, כאן מוקד אלון. תלונה על רעש.', p)).toBe('סבא 402 ממרכז. תלונה על רעש.');
     expect(p.centerCall).toBe('מרכז');
-    expect(radioize('מוקד: קיבלתי, רשמתי.', p)).toBe('סבא 401: קיבלתי, רשמתי.');
+    expect(headRouteText(p)).toEqual({ open: 'מרכז מסבא 401', body: 'תעבירי את האירוע ל402.' });
+    expect(radioize('מוקד: קיבלתי, רשמתי.', p)).toBe('משל״ט מרכז: קיבלתי, רשמתי.');
   });
 
   it('נתניה ושיטור עירוני: „נתניה 301”', () => {

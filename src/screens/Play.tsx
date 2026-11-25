@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { audio } from '../audio/audio';
-import { centerText, loadRadioIndex, voiceKey } from '../audio/voiceKey';
+import { loadRadioIndex, voiceKey } from '../audio/voiceKey';
 import { buildDebrief } from '../engine/feedback';
 import {
   ambienceOf, availableChoices, availableElements, availableFollowUps, currentHint, factText, findChoice, moodOf, simNow, startTimeOf, visibleHotspots,
@@ -18,13 +18,13 @@ import { procedureReport } from '../engine/procedure';
 import { RadioChain, RadioCtx, useRadio } from '../ui/radio';
 import { RadioGuide } from '../ui/RadioGuide';
 import { FirstSceneGuide, FullscreenButton, RotateHint } from '../ui/DeviceHints';
-import { callTo, chatterLines, gameProfile, radioize, RADIO_TO_LABEL, type RadioProfile, type RadioTo } from '../config/stations';
+import { callTo, chatterLines, gameProfile, headRouteText, radioize, RADIO_TO_LABEL, type RadioProfile, type RadioTo } from '../config/stations';
 import { Modal, useAudioStatus } from '../ui/SettingsDialog';
 
 export function speakerName(sc: Scenario, id: string, p?: RadioProfile): string {
   if (id === 'player') return p?.real ? `אתה (${p.unit})` : 'אתה (הסייר)';
-  if (id === 'dispatch') return p?.real ? p.head : 'מוקד';
-  if (id === 'center') return p?.real ? p.center : 'מוקד';
+  if (id === 'dispatch' || id === 'center') return p?.real ? p.center : 'מוקד';
+  if (id === 'head') return p?.real ? p.head : 'ראש המשמרת';
   if (id === 'duty') return p?.dutyOfficer ?? 'קצין תורן';
   if (id === 'narrator') return '';
   return sc.characters.find((c) => c.id === id)?.name ?? id;
@@ -40,7 +40,7 @@ export function Lines({ sc, lines }: { sc: Scenario; lines: Line[] }) {
         // אם הטקסט כבר פותח בשם הדובר (למשל „מוקד: …”) – לא מכפילים
         const who = named && text.startsWith(`${named}:`) ? '' : named;
         return (
-          <p key={i} className={`line ${['center', 'duty'].includes(l.speaker) ? 'dispatch' : l.speaker === 'dispatch' || l.speaker === 'player' || l.speaker === 'narrator' ? l.speaker : ''}`}>
+          <p key={i} className={`line ${['center', 'duty', 'head'].includes(l.speaker) ? 'dispatch' : l.speaker === 'dispatch' || l.speaker === 'player' || l.speaker === 'narrator' ? l.speaker : ''}`}>
             {who && <span className="who">{who}: </span>}
             {text}
           </p>
@@ -150,7 +150,7 @@ function Composer({ sc, st, onSend, learning }: { sc: Scenario; st: GameState; o
   const chosen = sc.update.elements.filter((e) => sel.includes(e.id));
   const covered = new Set(chosen.map((e) => e.category));
   const p = useRadio();
-  const [to, setTo] = useState<RadioTo>('head');
+  const [to, setTo] = useState<RadioTo>('center');
   const opened = sel.includes('rp-open');
   const body = chosen.filter((e) => e.id !== 'rp-open').map((e) => fill(e.text, st.vars)).join('. ');
   const preview = `${opened ? `${callTo(p, to)}, ` : ''}${body}${note ? `. ${note}` : ''}`;
@@ -159,14 +159,14 @@ function Composer({ sc, st, onSend, learning }: { sc: Scenario; st: GameState; o
       <fieldset className="composer-to" data-testid="composer-to">
         <legend>למי משדרים</legend>
         <div className="radio-row" role="radiogroup">
-          {(['head', 'center', 'duty'] as RadioTo[]).map((k) => (
+          {(['center', 'head', 'duty'] as RadioTo[]).map((k) => (
             <label key={k}>
               <input type="radio" name="radio-to" checked={to === k} onChange={() => setTo(k)} />
-              <span>{p.real ? `${RADIO_TO_LABEL[k]}${k === 'center' ? ` – ${p.center}` : ''}` : k === 'head' ? 'המוקד' : RADIO_TO_LABEL[k]}</span>
+              <span>{p.real ? `${RADIO_TO_LABEL[k]}${k === 'center' ? ` – ${p.center}` : ''}` : k === 'center' ? 'המוקד' : RADIO_TO_LABEL[k]}</span>
             </label>
           ))}
         </div>
-        <p className="small muted">401 – עדכוני מצב, תגבור, פנוי/עסוק · המשל״ט – מד״א, כב״ה, גורם מוסמך, איתור · 11 – אירוע משמעותי (נפגע, עיכוב, פינוי)</p>
+        <p className="small muted">המשל״ט – כל ניהול האירוע: פרטים, קבלה, הגעה, עדכונים, מד״א, כב״ה, גורם מוסמך · 401 – תגבור וניתוב בין ניידות · 11 – אירוע משמעותי (נפגע, עיכוב, פינוי)</p>
       </fieldset>
       <p className="small muted">בחרו רכיבים לעדכון קצר. כדאי לכלול: מקום, מצב נוכחי, מה אומת, מה עדיין חסר וסיוע נדרש. אפשר לשלוח עדכון נוסף בכל עת.</p>
       {cats.map((c) => (
@@ -372,18 +372,22 @@ export function Play() {
     const vl = sc.media.voiceLines ?? {};
     const clip = (sp: string, text: string) => vl[voiceKey(sp, text)];
     const addr = (sp: string, text: string) => radioIdx[voiceKey(sp, text)];
-    const isRadio = (sp: string) => ['dispatch', 'center', 'duty', 'player'].includes(sp);
+    const isRadio = (sp: string) => ['dispatch', 'center', 'duty', 'head', 'player'].includes(sp);
     const prof = gameProfile(st.config, settings.station, sc.dispatch.unit);
     // שורות השחקן נשמעות רק כשהן שידור בקשר שהוקלט (נוהל קשר)
     const spoken = st.lastLines.filter((l) => l.speaker !== 'player' || clip('player', l.text) || clip('player', l.text.slice(l.text.indexOf(', ') + 2)));
-    // פתיחת אירוע בתחנה: קודם המשל״ט (קול נשי) מעביר לראש המשמרת, ואז ראש המשמרת מנתב אליך
-    if (st.turn === 0 && prof.real) spoken.unshift({ speaker: 'center', text: centerText(sc) });
     const items: { file: string; radio: boolean; who: string }[] = [];
+    // פתיחת אירוע בתחנה: ראש המשמרת מבקש מהמשל״ט „מרכז מסבא 401, תעבירי את האירוע ל־402”, ואז המשל״ט (קול נשי) מעדכן אותך
+    if (st.turn === 0 && prof.real) {
+      const r = headRouteText(prof);
+      const a = addr('head', r.open), b = addr('head', r.body);
+      if (a && b) items.push({ file: a, radio: true, who: 'head' }, { file: b, radio: true, who: 'head' });
+    }
     // עדכון: קודם השידור שלך („מרכז מסבא 402” + הרכיבים), ואז התשובה
     const last = st.log[st.log.length - 1];
     if (last?.kind === 'update') {
       const up = st.updates[st.updates.length - 1];
-      const open = up.elements.includes('rp-open') ? addr('player', callTo(prof, up.to ?? 'head')) : undefined;
+      const open = up.elements.includes('rp-open') ? addr('player', callTo(prof, up.to ?? 'center')) : undefined;
       if (open) items.push({ file: open, radio: true, who: 'player' });
       for (const id of up.elements.filter((x) => x !== 'rp-open')) {
         const f = clip('player', fill(sc.update.elements.find((e) => e.id === id)?.text ?? '', st.vars));
@@ -395,13 +399,9 @@ export function Play() {
       const who = l.speaker;
       const full = clip(who, l.text);
       if (full) {
-        // פתיחה: „סבא 402 מ401” לפני הודעת ראש המשמרת, „סבא 401” לפני הודעת המשל״ט
+        // פתיחה: „סבא 402 ממרכז” לפני הודעת המשל״ט בפתיחת האירוע
         if (st.turn === 0 && who === 'dispatch') {
-          const a = addr('dispatch', prof.real ? `${prof.unit} מ${prof.headNum}` : `${prof.unit} ממוקד אלון`);
-          if (a) items.push({ file: a, radio: true, who });
-        }
-        if (st.turn === 0 && who === 'center') {
-          const a = addr('center', prof.head);
+          const a = addr('dispatch', prof.real ? `${prof.unit} מ${prof.centerCall}` : `${prof.unit} ממוקד אלון`);
           if (a) items.push({ file: a, radio: true, who });
         }
         items.push({ file: full, radio: isRadio(who), who });
@@ -569,8 +569,8 @@ export function Play() {
               <div aria-live="polite" ref={dialogRef}>
                 {radio.real && (
                   <p className="line dispatch relay">
-                    <span className="who">{radio.center}: </span>
-                    {radio.head}, {centerText(sc)}
+                    <span className="who">{radio.head}: </span>
+                    {headRouteText(radio).open}, {headRouteText(radio).body}
                   </p>
                 )}
                 <Lines sc={sc} lines={st.log[0].lines} />
@@ -752,9 +752,9 @@ export function Play() {
           st={st}
           learning={learning}
           onSend={(elements, note, to) => {
-            dispatch({ type: 'SEND_UPDATE', elements, note, turn: st.turn, ...(to !== 'head' ? { to } : {}) });
+            dispatch({ type: 'SEND_UPDATE', elements, note, turn: st.turn, ...(to !== 'center' ? { to } : {}) });
             setComposer(false);
-            toast(to === 'center' ? 'השידור נשלח למשל״ט' : to === 'duty' ? 'השידור נשלח לקצין התורן' : 'העדכון נשלח');
+            toast(to === 'head' ? 'השידור נשלח לראש המשמרת' : to === 'duty' ? 'השידור נשלח לקצין התורן' : 'השידור נשלח למשל״ט');
           }}
         />
       </Modal>

@@ -21,11 +21,11 @@ export function withProcedure(sc: Scenario): Scenario {
   const followUps: Choice[] = [
     {
       id: 'rp-ack',
-      label: 'לאשר קבלה בנוהל: „{{toHead}}, קיבלתי את האירוע, יוצא.”',
+      label: 'לאשר קבלה בנוהל: „{{toCenter}}, קיבלתי את האירוע, יוצא.”',
       when: { not: { flag: 'rpAck' } },
       lines: [
-        { speaker: 'player', text: '{{toHead}}, קיבלתי את האירוע, יוצא.' },
-        { speaker: 'dispatch', text: '{{unitShort}}, קיבל.' },
+        { speaker: 'player', text: '{{toCenter}}, קיבלתי את האירוע, יוצא.' },
+        { speaker: 'dispatch', text: '{{unitShort}}, קיבלתי.' },
       ],
       effects: { set: { rpAck: 'good' }, minutes: 0 },
       report: 'אישור קבלת האירוע בקשר',
@@ -69,21 +69,21 @@ export function withProcedure(sc: Scenario): Scenario {
   const radioChoices: Choice[] = [
     {
       id: 'rp-arrive',
-      label: 'לדווח הגעה: „{{toHead}}, הגעתי למקום.”',
+      label: 'לדווח הגעה: „{{toCenter}}, הגעתי למקום.”',
       lines: [
-        { speaker: 'player', text: '{{toHead}}, הגעתי למקום.' },
-        { speaker: 'dispatch', text: '{{unitShort}}, קיבל. עדכן כשיש תמונת מצב.' },
+        { speaker: 'player', text: '{{toCenter}}, הגעתי למקום.' },
+        { speaker: 'dispatch', text: '{{unitShort}}, קיבלתי. עדכן כשיש תמונת מצב.' },
       ],
       effects: { set: { rpArrive: true }, minutes: 0 },
       report: 'דיווח הגעה למקום בקשר',
     },
     {
       id: 'rp-busy-no',
-      label: 'לענות: „{{toHead}}, שלילי, עדיין בטיפול. אעדכן כשאתפנה.”',
+      label: 'לענות: „{{toCenter}}, שלילי, עדיין בטיפול. אעדכן כשאתפנה.”',
       when: { all: [{ flag: 'ev:rp-busy' }, { not: { flag: 'rpBusy' } }] },
       lines: [
-        { speaker: 'player', text: '{{toHead}}, שלילי, עדיין בטיפול באירוע. אעדכן כשאתפנה.' },
-        { speaker: 'dispatch', text: 'קיבל, מעביר לניידת אחרת.' },
+        { speaker: 'player', text: '{{toCenter}}, שלילי, עדיין בטיפול באירוע. אעדכן כשאתפנה.' },
+        { speaker: 'dispatch', text: 'קיבלתי, מעבירה לניידת אחרת.' },
       ],
       effects: { set: { rpBusy: 'good' }, minutes: 0 },
       report: 'מענה לראש המשמרת: עדיין בטיפול',
@@ -144,9 +144,9 @@ export function withProcedure(sc: Scenario): Scenario {
 
   const busy: ScenarioEvent = {
     id: 'rp-busy',
-    title: 'קריאה בקשר מ־{{headCall}}',
+    title: 'קריאה בקשר מהמשל״ט',
     when: { countChosen: { ids: sceneChoiceIds, gte: 5 } },
-    lines: [{ speaker: 'dispatch', text: '{{headToMe}}, אתה פנוי? יש אירוע נוסף באזור.' }],
+    lines: [{ speaker: 'dispatch', text: '{{centerToMe}}, אתה פנוי? יש אירוע נוסף באזור.' }],
     sfx: 'radio-chirp',
   };
 
@@ -203,11 +203,11 @@ export function procedureReport(st: GameState, sc?: Scenario): { items: ProcItem
   const extIds = new Set((sc?.update.elements ?? []).filter((e) => e.category === 'assistance' && EXTERNAL.test(e.text)).map((e) => e.id));
   const extUps = st.updates.filter((u) => u.elements.some((id) => extIds.has(id)));
   if (extUps.length) {
-    const ok = extUps.every((u) => u.to === 'center');
+    const ok = extUps.every((u) => !u.to || u.to === 'center');
     items.push({
       label: 'פנייה לגורם הנכון',
       ok,
-      detail: ok ? 'בקשות לכוחות חיצוניים (מד״א, כב״ה, גורם מוסמך) נשלחו למשל״ט – הוא שמזמין אותם.' : 'ביקשת כוחות חיצוניים מראש המשמרת. את מד״א, כב״ה וגורמים מוסמכים מזמין המשל״ט – פנה אליו ישירות („מרכז מ402, תזמני מד״א…”).',
+      detail: ok ? 'בקשות לכוחות חיצוניים (מד״א, כב״ה, גורם מוסמך) נשלחו למשל״ט – הוא שמזמין אותם.' : 'ביקשת כוחות חיצוניים מראש המשמרת. את מד״א, כב״ה וגורמים מוסמכים מזמין המשל״ט – פנה אליו („מרכז מסבא 402, תזמני מד״א…”).',
     });
   }
   // אירוע משמעותי (עיכוב, פינוי, חפץ חשוד, נפגע) – עדכון לקצין התורן
@@ -239,14 +239,16 @@ export function procedureReport(st: GameState, sc?: Scenario): { items: ProcItem
 }
 
 /** משתני הקשר לטקסטים ({{unitCall}}, {{headCall}}) */
-export function radioVars(sc: Scenario, radio?: { unit: string; head: string }): Record<string, string> {
-  // מבנה שידור: „למי מ־מי”; השולח באות קריאה מלא („401 מסבא 402”), התשובה „סבא 402, קיבל”
+export function radioVars(sc: Scenario, radio?: { unit: string; head: string; centerCall?: string }): Record<string, string> {
+  // הניידת עובדת מול המשל״ט: „מרכז מסבא 402, …” / „סבא 402 ממרכז, …”; תשובה: „סבא 402, קיבלתי.”
   if (!radio) {
     const u = sc.dispatch.unit;
-    return { unitCall: u, headCall: 'מוקד אלון', toHead: `מוקד אלון מ${u}`, headToMe: `${u} ממוקד אלון`, unitShort: u };
+    return { unitCall: u, headCall: 'מוקד אלון', toCenter: `מוקד אלון מ${u}`, centerToMe: `${u} ממוקד אלון`, toHead: `מוקד אלון מ${u}`, headToMe: `${u} ממוקד אלון`, unitShort: u };
   }
   const h = radio.head.split(' ').at(-1) ?? radio.head;
-  return { unitCall: radio.unit, headCall: radio.head, toHead: `${h} מ${radio.unit}`, headToMe: `${radio.unit} מ${h}`, unitShort: radio.unit };
+  const c = radio.centerCall ?? 'מרכז';
+  return { unitCall: radio.unit, headCall: radio.head, toCenter: `${c} מ${radio.unit}`, centerToMe: `${radio.unit} מ${c}`,
+    toHead: `${h} מ${radio.unit}`, headToMe: `${radio.unit} מ${h}`, unitShort: radio.unit };
 }
 
 /** בקשות שעוברות דרך המשל״ט (שירותים חיצוניים וגורמים מוסמכים) */

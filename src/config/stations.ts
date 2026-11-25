@@ -135,20 +135,25 @@ export function callTo(p: RadioProfile, to: RadioTo): string {
   const dest = to === 'center' ? p.centerCall : to === 'duty' ? p.dutyNum : p.headNum;
   return `${dest} מ${p.unit}`;
 }
-export const RADIO_TO_LABEL: Record<RadioTo, string> = { head: 'ראש המשמרת (401)', center: 'המשל״ט', duty: 'הקצין התורן (11)' };
+export const RADIO_TO_LABEL: Record<RadioTo, string> = { center: 'המשל״ט', head: 'ראש המשמרת (401)', duty: 'הקצין התורן (11)' };
 
 /**
- * התאמת טקסט מהתרחיש לפרופיל: „סייר 23” → אות הקריאה שלך, „מוקד אלון” → ראש המשמרת,
- * ו„מוקד:” בתחילת שורה → שם הדובר בקשר.
+ * התאמת טקסט מהתרחיש לפרופיל: „סייר 23” → אות הקריאה שלך, „מוקד אלון” → המשל״ט של המחוז
+ * (הניידת עובדת באירוע מול המשל״ט), ו„מוקד:” בתחילת שורה → שם המשל״ט.
  */
 export function radioize(text: string, p: RadioProfile): string {
   if (!p.real) return text;
   return text
-    .replace(/סייר \d+, כאן מוקד אלון\./g, `${p.unit} מ${p.headNum}.`)
+    .replace(/סייר \d+, כאן מוקד אלון\./g, `${p.unit} מ${p.centerCall}.`)
     .replace(/סייר \d+/g, p.unit)
-    .replace(/כאן מוקד אלון/g, `כאן ${p.head}`)
-    .replace(/מוקד אלון/g, p.head)
-    .replace(/^מוקד:/, `${p.head}:`);
+    .replace(/כאן מוקד אלון/g, `כאן ${p.center}`)
+    .replace(/מוקד אלון/g, p.center)
+    .replace(/^מוקד:/, `${p.center}:`);
+}
+
+/** בקשת ראש המשמרת מהמשל״ט בפתיחת האירוע: „מרכז מסבא 401, תעבירי את האירוע ל־402.” */
+export function headRouteText(p: RadioProfile): { open: string; body: string } {
+  return { open: `${p.centerCall} מ${p.head}`, body: `תעבירי את האירוע ל${p.unitNum}.` };
 }
 
 /** אותות הקריאה שאפשר לבחור לניידת שלך בתחנה */
@@ -184,16 +189,17 @@ export function chatterLines(p: RadioProfile): string[] {
   const own = p.unit.split(' ').at(-1);
   const others = p.real ? ['403', '404', '405', '302'].filter((n) => n !== own).map((n) => `${prefix} ${n}`) : ['סייר 12', 'סייר 31', 'סייר 40'];
   const [a, b, c] = others;
+  const ctr = p.real ? p.centerCall : 'מוקד אלון';
   const head = p.head;
   const duty = p.real ? p.dutyOfficer : 'הקצין התורן';
   return [
-    `${a} ל־${head}: סיימתי באירוע ברחוב הרימון, פנוי.`,
-    `${head} ל־${b}: גש לרחוב הנרקיס 12, אזעקה ברכב חונה.`,
-    `${b} ל־${head}: קיבלתי, בדרך.`,
-    `${head} לכל הניידות: רכב לבן מסוג מסחרי עזב בפראות את צומת הזית לכיוון צפון. מי שמזהה – מדווח, לא מתקרב לבד.`,
-    `${c} ל־${head}: אני בעצירת רכב בשדרות הזית, הכול תקין, ממשיך.`,
-    `${duty} ל־${head}: עדכן אותי כשנסגרים האירועים הפתוחים.`,
-    `${a} ל־${head}: מבקש הפסקת התרעננות בתחנה, עשר דקות.`,
-    `${head} ל־${a}: חיובי.`,
+    `${ctr} מ${a}: סיימתי באירוע ברחוב הרימון, פנוי.`,
+    `${b} מ${ctr}: גש לרחוב הנרקיס 12, אזעקה ברכב חונה.`,
+    `${ctr} מ${b}: קיבלתי, בדרך.`,
+    `${ctr} לכל הניידות: רכב לבן מסוג מסחרי עזב בפראות את צומת הזית לכיוון צפון. מי שמזהה – מדווח, לא מתקרב לבד.`,
+    `${ctr} מ${c}: אני בעצירת רכב בשדרות הזית, הכול תקין, ממשיך.`,
+    `${head} מ${duty}: עדכן אותי כשנסגרים האירועים הפתוחים.`,
+    `${head} מ${a}: מבקש הפסקת התרעננות בתחנה, עשר דקות.`,
+    `${a} מ${head}: חיובי.`,
   ];
 }

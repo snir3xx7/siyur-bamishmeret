@@ -19,8 +19,8 @@ describe('נוהל קשר – שכבה לכל התרחישים', () => {
   it('אותות הקריאה מהתחנה נכנסים לטקסט; ברירת מחדל בדויה', () => {
     const sc = withProcedure(loadScenario('noise-building'));
     const real = play(sc, ['rp-ack'], { radio: { unit: 'סבא 402', head: 'סבא 401', center: 'משל״ט מרכז' } });
-    expect(real.lastLines[0].text).toBe('401 מסבא 402, קיבלתי את האירוע, יוצא.');
-    expect(real.lastLines[1].text).toBe('סבא 402, קיבל.');
+    expect(real.lastLines[0].text).toBe('מרכז מסבא 402, קיבלתי את האירוע, יוצא.');
+    expect(real.lastLines[1].text).toBe('סבא 402, קיבלתי.');
     const fict = play(sc, ['rp-ack']);
     expect(fict.lastLines[0].text).toContain('מוקד אלון מסייר 23');
   });
@@ -59,16 +59,17 @@ describe('נוהל קשר – שכבה לכל התרחישים', () => {
 });
 
 describe('למי משדרים: משל״ט, ראש משמרת, קצין תורן', () => {
-  it('בקשת מד״א מהמשל״ט – המשל״ט עונה, ונוהל הקשר תקין; מראש המשמרת – הערה', () => {
+  it('בקשת מד״א מהמשל״ט (ברירת המחדל) – המשל״ט עונה, ונוהל הקשר תקין; מראש המשמרת – הערה', () => {
     const sc = withProcedure(loadScenario('missing-elder'));
     const seed = seedFor(loadScenario('missing-elder'), 'bench');
     const base = play(sc, ['f-desc', 'GO', 'ARRIVE', 'o-calm', 'p-search'], { seed });
-    const toCenter = reduce(sc, base, { type: 'SEND_UPDATE', elements: ['u-loc', 'u-ems'], note: '', turn: base.turn, to: 'center' });
-    expect(toCenter.lastLines[0].speaker).toBe('center');
-    expect(toCenter.updates[0].to).toBe('center');
+    const toCenter = reduce(sc, base, { type: 'SEND_UPDATE', elements: ['u-loc', 'u-ems'], note: '', turn: base.turn });
+    expect(toCenter.lastLines[0].speaker).toBe('dispatch');
+    expect(toCenter.updates[0].to).toBeUndefined();
+    expect(reduce(sc, base, { type: 'SEND_UPDATE', elements: ['u-loc', 'u-ems'], note: '', turn: base.turn, to: 'center' }).lastLines[0].speaker).toBe('dispatch');
     expect(procedureReport(toCenter, sc).items.find((i) => i.label === 'פנייה לגורם הנכון')!.ok).toBe(true);
-    const toHead = reduce(sc, base, { type: 'SEND_UPDATE', elements: ['u-loc', 'u-ems'], note: '', turn: base.turn });
-    expect(toHead.lastLines[0].speaker).toBe('dispatch');
+    const toHead = reduce(sc, base, { type: 'SEND_UPDATE', elements: ['u-loc', 'u-ems'], note: '', turn: base.turn, to: 'head' });
+    expect(toHead.lastLines[0].speaker).toBe('head');
     expect(procedureReport(toHead, sc).items.find((i) => i.label === 'פנייה לגורם הנכון')!.ok).toBe(false);
     // נפגע/מד״א → צריך לעדכן גם את הקצין התורן
     expect(procedureReport(toCenter, sc).items.find((i) => i.label === 'עדכון הקצין התורן')!.ok).toBe(false);

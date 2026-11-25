@@ -1,21 +1,11 @@
 import { expect, type Page } from '@playwright/test';
 
-/** גרסאות התרחישים הנוכחיות (כמו ב-public/scenarios/index.json) */
-export const VERSIONS: Record<string, number> = {
-  'accident-rain': 5,
-  'noise-building': 3,
-  'yard-dispute': 3,
-  'missing-elder': 2,
-  'suspicious-object': 3,
-  'blocked-parking': 2,
-  'lost-child': 3,
-  'bar-fight': 3,
-  'gas-smell': 3,
-  'park-youths': 1,
-  'shoplifting': 1,
-  'burglary': 1,
-  'domestic-call': 1,
-};
+import { readFileSync } from 'node:fs';
+
+/** גרסאות התרחישים הנוכחיות – נקראות מ-public/scenarios/index.json */
+export const VERSIONS: Record<string, number> = Object.fromEntries(
+  (JSON.parse(readFileSync('public/scenarios/index.json', 'utf8')).scenarios as { id: string; version: number }[]).map((e) => [e.id, e.version]),
+);
 
 export async function startScenario(page: Page, id = 'accident-rain', seed = 4, opts: { mode?: 'learning' | 'practice' } = {}) {
   await page.goto(`./#/s/${id}?v=${VERSIONS[id]}&seed=${seed}`);

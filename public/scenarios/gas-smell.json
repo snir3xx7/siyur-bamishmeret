@@ -1,6 +1,6 @@
 {
  "id": "gas-smell",
- "version": 3,
+ "version": 4,
  "title": "ריח גז בבניין מגורים",
  "category": "אירועים חריגים ובטיחות",
  "summary": "דיירת מדווחת על ריח גז חזק בכניסה לבניין. יש לפנות את הדיירים בלי ליצור ניצוץ, לתת הוראות פינוי ברורות גם למי שמסרב, למנוע אש ועישון, להרחיק את כולם ולהעביר את הזירה לכב״ה.",
@@ -1834,7 +1834,7 @@
    "92c814ac": "audio/voice/gas-smell/l-92c814ac.mp3",
    "e77028d7": "audio/voice/gas-smell/l-e77028d7.mp3",
    "0e01a700": "audio/voice/gas-smell/l-0e01a700.mp3",
-   "4e52b452": "audio/voice/gas-smell/l-4e52b452.mp3",
+   "5a7fa6a9": "audio/voice/gas-smell/l-5a7fa6a9.mp3",
    "e45f91ee": "audio/voice/gas-smell/l-e45f91ee.mp3",
    "bc4ef680": "audio/voice/gas-smell/l-bc4ef680.mp3",
    "dec6b838": "audio/voice/gas-smell/l-dec6b838.mp3",
@@ -1865,9 +1865,9 @@
    "a2091f36": "audio/voice/gas-smell/l-a2091f36.mp3",
    "ac2cd5e2": "audio/voice/gas-smell/l-ac2cd5e2.mp3",
    "eb03ec08": "audio/voice/gas-smell/l-eb03ec08.mp3",
-   "476c06a7": "audio/voice/gas-smell/l-476c06a7.mp3",
+   "ec463fb2": "audio/voice/gas-smell/l-ec463fb2.mp3",
    "6c920960": "audio/voice/gas-smell/l-6c920960.mp3",
-   "4442afed": "audio/voice/gas-smell/l-4442afed.mp3",
+   "a7433af7": "audio/voice/gas-smell/l-a7433af7.mp3",
    "1734ec94": "audio/voice/gas-smell/l-1734ec94.mp3",
    "64c2f217": "audio/voice/gas-smell/l-64c2f217.mp3",
    "5004ef65": "audio/voice/gas-smell/l-5004ef65.mp3",
@@ -1877,13 +1877,13 @@
    "b8e256cf": "audio/voice/gas-smell/l-b8e256cf.mp3",
    "c814ac74": "audio/voice/gas-smell/l-c814ac74.mp3",
    "a6e1a1e6": "audio/voice/gas-smell/l-a6e1a1e6.mp3",
-   "d572947d": "audio/voice/gas-smell/l-d572947d.mp3",
+   "bb10233e": "audio/voice/gas-smell/l-bb10233e.mp3",
    "4de7ff40": "audio/voice/gas-smell/l-4de7ff40.mp3",
    "72c14592": "audio/voice/gas-smell/l-72c14592.mp3",
-   "19587e85": "audio/voice/gas-smell/l-19587e85.mp3",
+   "30635cba": "audio/voice/gas-smell/l-30635cba.mp3",
    "5b69fb64": "audio/voice/gas-smell/l-5b69fb64.mp3",
    "80fc5f75": "audio/voice/gas-smell/l-80fc5f75.mp3",
-   "2921e8ae": "audio/voice/gas-smell/l-2921e8ae.mp3",
+   "74d70b6d": "audio/voice/gas-smell/l-74d70b6d.mp3",
    "170f5e23": "audio/voice/gas-smell/l-170f5e23.mp3",
    "f3ebfae0": "audio/voice/gas-smell/l-f3ebfae0.mp3",
    "67443096": "audio/voice/gas-smell/l-67443096.mp3",
@@ -1894,8 +1894,7 @@
    "452557e5": "audio/voice/gas-smell/l-452557e5.mp3",
    "ea63fabf": "audio/voice/gas-smell/l-ea63fabf.mp3",
    "e77ff72c": "audio/voice/gas-smell/l-e77ff72c.mp3",
-   "3bcc191c": "audio/voice/gas-smell/l-3bcc191c.mp3",
-   "44cb0a05": "audio/voice/gas-smell/l-44cb0a05.mp3"
+   "3bcc191c": "audio/voice/gas-smell/l-3bcc191c.mp3"
   }
  }
 }

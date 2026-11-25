@@ -98,15 +98,13 @@ def all_lines(sc):
         add(e['lines']); [add(b['lines']) for b in e.get('branches', [])]
     for r in sc['update']['responses']:
         add(r['lines'])
-        # אותה תשובה כשהעדכון נשלח למשל״ט או לקצין התורן (קולות אחרים)
-        add([{**l, 'speaker': 'center' if l['speaker'] == 'dispatch' else l['speaker']} for l in r['lines']])
+        # אותה תשובה כשהעדכון נשלח לראש המשמרת או לקצין התורן (קולות אחרים)
+        add([{**l, 'speaker': 'head' if l['speaker'] == 'dispatch' else l['speaker']} for l in r['lines']])
         add([{**l, 'speaker': 'duty' if l['speaker'] == 'dispatch' else l['speaker']} for l in r['lines']])
-    for sp in ('dispatch', 'center', 'duty'):
+    for sp in ('dispatch', 'head', 'duty'):
         add([{'speaker': sp, 'text': 'מוקד: קיבלתי, רשמתי.'}])
     # השידור של השחקן בעדכון: פתיחה בנוהל + כל רכיב עדכון
     add([{'speaker': 'player', 'text': e['text']} for e in sc['update']['elements'] if e['id'] != 'rp-open'])
-    # המשל״ט (קול נשי) מעביר את האירוע לראש המשמרת – בלי אות קריאה, כדי שיתאים לכל תחנה
-    add([{'speaker': 'center', 'text': center_text(sc)}])
     return L
 
 
@@ -168,9 +166,12 @@ def main():
                     u = f'{pre} {n}'
                     for dest in (st['shiftHead'], st['dutyOfficer'], d['centerCall']):
                         jobs.append((st['id'], 'player', f'{dest} מ{u}'))
-                    jobs.append((st['id'], 'dispatch', f'{u} מ{st["shiftHead"]}'))
+                    jobs.append((st['id'], 'dispatch', f'{u} מ{d["centerCall"]}'))
                     jobs.append((st['id'], 'dispatch', u))
-                jobs.append((st['id'], 'center', f'{pre} {st["shiftHead"]}'))
+                # ראש המשמרת מבקש מהמשל״ט: „מרכז מסבא 401” + „תעבירי את האירוע ל־402.”
+                jobs.append((st['id'], 'head', f'{d["centerCall"]} מ{pre} {st["shiftHead"]}'))
+        for n in UNITS:
+            jobs.append(('common', 'head', f'תעבירי את האירוע ל{n}.'))
         for sc in scenarios:  # בדוי: „מוקד אלון מסייר 23”
             u = sc['dispatch']['unit']
             jobs += [('fictional', 'player', f'מוקד אלון מ{u}'), ('fictional', 'player', f'קצין תורן מ{u}'),
@@ -202,7 +203,7 @@ def main():
         mapping, made = {}, 0
         for l in all_lines(sc):
             sp = l['speaker']
-            m0 = re.match(r'^\{\{(toHead|headToMe|unitShort)\}\},\s*', l['text'])
+            m0 = re.match(r'^\{\{(toCenter|centerToMe|toHead|headToMe|unitShort)\}\},\s*', l['text'])
             if m0:
                 # פתיחה בנוהל („401 מסבא 402,”) מוקלטת בנפרד לכל תחנה – כאן רק גוף ההודעה
                 l = {**l, 'text': l['text'][m0.end():]}

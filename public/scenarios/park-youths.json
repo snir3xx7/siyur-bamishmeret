@@ -1,6 +1,6 @@
 {
  "id": "park-youths",
- "version": 1,
+ "version": 2,
  "title": "רעש ושתייה של בני נוער בגינה ציבורית",
  "category": "איכות חיים וסדר ציבורי",
  "summary": "שכנה מתלוננת על מוזיקה ושתייה בגינה בחצות. בגינה שלושה בני נוער, ואחת מהן לא מרגישה טוב. יש לגשת ברוגע, להנמיך, לברר גילאים, לטפל באלכוהול אצל קטינים, לזהות מצוקה רפואית, לערב הורים ולסיים בלי השפלה.",
@@ -1302,7 +1302,7 @@
    "6b0ec99b": "audio/voice/park-youths/l-6b0ec99b.mp3",
    "f3c7836a": "audio/voice/park-youths/l-f3c7836a.mp3",
    "0e01a700": "audio/voice/park-youths/l-0e01a700.mp3",
-   "4e52b452": "audio/voice/park-youths/l-4e52b452.mp3",
+   "5a7fa6a9": "audio/voice/park-youths/l-5a7fa6a9.mp3",
    "e45f91ee": "audio/voice/park-youths/l-e45f91ee.mp3",
    "bc4ef680": "audio/voice/park-youths/l-bc4ef680.mp3",
    "dec6b838": "audio/voice/park-youths/l-dec6b838.mp3",
@@ -1328,9 +1328,9 @@
    "2334e85f": "audio/voice/park-youths/l-2334e85f.mp3",
    "336111a2": "audio/voice/park-youths/l-336111a2.mp3",
    "eb03ec08": "audio/voice/park-youths/l-eb03ec08.mp3",
-   "476c06a7": "audio/voice/park-youths/l-476c06a7.mp3",
+   "ec463fb2": "audio/voice/park-youths/l-ec463fb2.mp3",
    "6c920960": "audio/voice/park-youths/l-6c920960.mp3",
-   "4442afed": "audio/voice/park-youths/l-4442afed.mp3",
+   "a7433af7": "audio/voice/park-youths/l-a7433af7.mp3",
    "1734ec94": "audio/voice/park-youths/l-1734ec94.mp3",
    "64c2f217": "audio/voice/park-youths/l-64c2f217.mp3",
    "0a71efb5": "audio/voice/park-youths/l-0a71efb5.mp3",
@@ -1338,10 +1338,10 @@
    "77948926": "audio/voice/park-youths/l-77948926.mp3",
    "c814ac74": "audio/voice/park-youths/l-c814ac74.mp3",
    "ce34c535": "audio/voice/park-youths/l-ce34c535.mp3",
-   "9943f848": "audio/voice/park-youths/l-9943f848.mp3",
+   "28a432ed": "audio/voice/park-youths/l-28a432ed.mp3",
    "c97cf417": "audio/voice/park-youths/l-c97cf417.mp3",
    "80fc5f75": "audio/voice/park-youths/l-80fc5f75.mp3",
-   "2921e8ae": "audio/voice/park-youths/l-2921e8ae.mp3",
+   "74d70b6d": "audio/voice/park-youths/l-74d70b6d.mp3",
    "170f5e23": "audio/voice/park-youths/l-170f5e23.mp3",
    "cee8a470": "audio/voice/park-youths/l-cee8a470.mp3",
    "2d676dc7": "audio/voice/park-youths/l-2d676dc7.mp3",
@@ -1349,8 +1349,7 @@
    "fada45d7": "audio/voice/park-youths/l-fada45d7.mp3",
    "89dde9a0": "audio/voice/park-youths/l-89dde9a0.mp3",
    "32740b39": "audio/voice/park-youths/l-32740b39.mp3",
-   "50ba9bab": "audio/voice/park-youths/l-50ba9bab.mp3",
-   "55bb8e3e": "audio/voice/park-youths/l-55bb8e3e.mp3"
+   "50ba9bab": "audio/voice/park-youths/l-50ba9bab.mp3"
   }
  }
 }

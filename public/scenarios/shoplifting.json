@@ -1,6 +1,6 @@
 {
  "id": "shoplifting",
- "version": 1,
+ "version": 2,
  "title": "חשד לגניבה ממינימרקט",
  "category": "עבירות רכוש",
  "summary": "מאבטח במינימרקט עיכב נער בן 17 בחשד שגנב, ובעלת החנות כועסת ורוצה „ללמד אותו לקח”. יש לאמת לפני שמאשימים, להרחיק מעיני הלקוחות, לזהות, לערב הורה של קטין ולמנוע פרסום תמונתו.",
@@ -1418,7 +1418,7 @@
    "c729818b": "audio/voice/shoplifting/l-c729818b.mp3",
    "b86d4c9f": "audio/voice/shoplifting/l-b86d4c9f.mp3",
    "0e01a700": "audio/voice/shoplifting/l-0e01a700.mp3",
-   "4e52b452": "audio/voice/shoplifting/l-4e52b452.mp3",
+   "5a7fa6a9": "audio/voice/shoplifting/l-5a7fa6a9.mp3",
    "e45f91ee": "audio/voice/shoplifting/l-e45f91ee.mp3",
    "bc4ef680": "audio/voice/shoplifting/l-bc4ef680.mp3",
    "dec6b838": "audio/voice/shoplifting/l-dec6b838.mp3",
@@ -1446,19 +1446,19 @@
    "608d2f70": "audio/voice/shoplifting/l-608d2f70.mp3",
    "1f45764a": "audio/voice/shoplifting/l-1f45764a.mp3",
    "eb03ec08": "audio/voice/shoplifting/l-eb03ec08.mp3",
-   "476c06a7": "audio/voice/shoplifting/l-476c06a7.mp3",
+   "ec463fb2": "audio/voice/shoplifting/l-ec463fb2.mp3",
    "6c920960": "audio/voice/shoplifting/l-6c920960.mp3",
-   "4442afed": "audio/voice/shoplifting/l-4442afed.mp3",
+   "a7433af7": "audio/voice/shoplifting/l-a7433af7.mp3",
    "1734ec94": "audio/voice/shoplifting/l-1734ec94.mp3",
    "64c2f217": "audio/voice/shoplifting/l-64c2f217.mp3",
    "1f48c6c5": "audio/voice/shoplifting/l-1f48c6c5.mp3",
    "4f62295d": "audio/voice/shoplifting/l-4f62295d.mp3",
    "c814ac74": "audio/voice/shoplifting/l-c814ac74.mp3",
    "68760a99": "audio/voice/shoplifting/l-68760a99.mp3",
-   "5ac76b60": "audio/voice/shoplifting/l-5ac76b60.mp3",
+   "c0c8aae1": "audio/voice/shoplifting/l-c0c8aae1.mp3",
    "ae2cb0e7": "audio/voice/shoplifting/l-ae2cb0e7.mp3",
    "80fc5f75": "audio/voice/shoplifting/l-80fc5f75.mp3",
-   "2921e8ae": "audio/voice/shoplifting/l-2921e8ae.mp3",
+   "74d70b6d": "audio/voice/shoplifting/l-74d70b6d.mp3",
    "170f5e23": "audio/voice/shoplifting/l-170f5e23.mp3",
    "fc32d302": "audio/voice/shoplifting/l-fc32d302.mp3",
    "c12caf30": "audio/voice/shoplifting/l-c12caf30.mp3",
@@ -1466,8 +1466,7 @@
    "6c1da3af": "audio/voice/shoplifting/l-6c1da3af.mp3",
    "33edc197": "audio/voice/shoplifting/l-33edc197.mp3",
    "df0708b5": "audio/voice/shoplifting/l-df0708b5.mp3",
-   "dae3614f": "audio/voice/shoplifting/l-dae3614f.mp3",
-   "b0f0c049": "audio/voice/shoplifting/l-b0f0c049.mp3"
+   "dae3614f": "audio/voice/shoplifting/l-dae3614f.mp3"
   }
  }
 }

@@ -5,15 +5,15 @@ import { radioProfile, type RadioProfile } from '../config/stations';
 export const RadioCtx = createContext<RadioProfile>(radioProfile(undefined, ''));
 export const useRadio = () => useContext(RadioCtx);
 
-/** שרשרת הקשר: אזרח → משל״ט → משגר → ראש המשמרת → אתה */
+/** שרשרת הקשר: אזרח → המשל״ט פותח אירוע → 401 מבקש להעביר אליך → המשל״ט מעדכן אותך → אתה עובד מול המשל״ט */
 export function RadioChain({ p, incident }: { p: RadioProfile; incident: string }) {
   if (!p.real) return null;
   const steps = [
     { icon: '📞', who: 'אזרח', what: 'פנייה למוקד' },
     { icon: '🖥', who: p.center, what: `נפתח אירוע ${incident}` },
-    { icon: '📡', who: 'משגר', what: `מעביר ל־${p.head}` },
-    { icon: '🎧', who: p.head, what: 'ראש המשמרת מנתב' },
-    { icon: '🚓', who: p.unit, what: 'אתה' },
+    { icon: '🎧', who: p.head, what: `„תעבירי ל־${p.unitNum}”` },
+    { icon: '📡', who: p.center, what: `מעדכן את ${p.unitNum}` },
+    { icon: '🚓', who: p.unit, what: 'אתה – מול המשל״ט' },
   ];
   return (
     <ol className="radio-chain" aria-label="שרשרת הקשר" data-testid="radio-chain">

@@ -6,7 +6,7 @@
  },
  "special": {
   "dispatch": {
-   "voice": "jonathan",
+   "voice": "maya",
    "radio": true,
    "speed": 1.05
   },
@@ -28,6 +28,11 @@
    "voice": "david",
    "radio": true,
    "speed": 1.0
+  },
+  "head": {
+   "voice": "jonathan",
+   "radio": true,
+   "speed": 1.05
   }
  },
  "characters": {

@@ -1,6 +1,6 @@
 {
  "id": "lost-child",
- "version": 3,
+ "version": 4,
  "title": "ילד שהלך לאיבוד בשוק",
  "category": "נעדרים ואוכלוסיות פגיעות",
  "summary": "אם בבהלה מדווחת שבנה בן השש נעלם בין הדוכנים. יש להרגיע ולקבל תיאור, להשאיר את האם בנקודה קבועה, לגייס את הסוחרים, לגשת לילד בגובה העיניים ולוודא זהות לפני מסירה.",
@@ -1891,7 +1891,7 @@
    "e6dc5b43": "audio/voice/lost-child/l-e6dc5b43.mp3",
    "0b51770f": "audio/voice/lost-child/l-0b51770f.mp3",
    "0e01a700": "audio/voice/lost-child/l-0e01a700.mp3",
-   "4e52b452": "audio/voice/lost-child/l-4e52b452.mp3",
+   "5a7fa6a9": "audio/voice/lost-child/l-5a7fa6a9.mp3",
    "e45f91ee": "audio/voice/lost-child/l-e45f91ee.mp3",
    "bc4ef680": "audio/voice/lost-child/l-bc4ef680.mp3",
    "dec6b838": "audio/voice/lost-child/l-dec6b838.mp3",
@@ -1927,9 +1927,9 @@
    "817e3a18": "audio/voice/lost-child/l-817e3a18.mp3",
    "1866227d": "audio/voice/lost-child/l-1866227d.mp3",
    "eb03ec08": "audio/voice/lost-child/l-eb03ec08.mp3",
-   "476c06a7": "audio/voice/lost-child/l-476c06a7.mp3",
+   "ec463fb2": "audio/voice/lost-child/l-ec463fb2.mp3",
    "6c920960": "audio/voice/lost-child/l-6c920960.mp3",
-   "4442afed": "audio/voice/lost-child/l-4442afed.mp3",
+   "a7433af7": "audio/voice/lost-child/l-a7433af7.mp3",
    "1734ec94": "audio/voice/lost-child/l-1734ec94.mp3",
    "64c2f217": "audio/voice/lost-child/l-64c2f217.mp3",
    "20598f51": "audio/voice/lost-child/l-20598f51.mp3",
@@ -1939,13 +1939,13 @@
    "a280d6af": "audio/voice/lost-child/l-a280d6af.mp3",
    "c814ac74": "audio/voice/lost-child/l-c814ac74.mp3",
    "bfc7b412": "audio/voice/lost-child/l-bfc7b412.mp3",
-   "612ffd2b": "audio/voice/lost-child/l-612ffd2b.mp3",
+   "418d8bea": "audio/voice/lost-child/l-418d8bea.mp3",
    "30861520": "audio/voice/lost-child/l-30861520.mp3",
    "0f43dbc7": "audio/voice/lost-child/l-0f43dbc7.mp3",
-   "0c26959a": "audio/voice/lost-child/l-0c26959a.mp3",
+   "6fdcf49f": "audio/voice/lost-child/l-6fdcf49f.mp3",
    "aa9cac85": "audio/voice/lost-child/l-aa9cac85.mp3",
    "80fc5f75": "audio/voice/lost-child/l-80fc5f75.mp3",
-   "2921e8ae": "audio/voice/lost-child/l-2921e8ae.mp3",
+   "74d70b6d": "audio/voice/lost-child/l-74d70b6d.mp3",
    "170f5e23": "audio/voice/lost-child/l-170f5e23.mp3",
    "b6488ba0": "audio/voice/lost-child/l-b6488ba0.mp3",
    "7241e4ca": "audio/voice/lost-child/l-7241e4ca.mp3",
@@ -1955,8 +1955,7 @@
    "0c68e977": "audio/voice/lost-child/l-0c68e977.mp3",
    "d8c16bf3": "audio/voice/lost-child/l-d8c16bf3.mp3",
    "dadb6008": "audio/voice/lost-child/l-dadb6008.mp3",
-   "3bcc191c": "audio/voice/lost-child/l-3bcc191c.mp3",
-   "f29d37e8": "audio/voice/lost-child/l-f29d37e8.mp3"
+   "3bcc191c": "audio/voice/lost-child/l-3bcc191c.mp3"
   }
  }
 }

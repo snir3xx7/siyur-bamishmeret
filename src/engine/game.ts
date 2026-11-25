@@ -275,11 +275,12 @@ export function reduce(sc: Scenario, prev: GameState, action: GameAction): GameS
       }
       if (!any) lines.push({ speaker: 'dispatch', text: 'מוקד: קיבלתי, רשמתי.' });
       // מי עונה בקשר: המשל״ט או הקצין התורן, לפי מי שאליו נשלח העדכון
-      const to = action.to ?? 'head';
-      if (to !== 'head') {
-        for (let i = 0; i < lines.length; i++) if (lines[i].speaker === 'dispatch') lines[i] = { ...lines[i], speaker: to === 'center' ? 'center' : 'duty' };
+      // ברירת מחדל: המשל״ט (הדובר 'dispatch'). לראש המשמרת או לקצין התורן – הם עונים בקולם
+      const to = action.to ?? 'center';
+      if (to !== 'center') {
+        for (let i = 0; i < lines.length; i++) if (lines[i].speaker === 'dispatch') lines[i] = { ...lines[i], speaker: to };
       }
-      st.updates.push({ n, turn: st.turn, t: simNow(prev), elements, note: action.note.slice(0, 280), ...(to !== 'head' ? { to } : {}) });
+      st.updates.push({ n, turn: st.turn, t: simNow(prev), elements, note: action.note.slice(0, 280), ...(to !== 'center' ? { to } : {}) });
       st.simMinutes += 1;
       st.lastLines = lines;
       const texts = elements.map((id) => fill(sc.update.elements.find((e) => e.id === id)!.text, st.vars));

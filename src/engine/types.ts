@@ -294,7 +294,7 @@ export interface KnownFact {
 
 export interface SentUpdate {
   n: number;
-  /** למי נשלח: ראש המשמרת (ברירת מחדל), המשל״ט או הקצין התורן */
+  /** למי נשלח: המשל״ט (ברירת מחדל), ראש המשמרת או הקצין התורן */
   to?: 'head' | 'center' | 'duty';
   turn: number;
   t: number;

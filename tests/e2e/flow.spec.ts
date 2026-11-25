@@ -138,7 +138,7 @@ test('מצב למידה: השהיה עוצרת את השעון וחוסמת פע
 test('עמוד למדריך: קישור קבוע ובדיקת מסלולים', async ({ page }) => {
   await page.goto('./#/instructor');
   await page.getByLabel('זרע (1–999999)').fill('777');
-  await expect(page.getByTestId('instructor-link')).toContainText('#/s/accident-rain?v=5&seed=777');
+  await expect(page.getByTestId('instructor-link')).toContainText(`#/s/accident-rain?v=${VERSIONS['accident-rain']}&seed=777`);
   await page.getByRole('button', { name: 'הרצת בדיקה' }).click();
   await expect(page.getByText('✓ לא נמצאו שגיאות')).toBeVisible({ timeout: 20000 });
 });
@@ -154,7 +154,7 @@ test('סמכות: קטטה – דרישת הזדהות בלי הסבר נתקל�
   await expect(page.getByTestId('char-dor')).toBeVisible();
 });
 
-test('תחנה ואות קריאה: כפר סבא – שרשרת קשר מהמשל״ט דרך 401 אל הניידת', async ({ page }) => {
+test('תחנה ואות קריאה: כפר סבא – 401 מבקש מהמשל״ט להעביר, המשל״ט מעדכן את הניידת', async ({ page }) => {
   await page.goto(`./#/s/noise-building?v=${VERSIONS['noise-building']}&seed=9`);
   const picker = page.getByTestId('station-picker');
   await picker.getByText('התחנה שלי').click();
@@ -163,7 +163,8 @@ test('תחנה ואות קריאה: כפר סבא – שרשרת קשר מהמש
   await page.getByRole('button', { name: /התחלת התרחיש/ }).click();
   await expect(page.getByTestId('radio-chain')).toContainText('משל״ט מרכז');
   await expect(page.getByTestId('radio-chain')).toContainText('סבא 401');
-  await expect(page.getByText(/סבא 403 מ401/).first()).toBeVisible();
+  await expect(page.getByText(/מרכז מסבא 401, תעבירי את האירוע ל403/).first()).toBeVisible();
+  await expect(page.getByText(/סבא 403 ממרכז/).first()).toBeVisible();
 });
 
 test('משמרת מלאה: קישור מדריך, אירוע ראשון, תחקיר וחזרה למשמרת', async ({ page }) => {
