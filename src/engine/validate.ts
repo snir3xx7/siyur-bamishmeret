@@ -90,7 +90,7 @@ export function validateScenario(sc: Scenario, opts: { walks?: number } = {}): V
     if (!c.lines?.length && !c.branches?.length) warnings.push(`בחירה ${c.id} ללא דיאלוג או תגובה`);
   }
   function checkSpeaker(where: string, s: string) {
-    if (!['player', 'dispatch', 'narrator'].includes(s) && !charIds.has(s)) errors.push(`${where}: דובר לא מוכר "${s}"`);
+    if (!['player', 'dispatch', 'narrator', 'head', 'duty'].includes(s) && !charIds.has(s)) errors.push(`${where}: דובר לא מוכר "${s}"`);
   }
   for (const h of sc.hotspots) {
     checkRefs(`נקודת עניין ${h.id}`, h.when);

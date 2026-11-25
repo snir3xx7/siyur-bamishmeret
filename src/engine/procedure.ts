@@ -14,7 +14,7 @@ import type { Choice, GameState, Hotspot, Line, Scenario, ScenarioEvent, UpdateE
 
 const augmented = new WeakMap<Scenario, Scenario>();
 
-export const PROC_IDS = ['rp-ack', 'rp-ack-short', 'rp-arrive', 'rp-busy-no', 'rp-busy-yes', 'rt-main', 'rt-side', 'fm-distance', 'fm-stop'];
+export const PROC_IDS = ['rp-ack', 'rp-ack-short', 'rp-arrive', 'rp-busy-update', 'rp-busy-no', 'rp-busy-yes', 'rt-main', 'rt-side', 'fm-distance', 'fm-stop'];
 
 /**
  * שידור של הניידת בנוהל: „מוקד, כאן סייר 23. …” / „מוקד, …” → „{{toCenter}}, …” („מרכז מסבא 402, …”).
@@ -97,23 +97,34 @@ export function withProcedure(sc: Scenario): Scenario {
       report: 'דיווח הגעה למקום בקשר',
     },
     {
-      id: 'rp-busy-no',
-      label: 'לענות: „{{toCenter}}, שלילי, עדיין בטיפול. אעדכן כשאתפנה.”',
+      id: 'rp-busy-update',
+      label: 'לעדכן את 401 בפרטי האירוע עד עכשיו – שלילי, ממשיך לתחקר ולברר',
       when: { all: [{ flag: 'ev:rp-busy' }, { not: { flag: 'rpBusy' } }] },
       lines: [
-        { speaker: 'player', text: '{{toCenter}}, שלילי, עדיין בטיפול באירוע. אעדכן כשאתפנה.' },
-        { speaker: 'dispatch', text: 'קיבלתי, מעבירה לניידת אחרת.' },
+        { speaker: 'player', text: '{{toHead}}, שלילי. עדכון: אני בזירה עם המעורבים, המצב בשליטה. אוסף גרסאות ומתעד. ממשיך לתחקר ולברר, ואעדכן כשאתפנה.' },
+        { speaker: 'head', text: '{{headToMe}}, קיבלתי. תמשיך, ותעדכן כשאתה פנוי.' },
+      ],
+      effects: { set: { rpBusy: 'good', rpBusyUpdate: true }, minutes: 0 },
+      report: 'מענה ל־401: עדכון מצב וממשיך בטיפול',
+    },
+    {
+      id: 'rp-busy-no',
+      label: 'לענות ל־401: „שלילי, עדיין בטיפול. אעדכן כשאתפנה.”',
+      when: { all: [{ flag: 'ev:rp-busy' }, { not: { flag: 'rpBusy' } }] },
+      lines: [
+        { speaker: 'player', text: '{{toHead}}, שלילי, עדיין בטיפול באירוע. אעדכן כשאתפנה.' },
+        { speaker: 'head', text: '{{headToMe}}, קיבלתי, מעביר את האירוע הנוסף לניידת אחרת.' },
       ],
       effects: { set: { rpBusy: 'good' }, minutes: 0 },
-      report: 'מענה לראש המשמרת: עדיין בטיפול',
+      report: 'מענה ל־401: עדיין בטיפול',
     },
     {
       id: 'rp-busy-yes',
-      label: 'לענות „חיובי, פנוי” ולהתכונן לעזוב',
+      label: 'לענות ל־401 „חיובי, פנוי” ולהתכונן לעזוב',
       when: { all: [{ flag: 'ev:rp-busy' }, { not: { flag: 'rpBusy' } }] },
       lines: [
-        { speaker: 'player', text: '{{toCenter}}, חיובי, פנוי.' },
-        { speaker: 'dispatch', text: 'רגע – סיימת שם? המעורבים עדיין במקום לפי הדיווח שלך. תשלים קודם ותעדכן.' },
+        { speaker: 'player', text: '{{toHead}}, חיובי, פנוי.' },
+        { speaker: 'head', text: '{{headToMe}}, רגע – סיימת שם? לפי הדיווח המעורבים עדיין במקום. תשלים קודם ותעדכן.' },
       ],
       effects: { set: { rpBusy: 'bad' }, minutes: 0, note: 'דיווח „פנוי” בזמן שהטיפול בזירה עוד לא הסתיים' },
     },
@@ -163,9 +174,9 @@ export function withProcedure(sc: Scenario): Scenario {
 
   const busy: ScenarioEvent = {
     id: 'rp-busy',
-    title: 'קריאה בקשר מהמשל״ט',
+    title: 'קריאה בקשר מ־401',
     when: { countChosen: { ids: sceneChoiceIds, gte: 5 } },
-    lines: [{ speaker: 'dispatch', text: '{{centerToMe}}, אתה פנוי? יש אירוע נוסף באזור.' }],
+    lines: [{ speaker: 'head', text: '{{headToMe}}, מה המצב אצלך? אתה פנוי? יש אירוע נוסף באזור.' }],
     sfx: 'radio-chirp',
   };
 
@@ -229,6 +240,17 @@ export function procedureReport(st: GameState, sc?: Scenario): { items: ProcItem
       detail: ok ? 'בקשות לכוחות חיצוניים (מד״א, כב״ה, גורם מוסמך) נשלחו למשל״ט – הוא שמזמין אותם.' : 'ביקשת כוחות חיצוניים מראש המשמרת. את מד״א, כב״ה וגורמים מוסמכים מזמין המשל״ט – פנה אליו („מרכז מסבא 402, תזמני מד״א…”).',
     });
   }
+  // בקשת ניידת נוספת – מ־401 (ראש המשמרת מנהל את הניידות), לא מהמשל״ט
+  const backupIds = new Set((sc?.update.elements ?? []).filter((e) => BACKUP_RE.test(e.text)).map((e) => e.id));
+  const backupUps = st.updates.filter((u) => u.elements.some((id) => backupIds.has(id)));
+  if (backupUps.length) {
+    const ok = backupUps.every((u) => u.to === 'head');
+    items.push({
+      label: 'בקשת ניידת נוספת',
+      ok,
+      detail: ok ? 'ביקשת ניידת נוספת מ־401 – הוא מנהל את הניידות במשמרת.' : 'ניידת נוספת מבקשים מ־401 („401 מסבא 402, מבקש ניידת נוספת…”), לא מהמשל״ט.',
+    });
+  }
   // אירוע משמעותי (עיכוב, פינוי, חפץ חשוד, נפגע) – עדכון לקצין התורן
   if (st.flags.detained || st.flags.evacuated || st.flags.expertCalled || st.flags.ems) {
     const ok = st.updates.some((u) => u.to === 'duty');
@@ -250,7 +272,7 @@ export function procedureReport(st: GameState, sc?: Scenario): { items: ProcItem
     items.push({
       label: 'מענה ל„אתה פנוי?”',
       ok: b === 'good',
-      detail: b === 'good' ? 'ענית שאתה עדיין בטיפול – ראש המשמרת העביר את האירוע לניידת אחרת.' : b === 'bad' ? 'דיווחת „פנוי” באמצע הטיפול. ראש המשמרת עלול לשלוח אותך ולהשאיר את הזירה בלי מענה.' : 'לא ענית לראש המשמרת. קריאה בקשר דורשת מענה, גם כשאתה עסוק.',
+      detail: b === 'good' ? (st.flags.rpBusyUpdate ? 'ענית ל־401 שאתה עדיין בטיפול, ועדכנת בקצרה את המצב עד עכשיו – כך הוא יודע מה קורה בזירה.' : 'ענית שאתה עדיין בטיפול – 401 העביר את האירוע לניידת אחרת. כדאי גם לעדכן בקצרה את המצב עד עכשיו.') : b === 'bad' ? 'דיווחת „פנוי” באמצע הטיפול. ראש המשמרת עלול לשלוח אותך ולהשאיר את הזירה בלי מענה.' : 'לא ענית לראש המשמרת. קריאה בקשר דורשת מענה, גם כשאתה עסוק.',
     });
   }
   const scored = items.filter((i) => i.ok !== null);
@@ -289,7 +311,6 @@ export const RECIPIENT_BODIES = {
     status: 'קיבלתי. תעדכן אותי בכל שינוי ובסיום האירוע.',
   },
 } as const;
-const BACKUP_RE = /ניידת נוספת|תגבור/;
 
 /** מה עונה 401 או 11 לעדכון, לפי תוכנו */
 export function recipientReply(sc: Scenario, elements: string[], to: 'head' | 'duty', vars: Record<string, string>): Line {
@@ -302,6 +323,7 @@ export function recipientReply(sc: Scenario, elements: string[], to: 'head' | 'd
 }
 
 /** בקשות שעוברות דרך המשל״ט (שירותים חיצוניים וגורמים מוסמכים) */
+const BACKUP_RE = /ניידת נוספת|תגבור/;
 export const EXTERNAL = /מד״א|כב״ה|כיבוי|גורם מוסמך|גרר|פקח|חברת הגז|קווי האוטובוס|הנהלת השוק|לאתר|להפיץ|ניידות/;
 
 export const isProcChoice = (id: string) => PROC_IDS.includes(id);
