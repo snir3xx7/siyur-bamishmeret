@@ -165,6 +165,9 @@ test('תחנה ואות קריאה: כפר סבא – 401 מבקש מהמשל״�
   await expect(page.getByTestId('radio-chain')).toContainText('סבא 401');
   await expect(page.getByText(/מרכז מסבא 401, תעבירי את האירוע ל403/).first()).toBeVisible();
   await expect(page.getByText(/סבא 403 ממרכז/).first()).toBeVisible();
+  // אותות הקריאה בכפתורים ממולאים (לא „{{toCenter}}”)
+  await expect(page.getByRole('button', { name: /מרכז מסבא 403, קיבלתי את האירוע/ })).toBeVisible();
+  await expect(page.getByText('{{')).toHaveCount(0);
 });
 
 test('משמרת מלאה: קישור מדריך, אירוע ראשון, תחקיר וחזרה למשמרת', async ({ page }) => {

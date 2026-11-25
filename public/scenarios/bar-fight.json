@@ -910,7 +910,7 @@
   "text": "נסיעה מהירה ברחובות הריקים. מרחוק רואים את האור הכתום של הבר ואנשים שעומדים על המדרכה.",
   "travelMinutes": 4,
   "ambience": [
-   "engine-wipers",
+   "siren",
    "radio-chatter"
   ]
  },
@@ -2000,7 +2000,8 @@
    "audio/engine-wipers.mp3",
    "audio/radio-chirp.mp3",
    "audio/alert.mp3",
-   "audio/radio-chatter.mp3"
+   "audio/radio-chatter.mp3",
+   "audio/siren.mp3"
   ],
   "voice": {},
   "narrationMissing": "קריינות: קולות מסונתזים מקומית ב־BlueTTS (קוד MIT; קולות מ־LibriTTS-R, CC BY 4.0). שורות עם אות קריאה של התחנה מוקראות בקול הדפדפן אם הופעל.",

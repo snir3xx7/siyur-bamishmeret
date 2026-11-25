@@ -100,7 +100,7 @@ function LogPanel({ sc, st }: { sc: Scenario; st: GameState }) {
       {st.log.map((e) => (
         <li key={`${e.turn}-${e.ref}`} className="dialog-box">
           <div className="small muted">
-            <bdi className="ltr">{clockLabel(t0, e.t)}</bdi> · {e.label}
+            <bdi className="ltr">{clockLabel(t0, e.t)}</bdi> · {fill(e.label, st.vars)}
           </div>
           <Lines sc={sc} lines={e.lines} />
           {e.consequences.map((c) => (
@@ -222,7 +222,7 @@ export function Play() {
   const [finishing, setFinishing] = useState(false);
   const [hint, setHint] = useState<string | null>(null);
   const [guide, setGuide] = useState(false);
-  const [radioIdx, setRadioIdx] = useState<Record<string, string>>({});
+  const [radioIdx, setRadioIdx] = useState<Record<string, string> | null>(null);
   useEffect(() => {
     void loadRadioIndex().then(setRadioIdx);
   }, []);
@@ -345,8 +345,15 @@ export function Play() {
   // שמע לפי שלב (לכל היותר שתי שכבות סביבה)
   useEffect(() => {
     if (!sc) return;
-    audio.preload([...sc.media.audio.map((a) => a.replace(/^audio\//, '').replace(/\.mp3$/, '')), 'radio-chirp', 'radio-end']);
-    return () => audio.stopAll();
+    const strip = (a: string) => a.replace(/^audio\//, '').replace(/\.mp3$/, '');
+    // קטעי הפתיחה (הודעת המשל״ט) נטענים מראש – כדי שהשידור הראשון יתחיל מיד
+    const vl = sc.media.voiceLines ?? {};
+    const opening = sc.dispatch.lines.map((l) => vl[voiceKey(l.speaker, l.text)]).filter(Boolean) as string[];
+    audio.preload([...sc.media.audio.map(strip), 'radio-chirp', 'radio-end', ...opening.map(strip)]);
+    return () => {
+      audio.stopAll();
+      audio.releaseVoice();
+    };
   }, [sc]);
   const ambienceKey = sc && st && stage === 'scene' ? ambienceOf(sc, st).join(',') : '';
   const audioStatus = audio.status;
@@ -361,6 +368,8 @@ export function Play() {
   const spokenTurn = useRef(-1);
   useEffect(() => {
     if (!sc || !st || spokenTurn.current === st.turn) return;
+    // פתיחות השידור לפי תחנה עוד נטענות – מחכים להן כדי שהפתיחה תישמע מלאה
+    if (!radioIdx && st.config.radio) return;
     spokenTurn.current = st.turn;
     const ref = st.log[st.log.length - 1]?.ref;
     const voice = ref ? sc.media.voice[ref] : undefined;
@@ -371,7 +380,7 @@ export function Play() {
     // קריינות לכל שורה (BlueTTS): אם לכל השורות המדוברות יש קטע – משמיעים אותם בקולות הדמויות
     const vl = sc.media.voiceLines ?? {};
     const clip = (sp: string, text: string) => vl[voiceKey(sp, text)];
-    const addr = (sp: string, text: string) => radioIdx[voiceKey(sp, text)];
+    const addr = (sp: string, text: string) => radioIdx?.[voiceKey(sp, text)];
     const isRadio = (sp: string) => ['dispatch', 'center', 'duty', 'head', 'player'].includes(sp);
     const prof = gameProfile(st.config, settings.station, sc.dispatch.unit);
     // שורות השחקן נשמעות רק כשהן שידור בקשר שהוקלט (נוהל קשר)
@@ -422,7 +431,7 @@ export function Play() {
     else if (dispatchText) void audio.radioMessage(dispatchText, voice);
     else if (other) void audio.say(other, voice);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [st?.turn]);
+  }, [st?.turn, radioIdx]);
 
   const choose = useCallback(
     (choiceId: string) => {
@@ -607,7 +616,7 @@ export function Play() {
               <div className="stack" style={{ marginTop: 0 }}>
                 {availableFollowUps(sc, st).map((c) => (
                   <button key={c.id} type="button" className="btn block" onClick={() => choose(c.id)}>
-                    {c.label}
+                    {fill(c.label, st.vars)}
                   </button>
                 ))}
                 {availableFollowUps(sc, st).length === 0 && <p className="small muted">אין שאלות נוספות למוקד.</p>}
@@ -633,7 +642,7 @@ export function Play() {
                       <Lines sc={sc} lines={own} />
                       {evEntry && evLines > 0 && (
                         <>
-                          <p className="event-head" data-testid="event-head">{evEntry.ref.startsWith('event:rp-') ? '📻' : '⚠'} {evEntry.label}</p>
+                          <p className="event-head" data-testid="event-head">{evEntry.ref.startsWith('event:rp-') ? '📻' : '⚠'} {fill(evEntry.label, st.vars)}</p>
                           <Lines sc={sc} lines={st.lastLines.slice(own.length)} />
                         </>
                       )}

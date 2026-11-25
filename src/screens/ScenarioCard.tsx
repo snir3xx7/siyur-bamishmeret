@@ -172,7 +172,7 @@ export function ScenarioCard({ id, query }: { id: string; query: URLSearchParams
               disabled={off === 'working' || off === 'unsupported'}
               onClick={async () => {
                 setOff('working');
-                const s = await downloadScenario(sc, (d, t) => setProgress(`${d}/${t}`));
+                const s = await downloadScenario(sc, (d, t) => setProgress(`${d}/${t}`), settings.station?.mode === 'station' ? settings.station.station : undefined);
                 setOff(s);
                 setProgress('');
               }}

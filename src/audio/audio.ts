@@ -196,14 +196,15 @@ class AudioEngine {
   }
 
   stopAll() {
+    this.cutLines();
     this.setAmbience([]);
     window.speechSynthesis?.cancel();
     this.speaking = 0;
     this.unduck();
   }
 
-  play(name: string, channel: Channel = 'sfx') {
-    if (!this.ctx || this.status !== 'running') return Promise.resolve();
+  async play(name: string, channel: Channel = 'sfx'): Promise<void> {
+    if (!(await this.ready()) || !this.ctx) return;
     const ctx = this.ctx;
     return this.load(name).then(
       (buf) =>
@@ -231,27 +232,135 @@ class AudioEngine {
 
   private lineToken = 0;
 
+  /** אם השמע עדיין „מתעורר” (לחיצה ראשונה) – מחכים לו רגע במקום לדלג על השידור */
+  private async ready(): Promise<boolean> {
+    if (this.status === 'running') return true;
+    if (!this.ctx || this.status === 'unsupported') return false;
+    try {
+      await Promise.race([this.ctx.resume(), new Promise((r) => setTimeout(r, 1500))]);
+    } catch {
+      /* נשאר חסום */
+    }
+    if (this.ctx.state === 'running' && (this.status as AudioStatus) !== 'running') {
+      this.status = 'running';
+      this.emit();
+      this.setAmbience(this.wantedAmbience);
+    }
+    return this.status === 'running';
+  }
+  private active = new Set<AudioBufferSourceNode>();
+  private hiss: AudioBuffer | null = null;
+
+  /** רחש רקע עדין של מכשיר קשר (נוצר פעם אחת בזיכרון, בלי קובץ) */
+  private hissBuffer(): AudioBuffer | null {
+    if (!this.ctx) return null;
+    if (!this.hiss) {
+      const n = Math.round(this.ctx.sampleRate * 1.5);
+      const b = this.ctx.createBuffer(1, n, this.ctx.sampleRate);
+      const d = b.getChannelData(0);
+      let y = 0;
+      for (let i = 0; i < n; i++) {
+        y += 0.35 * (Math.random() * 2 - 1 - y);
+        d[i] = y;
+      }
+      this.hiss = b;
+    }
+    return this.hiss;
+  }
+
+  /** קטיעת השידור/הדיבור הנוכחי (פעולה חדשה של השחקן) */
+  cutLines() {
+    this.lineToken++;
+    for (const src of this.active) {
+      try {
+        src.stop();
+      } catch {
+        /* כבר נעצר */
+      }
+    }
+    this.active.clear();
+  }
+
+  /** שחרור קטעי קול של תרחיש מהזיכרון (בטלפונים הזיכרון מוגבל) */
+  releaseVoice() {
+    for (const k of [...this.buffers.keys()]) if (k.startsWith('voice/') || k.startsWith('radio/')) this.buffers.delete(k);
+  }
+
   /**
    * השמעת שורות בקולות מוקלטים, אחת אחרי השנייה. שורות קשר (radio) עטופות בצפצוף פתיחה וסגירה.
    * פעולה חדשה של השחקן מפסיקה את הרצף הקודם בין קטעים.
    */
   async playLines(items: { file: string; radio: boolean; who?: string }[]) {
     const s = this.settings;
-    if (!s || s.muted || s.textOnly || this.status !== 'running' || !items.length) return;
-    const token = ++this.lineToken;
+    if (!s || s.muted || s.textOnly || !items.length) return;
+    this.cutLines();
+    const token = this.lineToken;
+    if (!(await this.ready()) || !this.ctx || token !== this.lineToken) return;
+    const ctx = this.ctx;
     this.speaking++;
     this.duck();
     try {
+      // טעינה מקבילה של כל הקטעים, ואז תזמון רציף על ציר הזמן של השמע – בלי פערים בין קטעים
+      const names = items.map((it) => it.file.replace(/^audio\//, '').replace(/\.mp3$/, ''));
+      const [chirp, end, ...bufs] = await Promise.all([this.load('radio-chirp'), this.load('radio-end'), ...names.map((n) => this.load(n))]);
+      if (token !== this.lineToken) return;
+      let t = ctx.currentTime + 0.05;
+      let last: AudioBufferSourceNode | null = null;
+      const at = (buf: AudioBuffer | null, ch: Channel, when: number, gain = 1) => {
+        const bus = this.buses[ch];
+        if (!buf || !bus) return when;
+        const src = ctx.createBufferSource();
+        src.buffer = buf;
+        if (gain !== 1) {
+          const g = ctx.createGain();
+          g.gain.value = gain;
+          src.connect(g).connect(bus);
+        } else src.connect(bus);
+        src.start(when);
+        this.active.add(src);
+        src.onended = () => this.active.delete(src);
+        last = src;
+        return when + buf.duration;
+      };
+      let txStart = t;
       for (let i = 0; i < items.length; i++) {
-        if (token !== this.lineToken) return;
         const it = items[i];
-        const name = it.file.replace(/^audio\//, '').replace(/\.mp3$/, '');
-        // שידור חדש (צפצוף פתיחה/סגירה) בכל החלפת דובר בקשר
         const startRadio = it.radio && (i === 0 || !items[i - 1].radio || items[i - 1].who !== it.who);
         const endRadio = it.radio && (i === items.length - 1 || !items[i + 1].radio || items[i + 1].who !== it.who);
-        if (startRadio) await this.play('radio-chirp', 'radio');
-        await this.play(name, it.radio ? 'radio' : 'speech');
-        if (endRadio) await this.play('radio-end', 'radio');
+        if (startRadio) {
+          txStart = t;
+          t = at(chirp, 'radio', t) + 0.04;
+        }
+        t = at(bufs[i], it.radio ? 'radio' : 'speech', t);
+        if (endRadio) {
+          // רחש קשר עדין מתחת לשידור כולו, ואז צליל סגירה
+          const hiss = this.hissBuffer();
+          const bus = this.buses.radio;
+          if (hiss && bus) {
+            const src = ctx.createBufferSource();
+            src.buffer = hiss;
+            src.loop = true;
+            const g = ctx.createGain();
+            g.gain.value = 0.035;
+            src.connect(g).connect(bus);
+            src.start(txStart);
+            src.stop(t + 0.05);
+            this.active.add(src);
+            src.onended = () => this.active.delete(src);
+          }
+          t = at(end, 'radio', t + 0.02);
+          // החלפת דובר בקשר: הפסקה קצרה כמו בשטח
+          t += 0.35;
+        } else t += it.radio ? 0.06 : 0.25;
+      }
+      const tail = last as AudioBufferSourceNode | null;
+      if (tail) {
+        await new Promise<void>((resolve) => {
+          const done = () => resolve();
+          tail.addEventListener('ended', done);
+          // גיבוי אם האירוע לא מגיע (רקע/השהיה)
+          setTimeout(done, Math.max(0, (t - ctx.currentTime) * 1000) + 1500);
+        });
       }
     } finally {
       this.speaking = Math.max(0, this.speaking - 1);
@@ -268,7 +377,7 @@ class AudioEngine {
 
   async say(text: string, voiceFile?: string, channel: Channel = 'speech') {
     const s = this.settings;
-    if (!s || s.muted || s.textOnly || this.status !== 'running') return;
+    if (!s || s.muted || s.textOnly || !(await this.ready())) return;
     this.speaking++;
     this.duck();
     try {
@@ -315,3 +424,5 @@ class AudioEngine {
 }
 
 export const audio = new AudioEngine();
+// לבדיקות בפיתוח בלבד
+if (import.meta.env.DEV) (window as unknown as { __audio: AudioEngine }).__audio = audio;

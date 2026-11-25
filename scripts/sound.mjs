@@ -334,8 +334,32 @@ export function radioChatter() {
   return normalize(loopify(highpass(out, 300), 0.4), 0.5);
 }
 
+
+/**
+ * צופר ניידת כפי שנשמע מתוך הרכב: „וויל” עולה ויורד (650↔1500Hz, מחזור של 4 שניות), עמום דרך הגג,
+ * עם מנוע ורעש כביש מתחת. שני מחזורים מלאים – לולאה רציפה.
+ */
+export function siren() {
+  const T = 8;
+  const out = buf(T);
+  let ph = 0;
+  for (let i = 0; i < out.length; i++) {
+    const t = i / SR;
+    const c = (t % 4) / 4;
+    const sweep = c < 0.5 ? c * 2 : 2 - c * 2; // משולש: עולה ויורד
+    const f = 650 + 850 * (0.5 - 0.5 * Math.cos(Math.PI * sweep));
+    ph += (2 * Math.PI * f) / SR;
+    out[i] = 0.7 * Math.sin(ph) + 0.2 * Math.sin(2 * ph) + 0.1 * Math.sign(Math.sin(ph));
+  }
+  const muffled = lowpass(lowpass(out, 1800), 2400);
+  const road = lowpass(noise(T, 61), 300);
+  const eng = buf(T);
+  for (let i = 0; i < eng.length; i++) eng[i] = Math.sin((2 * Math.PI * 42 * i) / SR) * 0.5 + Math.sin((2 * Math.PI * 84 * i) / SR) * 0.2;
+  return normalize(loopify(mix([muffled, 0.55], [road, 1.4], [eng, 0.25]), 0.3), 0.6);
+}
+
 export const SOUNDS = {
   rain, traffic, 'engine-wipers': engineWipers, 'radio-chirp': radioChirp, 'radio-end': radioEnd,
   'music-muffled': musicMuffled, 'building-hum': buildingHum, crowd, 'yard-evening': yardEvening,
-  'yard-morning': yardMorning, knock, 'ui-click': uiClick, sample, alert, 'radio-chatter': radioChatter,
+  'yard-morning': yardMorning, knock, 'ui-click': uiClick, sample, alert, 'radio-chatter': radioChatter, siren,
 };

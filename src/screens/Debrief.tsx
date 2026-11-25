@@ -1,3 +1,4 @@
+import { fill } from '../engine/text';
 import { useEffect, useMemo, useState } from 'react';
 import { buildDebrief, debriefText, shiftLabel } from '../engine/feedback';
 import { replay } from '../engine/game';
@@ -282,7 +283,7 @@ export function DebriefScreen({ query }: { query: URLSearchParams }) {
             <summary>
               <bdi className="ltr small muted">{t.time}</bdi>
               <span>
-                {t.entry.label}
+                {fill(t.entry.label, st.vars)}
                 {t.rules.length > 0 && (
                   <span className="small muted">
                     {' '}
@@ -312,7 +313,7 @@ export function DebriefScreen({ query }: { query: URLSearchParams }) {
               </div>
               <div>
                 <strong>מה בחרת ומה קרה</strong>
-                <p className="small">{t.entry.label}</p>
+                <p className="small">{fill(t.entry.label, st.vars)}</p>
                 <Lines sc={sc} lines={t.entry.lines} />
                 {t.entry.consequences.map((c) => (
                   <p key={c} className="consequence">
