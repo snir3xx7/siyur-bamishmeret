@@ -1,0 +1,1356 @@
+{
+ "id": "park-youths",
+ "version": 1,
+ "title": "רעש ושתייה של בני נוער בגינה ציבורית",
+ "category": "איכות חיים וסדר ציבורי",
+ "summary": "שכנה מתלוננת על מוזיקה ושתייה בגינה בחצות. בגינה שלושה בני נוער, ואחת מהן לא מרגישה טוב. יש לגשת ברוגע, להנמיך, לברר גילאים, לטפל באלכוהול אצל קטינים, לזהות מצוקה רפואית, לערב הורים ולסיים בלי השפלה.",
+ "estimatedMinutes": 12,
+ "difficultyLabel": "בינונית",
+ "skills": [
+  "גישה רגועה לבני נוער",
+  "בירור גיל והזדהות",
+  "אלכוהול וקטינים",
+  "זיהוי מצוקה רפואית",
+  "יידוע הורים"
+ ],
+ "shifts": [
+  "night",
+  "evening"
+ ],
+ "defaultShift": "night",
+ "location": {
+  "name": "גינת הזית, רחוב האורן",
+  "area": "שכונת גני האלון, קריית אלון (בדוי)"
+ },
+ "objectives": [
+  "לשמוע את המתלוננת בדיסקרטיות",
+  "לגשת לנערים ברוגע ולהנמיך את המוזיקה",
+  "לברר גילאים ולטפל באלכוהול אצל קטינים",
+  "לזהות שליאור לא בסדר ולהזמין מד״א",
+  "ליידע הורים ולסיים בכבוד, כולל ניקיון"
+ ],
+ "variants": [
+  {
+   "id": "faint",
+   "label": "ליאור מרגישה חולשה וסחרחורת",
+   "set": {
+    "sev": "faint"
+   },
+   "vars": {
+    "lior_sign": "ליאור מחווירה, מתיישבת על הספסל ואומרת שמסתובב לה הראש"
+   }
+  },
+  {
+   "id": "vomit",
+   "label": "ליאור מקיאה ומתקשה לעמוד",
+   "set": {
+    "sev": "vomit"
+   },
+   "vars": {
+    "lior_sign": "ליאור מתכופפת, מקיאה ליד הספסל ומתקשה לעמוד על הרגליים"
+   }
+  }
+ ],
+ "scoring": {
+  "weights": {
+   "info": 15,
+   "assessment": 25,
+   "communication": 20,
+   "authority": 20,
+   "dispatch": 10,
+   "documentation": 10
+  },
+  "rules": [
+   {
+    "id": "py-info-hana",
+    "domain": "info",
+    "label": "שמיעת המתלוננת בדיסקרטיות",
+    "max": 7,
+    "required": false,
+    "tiers": [
+     {
+      "when": {
+       "chosen": "h-meet"
+      },
+      "points": 7,
+      "explain": "המתלוננת נשמעה בצד.",
+      "keep": "שמעת את חנה בנפרד, בלי לחשוף אותה מול הנערים."
+     }
+    ],
+    "fallback": {
+     "explain": "המתלוננת לא נשמעה.",
+     "improve": "לא שמעת את חנה. בסבב הבא גש אליה בדיסקרטיות."
+    }
+   },
+   {
+    "id": "py-info-tom",
+    "domain": "info",
+    "label": "שיחה עם הנער השקט",
+    "max": 8,
+    "required": false,
+    "tiers": [
+     {
+      "when": {
+       "chosen": "t-talk"
+      },
+      "points": 8,
+      "explain": "נשמע תום.",
+      "keep": "דיברת עם תום – השקט שבחבורה ידע בדיוק מה ליאור שתתה."
+     }
+    ],
+    "fallback": {
+     "explain": "תום לא נשמע.",
+     "improve": "לא שוחחת עם תום. לעיתים השקט בקבוצה יודע הכי הרבה."
+    }
+   },
+   {
+    "id": "py-assess-medical",
+    "domain": "assessment",
+    "label": "זיהוי מצוקה רפואית",
+    "max": 10,
+    "required": true,
+    "appliesWhen": {
+     "flag": "ev:sick"
+    },
+    "tiers": [
+     {
+      "when": {
+       "all": [
+        {
+         "chosen": "l-check"
+        },
+        {
+         "chosen": "l-side"
+        }
+       ]
+      },
+      "points": 10,
+      "explain": "מצבה נבדק ונשמרה השגחה.",
+      "keep": "בדקת את ליאור, הושבת אותה בצד ולא השארת אותה לבד – שתייה מרובה אצל נערה צעירה עלולה להחמיר מהר."
+     },
+     {
+      "when": {
+       "any": [
+        {
+         "chosen": "l-check"
+        },
+        {
+         "chosen": "l-side"
+        }
+       ]
+      },
+      "points": 5,
+      "explain": "טיפול חלקי בנערה.",
+      "improve": "טיפלת רק בחלק. בסבב הבא גם בדוק, גם השגח – עד שמד״א מגיעים."
+     }
+    ],
+    "fallback": {
+     "explain": "מצבה לא נבדק.",
+     "improve": "ליאור לא נבדקה. בסבב הבא בדוק הכרה ונשימה, והשאר מישהו לידה."
+    }
+   },
+   {
+    "id": "py-assess-ages",
+    "domain": "assessment",
+    "label": "בירור גילאים",
+    "max": 8,
+    "required": true,
+    "tiers": [
+     {
+      "when": {
+       "chosen": "y-ages"
+      },
+      "points": 8,
+      "explain": "הגילאים התבררו.",
+      "keep": "בדקת גילאים – וכך ידעת שמדובר בקטינים."
+     }
+    ],
+    "fallback": {
+     "explain": "הגילאים לא התבררו.",
+     "improve": "לא בדקת בני כמה הם. בסבב הבא בקש הזדהות."
+    }
+   },
+   {
+    "id": "py-assess-quiet",
+    "domain": "assessment",
+    "label": "השקטת הגינה",
+    "max": 7,
+    "required": true,
+    "tiers": [
+     {
+      "when": {
+       "all": [
+        {
+         "flag": "lowered"
+        },
+        {
+         "flag": "cleaned"
+        }
+       ]
+      },
+      "points": 7,
+      "explain": "המוזיקה כובתה והגינה נוקתה.",
+      "keep": "המוזיקה כובתה והבקבוקים נאספו."
+     },
+     {
+      "when": {
+       "flag": "lowered"
+      },
+      "points": 4,
+      "explain": "המוזיקה כובתה; הפסולת נשארה.",
+      "improve": "כיביתם, אבל הבקבוקים נשארו. בסבב הבא בקש לאסוף."
+     }
+    ],
+    "fallback": {
+     "explain": "הרעש נמשך.",
+     "improve": "המוזיקה לא הונמכה. בסבב הבא בקש להנמיך."
+    }
+   },
+   {
+    "id": "py-comm-youth",
+    "domain": "communication",
+    "label": "גישה לבני הנוער",
+    "max": 12,
+    "required": true,
+    "tiers": [
+     {
+      "when": {
+       "all": [
+        {
+         "chosen": "y-approach"
+        },
+        {
+         "not": {
+          "chosen": "y-order"
+         }
+        }
+       ]
+      },
+      "points": 12,
+      "explain": "הגישה הייתה רגועה ומכבדת.",
+      "keep": "ניגשת ברוגע, הצגת את עצמך והסברת. בני נוער משתפים פעולה כשלא מבזים אותם."
+     },
+     {
+      "when": {
+       "chosen": "y-order"
+      },
+      "points": 3,
+      "explain": "הייתה צעקה.",
+      "improve": "הצעקה הסלימה. בסבב הבא פתח בהצגה עצמית והסבר."
+     }
+    ],
+    "fallback": {
+     "explain": "לא הייתה פנייה מסודרת.",
+     "improve": "לא פנית לנערים באופן מסודר. בסבב הבא הצג את עצמך והסבר."
+    }
+   },
+   {
+    "id": "py-comm-tom",
+    "domain": "communication",
+    "label": "השגחה בעזרת חבר",
+    "max": 8,
+    "required": false,
+    "appliesWhen": {
+     "flag": "ev:sick"
+    },
+    "tiers": [
+     {
+      "when": {
+       "chosen": "l-side"
+      },
+      "points": 8,
+      "explain": "נבחר מישהו להישאר ליד ליאור.",
+      "keep": "השארת את תום ליד ליאור – כך היא לא לבד."
+     }
+    ],
+    "fallback": {
+     "explain": "ליאור נשארה לבד.",
+     "improve": "ליאור נשארה לבד. בסבב הבא השאר מישהו לידה."
+    }
+   },
+   {
+    "id": "py-auth-alcohol",
+    "domain": "authority",
+    "label": "אלכוהול אצל קטינים",
+    "max": 10,
+    "required": true,
+    "appliesWhen": {
+     "flag": "minors"
+    },
+    "tiers": [
+     {
+      "when": {
+       "chosen": "y-alcohol"
+      },
+      "points": 10,
+      "explain": "האלכוהול טופל בהסבר.",
+      "keep": "הסברת שאלכוהול לקטינים אסור, ושפכת את מה שנשאר – בלי להשפיל."
+     }
+    ],
+    "fallback": {
+     "explain": "האלכוהול לא טופל.",
+     "improve": "הקטינים נשארו עם אלכוהול. בסבב הבא הסבר ושפוך."
+    }
+   },
+   {
+    "id": "py-auth-parents",
+    "domain": "authority",
+    "label": "יידוע הורים",
+    "max": 10,
+    "required": true,
+    "appliesWhen": {
+     "flag": "minors"
+    },
+    "tiers": [
+     {
+      "when": {
+       "chosen": "t-parents"
+      },
+      "points": 10,
+      "explain": "ההורים עודכנו.",
+      "keep": "עדכנת את ההורים. קטינים בחצות עם אלכוהול – ההורים צריכים לדעת ולבוא."
+     }
+    ],
+    "fallback": {
+     "explain": "ההורים לא עודכנו.",
+     "improve": "לא עדכנת הורים. בסבב הבא התקשר אליהם."
+    }
+   },
+   {
+    "id": "py-disp-ems",
+    "domain": "dispatch",
+    "label": "הזמנת מד״א",
+    "max": 10,
+    "required": true,
+    "appliesWhen": {
+     "flag": "ev:sick"
+    },
+    "tiers": [
+     {
+      "when": {
+       "all": [
+        {
+         "flag": "ems"
+        },
+        {
+         "sent": "u-lior"
+        }
+       ]
+      },
+      "points": 10,
+      "explain": "מד״א הוזמנו עם תיאור המצב.",
+      "keep": "הזמנת מד״א ותיארת את מצבה של ליאור."
+     },
+     {
+      "when": {
+       "flag": "ems"
+      },
+      "points": 7,
+      "explain": "מד״א הוזמנו בלי תיאור.",
+      "improve": "הזמנת מד״א – אבל בלי לתאר את מצבה. בסבב הבא הוסף תיאור."
+     }
+    ],
+    "fallback": {
+     "explain": "מד״א לא הוזמנו.",
+     "improve": "ליאור במצוקה ומד״א לא הוזמנו. בסבב הבא הזמן דרך המשל״ט."
+    }
+   },
+   {
+    "id": "py-doc",
+    "domain": "documentation",
+    "label": "תיעוד",
+    "max": 10,
+    "required": true,
+    "tiers": [
+     {
+      "when": {
+       "chosen": "z-doc"
+      },
+      "points": 10,
+      "explain": "האירוע תועד.",
+      "keep": "תיעדת שעה, מה נצפה, גילאים, טיפול ומי עודכן."
+     }
+    ],
+    "fallback": {
+     "explain": "לא תועד.",
+     "improve": "לא תיעדת. בסבב הבא רשום מה נעשה ומי עודכן."
+    }
+   }
+  ]
+ },
+ "facts": [
+  {
+   "id": "d-report",
+   "kind": "dispatch",
+   "text": "מוזיקה חזקה ושתייה בגינת הזית בחצות"
+  },
+  {
+   "id": "d-caller",
+   "kind": "dispatch",
+   "text": "המתלוננת: חנה, גרה מול הגינה, ביקשה לא להיחשף"
+  },
+  {
+   "id": "c-hana",
+   "kind": "claim",
+   "text": "הם שם כבר שעתיים, צועקים ושוברים בקבוקים",
+   "source": "hana"
+  },
+  {
+   "id": "o-scene",
+   "kind": "observation",
+   "text": "רמקול מנגן חזק, בקבוקי אלכוהול ריקים ופסולת על השולחן"
+  },
+  {
+   "id": "o-ages",
+   "kind": "observation",
+   "text": "עידן בן 17, ליאור בת 16, תום בן 16 – שלושתם קטינים"
+  },
+  {
+   "id": "o-lior",
+   "kind": "observation",
+   "text": "{{lior_sign}}"
+  },
+  {
+   "id": "c-idan",
+   "kind": "claim",
+   "text": "טוען ש„רק שומעים מוזיקה” ושהבקבוקים „לא שלהם”",
+   "source": "idan"
+  }
+ ],
+ "characters": [
+  {
+   "id": "hana",
+   "name": "חנה ברק",
+   "role": "השכנה המתלוננת",
+   "gender": "f",
+   "look": {
+    "skin": "#d6a57c",
+    "hair": "#3a2a20",
+    "hairStyle": "short",
+    "top": "#555",
+    "bottom": "#333"
+   },
+   "attitude": 1,
+   "x": 12,
+   "y": 96,
+   "scale": 1.3,
+   "when": {
+    "flag": "metHana"
+   },
+   "sprite": "img/chars/hana",
+   "spriteMoods": [
+    "calm",
+    "tense",
+    "upset"
+   ]
+  },
+  {
+   "id": "idan",
+   "name": "עידן",
+   "role": "נער, בן 17",
+   "gender": "m",
+   "look": {
+    "skin": "#d6a57c",
+    "hair": "#3a2a20",
+    "hairStyle": "short",
+    "top": "#555",
+    "bottom": "#333"
+   },
+   "attitude": 0,
+   "x": 46,
+   "y": 95,
+   "scale": 1.3,
+   "moodRules": [
+    {
+     "when": {
+      "flag": "idanAngry"
+     },
+     "mood": "upset"
+    },
+    {
+     "when": {
+      "not": {
+       "flag": "calmed"
+      }
+     },
+     "mood": "tense"
+    }
+   ],
+   "sprite": "img/chars/idan",
+   "spriteMoods": [
+    "calm",
+    "tense",
+    "upset"
+   ]
+  },
+  {
+   "id": "lior",
+   "name": "ליאור",
+   "role": "נערה, בת 16",
+   "gender": "f",
+   "look": {
+    "skin": "#d6a57c",
+    "hair": "#3a2a20",
+    "hairStyle": "short",
+    "top": "#555",
+    "bottom": "#333"
+   },
+   "attitude": 0,
+   "x": 62,
+   "y": 95,
+   "scale": 1.25,
+   "moodRules": [
+    {
+     "when": {
+      "flag": "ev:sick"
+     },
+     "mood": "hurt"
+    }
+   ],
+   "sprite": "img/chars/lior",
+   "spriteMoods": [
+    "calm",
+    "tense",
+    "upset",
+    "hurt"
+   ]
+  },
+  {
+   "id": "tom",
+   "name": "תום",
+   "role": "נער, בן 16",
+   "gender": "m",
+   "look": {
+    "skin": "#d6a57c",
+    "hair": "#3a2a20",
+    "hairStyle": "short",
+    "top": "#555",
+    "bottom": "#333"
+   },
+   "attitude": 1,
+   "x": 78,
+   "y": 95,
+   "scale": 1.25,
+   "sprite": "img/chars/tom",
+   "spriteMoods": [
+    "calm",
+    "tense",
+    "upset"
+   ]
+  }
+ ],
+ "dispatch": {
+  "time": {
+   "night": "00:15",
+   "evening": "22:30"
+  },
+  "unit": "סייר 15",
+  "incident": "7302",
+  "lines": [
+   {
+    "speaker": "dispatch",
+    "text": "סייר 15, כאן מוקד אלון. תלונה על מוזיקה חזקה ושתייה של צעירים בגינת הזית ברחוב האורן. המתלוננת ביקשה לא להיחשף. אשר קבלה."
+   }
+  ],
+  "initialFacts": [
+   "d-report",
+   "d-caller"
+  ],
+  "followUps": [
+   {
+    "id": "f-ages",
+    "label": "לשאול: נמסר משהו על גיל הצעירים?",
+    "lines": [
+     {
+      "speaker": "player",
+      "text": "מוקד, נמסר משהו על הגילאים?"
+     },
+     {
+      "speaker": "dispatch",
+      "text": "לפי המתלוננת הם נראים צעירים מאוד – בני נוער."
+     }
+    ],
+    "effects": {
+     "set": {
+      "askedAges": true
+     }
+    },
+    "report": "בירור גילאים"
+   },
+   {
+    "id": "f-count",
+    "label": "לשאול: כמה הם, ויש אלימות?",
+    "lines": [
+     {
+      "speaker": "player",
+      "text": "כמה הם? יש אלימות?"
+     },
+     {
+      "speaker": "dispatch",
+      "text": "שלושה או ארבעה. אין דיווח על אלימות – צעקות ובקבוקים."
+     }
+    ],
+    "effects": {
+     "set": {
+      "askedCount": true
+     }
+    },
+    "report": "בירור מספר ואלימות"
+   }
+  ],
+  "goLabel": "אישור קבלה ויציאה לגינה"
+ },
+ "transition": {
+  "kind": "street",
+  "text": "חונים ליד הגינה. מרחוק שומעים בס ממוזיקה, וצחוקים.",
+  "travelMinutes": 4,
+  "ambience": [
+   "yard-evening",
+   "radio-chatter"
+  ]
+ },
+ "scene": {
+  "background": "img/night-garden",
+  "alt": "גינה ציבורית בלילה: ספסל ושולחן פיקניק עם בקבוקים ריקים ורמקול קטן, מתקני כושר ומגלשה משמאל, בניינים עם חלונות מוארים ברקע.",
+  "fallbackColor": "#1d2430",
+  "ambience": [
+   "music-muffled",
+   "yard-evening"
+  ],
+  "ambienceRules": [
+   {
+    "when": {
+     "flag": "lowered"
+    },
+    "ambience": [
+     "yard-evening"
+    ]
+   }
+  ],
+  "lights": "steady",
+  "weather": "none",
+  "bgByShift": {
+   "evening": "night",
+   "night": "night"
+  },
+  "props": [
+   {
+    "id": "patrol",
+    "kind": "patrol",
+    "x": 92,
+    "y": 99,
+    "scale": 0.7,
+    "flip": true
+   },
+   {
+    "id": "sg-garden",
+    "kind": "sign",
+    "x": 30,
+    "y": 40,
+    "text": "גינת הזית",
+    "sign": "shop",
+    "scale": 0.9
+   }
+  ],
+  "painted": true
+ },
+ "arrivalLines": [
+  {
+   "speaker": "narrator",
+   "text": "גינת הזית. ליד שולחן הפיקניק שלושה בני נוער, רמקול מנגן חזק, ועל השולחן בקבוקים ריקים. בחלון מול הגינה נדלק אור, ואישה מבוגרת מנופפת לכם."
+  }
+ ],
+ "arrivalFacts": [
+  "o-scene"
+ ],
+ "hotspots": [
+  {
+   "id": "h-area",
+   "label": "הגינה",
+   "kind": "area",
+   "x": 30,
+   "y": 78,
+   "description": "שולחן הפיקניק, הבקבוקים והרמקול.",
+   "choices": [
+    {
+     "id": "h-meet",
+     "label": "לגשת לחנה בשקט, הרחק מהנערים, ולשמוע מה קרה",
+     "lines": [
+      {
+       "speaker": "hana",
+       "text": "הם פה כבר שעתיים. צועקים, שוברים בקבוקים. יש לי נכדים שישנים אצלי. רק אל תגידו שאני התקשרתי."
+      }
+     ],
+     "effects": {
+      "reveal": [
+       "c-hana"
+      ],
+      "set": {
+       "metHana": true
+      },
+      "verify": [
+       "d-caller"
+      ]
+     },
+     "report": "שיחה דיסקרטית עם המתלוננת"
+    },
+    {
+     "id": "z-doc",
+     "label": "לתעד: שעה, מה נצפה, גילאים, מה נעשה ומי עודכן",
+     "lines": [
+      {
+       "speaker": "narrator",
+       "text": "תיעדת: השעה, הרמקול והבקבוקים, הגילאים, מצבה של ליאור, וההורים שעודכנו."
+      }
+     ],
+     "effects": {
+      "set": {
+       "documented": true
+      }
+     },
+     "report": "תיעוד"
+    }
+   ]
+  },
+  {
+   "id": "h-idan",
+   "label": "עידן",
+   "kind": "character",
+   "x": 46,
+   "y": 44,
+   "description": "עידן, בן 17. נראה המנהיג של החבורה.",
+   "choices": [
+    {
+     "id": "y-approach",
+     "label": "לגשת ברוגע, להציג את עצמך ולהסביר למה הגעתם",
+     "lines": [
+      {
+       "speaker": "player",
+       "text": "ערב טוב, חבר׳ה. אני מצוות הסיור. יש תלונה על רעש מהגינה – אנשים ישנים מסביב. בואו נדבר רגע."
+      },
+      {
+       "speaker": "idan",
+       "text": "אנחנו רק שומעים מוזיקה…"
+      }
+     ],
+     "effects": {
+      "set": {
+       "calmed": true
+      },
+      "attitude": {
+       "idan": 1
+      }
+     },
+     "report": "גישה רגועה לנערים"
+    },
+    {
+     "id": "y-order",
+     "label": "לצעוק: „כבו את זה מיד, כולם הביתה!”",
+     "lines": [
+      {
+       "speaker": "player",
+       "text": "כבו את זה מיד! כולם הביתה, עכשיו!"
+      },
+      {
+       "speaker": "idan",
+       "text": "מה אתה צועק? אנחנו לא עושים כלום!"
+      }
+     ],
+     "effects": {
+      "set": {
+       "idanAngry": true
+      },
+      "attitude": {
+       "idan": -2
+      },
+      "note": "פנייה בצעקה הסלימה את השיחה"
+     }
+    },
+    {
+     "id": "y-lower",
+     "label": "לבקש להנמיך את הרמקול עכשיו",
+     "lines": [
+      {
+       "speaker": "idan",
+       "text": "טוב, מוריד."
+      },
+      {
+       "speaker": "narrator",
+       "text": "המוזיקה נחלשת."
+      }
+     ],
+     "effects": {
+      "set": {
+       "lowered": true
+      }
+     },
+     "report": "הנמכת המוזיקה"
+    },
+    {
+     "id": "y-ages",
+     "label": "לבקש מכולם להזדהות ולברר גילאים",
+     "lines": [
+      {
+       "speaker": "player",
+       "text": "אני צריך לראות תעודות – בני כמה אתם?"
+      },
+      {
+       "speaker": "narrator",
+       "text": "עידן בן 17, ליאור בת 16, תום בן 16."
+      }
+     ],
+     "effects": {
+      "reveal": [
+       "o-ages"
+      ],
+      "set": {
+       "minors": true
+      }
+     },
+     "report": "בירור גילאים והזדהות"
+    },
+    {
+     "id": "y-version",
+     "label": "לשאול את עידן מאיפה האלכוהול",
+     "lines": [
+      {
+       "speaker": "idan",
+       "text": "זה לא שלנו, זה היה פה כשבאנו."
+      }
+     ],
+     "effects": {
+      "reveal": [
+       "c-idan"
+      ]
+     },
+     "report": "גרסת הנער"
+    },
+    {
+     "id": "y-alcohol",
+     "label": "להסביר שאסור לקטינים לשתות ולשפוך את האלכוהול שנשאר",
+     "when": {
+      "flag": "minors"
+     },
+     "lines": [
+      {
+       "speaker": "player",
+       "text": "אתם קטינים, ואלכוהול – לא. אני שופך את מה שנשאר, ונמשיך בלי זה."
+      },
+      {
+       "speaker": "narrator",
+       "text": "שפכת את שאריות הבקבוקים לפח."
+      }
+     ],
+     "effects": {
+      "set": {
+       "alcoholHandled": true
+      }
+     },
+     "report": "טיפול באלכוהול אצל קטינים"
+    },
+    {
+     "id": "y-clean",
+     "label": "לבקש מהם לאסוף את הבקבוקים והפסולת",
+     "lines": [
+      {
+       "speaker": "player",
+       "text": "לפני שהולכים – אוספים את הבקבוקים והפסולת. הגינה של כולם."
+      },
+      {
+       "speaker": "narrator",
+       "text": "תום ועידן אוספים את הבקבוקים לפח."
+      }
+     ],
+     "effects": {
+      "set": {
+       "cleaned": true
+      }
+     },
+     "report": "ניקיון הגינה"
+    }
+   ],
+   "character": "idan"
+  },
+  {
+   "id": "h-lior",
+   "label": "ליאור",
+   "kind": "character",
+   "x": 62,
+   "y": 44,
+   "description": "ליאור, בת 16.",
+   "choices": [
+    {
+     "id": "l-check",
+     "label": "לבדוק את ליאור: הכרה, נשימה, כמה שתתה, האם לקחה משהו נוסף",
+     "when": {
+      "flag": "ev:sick"
+     },
+     "lines": [
+      {
+       "speaker": "player",
+       "text": "ליאור, את שומעת אותי? כמה שתית? לקחת עוד משהו?"
+      },
+      {
+       "speaker": "lior",
+       "text": "רק… כמה כוסות. מסתובב לי הכול."
+      }
+     ],
+     "effects": {
+      "set": {
+       "liorChecked": true
+      }
+     },
+     "report": "בדיקת מצבה של הנערה"
+    },
+    {
+     "id": "l-side",
+     "label": "להושיב אותה בצד, לא להשאיר אותה לבד ולחכות למד״א",
+     "when": {
+      "flag": "ev:sick"
+     },
+     "lines": [
+      {
+       "speaker": "narrator",
+       "text": "הושבת את ליאור על הספסל, תום נשאר לידה, ואתה עוקב אחרי הנשימה."
+      }
+     ],
+     "effects": {
+      "set": {
+       "liorSafe": true
+      }
+     },
+     "report": "השגחה על הנערה"
+    }
+   ],
+   "character": "lior"
+  },
+  {
+   "id": "h-tom",
+   "label": "תום",
+   "kind": "character",
+   "x": 78,
+   "y": 44,
+   "description": "תום, בן 16. שקט.",
+   "choices": [
+    {
+     "id": "t-parents",
+     "label": "לבקש מספרי טלפון של הורים ולעדכן אותם",
+     "when": {
+      "flag": "minors"
+     },
+     "lines": [
+      {
+       "speaker": "player",
+       "text": "אני מתקשר להורים – תנו לי מספרים."
+      },
+      {
+       "speaker": "narrator",
+       "text": "הורי ליאור ותום בדרך. אמא של עידן אומרת שהיא תבוא לאסוף אותו."
+      }
+     ],
+     "effects": {
+      "set": {
+       "parents": true
+      }
+     },
+     "report": "יידוע הורים"
+    },
+    {
+     "id": "t-talk",
+     "label": "לשאול את תום מה קרה הערב",
+     "lines": [
+      {
+       "speaker": "tom",
+       "text": "קנינו בקבוקים במכולת. ליאור שתתה הכי הרבה… היא לא רגילה."
+      }
+     ],
+     "effects": {
+      "set": {
+       "tomTalked": true
+      }
+     },
+     "report": "שיחה עם הנער השקט"
+    }
+   ],
+   "character": "tom"
+  }
+ ],
+ "events": [
+  {
+   "id": "sick",
+   "title": "התפתחות: ליאור לא מרגישה טוב",
+   "when": {
+    "countChosen": {
+     "ids": [
+      "h-meet",
+      "y-approach",
+      "y-order",
+      "y-lower",
+      "y-ages",
+      "y-alcohol",
+      "y-version",
+      "y-clean",
+      "z-doc"
+     ],
+     "gte": 3
+    }
+   },
+   "lines": [
+    {
+     "speaker": "narrator",
+     "text": "{{lior_sign}}."
+    },
+    {
+     "speaker": "tom",
+     "text": "ליאור? היא לא נראית טוב…"
+    }
+   ],
+   "effects": {
+    "reveal": [
+     "o-lior"
+    ],
+    "note": "נערה קטינה במצוקה אחרי שתיית אלכוהול"
+   },
+   "sfx": "alert"
+  }
+ ],
+ "update": {
+  "categories": {
+   "location": "מקום",
+   "situation": "מצב נוכחי",
+   "status": "מצב המעורבים",
+   "verified": "מה אומת",
+   "missing": "מה עדיין חסר",
+   "assistance": "סיוע נדרש",
+   "judgement": "קביעה"
+  },
+  "elements": [
+   {
+    "id": "u-loc",
+    "category": "location",
+    "text": "נמצא בגינת הזית, רחוב האורן"
+   },
+   {
+    "id": "u-youths",
+    "category": "situation",
+    "text": "שלושה בני נוער, רמקול ואלכוהול",
+    "when": {
+     "fact": "o-scene"
+    }
+   },
+   {
+    "id": "u-minors",
+    "category": "status",
+    "text": "שלושתם קטינים (16–17)",
+    "when": {
+     "fact": "o-ages"
+    }
+   },
+   {
+    "id": "u-lior",
+    "category": "status",
+    "text": "נערה בת 16 במצוקה אחרי שתייה",
+    "when": {
+     "flag": "ev:sick"
+    }
+   },
+   {
+    "id": "u-ems",
+    "category": "assistance",
+    "text": "מבקש מד״א לגינה – נערה במצוקה",
+    "when": {
+     "flag": "ev:sick"
+    }
+   },
+   {
+    "id": "u-parents",
+    "category": "verified",
+    "text": "ההורים עודכנו ובדרך",
+    "when": {
+     "flag": "parents"
+    }
+   },
+   {
+    "id": "u-quiet",
+    "category": "verified",
+    "text": "המוזיקה כובתה, הגינה נוקתה",
+    "when": {
+     "all": [
+      {
+       "flag": "lowered"
+      },
+      {
+       "flag": "cleaned"
+      }
+     ]
+    }
+   }
+  ],
+  "responses": [
+   {
+    "when": {
+     "inUpdate": "u-ems"
+    },
+    "lines": [
+     {
+      "speaker": "dispatch",
+      "text": "מוקד: צוות מד״א בדרך, כשמונה דקות."
+     }
+    ],
+    "effects": {
+     "set": {
+      "ems": true
+     }
+    }
+   }
+  ]
+ },
+ "finish": {
+  "label": "סיום הטיפול במקום",
+  "confirm": "לסיים את הטיפול ולעבור לתחקיר? אפשר לשלוח עדכון אחרון למוקד לפני הסיום."
+ },
+ "endings": [
+  {
+   "id": "e-good",
+   "kind": "good",
+   "title": "הגינה שקטה ובני הנוער בידיים טובות",
+   "text": "הגישה הייתה רגועה, הגילאים התבררו, האלכוהול טופל, ליאור קיבלה טיפול, ההורים עודכנו והגינה נוקתה.",
+   "when": {
+    "all": [
+     {
+      "flag": "lowered"
+     },
+     {
+      "flag": "minors"
+     },
+     {
+      "flag": "alcoholHandled"
+     },
+     {
+      "flag": "ems"
+     },
+     {
+      "flag": "liorSafe"
+     },
+     {
+      "flag": "parents"
+     },
+     {
+      "not": {
+       "flag": "idanAngry"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "id": "e-partial",
+   "kind": "partial",
+   "title": "הרעש טופל – לא הכול נסגר",
+   "text": "המוזיקה כובתה, אבל משהו חסר: גילאים, אלכוהול, טיפול בליאור, הורים או גישה מכבדת.",
+   "when": {
+    "flag": "lowered"
+   }
+  },
+  {
+   "id": "e-retry",
+   "kind": "retry",
+   "title": "הזדמנות לתיקון: המצב בגינה נשאר",
+   "text": "הצוות עזב לפני שהמוזיקה כובתה. חנה התקשרה שוב, ומד״א הוזעקו לגינה מאוחר יותר.",
+   "when": {
+    "always": true
+   }
+  }
+ ],
+ "hints": [
+  {
+   "when": {
+    "all": [
+     {
+      "stage": [
+       "scene"
+      ]
+     },
+     {
+      "not": {
+       "flag": "metHana"
+      }
+     }
+    ]
+   },
+   "text": "המתלוננת ביקשה לא להיחשף. אפשר לשמוע אותה בצד, לפני שניגשים לנערים."
+  },
+  {
+   "when": {
+    "all": [
+     {
+      "stage": [
+       "scene"
+      ]
+     },
+     {
+      "not": {
+       "flag": "minors"
+      }
+     }
+    ]
+   },
+   "text": "הם נראים צעירים. בני כמה הם?"
+  },
+  {
+   "when": {
+    "all": [
+     {
+      "flag": "ev:sick"
+     },
+     {
+      "not": {
+       "flag": "ems"
+      }
+     }
+    ]
+   },
+   "text": "ליאור לא בסדר. מי צריך להגיע – ודרך מי מזמינים?"
+  },
+  {
+   "when": {
+    "all": [
+     {
+      "flag": "minors"
+     },
+     {
+      "not": {
+       "flag": "parents"
+      }
+     }
+    ]
+   },
+   "text": "קטינים, בחצות, עם אלכוהול – מי צריך לדעת?"
+  },
+  {
+   "when": {
+    "always": true
+   },
+   "text": "לפני הסיום: הגינה שקטה, נקייה, וכל הנערים בידיים של מבוגר?"
+  }
+ ],
+ "challenges": [
+  "שחק עם זרע אחר – מצבה של ליאור משתנה. האם התגובה שלך מתאימה?",
+  "נסה לברר גילאים לפני שליאור מרגישה רע.",
+  "נסח שידור למשל״ט שכולל: מקום, גיל, מצב ומה נדרש."
+ ],
+ "report": {
+  "reason": "התקבלה משימה מהמוקד: רעש ושתייה של צעירים בגינת הזית.",
+  "checklist": [
+   {
+    "label": "מה נצפה בגינה",
+    "when": {
+     "fact": "o-scene"
+    }
+   },
+   {
+    "label": "גילאים",
+    "when": {
+     "fact": "o-ages"
+    }
+   },
+   {
+    "label": "מצבה של ליאור",
+    "when": {
+     "fact": "o-lior"
+    }
+   },
+   {
+    "label": "גרסת הנער",
+    "when": {
+     "fact": "c-idan"
+    }
+   }
+  ]
+ },
+ "media": {
+  "images": [
+   "img/night-garden-day.webp",
+   "img/night-garden-night.webp",
+   "img/chars/hana-calm.webp",
+   "img/chars/hana-tense.webp",
+   "img/chars/hana-upset.webp",
+   "img/chars/idan-calm.webp",
+   "img/chars/idan-tense.webp",
+   "img/chars/idan-upset.webp",
+   "img/chars/lior-calm.webp",
+   "img/chars/lior-tense.webp",
+   "img/chars/lior-upset.webp",
+   "img/chars/lior-hurt.webp",
+   "img/chars/tom-calm.webp",
+   "img/chars/tom-tense.webp",
+   "img/chars/tom-upset.webp",
+   "img/props/patrol.webp",
+   "img/drive/side-day.webp",
+   "img/drive/side-night.webp"
+  ],
+  "audio": [
+   "audio/radio-chatter.mp3",
+   "audio/music-muffled.mp3",
+   "audio/yard-evening.mp3",
+   "audio/radio-chirp.mp3",
+   "audio/alert.mp3"
+  ],
+  "voice": {},
+  "narrationMissing": "קריינות: קולות מסונתזים מקומית ב־BlueTTS (קוד MIT; קולות מ־LibriTTS-R, CC BY 4.0). שורות עם אות קריאה של התחנה מוקראות בקול הדפדפן אם הופעל.",
+  "voiceLines": {
+   "6b0ec99b": "audio/voice/park-youths/l-6b0ec99b.mp3",
+   "f3c7836a": "audio/voice/park-youths/l-f3c7836a.mp3",
+   "0e01a700": "audio/voice/park-youths/l-0e01a700.mp3",
+   "4e52b452": "audio/voice/park-youths/l-4e52b452.mp3",
+   "e45f91ee": "audio/voice/park-youths/l-e45f91ee.mp3",
+   "bc4ef680": "audio/voice/park-youths/l-bc4ef680.mp3",
+   "dec6b838": "audio/voice/park-youths/l-dec6b838.mp3",
+   "39c2e3ce": "audio/voice/park-youths/l-39c2e3ce.mp3",
+   "0bb6cb73": "audio/voice/park-youths/l-0bb6cb73.mp3",
+   "29b547b9": "audio/voice/park-youths/l-29b547b9.mp3",
+   "735e904b": "audio/voice/park-youths/l-735e904b.mp3",
+   "1dc8ebc0": "audio/voice/park-youths/l-1dc8ebc0.mp3",
+   "51576a51": "audio/voice/park-youths/l-51576a51.mp3",
+   "0a2ae76f": "audio/voice/park-youths/l-0a2ae76f.mp3",
+   "f9732f51": "audio/voice/park-youths/l-f9732f51.mp3",
+   "37660c07": "audio/voice/park-youths/l-37660c07.mp3",
+   "a70f88f0": "audio/voice/park-youths/l-a70f88f0.mp3",
+   "490e3865": "audio/voice/park-youths/l-490e3865.mp3",
+   "670738b8": "audio/voice/park-youths/l-670738b8.mp3",
+   "7deeb5f9": "audio/voice/park-youths/l-7deeb5f9.mp3",
+   "6666ad2a": "audio/voice/park-youths/l-6666ad2a.mp3",
+   "dbe964b1": "audio/voice/park-youths/l-dbe964b1.mp3",
+   "b996ab06": "audio/voice/park-youths/l-b996ab06.mp3",
+   "6a3fe41b": "audio/voice/park-youths/l-6a3fe41b.mp3",
+   "95a2a11c": "audio/voice/park-youths/l-95a2a11c.mp3",
+   "10abbf22": "audio/voice/park-youths/l-10abbf22.mp3",
+   "2334e85f": "audio/voice/park-youths/l-2334e85f.mp3",
+   "336111a2": "audio/voice/park-youths/l-336111a2.mp3",
+   "eb03ec08": "audio/voice/park-youths/l-eb03ec08.mp3",
+   "476c06a7": "audio/voice/park-youths/l-476c06a7.mp3",
+   "6c920960": "audio/voice/park-youths/l-6c920960.mp3",
+   "4442afed": "audio/voice/park-youths/l-4442afed.mp3",
+   "1734ec94": "audio/voice/park-youths/l-1734ec94.mp3",
+   "64c2f217": "audio/voice/park-youths/l-64c2f217.mp3",
+   "0a71efb5": "audio/voice/park-youths/l-0a71efb5.mp3",
+   "a6d34ce3": "audio/voice/park-youths/l-a6d34ce3.mp3",
+   "77948926": "audio/voice/park-youths/l-77948926.mp3",
+   "c814ac74": "audio/voice/park-youths/l-c814ac74.mp3",
+   "ce34c535": "audio/voice/park-youths/l-ce34c535.mp3",
+   "9943f848": "audio/voice/park-youths/l-9943f848.mp3",
+   "c97cf417": "audio/voice/park-youths/l-c97cf417.mp3",
+   "80fc5f75": "audio/voice/park-youths/l-80fc5f75.mp3",
+   "2921e8ae": "audio/voice/park-youths/l-2921e8ae.mp3",
+   "170f5e23": "audio/voice/park-youths/l-170f5e23.mp3",
+   "cee8a470": "audio/voice/park-youths/l-cee8a470.mp3",
+   "2d676dc7": "audio/voice/park-youths/l-2d676dc7.mp3",
+   "051605d5": "audio/voice/park-youths/l-051605d5.mp3",
+   "fada45d7": "audio/voice/park-youths/l-fada45d7.mp3",
+   "89dde9a0": "audio/voice/park-youths/l-89dde9a0.mp3",
+   "32740b39": "audio/voice/park-youths/l-32740b39.mp3",
+   "50ba9bab": "audio/voice/park-youths/l-50ba9bab.mp3",
+   "55bb8e3e": "audio/voice/park-youths/l-55bb8e3e.mp3"
+  }
+ }
+}

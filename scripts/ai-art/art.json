@@ -71,6 +71,34 @@
    "seed": 66,
    "base": "day",
    "prompt": "Wide eye-level view of the outside entrance of an Israeli apartment building in daylight. Center: a glass and aluminium building entrance door with an intercom panel, open lobby inside with mailboxes. Left: a grey metal gas meter cabinet on the wall with yellow gas pipes running up the facade. Right: a small front garden with shrubs and a low fence, a bench. Beige stone facade with balconies above. Paved entrance path and sidewalk in the bottom third. No people, no cars, no vehicles, no text, no letters, no logos."
+  },
+  {
+   "id": "burglary",
+   "out": "apartment-door",
+   "seed": 91,
+   "base": "day",
+   "prompt": "Eye-level wide view of an apartment building landing in daylight. Center: an apartment front door standing ajar, the wooden door frame splintered and broken next to the lock, wood chips on the floor, a doormat pushed aside. Through the gap: a glimpse of a messy hallway with open drawers. Left: stairs going down with a metal railing. Right: a neighbor's closed door and a small window letting in sunlight. Beige walls, grey terrazzo floor in the bottom third. No people, no text, no letters, no numbers, no logos."
+  },
+  {
+   "id": "shop",
+   "out": "minimarket",
+   "seed": 92,
+   "base": "day",
+   "prompt": "Wide eye-level interior view of a small Israeli neighborhood minimarket in daylight. Left: a checkout counter with a cash register and a small screen showing security camera views. Center and right: aisles with colorful shelves of snacks, drinks and household goods, a fridge with glowing glass doors. Back right: a narrow door to a small back office, slightly open. Fluorescent ceiling lights, a ceiling-mounted security camera dome. Clean tiled floor in the bottom third. No people, no text, no letters, no numbers, no logos."
+  },
+  {
+   "id": "home",
+   "out": "living-room",
+   "seed": 93,
+   "base": "night",
+   "prompt": "Wide eye-level view of a modest Israeli family living room at night, warm lamp light. Left: an entrance door and a short hallway leading to bedrooms. Center: a sofa with cushions, a coffee table with a toppled chair next to it and a broken glass vase on the floor. Right: a doorway to a small kitchen with light on, family photos on the wall, a TV cabinet. A window with dark night outside. Tiled floor in the bottom third. No people, no text, no letters, no numbers, no logos."
+  },
+  {
+   "id": "garden",
+   "out": "night-garden",
+   "seed": 94,
+   "base": "night",
+   "prompt": "Wide eye-level view of a small public neighborhood garden at night lit by orange street lamps. Center: a wooden bench and a picnic table with scattered empty glass bottles and snack wrappers, a small portable speaker glowing on the table. Left: outdoor fitness equipment and a playground slide. Background: apartment buildings with a few lit windows and balconies. Right: a trash bin overflowing slightly, a path leading out. Grass and paved path in the bottom third. No people, no text, no letters, no numbers, no logos."
   }
  ],
  "characters": [
@@ -403,6 +431,130 @@
     "calm"
    ],
    "desc": "A teenage boy about sixteen, black hair, tan skin, wearing a red t-shirt, black shorts and sneakers, holding a smartphone up in one hand, filming, curious expression, the phone screen glowing."
+  },
+  {
+   "id": "michal",
+   "seed": 131,
+   "moods": [
+    "calm",
+    "tense",
+    "upset"
+   ],
+   "desc": "A woman in her early forties, straight shoulder-length chestnut hair, light skin, wearing a grey blazer over a white top, dark trousers and loafers, holding a handbag."
+  },
+  {
+   "id": "avi",
+   "seed": 132,
+   "moods": [
+    "calm",
+    "tense",
+    "upset"
+   ],
+   "desc": "A man in his sixties, grey hair and moustache, tan skin, wearing a light blue short-sleeved button shirt, beige trousers and sandals, reading glasses on his head."
+  },
+  {
+   "id": "shai",
+   "seed": 133,
+   "moods": [
+    "calm",
+    "tense",
+    "upset"
+   ],
+   "desc": "A security guard man in his thirties, short black hair, olive skin, wearing a plain black polo shirt with no text or logo, black cargo trousers and black boots, a radio clipped to his belt."
+  },
+  {
+   "id": "dvora",
+   "seed": 134,
+   "moods": [
+    "calm",
+    "tense",
+    "upset"
+   ],
+   "desc": "A woman in her fifties, short curly greying hair, tan skin, wearing a navy shopkeeper vest over a white shirt, black trousers, reading glasses on a cord."
+  },
+  {
+   "id": "itay",
+   "seed": 135,
+   "moods": [
+    "calm",
+    "tense",
+    "upset"
+   ],
+   "desc": "A teenage boy about seventeen, messy brown hair, light skin, wearing a grey hoodie, dark jeans and white sneakers, a backpack over one shoulder, looking nervous."
+  },
+  {
+   "id": "ronit",
+   "seed": 136,
+   "moods": [
+    "calm",
+    "tense",
+    "upset",
+    "hurt"
+   ],
+   "desc": "A woman in her early forties, dark hair in a loose ponytail, light olive skin, wearing a lilac long-sleeve home top and grey sweatpants, barefoot in house slippers.",
+   "hurt": "One hand holding her other forearm protectively, a red mark on the forearm, teary eyes."
+  },
+  {
+   "id": "gil",
+   "seed": 137,
+   "moods": [
+    "calm",
+    "tense",
+    "upset"
+   ],
+   "desc": "A man in his mid forties, short dark hair, light stubble, olive skin, wearing a dark grey t-shirt, black track pants and house slippers."
+  },
+  {
+   "id": "shaked",
+   "seed": 138,
+   "moods": [
+    "calm",
+    "tense",
+    "upset"
+   ],
+   "desc": "A teenage girl about fifteen, long brown hair, light skin, wearing pajamas with a light blue top and grey pants, hugging herself, scared."
+  },
+  {
+   "id": "hana",
+   "seed": 139,
+   "moods": [
+    "calm",
+    "tense",
+    "upset"
+   ],
+   "desc": "A woman in her late sixties, short white hair, light skin, wearing a maroon cardigan over a nightgown, house slippers, holding a phone."
+  },
+  {
+   "id": "idan",
+   "seed": 140,
+   "moods": [
+    "calm",
+    "tense",
+    "upset"
+   ],
+   "desc": "A teenage boy about seventeen, black hair with a fade haircut, tan skin, wearing a white t-shirt, black jacket, jeans and sneakers."
+  },
+  {
+   "id": "lior",
+   "seed": 141,
+   "moods": [
+    "calm",
+    "tense",
+    "upset",
+    "hurt"
+   ],
+   "desc": "A teenage girl about sixteen, long dark wavy hair, light skin, wearing a black denim jacket, a short skirt with leggings and sneakers.",
+   "hurt": "Looking pale and dizzy, one hand on her stomach, slightly bent forward."
+  },
+  {
+   "id": "tom",
+   "seed": 142,
+   "moods": [
+    "calm",
+    "tense",
+    "upset"
+   ],
+   "desc": "A teenage boy about sixteen, curly light brown hair, light skin, wearing a blue hoodie, grey jogging trousers and sneakers, holding a bottle of soda."
   }
  ],
  "props": [

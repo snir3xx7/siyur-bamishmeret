@@ -143,6 +143,51 @@
   },
   "film3": {
    "voice": "ethan"
+  },
+  "michal": {
+   "voice": "tamar"
+  },
+  "avi": {
+   "voice": "adam",
+   "speed": 0.95
+  },
+  "shai": {
+   "voice": "daniel"
+  },
+  "dvora": {
+   "voice": "yael",
+   "speed": 1.05
+  },
+  "itay": {
+   "voice": "ethan",
+   "speed": 0.95
+  },
+  "ronit": {
+   "voice": "maya",
+   "speed": 0.95
+  },
+  "gil": {
+   "voice": "david"
+  },
+  "shaked": {
+   "voice": "lily",
+   "pitch": 2,
+   "speed": 0.95
+  },
+  "hana": {
+   "voice": "yael",
+   "speed": 0.95
+  },
+  "idan": {
+   "voice": "ariel",
+   "speed": 1.05
+  },
+  "lior": {
+   "voice": "emma",
+   "speed": 0.9
+  },
+  "tom": {
+   "voice": "ethan"
   }
  }
 }

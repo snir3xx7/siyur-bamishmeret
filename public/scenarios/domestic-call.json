@@ -1,0 +1,1781 @@
+{
+ "id": "domestic-call",
+ "version": 1,
+ "title": "קריאה על צעקות בבית – חשד לאלימות במשפחה",
+ "category": "עבירות נגד אדם",
+ "summary": "נערה בת 15 התקשרה בשקט: צעקות ורעש שבירה, ואמה בוכה. בפתח האב אומר ש„הכול בסדר”. יש לראות את כל בני הבית, להפריד, לשוחח עם האם בנפרד, להגן על הנערה, להעריך סיכון ולפעול – בלי „לעשות שלום”.",
+ "estimatedMinutes": 14,
+ "difficultyLabel": "מתקדמת",
+ "skills": [
+  "כניסה ובדיקת שלום כל בני הבית",
+  "הפרדה ושיחה נפרדת",
+  "הגנה על המתקשרת",
+  "הערכת סיכון",
+  "עיכוב, עדכון קצין תורן והפניה לסיוע"
+ ],
+ "shifts": [
+  "evening",
+  "night"
+ ],
+ "defaultShift": "night",
+ "location": {
+  "name": "רחוב הגפן 8, דירה 5",
+  "area": "שכונת גבעת הרימון, קריית אלון (בדוי)"
+ },
+ "objectives": [
+  "לראות את כל בני הבית ולוודא שלומם",
+  "להפריד בין בני הזוג ולשוחח עם האישה בנפרד",
+  "לא לחשוף שהנערה התקשרה",
+  "לשאול שאלות להערכת סיכון",
+  "לפעול לפי מה שעולה: עיכוב, עדכון קצין תורן והפניה לגורמי סיוע"
+ ],
+ "variants": [
+  {
+   "id": "mark",
+   "label": "על זרוע האישה סימן אדום טרי",
+   "set": {
+    "mark": true
+   },
+   "vars": {
+    "ronit_tell": "הוא תפס לי את היד חזק ודחף אותי. האגרטל נפל כשנתקלתי בשולחן. זו לא הפעם הראשונה."
+   }
+  },
+  {
+   "id": "threats",
+   "label": "אין סימן; היו איומים קשים",
+   "set": {
+    "mark": false
+   },
+   "vars": {
+    "ronit_tell": "הוא לא נגע בי הפעם. הוא שבר את האגרטל וצעק שאם אעזוב – אני אצטער. אני מפחדת ממנו."
+   }
+  }
+ ],
+ "scoring": {
+  "weights": {
+   "info": 15,
+   "assessment": 25,
+   "communication": 20,
+   "authority": 25,
+   "dispatch": 10,
+   "documentation": 5
+  },
+  "rules": [
+   {
+    "id": "dv-info-history",
+    "domain": "info",
+    "label": "בירור היסטוריה",
+    "max": 5,
+    "required": false,
+    "tiers": [
+     {
+      "when": {
+       "chosen": "f-history"
+      },
+      "points": 5,
+      "explain": "התבררה קריאה קודמת.",
+      "keep": "ידעת שהייתה קריאה דומה – זה מעלה את רמת הסיכון."
+     }
+    ],
+    "fallback": {
+     "explain": "לא התבררה היסטוריה.",
+     "improve": "לא שאלת על קריאות קודמות. בסבב הבא שאל – זה חלק מהערכת הסיכון."
+    }
+   },
+   {
+    "id": "dv-info-versions",
+    "domain": "info",
+    "label": "שמיעת שני הצדדים",
+    "max": 10,
+    "required": true,
+    "tiers": [
+     {
+      "when": {
+       "all": [
+        {
+         "chosen": "g-version"
+        },
+        {
+         "chosen": "r-private"
+        }
+       ]
+      },
+      "points": 10,
+      "explain": "נשמעו שני בני הזוג בנפרד.",
+      "keep": "שמעת את גיל ואת רונית, כל אחד בנפרד."
+     },
+     {
+      "when": {
+       "any": [
+        {
+         "chosen": "g-version"
+        },
+        {
+         "chosen": "r-private"
+        }
+       ]
+      },
+      "points": 5,
+      "explain": "נשמע צד אחד.",
+      "improve": "שמעת רק צד אחד. בסבב הבא שמע את שניהם – בנפרד."
+     }
+    ],
+    "fallback": {
+     "explain": "הגרסאות לא נשמעו.",
+     "improve": "לא שמעת אף צד. בסבב הבא הפרד ושמע כל אחד."
+    }
+   },
+   {
+    "id": "dv-assess-enter",
+    "domain": "assessment",
+    "label": "כניסה וראיית כל בני הבית",
+    "max": 10,
+    "required": true,
+    "anchor": [
+     "g-enter",
+     "g-leave"
+    ],
+    "tiers": [
+     {
+      "when": {
+       "all": [
+        {
+         "chosen": "g-enter"
+        },
+        {
+         "chosen": "z-all"
+        }
+       ]
+      },
+      "points": 10,
+      "explain": "נכנסת וראית את כולם.",
+      "keep": "לא הסתפקת ב„הכול בסדר” בפתח, ווידאת שראית כל אדם בבית – כולל החדרים."
+     },
+     {
+      "when": {
+       "chosen": "g-enter"
+      },
+      "points": 5,
+      "explain": "נכנסת, אך לא בדקת את כל החדרים.",
+      "improve": "נכנסת – אבל לא וידאת מי עוד בבית. בסבב הבא בדוק את כל החדרים."
+     }
+    ],
+    "fallback": {
+     "explain": "עזבת בלי להיכנס.",
+     "improve": "עזבת אחרי „הכול בסדר” בפתח. בקריאה כזו – רואים את כל בני הבית לפני שעוזבים."
+    }
+   },
+   {
+    "id": "dv-assess-separate",
+    "domain": "assessment",
+    "label": "הפרדה",
+    "max": 8,
+    "required": true,
+    "tiers": [
+     {
+      "when": {
+       "all": [
+        {
+         "chosen": "g-separate"
+        },
+        {
+         "not": {
+          "flag": "ev:approach"
+         }
+        }
+       ]
+      },
+      "points": 8,
+      "explain": "בני הזוג הופרדו מוקדם.",
+      "keep": "הפרדת מיד. כך רונית יכלה לדבר, וגיל לא הספיק להתקרב."
+     },
+     {
+      "when": {
+       "flag": "separated"
+      },
+      "points": 5,
+      "explain": "ההפרדה נעשתה מאוחר.",
+      "improve": "ההפרדה הגיעה אחרי שגיל כבר התקרב. בסבב הבא הפרד מיד אחרי הכניסה."
+     }
+    ],
+    "fallback": {
+     "explain": "לא הייתה הפרדה.",
+     "improve": "בני הזוג נשארו יחד. בסבב הבא העבר אחד מהם לחדר אחר."
+    }
+   },
+   {
+    "id": "dv-assess-risk",
+    "domain": "assessment",
+    "label": "הערכת סיכון",
+    "max": 7,
+    "required": true,
+    "tiers": [
+     {
+      "when": {
+       "chosen": "r-risk"
+      },
+      "points": 7,
+      "explain": "נשאלו שאלות סיכון.",
+      "keep": "שאלת על אירועים קודמים, איומים, כלים מסוכנים ואלכוהול – אלה מנבאים חשובים לסכנה."
+     }
+    ],
+    "fallback": {
+     "explain": "לא הוערך סיכון.",
+     "improve": "לא שאלת שאלות סיכון. בסבב הבא שאל על עבר, איומים, כלים מסוכנים ואלכוהול."
+    }
+   },
+   {
+    "id": "dv-comm-ronit",
+    "domain": "communication",
+    "label": "שיחה עם הנפגעת",
+    "max": 10,
+    "required": true,
+    "tiers": [
+     {
+      "when": {
+       "all": [
+        {
+         "chosen": "r-private"
+        },
+        {
+         "not": {
+          "chosen": "r-mediate"
+         }
+        },
+        {
+         "not": {
+          "chosen": "r-together"
+         }
+        }
+       ]
+      },
+      "points": 10,
+      "explain": "השיחה הייתה נפרדת, בלי לחץ ובלי „לעשות שלום”.",
+      "keep": "דיברת עם רונית לבד ולא ניסית לגשר. כך היא יכלה לספר."
+     },
+     {
+      "when": {
+       "chosen": "r-mediate"
+      },
+      "points": 2,
+      "explain": "הוצע „לעשות שלום”.",
+      "improve": "„תשלימו” בחשד לאלימות מקטין את מה שקרה ומשתיק את הנפגעת. בסבב הבא – הפרד ושמע."
+     },
+     {
+      "when": {
+       "chosen": "r-private"
+      },
+      "points": 6,
+      "explain": "הייתה שיחה נפרדת, אחרי שאלה בנוכחות האב.",
+      "improve": "קודם שאלת אותה ליד גיל, והיא שתקה. בסבב הבא שאל רק בנפרד."
+     }
+    ],
+    "fallback": {
+     "explain": "לא הייתה שיחה נפרדת.",
+     "improve": "לא דיברת עם רונית לבד. בסבב הבא הפרד ושאל בשקט."
+    }
+   },
+   {
+    "id": "dv-comm-help",
+    "domain": "communication",
+    "label": "הפניה לסיוע ותכנון בטיחות",
+    "max": 10,
+    "required": true,
+    "tiers": [
+     {
+      "when": {
+       "chosen": "r-help"
+      },
+      "points": 10,
+      "explain": "הוסברו דרכי סיוע ונבדק מקום בטוח.",
+      "keep": "הסברת לרונית על דרכי סיוע ווידאת שיש לה ולבת מקום בטוח הלילה."
+     }
+    ],
+    "fallback": {
+     "explain": "לא הוסברו דרכי סיוע.",
+     "improve": "רונית נשארה בלי לדעת למי לפנות. בסבב הבא הסבר על סיוע ובדוק מקום בטוח."
+    }
+   },
+   {
+    "id": "dv-auth-enter",
+    "domain": "authority",
+    "label": "הסבר הכניסה",
+    "max": 6,
+    "required": true,
+    "tiers": [
+     {
+      "when": {
+       "chosen": "g-enter"
+      },
+      "points": 6,
+      "explain": "הכניסה הוסברה בנימוס ובתקיפות.",
+      "keep": "הסברת לגיל למה אתה נכנס – בלי ויכוח, אבל בלי לוותר."
+     }
+    ],
+    "fallback": {
+     "explain": "לא היה הסבר.",
+     "improve": "לא הסברת למה אתה נכנס. בסבב הבא: „אנחנו לא עוזבים לפני שנראה שכולם בסדר.”"
+    }
+   },
+   {
+    "id": "dv-auth-detain",
+    "domain": "authority",
+    "label": "עיכוב מבוסס ומוסבר",
+    "max": 10,
+    "required": true,
+    "tiers": [
+     {
+      "when": {
+       "flag": "detainedProper"
+      },
+      "points": 10,
+      "explain": "העיכוב נשען על דברי האישה והוסבר.",
+      "keep": "עיכבת רק אחרי ששמעת את רונית, והסברת לגיל על מה ומה יקרה."
+     },
+     {
+      "when": {
+       "flag": "detainedNoBasis"
+      },
+      "points": 3,
+      "explain": "העיכוב נעשה לפני ששמעו את האישה.",
+      "improve": "עיכבת לפני שהיה בסיס. בסבב הבא שמע קודם את רונית, ואז פעל."
+     }
+    ],
+    "fallback": {
+     "explain": "האב לא עוכב.",
+     "improve": "עלה חשד לאלימות או לאיומים, אבל האב לא עוכב. בסבב הבא – עיכוב לבירור, בהסבר."
+    }
+   },
+   {
+    "id": "dv-auth-stop",
+    "domain": "authority",
+    "label": "עצירת התקרבות",
+    "max": 5,
+    "required": true,
+    "appliesWhen": {
+     "flag": "ev:approach"
+    },
+    "tiers": [
+     {
+      "when": {
+       "chosen": "g-stop"
+      },
+      "points": 5,
+      "explain": "האב נעצר בהוראה ברורה.",
+      "keep": "עצרת את גיל מיד בהוראה קצרה וברורה."
+     }
+    ],
+    "fallback": {
+     "explain": "ההתקרבות לא נעצרה.",
+     "improve": "גיל התקרב לרונית ולא עצרת. בסבב הבא היעמד ביניהם ותן הוראה."
+    }
+   },
+   {
+    "id": "dv-auth-caller",
+    "domain": "authority",
+    "label": "הגנה על המתקשרת",
+    "max": 4,
+    "required": true,
+    "appliesWhen": {
+     "flag": "seenAll"
+    },
+    "tiers": [
+     {
+      "when": {
+       "all": [
+        {
+         "chosen": "k-safe"
+        },
+        {
+         "not": {
+          "flag": "exposed"
+         }
+        }
+       ]
+      },
+      "points": 4,
+      "explain": "הנערה נבדקה בלי שנחשפה.",
+      "keep": "בדקת ששקד בסדר בלי לחשוף שהיא התקשרה."
+     }
+    ],
+    "fallback": {
+     "explain": "המתקשרת נחשפה או לא נבדקה.",
+     "improve": "שקד נחשפה כמתקשרת או שלא בדקת אותה. בסבב הבא בדוק את שלומה – ושמור על סודה."
+    }
+   },
+   {
+    "id": "dv-disp",
+    "domain": "dispatch",
+    "label": "עדכון וגורמים",
+    "max": 10,
+    "required": true,
+    "tiers": [
+     {
+      "when": {
+       "all": [
+        {
+         "sent": "u-welfare"
+        },
+        {
+         "not": {
+          "sent": "u-fine"
+         }
+        }
+       ]
+      },
+      "points": 10,
+      "explain": "עודכנו גורמי הרווחה בלי קביעה מוקדמת.",
+      "keep": "ביקשת לעדכן את גורמי הרווחה – יש קטינה בבית."
+     },
+     {
+      "when": {
+       "sent": "u-fine"
+      },
+      "points": 2,
+      "explain": "דווח „הכול בסדר”.",
+      "improve": "דיווחת „הכול בסדר” לפני בירור. בסבב הבא דווח עובדות."
+     },
+     {
+      "when": {
+       "updatesGte": 1
+      },
+      "points": 4,
+      "explain": "נשלח עדכון בלי רווחה.",
+      "improve": "יש קטינה בבית – בסבב הבא בקש לעדכן את גורמי הרווחה."
+     }
+    ],
+    "fallback": {
+     "explain": "לא נשלח עדכון.",
+     "improve": "לא עדכנת. בסבב הבא דווח עובדות ובקש לעדכן רווחה."
+    }
+   },
+   {
+    "id": "dv-doc",
+    "domain": "documentation",
+    "label": "תיעוד",
+    "max": 5,
+    "required": true,
+    "tiers": [
+     {
+      "when": {
+       "chosen": "z-doc"
+      },
+      "points": 5,
+      "explain": "האירוע תועד.",
+      "keep": "תיעדת זירה, ממצאים, גרסאות ושעות."
+     }
+    ],
+    "fallback": {
+     "explain": "לא תועד.",
+     "improve": "לא תיעדת. בסבב הבא תעד את מה שנצפה – זה בסיס לחקירה."
+    }
+   }
+  ]
+ },
+ "facts": [
+  {
+   "id": "d-report",
+   "kind": "dispatch",
+   "text": "נערה התקשרה בשקט: צעקות ורעש שבירה בדירה, אמה בוכה"
+  },
+  {
+   "id": "d-caller",
+   "kind": "dispatch",
+   "text": "המתקשרת – בת 15, ביקשה שאביה לא יידע שהתקשרה"
+  },
+  {
+   "id": "d-history",
+   "kind": "dispatch",
+   "text": "הייתה קריאה דומה מהכתובת לפני חצי שנה"
+  },
+  {
+   "id": "o-scene",
+   "kind": "observation",
+   "text": "כיסא הפוך ואגרטל שבור בסלון"
+  },
+  {
+   "id": "o-everyone",
+   "kind": "observation",
+   "text": "כל בני הבית נראו: האב, האם והנערה. אין ילדים נוספים"
+  },
+  {
+   "id": "c-gil",
+   "kind": "claim",
+   "text": "טוען שהיה „ויכוח קטן” ושהאגרטל נפל בטעות",
+   "source": "gil"
+  },
+  {
+   "id": "c-ronit",
+   "kind": "claim",
+   "text": "{{ronit_tell}}",
+   "source": "ronit"
+  },
+  {
+   "id": "o-arm",
+   "kind": "observation",
+   "text": "על זרוע האישה סימן אדום טרי"
+  },
+  {
+   "id": "c-risk",
+   "kind": "claim",
+   "text": "יש בבית סכין יפנית בארגז הכלים; האב שותה יותר בחודשים האחרונים; איים לפני כן",
+   "source": "ronit"
+  },
+  {
+   "id": "c-shaked",
+   "kind": "claim",
+   "text": "מפחדת; שמעה צעקות ושבירה מהחדר",
+   "source": "shaked"
+  }
+ ],
+ "characters": [
+  {
+   "id": "ronit",
+   "name": "רונית אלמוג",
+   "role": "האם",
+   "gender": "f",
+   "look": {
+    "skin": "#d6a57c",
+    "hair": "#3a2a20",
+    "hairStyle": "short",
+    "top": "#555",
+    "bottom": "#333"
+   },
+   "attitude": 0,
+   "x": 30,
+   "y": 97,
+   "scale": 1.65,
+   "moodRules": [
+    {
+     "when": {
+      "all": [
+       {
+        "flag": "mark"
+       },
+       {
+        "fact": "o-arm"
+       }
+      ]
+     },
+     "mood": "hurt"
+    },
+    {
+     "when": {
+      "not": {
+       "flag": "ronitSafe"
+      }
+     },
+     "mood": "tense"
+    }
+   ],
+   "sprite": "img/chars/ronit",
+   "spriteMoods": [
+    "calm",
+    "tense",
+    "upset",
+    "hurt"
+   ]
+  },
+  {
+   "id": "gil",
+   "name": "גיל אלמוג",
+   "role": "האב",
+   "gender": "m",
+   "look": {
+    "skin": "#d6a57c",
+    "hair": "#3a2a20",
+    "hairStyle": "short",
+    "top": "#555",
+    "bottom": "#333"
+   },
+   "attitude": 0,
+   "x": 64,
+   "y": 97,
+   "scale": 1.65,
+   "moodRules": [
+    {
+     "when": {
+      "any": [
+       {
+        "flag": "gilAngry"
+       },
+       {
+        "all": [
+         {
+          "flag": "ev:approach"
+         },
+         {
+          "not": {
+           "flag": "gilStopped"
+          }
+         }
+        ]
+       }
+      ]
+     },
+     "mood": "upset"
+    },
+    {
+     "when": {
+      "not": {
+       "flag": "detained"
+      }
+     },
+     "mood": "tense"
+    }
+   ],
+   "sprite": "img/chars/gil",
+   "spriteMoods": [
+    "calm",
+    "tense",
+    "upset"
+   ]
+  },
+  {
+   "id": "shaked",
+   "name": "שקד אלמוג",
+   "role": "הבת, בת 15",
+   "gender": "f",
+   "look": {
+    "skin": "#d6a57c",
+    "hair": "#3a2a20",
+    "hairStyle": "short",
+    "top": "#555",
+    "bottom": "#333"
+   },
+   "attitude": 0,
+   "x": 84,
+   "y": 96,
+   "scale": 1.5,
+   "when": {
+    "flag": "seenAll"
+   },
+   "moodRules": [
+    {
+     "when": {
+      "not": {
+       "flag": "shakedSafe"
+      }
+     },
+     "mood": "tense"
+    }
+   ],
+   "sprite": "img/chars/shaked",
+   "spriteMoods": [
+    "calm",
+    "tense",
+    "upset"
+   ]
+  }
+ ],
+ "dispatch": {
+  "time": {
+   "evening": "21:40",
+   "night": "23:55"
+  },
+  "unit": "סייר 21",
+  "incident": "8140",
+  "lines": [
+   {
+    "speaker": "dispatch",
+    "text": "סייר 21, כאן מוקד אלון. ברחוב הגפן 8, דירה 5 – נערה התקשרה בשקט: צעקות ורעש שבירה, ואמא שלה בוכה. היא ביקשה שאביה לא יידע שהתקשרה. אשר קבלה."
+   }
+  ],
+  "initialFacts": [
+   "d-report",
+   "d-caller"
+  ],
+  "followUps": [
+   {
+    "id": "f-history",
+    "label": "לשאול: היו קריאות קודמות מהכתובת?",
+    "lines": [
+     {
+      "speaker": "player",
+      "text": "מוקד, היו קריאות קודמות מהכתובת?"
+     },
+     {
+      "speaker": "dispatch",
+      "text": "כן – קריאה דומה לפני חצי שנה. אז הסתיים בלי תלונה."
+     }
+    ],
+    "effects": {
+     "reveal": [
+      "d-history"
+     ]
+    },
+    "report": "בירור היסטוריה בכתובת"
+   },
+   {
+    "id": "f-backup",
+    "label": "לבקש ניידת נוספת לכתובת",
+    "lines": [
+     {
+      "speaker": "player",
+      "text": "מוקד, מבקש ניידת נוספת לכתובת – אירוע במשפחה, צריך להפריד."
+     },
+     {
+      "speaker": "dispatch",
+      "text": "ניידת 23 בדרך, כשבע דקות."
+     }
+    ],
+    "effects": {
+     "set": {
+      "backup": true
+     }
+    },
+    "report": "בקשת ניידת נוספת"
+   },
+   {
+    "id": "f-weapon",
+    "label": "לשאול: ידוע על נשק ברשות מישהו בבית?",
+    "lines": [
+     {
+      "speaker": "player",
+      "text": "ידוע על נשק ברשות מישהו בבית?"
+     },
+     {
+      "speaker": "dispatch",
+      "text": "אין רישום של נשק ברישיון בכתובת."
+     }
+    ],
+    "effects": {
+     "set": {
+      "askedWeapon": true
+     }
+    },
+    "report": "בירור נשק ברשות"
+   }
+  ],
+  "goLabel": "אישור קבלה ויציאה לכתובת"
+ },
+ "transition": {
+  "kind": "car",
+  "text": "נסיעה בשקט, בלי אורות מהבהבים ליד הבניין. בקומה השנייה האור בסלון דולק.",
+  "travelMinutes": 5,
+  "ambience": [
+   "engine-wipers",
+   "radio-chatter"
+  ]
+ },
+ "scene": {
+  "background": "img/living-room",
+  "alt": "סלון משפחתי בלילה: ספה, שולחן קפה, כיסא הפוך ואגרטל שבור על הרצפה; משמאל דלת הכניסה ומסדרון לחדרים, מימין מטבח מואר.",
+  "fallbackColor": "#3a2f28",
+  "ambience": [
+   "building-hum"
+  ],
+  "lights": "off",
+  "weather": "none",
+  "bgByShift": {
+   "evening": "night",
+   "night": "night"
+  },
+  "props": [],
+  "painted": true
+ },
+ "arrivalLines": [
+  {
+   "speaker": "narrator",
+   "text": "דפקת. האב פותח את הדלת חלקית. מאחוריו בסלון כיסא הפוך ושברי אגרטל. האם יושבת על הספה עם הגב אליכם."
+  },
+  {
+   "speaker": "gil",
+   "text": "הכול בסדר פה. סתם ויכוח קטן. אתם יכולים ללכת."
+  }
+ ],
+ "arrivalFacts": [
+  "o-scene"
+ ],
+ "hotspots": [
+  {
+   "id": "h-gil",
+   "label": "גיל – האב",
+   "kind": "character",
+   "x": 64,
+   "y": 40,
+   "description": "גיל אלמוג. עמד בפתח ועכשיו בסלון.",
+   "choices": [
+    {
+     "id": "g-enter",
+     "label": "להסביר בנימוס ובתקיפות: לא עוזבים לפני שרואים שכל בני הבית בסדר",
+     "lines": [
+      {
+       "speaker": "player",
+       "text": "ערב טוב. הגיעה קריאה מהכתובת, ואנחנו לא עוזבים לפני שנראה שכל מי שבבית בסדר. אני נכנס."
+      },
+      {
+       "speaker": "gil",
+       "text": "(נאנח, פותח את הדלת) …תיכנסו. אבל אין פה כלום."
+      }
+     ],
+     "effects": {
+      "set": {
+       "entered": true
+      }
+     },
+     "report": "כניסה לבדיקת שלום בני הבית"
+    },
+    {
+     "id": "g-leave",
+     "label": "לקבל את דבריו ולעזוב: „אם הכול בסדר – נלך”",
+     "when": {
+      "not": {
+       "flag": "entered"
+      }
+     },
+     "lines": [
+      {
+       "speaker": "narrator",
+       "text": "יצאתם. מאחורי הדלת הצעקות מתחדשות כמה דקות אחר כך."
+      }
+     ],
+     "effects": {
+      "set": {
+       "leftEarly": true
+      },
+      "note": "עזיבה בלי לראות את בני הבית"
+     }
+    },
+    {
+     "id": "g-separate",
+     "label": "לבקש מגיל לעבור איתך למטבח – כדי לשמוע כל אחד בנפרד",
+     "when": {
+      "flag": "entered"
+     },
+     "lines": [
+      {
+       "speaker": "player",
+       "text": "גיל, אני רוצה לשמוע את הצד שלך – בוא נדבר רגע במטבח."
+      },
+      {
+       "speaker": "gil",
+       "text": "למה במטבח? …טוב."
+      }
+     ],
+     "effects": {
+      "set": {
+       "separated": true
+      }
+     },
+     "report": "הפרדה בין בני הזוג"
+    },
+    {
+     "id": "g-version",
+     "label": "לשמוע את הגרסה של גיל",
+     "when": {
+      "flag": "entered"
+     },
+     "lines": [
+      {
+       "speaker": "gil",
+       "text": "היא התחילה לצעוק עליי על כסף. אני רק הרמתי את הקול. האגרטל נפל, זה הכול."
+      }
+     ],
+     "effects": {
+      "reveal": [
+       "c-gil"
+      ]
+     },
+     "report": "גביית גרסת האב"
+    },
+    {
+     "id": "g-stop",
+     "label": "לעצור את גיל בהוראה ברורה כשהוא מתקרב לרונית",
+     "when": {
+      "all": [
+       {
+        "flag": "ev:approach"
+       },
+       {
+        "not": {
+         "flag": "gilStopped"
+        }
+       }
+      ]
+     },
+     "lines": [
+      {
+       "speaker": "player",
+       "text": "גיל, עצור. תחזור למטבח עכשיו. אתה לא מתקרב אליה בזמן שאנחנו כאן."
+      },
+      {
+       "speaker": "gil",
+       "text": "(נעצר) …בסדר."
+      }
+     ],
+     "effects": {
+      "set": {
+       "gilStopped": true,
+       "separated": true
+      }
+     },
+     "report": "עצירת התקרבות האב"
+    },
+    {
+     "id": "g-detain",
+     "label": "להודיע לגיל שהוא מעוכב לבירור, להסביר על מה ומה יקרה",
+     "when": {
+      "all": [
+       {
+        "flag": "entered"
+       },
+       {
+        "not": {
+         "flag": "detained"
+        }
+       }
+      ]
+     },
+     "lines": [
+      {
+       "speaker": "player",
+       "text": "אתה מעוכב."
+      },
+      {
+       "speaker": "gil",
+       "text": "על מה? אף אחד אפילו לא שאל אותה!"
+      }
+     ],
+     "effects": {
+      "set": {
+       "detained": true,
+       "detainedNoBasis": true,
+       "gilAngry": true
+      },
+      "note": "עיכוב לפני ששמעו את האישה ובלי הסבר"
+     },
+     "branches": [
+      {
+       "when": {
+        "fact": "c-ronit"
+       },
+       "lines": [
+        {
+         "speaker": "player",
+         "text": "גיל, לפי מה שעלה כאן – יש חשד לאלימות כלפי רונית. אתה מעוכב לבירור. ניידת נוספת תיקח אותך לתחנה, ושם תוכל למסור את הגרסה שלך."
+        },
+        {
+         "speaker": "gil",
+         "text": "…אני לא עשיתי כלום. טוב."
+        }
+       ],
+       "effects": {
+        "set": {
+         "detained": true,
+         "detainedProper": true
+        }
+       }
+      }
+     ],
+     "report": "הודעה על עיכוב"
+    }
+   ],
+   "character": "gil"
+  },
+  {
+   "id": "h-ronit",
+   "label": "רונית – האם",
+   "kind": "character",
+   "x": 30,
+   "y": 40,
+   "description": "רונית אלמוג, יושבת על הספה.",
+   "choices": [
+    {
+     "id": "r-private",
+     "label": "לשוחח עם רונית בנפרד, בשקט, ולשאול מה קרה",
+     "when": {
+      "flag": "separated"
+     },
+     "lines": [
+      {
+       "speaker": "ronit",
+       "text": "{{ronit_tell}}"
+      }
+     ],
+     "effects": {
+      "reveal": [
+       "c-ronit"
+      ],
+      "set": {
+       "heardRonit": true
+      }
+     },
+     "branches": [
+      {
+       "when": {
+        "flag": "mark"
+       },
+       "lines": [
+        {
+         "speaker": "ronit",
+         "text": "{{ronit_tell}}"
+        },
+        {
+         "speaker": "narrator",
+         "text": "על הזרוע שלה סימן אדום טרי."
+        }
+       ],
+       "effects": {
+        "reveal": [
+         "c-ronit",
+         "o-arm"
+        ],
+        "set": {
+         "heardRonit": true
+        }
+       }
+      }
+     ],
+     "report": "שיחה נפרדת עם האם"
+    },
+    {
+     "id": "r-together",
+     "label": "לשאול את רונית מה קרה – כשגיל עומד לידה",
+     "when": {
+      "all": [
+       {
+        "flag": "entered"
+       },
+       {
+        "not": {
+         "flag": "separated"
+        }
+       }
+      ]
+     },
+     "lines": [
+      {
+       "speaker": "ronit",
+       "text": "(מסתכלת על גיל) …כלום. ויכוח. הכול בסדר."
+      }
+     ],
+     "effects": {
+      "set": {
+       "askedTogether": true
+      },
+      "note": "שאלה בנוכחות האב – האישה לא יכלה לדבר חופשי"
+     }
+    },
+    {
+     "id": "r-risk",
+     "label": "לשאול שאלות להערכת סיכון: קרה בעבר? איומים? כלי נשק או סכינים בבית? אלכוהול?",
+     "when": {
+      "flag": "heardRonit"
+     },
+     "lines": [
+      {
+       "speaker": "ronit",
+       "text": "זה קרה כבר. הוא שותה הרבה בזמן האחרון. יש סכין יפנית בארגז הכלים. הוא אמר שאם אעזוב – אני אצטער."
+      }
+     ],
+     "effects": {
+      "reveal": [
+       "c-risk"
+      ],
+      "set": {
+       "riskAssessed": true
+      }
+     },
+     "report": "הערכת סיכון"
+    },
+    {
+     "id": "r-mediate",
+     "label": "להציע לשניהם „לעשות שלום” ולהירגע",
+     "when": {
+      "flag": "entered"
+     },
+     "lines": [
+      {
+       "speaker": "player",
+       "text": "אולי פשוט תירגעו ותשלימו? זה קורה בכל בית."
+      },
+      {
+       "speaker": "ronit",
+       "text": "(שותקת, מורידה את העיניים)"
+      }
+     ],
+     "effects": {
+      "set": {
+       "mediated": true
+      },
+      "note": "ניסיון „לעשות שלום” בחשד לאלימות – מקטין את הסיכון בעיני הנפגעת"
+     }
+    },
+    {
+     "id": "r-help",
+     "label": "להסביר לרונית על דרכי סיוע ולוודא שיש לה מקום בטוח הלילה",
+     "when": {
+      "flag": "heardRonit"
+     },
+     "lines": [
+      {
+       "speaker": "player",
+       "text": "את לא לבד. יש מוקד סיוע זמין כל שעות היממה, ועובדת סוציאלית יכולה ליצור איתך קשר כבר מחר. יש לך איפה להיות הלילה, את והבת?"
+      },
+      {
+       "speaker": "ronit",
+       "text": "אחותי גרה קרוב. אני מתקשרת אליה."
+      }
+     ],
+     "effects": {
+      "set": {
+       "ronitSafe": true
+      }
+     },
+     "report": "הפניה לסיוע ותכנון בטיחות"
+    }
+   ],
+   "character": "ronit"
+  },
+  {
+   "id": "h-hall",
+   "label": "המסדרון והחדרים",
+   "kind": "area",
+   "x": 10,
+   "y": 52,
+   "description": "מסדרון שמוביל לחדרי השינה.",
+   "choices": [
+    {
+     "id": "z-all",
+     "label": "לוודא שראית את כל מי שבבית – כולל החדרים",
+     "when": {
+      "flag": "entered"
+     },
+     "lines": [
+      {
+       "speaker": "narrator",
+       "text": "בחדר האחרון במסדרון יושבת נערה בפיג׳מה, מחבקת את עצמה. אין אנשים נוספים בבית."
+      }
+     ],
+     "effects": {
+      "set": {
+       "seenAll": true
+      },
+      "reveal": [
+       "o-everyone"
+      ]
+     },
+     "report": "בדיקת שלום כל בני הבית"
+    },
+    {
+     "id": "z-doc",
+     "label": "לתעד: הזירה, מה נצפה, גרסאות ושעות",
+     "when": {
+      "flag": "entered"
+     },
+     "lines": [
+      {
+       "speaker": "narrator",
+       "text": "תיעדת את הסלון, את מה שנצפה על כל אחד, את הגרסאות ואת השעות."
+      }
+     ],
+     "effects": {
+      "set": {
+       "documented": true
+      }
+     },
+     "report": "תיעוד"
+    }
+   ]
+  },
+  {
+   "id": "h-shaked",
+   "label": "שקד – הבת",
+   "kind": "character",
+   "x": 86,
+   "y": 46,
+   "description": "שקד, בת 15. היא זו שהתקשרה – אבל אביה לא יודע.",
+   "choices": [
+    {
+     "id": "k-safe",
+     "label": "לגשת לשקד בעדינות, בלי לחשוף שהיא התקשרה, ולוודא שהיא בסדר",
+     "lines": [
+      {
+       "speaker": "player",
+       "text": "היי, אני מהמשטרה. אני רק רוצה לוודא שאת בסדר. נגעו בך?"
+      },
+      {
+       "speaker": "shaked",
+       "text": "(בשקט) לא… רק פחדתי. שמעתי צעקות ושבירה."
+      }
+     ],
+     "effects": {
+      "reveal": [
+       "c-shaked"
+      ],
+      "set": {
+       "shakedSafe": true
+      }
+     },
+     "report": "בדיקת שלום הנערה בלי לחשוף אותה"
+    },
+    {
+     "id": "k-expose",
+     "label": "להודות לשקד בקול על כך שהתקשרה",
+     "lines": [
+      {
+       "speaker": "player",
+       "text": "תודה שהתקשרת אלינו, שקד."
+      },
+      {
+       "speaker": "gil",
+       "text": "(מהמטבח) מה?! את התקשרת למשטרה?!"
+      }
+     ],
+     "effects": {
+      "set": {
+       "exposed": true,
+       "gilAngry": true
+      },
+      "note": "נחשף שהנערה היא המתקשרת"
+     }
+    }
+   ],
+   "character": "shaked",
+   "when": {
+    "flag": "seenAll"
+   }
+  }
+ ],
+ "events": [
+  {
+   "id": "approach",
+   "title": "התפתחות: האב מתקרב לאם",
+   "when": {
+    "all": [
+     {
+      "not": {
+       "flag": "separated"
+      }
+     },
+     {
+      "countChosen": {
+       "ids": [
+        "g-enter",
+        "g-version",
+        "g-separate",
+        "r-private",
+        "r-risk",
+        "r-mediate",
+        "z-all",
+        "z-doc"
+       ],
+       "gte": 2
+      }
+     }
+    ]
+   },
+   "lines": [
+    {
+     "speaker": "gil",
+     "text": "תגידי להם שהכול בסדר!"
+    },
+    {
+     "speaker": "narrator",
+     "text": "גיל צועד בצעדים מהירים לעבר רונית, שמתכווצת על הספה."
+    }
+   ],
+   "effects": {
+    "note": "האב התקרב לאם בזמן הטיפול"
+   },
+   "sfx": "alert"
+  },
+  {
+   "id": "backup",
+   "title": "הניידת הנוספת הגיעה",
+   "when": {
+    "all": [
+     {
+      "any": [
+       {
+        "flag": "backup"
+       },
+       {
+        "flag": "backupReq"
+       }
+      ]
+     },
+     {
+      "countChosen": {
+       "ids": [
+        "g-enter",
+        "g-version",
+        "g-separate",
+        "r-private",
+        "r-risk",
+        "r-mediate",
+        "z-all",
+        "z-doc"
+       ],
+       "gte": 3
+      }
+     }
+    ]
+   },
+   "lines": [
+    {
+     "speaker": "narrator",
+     "text": "ניידת 23 הגיעה. שוטרת נכנסת ונשארת ליד המטבח."
+    }
+   ],
+   "effects": {
+    "set": {
+     "backupHere": true
+    }
+   }
+  }
+ ],
+ "update": {
+  "categories": {
+   "location": "מקום",
+   "situation": "מצב נוכחי",
+   "status": "מצב המעורבים",
+   "verified": "מה אומת",
+   "missing": "מה עדיין חסר",
+   "assistance": "סיוע נדרש",
+   "judgement": "קביעה"
+  },
+  "elements": [
+   {
+    "id": "u-loc",
+    "category": "location",
+    "text": "נמצא ברחוב הגפן 8, דירה 5"
+   },
+   {
+    "id": "u-inside",
+    "category": "situation",
+    "text": "נכנסנו; כל בני הבית נראו",
+    "when": {
+     "flag": "seenAll"
+    }
+   },
+   {
+    "id": "u-separated",
+    "category": "situation",
+    "text": "בני הזוג הופרדו",
+    "when": {
+     "flag": "separated"
+    }
+   },
+   {
+    "id": "u-mark",
+    "category": "status",
+    "text": "על זרוע האישה סימן אדום טרי",
+    "when": {
+     "fact": "o-arm"
+    }
+   },
+   {
+    "id": "u-threats",
+    "category": "status",
+    "text": "האישה מדווחת על איומים ועל אירועים קודמים",
+    "when": {
+     "fact": "c-risk"
+    }
+   },
+   {
+    "id": "u-detained",
+    "category": "verified",
+    "text": "האב מעוכב לבירור על בסיס דברי האישה",
+    "when": {
+     "flag": "detainedProper"
+    }
+   },
+   {
+    "id": "u-backup",
+    "category": "assistance",
+    "text": "מבקש ניידת נוספת",
+    "when": {
+     "all": [
+      {
+       "not": {
+        "flag": "backup"
+       }
+      },
+      {
+       "not": {
+        "flag": "backupReq"
+       }
+      }
+     ]
+    }
+   },
+   {
+    "id": "u-welfare",
+    "category": "assistance",
+    "text": "מבקש יידוע גורמי רווחה – קטינה בבית",
+    "when": {
+     "flag": "seenAll"
+    }
+   },
+   {
+    "id": "u-fine",
+    "category": "judgement",
+    "text": "ויכוח משפחתי, הכול בסדר",
+    "when": {
+     "flag": "entered"
+    }
+   }
+  ],
+  "responses": [
+   {
+    "when": {
+     "inUpdate": "u-backup"
+    },
+    "lines": [
+     {
+      "speaker": "dispatch",
+      "text": "מוקד: ניידת 23 בדרך."
+     }
+    ],
+    "effects": {
+     "set": {
+      "backupReq": true
+     }
+    }
+   },
+   {
+    "when": {
+     "inUpdate": "u-welfare"
+    },
+    "lines": [
+     {
+      "speaker": "dispatch",
+      "text": "מוקד: רשמתי, גורמי הרווחה יעודכנו."
+     }
+    ],
+    "effects": {
+     "set": {
+      "welfare": true
+     }
+    }
+   },
+   {
+    "when": {
+     "inUpdate": "u-fine"
+    },
+    "lines": [
+     {
+      "speaker": "dispatch",
+      "text": "מוקד: רשמתי. בטוח? הייתה קריאה דומה לפני חצי שנה."
+     }
+    ],
+    "effects": {
+     "note": "דווח „הכול בסדר” לפני בירור מלא"
+    }
+   }
+  ]
+ },
+ "finish": {
+  "label": "סיום הטיפול במקום",
+  "confirm": "לסיים את הטיפול ולעבור לתחקיר? אפשר לשלוח עדכון אחרון למוקד לפני הסיום."
+ },
+ "endings": [
+  {
+   "id": "e-good",
+   "kind": "good",
+   "title": "בני הבית מוגנים והבירור מתחיל נכון",
+   "text": "נכנסתם וראיתם את כולם, הפרדתם, שמעתם את רונית בנפרד, העדתם סיכון, הגנתם על שקד, עיכבתם על בסיס דבריה והפניתם לסיוע.",
+   "when": {
+    "all": [
+     {
+      "flag": "seenAll"
+     },
+     {
+      "flag": "separated"
+     },
+     {
+      "flag": "heardRonit"
+     },
+     {
+      "flag": "riskAssessed"
+     },
+     {
+      "flag": "ronitSafe"
+     },
+     {
+      "flag": "shakedSafe"
+     },
+     {
+      "flag": "detainedProper"
+     },
+     {
+      "not": {
+       "flag": "detainedNoBasis"
+      }
+     },
+     {
+      "not": {
+       "flag": "exposed"
+      }
+     },
+     {
+      "not": {
+       "flag": "mediated"
+      }
+     },
+     {
+      "any": [
+       {
+        "not": {
+         "flag": "ev:approach"
+        }
+       },
+       {
+        "flag": "gilStopped"
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "e-partial",
+   "kind": "partial",
+   "title": "הטיפול חלקי – הסיכון לא טופל עד הסוף",
+   "text": "נכנסתם, אבל חלק מהצעדים חסרים: הפרדה, שיחה נפרדת, הערכת סיכון, הגנה על המתקשרת, עיכוב מבוסס או הפניה לסיוע.",
+   "when": {
+    "flag": "entered"
+   }
+  },
+  {
+   "id": "e-retry",
+   "kind": "retry",
+   "title": "הזדמנות לתיקון: עזבתם בלי לראות את בני הבית",
+   "text": "הצוות עזב אחרי „הכול בסדר” בפתח. כעבור חצי שעה התקבלה קריאה נוספת מאותה דירה.",
+   "when": {
+    "always": true
+   }
+  }
+ ],
+ "hints": [
+  {
+   "when": {
+    "all": [
+     {
+      "stage": [
+       "dispatch"
+      ]
+     },
+     {
+      "not": {
+       "chosen": "f-backup"
+      }
+     }
+    ]
+   },
+   "text": "אירוע במשפחה עם חשד לאלימות – כדאי שתי ניידות, כדי שאפשר יהיה להפריד."
+  },
+  {
+   "when": {
+    "all": [
+     {
+      "stage": [
+       "scene"
+      ]
+     },
+     {
+      "not": {
+       "flag": "entered"
+      }
+     }
+    ]
+   },
+   "text": "„הכול בסדר” בפתח זה לא בדיקה. צריך לראות את כולם."
+  },
+  {
+   "when": {
+    "all": [
+     {
+      "flag": "entered"
+     },
+     {
+      "not": {
+       "flag": "separated"
+      }
+     }
+    ]
+   },
+   "text": "כל עוד הם באותו חדר – היא לא תוכל לדבר חופשי."
+  },
+  {
+   "when": {
+    "all": [
+     {
+      "flag": "ev:approach"
+     },
+     {
+      "not": {
+       "flag": "gilStopped"
+      }
+     }
+    ]
+   },
+   "text": "גיל מתקרב לרונית. עצור אותו בהוראה ברורה."
+  },
+  {
+   "when": {
+    "all": [
+     {
+      "flag": "heardRonit"
+     },
+     {
+      "not": {
+       "flag": "riskAssessed"
+      }
+     }
+    ]
+   },
+   "text": "שאלות להערכת סיכון: קרה בעבר? איומים? כלים מסוכנים בבית? אלכוהול?"
+  },
+  {
+   "when": {
+    "flag": "seenAll"
+   },
+   "text": "שקד היא שהתקשרה – אסור שאביה יידע."
+  },
+  {
+   "when": {
+    "always": true
+   },
+   "text": "לפני הסיום: האם רונית ושקד בטוחות הלילה, והקצין התורן מעודכן?"
+  }
+ ],
+ "challenges": [
+  "שחק עם זרע אחר – לפעמים אין סימן אלא איומים. האם הפעולה שלך מתאימה לשני המקרים?",
+  "נסה להפריד לפני שגיל מגיע לרונית.",
+  "נסח עדכון לקצין התורן: מה נצפה, מה נאמר, מה נעשה."
+ ],
+ "report": {
+  "reason": "התקבלה משימה מהמוקד: צעקות ורעש שבירה בדירה ברחוב הגפן 8.",
+  "checklist": [
+   {
+    "label": "מה נצפה בזירה",
+    "when": {
+     "fact": "o-scene"
+    }
+   },
+   {
+    "label": "גרסת האם (בנפרד)",
+    "when": {
+     "fact": "c-ronit"
+    }
+   },
+   {
+    "label": "גרסת האב",
+    "when": {
+     "fact": "c-gil"
+    }
+   },
+   {
+    "label": "הערכת סיכון",
+    "when": {
+     "fact": "c-risk"
+    }
+   },
+   {
+    "label": "שלום הקטינה",
+    "when": {
+     "fact": "c-shaked"
+    }
+   }
+  ]
+ },
+ "media": {
+  "images": [
+   "img/living-room-day.webp",
+   "img/living-room-night.webp",
+   "img/chars/ronit-calm.webp",
+   "img/chars/ronit-tense.webp",
+   "img/chars/ronit-upset.webp",
+   "img/chars/ronit-hurt.webp",
+   "img/chars/gil-calm.webp",
+   "img/chars/gil-tense.webp",
+   "img/chars/gil-upset.webp",
+   "img/chars/shaked-calm.webp",
+   "img/chars/shaked-tense.webp",
+   "img/chars/shaked-upset.webp",
+   "img/drive/interior.webp",
+   "img/drive/road-day.webp",
+   "img/drive/road-night.webp"
+  ],
+  "audio": [
+   "audio/radio-chatter.mp3",
+   "audio/building-hum.mp3",
+   "audio/engine-wipers.mp3",
+   "audio/radio-chirp.mp3",
+   "audio/alert.mp3"
+  ],
+  "voice": {},
+  "narrationMissing": "קריינות: קולות מסונתזים מקומית ב־BlueTTS (קוד MIT; קולות מ־LibriTTS-R, CC BY 4.0). שורות עם אות קריאה של התחנה מוקראות בקול הדפדפן אם הופעל.",
+  "voiceLines": {
+   "62230d83": "audio/voice/domestic-call/l-62230d83.mp3",
+   "9e880dae": "audio/voice/domestic-call/l-9e880dae.mp3",
+   "975458f6": "audio/voice/domestic-call/l-975458f6.mp3",
+   "0e01a700": "audio/voice/domestic-call/l-0e01a700.mp3",
+   "4e52b452": "audio/voice/domestic-call/l-4e52b452.mp3",
+   "e45f91ee": "audio/voice/domestic-call/l-e45f91ee.mp3",
+   "bc4ef680": "audio/voice/domestic-call/l-bc4ef680.mp3",
+   "dec6b838": "audio/voice/domestic-call/l-dec6b838.mp3",
+   "39c2e3ce": "audio/voice/domestic-call/l-39c2e3ce.mp3",
+   "0bb6cb73": "audio/voice/domestic-call/l-0bb6cb73.mp3",
+   "29b547b9": "audio/voice/domestic-call/l-29b547b9.mp3",
+   "66c70766": "audio/voice/domestic-call/l-66c70766.mp3",
+   "419ee934": "audio/voice/domestic-call/l-419ee934.mp3",
+   "7fbc4874": "audio/voice/domestic-call/l-7fbc4874.mp3",
+   "57f43af6": "audio/voice/domestic-call/l-57f43af6.mp3",
+   "36b1f7d6": "audio/voice/domestic-call/l-36b1f7d6.mp3",
+   "93bf16c0": "audio/voice/domestic-call/l-93bf16c0.mp3",
+   "ce411832": "audio/voice/domestic-call/l-ce411832.mp3",
+   "8bb3f3ea": "audio/voice/domestic-call/l-8bb3f3ea.mp3",
+   "23015bb8": "audio/voice/domestic-call/l-23015bb8.mp3",
+   "f365cf8a": "audio/voice/domestic-call/l-f365cf8a.mp3",
+   "e55646eb": "audio/voice/domestic-call/l-e55646eb.mp3",
+   "265db0bb": "audio/voice/domestic-call/l-265db0bb.mp3",
+   "19a47209": "audio/voice/domestic-call/l-19a47209.mp3",
+   "3d7589d3": "audio/voice/domestic-call/l-3d7589d3.mp3",
+   "30d61840": "audio/voice/domestic-call/l-30d61840.mp3",
+   "43666708": "audio/voice/domestic-call/l-43666708.mp3",
+   "f0a1ce4e": "audio/voice/domestic-call/l-f0a1ce4e.mp3",
+   "8a2f0f2c": "audio/voice/domestic-call/l-8a2f0f2c.mp3",
+   "5a1721e6": "audio/voice/domestic-call/l-5a1721e6.mp3",
+   "484ac99f": "audio/voice/domestic-call/l-484ac99f.mp3",
+   "3d5e47e3": "audio/voice/domestic-call/l-3d5e47e3.mp3",
+   "715b7240": "audio/voice/domestic-call/l-715b7240.mp3",
+   "5c28e3c7": "audio/voice/domestic-call/l-5c28e3c7.mp3",
+   "eb03ec08": "audio/voice/domestic-call/l-eb03ec08.mp3",
+   "476c06a7": "audio/voice/domestic-call/l-476c06a7.mp3",
+   "6c920960": "audio/voice/domestic-call/l-6c920960.mp3",
+   "4442afed": "audio/voice/domestic-call/l-4442afed.mp3",
+   "1734ec94": "audio/voice/domestic-call/l-1734ec94.mp3",
+   "64c2f217": "audio/voice/domestic-call/l-64c2f217.mp3",
+   "bf8d7099": "audio/voice/domestic-call/l-bf8d7099.mp3",
+   "da3f073c": "audio/voice/domestic-call/l-da3f073c.mp3",
+   "f86b4099": "audio/voice/domestic-call/l-f86b4099.mp3",
+   "c814ac74": "audio/voice/domestic-call/l-c814ac74.mp3",
+   "3f4dde5f": "audio/voice/domestic-call/l-3f4dde5f.mp3",
+   "73103748": "audio/voice/domestic-call/l-73103748.mp3",
+   "cf483c1d": "audio/voice/domestic-call/l-cf483c1d.mp3",
+   "222e3847": "audio/voice/domestic-call/l-222e3847.mp3",
+   "c8fede48": "audio/voice/domestic-call/l-c8fede48.mp3",
+   "4a159aa5": "audio/voice/domestic-call/l-4a159aa5.mp3",
+   "341a250b": "audio/voice/domestic-call/l-341a250b.mp3",
+   "5991454e": "audio/voice/domestic-call/l-5991454e.mp3",
+   "c2395251": "audio/voice/domestic-call/l-c2395251.mp3",
+   "80fc5f75": "audio/voice/domestic-call/l-80fc5f75.mp3",
+   "2921e8ae": "audio/voice/domestic-call/l-2921e8ae.mp3",
+   "170f5e23": "audio/voice/domestic-call/l-170f5e23.mp3",
+   "e3d7e961": "audio/voice/domestic-call/l-e3d7e961.mp3",
+   "9c07163b": "audio/voice/domestic-call/l-9c07163b.mp3",
+   "ae5e06b7": "audio/voice/domestic-call/l-ae5e06b7.mp3",
+   "44ee31a8": "audio/voice/domestic-call/l-44ee31a8.mp3",
+   "09ff2ed7": "audio/voice/domestic-call/l-09ff2ed7.mp3",
+   "c9c84747": "audio/voice/domestic-call/l-c9c84747.mp3",
+   "a14fc80a": "audio/voice/domestic-call/l-a14fc80a.mp3",
+   "77ec350c": "audio/voice/domestic-call/l-77ec350c.mp3",
+   "3a2cd3bc": "audio/voice/domestic-call/l-3a2cd3bc.mp3",
+   "e3fa7e9f": "audio/voice/domestic-call/l-e3fa7e9f.mp3"
+  }
+ }
+}

@@ -47,6 +47,22 @@ const GOOD_PATHS: Record<string, { variant: string; steps: Step[] }> = {
     variant: 'meter',
     steps: ['f-people', 'f-fire', 'GO', 'ARRIVE', 'z-smell', ['UPDATE', 'u-loc', 'u-smell'], 'z-noflame', 'g-hear', 'mo-explain', 'z-knock', 'z-perimeter', 'g-help', 'g-update', 't-explain', 'z-doc', 'z-handover', ['UPDATE', 'u-loc', 'u-evacuated', 'u-handed'], 'FINISH'],
   },
+  'burglary': {
+    variant: 'seen',
+    steps: ['f-inside', 'f-suspect', 'f-backup', 'GO', 'ARRIVE', 'z-look', 'z-preserve', 'm-calm', 'a-ask', 'a-camera', 'a-keep', 'm-items', 'z-check', 'm-support', ['UPDATE', 'u-loc', 'u-forced', 'u-preserved', 'u-forensics', 'u-desc'], 'z-doc', 'FINISH'],
+  },
+  'shoplifting': {
+    variant: 'took',
+    steps: ['f-age', 'GO', 'ARRIVE', 's-shai', 's-search', 'd-hear', 'd-photo', 'i-office', 'i-calm', 'i-id', 'i-version', 'd-footage', 'i-parent', 'i-close', ['UPDATE', 'u-loc', 'u-minor', 'u-footage-took', 'u-youth'], 'z-doc', 'FINISH'],
+  },
+  'domestic-call': {
+    variant: 'mark',
+    steps: ['f-history', 'f-backup', 'f-weapon', 'GO', 'ARRIVE', 'g-enter', 'g-separate', 'z-all', 'k-safe', 'r-private', 'r-risk', 'r-help', 'g-version', 'g-detain', ['UPDATE', 'u-loc', 'u-inside', 'u-separated', 'u-mark', 'u-threats', 'u-detained', 'u-welfare'], 'z-doc', 'FINISH'],
+  },
+  'park-youths': {
+    variant: 'faint',
+    steps: ['f-ages', 'GO', 'ARRIVE', 'h-meet', 'y-approach', 'y-lower', 'l-check', 'l-side', ['UPDATE', 'u-loc', 'u-youths', 'u-lior', 'u-ems'], 'y-ages', 'y-alcohol', 't-talk', 't-parents', 'y-clean', 'z-doc', ['UPDATE', 'u-loc', 'u-minors', 'u-parents', 'u-quiet'], 'FINISH'],
+  },
 };
 
 describe('קבצי תרחישים', () => {

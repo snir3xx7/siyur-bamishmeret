@@ -1,0 +1,1604 @@
+{
+ "id": "burglary",
+ "version": 1,
+ "title": "פריצה לדירה",
+ "category": "עבירות רכוש",
+ "summary": "דיירת חזרה הביתה ומצאה את הדלת פרוצה. יש לשמור על הזירה בלי לגעת, למנוע כניסה, לא להיכנס לבד, לגבות גרסאות מהדיירת ומהשכן, לאתר מצלמות ולהזמין מז״פ.",
+ "estimatedMinutes": 11,
+ "difficultyLabel": "בינונית",
+ "skills": [
+  "שמירה על זירת עבירה",
+  "אי־כניסה לבד",
+  "גביית גרסה וציר זמן",
+  "איתור עדים ומצלמות",
+  "הזמנת מז״פ דרך המשל״ט"
+ ],
+ "shifts": [
+  "morning",
+  "evening"
+ ],
+ "defaultShift": "morning",
+ "location": {
+  "name": "רחוב הרימון 14, קומה 3",
+  "area": "שכונת נווה הדר, קריית אלון (בדוי)"
+ },
+ "objectives": [
+  "לשמור על הזירה: לא לגעת ולא להכניס אף אחד",
+  "לא להיכנס לדירה לבד – רק עם ניידת נוספת",
+  "לגבות מהדיירת ציר זמן ורשימת חפצים",
+  "לאתר עדים ומצלמות",
+  "להזמין מז״פ ולהפיץ תיאור חשוד אם יש"
+ ],
+ "variants": [
+  {
+   "id": "seen",
+   "label": "השכן ראה צעיר עם תיק יוצא מהבניין",
+   "set": {
+    "seen": true
+   },
+   "vars": {
+    "avi_saw": "ראיתי בחור צעיר, כובע אדום ותיק גב שחור, יוצא מהבניין בריצה לפני רבע שעה, לכיוון תחנת האוטובוס."
+   }
+  },
+  {
+   "id": "heard",
+   "label": "השכן רק שמע דפיקות",
+   "set": {
+    "seen": false
+   },
+   "vars": {
+    "avi_saw": "לא ראיתי אף אחד. רק שמעתי דפיקות חזקות בערך בשתים עשרה וחצי, וחשבתי שמשפצים."
+   }
+  }
+ ],
+ "scoring": {
+  "weights": {
+   "info": 20,
+   "assessment": 25,
+   "communication": 15,
+   "authority": 15,
+   "dispatch": 15,
+   "documentation": 10
+  },
+  "rules": [
+   {
+    "id": "bg-info-dispatch",
+    "domain": "info",
+    "label": "השלמת פרטים מהמוקד",
+    "max": 5,
+    "required": false,
+    "tiers": [
+     {
+      "when": {
+       "countChosen": {
+        "ids": [
+         "f-inside",
+         "f-suspect"
+        ],
+        "gte": 2
+       }
+      },
+      "points": 5,
+      "explain": "התברר אם נכנסו לזירה ואם יש חשוד.",
+      "keep": "לפני ההגעה ידעת שאיש לא נכנס ושאין מידע על חשוד בפנים."
+     },
+     {
+      "when": {
+       "countChosen": {
+        "ids": [
+         "f-inside",
+         "f-suspect"
+        ],
+        "gte": 1
+       }
+      },
+      "points": 3,
+      "explain": "התברר פרט אחד.",
+      "improve": "שאלת רק חלק. בסבב הבא שאל גם אם מישהו נכנס וגם אם ייתכן שמישהו בפנים."
+     }
+    ],
+    "fallback": {
+     "explain": "לא התבקשו השלמות.",
+     "improve": "יצאת בלי לשאול את המוקד. בפריצה – שאל אם מישהו נכנס ואם ייתכן שהפורץ עדיין בפנים."
+    }
+   },
+   {
+    "id": "bg-info-witness",
+    "domain": "info",
+    "label": "עדות השכן",
+    "max": 8,
+    "required": true,
+    "tiers": [
+     {
+      "when": {
+       "fact": "c-avi"
+      },
+      "points": 8,
+      "explain": "השכן נשאל.",
+      "keep": "שאלת את השכן מה שמע וראה. כך יש לך שעה משוערת ואולי תיאור חשוד."
+     }
+    ],
+    "fallback": {
+     "explain": "השכן לא נשאל.",
+     "improve": "לא שאלת את השכן. שכנים הם לרוב העדים הראשונים בפריצה."
+    }
+   },
+   {
+    "id": "bg-info-camera",
+    "domain": "info",
+    "label": "איתור מצלמות",
+    "max": 7,
+    "required": false,
+    "tiers": [
+     {
+      "when": {
+       "flag": "camera"
+      },
+      "points": 7,
+      "explain": "אותרה מצלמה בכניסה.",
+      "keep": "שאלת על מצלמות ואיתרת את מצלמת הוועד. צילום כזה הוא לפעמים הראיה החשובה ביותר."
+     }
+    ],
+    "fallback": {
+     "explain": "לא נשאל על מצלמות.",
+     "improve": "לא בדקת אם יש מצלמות. בסבב הבא שאל – לפני שהקטע נמחק."
+    }
+   },
+   {
+    "id": "bg-assess-preserve",
+    "domain": "assessment",
+    "label": "שמירה על הזירה",
+    "max": 10,
+    "required": true,
+    "anchor": [
+     "z-preserve"
+    ],
+    "tiers": [
+     {
+      "when": {
+       "all": [
+        {
+         "flag": "preserved"
+        },
+        {
+         "not": {
+          "flag": "ev:enter"
+         }
+        }
+       ]
+      },
+      "points": 10,
+      "explain": "הזירה נשמרה מיד.",
+      "keep": "סימנת את האזור והבהרת שאיש לא נוגע – עוד לפני שמישהו ניסה להיכנס."
+     },
+     {
+      "when": {
+       "flag": "preserved"
+      },
+      "points": 6,
+      "explain": "הזירה נשמרה, אחרי שהדיירת כמעט נכנסה.",
+      "improve": "שמרת על הזירה רק אחרי שמיכל כמעט נכנסה. בסבב הבא סמן מיד עם ההגעה."
+     }
+    ],
+    "fallback": {
+     "explain": "הזירה לא נשמרה.",
+     "improve": "לא שמרת על הזירה. בסבב הבא סמן את האזור והבהר לכולם לא לגעת."
+    }
+   },
+   {
+    "id": "bg-assess-entry",
+    "domain": "assessment",
+    "label": "לא להיכנס לבד",
+    "max": 10,
+    "required": true,
+    "anchor": [
+     "z-enter",
+     "z-check"
+    ],
+    "tiers": [
+     {
+      "when": {
+       "all": [
+        {
+         "not": {
+          "flag": "enteredAlone"
+         }
+        },
+        {
+         "flag": "checked"
+        }
+       ]
+      },
+      "points": 10,
+      "explain": "הדירה נבדקה עם ניידת נוספת.",
+      "keep": "חיכית לניידת הנוספת ובדקתם יחד, בלי לגעת. בטוח יותר – ושומר על הראיות."
+     },
+     {
+      "when": {
+       "not": {
+        "flag": "enteredAlone"
+       }
+      },
+      "points": 7,
+      "explain": "לא נכנסת לבד; הדירה לא נבדקה.",
+      "improve": "לא נכנסת לבד – נכון. בסבב הבא בקש ניידת נוספת כדי לוודא שאין איש בפנים."
+     }
+    ],
+    "fallback": {
+     "explain": "נכנסת לבד לדירה פרוצה.",
+     "improve": "נכנסת לבד: אם הפורץ היה בפנים – היית לבד מולו, וגם השארת עקבות. בסבב הבא חכה לניידת נוספת."
+    }
+   },
+   {
+    "id": "bg-assess-desc",
+    "domain": "assessment",
+    "label": "הפצת תיאור החשוד",
+    "max": 5,
+    "required": true,
+    "appliesWhen": {
+     "flag": "seen"
+    },
+    "tiers": [
+     {
+      "when": {
+       "sent": "u-desc"
+      },
+      "points": 5,
+      "explain": "התיאור נמסר והופץ.",
+      "keep": "מסרת מיד את תיאור החשוד. רבע שעה – והוא אולי עוד בתחנת האוטובוס."
+     }
+    ],
+    "fallback": {
+     "explain": "התיאור לא הופץ.",
+     "improve": "השכן ראה חשוד, אבל התיאור לא נמסר. בסבב הבא עדכן מיד – כל דקה חשובה."
+    }
+   },
+   {
+    "id": "bg-comm-michal",
+    "domain": "communication",
+    "label": "שיח עם נפגעת העבירה",
+    "max": 8,
+    "required": true,
+    "tiers": [
+     {
+      "when": {
+       "all": [
+        {
+         "chosen": "m-calm"
+        },
+        {
+         "not": {
+          "chosen": "m-blame"
+         }
+        }
+       ]
+      },
+      "points": 8,
+      "explain": "השיחה הייתה סבלנית ולא מאשימה.",
+      "keep": "שאלת את מיכל בסבלנות ובלי האשמה. נפגעי פריצה מרגישים פגיעה בפרטיות – היחס שלך חשוב."
+     },
+     {
+      "when": {
+       "chosen": "m-blame"
+      },
+      "points": 3,
+      "explain": "נשאלה שאלה מאשימה.",
+      "improve": "„למה לא נעלת” נשמע כהאשמה. בסבב הבא התמקד במה שקרה ובמה שעושים עכשיו."
+     }
+    ],
+    "fallback": {
+     "explain": "לא שוחחת עם הדיירת.",
+     "improve": "לא שוחחת עם מיכל. בסבב הבא גבה ממנה ציר זמן."
+    }
+   },
+   {
+    "id": "bg-comm-support",
+    "domain": "communication",
+    "label": "הסבר הצעדים הבאים",
+    "max": 7,
+    "required": false,
+    "tiers": [
+     {
+      "when": {
+       "chosen": "m-support"
+      },
+      "points": 7,
+      "explain": "הדיירת קיבלה הסבר על ההמשך.",
+      "keep": "הסברת למיכל מה יקרה: מז״פ, תלונה, מנעול. אנשים רגועים יותר כשהם יודעים מה הלאה."
+     }
+    ],
+    "fallback": {
+     "explain": "לא הוסבר מה הלאה.",
+     "improve": "מיכל נשארה בלי לדעת מה יקרה. בסבב הבא הסבר את הצעדים הבאים."
+    }
+   },
+   {
+    "id": "bg-auth-stop",
+    "domain": "authority",
+    "label": "מניעת כניסה לזירה",
+    "max": 8,
+    "required": true,
+    "appliesWhen": {
+     "flag": "ev:enter"
+    },
+    "anchor": [
+     "m-stop"
+    ],
+    "tiers": [
+     {
+      "when": {
+       "chosen": "m-stop"
+      },
+      "points": 8,
+      "explain": "הדיירת נעצרה בעדינות ובהסבר.",
+      "keep": "עצרת את מיכל והסברת למה – בלי לצעוק ובלי לזלזל ברצון שלה לבדוק."
+     }
+    ],
+    "fallback": {
+     "explain": "הדיירת נכנסה לזירה.",
+     "improve": "מיכל נגעה בידית ונכנסה. בסבב הבא עצור אותה והסבר שזה ימחק טביעות."
+    }
+   },
+   {
+    "id": "bg-auth-keep",
+    "domain": "authority",
+    "label": "הנחיה לשכן",
+    "max": 7,
+    "required": false,
+    "tiers": [
+     {
+      "when": {
+       "chosen": "a-keep"
+      },
+      "points": 7,
+      "explain": "השכן הונחה לא להתקרב.",
+      "keep": "ביקשת מהשכן לא להתקרב לדלת. הוראה פשוטה שחוסכת ראיות פגועות."
+     }
+    ],
+    "fallback": {
+     "explain": "השכן לא הונחה.",
+     "improve": "לא ביקשת מהשכן להתרחק. בסבב הבא תן הנחיה קצרה לכל מי שבסביבה."
+    }
+   },
+   {
+    "id": "bg-disp-forensics",
+    "domain": "dispatch",
+    "label": "הזמנת מז״פ",
+    "max": 8,
+    "required": true,
+    "tiers": [
+     {
+      "when": {
+       "flag": "forensics"
+      },
+      "points": 8,
+      "explain": "מז״פ הוזמנו.",
+      "keep": "ביקשת מז״פ. בלי בדיקת טביעות – קשה למצוא את הפורץ."
+     }
+    ],
+    "fallback": {
+     "explain": "מז״פ לא הוזמנו.",
+     "improve": "לא הוזמן צוות מז״פ. בסבב הבא בקש אותו – דרך המשל״ט."
+    }
+   },
+   {
+    "id": "bg-disp-first",
+    "domain": "dispatch",
+    "label": "עדכון ראשון",
+    "max": 7,
+    "required": true,
+    "anchor": [
+     "update:1"
+    ],
+    "tiers": [
+     {
+      "when": {
+       "update": {
+        "n": 1,
+        "has": [
+         "u-forced"
+        ],
+        "hasCat": [
+         "location"
+        ]
+       }
+      },
+      "points": 7,
+      "explain": "בעדכון הראשון נמסרו מקום וסימני פריצה.",
+      "keep": "העדכון הראשון כלל מקום וסימני פריצה מאומתים."
+     },
+     {
+      "when": {
+       "updatesGte": 1
+      },
+      "points": 3,
+      "explain": "נשלח עדכון חלקי.",
+      "improve": "העדכון הראשון לא כלל את מה שראית בדלת. בסבב הבא התבונן ועדכן."
+     }
+    ],
+    "fallback": {
+     "explain": "לא נשלח עדכון.",
+     "improve": "לא עדכנת. בסבב הבא שלח עדכון קצר אחרי התצפית."
+    }
+   },
+   {
+    "id": "bg-doc",
+    "domain": "documentation",
+    "label": "תיעוד הזירה",
+    "max": 5,
+    "required": true,
+    "tiers": [
+     {
+      "when": {
+       "chosen": "z-doc"
+      },
+      "points": 5,
+      "explain": "הזירה תועדה.",
+      "keep": "תיעדת שעות, סימנים ומי היה במקום."
+     }
+    ],
+    "fallback": {
+     "explain": "הזירה לא תועדה.",
+     "improve": "לא תיעדת. בסבב הבא רשום שעות, סימנים ועדים."
+    }
+   },
+   {
+    "id": "bg-doc-items",
+    "domain": "documentation",
+    "label": "רשימת חפצים",
+    "max": 5,
+    "required": false,
+    "tiers": [
+     {
+      "when": {
+       "flag": "itemsListed"
+      },
+      "points": 5,
+      "explain": "נרשמה רשימה ראשונית.",
+      "keep": "שאלת מה היה בבית. כך הדוח מוכן להשלמה אחרי מז״פ."
+     }
+    ],
+    "fallback": {
+     "explain": "לא נרשמה רשימת חפצים.",
+     "improve": "לא שאלת מה עלול להיגנב. בסבב הבא רשום רשימה ראשונית."
+    }
+   }
+  ]
+ },
+ "facts": [
+  {
+   "id": "d-report",
+   "kind": "dispatch",
+   "text": "דיירת חזרה הביתה ומצאה את דלת הדירה פרוצה"
+  },
+  {
+   "id": "d-caller",
+   "kind": "dispatch",
+   "text": "המדווחת: מיכל רוזן, ממתינה בחדר המדרגות"
+  },
+  {
+   "id": "d-not-inside",
+   "kind": "dispatch",
+   "text": "המדווחת לא נכנסה לדירה"
+  },
+  {
+   "id": "o-door",
+   "kind": "observation",
+   "text": "משקוף הדלת שבור ליד המנעול, שבבי עץ על הרצפה – סימני פריצה בכלי"
+  },
+  {
+   "id": "o-mess",
+   "kind": "observation",
+   "text": "מבעד לפתח רואים מגירות פתוחות ובלגן במסדרון"
+  },
+  {
+   "id": "c-michal-time",
+   "kind": "claim",
+   "text": "יצאה לעבודה ב־8:00 וחזרה ב־13:10",
+   "source": "michal"
+  },
+  {
+   "id": "c-michal-items",
+   "kind": "claim",
+   "text": "בבית היו תכשיטים של סבתה, מחשב נייד ומעט מזומן",
+   "source": "michal"
+  },
+  {
+   "id": "c-avi",
+   "kind": "claim",
+   "text": "{{avi_saw}}",
+   "source": "avi"
+  },
+  {
+   "id": "o-camera",
+   "kind": "observation",
+   "text": "בכניסה לבניין יש מצלמה של ועד הבית; ניסים מהוועד יכול להוציא את הקטע"
+  },
+  {
+   "id": "o-safe",
+   "kind": "observation",
+   "text": "הדירה נבדקה עם הניידת הנוספת – אין בה איש; לא נגענו בחפצים"
+  }
+ ],
+ "characters": [
+  {
+   "id": "michal",
+   "name": "מיכל רוזן",
+   "role": "הדיירת המדווחת",
+   "gender": "f",
+   "look": {
+    "skin": "#d6a57c",
+    "hair": "#3a2a20",
+    "hairStyle": "short",
+    "top": "#555",
+    "bottom": "#333"
+   },
+   "attitude": 1,
+   "x": 27,
+   "y": 98,
+   "scale": 1.95,
+   "moodRules": [
+    {
+     "when": {
+      "all": [
+       {
+        "flag": "ev:enter"
+       },
+       {
+        "not": {
+         "flag": "stopped"
+        }
+       }
+      ]
+     },
+     "mood": "upset"
+    },
+    {
+     "when": {
+      "not": {
+       "flag": "supported"
+      }
+     },
+     "mood": "tense"
+    }
+   ],
+   "sprite": "img/chars/michal",
+   "spriteMoods": [
+    "calm",
+    "tense",
+    "upset"
+   ]
+  },
+  {
+   "id": "avi",
+   "name": "אבי שושני",
+   "role": "שכן מהדירה ממול",
+   "gender": "m",
+   "look": {
+    "skin": "#d6a57c",
+    "hair": "#3a2a20",
+    "hairStyle": "short",
+    "top": "#555",
+    "bottom": "#333"
+   },
+   "attitude": 1,
+   "x": 83,
+   "y": 98,
+   "scale": 1.95,
+   "sprite": "img/chars/avi",
+   "spriteMoods": [
+    "calm",
+    "tense",
+    "upset"
+   ]
+  }
+ ],
+ "dispatch": {
+  "time": {
+   "morning": "13:18",
+   "evening": "19:40"
+  },
+  "unit": "סייר 12",
+  "incident": "5530",
+  "lines": [
+   {
+    "speaker": "dispatch",
+    "text": "סייר 12, כאן מוקד אלון. פריצה לדירה ברחוב הרימון 14, קומה 3. הדיירת חזרה ומצאה את הדלת פרוצה, והיא ממתינה בחדר המדרגות. אשר קבלה."
+   }
+  ],
+  "initialFacts": [
+   "d-report",
+   "d-caller"
+  ],
+  "basicExtraFacts": [
+   "d-not-inside"
+  ],
+  "followUps": [
+   {
+    "id": "f-inside",
+    "label": "לשאול: מישהו נכנס לדירה מאז שגילו את הפריצה?",
+    "when": {
+     "not": {
+      "fact": "d-not-inside"
+     }
+    },
+    "lines": [
+     {
+      "speaker": "player",
+      "text": "מוקד, מישהו נכנס לדירה מאז שגילו את הפריצה?"
+     },
+     {
+      "speaker": "dispatch",
+      "text": "לפי המדווחת היא לא נכנסה. היא עומדת בחוץ."
+     }
+    ],
+    "effects": {
+     "reveal": [
+      "d-not-inside"
+     ]
+    },
+    "report": "בירור אם נכנסו לזירה"
+   },
+   {
+    "id": "f-suspect",
+    "label": "לשאול: יש מידע על חשוד או על מישהו שעדיין בפנים?",
+    "lines": [
+     {
+      "speaker": "player",
+      "text": "יש מידע על חשוד? ייתכן שמישהו עדיין בפנים?"
+     },
+     {
+      "speaker": "dispatch",
+      "text": "אין מידע על חשוד. המדווחת לא שמעה רעשים מבפנים."
+     }
+    ],
+    "effects": {
+     "set": {
+      "askedSuspect": true
+     }
+    },
+    "report": "בירור חשוד ואפשרות שמישהו בפנים"
+   },
+   {
+    "id": "f-backup",
+    "label": "לבקש ניידת נוספת לנקודה",
+    "lines": [
+     {
+      "speaker": "player",
+      "text": "מוקד, מבקש ניידת נוספת לנקודה – לבדיקת הדירה."
+     },
+     {
+      "speaker": "dispatch",
+      "text": "ניידת 14 בדרך, כעשר דקות."
+     }
+    ],
+    "effects": {
+     "set": {
+      "backup": true
+     }
+    },
+    "report": "בקשת ניידת נוספת כבר ביציאה"
+   }
+  ],
+  "goLabel": "אישור קבלה ויציאה לכתובת"
+ },
+ "transition": {
+  "kind": "car",
+  "text": "נסיעה לשכונת נווה הדר. ברחוב הרימון שקט של צהריים; בכניסה לבניין מצלמה קטנה מעל הדלת.",
+  "travelMinutes": 5,
+  "ambience": [
+   "engine-wipers",
+   "radio-chatter"
+  ]
+ },
+ "scene": {
+  "background": "img/apartment-door",
+  "alt": "חדר מדרגות בקומה שלישית: דלת דירה פתוחה חלקית, משקוף שבור ליד המנעול ושבבי עץ על הרצפה; מבעד לפתח מגירות פתוחות. משמאל מדרגות, מימין דלת השכן.",
+  "fallbackColor": "#7a7166",
+  "ambience": [
+   "building-hum"
+  ],
+  "lights": "off",
+  "weather": "none",
+  "bgByShift": {
+   "morning": "day",
+   "evening": "night"
+  },
+  "props": [
+   {
+    "id": "tape",
+    "kind": "tape",
+    "x": 52,
+    "y": 96,
+    "scale": 1.5,
+    "when": {
+     "flag": "preserved"
+    }
+   },
+   {
+    "id": "sg-14",
+    "kind": "sign",
+    "x": 50,
+    "y": 5,
+    "text": "דירה 14",
+    "sign": "plate",
+    "scale": 0.9
+   }
+  ],
+  "painted": true
+ },
+ "arrivalLines": [
+  {
+   "speaker": "narrator",
+   "text": "קומה שלישית. דלת הדירה פתוחה חלקית, המשקוף שבור ליד המנעול ושבבי עץ על הרצפה. מיכל עומדת ליד המדרגות, הטלפון ביד. דלת הדירה ממול נפתחת, ושכן מבוגר מציץ החוצה."
+  },
+  {
+   "speaker": "michal",
+   "text": "סוף סוף. אני לא מאמינה שזה קרה לי."
+  }
+ ],
+ "arrivalFacts": [],
+ "hotspots": [
+  {
+   "id": "h-door",
+   "label": "דלת הדירה",
+   "kind": "item",
+   "x": 50,
+   "y": 60,
+   "description": "דלת הדירה הפרוצה, פתוחה חלקית.",
+   "choices": [
+    {
+     "id": "z-look",
+     "label": "להתבונן בדלת מבחוץ בלי לגעת: מנעול, משקוף, רצפה",
+     "lines": [
+      {
+       "speaker": "narrator",
+       "text": "בלי לגעת: המשקוף סדוק ליד המנעול, שבבי עץ על הרצפה – סימן לכלי פריצה. מבעד לפתח רואים מגירות פתוחות."
+      }
+     ],
+     "effects": {
+      "reveal": [
+       "o-door",
+       "o-mess"
+      ],
+      "verify": [
+       "d-report"
+      ]
+     },
+     "report": "תצפית על הדלת בלי לגעת"
+    },
+    {
+     "id": "z-preserve",
+     "label": "לשמור על הזירה: לסמן את האזור ולהבהיר שאיש לא נכנס ולא נוגע",
+     "lines": [
+      {
+       "speaker": "player",
+       "text": "מכאן והלאה אף אחד לא נכנס ולא נוגע בדלת – גם לא בידית. צוות מז״פ יבדוק טביעות."
+      },
+      {
+       "speaker": "narrator",
+       "text": "מתחת סרט סימון לפני הדלת."
+      }
+     ],
+     "effects": {
+      "set": {
+       "preserved": true
+      }
+     },
+     "report": "שמירה על הזירה וסימון"
+    },
+    {
+     "id": "z-enter",
+     "label": "להיכנס לבדוק את הדירה לבד, עכשיו",
+     "when": {
+      "not": {
+       "flag": "checked"
+      }
+     },
+     "lines": [
+      {
+       "speaker": "narrator",
+       "text": "דחפת את הדלת ונכנסת. החדרים ריקים – אבל הנעליים שלך השאירו עקבות על הרצפה, והידית נגעה בכפפה."
+      }
+     ],
+     "effects": {
+      "set": {
+       "enteredAlone": true
+      },
+      "note": "כניסה לבד לדירה פרוצה – סיכון עצמי ופגיעה בראיות"
+     }
+    },
+    {
+     "id": "z-check",
+     "label": "עם הניידת הנוספת – לבדוק שאין איש בדירה, בלי לגעת בחפצים",
+     "when": {
+      "all": [
+       {
+        "flag": "backupHere"
+       },
+       {
+        "not": {
+         "flag": "enteredAlone"
+        }
+       },
+       {
+        "not": {
+         "flag": "checked"
+        }
+       }
+      ]
+     },
+     "lines": [
+      {
+       "speaker": "narrator",
+       "text": "נכנסתם יחד, בזהירות ובלי לגעת. אין איש בדירה. יצאתם באותו מסלול."
+      }
+     ],
+     "effects": {
+      "set": {
+       "checked": true
+      },
+      "reveal": [
+       "o-safe"
+      ]
+     },
+     "report": "בדיקת הדירה עם ניידת נוספת"
+    },
+    {
+     "id": "z-doc",
+     "label": "לתעד: שעות, סימני הפריצה, מי היה במקום ומה נעשה",
+     "lines": [
+      {
+       "speaker": "narrator",
+       "text": "תיעדת: שעת היציאה והחזרה של הדיירת, סימני הפריצה, השכן, ומה נעשה עד עכשיו."
+      }
+     ],
+     "effects": {
+      "set": {
+       "documented": true
+      }
+     },
+     "report": "תיעוד הזירה"
+    }
+   ]
+  },
+  {
+   "id": "h-michal",
+   "label": "מיכל – הדיירת",
+   "kind": "character",
+   "x": 27,
+   "y": 40,
+   "description": "מיכל רוזן, הדיירת. חזרה הביתה ומצאה את הדלת פרוצה.",
+   "choices": [
+    {
+     "id": "m-calm",
+     "label": "לשאול בסבלנות: מתי יצאה, מתי חזרה ומה ראתה",
+     "lines": [
+      {
+       "speaker": "player",
+       "text": "אני כאן. בואי נעבור על זה ביחד – מתי יצאת, מתי חזרת ומה ראית?"
+      },
+      {
+       "speaker": "michal",
+       "text": "יצאתי לעבודה בשמונה. חזרתי ברבע אחרי אחת, והדלת הייתה ככה. לא נכנסתי – פחדתי שמישהו עוד בפנים."
+      }
+     ],
+     "effects": {
+      "reveal": [
+       "c-michal-time"
+      ],
+      "verify": [
+       "d-not-inside"
+      ],
+      "attitude": {
+       "michal": 1
+      }
+     },
+     "report": "גביית ציר זמן מהדיירת"
+    },
+    {
+     "id": "m-items",
+     "label": "לשאול מה היה בבית שעלול להיגנב",
+     "lines": [
+      {
+       "speaker": "michal",
+       "text": "תכשיטים של סבתא שלי, מחשב נייד, קצת מזומן במגירה. התכשיטים – זה מה ששובר לי את הלב."
+      }
+     ],
+     "effects": {
+      "reveal": [
+       "c-michal-items"
+      ],
+      "set": {
+       "itemsListed": true
+      }
+     },
+     "report": "רשימת חפצים חשודים כגנובים"
+    },
+    {
+     "id": "m-blame",
+     "label": "לשאול: „למה לא נעלת את הדלת העליונה?”",
+     "lines": [
+      {
+       "speaker": "player",
+       "text": "למה לא נעלת גם את המנעול העליון?"
+      },
+      {
+       "speaker": "michal",
+       "text": "עכשיו זה באשמתי?!"
+      }
+     ],
+     "effects": {
+      "attitude": {
+       "michal": -2
+      },
+      "note": "שאלה מאשימה כלפי נפגעת העבירה"
+     }
+    },
+    {
+     "id": "m-stop",
+     "label": "לעצור את מיכל בעדינות ולהסביר למה אסור להיכנס עכשיו",
+     "when": {
+      "all": [
+       {
+        "flag": "ev:enter"
+       },
+       {
+        "not": {
+         "flag": "stopped"
+        }
+       }
+      ]
+     },
+     "lines": [
+      {
+       "speaker": "player",
+       "text": "מיכל, רגע – אל תיכנסי. אני מבין שאת רוצה לבדוק את התכשיטים, אבל כל דבר שתיגעי בו עלול למחוק טביעות. ברגע שמז״פ יסיימו – נבדוק יחד."
+      },
+      {
+       "speaker": "michal",
+       "text": "…טוב. אני מחכה."
+      }
+     ],
+     "effects": {
+      "set": {
+       "stopped": true
+      },
+      "attitude": {
+       "michal": 1
+      }
+     },
+     "report": "מניעת כניסה לזירה בהסבר"
+    },
+    {
+     "id": "m-support",
+     "label": "להסביר למיכל מה הצעדים הבאים: מז״פ, תלונה, החלפת מנעול",
+     "lines": [
+      {
+       "speaker": "player",
+       "text": "מה שיקרה עכשיו: מז״פ יגיעו לבדוק טביעות, ואחרי שיסיימו נעבור יחד על מה שחסר. את התלונה אפשר להשלים כאן איתי. ואחרי זה – כדאי להחליף מנעול לפני הלילה."
+      },
+      {
+       "speaker": "michal",
+       "text": "תודה. טוב לדעת מה הולך לקרות."
+      }
+     ],
+     "effects": {
+      "set": {
+       "supported": true
+      },
+      "attitude": {
+       "michal": 1
+      }
+     },
+     "report": "הסבר הצעדים הבאים לנפגעת"
+    }
+   ],
+   "character": "michal"
+  },
+  {
+   "id": "h-avi",
+   "label": "אבי – השכן",
+   "kind": "character",
+   "x": 83,
+   "y": 40,
+   "description": "אבי שושני, השכן מהדירה ממול.",
+   "choices": [
+    {
+     "id": "a-ask",
+     "label": "לשאול את אבי מה שמע או ראה",
+     "lines": [
+      {
+       "speaker": "avi",
+       "text": "{{avi_saw}}"
+      }
+     ],
+     "effects": {
+      "reveal": [
+       "c-avi"
+      ]
+     },
+     "report": "גביית עדות מהשכן"
+    },
+    {
+     "id": "a-camera",
+     "label": "לשאול אם יש מצלמות בבניין או ברחוב",
+     "lines": [
+      {
+       "speaker": "avi",
+       "text": "יש מצלמה בכניסה לבניין – ניסים מהוועד מחזיק את המקליט. אני יכול לקרוא לו."
+      }
+     ],
+     "effects": {
+      "reveal": [
+       "o-camera"
+      ],
+      "set": {
+       "camera": true
+      }
+     },
+     "report": "איתור מצלמות"
+    },
+    {
+     "id": "a-keep",
+     "label": "לבקש מאבי לא לגשת לדלת ולא לגעת בכלום",
+     "lines": [
+      {
+       "speaker": "player",
+       "text": "אבי, תודה על העזרה. אני מבקש שלא תתקרב לדלת ולא תיגע בכלום – זה חשוב לבדיקה."
+      },
+      {
+       "speaker": "avi",
+       "text": "כמובן, אני נשאר פה."
+      }
+     ],
+     "effects": {
+      "set": {
+       "neighborKept": true
+      }
+     },
+     "report": "הנחיה לשכן לא להתקרב לזירה"
+    }
+   ],
+   "character": "avi"
+  }
+ ],
+ "events": [
+  {
+   "id": "enter",
+   "title": "התפתחות: הדיירת רוצה להיכנס",
+   "when": {
+    "all": [
+     {
+      "not": {
+       "flag": "preserved"
+      }
+     },
+     {
+      "countChosen": {
+       "ids": [
+        "z-look",
+        "z-preserve",
+        "z-doc",
+        "m-calm",
+        "m-items",
+        "m-blame",
+        "a-ask",
+        "a-camera",
+        "a-keep"
+       ],
+       "gte": 3
+      }
+     }
+    ]
+   },
+   "lines": [
+    {
+     "speaker": "michal",
+     "text": "אני חייבת לבדוק אם התכשיטים של סבתא שלי שם!"
+    },
+    {
+     "speaker": "narrator",
+     "text": "מיכל צועדת לעבר הדלת ומושיטה יד לידית."
+    }
+   ],
+   "effects": {
+    "note": "הדיירת ניסתה להיכנס לזירה לפני שנבדקה"
+   },
+   "sfx": "alert"
+  },
+  {
+   "id": "backup",
+   "title": "הניידת הנוספת הגיעה",
+   "when": {
+    "all": [
+     {
+      "any": [
+       {
+        "flag": "backup"
+       },
+       {
+        "flag": "backupReq"
+       }
+      ]
+     },
+     {
+      "countChosen": {
+       "ids": [
+        "z-look",
+        "z-preserve",
+        "z-doc",
+        "m-calm",
+        "m-items",
+        "m-blame",
+        "a-ask",
+        "a-camera",
+        "a-keep"
+       ],
+       "gte": 3
+      }
+     }
+    ]
+   },
+   "lines": [
+    {
+     "speaker": "narrator",
+     "text": "ניידת 14 עוצרת למטה. שוטר עולה במדרגות ומצטרף אליך."
+    }
+   ],
+   "effects": {
+    "set": {
+     "backupHere": true
+    }
+   }
+  }
+ ],
+ "update": {
+  "categories": {
+   "location": "מקום",
+   "situation": "מצב נוכחי",
+   "status": "מצב המעורבים",
+   "verified": "מה אומת",
+   "missing": "מה עדיין חסר",
+   "assistance": "סיוע נדרש",
+   "judgement": "קביעה"
+  },
+  "elements": [
+   {
+    "id": "u-loc",
+    "category": "location",
+    "text": "נמצא ברחוב הרימון 14, קומה 3"
+   },
+   {
+    "id": "u-forced",
+    "category": "verified",
+    "text": "פריצה בכלי – משקוף שבור, מגירות פתוחות",
+    "when": {
+     "fact": "o-door"
+    }
+   },
+   {
+    "id": "u-preserved",
+    "category": "verified",
+    "text": "הזירה נשמרת, איש לא נכנס",
+    "when": {
+     "flag": "preserved"
+    }
+   },
+   {
+    "id": "u-desc",
+    "category": "situation",
+    "text": "חשוד: צעיר, כובע אדום, תיק גב שחור, לכיוון תחנת האוטובוס, לפני כרבע שעה",
+    "when": {
+     "all": [
+      {
+       "fact": "c-avi"
+      },
+      {
+       "flag": "seen"
+      }
+     ]
+    }
+   },
+   {
+    "id": "u-forensics",
+    "category": "assistance",
+    "text": "מבקש צוות מז״פ לזירה",
+    "when": {
+     "not": {
+      "flag": "forensics"
+     }
+    }
+   },
+   {
+    "id": "u-backup",
+    "category": "assistance",
+    "text": "מבקש ניידת נוספת לבדיקת הדירה",
+    "when": {
+     "all": [
+      {
+       "not": {
+        "flag": "backup"
+       }
+      },
+      {
+       "not": {
+        "flag": "backupReq"
+       }
+      }
+     ]
+    }
+   },
+   {
+    "id": "u-camera",
+    "category": "verified",
+    "text": "יש מצלמה בכניסה לבניין – בטיפול מול הוועד",
+    "when": {
+     "flag": "camera"
+    }
+   },
+   {
+    "id": "u-safe",
+    "category": "verified",
+    "text": "הדירה נבדקה עם ניידת נוספת – אין איש",
+    "when": {
+     "flag": "checked"
+    }
+   },
+   {
+    "id": "u-items",
+    "category": "missing",
+    "text": "רשימת חפצים חסרים – תושלם אחרי מז״פ",
+    "when": {
+     "flag": "itemsListed"
+    }
+   },
+   {
+    "id": "u-no-assist",
+    "category": "assistance",
+    "text": "לא נדרש סיוע נוסף"
+   }
+  ],
+  "responses": [
+   {
+    "when": {
+     "inUpdate": "u-forensics"
+    },
+    "lines": [
+     {
+      "speaker": "dispatch",
+      "text": "מוקד: צוות מז״פ הוזמן, כשעה. שמרו על הזירה."
+     }
+    ],
+    "effects": {
+     "set": {
+      "forensics": true
+     }
+    }
+   },
+   {
+    "when": {
+     "inUpdate": "u-backup"
+    },
+    "lines": [
+     {
+      "speaker": "dispatch",
+      "text": "מוקד: ניידת 14 בדרך אליכם."
+     }
+    ],
+    "effects": {
+     "set": {
+      "backupReq": true
+     }
+    }
+   },
+   {
+    "when": {
+     "inUpdate": "u-desc"
+    },
+    "lines": [
+     {
+      "speaker": "dispatch",
+      "text": "מוקד: התיאור הופץ לניידות באזור."
+     }
+    ],
+    "effects": {
+     "set": {
+      "descSent": true
+     }
+    }
+   }
+  ]
+ },
+ "finish": {
+  "label": "סיום הטיפול במקום",
+  "confirm": "לסיים את הטיפול ולעבור לתחקיר? אפשר לשלוח עדכון אחרון למוקד לפני הסיום."
+ },
+ "endings": [
+  {
+   "id": "e-good",
+   "kind": "good",
+   "title": "הזירה נשמרה והחקירה מתחילה נכון",
+   "text": "איש לא נגע בזירה, לא נכנסת לבד, מז״פ הוזמנו, העדויות והמצלמה אותרו והדיירת יודעת מה הלאה.",
+   "when": {
+    "all": [
+     {
+      "flag": "preserved"
+     },
+     {
+      "not": {
+       "flag": "enteredAlone"
+      }
+     },
+     {
+      "flag": "forensics"
+     },
+     {
+      "flag": "supported"
+     },
+     {
+      "fact": "c-avi"
+     },
+     {
+      "any": [
+       {
+        "not": {
+         "flag": "ev:enter"
+        }
+       },
+       {
+        "flag": "stopped"
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "e-partial",
+   "kind": "partial",
+   "title": "טיפול חלקי בזירת הפריצה",
+   "text": "חלק מהצעדים בוצעו, אבל משהו נשאר פתוח: שמירה על הזירה, כניסה לבד, מז״פ, עדויות או הסבר לדיירת.",
+   "when": {
+    "any": [
+     {
+      "flag": "preserved"
+     },
+     {
+      "flag": "forensics"
+     }
+    ]
+   }
+  },
+  {
+   "id": "e-retry",
+   "kind": "retry",
+   "title": "הזדמנות לתיקון: הזירה לא נשמרה",
+   "text": "הצוות עזב בלי שמירה על הזירה ובלי מז״פ. כשהגיעו לבדוק, כבר היו על הדלת טביעות של כמה אנשים.",
+   "when": {
+    "always": true
+   }
+  }
+ ],
+ "hints": [
+  {
+   "when": {
+    "all": [
+     {
+      "stage": [
+       "dispatch"
+      ]
+     },
+     {
+      "not": {
+       "chosen": "f-backup"
+      }
+     }
+    ]
+   },
+   "text": "דירה פרוצה – אולי מישהו עוד בפנים. כדאי לבקש ניידת נוספת כבר עכשיו."
+  },
+  {
+   "when": {
+    "all": [
+     {
+      "stage": [
+       "scene"
+      ]
+     },
+     {
+      "not": {
+       "flag": "preserved"
+      }
+     }
+    ]
+   },
+   "text": "הדלת והידית הן ראיות. מה עושים כדי שאיש לא ייגע בהן?"
+  },
+  {
+   "when": {
+    "all": [
+     {
+      "flag": "ev:enter"
+     },
+     {
+      "not": {
+       "flag": "stopped"
+      }
+     }
+    ]
+   },
+   "text": "מיכל עומדת להיכנס. עצור אותה בעדינות והסבר למה."
+  },
+  {
+   "when": {
+    "all": [
+     {
+      "stage": [
+       "scene"
+      ]
+     },
+     {
+      "not": {
+       "flag": "forensics"
+      }
+     }
+    ]
+   },
+   "text": "מי בודק טביעות? בקשה כזו עוברת דרך המשל״ט."
+  },
+  {
+   "when": {
+    "all": [
+     {
+      "stage": [
+       "scene"
+      ]
+     },
+     {
+      "not": {
+       "fact": "c-avi"
+      }
+     }
+    ]
+   },
+   "text": "השכן מהדירה ממול אולי שמע או ראה משהו."
+  },
+  {
+   "when": {
+    "always": true
+   },
+   "text": "לפני הסיום: האם הדיירת יודעת מה יקרה עכשיו?"
+  }
+ ],
+ "challenges": [
+  "שחק עם זרע אחר – האם השכן ראה חשוד? בדוק שאתה מפיץ תיאור כשיש.",
+  "נסה לשמור על הזירה לפני שמיכל מנסה להיכנס.",
+  "נסח עדכון אחד: מקום, סימני פריצה, זירה שמורה, מז״פ ותיאור."
+ ],
+ "report": {
+  "reason": "התקבלה משימה מהמוקד: פריצה לדירה ברחוב הרימון 14.",
+  "checklist": [
+   {
+    "label": "סימני הפריצה",
+    "when": {
+     "fact": "o-door"
+    }
+   },
+   {
+    "label": "ציר זמן",
+    "when": {
+     "fact": "c-michal-time"
+    }
+   },
+   {
+    "label": "עדות השכן",
+    "when": {
+     "fact": "c-avi"
+    }
+   },
+   {
+    "label": "מצלמות",
+    "when": {
+     "fact": "o-camera"
+    }
+   },
+   {
+    "label": "רשימת חפצים",
+    "when": {
+     "fact": "c-michal-items"
+    }
+   }
+  ]
+ },
+ "media": {
+  "images": [
+   "img/apartment-door-day.webp",
+   "img/apartment-door-night.webp",
+   "img/chars/michal-calm.webp",
+   "img/chars/michal-tense.webp",
+   "img/chars/michal-upset.webp",
+   "img/chars/avi-calm.webp",
+   "img/chars/avi-tense.webp",
+   "img/chars/avi-upset.webp",
+   "img/drive/interior.webp",
+   "img/drive/road-day.webp",
+   "img/drive/road-night.webp"
+  ],
+  "audio": [
+   "audio/radio-chatter.mp3",
+   "audio/building-hum.mp3",
+   "audio/engine-wipers.mp3",
+   "audio/radio-chirp.mp3",
+   "audio/alert.mp3"
+  ],
+  "voice": {},
+  "narrationMissing": "קריינות: קולות מסונתזים מקומית ב־BlueTTS (קוד MIT; קולות מ־LibriTTS-R, CC BY 4.0). שורות עם אות קריאה של התחנה מוקראות בקול הדפדפן אם הופעל.",
+  "voiceLines": {
+   "6a161f22": "audio/voice/burglary/l-6a161f22.mp3",
+   "757679e0": "audio/voice/burglary/l-757679e0.mp3",
+   "9ed1f317": "audio/voice/burglary/l-9ed1f317.mp3",
+   "0e01a700": "audio/voice/burglary/l-0e01a700.mp3",
+   "4e52b452": "audio/voice/burglary/l-4e52b452.mp3",
+   "e45f91ee": "audio/voice/burglary/l-e45f91ee.mp3",
+   "bc4ef680": "audio/voice/burglary/l-bc4ef680.mp3",
+   "dec6b838": "audio/voice/burglary/l-dec6b838.mp3",
+   "39c2e3ce": "audio/voice/burglary/l-39c2e3ce.mp3",
+   "0bb6cb73": "audio/voice/burglary/l-0bb6cb73.mp3",
+   "29b547b9": "audio/voice/burglary/l-29b547b9.mp3",
+   "7fbc02ed": "audio/voice/burglary/l-7fbc02ed.mp3",
+   "7b58190e": "audio/voice/burglary/l-7b58190e.mp3",
+   "7dfbe444": "audio/voice/burglary/l-7dfbe444.mp3",
+   "df977769": "audio/voice/burglary/l-df977769.mp3",
+   "b11bcb00": "audio/voice/burglary/l-b11bcb00.mp3",
+   "6f3abff3": "audio/voice/burglary/l-6f3abff3.mp3",
+   "7c34abc3": "audio/voice/burglary/l-7c34abc3.mp3",
+   "07db620c": "audio/voice/burglary/l-07db620c.mp3",
+   "b8f07973": "audio/voice/burglary/l-b8f07973.mp3",
+   "733e88ba": "audio/voice/burglary/l-733e88ba.mp3",
+   "ed3dad02": "audio/voice/burglary/l-ed3dad02.mp3",
+   "22eb3705": "audio/voice/burglary/l-22eb3705.mp3",
+   "95c9cfda": "audio/voice/burglary/l-95c9cfda.mp3",
+   "ab52b455": "audio/voice/burglary/l-ab52b455.mp3",
+   "68002460": "audio/voice/burglary/l-68002460.mp3",
+   "6637e6a7": "audio/voice/burglary/l-6637e6a7.mp3",
+   "56d0842f": "audio/voice/burglary/l-56d0842f.mp3",
+   "19086cce": "audio/voice/burglary/l-19086cce.mp3",
+   "0bb7656c": "audio/voice/burglary/l-0bb7656c.mp3",
+   "a31b79bb": "audio/voice/burglary/l-a31b79bb.mp3",
+   "eb03ec08": "audio/voice/burglary/l-eb03ec08.mp3",
+   "476c06a7": "audio/voice/burglary/l-476c06a7.mp3",
+   "6c920960": "audio/voice/burglary/l-6c920960.mp3",
+   "4442afed": "audio/voice/burglary/l-4442afed.mp3",
+   "1734ec94": "audio/voice/burglary/l-1734ec94.mp3",
+   "64c2f217": "audio/voice/burglary/l-64c2f217.mp3",
+   "ebbc8af8": "audio/voice/burglary/l-ebbc8af8.mp3",
+   "4e9bfee4": "audio/voice/burglary/l-4e9bfee4.mp3",
+   "149dddc7": "audio/voice/burglary/l-149dddc7.mp3",
+   "c814ac74": "audio/voice/burglary/l-c814ac74.mp3",
+   "e687981b": "audio/voice/burglary/l-e687981b.mp3",
+   "49f87d94": "audio/voice/burglary/l-49f87d94.mp3",
+   "3c9e7f01": "audio/voice/burglary/l-3c9e7f01.mp3",
+   "e172c581": "audio/voice/burglary/l-e172c581.mp3",
+   "72a634b0": "audio/voice/burglary/l-72a634b0.mp3",
+   "a7acd05b": "audio/voice/burglary/l-a7acd05b.mp3",
+   "54e8ec4a": "audio/voice/burglary/l-54e8ec4a.mp3",
+   "56b30807": "audio/voice/burglary/l-56b30807.mp3",
+   "80c9a350": "audio/voice/burglary/l-80c9a350.mp3",
+   "80fc5f75": "audio/voice/burglary/l-80fc5f75.mp3",
+   "2921e8ae": "audio/voice/burglary/l-2921e8ae.mp3",
+   "170f5e23": "audio/voice/burglary/l-170f5e23.mp3",
+   "e2b591c4": "audio/voice/burglary/l-e2b591c4.mp3",
+   "aa51b8cb": "audio/voice/burglary/l-aa51b8cb.mp3",
+   "64dd38cb": "audio/voice/burglary/l-64dd38cb.mp3",
+   "11e9b13c": "audio/voice/burglary/l-11e9b13c.mp3",
+   "8fd15bdb": "audio/voice/burglary/l-8fd15bdb.mp3",
+   "34a5cad1": "audio/voice/burglary/l-34a5cad1.mp3",
+   "3b3bd087": "audio/voice/burglary/l-3b3bd087.mp3",
+   "b29c5b3e": "audio/voice/burglary/l-b29c5b3e.mp3",
+   "54fb62ff": "audio/voice/burglary/l-54fb62ff.mp3",
+   "3bcc191c": "audio/voice/burglary/l-3bcc191c.mp3",
+   "b43779bf": "audio/voice/burglary/l-b43779bf.mp3"
+  }
+ }
+}

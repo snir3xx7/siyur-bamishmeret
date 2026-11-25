@@ -1,0 +1,1473 @@
+{
+ "id": "shoplifting",
+ "version": 1,
+ "title": "חשד לגניבה ממינימרקט",
+ "category": "עבירות רכוש",
+ "summary": "מאבטח במינימרקט עיכב נער בן 17 בחשד שגנב, ובעלת החנות כועסת ורוצה „ללמד אותו לקח”. יש לאמת לפני שמאשימים, להרחיק מעיני הלקוחות, לזהות, לערב הורה של קטין ולמנוע פרסום תמונתו.",
+ "estimatedMinutes": 11,
+ "difficultyLabel": "בינונית",
+ "skills": [
+  "אימות לפני האשמה",
+  "שמירה על כבוד ופרטיות",
+  "הזדהות ובירור גיל",
+  "קטין – יידוע הורה",
+  "מניעת פרסום וביוש"
+ ],
+ "shifts": [
+  "morning",
+  "evening"
+ ],
+ "defaultShift": "evening",
+ "location": {
+  "name": "מינימרקט „השכונה”, רחוב הדקל 22",
+  "area": "שכונת נווה אורן, קריית אלון (בדוי)"
+ },
+ "objectives": [
+  "לשמוע את המאבטח ואת בעלת החנות",
+  "לאמת במצלמה או בקבלה לפני כל האשמה",
+  "להעביר את הבירור למקום מוצנע",
+  "לזהות את הנער, ואם הוא קטין – ליידע הורה",
+  "למנוע צילום ופרסום של הנער"
+ ],
+ "variants": [
+  {
+   "id": "took",
+   "label": "הנער הכניס חטיפים לתיק בלי לשלם",
+   "set": {
+    "took": true
+   },
+   "vars": {
+    "footage": "במצלמה רואים את הנער מכניס שתי חפיסות שוקולד לתיק ויוצא בלי לעבור בקופה",
+    "value": "38 ₪"
+   }
+  },
+  {
+   "id": "paid",
+   "label": "הנער שילם – המאבטח טעה",
+   "set": {
+    "took": false
+   },
+   "vars": {
+    "footage": "במצלמה רואים את הנער משלם בקופה העצמית על שתי חפיסות השוקולד",
+    "value": "38 ₪"
+   }
+  }
+ ],
+ "scoring": {
+  "weights": {
+   "info": 20,
+   "assessment": 20,
+   "communication": 15,
+   "authority": 25,
+   "dispatch": 10,
+   "documentation": 10
+  },
+  "rules": [
+   {
+    "id": "sh-info-guard",
+    "domain": "info",
+    "label": "גרסת המאבטח",
+    "max": 6,
+    "required": true,
+    "tiers": [
+     {
+      "when": {
+       "chosen": "s-shai"
+      },
+      "points": 6,
+      "explain": "נשמעה גרסת המאבטח.",
+      "keep": "שאלת את שי מה ראה ומה עשה – כולל שפתח את התיק."
+     }
+    ],
+    "fallback": {
+     "explain": "לא נשמעה גרסת המאבטח.",
+     "improve": "לא שאלת את המאבטח מה ראה. בסבב הבא התחל ממי שעיכב."
+    }
+   },
+   {
+    "id": "sh-info-footage",
+    "domain": "info",
+    "label": "צילום המצלמה",
+    "max": 8,
+    "required": true,
+    "tiers": [
+     {
+      "when": {
+       "chosen": "d-footage"
+      },
+      "points": 8,
+      "explain": "נבדק הצילום.",
+      "keep": "צפית בצילום לפני שהחלטת. כך ידעת מה באמת קרה."
+     }
+    ],
+    "fallback": {
+     "explain": "הצילום לא נבדק.",
+     "improve": "לא בדקת את המצלמה. בסבב הבא אמת לפני כל החלטה."
+    }
+   },
+   {
+    "id": "sh-info-teen",
+    "domain": "info",
+    "label": "גרסת הנער",
+    "max": 6,
+    "required": true,
+    "tiers": [
+     {
+      "when": {
+       "chosen": "i-version"
+      },
+      "points": 6,
+      "explain": "נשמעה גרסת הנער.",
+      "keep": "נתת לאיתי לספר את הצד שלו."
+     }
+    ],
+    "fallback": {
+     "explain": "גרסת הנער לא נשמעה.",
+     "improve": "לא שמעת את איתי. גם לחשוד יש גרסה."
+    }
+   },
+   {
+    "id": "sh-assess-verify",
+    "domain": "assessment",
+    "label": "אימות לפני האשמה",
+    "max": 10,
+    "required": true,
+    "tiers": [
+     {
+      "when": {
+       "all": [
+        {
+         "flag": "verified"
+        },
+        {
+         "not": {
+          "chosen": "i-accuse"
+         }
+        }
+       ]
+      },
+      "points": 10,
+      "explain": "לא הואשם לפני אימות.",
+      "keep": "לא האשמת עד שראית את הצילום. במקרה של טעות – זה ההבדל בין בירור הוגן לפגיעה בחף מפשע."
+     },
+     {
+      "when": {
+       "flag": "verified"
+      },
+      "points": 4,
+      "explain": "הצילום נבדק, אך הייתה האשמה מוקדמת.",
+      "improve": "האשמת את איתי לפני שבדקת. בסבב הבא בדוק קודם."
+     }
+    ],
+    "fallback": {
+     "explain": "לא נעשה אימות.",
+     "improve": "לא אימתת מה קרה. בסבב הבא בדוק צילום או קבלה."
+    }
+   },
+   {
+    "id": "sh-assess-private",
+    "domain": "assessment",
+    "label": "בירור במקום מוצנע",
+    "max": 10,
+    "required": true,
+    "tiers": [
+     {
+      "when": {
+       "chosen": "i-office"
+      },
+      "points": 10,
+      "explain": "הבירור הועבר למשרד.",
+      "keep": "העברת את הבירור למשרד. נער בן 17 מול לקוחות – זה עונש בפני עצמו."
+     }
+    ],
+    "fallback": {
+     "explain": "הבירור נעשה מול הלקוחות.",
+     "improve": "הבירור התנהל מול כולם. בסבב הבא העבר למקום מוצנע."
+    }
+   },
+   {
+    "id": "sh-comm-teen",
+    "domain": "communication",
+    "label": "פנייה מכבדת לנער",
+    "max": 8,
+    "required": true,
+    "tiers": [
+     {
+      "when": {
+       "all": [
+        {
+         "chosen": "i-calm"
+        },
+        {
+         "not": {
+          "chosen": "i-accuse"
+         }
+        }
+       ]
+      },
+      "points": 8,
+      "explain": "הפנייה הייתה מכבדת.",
+      "keep": "הצגת את עצמך והסברת מה קורה. איתי נרגע ושיתף פעולה."
+     },
+     {
+      "when": {
+       "chosen": "i-accuse"
+      },
+      "points": 2,
+      "explain": "הייתה האשמה פומבית.",
+      "improve": "„תודה שגנבת” מול לקוחות – פוגע ולא מקצועי. בסבב הבא דבר לעניין, בפרטיות."
+     }
+    ],
+    "fallback": {
+     "explain": "לא הייתה פנייה מסודרת.",
+     "improve": "לא הצגת את עצמך ולא הסברת. בסבב הבא פתח בזה."
+    }
+   },
+   {
+    "id": "sh-comm-owner",
+    "domain": "communication",
+    "label": "שיח עם בעלת החנות",
+    "max": 7,
+    "required": false,
+    "tiers": [
+     {
+      "when": {
+       "chosen": "d-hear"
+      },
+      "points": 7,
+      "explain": "הוכר התסכול של בעלת החנות.",
+      "keep": "הכרת בתסכול של דבורה והחזרת את השיחה לעובדות."
+     }
+    ],
+    "fallback": {
+     "explain": "בעלת החנות לא נשמעה.",
+     "improve": "דבורה נשארה כועסת. בסבב הבא הכר בתסכול שלה."
+    }
+   },
+   {
+    "id": "sh-auth-id",
+    "domain": "authority",
+    "label": "זיהוי ובירור גיל",
+    "max": 8,
+    "required": true,
+    "tiers": [
+     {
+      "when": {
+       "chosen": "i-id"
+      },
+      "points": 8,
+      "explain": "הנער זוהה וגילו התברר.",
+      "keep": "זיהית את איתי ושאלת לגילו – וכך ידעת שמדובר בקטין."
+     }
+    ],
+    "fallback": {
+     "explain": "הנער לא זוהה.",
+     "improve": "לא זיהית את הנער. בסבב הבא בקש הזדהות ובדוק גיל."
+    }
+   },
+   {
+    "id": "sh-auth-parent",
+    "domain": "authority",
+    "label": "קטין – יידוע הורה",
+    "max": 9,
+    "required": true,
+    "appliesWhen": {
+     "flag": "minor"
+    },
+    "tiers": [
+     {
+      "when": {
+       "chosen": "i-parent"
+      },
+      "points": 9,
+      "explain": "הורה עודכן.",
+      "keep": "כשהתברר שהוא בן 17, יצרת קשר עם הורה. בקטינים – זה הצעד הראשון."
+     }
+    ],
+    "fallback": {
+     "explain": "הורה לא עודכן.",
+     "improve": "איתי קטין, ואף הורה לא עודכן. בסבב הבא התקשר להורה מיד כשמתברר הגיל."
+    }
+   },
+   {
+    "id": "sh-auth-photo",
+    "domain": "authority",
+    "label": "מניעת צילום ופרסום",
+    "max": 8,
+    "required": true,
+    "appliesWhen": {
+     "flag": "ev:photo"
+    },
+    "tiers": [
+     {
+      "when": {
+       "chosen": "d-photo"
+      },
+      "points": 8,
+      "explain": "הצילום נעצר בהסבר.",
+      "keep": "עצרת את דבורה מלצלם והסברת למה – בלי להתעלם מהכעס שלה."
+     }
+    ],
+    "fallback": {
+     "explain": "הנער צולם.",
+     "improve": "דבורה צילמה קטין לפרסום. בסבב הבא עצור את זה מיד."
+    }
+   },
+   {
+    "id": "sh-disp-close",
+    "domain": "dispatch",
+    "label": "עדכון מוקד",
+    "max": 10,
+    "required": true,
+    "tiers": [
+     {
+      "when": {
+       "any": [
+        {
+         "sent": "u-youth"
+        },
+        {
+         "sent": "u-footage-paid"
+        }
+       ]
+      },
+      "points": 10,
+      "explain": "נמסר עדכון לפי הממצאים.",
+      "keep": "עדכנת את המוקד לפי מה שאומת: הפניה לנוהל לקטינים, או שאין עבירה."
+     },
+     {
+      "when": {
+       "updatesGte": 1
+      },
+      "points": 4,
+      "explain": "נשלח עדכון בלי הממצאים.",
+      "improve": "העדכון לא כלל את מה שאומת. בסבב הבא מסור את הממצא ואת ההמשך."
+     }
+    ],
+    "fallback": {
+     "explain": "לא נשלח עדכון.",
+     "improve": "לא עדכנת את המוקד. בסבב הבא מסור את הממצאים."
+    }
+   },
+   {
+    "id": "sh-doc",
+    "domain": "documentation",
+    "label": "תיעוד",
+    "max": 10,
+    "required": true,
+    "tiers": [
+     {
+      "when": {
+       "chosen": "z-doc"
+      },
+      "points": 10,
+      "explain": "האירוע תועד.",
+      "keep": "תיעדת גרסאות, צילום, שעה ושווי."
+     }
+    ],
+    "fallback": {
+     "explain": "האירוע לא תועד.",
+     "improve": "לא תיעדת. בסבב הבא רשום גרסאות, צילום ושווי."
+    }
+   }
+  ]
+ },
+ "facts": [
+  {
+   "id": "d-report",
+   "kind": "dispatch",
+   "text": "מאבטח עיכב צעיר בחשד לגניבה ממינימרקט ברחוב הדקל 22"
+  },
+  {
+   "id": "d-age",
+   "kind": "dispatch",
+   "text": "לפי המאבטח החשוד צעיר, נראה בן 16–18"
+  },
+  {
+   "id": "c-shai",
+   "kind": "claim",
+   "text": "ראה את הנער מכניס חפיסות שוקולד לתיק ויוצא; עצר אותו בדלת ופתח את התיק",
+   "source": "shai"
+  },
+  {
+   "id": "c-dvora",
+   "kind": "claim",
+   "text": "יש גניבות כל שבוע, והיא רוצה „ללמד אותו לקח”",
+   "source": "dvora"
+  },
+  {
+   "id": "c-itay",
+   "kind": "claim",
+   "text": "טוען שהוא שילם בקופה העצמית",
+   "source": "itay"
+  },
+  {
+   "id": "o-footage",
+   "kind": "observation",
+   "text": "{{footage}}"
+  },
+  {
+   "id": "o-id",
+   "kind": "observation",
+   "text": "הנער הזדהה: איתי, בן 17 – קטין"
+  },
+  {
+   "id": "o-receipt",
+   "kind": "observation",
+   "text": "בכיס הנער קבלה מהקופה העצמית על שתי חפיסות שוקולד"
+  }
+ ],
+ "characters": [
+  {
+   "id": "shai",
+   "name": "שי לוי",
+   "role": "מאבטח החנות",
+   "gender": "m",
+   "look": {
+    "skin": "#d6a57c",
+    "hair": "#3a2a20",
+    "hairStyle": "short",
+    "top": "#555",
+    "bottom": "#333"
+   },
+   "attitude": 0,
+   "x": 20,
+   "y": 96,
+   "scale": 1.35,
+   "moodRules": [
+    {
+     "when": {
+      "not": {
+       "flag": "searchClarified"
+      }
+     },
+     "mood": "tense"
+    }
+   ],
+   "sprite": "img/chars/shai",
+   "spriteMoods": [
+    "calm",
+    "tense",
+    "upset"
+   ]
+  },
+  {
+   "id": "dvora",
+   "name": "דבורה אזולאי",
+   "role": "בעלת החנות",
+   "gender": "f",
+   "look": {
+    "skin": "#d6a57c",
+    "hair": "#3a2a20",
+    "hairStyle": "short",
+    "top": "#555",
+    "bottom": "#333"
+   },
+   "attitude": 0,
+   "x": 45,
+   "y": 96,
+   "scale": 1.35,
+   "moodRules": [
+    {
+     "when": {
+      "all": [
+       {
+        "flag": "ev:photo"
+       },
+       {
+        "not": {
+         "flag": "photoStopped"
+        }
+       }
+      ]
+     },
+     "mood": "upset"
+    },
+    {
+     "when": {
+      "not": {
+       "flag": "dvoraCalm"
+      }
+     },
+     "mood": "tense"
+    }
+   ],
+   "sprite": "img/chars/dvora",
+   "spriteMoods": [
+    "calm",
+    "tense",
+    "upset"
+   ]
+  },
+  {
+   "id": "itay",
+   "name": "איתי כהן",
+   "role": "הנער החשוד",
+   "gender": "m",
+   "look": {
+    "skin": "#d6a57c",
+    "hair": "#3a2a20",
+    "hairStyle": "short",
+    "top": "#555",
+    "bottom": "#333"
+   },
+   "attitude": 0,
+   "x": 78,
+   "y": 95,
+   "scale": 1.25,
+   "moodRules": [
+    {
+     "when": {
+      "flag": "exposed"
+     },
+     "mood": "upset"
+    },
+    {
+     "when": {
+      "not": {
+       "flag": "itayCalm"
+      }
+     },
+     "mood": "tense"
+    }
+   ],
+   "sprite": "img/chars/itay",
+   "spriteMoods": [
+    "calm",
+    "tense",
+    "upset"
+   ]
+  }
+ ],
+ "dispatch": {
+  "time": {
+   "morning": "10:12",
+   "evening": "18:25"
+  },
+  "unit": "סייר 30",
+  "incident": "6611",
+  "lines": [
+   {
+    "speaker": "dispatch",
+    "text": "סייר 30, כאן מוקד אלון. מאבטח במינימרקט ברחוב הדקל 22 עיכב צעיר בחשד לגניבה. בעלת החנות במקום ונשמעת נסערת. אשר קבלה."
+   }
+  ],
+  "initialFacts": [
+   "d-report"
+  ],
+  "basicExtraFacts": [
+   "d-age"
+  ],
+  "followUps": [
+   {
+    "id": "f-age",
+    "label": "לשאול: מה ידוע על גיל החשוד?",
+    "when": {
+     "not": {
+      "fact": "d-age"
+     }
+    },
+    "lines": [
+     {
+      "speaker": "player",
+      "text": "מוקד, מה ידוע על גיל החשוד?"
+     },
+     {
+      "speaker": "dispatch",
+      "text": "לפי המאבטח הוא נראה בן 16–18."
+     }
+    ],
+    "effects": {
+     "reveal": [
+      "d-age"
+     ]
+    },
+    "report": "בירור גיל החשוד"
+   },
+   {
+    "id": "f-held",
+    "label": "לשאול: איפה מוחזק החשוד ומה מצבו?",
+    "lines": [
+     {
+      "speaker": "player",
+      "text": "איפה מחזיקים אותו? יש פציעות או כוח?"
+     },
+     {
+      "speaker": "dispatch",
+      "text": "לפי המדווח הוא יושב ליד הקופה. אין דיווח על פציעות."
+     }
+    ],
+    "effects": {
+     "set": {
+      "askedHeld": true
+     }
+    },
+    "report": "בירור מצב החשוד"
+   }
+  ],
+  "goLabel": "אישור קבלה ויציאה למינימרקט"
+ },
+ "transition": {
+  "kind": "car",
+  "text": "נסיעה קצרה לרחוב הדקל. במינימרקט עומדים כמה לקוחות ומסתכלים לעבר הקופה.",
+  "travelMinutes": 3,
+  "ambience": [
+   "engine-wipers",
+   "radio-chatter"
+  ]
+ },
+ "scene": {
+  "background": "img/minimarket",
+  "alt": "מינימרקט שכונתי: קופה עם מסך מצלמות משמאל, מדפים צבעוניים ומקרר זכוכית, ובפינה דלת למשרד קטן.",
+  "fallbackColor": "#8d8a7a",
+  "ambience": [
+   "crowd"
+  ],
+  "lights": "off",
+  "weather": "none",
+  "bgByShift": {
+   "morning": "day",
+   "evening": "day"
+  },
+  "props": [
+   {
+    "id": "sg-shop",
+    "kind": "sign",
+    "x": 50,
+    "y": 14,
+    "text": "מינימרקט השכונה",
+    "sign": "shop",
+    "scale": 1.1
+   },
+   {
+    "id": "sg-office",
+    "kind": "sign",
+    "x": 86,
+    "y": 38,
+    "text": "משרד",
+    "sign": "plate",
+    "scale": 0.8
+   }
+  ],
+  "painted": true
+ },
+ "arrivalLines": [
+  {
+   "speaker": "narrator",
+   "text": "המינימרקט. ליד הקופה יושב נער בקפוצ׳ון אפור, תיק גב פתוח לרגליו. מאבטח בחולצה שחורה עומד מעליו, ובעלת החנות מדברת בקול רם. כמה לקוחות מסתכלים."
+  },
+  {
+   "speaker": "dvora",
+   "text": "סוף סוף! זה כבר הפעם השלישית השבוע שגונבים לי!"
+  }
+ ],
+ "arrivalFacts": [],
+ "hotspots": [
+  {
+   "id": "h-shai",
+   "label": "שי – המאבטח",
+   "kind": "character",
+   "x": 20,
+   "y": 44,
+   "description": "שי לוי, מאבטח החנות.",
+   "choices": [
+    {
+     "id": "s-shai",
+     "label": "לשאול את שי מה ראה ומה עשה",
+     "lines": [
+      {
+       "speaker": "shai",
+       "text": "ראיתי אותו מכניס שוקולדים לתיק. עצרתי אותו בדלת, פתחתי לו את התיק – והנה הם."
+      }
+     ],
+     "effects": {
+      "reveal": [
+       "c-shai"
+      ]
+     },
+     "report": "גביית גרסת המאבטח"
+    },
+    {
+     "id": "s-search",
+     "label": "להבהיר לשי: מעכשיו הבירור אצלך, ואין לחפש בכליו בכוח",
+     "lines": [
+      {
+       "speaker": "player",
+       "text": "תודה, שי. מכאן אני ממשיך. ורק לידיעה – חיפוש בתיק של אדם לא עושים בכוח. אם יש חשד, מחכים לנו."
+      },
+      {
+       "speaker": "shai",
+       "text": "בסדר… הוא פתח את התיק בעצמו כשביקשתי."
+      }
+     ],
+     "effects": {
+      "set": {
+       "searchClarified": true
+      }
+     },
+     "report": "הבהרת גבולות סמכות המאבטח"
+    }
+   ],
+   "character": "shai"
+  },
+  {
+   "id": "h-dvora",
+   "label": "דבורה – בעלת החנות",
+   "kind": "character",
+   "x": 45,
+   "y": 44,
+   "description": "דבורה אזולאי, בעלת המינימרקט.",
+   "choices": [
+    {
+     "id": "d-hear",
+     "label": "להקשיב לדבורה ולהכיר בתסכול שלה",
+     "lines": [
+      {
+       "speaker": "player",
+       "text": "אני שומע שזה לא הפעם הראשונה, וזה מתסכל. בואי נברר מה קרה הפעם, לפי העובדות."
+      },
+      {
+       "speaker": "dvora",
+       "text": "כל שבוע גונבים לי. אני רוצה שיילמד לקח!"
+      }
+     ],
+     "effects": {
+      "reveal": [
+       "c-dvora"
+      ],
+      "set": {
+       "dvoraCalm": true
+      },
+      "attitude": {
+       "dvora": 1
+      }
+     },
+     "report": "הקשבה לבעלת החנות"
+    },
+    {
+     "id": "d-footage",
+     "label": "לבקש מדבורה לראות את צילום המצלמה מהקופה",
+     "lines": [
+      {
+       "speaker": "narrator",
+       "text": "דבורה מריצה את ההקלטה במסך שליד הקופה. {{footage}}."
+      }
+     ],
+     "effects": {
+      "reveal": [
+       "o-footage"
+      ],
+      "set": {
+       "verified": true
+      }
+     },
+     "report": "צפייה בצילומי המצלמה"
+    },
+    {
+     "id": "d-photo",
+     "label": "לעצור את דבורה מלצלם את הנער ולהסביר למה",
+     "when": {
+      "all": [
+       {
+        "flag": "ev:photo"
+       },
+       {
+        "not": {
+         "flag": "photoStopped"
+        }
+       }
+      ]
+     },
+     "lines": [
+      {
+       "speaker": "player",
+       "text": "דבורה, בבקשה לא לצלם אותו. הוא קטין, ופרסום תמונה שלו אסור ויכול לפגוע גם בך. את הבירור אני מנהל – והתלונה שלך תטופל."
+      },
+      {
+       "speaker": "dvora",
+       "text": "…טוב. אבל שיטפלו בזה."
+      }
+     ],
+     "effects": {
+      "set": {
+       "photoStopped": true
+      },
+      "attitude": {
+       "dvora": 1
+      }
+     },
+     "report": "מניעת צילום ופרסום של הנער"
+    }
+   ],
+   "character": "dvora"
+  },
+  {
+   "id": "h-itay",
+   "label": "איתי – הנער",
+   "kind": "character",
+   "x": 78,
+   "y": 44,
+   "description": "נער בן כ־17, יושב ליד הקופה.",
+   "choices": [
+    {
+     "id": "i-office",
+     "label": "להעביר את הבירור למשרד, הרחק מעיני הלקוחות",
+     "lines": [
+      {
+       "speaker": "player",
+       "text": "בוא נמשיך במשרד, לא מול כולם."
+      },
+      {
+       "speaker": "narrator",
+       "text": "נכנסתם למשרד הקטן. הלקוחות חוזרים לקניות."
+      }
+     ],
+     "effects": {
+      "set": {
+       "private": true
+      }
+     },
+     "report": "העברת הבירור למקום מוצנע"
+    },
+    {
+     "id": "i-calm",
+     "label": "להציג את עצמך ולהסביר לאיתי מה קורה עכשיו",
+     "lines": [
+      {
+       "speaker": "player",
+       "text": "אני מצוות הסיור. יש חשד שלא שילמת על משהו, ואני כאן כדי לברר מה קרה. תקבל הזדמנות להסביר."
+      },
+      {
+       "speaker": "itay",
+       "text": "(בשקט) אני לא גנבתי כלום."
+      }
+     ],
+     "effects": {
+      "set": {
+       "itayCalm": true
+      },
+      "attitude": {
+       "itay": 1
+      }
+     },
+     "report": "פנייה מכבדת לחשוד"
+    },
+    {
+     "id": "i-id",
+     "label": "לבקש מאיתי להזדהות ולברר את גילו",
+     "lines": [
+      {
+       "speaker": "player",
+       "text": "אני צריך לזהות אותך – יש לך תעודה? בן כמה אתה?"
+      },
+      {
+       "speaker": "itay",
+       "text": "איתי כהן. אני בן 17."
+      }
+     ],
+     "effects": {
+      "reveal": [
+       "o-id"
+      ],
+      "set": {
+       "identified": true,
+       "minor": true
+      }
+     },
+     "report": "זיהוי ובירור גיל"
+    },
+    {
+     "id": "i-version",
+     "label": "לשמוע את הגרסה של איתי",
+     "lines": [
+      {
+       "speaker": "itay",
+       "text": "שילמתי… כלומר… רציתי לשלם. לא היה לי מספיק כסף."
+      }
+     ],
+     "effects": {
+      "reveal": [
+       "c-itay"
+      ]
+     },
+     "branches": [
+      {
+       "when": {
+        "variant": [
+         "paid"
+        ]
+       },
+       "lines": [
+        {
+         "speaker": "itay",
+         "text": "שילמתי בקופה העצמית! הנה הקבלה, בכיס."
+        },
+        {
+         "speaker": "narrator",
+         "text": "בכיס שלו קבלה על שתי חפיסות שוקולד."
+        }
+       ],
+       "effects": {
+        "reveal": [
+         "c-itay",
+         "o-receipt"
+        ]
+       }
+      }
+     ],
+     "report": "שמיעת גרסת החשוד"
+    },
+    {
+     "id": "i-accuse",
+     "label": "לומר לאיתי מול כולם: „תודה שגנבת, זה יחסוך זמן”",
+     "lines": [
+      {
+       "speaker": "player",
+       "text": "תודה שגנבת, זה יחסוך לכולנו זמן."
+      },
+      {
+       "speaker": "itay",
+       "text": "(מסמיק, מסתכל על הלקוחות) …"
+      }
+     ],
+     "effects": {
+      "set": {
+       "exposed": true
+      },
+      "attitude": {
+       "itay": -2
+      },
+      "note": "האשמה פומבית לפני בירור"
+     }
+    },
+    {
+     "id": "i-parent",
+     "label": "ליצור קשר עם הורה של איתי ולהסביר את המצב",
+     "when": {
+      "flag": "minor"
+     },
+     "lines": [
+      {
+       "speaker": "player",
+       "text": "מכיוון שאתה בן 17, אני מתקשר לאחד ההורים שלך. מה המספר?"
+      },
+      {
+       "speaker": "narrator",
+       "text": "אמא של איתי עונה ואומרת שהיא בדרך – עשר דקות."
+      }
+     ],
+     "effects": {
+      "set": {
+       "parent": true
+      }
+     },
+     "report": "יידוע הורה של קטין"
+    },
+    {
+     "id": "i-close",
+     "label": "לסגור את האירוע לפי מה שאומת",
+     "when": {
+      "all": [
+       {
+        "flag": "verified"
+       },
+       {
+        "flag": "identified"
+       }
+      ]
+     },
+     "lines": [
+      {
+       "speaker": "player",
+       "text": "לפי הצילום החפיסות לא שולמו. החפיסות חוזרות לחנות, והפרטים יועברו לבירור לפי הנוהל לקטינים, יחד עם אמא שלך."
+      },
+      {
+       "speaker": "itay",
+       "text": "…בסדר."
+      }
+     ],
+     "effects": {
+      "set": {
+       "closed": true
+      }
+     },
+     "branches": [
+      {
+       "when": {
+        "variant": [
+         "paid"
+        ]
+       },
+       "lines": [
+        {
+         "speaker": "player",
+         "text": "בדקנו – שילמת. אני מתנצל על אי הנעימות. אתה חופשי ללכת."
+        },
+        {
+         "speaker": "itay",
+         "text": "תודה."
+        }
+       ],
+       "effects": {
+        "set": {
+         "closed": true,
+         "apologized": true
+        }
+       }
+      }
+     ],
+     "report": "סגירת האירוע לפי הממצאים"
+    }
+   ],
+   "character": "itay"
+  },
+  {
+   "id": "h-counter",
+   "label": "אזור הקופה",
+   "kind": "area",
+   "x": 30,
+   "y": 70,
+   "description": "הקופה והמסך של המצלמות.",
+   "choices": [
+    {
+     "id": "z-doc",
+     "label": "לתעד: מה ראה המאבטח, מה מראה המצלמה, שעה ושווי",
+     "lines": [
+      {
+       "speaker": "narrator",
+       "text": "תיעדת: גרסת המאבטח, מה נראה במצלמה, השעה, ושווי של {{value}}."
+      }
+     ],
+     "effects": {
+      "set": {
+       "documented": true
+      }
+     },
+     "report": "תיעוד האירוע"
+    }
+   ]
+  }
+ ],
+ "events": [
+  {
+   "id": "photo",
+   "title": "התפתחות: בעלת החנות שולפת טלפון",
+   "when": {
+    "countChosen": {
+     "ids": [
+      "s-shai",
+      "s-search",
+      "d-hear",
+      "d-footage",
+      "i-office",
+      "i-calm",
+      "i-id",
+      "i-version",
+      "i-accuse",
+      "z-doc"
+     ],
+     "gte": 3
+    }
+   },
+   "lines": [
+    {
+     "speaker": "dvora",
+     "text": "אני מצלמת אותו ומעלה לקבוצה של השכונה. שכולם יידעו מי זה!"
+    },
+    {
+     "speaker": "narrator",
+     "text": "דבורה מכוונת את הטלפון אל איתי."
+    }
+   ],
+   "effects": {
+    "note": "בעלת החנות עמדה לצלם ולפרסם את הנער"
+   },
+   "sfx": "alert"
+  }
+ ],
+ "update": {
+  "categories": {
+   "location": "מקום",
+   "situation": "מצב נוכחי",
+   "status": "מצב המעורבים",
+   "verified": "מה אומת",
+   "missing": "מה עדיין חסר",
+   "assistance": "סיוע נדרש",
+   "judgement": "קביעה"
+  },
+  "elements": [
+   {
+    "id": "u-loc",
+    "category": "location",
+    "text": "נמצא במינימרקט ברחוב הדקל 22"
+   },
+   {
+    "id": "u-suspect",
+    "category": "situation",
+    "text": "חשוד מעוכב על ידי מאבטח, ללא פציעות"
+   },
+   {
+    "id": "u-minor",
+    "category": "status",
+    "text": "החשוד קטין בן 17 – הורה בדרך",
+    "when": {
+     "flag": "parent"
+    }
+   },
+   {
+    "id": "u-footage-took",
+    "category": "verified",
+    "text": "הצילום מראה גניבה של שתי חפיסות, שווי 38 ₪",
+    "when": {
+     "all": [
+      {
+       "fact": "o-footage"
+      },
+      {
+       "flag": "took"
+      }
+     ]
+    }
+   },
+   {
+    "id": "u-footage-paid",
+    "category": "verified",
+    "text": "הצילום והקבלה מראים שהנער שילם – אין עבירה",
+    "when": {
+     "all": [
+      {
+       "fact": "o-footage"
+      },
+      {
+       "not": {
+        "flag": "took"
+       }
+      }
+     ]
+    }
+   },
+   {
+    "id": "u-youth",
+    "category": "assistance",
+    "text": "מבקש הפניה לבירור לפי הנוהל לקטינים",
+    "when": {
+     "all": [
+      {
+       "flag": "took"
+      },
+      {
+       "flag": "minor"
+      }
+     ]
+    }
+   },
+   {
+    "id": "u-closed",
+    "category": "verified",
+    "text": "האירוע הסתיים במקום",
+    "when": {
+     "flag": "closed"
+    }
+   }
+  ],
+  "responses": [
+   {
+    "when": {
+     "inUpdate": "u-youth"
+    },
+    "lines": [
+     {
+      "speaker": "dispatch",
+      "text": "מוקד: רשמתי, הפרטים יועברו לבירור לפי הנוהל לקטינים."
+     }
+    ],
+    "effects": {
+     "set": {
+      "youthReferred": true
+     }
+    }
+   }
+  ]
+ },
+ "finish": {
+  "label": "סיום הטיפול במקום",
+  "confirm": "לסיים את הטיפול ולעבור לתחקיר? אפשר לשלוח עדכון אחרון למוקד לפני הסיום."
+ },
+ "endings": [
+  {
+   "id": "e-good",
+   "kind": "good",
+   "title": "בירור הוגן שנשען על עובדות",
+   "text": "הממצאים אומתו לפני כל האשמה, הבירור נעשה בפרטיות, הורה עודכן, ואיש לא צילם או פרסם את הנער.",
+   "when": {
+    "all": [
+     {
+      "flag": "verified"
+     },
+     {
+      "flag": "identified"
+     },
+     {
+      "flag": "private"
+     },
+     {
+      "not": {
+       "flag": "exposed"
+      }
+     },
+     {
+      "any": [
+       {
+        "not": {
+         "flag": "ev:photo"
+        }
+       },
+       {
+        "flag": "photoStopped"
+       }
+      ]
+     },
+     {
+      "flag": "closed"
+     },
+     {
+      "any": [
+       {
+        "all": [
+         {
+          "flag": "took"
+         },
+         {
+          "flag": "parent"
+         },
+         {
+          "flag": "youthReferred"
+         }
+        ]
+       },
+       {
+        "all": [
+         {
+          "not": {
+           "flag": "took"
+          }
+         },
+         {
+          "flag": "apologized"
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "e-partial",
+   "kind": "partial",
+   "title": "האירוע הסתיים – לא הכול נעשה נכון",
+   "text": "האירוע נסגר, אבל משהו חסר: אימות, פרטיות, יידוע הורה, מניעת צילום או הפניה לנוהל לקטינים.",
+   "when": {
+    "flag": "closed"
+   }
+  },
+  {
+   "id": "e-retry",
+   "kind": "retry",
+   "title": "הזדמנות לתיקון: האירוע לא נסגר",
+   "text": "הצוות עזב בלי לסגור את האירוע. הנער נשאר מעוכב בידי המאבטח, בלי בירור ובלי הורה.",
+   "when": {
+    "always": true
+   }
+  }
+ ],
+ "hints": [
+  {
+   "when": {
+    "all": [
+     {
+      "stage": [
+       "scene"
+      ]
+     },
+     {
+      "not": {
+       "flag": "verified"
+      }
+     }
+    ]
+   },
+   "text": "לפני שמחליטים – מה מראה המצלמה? אולי הוא שילם?"
+  },
+  {
+   "when": {
+    "all": [
+     {
+      "stage": [
+       "scene"
+      ]
+     },
+     {
+      "not": {
+       "flag": "private"
+      }
+     }
+    ]
+   },
+   "text": "הבירור מתנהל מול לקוחות. אפשר להמשיך במקום מוצנע."
+  },
+  {
+   "when": {
+    "all": [
+     {
+      "flag": "minor"
+     },
+     {
+      "not": {
+       "flag": "parent"
+      }
+     }
+    ]
+   },
+   "text": "הוא בן 17 – קטין. מי צריך לדעת?"
+  },
+  {
+   "when": {
+    "all": [
+     {
+      "flag": "ev:photo"
+     },
+     {
+      "not": {
+       "flag": "photoStopped"
+      }
+     }
+    ]
+   },
+   "text": "בעלת החנות מצלמת קטין לפרסום. עצור את זה, בהסבר."
+  },
+  {
+   "when": {
+    "always": true
+   },
+   "text": "לפני הסיום: האם הסגירה נשענת על מה שאומת?"
+  }
+ ],
+ "challenges": [
+  "שחק עם זרע אחר – אולי הנער שילם. האם הבירור שלך נשען על עובדות?",
+  "נסה להעביר את הבירור למשרד לפני שבעלת החנות שולפת טלפון.",
+  "נסח עדכון: מה אומת, גיל החשוד, ומה ההמשך."
+ ],
+ "report": {
+  "reason": "התקבלה משימה מהמוקד: חשד לגניבה ממינימרקט ברחוב הדקל 22.",
+  "checklist": [
+   {
+    "label": "גרסת המאבטח",
+    "when": {
+     "fact": "c-shai"
+    }
+   },
+   {
+    "label": "צילום המצלמה",
+    "when": {
+     "fact": "o-footage"
+    }
+   },
+   {
+    "label": "גרסת הנער",
+    "when": {
+     "fact": "c-itay"
+    }
+   },
+   {
+    "label": "זיהוי וגיל",
+    "when": {
+     "fact": "o-id"
+    }
+   }
+  ]
+ },
+ "media": {
+  "images": [
+   "img/minimarket-day.webp",
+   "img/minimarket-night.webp",
+   "img/chars/shai-calm.webp",
+   "img/chars/shai-tense.webp",
+   "img/chars/shai-upset.webp",
+   "img/chars/dvora-calm.webp",
+   "img/chars/dvora-tense.webp",
+   "img/chars/dvora-upset.webp",
+   "img/chars/itay-calm.webp",
+   "img/chars/itay-tense.webp",
+   "img/chars/itay-upset.webp",
+   "img/drive/interior.webp",
+   "img/drive/road-day.webp",
+   "img/drive/road-night.webp"
+  ],
+  "audio": [
+   "audio/radio-chatter.mp3",
+   "audio/crowd.mp3",
+   "audio/engine-wipers.mp3",
+   "audio/radio-chirp.mp3",
+   "audio/alert.mp3"
+  ],
+  "voice": {},
+  "narrationMissing": "קריינות: קולות מסונתזים מקומית ב־BlueTTS (קוד MIT; קולות מ־LibriTTS-R, CC BY 4.0). שורות עם אות קריאה של התחנה מוקראות בקול הדפדפן אם הופעל.",
+  "voiceLines": {
+   "483e0023": "audio/voice/shoplifting/l-483e0023.mp3",
+   "c729818b": "audio/voice/shoplifting/l-c729818b.mp3",
+   "b86d4c9f": "audio/voice/shoplifting/l-b86d4c9f.mp3",
+   "0e01a700": "audio/voice/shoplifting/l-0e01a700.mp3",
+   "4e52b452": "audio/voice/shoplifting/l-4e52b452.mp3",
+   "e45f91ee": "audio/voice/shoplifting/l-e45f91ee.mp3",
+   "bc4ef680": "audio/voice/shoplifting/l-bc4ef680.mp3",
+   "dec6b838": "audio/voice/shoplifting/l-dec6b838.mp3",
+   "39c2e3ce": "audio/voice/shoplifting/l-39c2e3ce.mp3",
+   "0bb6cb73": "audio/voice/shoplifting/l-0bb6cb73.mp3",
+   "29b547b9": "audio/voice/shoplifting/l-29b547b9.mp3",
+   "890afdd6": "audio/voice/shoplifting/l-890afdd6.mp3",
+   "e493c4fa": "audio/voice/shoplifting/l-e493c4fa.mp3",
+   "b4937f46": "audio/voice/shoplifting/l-b4937f46.mp3",
+   "6ac96002": "audio/voice/shoplifting/l-6ac96002.mp3",
+   "2f89b9f7": "audio/voice/shoplifting/l-2f89b9f7.mp3",
+   "8307ae73": "audio/voice/shoplifting/l-8307ae73.mp3",
+   "b3f38a7d": "audio/voice/shoplifting/l-b3f38a7d.mp3",
+   "0a36f2b2": "audio/voice/shoplifting/l-0a36f2b2.mp3",
+   "5c3a2c1c": "audio/voice/shoplifting/l-5c3a2c1c.mp3",
+   "cb293a7f": "audio/voice/shoplifting/l-cb293a7f.mp3",
+   "d76c4a60": "audio/voice/shoplifting/l-d76c4a60.mp3",
+   "43208d48": "audio/voice/shoplifting/l-43208d48.mp3",
+   "f3b2e927": "audio/voice/shoplifting/l-f3b2e927.mp3",
+   "1f3aa590": "audio/voice/shoplifting/l-1f3aa590.mp3",
+   "ce5d0ccd": "audio/voice/shoplifting/l-ce5d0ccd.mp3",
+   "72ac8471": "audio/voice/shoplifting/l-72ac8471.mp3",
+   "5dbd7dcd": "audio/voice/shoplifting/l-5dbd7dcd.mp3",
+   "df6a80db": "audio/voice/shoplifting/l-df6a80db.mp3",
+   "608d2f70": "audio/voice/shoplifting/l-608d2f70.mp3",
+   "1f45764a": "audio/voice/shoplifting/l-1f45764a.mp3",
+   "eb03ec08": "audio/voice/shoplifting/l-eb03ec08.mp3",
+   "476c06a7": "audio/voice/shoplifting/l-476c06a7.mp3",
+   "6c920960": "audio/voice/shoplifting/l-6c920960.mp3",
+   "4442afed": "audio/voice/shoplifting/l-4442afed.mp3",
+   "1734ec94": "audio/voice/shoplifting/l-1734ec94.mp3",
+   "64c2f217": "audio/voice/shoplifting/l-64c2f217.mp3",
+   "1f48c6c5": "audio/voice/shoplifting/l-1f48c6c5.mp3",
+   "4f62295d": "audio/voice/shoplifting/l-4f62295d.mp3",
+   "c814ac74": "audio/voice/shoplifting/l-c814ac74.mp3",
+   "68760a99": "audio/voice/shoplifting/l-68760a99.mp3",
+   "5ac76b60": "audio/voice/shoplifting/l-5ac76b60.mp3",
+   "ae2cb0e7": "audio/voice/shoplifting/l-ae2cb0e7.mp3",
+   "80fc5f75": "audio/voice/shoplifting/l-80fc5f75.mp3",
+   "2921e8ae": "audio/voice/shoplifting/l-2921e8ae.mp3",
+   "170f5e23": "audio/voice/shoplifting/l-170f5e23.mp3",
+   "fc32d302": "audio/voice/shoplifting/l-fc32d302.mp3",
+   "c12caf30": "audio/voice/shoplifting/l-c12caf30.mp3",
+   "dcf40046": "audio/voice/shoplifting/l-dcf40046.mp3",
+   "6c1da3af": "audio/voice/shoplifting/l-6c1da3af.mp3",
+   "33edc197": "audio/voice/shoplifting/l-33edc197.mp3",
+   "df0708b5": "audio/voice/shoplifting/l-df0708b5.mp3",
+   "dae3614f": "audio/voice/shoplifting/l-dae3614f.mp3",
+   "b0f0c049": "audio/voice/shoplifting/l-b0f0c049.mp3"
+  }
+ }
+}

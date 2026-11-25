@@ -1,0 +1,1878 @@
+[accident-rain] dispatch: דיווח על תאונה בין שני כלי רכב בשדרות הזית פינת רחוב הכלנית, ליד מכולת הגפן. לפי המדווח התנועה ממשיכה לעבור לידם. אין מידע על נפגעים. אשר קבלה.
+    <he>divˈuaχ ʔˈal teʔunˈa bˈen ʃnˈej klˈej ʁˈeχev bisdeʁˈot hazˈajit pinˈat ʁeχˈov hakalanˈit, lejˈad makˈolet haɡˈefen. lefˈi hameduvˈaχ hatnuʔˈa mamʃiχˈa laʔavˈoʁ lejadˈam. ʔˈejn mejdˈa ʔˈal nifɡaʔˈim. ʔaʃˈeʁ kabalˈa.</he>
+[accident-rain] narrator: הניידת נעצרת סמוך לצומת. שני רכבים עומדים באלכסון, ושני אנשים מתווכחים בקול ליד הרכב האדום. מתחת לסוכך המכולת עומד אדם עם מטרייה ומנופף לעברך. רכבים ממשיכים לחלוף לאט ליד התאונה.
+    <he>hanajˈedet neʔetsˈeʁet samˈuχ latsˈomet. ʃnˈej ʁeχavˈim ʔomdˈim baʔaleχsˈon, veʃnˈej ʔanaʃˈim mitvakχˈim bekˈol lejˈad haʁˈeχev haʔadˈom. mitˈaχat lesoχˈeχ hamakˈolet ʔomˈed ʔadˈam ʔˈim mitʁijˈa umenofˈef leʔevʁχˈa. ʁeχavˈim mamʃiχˈim laχalˈof leʔˈat lejˈad hateʔunˈa.</he>
+[accident-rain] player: קיבלתי את האירוע, יוצא.
+    <he>kibˈalti ʔˈet haʔejʁˈua, jotsˈe.</he>
+[accident-rain] dispatch: קיבל.
+    <he>kibˈel.</he>
+[accident-rain] player: קיבלתי.
+    <he>kibˈalti.</he>
+[accident-rain] narrator: השדרה ריקה בשעת הלילה. הדרך הקצרה היא גם המהירה.
+    <he>haʃdeʁˈa ʁekˈa biʃʔˈat halˈajla. hadˈeʁeχ haktsaʁˈa hˈi ɡˈam hamehiʁˈa.</he>
+[accident-rain] narrator: בשדרות הזית פקק של שעת בוקר. הניידת מתקדמת לאט בין הרכבים.
+    <he>bisdeʁˈot hazˈajit pkˈak ʃˈel ʃaʔˈat bˈokeʁ. hanajˈedet mitkadˈemet leʔˈat bˈen haʁeχavˈim.</he>
+[accident-rain] narrator: השדרה עמוסה מעט בשעת הערב, אבל זורמת.
+    <he>haʃdeʁˈa ʔamusˈa meʔˈat biʃʔˈat haʔˈeʁev, ʔavˈal zoʁˈemet.</he>
+[accident-rain] narrator: רחובות השכונה צרים ומפותלים. בשעה הזו השדרה הייתה פנויה , הדרך ארכה יותר.
+    <he>ʁeχovˈot haʃχunˈa tsaʁˈim umefutalˈim. baʃaʔˈa hazˈo haʃdeʁˈa hajtˈa pnujˈa, hadˈeʁeχ ʔaʁχˈa jotˈeʁ.</he>
+[accident-rain] narrator: עוקפים את הפקק בשדרה דרך רחובות השכונה. ארוך יותר , אבל זורם.
+    <he>ʔokfˈim ʔˈet hapkˈak baʃdeʁˈa dˈeʁeχ ʁeχovˈot haʃχunˈa. ʔaʁˈoχ jotˈeʁ, ʔavˈal zoʁˈem.</he>
+[accident-rain] player: מוקד, כאן סייר 23. נמסר משהו על נפגעים?
+    <he>mokˈed, kˈan sijˈeʁ ʔesʁˈim veʃalˈoʃ. nimsˈaʁ mˈaʃu ʔˈal nifɡaʔˈim?</he>
+[accident-rain] dispatch: לא נמסר על נפגעים. המדווח אמר שהנהגים יצאו מהרכבים ומתווכחים.
+    <he>lˈo nimsˈaʁ ʔˈal nifɡaʔˈim. hamedavˈeaχ ʔamˈaʁ ʃehanahaɡˈim jatsʔˈu mehaʁeχavˈim vemitvakχˈim.</he>
+[accident-rain] player: מוקד, יש חסימה, דליפה או סכנה נוספת?
+    <he>mokˈed, jˈeʃ χasimˈa, dlifˈa ʔˈo sakanˈa nosˈefet?</he>
+[accident-rain] dispatch: נמסר שאחד הרכבים עומד חלקית בנתיב הימני. אין דיווח על דליפה.
+    <he>nimsˈaʁ ʃeʔeχˈad haʁeχavˈim ʔomˈed χelkˈit banatˈiv hajemanˈi. ʔˈejn divˈuaχ ʔˈal dlifˈa.</he>
+[accident-rain] dispatch: נמסר שאחד ה, ... ,חלקית ב, ...
+    <he>nimsˈaʁ ʃeʔeχˈad ha,...,χelkˈit bˈa,...</he>
+[accident-rain] player: מוקד, ההודעה נקטעה. חזור בבקשה.
+    <he>mokˈed, hahodaʔˈa nikteʔˈa. χazˈoʁ bevakaʃˈa.</he>
+[accident-rain] dispatch: חוזר: אחד הרכבים עומד חלקית בנתיב הימני. אין דיווח על דליפה.
+    <he>χozˈeʁ: ʔeχˈad haʁeχavˈim ʔomˈed χelkˈit banatˈiv hajemanˈi. ʔˈejn divˈuaχ ʔˈal dlifˈa.</he>
+[accident-rain] player: מי המדווח? הוא עדיין במקום?
+    <he>mˈi hamedavˈeaχ? hˈu ʔadˈajin bamakˈom?</he>
+[accident-rain] dispatch: המדווח עובר אורח. אמר שהוא מחכה בצד, מתחת לסוכך של המכולת.
+    <he>hamedavˈeaχ ʔovˈeʁ ʔˈoʁaχ. ʔamˈaʁ ʃehˈu meχakˈe batsˈad, mitˈaχat lasoχˈeχ ʃˈel hamakˈolet.</he>
+[accident-rain] narrator: מיקמת את הניידת מאחורי הרכב האדום, הפעלת אורות והצבת קונוס. הרכבים החולפים מאטים וסוטים לנתיב השמאלי. עכשיו רואים בבירור שהרכב האדום חוסם חלקית את הנתיב הימני.
+    <he>mikˈamta ʔˈet hanajˈedet meʔaχoʁˈej haʁˈeχev haʔadˈom, hafʔalˈat ʔoʁˈot vehatsavˈat kˈonus. haʁeχavˈim haχolfˈim meʔetˈim vesotˈim lanatˈiv hasmalˈi. ʔaχʃˈav ʁoʔˈim beveʁˈuʁ ʃehaʁˈeχev haʔadˈom χosˈem χelkˈit ʔˈet hanatˈiv hajemanˈi.</he>
+[accident-rain] oren: בסדר, אבל שהיא לא תיסע מכאן.
+    <he>besˈedeʁ, ʔavˈal ʃehˈi lˈo tisˈa mikˈan.</he>
+[accident-rain] dana: אני לא הולכת לשום מקום.
+    <he>ʔanˈi lˈo holˈeχet leʃˈum makˈom.</he>
+[accident-rain] narrator: תיעדת את מיקום שני הרכבים לפני כל הזזה: הכסוף בנתיב הימני של השדרה, האדום ביציאה מהכלנית. הדלת הימנית של האדום מעוכה, הפגוש של הכסוף סדוק. אין סימני דליפה. ביציאה מהכלנית מוצב תמרור עצור.
+    <he>tiʔˈadta ʔˈet mikˈum ʃnˈej haʁeχavˈim lifnˈej kˈol hazazˈa: hakasˈuf banatˈiv hajemanˈi ʃˈel haʃideʁˈa, haʔadˈom bajetsiʔˈa mehakalanˈit. hadˈelet hajemanˈit ʃˈel haʔadˈom meʔukˈa, hapaɡˈuʃ ʃˈel hakasˈuf sadˈuk. ʔˈejn simanˈej dlifˈa. bajetsiʔˈa mehakalanˈit mutsˈav tamʁˈuʁ ʔatsˈuʁ.</he>
+[accident-rain] narrator: הרכבים כבר עומדים בשוליים. תיעדת את הנזק ואת תמרור העצור ביציאה מהכלנית, אבל המיקום המקורי של הרכבים כבר לא נראה.
+    <he>haʁeχavˈim kvˈaʁ ʔomdˈim baʃulˈajim. teʔˈadta ʔˈet hanˈezek veʔˈet tamʁˈuʁ haʔatsˈoʁ bajetsiʔˈa mehakalanˈit, ʔavˈal hamikˈum hamekoʁˈi ʃˈel haʁeχavˈim kvˈaʁ lˈo niʁʔˈa.</he>
+[accident-rain] narrator: אחרי התיעוד, הנהגים מזיזים את הרכבים לשוליים. הנתיב הימני נפתח והתנועה זורמת.
+    <he>ʔaχʁˈej hatiʔˈud, hanahaɡˈim mezizˈim ʔˈet haʁeχavˈim laʃulˈajim. hanatˈiv hajemanˈi niftˈaχ vehatnuʔˈa zoʁˈemet.</he>
+[accident-rain] narrator: הנהגים מזיזים את הרכבים לשוליים. התנועה זורמת שוב, אבל המיקום המקורי של הרכבים כבר לא נראה.
+    <he>hanahaɡˈim mezizˈim ʔˈet haʁeχavˈim laʃulˈajim. hatnuʔˈa zoʁˈemet ʃˈuv, ʔavˈal hamikˈum hamekoʁˈi ʃˈel haʁeχavˈim kvˈaʁ lˈo niʁʔˈa.</he>
+[accident-rain] oren: היא יצאה לי מהכלנית בלי להסתכל!
+    <he>hˈi jatsʔˈa lˈi mehakalanˈit blˈi lehistakˈel!</he>
+[accident-rain] dana: אתה נסעת מהר ודיברת בטלפון!
+    <he>ʔatˈa nasˈata mahˈeʁ vedibˈaʁta batˈelefon!</he>
+[accident-rain] narrator: השניים מתפרצים זה על דבריו של זה. קשה להבין מה כל אחד ראה בפועל.
+    <he>haʃnˈajim mitpaʁtsˈim zˈe ʔˈal dvaʁˈav ʃˈel zˈe. kaʃˈe lehavˈin mˈa kˈol ʔeχˈad ʁaʔˈa bafˈoʔal.</he>
+[accident-rain] oren: אני בסדר, רק עצבני. הרכב חדש.
+    <he>ʔanˈi besˈedeʁ, ʁˈak ʔatsbanˈi. heʁˈekev χadˈaʃ.</he>
+[accident-rain] oren: אני בסדר, האמת, החגורה לחצה לי פה בחזה. כואב כשאני נושם עמוק.
+    <he>ʔanˈi besˈedeʁ, haʔemˈet, haχaɡuʁˈa laχatsˈa lˈi pˈo baχazˈe. koʔˈev kʃeʔanˈi noʃˈem ʔamˈok.</he>
+[accident-rain] oren: נסעתי בשדרה, לא מהר, איזה ארבעים. היא פשוט יצאה לי מהכלנית בלי לתת זכות קדימה.
+    <he>nasˈati baʃideʁˈa, lˈo mahˈeʁ, ʔˈejze ʔaʁbaʔˈim. hˈi paʃˈut jatsʔˈa lˈi mehakalanˈit blˈi latˈet zχˈut kdimˈa.</he>
+[accident-rain] oren: מה יש לשאול? היא אשמה. תרשום את זה וזהו.
+    <he>mˈa jˈeʃ liʃʔˈol? hˈi ʔaʃemˈa. tiʁʃˈom ʔˈet zˈe vezˈehu.</he>
+[accident-rain] oren: הטלפון היה בתושבת, הניווט היה פתוח. לא דיברתי.
+    <he>hatˈelefon hajˈa betoʃˈevet, hanivˈut hajˈa patˈuaχ. lˈo dibˈaʁti.</he>
+[accident-rain] oren: זה מה שהיא אמרה לך? אני לא עונה על זה.
+    <he>zˈe mˈa ʃehˈi ʔamʁˈa leχˈa? ʔanˈi lˈo ʔonˈe ʔˈal zˈe.</he>
+[accident-rain] oren: מה?! היא ממציאה! אין לי מה לדבר איתך יותר.
+    <he>mˈa?! hˈi mamtsiʔˈa! ʔˈejn lˈi mˈa ledabˈeʁ ʔitχˈa jotˈeʁ.</he>
+[accident-rain] oren: טוב, בסדר. תשאל.
+    <he>tˈov, besˈedeʁ. tiʃʔˈal.</he>
+[accident-rain] oren: בדיוק! סוף סוף מישהו מבין.
+    <he>bidjˈuk! sˈof sˈof mˈiʃu mevˈin.</he>
+[accident-rain] narrator: דנה, ששמעה את הדברים, מתרחקת בכעס ומדברת בטלפון.
+    <he>dˈana, ʃeʃamʔˈa ʔˈet hadvaʁˈim, mitʁaχˈeket bekˈaʔas vemedabˈeʁet batˈelefon.</he>
+[accident-rain] oren: תודה. באמת לא נעים לי לנשום.
+    <he>todˈa. beʔemˈet lˈo naʔˈim lˈi linʃˈom.</he>
+[accident-rain] oren: התחיל לי סחרור, וכשאני נושם עמוק זה דוקר יותר.
+    <he>hitχˈil lˈi siχʁˈuʁ, vekʃeʔanˈi noʃˈem ʔamˈok zˈe dokˈeʁ jotˈeʁ.</he>
+[accident-rain] dana: אני רועדת קצת, אבל לא נפגעתי.
+    <he>ʔanˈi ʁoʔˈedet ktsˈat, ʔavˈal lˈo nifɡˈaʔti.</he>
+[accident-rain] dana: אני, בסדר. בעצם, הצוואר והכתף כואבים לי מאז המכה. חשבתי שזה יעבור.
+    <he>ʔanˈi, besˈedeʁ. beʔˈetsem, hatsavˈaʁ vehakatˈef koʔavˈim lˈi meʔˈaz hamakˈa. χaʃˈavti ʃezˈe jaʔavˈoʁ.</he>
+[accident-rain] dana: עצרתי בעצור, הסתכלתי ימינה ושמאלה. הוא הגיע מהר. נראה לי שהוא דיבר בטלפון.
+    <he>ʔatsˈaʁti baʔatsˈuʁ, histakˈalti jamˈina vesmˈola. hˈu hiɡˈia mahˈeʁ. niʁʔˈa lˈi ʃehˈu dibˈeʁ batˈelefon.</he>
+[accident-rain] dana: אני לא רוצה לדבר עכשיו. כבר שמעת אותו, לא?
+    <he>ʔanˈi lˈo ʁotsˈe ledabˈeʁ ʔaχʃˈav. kvˈaʁ ʃamˈaʔta ʔotˈo, lˈo?</he>
+[accident-rain] dana: טוב. עצרתי בתמרור, הסתכלתי, והוא הגיע מהר. נראה לי שהוא דיבר בטלפון.
+    <he>tˈov. ʔatsˈaʁti batamʁˈuʁ, histakˈalti, vehˈu hiɡˈia mahˈeʁ. niʁʔˈa lˈi ʃehˈu dibˈeʁ batˈelefon.</he>
+[accident-rain] dana: אז מה, אתה כבר מאמין לו? אין לי מה להוסיף.
+    <he>ʔˈaz mˈa, ʔatˈa kvˈaʁ maʔamˈin lˈo? ʔˈejn lˈi mˈa lehosˈif.</he>
+[accident-rain] dana: תודה.
+    <he>todˈa.</he>
+[accident-rain] dana: פתאום הכול מסתובב, והכאב בצוואר יורד לי ליד.
+    <he>pitʔˈom hakˈol mistovˈev, vehakeʔˈev batsavˈaʁ joʁˈed lˈi lajˈad.</he>
+[accident-rain] samir: אני זה שהתקשר. עמדתי פה מתחת לסוכך. ראיתי את האדום עוצר בתמרור ואז מתחיל לפנות. הכסוף הגיע בשדרה , מהר או לא, אני לא יכול להגיד.
+    <he>ʔanˈi zˈe ʃehitkaʃˈeʁ. ʔamˈadti pˈo mitˈaχat lasoχˈeχ. ʁaʔˈiti ʔˈet haʔadˈom ʔotsˈeʁ betamʁˈuʁ veʔˈaz matχˈil lifnˈot. hakasˈuf hiɡˈia baʃdeʁˈa, mahˈeʁ ʔˈo lˈo, ʔanˈi lˈo jaχˈol lehaɡˈid.</he>
+[accident-rain] samir: רגע אחרי המכה ראיתי את נהגת הרכב האדום אוחזת בצוואר. אחר כך הם מיד התחילו לצעוק.
+    <he>ʁˈeɡa ʔaχʁˈej hamakˈa ʁaʔˈiti ʔˈet nahˈeɡet haʁˈeχev haʔadˈom ʔoχˈezet batsavˈaʁ. ʔaχˈaʁ kˈaχ hˈem mijˈad hitχˈilu litsʔˈok.</he>
+[accident-rain] samir: רגע אחרי המכה ראיתי את נהג הרכב הכסוף נשען על הדלת ונושם בכבדות. אחר כך הם מיד התחילו לצעוק.
+    <he>ʁˈeɡa ʔaχʁˈej hamakˈa ʁaʔˈiti ʔˈet nahˈaɡ haʁˈeχev hakasˈuf niʃʔˈan ʔˈal hadˈelet venoʃˈem beχvedˈut. ʔaχˈaʁ kˈaχ hˈem mijˈad hitχˈilu litsʔˈok.</he>
+[accident-rain] samir: לא ראיתי. היה גשם חזק והשמשות היו מלאות טיפות.
+    <he>lˈo ʁaʔˈiti. hajˈa ɡˈeʃem χazˈak vehaʃmaʃˈot hajˈu meleʔˈot tipˈot.</he>
+[accident-rain] samir: בטח. סמיר חדאד, אני גר בבניין ממול. אפשר לרשום.
+    <he>bˈetaχ. samˈiʁ χadˈad, ʔanˈi ɡˈaʁ bebinjˈan mimˈul. ʔefʃˈaʁ liʁʃˈom.</he>
+[accident-rain] player: הגעתי למקום.
+    <he>hiɡˈaʔti lamakˈom.</he>
+[accident-rain] dispatch: קיבל. עדכן כשיש תמונת מצב.
+    <he>kibˈel. ʔidkˈen kʃejˈeʃ tmunˈat matsˈav.</he>
+[accident-rain] player: שלילי, עדיין בטיפול באירוע. אעדכן כשאתפנה.
+    <he>ʃlilˈi, ʔadˈajin betipˈul baʔejʁˈua. ʔeʔadkˈen kʃeʔetpanˈe.</he>
+[accident-rain] dispatch: קיבל, מעביר לניידת אחרת.
+    <he>kibˈel, maʔavˈiʁ lenajˈedet ʔaχˈeʁet.</he>
+[accident-rain] player: חיובי, פנוי.
+    <he>χijuvˈi, panˈuj.</he>
+[accident-rain] dispatch: רגע , סיימת שם? המעורבים עדיין במקום לפי הדיווח שלך. תשלים קודם ותעדכן.
+    <he>ʁˈeɡa, sijˈamta ʃˈam? hameʔoʁavˈim ʔadˈajin bamakˈom lefˈi hadivˈuaχ ʃelχˈa. taʃlˈim kˈodem veteʔadkˈen.</he>
+[accident-rain] dispatch: אין דיווחים נוספים.
+    <he>ʔˈejn divuχˈim nosafˈim.</he>
+[accident-rain] dispatch: התקבלה שיחה מנהג שחלף במקום: רכב עומד בנתיב הימני, צריך זהירות.
+    <he>hitkablˈa siχˈa minahˈaɡ ʃeχalˈaf bamakˈom: ʁˈeχev ʔomˈed banatˈiv hajemanˈi, tsaʁˈiχ zehiʁˈut.</he>
+[accident-rain] dispatch: הצוות במרחק כחמש דקות.
+    <he>hatsˈevet bemeʁχˈak keχamˈeʃ dakˈot.</he>
+[accident-rain] narrator: הצופים זזים כמה צעדים אחורה וממשיכים לצלם מרחוק. אף אחד לא מתווכח.
+    <he>hatsofˈim zazˈim kˈama tseʔadˈim ʔaχˈoʁa vemamʃiχˈim letsalˈem meʁaχˈok. ʔˈaf ʔeχˈad lˈo mitvakˈeaχ.</he>
+[accident-rain] narrator: אחד הצופים מרים את הטלפון גבוה יותר: מותר לי לצלם ברחוב! הוויכוח מושך עוד אנשים לזירה.
+    <he>ʔeχˈad hatsofˈim meʁˈim ʔˈet hatˈelefon ɡavˈoa jotˈeʁ: mutˈaʁ lˈi letsalˈem baʁeχˈov! havikˈuaχ moʃˈeχ ʔˈod ʔanaʃˈim laziʁˈa.</he>
+[accident-rain] narrator: דנה התיישבה פתאום על שפת המדרכה, חיוורת, ואומרת: רגע, מסתובב לי הראש.
+    <he>dˈana hitjaʃvˈa pitʔˈom ʔˈal sfˈat hamidʁaχˈa, χivˈeʁet, veʔomˈeʁet: ʁˈeɡa, mistovˈev lˈi haʁˈoʃ.</he>
+[accident-rain] narrator: אורן התיישב פתאום על שפת המדרכה, חיוור, ואומר: רגע, מסתובב לי הראש.
+    <he>ʔˈoʁen hitjaʃˈev pitʔˈom ʔˈal sfˈat hamidʁaχˈa, χivˈeʁ, veʔomˈeʁ: ʁˈeɡa, mistovˈev lˈi haʁˈoʃ.</he>
+[accident-rain] narrator: דנה, שיושב מתחת לסוכך, מחוויר פתאום ואומרת בשקט: מסתובב לי הראש,
+    <he>dˈana, ʃejoʃˈev mitˈaχat lasoχˈeχ, maχvˈiʁ pitʔˈom veʔomˈeʁet beʃˈeket: mistovˈev lˈi haʁˈoʃ,</he>
+[accident-rain] narrator: אורן, שיושב מתחת לסוכך, מחוויר פתאום ואומר בשקט: מסתובב לי הראש,
+    <he>ʔˈoʁen, ʃejoʃˈev mitˈaχat lasoχˈeχ, maχvˈiʁ pitʔˈom veʔomˈeʁ beʃˈeket: mistovˈev lˈi haʁˈoʃ,</he>
+[accident-rain] dispatch: אתה פנוי? יש אירוע נוסף באזור.
+    <he>ʔatˈa panˈuj? jˈeʃ ʔejʁˈua nosˈaf baʔezˈoʁ.</he>
+[accident-rain] dispatch: קיבלתי, העברתי לצוות הרפואי את ההחמרה. הם במרחק ארבע דקות. הישאר לידה ועדכן אם יש שינוי.
+    <he>kibˈalti, heʔevˈaʁti latsˈevet haʁefuʔˈi ʔˈet hahaχmaʁˈa. hˈem bemeʁχˈak ʔˈaʁba dakˈot. hiʃaʔˈeʁ lejadˈa veʔadkˈen ʔˈim jˈeʃ ʃinˈuj.</he>
+[accident-rain] dispatch: קיבלתי, העברתי לצוות הרפואי את ההחמרה. הם במרחק ארבע דקות. הישאר לידו ועדכן אם יש שינוי.
+    <he>kibˈalti, heʔevˈaʁti latsˈevet haʁefuʔˈi ʔˈet hahaχmaʁˈa. hˈem bemeʁχˈak ʔˈaʁba dakˈot. hiʃaʔˈeʁ lejadˈo veʔadkˈen ʔˈim jˈeʃ ʃinˈuj.</he>
+[accident-rain] center: קיבלתי, העברתי לצוות הרפואי את ההחמרה. הם במרחק ארבע דקות. הישאר לידה ועדכן אם יש שינוי.
+    <he>kibˈalti, heʔevˈaʁti latsˈevet haʁefuʔˈi ʔˈet hahaχmaʁˈa. hˈem bemeʁχˈak ʔˈaʁba dakˈot. hiʃaʔˈeʁ lejadˈa veʔadkˈen ʔˈim jˈeʃ ʃinˈuj.</he>
+[accident-rain] center: קיבלתי, העברתי לצוות הרפואי את ההחמרה. הם במרחק ארבע דקות. הישאר לידו ועדכן אם יש שינוי.
+    <he>kibˈalti, heʔevˈaʁti latsˈevet haʁefuʔˈi ʔˈet hahaχmaʁˈa. hˈem bemeʁχˈak ʔˈaʁba dakˈot. hiʃaʔˈeʁ lejadˈo veʔadkˈen ʔˈim jˈeʃ ʃinˈuj.</he>
+[accident-rain] duty: קיבלתי, העברתי לצוות הרפואי את ההחמרה. הם במרחק ארבע דקות. הישאר לידה ועדכן אם יש שינוי.
+    <he>kibˈalti, heʔevˈaʁti latsˈevet haʁefuʔˈi ʔˈet hahaχmaʁˈa. hˈem bemeʁχˈak ʔˈaʁba dakˈot. hiʃaʔˈeʁ lejadˈa veʔadkˈen ʔˈim jˈeʃ ʃinˈuj.</he>
+[accident-rain] duty: קיבלתי, העברתי לצוות הרפואי את ההחמרה. הם במרחק ארבע דקות. הישאר לידו ועדכן אם יש שינוי.
+    <he>kibˈalti, heʔevˈaʁti latsˈevet haʁefuʔˈi ʔˈet hahaχmaʁˈa. hˈem bemeʁχˈak ʔˈaʁba dakˈot. hiʃaʔˈeʁ lejadˈo veʔadkˈen ʔˈim jˈeʃ ʃinˈuj.</he>
+[accident-rain] dispatch: קיבלתי, צוות מד״א בדרך. זמן הגעה משוער שמונה דקות.
+    <he>kibˈalti, tsˈevet madˈa badˈeʁeχ. zmˈan haɡaʔˈa meʃoʔˈaʁ ʃmˈone dakˈot.</he>
+[accident-rain] center: קיבלתי, צוות מד״א בדרך. זמן הגעה משוער שמונה דקות.
+    <he>kibˈalti, tsˈevet madˈa badˈeʁeχ. zmˈan haɡaʔˈa meʃoʔˈaʁ ʃmˈone dakˈot.</he>
+[accident-rain] duty: קיבלתי, צוות מד״א בדרך. זמן הגעה משוער שמונה דקות.
+    <he>kibˈalti, tsˈevet madˈa badˈeʁeχ. zmˈan haɡaʔˈa meʃoʔˈaʁ ʃmˈone dakˈot.</he>
+[accident-rain] dispatch: קיבלתי, ניידת נוספת תגיע לסייע בהכוונת התנועה.
+    <he>kibˈalti, najˈedet nosˈefet taɡˈia lesajˈea behaχvanˈat hatnuʔˈa.</he>
+[accident-rain] center: קיבלתי, ניידת נוספת תגיע לסייע בהכוונת התנועה.
+    <he>kibˈalti, najˈedet nosˈefet taɡˈia lesajˈea behaχvanˈat hatnuʔˈa.</he>
+[accident-rain] duty: קיבלתי, ניידת נוספת תגיע לסייע בהכוונת התנועה.
+    <he>kibˈalti, najˈedet nosˈefet taɡˈia lesajˈea behaχvanˈat hatnuʔˈa.</he>
+[accident-rain] dispatch: רשמתי שלא נדרש סיוע.
+    <he>ʁaʃˈamti ʃelˈo nidʁˈaʃ sijˈua.</he>
+[accident-rain] center: רשמתי שלא נדרש סיוע.
+    <he>ʁaʃˈamti ʃelˈo nidʁˈaʃ sijˈua.</he>
+[accident-rain] duty: רשמתי שלא נדרש סיוע.
+    <he>ʁaʃˈamti ʃelˈo nidʁˈaʃ sijˈua.</he>
+[accident-rain] dispatch: רשמתי.
+    <he>ʁaʃˈamti.</he>
+[accident-rain] center: רשמתי.
+    <he>ʁaʃˈamti.</he>
+[accident-rain] duty: רשמתי.
+    <he>ʁaʃˈamti.</he>
+[accident-rain] dispatch: קיבלתי, רשמתי.
+    <he>kibˈalti, ʁaʃˈamti.</he>
+[accident-rain] center: קיבלתי, רשמתי.
+    <he>kibˈalti, ʁaʃˈamti.</he>
+[accident-rain] duty: קיבלתי, רשמתי.
+    <he>kibˈalti, ʁaʃˈamti.</he>
+[accident-rain] player: נמצא בשדרות הזית פינת הכלנית
+    <he>nimtsˈa bisdeʁˈot hazˈajit pinˈat hakalanˈit</he>
+[accident-rain] player: שני רכבים מעורבים, נזק פח
+    <he>ʃnˈej ʁeχavˈim meʔoʁavˈim, nˈezek pˈaχ</he>
+[accident-rain] player: רכב חוסם חלקית את הנתיב הימני
+    <he>ʁˈeχev χosˈem χelkˈit ʔˈet hanatˈiv hajemanˈi</he>
+[accident-rain] player: הרכבים הוזזו לשוליים, הנתיב פתוח
+    <he>haʁeχavˈim huzezˈu laʃulˈajim, hanatˈiv patˈuaχ</he>
+[accident-rain] player: הזירה מאובטחת באורות הניידת
+    <he>haziʁˈa meʔuvtˈaχat beʔoʁˈot hanajˈedet</he>
+[accident-rain] player: מצב המעורבים עדיין בבירור
+    <he>matsˈav hameʔoʁavˈim ʔadˈajin beveʁˈuʁ</he>
+[accident-rain] player: שני הנהגים בהכרה ועומדים על רגליהם
+    <he>ʃnˈej hanahaɡˈim behakaʁˈa veʔomdˈim ʔˈal ʁaɡlehˈem</he>
+[accident-rain] player: דנה אבוטבול מתלוננת על כאב בצוואר ובכתף
+    <he>dˈana ʔabˈutbul mitlonˈenet ʔˈal keʔˈev batsavˈaʁ uvakatˈef</he>
+[accident-rain] player: אורן שטרן מתלונן על כאב בחזה, במקום חגורת הבטיחות
+    <he>ʔˈoʁen ʃtˈeʁen mitlonˈen ʔˈal keʔˈev baχazˈe, bimkˈom χaɡoʁˈat habetiχˈut</he>
+[accident-rain] player: מצב דנה החמיר , סחרחורת. מבקש להקדים את הצוות הרפואי
+    <he>matsˈav dˈana heχmˈiʁ, sχaʁχˈoʁet. mevakˈeʃ lehakdˈim ʔˈet hatsˈevet haʁefuʔˈi</he>
+[accident-rain] player: מצב אורן החמיר , סחרחורת. מבקש להקדים את הצוות הרפואי
+    <he>matsˈav ʔˈoʁen heχmˈiʁ, sχaʁχˈoʁet. mevakˈeʃ lehakdˈim ʔˈet hatsˈevet haʁefuʔˈi</he>
+[accident-rain] player: נגבו גרסאות נפרדות , הגרסאות סותרות, הנסיבות בבירור
+    <he>niɡvˈu ɡiʁsaʔˈot nifʁadˈot, haɡiʁsaʔˈot sotʁˈot, hanesibˈot beveʁˈuʁ</he>
+[accident-rain] player: הנזק והשילוט בצומת תועדו
+    <he>hanˈezek vehaʃilˈut batsˈomet toʔadˈu</he>
+[accident-rain] player: יש עד ראייה, פרטיו נרשמו
+    <he>jˈeʃ ʔˈed ʁeʔijˈa, pʁatˈav niʁʃemˈu</he>
+[accident-rain] player: עדיין בבירור: נסיבות התאונה
+    <he>ʔadˈajin beveʁˈuʁ: nesibˈot hateʔunˈa</he>
+[accident-rain] player: טרם נגבו גרסאות מכל המעורבים
+    <he>tˈeʁem niɡvˈu ɡiʁsaʔˈot mikˈol hameʔoʁavˈim</he>
+[accident-rain] player: מבקש צוות מד״א לבדיקת דנה
+    <he>mevakˈeʃ tsˈevet madˈa libdikˈat dˈana</he>
+[accident-rain] player: מבקש צוות מד״א לבדיקת אורן
+    <he>mevakˈeʃ tsˈevet madˈa libdikˈat ʔˈoʁen</he>
+[accident-rain] player: מבקש סיוע בהכוונת תנועה
+    <he>mevakˈeʃ sijˈua behaχvanˈat tnuʔˈa</he>
+[accident-rain] player: לא נדרש סיוע נוסף כרגע
+    <he>lˈo nidʁˈaʃ sijˈua nosˈaf kaʁˈeɡa</he>
+[accident-rain] player: נהגת הרכב האדום אשמה בתאונה
+    <he>nahˈeɡet haʁˈeχev haʔadˈom ʔaʃemˈa bateʔunˈa</he>
+[accident-rain] center: נפתח אירוע ארבע ארבע שבע אחת , תאונת דרכים קלה בגשם, שדרות הזית פינת רחוב הכלנית. מעביר אליך לטיפול.
+    <he>niftˈaχ ʔejʁˈua ʔˈaʁba ʔˈaʁba ʃˈeva ʔaχˈat, teʔunˈat dʁaχˈim kalˈa baɡˈeʃem, sdeʁˈot hazˈajit pinˈat ʁeχˈov hakalanˈit. maʔavˈiʁ ʔelˈeχa letipˈul.</he>
+[noise-building] dispatch: תלונה על מוזיקה חזקה בבניין מגורים ברחוב התאנה 9, קומה 2. לפי המדווחת המוזיקה מגיעה מדירה 7, כבר כשעה. המדווחת ביקשה שפרטיה לא ייחשפו בפני השכנים. אשר קבלה.
+    <he>tlunˈa ʔˈal mˈuzika χazakˈa bebinjˈan meɡuʁˈim beʁeχˈov hateʔenˈa tˈeʃa, komˈa ʃtˈajim. lefˈi hamedavˈaχat hamˈuzika maɡiʔˈa midiʁˈa ʃˈeva, kvˈaʁ keʃaʔˈa. hamedavˈaχat bikʃˈa ʃepʁatˈeha lˈo jeχasfˈu bifnˈej haʃχenˈim. ʔaʃˈeʁ kabalˈa.</he>
+[noise-building] narrator: חדר המדרגות בקומה השנייה. בס עמום מהדהד בקירות, והאור במדרגות כבה ונדלק עם המתג. על הדלתות מספרים 7 ו8. שלט על הקיר מבקש לשמור על השקט.
+    <he>χadˈaʁ hamadʁeɡˈot bakomˈa haʃnijˈa. bˈas ʔamˈum mehadhˈed bakiʁˈot, vehaʔˈoʁ bamadʁeɡˈot kavˈa venidlˈak ʔˈim hamˈetaɡ. ʔˈal hadlatˈot mispʁˈim ʃˈeva veʃmonˈe. ʃˈelet ʔˈal hakˈiʁ mevakˈeʃ liʃmˈoʁ ʔˈal haʃˈeket.</he>
+[noise-building] player: קיבלתי את האירוע, יוצא.
+    <he>kibˈalti ʔˈet haʔejʁˈua, jotsˈe.</he>
+[noise-building] dispatch: קיבל.
+    <he>kibˈel.</he>
+[noise-building] player: קיבלתי.
+    <he>kibˈalti.</he>
+[noise-building] narrator: השדרה ריקה בשעת הלילה. הדרך הקצרה היא גם המהירה.
+    <he>haʃdeʁˈa ʁekˈa biʃʔˈat halˈajla. hadˈeʁeχ haktsaʁˈa hˈi ɡˈam hamehiʁˈa.</he>
+[noise-building] narrator: בשדרות הזית פקק של שעת בוקר. הניידת מתקדמת לאט בין הרכבים.
+    <he>bisdeʁˈot hazˈajit pkˈak ʃˈel ʃaʔˈat bˈokeʁ. hanajˈedet mitkadˈemet leʔˈat bˈen haʁeχavˈim.</he>
+[noise-building] narrator: השדרה עמוסה מעט בשעת הערב, אבל זורמת.
+    <he>haʃdeʁˈa ʔamusˈa meʔˈat biʃʔˈat haʔˈeʁev, ʔavˈal zoʁˈemet.</he>
+[noise-building] narrator: רחובות השכונה צרים ומפותלים. בשעה הזו השדרה הייתה פנויה , הדרך ארכה יותר.
+    <he>ʁeχovˈot haʃχunˈa tsaʁˈim umefutalˈim. baʃaʔˈa hazˈo haʃdeʁˈa hajtˈa pnujˈa, hadˈeʁeχ ʔaʁχˈa jotˈeʁ.</he>
+[noise-building] narrator: עוקפים את הפקק בשדרה דרך רחובות השכונה. ארוך יותר , אבל זורם.
+    <he>ʔokfˈim ʔˈet hapkˈak baʃdeʁˈa dˈeʁeχ ʁeχovˈot haʃχunˈa. ʔaʁˈoχ jotˈeʁ, ʔavˈal zoʁˈem.</he>
+[noise-building] player: מוקד, איפה גרה המדווחת? אפשר לפגוש אותה בלי שהשכנים יראו?
+    <he>mokˈed, ʔˈejfo ɡaʁˈa hamedavˈaχat? ʔefʃˈaʁ lifɡˈoʃ ʔotˈa blˈi ʃehaʃχenˈim jiʁʔˈu?</he>
+[noise-building] dispatch: המדווחת, רינה, גרה בדירה 3 בקומה הראשונה. היא מוכנה לפגוש אתכם בכניסה לבניין.
+    <he>hamedavˈaχat, ʁˈina, ɡaʁˈa bediʁˈa ʃalˈoʃ bakomˈa haʁiʃonˈa. hˈi muχanˈa lifɡˈoʃ ʔotχˈem baknisˈa labinjˈan.</he>
+[noise-building] dispatch: המדווחת גרה ב, ... ,מוכנה לפגוש ב, ...
+    <he>hamedavˈaχat ɡaʁˈa be,...,muχanˈa lifɡˈoʃ be,...</he>
+[noise-building] player: מוקד, ההודעה נקטעה. חזור בבקשה.
+    <he>mokˈed, hahodaʔˈa nikteʔˈa. χazˈoʁ bevakaʃˈa.</he>
+[noise-building] dispatch: חוזר: המדווחת, רינה, גרה בדירה 3 בקומה הראשונה. מוכנה לפגוש בכניסה לבניין.
+    <he>χozˈeʁ: hamedavˈaχat, ʁˈina, ɡaʁˈa bediʁˈa ʃalˈoʃ bakomˈa haʁiʃonˈa. muχanˈa lifɡˈoʃ baknisˈa labinjˈan.</he>
+[noise-building] player: היו תלונות קודמות מהכתובת הזאת?
+    <he>hajˈu tlunˈot kodmˈot mehaktˈovet hazˈot?</he>
+[noise-building] dispatch: זו התלונה השנייה מהכתובת החודש. בפעם הקודמת לא נשלח צוות.
+    <he>zˈo hatlunˈa haʃnijˈa mehaktˈovet haχˈodeʃ. bapˈaʔam hakodˈemet lˈo niʃlˈaχ tsˈevet.</he>
+[noise-building] player: נמסר משהו על כמות אנשים, צעקות או אלימות?
+    <he>nimsˈaʁ mˈaʃu ʔˈal kamˈut ʔanaʃˈim, tsaʔakˈot ʔˈo ʔalimˈut?</he>
+[noise-building] dispatch: המדווחת שמעה קולות של הרבה אנשים. אין דיווח על צעקות או אלימות.
+    <he>hamedavˈaχat ʃamʔˈa kolˈot ʃˈel haʁbˈe ʔanaʃˈim. ʔˈejn divˈuaχ ʔˈal tseʔakˈot ʔˈo ʔalimˈut.</he>
+[noise-building] narrator: עמדת בשקט ליד כל דלת. ליד דירה 7 שקט יחסי; מאחורי דלת 8 הבס חזק וקולות של אנשים. המוזיקה מגיעה מדירה 8, ולא מדירה 7 כפי שנמסר.
+    <he>ʔamˈadta beʃˈeket lejˈad kˈol dˈelet. lejˈad diʁˈa ʃˈeva ʃˈeket jaχasˈi; meʔaχoʁˈej dˈelet ʃmonˈe habˈas χazˈak vekolˈot ʃˈel ʔanaʃˈim. hamˈuzika maɡiʔˈa midiʁˈa ʃmonˈe, velˈo midiʁˈa ʃivʔˈa kfˈi ʃenimsˈaʁ.</he>
+[noise-building] narrator: עמדת בשקט ליד כל דלת. ליד דירה 8 שקט יחסי; מאחורי דלת 7 הבס חזק וקולות של אנשים. המוזיקה מגיעה מדירה 7, כפי שנמסר.
+    <he>ʔamˈadta beʃˈeket lejˈad kˈol dˈelet. lejˈad diʁˈa ʃmonˈe ʃˈeket jaχasˈi; meʔaχoʁˈej dˈelet ʃˈeva habˈas χazˈak vekolˈot ʃˈel ʔanaʃˈim. hamˈuzika maɡiʔˈa midiʁˈa ʃˈeva, kfˈi ʃenimsˈaʁ.</he>
+[noise-building] narrator: תיעדת: מוזיקה עם בס חזק נשמעת בבירור בחדר המדרגות בשעת ההגעה. מקור הרעש עוד לא אומת.
+    <he>tiʔˈadta: mˈuzika ʔˈim bˈas χazˈak niʃmˈaʔat beveʁˈuʁ beχadˈaʁ hamadʁeɡˈot biʃʔˈat hahaɡaʔˈa. mekˈoʁ haʁˈaʔaʃ ʔˈod lˈo ʔumˈat.</he>
+[noise-building] narrator: תיעדת: מוזיקה עם בס חזק נשמעת בבירור בחדר המדרגות, מקורה בדירה 8, בשעת ההגעה.
+    <he>tiʔˈadta: mˈuzika ʔˈim bˈas χazˈak niʃmˈaʔat beveʁˈuʁ beχadˈaʁ hamadʁeɡˈot, mekoʁˈa bediʁˈa ʃmonˈe, biʃʔˈat hahaɡaʔˈa.</he>
+[noise-building] narrator: תיעדת: מוזיקה עם בס חזק נשמעת בבירור בחדר המדרגות, מקורה בדירה 7, בשעת ההגעה.
+    <he>tiʔˈadta: mˈuzika ʔˈim bˈas χazˈak niʃmˈaʔat beveʁˈuʁ beχadˈaʁ hamadʁeɡˈot, mekoʁˈa bediʁˈa ʃˈeva, biʃʔˈat hahaɡaʔˈa.</he>
+[noise-building] narrator: חזרת לחדר המדרגות והמתנת דקה. המוזיקה כמעט לא נשמעת, ונשמעים רק קולות דיבור שקטים.
+    <he>χazˈaʁta leχadˈaʁ hamadʁeɡˈot vehimtˈanta dakˈa. hamˈuzika kimʔˈat lˈo niʃmˈaʔat, veniʃmaʔˈim ʁˈak kolˈot dibˈuʁ ʃketˈim.</he>
+[noise-building] rina: תודה שבאתם. אני לא רוצה שידעו שזו אני , אנחנו גרים פה כולנו.
+    <he>todˈa ʃebˈatem. ʔanˈi lˈo ʁotsˈe ʃejedʔˈu ʃezˈo ʔanˈi, ʔanˈaχnu ɡaʁˈim pˈo kulˈanu.</he>
+[noise-building] rina: זה כמעט כל סוף שבוע עד מאוחר. יש לי ילד קטן והוא לא מצליח להירדם.
+    <he>zˈe kimʔˈat kˈol sˈof ʃavˈua ʔˈad meʔuχˈaʁ. jˈeʃ lˈi jˈeled katˈan vehˈu lˈo matslˈiaχ leheʁadˈem.</he>
+[noise-building] rina: כן, אני התקשרתי. זה כמעט כל סוף שבוע עד מאוחר, והילד שלי לא נרדם.
+    <he>kˈen, ʔanˈi hitkaʃˈaʁti. zˈe kimʔˈat kˈol sˈof ʃavˈua ʔˈad meʔuχˈaʁ, vehajˈeled ʃelˈi lˈo niʁdˈam.</he>
+[noise-building] narrator: בזמן השיחה דלת בקומה השנייה נפתחת לרגע, ומישהו מציץ אל חדר המדרגות.
+    <he>bizmˈan hasiχˈa dˈelet bakomˈa haʃnijˈa niftˈaχat leʁˈeɡa, vemˈiʃu metsˈits ʔˈel χadˈaʁ hamadʁeɡˈot.</he>
+[noise-building] rina: תודה. ותודה שלא אמרתם שזו אני.
+    <he>todˈa. vetodˈa ʃelˈo ʔamˈaʁtem ʃezˈo ʔanˈi.</he>
+[noise-building] narrator: אחרי כמה דפיקות נפתחת הדלת. אדם מבוגר בחלוק, עם משקפיים על המצח.
+    <he>ʔaχʁˈej kˈama dfikˈot niftˈaχat hadˈelet. ʔadˈam mevuɡˈaʁ baχalˈuk, ʔˈim miʃkafˈajim ʔˈal hamˈetsaχ.</he>
+[noise-building] shmuel: מה קרה? הערתם אותי. המוזיקה זה לא אצלי , זה מהדירה ליד.
+    <he>mˈa kaʁˈa? heʔˈaʁtem ʔotˈi. hamˈuzika zˈe lˈo ʔetslˈi, zˈe mehadiʁˈa lejˈad.</he>
+[noise-building] narrator: המוזיקה נחלשת מעט. הדלת נפתחת ובחור בחולצה כתומה מציץ החוצה, מאחוריו אורחים ובלונים.
+    <he>hamˈuzika neχlˈeʃet meʔˈat. hadˈelet niftˈaχat vebaχˈuʁ beχultsˈa ktumˈa metsˈits haχˈutsa, meʔaχoʁˈav ʔoʁχˈim vubalonˈim.</he>
+[noise-building] ido: ערב טוב, כן, בטח. יש לי יום הולדת היום, חשבנו לסיים לפני חצות.
+    <he>ʔˈeʁev tˈov, kˈen, bˈetaχ. jˈeʃ lˈi jˈom hulˈedet hajˈom, χaʃˈavnu lesajˈem lifnˈej χatsˈot.</he>
+[noise-building] ido: תלונות? זאת הפעם הראשונה שאני מארח החודש! מי התלונן בכלל?
+    <he>tlunˈot? zˈot hapˈaʔam haʁiʃonˈa ʃeʔanˈi meʔaʁˈeaχ haχˈodeʃ! mˈi hitlonˈen biχlˈal?</he>
+[noise-building] ido: רינה? ברור. היא תמיד מתלוננת על כולם.
+    <he>ʁˈina? baʁˈuʁ. hˈi tamˈid mitlonˈenet ʔˈal kulˈam.</he>
+[noise-building] ido: לא חשבתי שזה עובר ככה. אפשר להבין.
+    <he>lˈo χaʃˈavti ʃezˈe ʔovˈeʁ kˈaχa. ʔefʃˈaʁ lehavˈin.</he>
+[noise-building] ido: ,אוקיי. מה אתה מציע?
+    <he>,ʔokˈej. mˈa ʔatˈa matsˈia?</he>
+[noise-building] ido: בערך חמישה עשר חברים. חשבנו לסיים לפני חצות.
+    <he>beʔˈeʁeχ χamiʃˈa ʔasˈaʁ χaveʁˈim. χaʃˈavnu lesajˈem lifnˈej χatsˈot.</he>
+[noise-building] narrator: מבעד לדלת רואים סלון עם אורחים, בלונים ורמקול גדול ליד החלון.
+    <he>mibˈaʔad ladˈelet ʁoʔˈim salˈon ʔˈim ʔoʁχˈim, balonˈim veʁamkˈol ɡadˈol lejˈad haχalˈon.</he>
+[noise-building] ido: סגור. אני מוריד עכשיו.
+    <he>saɡˈuʁ. ʔanˈi moʁˈid ʔaχʃˈav.</he>
+[noise-building] narrator: הבס נחלש בבת אחת.
+    <he>habˈas neχlˈaʃ bevˈat ʔaχˈat.</he>
+[noise-building] ido: טוב, מוריד. אבל אחרי שתלכו זה לא העסק שלכם.
+    <he>tˈov, moʁˈid. ʔavˈal ʔaχʁˈej ʃetelχˈu zˈe lˈo haʔˈesek ʃelaχˈem.</he>
+[noise-building] narrator: המוזיקה יורדת מעט.
+    <he>hamˈuzika joʁˈedet meʔˈat.</he>
+[noise-building] shmuel: מדירה 8. זה כבר יותר משעה. בדרך כלל הם בסדר, אבל היום זה חזק.
+    <he>midiʁˈa ʃmonˈe. zˈe kvˈaʁ jotˈeʁ miʃaʔˈa. bedˈeʁeχ klˈal hˈem besˈedeʁ, ʔavˈal hajˈom zˈe χazˈak.</he>
+[noise-building] shmuel: מדירה 7. זה כבר יותר משעה. בדרך כלל הם בסדר, אבל היום זה חזק.
+    <he>midiʁˈa ʃˈeva. zˈe kvˈaʁ jotˈeʁ miʃaʔˈa. bedˈeʁeχ klˈal hˈem besˈedeʁ, ʔavˈal hajˈom zˈe χazˈak.</he>
+[noise-building] shmuel: זה בסדר. רק שיהיה שקט.
+    <he>zˈe besˈedeʁ. ʁˈak ʃejihjˈe ʃˈeket.</he>
+[noise-building] player: הגעתי למקום.
+    <he>hiɡˈaʔti lamakˈom.</he>
+[noise-building] dispatch: קיבל. עדכן כשיש תמונת מצב.
+    <he>kibˈel. ʔidkˈen kʃejˈeʃ tmunˈat matsˈav.</he>
+[noise-building] player: שלילי, עדיין בטיפול באירוע. אעדכן כשאתפנה.
+    <he>ʃlilˈi, ʔadˈajin betipˈul baʔejʁˈua. ʔeʔadkˈen kʃeʔetpanˈe.</he>
+[noise-building] dispatch: קיבל, מעביר לניידת אחרת.
+    <he>kibˈel, maʔavˈiʁ lenajˈedet ʔaχˈeʁet.</he>
+[noise-building] player: חיובי, פנוי.
+    <he>χijuvˈi, panˈuj.</he>
+[noise-building] dispatch: רגע , סיימת שם? המעורבים עדיין במקום לפי הדיווח שלך. תשלים קודם ותעדכן.
+    <he>ʁˈeɡa, sijˈamta ʃˈam? hameʔoʁavˈim ʔadˈajin bamakˈom lefˈi hadivˈuaχ ʃelχˈa. taʃlˈim kˈodem veteʔadkˈen.</he>
+[noise-building] dispatch: התקבלה פנייה נוספת לפני כעשר דקות, מאותה כתובת, על אותו רעש.
+    <he>hitkablˈa pnijˈa nosˈefet lifnˈej keʔˈeseʁ dakˈot, meʔotˈa ktˈovet, ʔˈal ʔotˈo ʁˈaʔaʃ.</he>
+[noise-building] dispatch: אתה פנוי? יש אירוע נוסף באזור.
+    <he>ʔatˈa panˈuj? jˈeʃ ʔejʁˈua nosˈaf baʔezˈoʁ.</he>
+[noise-building] dispatch: אין ניידת פנויה כרגע. האם יש סכנה או אלימות במקום?
+    <he>ʔˈejn najˈedet pnujˈa kaʁˈeɡa. haʔˈim jˈeʃ sakanˈa ʔˈo ʔalimˈut bamakˈom?</he>
+[noise-building] center: אין ניידת פנויה כרגע. האם יש סכנה או אלימות במקום?
+    <he>ʔˈejn najˈedet pnujˈa kaʁˈeɡa. haʔˈim jˈeʃ sakanˈa ʔˈo ʔalimˈut bamakˈom?</he>
+[noise-building] duty: אין ניידת פנויה כרגע. האם יש סכנה או אלימות במקום?
+    <he>ʔˈejn najˈedet pnujˈa kaʁˈeɡa. haʔˈim jˈeʃ sakanˈa ʔˈo ʔalimˈut bamakˈom?</he>
+[noise-building] dispatch: קיבלתי, נעדכן אם תתקבל פנייה נוספת.
+    <he>kibˈalti, neʔadkˈen ʔˈim titkabˈel pnijˈa nosˈefet.</he>
+[noise-building] center: קיבלתי, נעדכן אם תתקבל פנייה נוספת.
+    <he>kibˈalti, neʔadkˈen ʔˈim titkabˈel pnijˈa nosˈefet.</he>
+[noise-building] duty: קיבלתי, נעדכן אם תתקבל פנייה נוספת.
+    <he>kibˈalti, neʔadkˈen ʔˈim titkabˈel pnijˈa nosˈefet.</he>
+[noise-building] dispatch: קיבלתי, רשמתי.
+    <he>kibˈalti, ʁaʃˈamti.</he>
+[noise-building] center: קיבלתי, רשמתי.
+    <he>kibˈalti, ʁaʃˈamti.</he>
+[noise-building] duty: קיבלתי, רשמתי.
+    <he>kibˈalti, ʁaʃˈamti.</he>
+[noise-building] player: נמצא ברחוב התאנה 9, קומה 2
+    <he>nimtsˈa beʁeχˈov hateʔenˈa tˈeʃa, komˈa ʃtˈajim</he>
+[noise-building] player: לפי התלונה הרעש מדירה 7 , טרם אומת
+    <he>lefˈi hatlunˈa haʁˈaʔaʃ midiʁˈa ʃˈeva, tˈeʁem ʔumˈat</he>
+[noise-building] player: מקור הרעש אומת: דירה 8
+    <he>mekˈoʁ haʁˈaʔaʃ ʔumˈat: diʁˈa ʃmonˈe</he>
+[noise-building] player: מקור הרעש אומת: דירה 7
+    <he>mekˈoʁ haʁˈaʔaʃ ʔumˈat: diʁˈa ʃˈeva</he>
+[noise-building] player: מסיבת יום הולדת עם כ15 אורחים
+    <he>mesibˈat jˈom hulˈedet ʔˈim keχamiʃˈa ʔasˈaʁ ʔoʁχˈim</he>
+[noise-building] player: אין צעקות או אלימות, האווירה רגועה
+    <he>ʔˈejn tsaʔakˈot ʔˈo ʔalimˈut, haʔaviʁˈa ʁeɡuʔˈa</he>
+[noise-building] player: המארח משתף פעולה
+    <he>hameʔaʁˈeaχ meʃatˈef peʔulˈa</he>
+[noise-building] player: המארח מתנגד ומתווכח
+    <he>hameʔaʁˈeaχ mitnaɡˈed vemitvakˈeaχ</he>
+[noise-building] player: המוזיקה הונמכה , נבדק בחדר המדרגות
+    <he>hamuzikˈa hunmeχˈa, nivdˈak beχadˈaʁ hamadʁeɡˈot</he>
+[noise-building] player: סוכם עם המארח לסיים את המוזיקה עד 23:30
+    <he>sukˈam ʔˈim hameʔaʁˈeaχ lesajˈem ʔˈet hamuzikˈa ʔˈad ʔaχˈat ʔesʁˈe vaχˈetsi balˈajla</he>
+[noise-building] player: עוצמת הרעש והשעה תועדו
+    <he>ʔotsmˈat haʁˈaʔaʃ vehaʃaʔˈa toʔadˈu</he>
+[noise-building] player: מקור הרעש עדיין בבירור
+    <he>makˈoʁ haʁˈaʔaʃ ʔadˈajin beveʁˈuʁ</he>
+[noise-building] player: טענת המדווחת לרעש חוזר בסופי שבוע , לא נבדקה
+    <he>taʔanˈat hamedavˈaχat leʁˈaʔaʃ χozˈeʁ besofˈej ʃavˈua, lˈo nivdekˈa</he>
+[noise-building] player: מבקש עדכון אם תתקבל פנייה נוספת מהכתובת
+    <he>mevakˈeʃ ʔidkˈun ʔˈim titkabˈel pnijˈa nosˈefet mehaktˈovet</he>
+[noise-building] player: לא נדרש סיוע נוסף
+    <he>lˈo nidʁˈaʃ sijˈua nosˈaf</he>
+[noise-building] player: מבקש ניידת נוספת למקום
+    <he>mevakˈeʃ najˈedet nosˈefet lamakˈom</he>
+[noise-building] player: המדווחת היא רינה מדירה 3 , אמרתי זאת למארח
+    <he>hamedavˈaχat hˈi ʁˈina midiʁˈa ʃalˈoʃ, ʔamˈaʁti zˈot lameʔaʁˈeaχ</he>
+[noise-building] center: נפתח אירוע חמש אחת אפס שמונה , דיווח על רעש בבניין מגורים, רחוב התאנה 9, קומה 2. מעביר אליך לטיפול.
+    <he>niftˈaχ ʔejʁˈua χamˈeʃ ʔaχˈat ʔˈefes ʃmonˈe, divˈuaχ ʔˈal ʁˈaʔaʃ bebinjˈan meɡuʁˈim, ʁeχˈov hateʔenˈa tˈeʃa, komˈa ʃtˈajim. maʔavˈiʁ ʔelˈeχa letipˈul.</he>
+[yard-dispute] dispatch: דיווח על ויכוח קולני בין שכנים בחצר משותפת ברחוב השקמה 4, בנוגע לרכוש משותף. אשר קבלה.
+    <he>divˈuaχ ʔˈal vikˈuaχ kolanˈi bˈen ʃχenˈim beχatsˈeʁ meʃutˈefet beʁeχˈov haʃikmˈa ʔˈaʁba, benoɡˈea leʁeχˈuʃ meʃutˈaf. ʔaʃˈeʁ kabalˈa.</he>
+[yard-dispute] narrator: בחצר עומדים גבר ואישה ליד המחסן המשותף ומדברים זה מעל זה. שני שכנים צופים מהצד ומוסיפים הערות, ועוד ראשים מציצים מהמרפסות. ליד השער עומדת אישה ומסמנת לך.
+    <he>baχatsˈeʁ ʔomdˈim ɡˈeveʁ veʔiʃˈa lejˈad hamaχsˈan hameʃutˈaf vemedabʁˈim zˈe meʔˈal zˈe. ʃnˈej ʃχenˈim tsofˈim mehatsˈad vemosifˈim heʔaʁˈot, veʔˈod ʁaʃˈim metsitsˈim mehamiʁpasˈot. lejˈad haʃˈaʔaʁ ʔomˈedet ʔiʃˈa vemesamˈenet lˈaχ.</he>
+[yard-dispute] michael: זה רכוש של הוועד! אני לא אתן לשבור פה מנעולים!
+    <he>zˈe ʁeχˈuʃ ʃˈel havˈaʔad! ʔanˈi lˈo ʔetˈen liʃbˈoʁ pˈo manʔulˈim!</he>
+[yard-dispute] ilana: העגלה של הבת שלי שם! אתה לא יכול לנעול לי את הדברים!
+    <he>haʔaɡalˈa ʃˈel habˈat ʃelˈi ʃˈam! ʔatˈa lˈo jaχˈol linʔˈol lˈi ʔˈet hadvaʁˈim!</he>
+[yard-dispute] player: קיבלתי את האירוע, יוצא.
+    <he>kibˈalti ʔˈet haʔejʁˈua, jotsˈe.</he>
+[yard-dispute] dispatch: קיבל.
+    <he>kibˈel.</he>
+[yard-dispute] player: קיבלתי.
+    <he>kibˈalti.</he>
+[yard-dispute] narrator: השדרה ריקה בשעת הלילה. הדרך הקצרה היא גם המהירה.
+    <he>haʃdeʁˈa ʁekˈa biʃʔˈat halˈajla. hadˈeʁeχ haktsaʁˈa hˈi ɡˈam hamehiʁˈa.</he>
+[yard-dispute] narrator: בשדרות הזית פקק של שעת בוקר. הניידת מתקדמת לאט בין הרכבים.
+    <he>bisdeʁˈot hazˈajit pkˈak ʃˈel ʃaʔˈat bˈokeʁ. hanajˈedet mitkadˈemet leʔˈat bˈen haʁeχavˈim.</he>
+[yard-dispute] narrator: השדרה עמוסה מעט בשעת הערב, אבל זורמת.
+    <he>haʃdeʁˈa ʔamusˈa meʔˈat biʃʔˈat haʔˈeʁev, ʔavˈal zoʁˈemet.</he>
+[yard-dispute] narrator: רחובות השכונה צרים ומפותלים. בשעה הזו השדרה הייתה פנויה , הדרך ארכה יותר.
+    <he>ʁeχovˈot haʃχunˈa tsaʁˈim umefutalˈim. baʃaʔˈa hazˈo haʃdeʁˈa hajtˈa pnujˈa, hadˈeʁeχ ʔaʁχˈa jotˈeʁ.</he>
+[yard-dispute] narrator: עוקפים את הפקק בשדרה דרך רחובות השכונה. ארוך יותר , אבל זורם.
+    <he>ʔokfˈim ʔˈet hapkˈak baʃdeʁˈa dˈeʁeχ ʁeχovˈot haʃχunˈa. ʔaʁˈoχ jotˈeʁ, ʔavˈal zoʁˈem.</he>
+[yard-dispute] player: מוקד, יש אלימות, פצועים או חפצים מסוכנים?
+    <he>mokˈed, jˈeʃ ʔalimˈut, ptsuˈiim ʔˈo χafatsˈim mesukanˈim?</he>
+[yard-dispute] dispatch: לא דווח על אלימות או על חפצים מסוכנים. צעקות בלבד.
+    <he>lˈo duvˈaχ ʔˈal ʔalimˈut ʔˈo ʔˈal χafatsˈim mesukanˈim. tseʔakˈot bilvˈad.</he>
+[yard-dispute] dispatch: לא דווח על, ... ,צעקות ב, ...
+    <he>lˈo duvˈaχ ʔˈal,...,tsaʔakot bˈa,...</he>
+[yard-dispute] player: מוקד, ההודעה נקטעה. חזור בבקשה.
+    <he>mokˈed, hahodaʔˈa nikteʔˈa. χazˈoʁ bevakaʃˈa.</he>
+[yard-dispute] dispatch: חוזר: לא דווח על אלימות או על חפצים מסוכנים. צעקות בלבד.
+    <he>χozˈeʁ: lˈo duvˈaχ ʔˈal ʔalimˈut ʔˈo ʔˈal χafatsˈim mesukanˈim. tseʔakˈot bilvˈad.</he>
+[yard-dispute] player: מי המדווחת? היא במקום?
+    <he>mˈi hamedavˈaχat? hˈi bamakˈom?</he>
+[yard-dispute] dispatch: שכנה מהבניין הסמוך. אמרה שהיא עומדת ליד השער של החצר.
+    <he>ʃχenˈa mehabinjˈan hasamˈuχ. ʔamʁˈa ʃehˈi ʔomˈedet lejˈad haʃˈaʔaʁ ʃˈel haχatsˈeʁ.</he>
+[yard-dispute] player: כמה אנשים מעורבים בוויכוח?
+    <he>kˈama ʔanaʃˈim meʔoʁavˈim bavikˈuaχ?</he>
+[yard-dispute] dispatch: שניים מתווכחים. המדווחת אמרה ששכנים נוספים התאספו מסביב.
+    <he>ʃnˈajim mitvakχˈim. hamedavˈaχat ʔamʁˈa ʃeʃχenˈim nosafˈim hitʔasfˈu misavˈiv.</he>
+[yard-dispute] narrator: השניים משתתקים לרגע. מיכאל משלב ידיים, אילנה נושמת עמוק.
+    <he>haʃnˈajim miʃtatkˈim leʁˈeɡa. miχaʔˈel meʃalˈev jadˈajim, ʔilˈana noʃˈemet ʔamˈok.</he>
+[yard-dispute] michael: היא ניסתה לשבור את המנעול! כולם ראו!
+    <he>hˈi nistˈa liʃbˈoʁ ʔˈet hamanʔˈul! kulˈam ʁaʔˈu!</he>
+[yard-dispute] ilana: אף אחד לא הודיע לי כלום! איך אני אמורה להוציא את העגלה?
+    <he>ʔˈaf ʔeχˈad lˈo hodˈia lˈi klˈum! ʔˈejχ ʔanˈi ʔamuʁˈa lehotsˈi ʔˈet haʔaɡalˈa?</he>
+[yard-dispute] narrator: אחד השכנים הסקרנים קורא נכון!, ושני הצדדים מרימים את הקול.
+    <he>ʔeχˈad haʃχenˈim hasakʁanˈim koʁˈe naχˈon!, veʃnˈej hatsdadˈim meʁimˈim ʔˈet hakˈol.</he>
+[yard-dispute] narrator: בלוח המודעות בכניסה לחצר תלויה הודעת ועד מלפני שלושה ימים על החלפת המנעול.
+    <he>belˈuaχ hamodaʔˈot baknisˈa laχatsˈeʁ tlujˈa hodaʔˈat vˈaʔad milifnˈej ʃloʃˈa jamˈim ʔˈal haχlafˈat hamanʔˈul.</he>
+[yard-dispute] narrator: בלוח המודעות בכניסה לחצר אין הודעה על החלפת המנעול.
+    <he>belˈuaχ hamodaʔˈot baknisˈa laχatsˈeʁ ʔˈejn hodaʔˈa ʔˈal haχlafˈat hamanʔˈul.</he>
+[yard-dispute] narrator: על הדלת מנעול תלייה חדש, בלי סימני שבירה. דרך החריץ רואים עגלת ילדים ושני זוגות אופניים.
+    <he>ʔˈal hadˈelet manʔˈul tlijˈa χadˈaʃ, blˈi simanˈej ʃviʁˈa. dˈeʁeχ haχaʁˈits ʁoʔˈim ʔaɡalˈat jeladˈim veʃnˈej zuɡˈot ʔofanˈajim.</he>
+[yard-dispute] narrator: רשמת: שעה, מיקום, מי נוכח, מצב דלת המחסן והמנעול, ומה כל צד אמר , בנפרד ממה שראית בעצמך.
+    <he>ʁaʃˈamta: ʃaʔˈa, mikˈum, mˈi noχˈeaχ, matsˈav dˈelet hamaχsˈan vehamanʔˈul, vemˈa kˈol tsˈad ʔamˈaʁ, benifʁˈad mimˈa ʃeʁaʔˈita beʔatsmeχˈa.</he>
+[yard-dispute] michael: ,בסדר. אני פותח.
+    <he>,besˈedeʁ. ʔanˈi potˈeaχ.</he>
+[yard-dispute] ilana: זה כל מה שביקשתי.
+    <he>zˈe kˈol mˈa ʃebikˈaʃti.</he>
+[yard-dispute] michael: אני לא פותח כלום בלחץ! זה רכוש של הוועד.
+    <he>ʔanˈi lˈo potˈeaχ klˈum belˈaχats! zˈe ʁeχˈuʃ ʃˈel havˈaʔad.</he>
+[yard-dispute] michael: טוב, טוב. אני פותח , אבל המפתח נשאר אצלי.
+    <he>tˈov, tˈov. ʔanˈi potˈeaχ, ʔavˈal hamaftˈeaχ niʃʔˈaʁ ʔetslˈi.</he>
+[yard-dispute] narrator: מיכאל פותח, ואילנה מוציאה את העגלה בלי להביט בו.
+    <he>miχaʔˈel potˈeaχ, veʔilˈana motsiʔˈa ʔˈet haʔaɡalˈa blˈi lehabˈit bˈo.</he>
+[yard-dispute] ilana: אני מוכנה, אם זה ייגמר.
+    <he>ʔanˈi muχanˈa, ʔˈim zˈe jiɡamˈeʁ.</he>
+[yard-dispute] narrator: השכנים מושכים בכתפיים ונכנסים לבניין. בלי קהל, הטון בחצר יורד.
+    <he>haʃχenˈim moʃχˈim bektefˈajim veniχnasˈim labinjˈan. blˈi kahˈal, hatˈon baχatsˈeʁ joʁˈed.</he>
+[yard-dispute] michael: אני בוועד הבית. לפני חודש נגנבו לי כלי עבודה מהמחסן , לכן החלפתי מנעול. פרסמתי הודעה על הלוח, תבדוק בעצמך.
+    <he>ʔanˈi bevˈaʔad habˈajit. lifnˈej χˈodeʃ niɡnevˈu lˈi klˈej ʔavodˈa mehamaχsˈan, laχˈen heχlˈafti manʔˈul. piʁsˈamti hodaʔˈa ʔˈal halˈuaχ, tivdˈok beʔatsmeχˈa.</he>
+[yard-dispute] michael: אני בוועד הבית. לפני חודש נגנבו לי כלי עבודה מהמחסן , לכן החלפתי מנעול. אמרתי לכולם שיבואו לקחת מפתח.
+    <he>ʔanˈi bevˈaʔad habˈajit. lifnˈej χˈodeʃ niɡnevˈu lˈi klˈej ʔavodˈa mehamaχsˈan, laχˈen heχlˈafti manʔˈul. ʔamˈaʁti lekulˈam ʃejavˈoʔu lakˈaχat maftˈeaχ.</he>
+[yard-dispute] michael: אני חבר ועד! החלפתי מנעול כדי לשמור על המחסן, והיא ניסתה לשבור אותו!
+    <he>ʔanˈi χavˈeʁ vˈaʔad! heχlˈafti manʔˈul kedˈej liʃmˈoʁ ʔˈal hamaχsˈan, vehˈi nistˈa liʃbˈoʁ ʔotˈo!</he>
+[yard-dispute] narrator: מיכאל מדבר אל השכנים שמסביב יותר מאשר אליך.
+    <he>miχaʔˈel medabˈeʁ ʔˈel haʃχenˈim ʃemisavˈiv jotˈeʁ meʔaʃˈeʁ ʔelˈeχa.</he>
+[yard-dispute] michael: לפני חודש נגנבו לי כלי עבודה מהמחסן. לכן מיהרתי להחליף. פרסמתי הודעה על הלוח, תבדוק בעצמך.
+    <he>lifnˈej χˈodeʃ niɡnevˈu lˈi klˈej ʔavodˈa mehamaχsˈan. laχˈen mihˈaʁti lehaχalˈif. piʁsˈamti hodaʔˈa ʔˈal halˈuaχ, tivdˈok beʔatsmeχˈa.</he>
+[yard-dispute] michael: לפני חודש נגנבו לי כלי עבודה מהמחסן. לכן מיהרתי להחליף. אמרתי לכולם שיבואו לקחת מפתח.
+    <he>lifnˈej χˈodeʃ niɡnevˈu lˈi klˈej ʔavodˈa mehamaχsˈan. laχˈen mihˈaʁti lehaχalˈif. ʔamˈaʁti lekulˈam ʃejavˈoʔu lakˈaχat maftˈeaχ.</he>
+[yard-dispute] michael: האמת, היא ביקשה אתמול, ואמרתי לה אחר כך. לא הספקתי.
+    <he>haʔemˈet, hˈi bikʃˈa ʔetmˈol, veʔamˈaʁti lˈa ʔaχˈaʁ kˈaχ. lˈo hispˈakti.</he>
+[yard-dispute] michael: זה לא העניין עכשיו.
+    <he>zˈe lˈo haʔinjˈan ʔaχʃˈav.</he>
+[yard-dispute] michael: אני בסדר. אף אחד לא נגע בי. אני פשוט עצבני.
+    <he>ʔanˈi besˈedeʁ. ʔˈaf ʔeχˈad lˈo naɡˈa bˈi. ʔanˈi paʃˈut ʔatsbanˈi.</he>
+[yard-dispute] michael: היא אומרת? אז היא משקרת. אין לי מה להוסיף.
+    <he>hˈi ʔomˈeʁet? ʔˈaz hˈi meʃakˈeʁet. ʔˈejn lˈi mˈa lehosˈif.</he>
+[yard-dispute] michael: אז עכשיו אתה גם שופט? אני חבר ועד!
+    <he>ʔˈaz ʔaχʃˈav ʔatˈa ɡˈam ʃofˈet? ʔanˈi χavˈeʁ vˈaʔad!</he>
+[yard-dispute] narrator: אילנה מחייכת בניצחון לעבר המרפסות.
+    <he>ʔilˈana meχajˈeχet benitsaχˈon leʔˈeveʁ hamiʁpasˈot.</he>
+[yard-dispute] ilana: העגלה והאופניים שלנו שם, ואני צריכה אותם לגן. אף אחד לא אמר לי שמחליפים מנעול.
+    <he>haʔaɡalˈa vehaʔofanˈajim ʃelˈanu ʃˈam, veʔanˈi tsʁiχˈa ʔotˈam laɡˈan. ʔˈaf ʔeχˈad lˈo ʔamˈaʁ lˈi ʃemaχalifˈim manʔˈul.</he>
+[yard-dispute] ilana: ביקשתי ממנו מפתח אתמול, הוא אמר אחר כך. היום משכתי במנעול מרוב כעס , אבל לא שברתי כלום.
+    <he>bikˈaʃti mimˈenu maftˈeaχ ʔetmˈol, hˈu ʔamˈaʁ ʔaχˈaʁ kˈaχ. hajˈom maʃˈaχti bemanʔˈul meʁˈov kˈaʔas, ʔavˈal lˈo ʃavˈaʁti klˈum.</he>
+[yard-dispute] ilana: העגלה של הבת שלי שם, ואף אחד לא הודיע לי כלום! מה, אני צריכה לבקש רשות?
+    <he>haʔaɡalˈa ʃˈel habˈat ʃelˈi ʃˈam, veʔˈaf ʔeχˈad lˈo hodˈia lˈi klˈum! mˈa, ʔanˈi tsʁiχˈa levakˈeʃ ʁeʃˈut?</he>
+[yard-dispute] ilana: לא, אף אחד לא נגע בי. אני פשוט מתוסכלת.
+    <he>lˈo, ʔˈaf ʔeχˈad lˈo naɡˈa bˈi. ʔanˈi paʃˈut metuskˈelet.</he>
+[yard-dispute] ilana: אז הוא כבר סיפר לך את הגרסה שלו. יופי. אין לי מה להגיד.
+    <he>ʔˈaz hˈu kvˈaʁ sipˈeʁ leχˈa ʔˈet haɡiʁsˈa ʃelˈo. jˈofi. ʔˈejn lˈi mˈa lehaɡˈid.</he>
+[yard-dispute] ilana: אז אתה בצד שלו. ברור.
+    <he>ʔˈaz ʔatˈa batsˈad ʃelˈo. baʁˈuʁ.</he>
+[yard-dispute] narrator: מיכאל מהנהן בסיפוק.
+    <he>miχaʔˈel mehanhˈen besipˈuk.</he>
+[yard-dispute] tamar: ראיתי מהמרפסת. הצעקות התחילו כשאילנה משכה במנעול. אף אחד לא נגע באף אחד.
+    <he>ʁaʔˈiti mehamiʁpˈeset. hatseʔakˈot hitχˈilu kʃeʔilˈana maʃχˈa bamanʔˈul. ʔˈaf ʔeχˈad lˈo naɡˈa beʔˈaf ʔeχˈad.</he>
+[yard-dispute] tamar: ואז השכנים התחילו להתאסף ולהגיד כל מיני דברים, וזה רק החמיר.
+    <he>veʔˈaz haʃχenˈim hitχˈilu lehitʔasˈef velehaɡˈid kˈol minˈej dvaʁˈim, vezˈe ʁˈak hiχmˈiʁ.</he>
+[yard-dispute] tamar: תמר שלום, מהבניין ממול. אין בעיה.
+    <he>tamˈaʁ ʃalˈom, mehabinjˈan mimˈul. ʔˈejn beʔajˈa.</he>
+[yard-dispute] player: הגעתי למקום.
+    <he>hiɡˈaʔti lamakˈom.</he>
+[yard-dispute] dispatch: קיבל. עדכן כשיש תמונת מצב.
+    <he>kibˈel. ʔidkˈen kʃejˈeʃ tmunˈat matsˈav.</he>
+[yard-dispute] player: שלילי, עדיין בטיפול באירוע. אעדכן כשאתפנה.
+    <he>ʃlilˈi, ʔadˈajin betipˈul baʔejʁˈua. ʔeʔadkˈen kʃeʔetpanˈe.</he>
+[yard-dispute] dispatch: קיבל, מעביר לניידת אחרת.
+    <he>kibˈel, maʔavˈiʁ lenajˈedet ʔaχˈeʁet.</he>
+[yard-dispute] player: חיובי, פנוי.
+    <he>χijuvˈi, panˈuj.</he>
+[yard-dispute] dispatch: רגע , סיימת שם? המעורבים עדיין במקום לפי הדיווח שלך. תשלים קודם ותעדכן.
+    <he>ʁˈeɡa, sijˈamta ʃˈam? hameʔoʁavˈim ʔadˈajin bamakˈom lefˈi hadivˈuaχ ʃelχˈa. taʃlˈim kˈodem veteʔadkˈen.</he>
+[yard-dispute] dispatch: לפני כחודש התקבל דיווח על גניבת כלי עבודה מהמחסן המשותף בכתובת.
+    <he>lifnˈej keχˈodeʃ hitkabˈel divˈuaχ ʔˈal ɡnevˈat klˈej ʔavodˈa mehamaχsˈan hameʃutˈaf baktˈovet.</he>
+[yard-dispute] dispatch: אתה פנוי? יש אירוע נוסף באזור.
+    <he>ʔatˈa panˈuj? jˈeʃ ʔejʁˈua nosˈaf baʔezˈoʁ.</he>
+[yard-dispute] dispatch: אין ניידת פנויה כרגע. האם יש אלימות או סכנה?
+    <he>ʔˈejn najˈedet pnujˈa kaʁˈeɡa. haʔˈim jˈeʃ ʔalimˈut ʔˈo sakanˈa?</he>
+[yard-dispute] center: אין ניידת פנויה כרגע. האם יש אלימות או סכנה?
+    <he>ʔˈejn najˈedet pnujˈa kaʁˈeɡa. haʔˈim jˈeʃ ʔalimˈut ʔˈo sakanˈa?</he>
+[yard-dispute] duty: אין ניידת פנויה כרגע. האם יש אלימות או סכנה?
+    <he>ʔˈejn najˈedet pnujˈa kaʁˈeɡa. haʔˈim jˈeʃ ʔalimˈut ʔˈo sakanˈa?</he>
+[yard-dispute] dispatch: רשמתי.
+    <he>ʁaʃˈamti.</he>
+[yard-dispute] center: רשמתי.
+    <he>ʁaʃˈamti.</he>
+[yard-dispute] duty: רשמתי.
+    <he>ʁaʃˈamti.</he>
+[yard-dispute] dispatch: קיבלתי, רשמתי.
+    <he>kibˈalti, ʁaʃˈamti.</he>
+[yard-dispute] center: קיבלתי, רשמתי.
+    <he>kibˈalti, ʁaʃˈamti.</he>
+[yard-dispute] duty: קיבלתי, רשמתי.
+    <he>kibˈalti, ʁaʃˈamti.</he>
+[yard-dispute] player: נמצא בחצר המשותפת ברחוב השקמה 4
+    <he>nimtsˈa baχatsˈeʁ hameʃutˈefet beʁeχˈov haʃikmˈa ʔˈaʁba</he>
+[yard-dispute] player: ויכוח בין שני שכנים על מחסן משותף שננעל
+    <he>vikˈuaχ bˈen ʃnˈej ʃχenˈim ʔˈal maχsˈan meʃutˈaf ʃeninʔˈal</he>
+[yard-dispute] player: יש קהל סביב הוויכוח
+    <he>jˈeʃ kahˈal svˈiv havikˈuaχ</he>
+[yard-dispute] player: הקהל התפזר והטון נרגע
+    <he>hakahˈal hitpazˈeʁ vehatˈon niʁɡˈa</he>
+[yard-dispute] player: אין אלימות ואין נפגעים
+    <he>ʔˈejn ʔalimˈut veʔˈejn nifɡaʔˈim</he>
+[yard-dispute] player: מצב המעורבים בבירור
+    <he>matsˈav hameʔoʁavˈim beveʁˈuʁ</he>
+[yard-dispute] player: נגבו גרסאות נפרדות , יש סתירה לגבי ההודעה על החלפת המנעול
+    <he>niɡvˈu ɡiʁsaʔˈot nifʁadˈot, jˈeʃ stiʁˈa leɡabˈej hahodaʔˈa ʔˈal haχlafˈat hamanʔˈul</he>
+[yard-dispute] player: נבדק לוח המודעות: תלויה הודעת ועד מלפני שלושה ימים על החלפת המנעול
+    <he>nivdˈak lˈuaχ hamodaʔˈot: tlujˈa hodaʔˈat vˈaʔad milifnˈej ʃloʃˈa jamˈim ʔˈal haχlafˈat hamanʔˈul</he>
+[yard-dispute] player: נבדק לוח המודעות: אין הודעה על החלפת המנעול
+    <he>nivdˈak lˈuaχ hamodaʔˈot: ʔˈejn hodaʔˈa ʔˈal haχlafˈat hamanʔˈul</he>
+[yard-dispute] player: המחסן נפתח וחפצי השכנה הוצאו
+    <he>hamaχsˈan niftˈaχ veχeftsˈej haʃχenˈa hutsʔˈu</he>
+[yard-dispute] player: חלוקת המפתחות טרם הוסדרה , הופנתה לוועד הבית
+    <he>χalukˈat hamafteχˈot tˈeʁem husdeʁˈa, hufnetˈa levˈaʔad habˈajit</he>
+[yard-dispute] player: טרם נשמעו כל הגרסאות
+    <he>tˈeʁem niʃmeʔˈu kˈol haɡiʁsaʔˈot</he>
+[yard-dispute] player: לא נדרש סיוע נוסף
+    <he>lˈo nidʁˈaʃ sijˈua nosˈaf</he>
+[yard-dispute] player: מבקש ניידת נוספת לחצר
+    <he>mevakˈeʃ najˈedet nosˈefet laχatsˈeʁ</he>
+[yard-dispute] player: מיכאל נעל רכוש משותף שלא כדין
+    <he>miχaʔˈel naʔˈal ʁeχˈuʃ meʃutˈaf ʃelˈo kadˈin</he>
+[yard-dispute] center: נפתח אירוע שש שתיים שלוש אפס , ויכוח בין שכנים בחצר משותפת, חצר משותפת, רחוב השקמה 4. מעביר אליך לטיפול.
+    <he>niftˈaχ ʔejʁˈua ʃˈeʃ ʃtˈajim ʃalˈoʃ ʔˈefes, vikˈuaχ bˈen ʃχenˈim beχatsˈeʁ meʃutˈefet, χatsˈeʁ meʃutˈefet, ʁeχˈov haʃikmˈa ʔˈaʁba. maʔavˈiʁ ʔelˈeχa letipˈul.</he>
+[missing-elder] dispatch: דיווח על נעדר: אברהם כהן, בן 82, יצא לטיול מביתו ברחוב הדקל 4 לפני כשעתיים ולא חזר. הבת, אורית, מחכה בכניסה לגן הברוש. אשר קבלה.
+    <he>divˈuaχ ʔˈal neʔedˈaʁ: ʔavʁahˈam kohˈen, bˈen ʃmonˈim veʃtˈajim, jatsˈa letijˈul mibetˈo beʁeχˈov hadˈekel ʔˈaʁba lifnˈej keʃaʔatˈajim velˈo χazˈaʁ. habˈat, ʔoʁˈit, meχakˈa baknisˈa leɡˈan habʁˈoʃ. ʔaʃˈeʁ kabalˈa.</he>
+[missing-elder] narrator: כניסה לגן הברוש. אורית ממתינה ליד השער, הטלפון ביד. הגן שקט: שבילים מוארים, מגרש משחקים ריק, וקיוסק קטן בקצה. יוסי, בעל הקיוסק, סוגר את התריס.
+    <he>knisˈa leɡˈan habʁˈoʃ. ʔoʁˈit mamtinˈa lejˈad haʃˈaʔaʁ, hatˈelefon bajˈad. haɡˈan ʃakˈet: ʃvilˈim muʔaʁˈim, miɡʁˈaʃ misχakˈim ʁˈek, vekijˈosk katˈan bakatsˈe. jˈosi, bˈaʔal hakijˈosk, soɡˈeʁ ʔˈet hatʁˈis.</he>
+[missing-elder] player: קיבלתי את האירוע, יוצא.
+    <he>kibˈalti ʔˈet haʔejʁˈua, jotsˈe.</he>
+[missing-elder] dispatch: קיבל.
+    <he>kibˈel.</he>
+[missing-elder] player: קיבלתי.
+    <he>kibˈalti.</he>
+[missing-elder] narrator: השדרה ריקה בשעת הלילה. הדרך הקצרה היא גם המהירה.
+    <he>haʃdeʁˈa ʁekˈa biʃʔˈat halˈajla. hadˈeʁeχ haktsaʁˈa hˈi ɡˈam hamehiʁˈa.</he>
+[missing-elder] narrator: בשדרות הזית פקק של שעת בוקר. הניידת מתקדמת לאט בין הרכבים.
+    <he>bisdeʁˈot hazˈajit pkˈak ʃˈel ʃaʔˈat bˈokeʁ. hanajˈedet mitkadˈemet leʔˈat bˈen haʁeχavˈim.</he>
+[missing-elder] narrator: השדרה עמוסה מעט בשעת הערב, אבל זורמת.
+    <he>haʃdeʁˈa ʔamusˈa meʔˈat biʃʔˈat haʔˈeʁev, ʔavˈal zoʁˈemet.</he>
+[missing-elder] narrator: רחובות השכונה צרים ומפותלים. בשעה הזו השדרה הייתה פנויה , הדרך ארכה יותר.
+    <he>ʁeχovˈot haʃχunˈa tsaʁˈim umefutalˈim. baʃaʔˈa hazˈo haʃdeʁˈa hajtˈa pnujˈa, hadˈeʁeχ ʔaʁχˈa jotˈeʁ.</he>
+[missing-elder] narrator: עוקפים את הפקק בשדרה דרך רחובות השכונה. ארוך יותר , אבל זורם.
+    <he>ʔokfˈim ʔˈet hapkˈak baʃdeʁˈa dˈeʁeχ ʁeχovˈot haʃχunˈa. ʔaʁˈoχ jotˈeʁ, ʔavˈal zoʁˈem.</he>
+[missing-elder] player: מוקד, יש תיאור? לבוש, מראה, משהו שבולט?
+    <he>mokˈed, jˈeʃ teʔˈuʁ? levˈuʃ, maʁʔˈe, mˈaʃu ʃebolˈet?</he>
+[missing-elder] dispatch: קרדיגן חום, כובע מצחייה אפור, משקפיים. הולך עם מקל הליכה.
+    <he>kaʁdiɡˈen χˈum, kˈova mitsχijˈa ʔafˈoʁ, miʃkafˈajim. holˈeχ ʔˈim makˈel haliχˈa.</he>
+[missing-elder] player: יש רקע רפואי? תרופות, בעיות זיכרון?
+    <he>jˈeʃ ʁˈeka ʁefuʔˈi? tʁufˈot, beʔajˈot zikaʁˈon?</he>
+[missing-elder] dispatch: לפי הבת: סוכרת ותחילת בלבול. הוא לא נטל את זריקת הערב.
+    <he>lefˈi habˈat: sukˈeʁet vetχilˈat bilbˈul. hˈu lˈo natˈal ʔˈet zʁikˈat haʔˈeʁev.</he>
+[missing-elder] player: יש לו טלפון? ניסו להתקשר?
+    <he>jˈeʃ lˈo tˈelefon? nisˈu lehitkaʃˈeʁ?</he>
+[missing-elder] dispatch: הטלפון שלו נשאר בבית. אין דרך ליצור איתו קשר.
+    <he>hatˈelefon ʃelˈo niʃʔˈaʁ babˈajit. ʔˈejn dˈeʁeχ litsˈoʁ ʔitˈo kˈeʃeʁ.</he>
+[missing-elder] orit: לפני שעתיים בערך. קרדיגן חום וכובע אפור, עם המקל. הוא תמיד הולך לקיוסק של יוסי ויושב על ספסל ליד מגרש המשחקים.
+    <he>lifnˈej ʃaʔatˈajim beʔˈeʁeχ. kaʁdiɡˈen χˈum vekˈova ʔafˈoʁ, ʔˈim hamakˈel. hˈu tamˈid holˈeχ lakijˈosk ʃˈel jˈosi vejoʃˈev ʔˈal safsˈal lejˈad miɡʁˈaʃ hamisχakˈim.</he>
+[missing-elder] orit: אתה חושב שאני לא מאשימה את עצמי מספיק? באתי לבקש עזרה, לא נזיפה.
+    <he>ʔatˈa χoʃˈev ʃeʔanˈi lˈo maʔaʃimˈa ʔˈet ʔatsmˈi maspˈik? bˈati levakˈeʃ ʔezʁˈa, lˈo nezifˈa.</he>
+[missing-elder] orit: ,בסדר. מה אתה צריך ממני?
+    <he>,besˈedeʁ. mˈa ʔatˈa tsaʁˈiχ mimˈeni?</he>
+[missing-elder] orit: בסדר. אחי בבית, אני אומרת לו להתקשר אם הוא מגיע.
+    <he>besˈedeʁ. ʔaχˈi babˈajit, ʔanˈi ʔomˈeʁet lˈo lehitkaʃˈeʁ ʔˈim hˈu maɡˈia.</he>
+[missing-elder] orit: אבא! הבהלת אותנו.
+    <he>ʔˈaba! hivhˈalta ʔotˈanu.</he>
+[missing-elder] avraham: אוריתי, הלכתי לקנות מים, ואז לא זכרתי מאיזה צד הבית.
+    <he>ʔoʁˈiti, halˈaχti liknˈot mˈajim, veʔˈaz lˈo zaχˈaʁti meʔˈejze tsˈad habˈajit.</he>
+[missing-elder] yossi: אדם מבוגר עם מקל? עוברים פה הרבה כאלה בערב, איך הוא נראה?
+    <he>ʔadˈam mevuɡˈaʁ ʔˈim makˈel? ʔovʁˈim pˈo haʁbˈe kaʔˈele baʔˈeʁev, ʔˈejχ hˈu niʁʔˈa?</he>
+[missing-elder] yossi: עם קרדיגן חום וכובע אפור? הוא פה! ישב לי על הארגזים מאחורה, נראה מבולבל, אז הושבתי אותו ונתתי לו מים.
+    <he>ʔˈim kaʁdiɡˈen χˈum vekˈova ʔafˈoʁ? hˈu pˈo! jaʃˈav lˈi ʔˈal haʔaʁɡazˈim meʔaχˈoʁa, niʁʔˈa mevulbˈal, ʔˈaz hoʃˈavti ʔotˈo venatˈati lˈo mˈajim.</he>
+[missing-elder] yossi: קרדיגן חום וכובע אפור? כן, לפני שעה בערך הוא קנה ממני מים והלך לכיוון מגרש המשחקים.
+    <he>kaʁdiɡˈen χˈum vekˈova ʔafˈoʁ? kˈen, lifnˈej ʃaʔˈa beʔˈeʁeχ hˈu kanˈa mimˈeni mˈajim vehalˈaχ lekivˈun miɡʁˈaʃ hamisχakˈim.</he>
+[missing-elder] yossi: אה, הוא! קנה ממני מים לפני שעה והלך לכיוון מגרש המשחקים.
+    <he>ʔˈa, hˈu! kanˈa mimˈeni mˈajim lifnˈej ʃaʔˈa vehalˈaχ lekivˈun miɡʁˈaʃ hamisχakˈim.</he>
+[missing-elder] yossi: רגע, זה האיש שיושב לי פה מאחורה! הושבתי אותו כי הוא נראה מבולבל.
+    <he>ʁˈeɡa, zˈe haʔˈiʃ ʃejoʃˈev lˈi pˈo meʔaχˈoʁa! hoʃˈavti ʔotˈo kˈi hˈu niʁʔˈa mevulbˈal.</he>
+[missing-elder] yossi: בטח. אני מכיר את אברהם מהשכונה, אני אשים לב.
+    <he>bˈetaχ. ʔanˈi makˈiʁ ʔˈet ʔavʁahˈam mehaʃχunˈa, ʔanˈi ʔasˈim lˈev.</he>
+[missing-elder] narrator: סרקת את מגרש המשחקים, את הספסלים ואת השיחים לאורך הגדר. אין איש שתואם לתיאור. אולי מישהו בגן ראה אותו?
+    <he>saʁˈakta ʔˈet miɡʁˈaʃ hamisχakˈim, ʔˈet hasafsalˈim veʔˈet hasiχˈim leʔˈoʁeχ haɡadˈeʁ. ʔˈejn ʔˈiʃ ʃetoʔˈem lateʔˈuʁ. ʔulˈaj mˈiʃu baɡˈan ʁaʔˈa ʔotˈo?</he>
+[missing-elder] narrator: הלכת לאורך השביל ובדקת כל ספסל. בפינת הגן, ליד המגלשה, יושב אדם מבוגר בכובע אפור, מקל מונח לצדו. הוא מביט סביבו בבלבול.
+    <he>halˈaχta leʔˈoʁeχ haʃvˈil vebadˈakta kˈol safsˈal. bepinˈat haɡˈan, lejˈad hamaɡleʃˈa, joʃˈev ʔadˈam mevuɡˈaʁ bekˈova ʔafˈoʁ, makˈel munˈaχ letsidˈo. hˈu mabˈit svivˈo bebilbˈul.</he>
+[missing-elder] narrator: קראת בקול ורצת בין השבילים. כמה חלונות נפתחו בבניינים, אבל איש לא ענה.
+    <he>kaʁˈata bekˈol veʁˈatsta bˈen haʃvilˈim. kˈama χalonˈot niftχˈu babinjanˈim, ʔavˈal ʔˈiʃ lˈo ʔanˈa.</he>
+[missing-elder] narrator: קראת בקול ורצת בין השבילים. בפינת הגן אדם מבוגר מתכווץ על הספסל ונבהל מהצעקות.
+    <he>kaʁˈata bekˈol veʁˈatsta bˈen haʃvilˈim. bepinˈat haɡˈan ʔadˈam mevuɡˈaʁ mitkavˈets ʔˈal hasafsˈal venivhˈal mehatsaʔakˈot.</he>
+[missing-elder] narrator: תיעדת: האב נמצא בספסל בפינת הגן ליד המגלשה, מצבו כפי שנצפה, ומי היה איתו ברגע המציאה.
+    <he>tiʔˈadta: haʔˈav nimtsˈa basafsˈal bepinˈat haɡˈan lejˈad hamaɡleʃˈa, matsavˈo kfˈi ʃenitspˈa, vemˈi hajˈa ʔitˈo beʁˈeɡa hametsiʔˈa.</he>
+[missing-elder] narrator: תיעדת: האב נמצא בליד הקיוסק, אצל יוסי, מצבו כפי שנצפה, ומי היה איתו ברגע המציאה.
+    <he>tiʔˈadta: haʔˈav nimtsˈa belijˈad hakijˈosk, ʔetsˈel jˈosi, matsavˈo kfˈi ʃenitspˈa, vemˈi hajˈa ʔitˈo beʁˈeɡa hametsiʔˈa.</he>
+[missing-elder] avraham: אברהם, אברהם כהן. אני גר פה, ברחוב הדקל. רק שכחתי לאיזה כיוון.
+    <he>ʔavʁahˈam, ʔavʁahˈam kohˈen. ʔanˈi ɡˈaʁ pˈo, beʁeχˈov hadˈekel. ʁˈak ʃaχˈaχti leʔˈejze kivˈun.</he>
+[missing-elder] avraham: מי אתה? עזוב אותי! אני לא הולך עם אנשים שאני לא מכיר!
+    <he>mˈi ʔatˈa? ʔazˈov ʔotˈi! ʔanˈi lˈo holˈeχ ʔˈim ʔanaʃˈim ʃeʔanˈi lˈo makˈiʁ!</he>
+[missing-elder] avraham: ,אברהם כהן. מרחוב הדקל.
+    <he>,ʔavʁahˈam kohˈen. miʁeχˈov hadˈekel.</he>
+[missing-elder] avraham: לא, קצת חלש לי. הידיים רועדות.
+    <he>lˈo, ktsˈat χalˈaʃ lˈi. hajadˈajim ʁoʔadˈot.</he>
+[missing-elder] narrator: מצחו מכוסה זיעה למרות הקרירות, והוא מתקשה למקד מבט.
+    <he>mitsχˈo meχusˈe zeʔˈa lamʁˈot hakʁiʁˈut, vehˈu mitkaʃˈe lemakˈed mabˈat.</he>
+[missing-elder] player: הגעתי למקום.
+    <he>hiɡˈaʔti lamakˈom.</he>
+[missing-elder] dispatch: קיבל. עדכן כשיש תמונת מצב.
+    <he>kibˈel. ʔidkˈen kʃejˈeʃ tmunˈat matsˈav.</he>
+[missing-elder] player: שלילי, עדיין בטיפול באירוע. אעדכן כשאתפנה.
+    <he>ʃlilˈi, ʔadˈajin betipˈul baʔejʁˈua. ʔeʔadkˈen kʃeʔetpanˈe.</he>
+[missing-elder] dispatch: קיבל, מעביר לניידת אחרת.
+    <he>kibˈel, maʔavˈiʁ lenajˈedet ʔaχˈeʁet.</he>
+[missing-elder] player: חיובי, פנוי.
+    <he>χijuvˈi, panˈuj.</he>
+[missing-elder] dispatch: רגע , סיימת שם? המעורבים עדיין במקום לפי הדיווח שלך. תשלים קודם ותעדכן.
+    <he>ʁˈeɡa, sijˈamta ʃˈam? hameʔoʁavˈim ʔadˈajin bamakˈom lefˈi hadivˈuaχ ʃelχˈa. taʃlˈim kˈodem veteʔadkˈen.</he>
+[missing-elder] dispatch: בדקנו עם הבן בבית , הוא לא חזר.
+    <he>badˈaknu ʔˈim habˈen babˈajit, hˈu lˈo χazˈaʁ.</he>
+[missing-elder] orit: אחי התקשר , אבא לא אכל ארוחת ערב, והזריקה שלו עדיין על השולחן. הוא בלי אינסולין כבר שעות!
+    <he>ʔaχˈi hitkaʃˈeʁ, ʔˈaba lˈo ʔaχˈal ʔaʁuχˈat ʔˈeʁev, vehazʁikˈa ʃelˈo ʔadˈajin ʔˈal haʃulχˈan. hˈu blˈi ʔinsulˈin kvˈaʁ ʃaʔˈot!</he>
+[missing-elder] dispatch: אתה פנוי? יש אירוע נוסף באזור.
+    <he>ʔatˈa panˈuj? jˈeʃ ʔejʁˈua nosˈaf baʔezˈoʁ.</he>
+[missing-elder] dispatch: התיאור הופץ לכל הניידות באזור.
+    <he>hateʔˈuʁ hufˈats lekˈol hanajadˈot baʔezˈoʁ.</he>
+[missing-elder] center: התיאור הופץ לכל הניידות באזור.
+    <he>hateʔˈuʁ hufˈats lekˈol hanajadˈot baʔezˈoʁ.</he>
+[missing-elder] duty: התיאור הופץ לכל הניידות באזור.
+    <he>hateʔˈuʁ hufˈats lekˈol hanajadˈot baʔezˈoʁ.</he>
+[missing-elder] dispatch: צוות מד״א בדרך אליכם, כשמונה דקות.
+    <he>tsˈevet madˈa badˈeʁeχ ʔaleχˈem, keʃmˈone dakˈot.</he>
+[missing-elder] center: צוות מד״א בדרך אליכם, כשמונה דקות.
+    <he>tsˈevet madˈa badˈeʁeχ ʔaleχˈem, keʃmˈone dakˈot.</he>
+[missing-elder] duty: צוות מד״א בדרך אליכם, כשמונה דקות.
+    <he>tsˈevet madˈa badˈeʁeχ ʔaleχˈem, keʃmˈone dakˈot.</he>
+[missing-elder] dispatch: קיבלתי, מבטל את החיפוש בשאר הניידות.
+    <he>kibˈalti, mevatˈel ʔˈet haχipˈus biʃʔˈaʁ hanajadˈot.</he>
+[missing-elder] center: קיבלתי, מבטל את החיפוש בשאר הניידות.
+    <he>kibˈalti, mevatˈel ʔˈet haχipˈus biʃʔˈaʁ hanajadˈot.</he>
+[missing-elder] duty: קיבלתי, מבטל את החיפוש בשאר הניידות.
+    <he>kibˈalti, mevatˈel ʔˈet haχipˈus biʃʔˈaʁ hanajadˈot.</he>
+[missing-elder] dispatch: קיבלתי, רשמתי.
+    <he>kibˈalti, ʁaʃˈamti.</he>
+[missing-elder] center: קיבלתי, רשמתי.
+    <he>kibˈalti, ʁaʃˈamti.</he>
+[missing-elder] duty: קיבלתי, רשמתי.
+    <he>kibˈalti, ʁaʃˈamti.</he>
+[missing-elder] player: נמצא בגן הברוש, רחוב הדקל
+    <he>nimtsˈa beɡˈan habʁˈuʃ, ʁeχˈov hadˈekel</he>
+[missing-elder] player: נעדר: אברהם כהן, 82, קרדיגן חום, כובע אפור, מקל הליכה
+    <he>neʔedˈaʁ: ʔavʁahˈam kohˈen, ʃmonˈim veʃtˈajim, kaʁdiɡˈen χˈum, kˈova ʔafˈoʁ, makˈel haliχˈa</he>
+[missing-elder] player: רקע רפואי: סוכרת ובלבול, לא קיבל אינסולין
+    <he>ʁˈeka ʁefuʔˈi: sukˈeʁet vebilbˈul, lˈo kibˈel ʔinsulˈin</he>
+[missing-elder] player: מבצע חיפוש בגן ובסביבתו
+    <he>mivtsˈa χipˈus baɡˈan uvesvivatˈo</he>
+[missing-elder] player: נראה לפני כשעה ליד הקיוסק
+    <he>niʁʔˈa lifnˈej keʃaʔˈa lejˈad hakijˈosk</he>
+[missing-elder] player: מבקש להפיץ את התיאור לכל הניידות באזור
+    <he>mevakˈeʃ lehafˈits ʔˈet hateʔˈuʁ lekˈol hanajadˈot baʔezˈoʁ</he>
+[missing-elder] player: הנעדר נמצא בספסל בפינת הגן ליד המגלשה וזהותו אומתה
+    <he>haneʔedˈaʁ nimtsˈa basafsˈal bepinˈat haɡˈan lejˈad hamaɡleʃˈa vezehutˈo ʔumatˈa</he>
+[missing-elder] player: הנעדר נמצא בליד הקיוסק, אצל יוסי וזהותו אומתה
+    <he>haneʔedˈaʁ nimtsˈa belijˈad hakijˈosk, ʔetsˈel jˈosi vezehutˈo ʔumatˈa</he>
+[missing-elder] player: נמצא אדם שתואם לתיאור , זהות טרם אומתה
+    <he>nimtsˈa ʔadˈam ʃetoʔˈem lateʔˈuʁ, zehˈut tˈeʁem ʔumtˈa</he>
+[missing-elder] player: רועד, מזיע ומבולבל , חשש לירידת סוכר
+    <he>ʁoʔˈed, mezˈia vemevulbˈal, χaʃˈaʃ lijeʁidˈat sukˈaʁ</he>
+[missing-elder] player: מבקש צוות מד״א למקום
+    <he>mevakˈeʃ tsˈevet midˈa lamakˈom</he>
+[missing-elder] player: הנעדר הושב לבתו
+    <he>haneʔedˈaʁ huʃˈav lebitˈo</he>
+[missing-elder] player: ניתן לבטל את החיפוש בשאר הניידות
+    <he>nitˈan levatˈel ʔˈet haχipˈus beʃʔˈaʁ hanajadˈot</he>
+[missing-elder] player: לא נדרש סיוע נוסף
+    <he>lˈo nidʁˈaʃ sijˈua nosˈaf</he>
+[missing-elder] center: נפתח אירוע שש שתיים שלוש אפס , קשיש שלא חזר הביתה, גן הברוש, רחוב הדקל. מעביר אליך לטיפול.
+    <he>niftˈaχ ʔejʁˈua ʃˈeʃ ʃtˈajim ʃalˈoʃ ʔˈefes, kaʃˈiʃ ʃelˈo χazˈaʁ habˈajta, ɡˈan habʁˈoʃ, ʁeχˈov hadˈekel. maʔavˈiʁ ʔelˈeχa letipˈul.</he>
+[suspicious-object] dispatch: דיווח על תיק שנשכח בתחנת האוטובוס הנרקיס בשדרות הזית. לפי המדווחת התיק שם כ20 דקות ואין איש לידו. אשר קבלה.
+    <he>divˈuaχ ʔˈal tˈik ʃeniʃkˈaχ betaχanˈat haʔˈotobus hanaʁkˈis bisdeʁˈot hazˈajit. lefˈi hamedavˈaχat hatˈik ʃˈam keʔesʁˈim dakˈot veʔˈejn ʔˈiʃ lejadˈo. ʔaʃˈeʁ kabalˈa.</he>
+[suspicious-object] narrator: התחנה בשדרות הזית. בקצה הספסל מונח תיק ספורט כחול, סגור. לידו עומד אדם מבוגר בטרנינג, מתבונן בתיק ומושיט אליו יד. נועה, המדווחת, עומדת ליד המאפייה ומסמנת לך.
+    <he>hataχanˈa bisdeʁˈot hazˈajit. bektsˈe hasafsˈal munˈaχ tˈik spˈoʁt kaχˈol, saɡˈuʁ. lejadˈo ʔomˈed ʔadˈam mevuɡˈaʁ beteʁˈeninɡ, mitbonˈen batˈik vemoʃˈit ʔelˈav jˈad. nˈoʔa, hamedavˈaχat, ʔomˈedet lejˈad hamaʔafijˈa vemesamˈenet lˈaχ.</he>
+[suspicious-object] player: קיבלתי את האירוע, יוצא.
+    <he>kibˈalti ʔˈet haʔejʁˈua, jotsˈe.</he>
+[suspicious-object] dispatch: קיבל.
+    <he>kibˈel.</he>
+[suspicious-object] player: קיבלתי.
+    <he>kibˈalti.</he>
+[suspicious-object] narrator: השדרה ריקה בשעת הלילה. הדרך הקצרה היא גם המהירה.
+    <he>haʃdeʁˈa ʁekˈa biʃʔˈat halˈajla. hadˈeʁeχ haktsaʁˈa hˈi ɡˈam hamehiʁˈa.</he>
+[suspicious-object] narrator: בשדרות הזית פקק של שעת בוקר. הניידת מתקדמת לאט בין הרכבים.
+    <he>bisdeʁˈot hazˈajit pkˈak ʃˈel ʃaʔˈat bˈokeʁ. hanajˈedet mitkadˈemet leʔˈat bˈen haʁeχavˈim.</he>
+[suspicious-object] narrator: השדרה עמוסה מעט בשעת הערב, אבל זורמת.
+    <he>haʃdeʁˈa ʔamusˈa meʔˈat biʃʔˈat haʔˈeʁev, ʔavˈal zoʁˈemet.</he>
+[suspicious-object] narrator: רחובות השכונה צרים ומפותלים. בשעה הזו השדרה הייתה פנויה , הדרך ארכה יותר.
+    <he>ʁeχovˈot haʃχunˈa tsaʁˈim umefutalˈim. baʃaʔˈa hazˈo haʃdeʁˈa hajtˈa pnujˈa, hadˈeʁeχ ʔaʁχˈa jotˈeʁ.</he>
+[suspicious-object] narrator: עוקפים את הפקק בשדרה דרך רחובות השכונה. ארוך יותר , אבל זורם.
+    <he>ʔokfˈim ʔˈet hapkˈak baʃdeʁˈa dˈeʁeχ ʁeχovˈot haʃχunˈa. ʔaʁˈoχ jotˈeʁ, ʔavˈal zoʁˈem.</he>
+[suspicious-object] player: מוקד, יש תיאור של התיק?
+    <he>mokˈed, jˈeʃ teʔˈuʁ ʃˈel hatˈik?</he>
+[suspicious-object] dispatch: תיק ספורט כחול כהה, סגור ברוכסן. המדווחת לא נגעה בו.
+    <he>tˈik spˈoʁt kaχˈol kehˈe, saɡˈuʁ beʁoχsˈan. hamedavˈaχat lˈo naɡaʔˈa bˈo.</he>
+[suspicious-object] player: איפה המדווחת? יש אנשים ליד התיק?
+    <he>ʔˈejfo hamedavˈaχat? jˈeʃ ʔanaʃˈim lejˈad hatˈik?</he>
+[suspicious-object] dispatch: המדווחת, נועה, ממתינה ליד המאפייה. לדבריה יש אנשים שממתינים בתחנה.
+    <he>hamedavˈaχat, nˈoʔa, mamtinˈa lejˈad hamaʔafijˈa. ledvaʁˈeha jˈeʃ ʔanaʃˈim ʃemamtinˈim bataχanˈa.</he>
+[suspicious-object] player: אילו קווי אוטובוס עוצרים שם?
+    <he>ʔˈejlu kavˈej ʔˈotobus ʔotsʁˈim ʃˈam?</he>
+[suspicious-object] dispatch: קווים 12 ו30, אוטובוס כל כעשר דקות בערך.
+    <he>kavˈim ʃtˈem ʔesʁˈe veʃloʃˈim, ʔˈotobus kˈol keʔˈeseʁ dakˈot beʔˈeʁeχ.</he>
+[suspicious-object] narrator: מכמה מטרים: תיק ספורט כחול כהה, סגור ברוכסן, בלי תווית או שם. אין סביבו איש שנראה קשור אליו.
+    <he>mikˈama mˈetʁim: tˈik spˈoʁt kaχˈol kehˈe, saɡˈuʁ beʁuχsˈan, blˈi tavˈit ʔˈo ʃˈem. ʔˈejn svivˈo ʔˈiʃ ʃeniʁʔˈa kaʃˈuʁ ʔelˈav.</he>
+[suspicious-object] narrator: פתחת מעט את הרוכסן. בפנים בד כהה. אנשים בתחנה מתקרבים לראות מה קורה.
+    <he>patˈaχta meʔˈat ʔˈet haʁuχsˈan. bifnˈim bˈad kehˈe. ʔanaʃˈim bataχanˈa mitkaʁvˈim liʁʔˈot mˈa koʁˈe.</he>
+[suspicious-object] narrator: תיעדת: שעת ההגעה, תיאור התיק ומיקומו המדויק בקצה הספסל, ופרטי המדווחת.
+    <he>tiʔˈadta: ʃaʔˈat hahaɡaʔˈa, teʔˈuʁ hatˈik umikumˈo hamedujˈak bektsˈe hasafsˈal, vepiʁtˈej hamedavˈaχat.</he>
+[suspicious-object] narrator: הממתינים מתרחקים. אתה מותח סרט סימון ומכוון את העוברים לצד השני של השדרה.
+    <he>hamamtinˈim mitʁaχakˈim. ʔatˈa motˈeaχ sˈeʁet simˈun vemeχavˈen ʔˈet haʔovʁˈim latsˈad haʃenˈi ʃˈel haʃidʁˈa.</he>
+[suspicious-object] narrator: הממתינים מתרחקים ואתה מותח סרט סימון. רק האיש בטרנינג נשאר על הספסל ולא זז.
+    <he>hamamtinˈim mitʁaχakˈim veʔatˈa motˈeaχ sˈeʁet simˈun. ʁˈak haʔˈiʃ betʁˈeninɡ niʃʔˈaʁ ʔˈal hasafsˈal velˈo zˈaz.</he>
+[suspicious-object] narrator: במאפייה ובבית המרקחת איש לא מכיר את התיק. המוכרת במאפייה אומרת שהוא שם לפחות חצי שעה.
+    <he>bamaʔafijˈa vebevˈet hamiʁkˈaχat ʔˈiʃ lˈo makˈiʁ ʔˈet hatˈik. hamoχˈeʁet bamaʔafijˈa ʔomˈeʁet ʃehˈu sˈam lefaχˈot χatsˈi ʃaʔˈa.</he>
+[suspicious-object] narrator: במאפייה לא יודעים. בבית המרקחת אישה מרימה את הראש: תיק כחול? רגע, זה שלי! והיא ממהרת החוצה.
+    <he>bamaʔafijˈa lˈo jodʔˈim. bevˈet hamiʁkˈaχat ʔiʃˈa meʁimˈa ʔˈet haʁˈoʃ: tˈik kaχˈol? ʁˈeɡa, zˈe ʃelˈi! vehˈi memahˈeʁet haχˈutsa.</he>
+[suspicious-object] narrator: הרמת יד וסימנת לנהג להמשיך. האוטובוס מאט, הנהג מהנהן וממשיך לתחנה הבאה בלי לעצור.
+    <he>heʁˈamta jˈad vesimˈanta lanahˈaɡ lehamʃˈiχ. haʔˈotobus meʔˈet, hanahˈaɡ mehanhˈen vemamʃˈiχ lataχanˈa habaʔˈa blˈi laʔatsˈoʁ.</he>
+[suspicious-object] narrator: כעבור כעשר דקות מגיע הגורם המוסמך. הוא בודק את התיק בזמן שאתה שומר על הטבעת: בגדי ספורט ובקבוק מים. לא חשוד. אפשר לפתוח את התחנה.
+    <he>kaʔavˈoʁ keʔˈeseʁ dakˈot maɡˈia haɡoʁˈem hamusmˈaχ. hˈu bodˈek ʔˈet hatˈik bizmˈan ʃeʔatˈa ʃomˈeʁ ʔˈal hatabˈaʔat: biɡdˈej spˈoʁt vebakbˈuk mˈajim. lˈo χaʃˈud. ʔefʃˈaʁ liftˈoaχ ʔˈet hataχanˈa.</he>
+[suspicious-object] narrator: כעבור כעשר דקות מגיע הגורם המוסמך. הוא בודק את התיק בזמן שאתה שומר על הטבעת: בגדי ספורט, מגבת ונעלי ריצה. לא חשוד. אפשר לפתוח את התחנה.
+    <he>kaʔavˈoʁ keʔˈeseʁ dakˈot maɡˈia haɡoʁˈem hamusmˈaχ. hˈu bodˈek ʔˈet hatˈik bizmˈan ʃeʔatˈa ʃomˈeʁ ʔˈal hatabˈaʔat: biɡdˈej spˈoʁt, maɡˈevet venaʔalˈej ʁitsˈa. lˈo χaʃˈud. ʔefʃˈaʁ liftˈoaχ ʔˈet hataχanˈa.</he>
+[suspicious-object] narrator: הגורם המוסמך מגיע ומבקש קודם להרחיק את האנשים מהתחנה. אחרי בידוד מהיר הוא בודק את התיק: בגדי ספורט ובקבוק מים. לא חשוד. אפשר לפתוח את התחנה.
+    <he>haɡoʁˈem hamusmˈaχ maɡˈia vemevakˈeʃ kˈodem lehaʁχˈik ʔˈet haʔanaʃˈim mehataχanˈa. ʔaχʁˈej bidˈud mahˈiʁ hˈu bodˈek ʔˈet hatˈik: biɡdˈej spˈoʁt vebakbˈuk mˈajim. lˈo χaʃˈud. ʔefʃˈaʁ liftˈoaχ ʔˈet hataχanˈa.</he>
+[suspicious-object] narrator: הגורם המוסמך מגיע ומבקש קודם להרחיק את האנשים מהתחנה. אחרי בידוד מהיר הוא בודק את התיק: בגדי ספורט, מגבת ונעלי ריצה. לא חשוד. אפשר לפתוח את התחנה.
+    <he>haɡoʁˈem hamusmˈaχ maɡˈia vemevakˈeʃ kˈodem lehaʁχˈik ʔˈet haʔanaʃˈim mehataχanˈa. ʔaχʁˈej bidˈud mahˈiʁ hˈu bodˈek ʔˈet hatˈik: biɡdˈej spˈoʁt, maɡˈevet venaʔalˈej ʁitsˈa. lˈo χaʃˈud. ʔefʃˈaʁ liftˈoaχ ʔˈet hataχanˈa.</he>
+[suspicious-object] beni: אה, חשבתי שאולי יש בפנים ארנק ואמצא את הבעלים. בסדר, הבנתי.
+    <he>ʔˈa, χaʃˈavti ʃeʔulˈaj jˈeʃ bifnˈim ʔaʁnˈak veʔemtsˈa ʔˈet habeʔalˈim. besˈedeʁ, hevˈanti.</he>
+[suspicious-object] beni: מה אתה צועק עליי? אני מחכה פה לאוטובוס, זכותי! מה כבר יש בתיק?
+    <he>mˈa ʔatˈa tsoʔˈek ʔalˈaj? ʔanˈi meχakˈe pˈo laʔˈotobus, zχutˈi! mˈa kvˈaʁ jˈeʃ batˈik?</he>
+[suspicious-object] beni: ,טוב, טוב. הולך. אבל לא היית צריך לצעוק.
+    <he>,tˈov, tˈov. holˈeχ. ʔavˈal lˈo hajˈita tsaʁˈiχ litsʔˈok.</he>
+[suspicious-object] beni: לא, כשהגעתי הוא כבר היה פה. סליחה שכמעט פתחתי אותו.
+    <he>lˈo, kʃehiɡˈaʔti hˈu kvˈaʁ hajˈa pˈo. sliχˈa ʃekimʔˈat patˈaχti ʔotˈo.</he>
+[suspicious-object] noa: הוא היה שם כבר כשהגעתי, לפני חצי שעה בערך. אף אחד לא התקרב אליו. בטח, אני מחכה.
+    <he>hˈu hajˈa ʃˈam kvˈaʁ kʃehiɡˈaʔti, lifnˈej χatsˈi ʃaʔˈa beʔˈeʁeχ. ʔˈaf ʔeχˈad lˈo hitkaʁˈev ʔelˈav. bˈetaχ, ʔanˈi meχakˈe.</he>
+[suspicious-object] ruti: אוי, אני כל כך מצטערת. נכנסתי רק לרגע לקנות תרופה.
+    <he>ʔˈoj, ʔanˈi kˈol kˈaχ mitstaʔˈeʁet. niχnˈasti ʁˈak leʁˈeɡa liknˈot tʁufˈa.</he>
+[suspicious-object] ruti: תיק ספורט כחול, רוכסן אחד. בפנים בגדי ספורט ובקבוק מים. הייתי בבית המרקחת , הנה הקבלה.
+    <he>tˈik spˈoʁt kaχˈol, ʁuχsˈan ʔeχˈad. bifnˈim biɡdˈej spˈoʁt vebakbˈuk mˈajim. hajˈiti bevˈet hamiʁkˈaχat, hˈine hakabalˈa.</he>
+[suspicious-object] ruti: תיק ספורט כחול, רוכסן אחד. בפנים בגדי ספורט, מגבת ונעלי ריצה. הייתי בבית המרקחת , הנה הקבלה.
+    <he>tˈik spˈoʁt kaχˈol, ʁuχsˈan ʔeχˈad. bifnˈim biɡdˈej spˈoʁt, maɡˈevet venaʔalˈej ʁitsˈa. hajˈiti bevˈet hamiʁkˈaχat, hˈine hakabalˈa.</he>
+[suspicious-object] narrator: רותי ניגשת, חוטפת את התיק ומתנצלת. אתה לא בטוח שזה באמת התיק שלה, והמוקד עוד לא יודע שהאירוע הסתיים.
+    <he>ʁˈuti niɡˈeʃet, χotˈefet ʔˈet hatˈik vemitnatsˈelet. ʔatˈa lˈo batˈuaχ ʃezˈe beʔemˈet hatˈik ʃelˈa, vehamokˈed ʔˈod lˈo jodˈea ʃehaʔejʁˈua histajˈem.</he>
+[suspicious-object] narrator: רותי לוקחת את התיק, מודה לך ומתנצלת בפני הממתינים. אתה מסיר את סרט הסימון.
+    <he>ʁˈuti lokˈaχat ʔˈet hatˈik, modˈa leχˈa vemitnatsˈelet bifnˈej hamamtinˈim. ʔatˈa mesˈiʁ ʔˈet sˈeʁet hasimˈun.</he>
+[suspicious-object] player: הגעתי למקום.
+    <he>hiɡˈaʔti lamakˈom.</he>
+[suspicious-object] dispatch: קיבל. עדכן כשיש תמונת מצב.
+    <he>kibˈel. ʔidkˈen kʃejˈeʃ tmunˈat matsˈav.</he>
+[suspicious-object] player: שלילי, עדיין בטיפול באירוע. אעדכן כשאתפנה.
+    <he>ʃlilˈi, ʔadˈajin betipˈul baʔejʁˈua. ʔeʔadkˈen kʃeʔetpanˈe.</he>
+[suspicious-object] dispatch: קיבל, מעביר לניידת אחרת.
+    <he>kibˈel, maʔavˈiʁ lenajˈedet ʔaχˈeʁet.</he>
+[suspicious-object] player: חיובי, פנוי.
+    <he>χijuvˈi, panˈuj.</he>
+[suspicious-object] dispatch: רגע , סיימת שם? המעורבים עדיין במקום לפי הדיווח שלך. תשלים קודם ותעדכן.
+    <he>ʁˈeɡa, sijˈamta ʃˈam? hameʔoʁavˈim ʔadˈajin bamakˈom lefˈi hadivˈuaχ ʃelχˈa. taʃlˈim kˈodem veteʔadkˈen.</he>
+[suspicious-object] dispatch: כעשר דקות. שמרו על הבידוד ואל תתקרבו לחפץ.
+    <he>keʔˈeseʁ dakˈot. ʃimʁˈu ʔˈal habidˈud veʔˈal titkaʁvˈu laχˈefets.</he>
+[suspicious-object] narrator: הצופים זזים כמה צעדים אחורה וממשיכים לצלם מרחוק. אף אחד לא מתווכח.
+    <he>hatsofˈim zazˈim kˈama tseʔadˈim ʔaχˈoʁa vemamʃiχˈim letsalˈem meʁaχˈok. ʔˈaf ʔeχˈad lˈo mitvakˈeaχ.</he>
+[suspicious-object] narrator: אחד הצופים מרים את הטלפון גבוה יותר: מותר לי לצלם ברחוב! הוויכוח מושך עוד אנשים לזירה.
+    <he>ʔeχˈad hatsofˈim meʁˈim ʔˈet hatˈelefon ɡavˈoa jotˈeʁ: mutˈaʁ lˈi letsalˈem baʁeχˈov! havikˈuaχ moʃˈeχ ʔˈod ʔanaʃˈim laziʁˈa.</he>
+[suspicious-object] narrator: אוטובוס קו 12 מתקרב לתחנה ומאותת לעצירה. בתוכו נוסעים עומדים ליד הדלת, מוכנים לרדת.
+    <he>ʔˈotobus kˈav ʃtˈem ʔesʁˈe mitkaʁˈev lataχanˈa vemeʔotˈet laʔatsiʁˈa. betoχˈo nosʔˈim ʔomdˈim lejˈad hadˈelet, muχanˈim laʁˈedet.</he>
+[suspicious-object] dispatch: אתה פנוי? יש אירוע נוסף באזור.
+    <he>ʔatˈa panˈuj? jˈeʃ ʔejʁˈua nosˈaf baʔezˈoʁ.</he>
+[suspicious-object] dispatch: גורם מוסמך בדרך, כעשר דקות. שמרו על הבידוד ואל תתקרבו לחפץ.
+    <he>ɡoʁˈem musmˈaχ badˈeʁeχ, keʔˈeseʁ dakˈot. ʃimʁˈu ʔˈal habidˈud veʔˈal titkaʁvˈu laχˈefets.</he>
+[suspicious-object] center: גורם מוסמך בדרך, כעשר דקות. שמרו על הבידוד ואל תתקרבו לחפץ.
+    <he>ɡoʁˈem musmˈaχ badˈeʁeχ, keʔˈeseʁ dakˈot. ʃimʁˈu ʔˈal habidˈud veʔˈal titkaʁvˈu laχˈefets.</he>
+[suspicious-object] duty: גורם מוסמך בדרך, כעשר דקות. שמרו על הבידוד ואל תתקרבו לחפץ.
+    <he>ɡoʁˈem musmˈaχ badˈeʁeχ, keʔˈeseʁ dakˈot. ʃimʁˈu ʔˈal habidˈud veʔˈal titkaʁvˈu laχˈefets.</he>
+[suspicious-object] dispatch: עדכנו את חברת האוטובוסים, הקווים יעקפו את התחנה.
+    <he>ʔidkenˈu ʔˈet χevʁˈat haʔotobˈusim, hakavˈim jaʔakfˈu ʔˈet hataχanˈa.</he>
+[suspicious-object] center: עדכנו את חברת האוטובוסים, הקווים יעקפו את התחנה.
+    <he>ʔidkenˈu ʔˈet χevʁˈat haʔotobˈusim, hakavˈim jaʔakfˈu ʔˈet hataχanˈa.</he>
+[suspicious-object] duty: עדכנו את חברת האוטובוסים, הקווים יעקפו את התחנה.
+    <he>ʔidkenˈu ʔˈet χevʁˈat haʔotobˈusim, hakavˈim jaʔakfˈu ʔˈet hataχanˈa.</he>
+[suspicious-object] dispatch: הגורם המוסמך מאשר , כשהתיאור והתוכן תואמים, הבעלים רשאית לקחת את התיק. עדכנו בסיום.
+    <he>haɡoʁˈem hamusmˈaχ meʔaʃˈeʁ, kʃehateʔˈuʁ vehatˈoχen toʔamˈim, habeʔalˈim ʁaʃaʔˈit lakˈaχat ʔˈet hatˈik. ʔidkˈanu basijˈum.</he>
+[suspicious-object] center: הגורם המוסמך מאשר , כשהתיאור והתוכן תואמים, הבעלים רשאית לקחת את התיק. עדכנו בסיום.
+    <he>haɡoʁˈem hamusmˈaχ meʔaʃˈeʁ, kʃehateʔˈuʁ vehatˈoχen toʔamˈim, habeʔalˈim ʁaʃaʔˈit lakˈaχat ʔˈet hatˈik. ʔidkˈanu basijˈum.</he>
+[suspicious-object] duty: הגורם המוסמך מאשר , כשהתיאור והתוכן תואמים, הבעלים רשאית לקחת את התיק. עדכנו בסיום.
+    <he>haɡoʁˈem hamusmˈaχ meʔaʃˈeʁ, kʃehateʔˈuʁ vehatˈoχen toʔamˈim, habeʔalˈim ʁaʃaʔˈit lakˈaχat ʔˈet hatˈik. ʔidkˈanu basijˈum.</he>
+[suspicious-object] dispatch: אל תיגעו בחפץ שוב. הרחיקו את כולם והמתינו לגורם המוסמך.
+    <he>ʔˈal tiɡʔˈu baχˈefets ʃˈuv. haʁχˈiku ʔˈet kulˈam vehimtˈinu laɡoʁˈem hamusmˈaχ.</he>
+[suspicious-object] center: אל תיגעו בחפץ שוב. הרחיקו את כולם והמתינו לגורם המוסמך.
+    <he>ʔˈal tiɡʔˈu baχˈefets ʃˈuv. haʁχˈiku ʔˈet kulˈam vehimtˈinu laɡoʁˈem hamusmˈaχ.</he>
+[suspicious-object] duty: אל תיגעו בחפץ שוב. הרחיקו את כולם והמתינו לגורם המוסמך.
+    <he>ʔˈal tiɡʔˈu baχˈefets ʃˈuv. haʁχˈiku ʔˈet kulˈam vehimtˈinu laɡoʁˈem hamusmˈaχ.</he>
+[suspicious-object] dispatch: קיבלתי, רשמתי.
+    <he>kibˈalti, ʁaʃˈamti.</he>
+[suspicious-object] center: קיבלתי, רשמתי.
+    <he>kibˈalti, ʁaʃˈamti.</he>
+[suspicious-object] duty: קיבלתי, רשמתי.
+    <he>kibˈalti, ʁaʃˈamti.</he>
+[suspicious-object] player: נמצא בתחנת הנרקיס, שדרות הזית
+    <he>nimtsˈa betaχanˈat hanaʁkˈis, sdeʁˈot hazˈajit</he>
+[suspicious-object] player: תיק ספורט כחול סגור על הספסל, ללא בעלים בסביבה
+    <he>tˈik spˈoʁt kaχˈol saɡˈuʁ ʔˈal hasafsˈal, lelˈo beʔalˈim basvivˈa</he>
+[suspicious-object] player: המקום בודד והאנשים הורחקו
+    <he>hamakˈom bodˈed vehaʔanaʃˈim huʁχakˈu</he>
+[suspicious-object] player: מבקש גורם מוסמך לבדיקת חפץ חשוד
+    <he>mevakˈeʃ ɡoʁˈem musmˈaχ livdikˈat χˈefets χaʃˈud</he>
+[suspicious-object] player: מבקש להסיט את קווי האוטובוס מהתחנה
+    <he>mevakˈeʃ lehasˈit ʔˈet kavˈej haʔˈotobus mehataχanˈa</he>
+[suspicious-object] player: הבעלים לא אותרו בחנויות הסמוכות
+    <he>habeʔalˈim lˈo ʔutʁˈu baχanujˈot hasmuχˈot</he>
+[suspicious-object] player: אותרה בעלת התיק , התיאור והתוכן תואמים
+    <he>ʔutʁˈa baʔalˈat hatˈik, hateʔˈuʁ vehatˈoχen toʔamˈim</he>
+[suspicious-object] player: אישה טוענת שהתיק שלה , טרם אומת
+    <he>ʔiʃˈa toʔˈenet ʃehatˈik ʃelˈa, tˈeʁem ʔumˈat</he>
+[suspicious-object] player: פתחתי את התיק כדי לחפש פרטי בעלים
+    <he>patˈaχti ʔˈet hatˈik kedˈej leχapˈes piʁtˈej beʔalˈim</he>
+[suspicious-object] player: החפץ אינו חשוד, התחנה נפתחה
+    <he>haχˈefets ʔejnˈo χaʃˈud, hataχanˈa nifteχˈa</he>
+[suspicious-object] player: לא נדרש סיוע נוסף
+    <he>lˈo nidʁˈaʃ sijˈua nosˈaf</he>
+[suspicious-object] center: נפתח אירוע שבע שבע אחת ארבע , חפץ חשוד בתחנת אוטובוס, תחנת האוטובוס הנרקיס, שדרות הזית. מעביר אליך לטיפול.
+    <he>niftˈaχ ʔejʁˈua ʃˈeva ʃˈeva ʔaχˈat ʔˈaʁba, χˈefets χaʃˈud betaχanˈat ʔˈotobus, taχanˈat haʔˈotobus hanaʁkˈis, sdeʁˈot hazˈajit. maʔavˈiʁ ʔelˈeχa letipˈul.</he>
+[blocked-parking] dispatch: תלונה על רכב שחוסם יציאה בחניון רחוב האלה 14. המתלונן, רוני, צריך לצאת בדחיפות ונשמע נסער. אשר קבלה.
+    <he>tlunˈa ʔˈal ʁˈeχev ʃeχosˈem jetsiʔˈa beχanjˈon ʁeχˈov haʔelˈa ʔaʁbˈa ʔesʁˈe. hamitlonˈen, ʁˈoni, tsaʁˈiχ latsˈet bidχifˈut veniʃmˈa nisʔˈaʁ. ʔaʃˈeʁ kabalˈa.</he>
+[blocked-parking] narrator: החניון מאחורי הבניין. רכב כסוף חונה בניצב מאחורי רכב אדום וחוסם אותו לגמרי. לידו מתהלך גבר במדי בית חולים, מסתכל בשעון. בפינה עומד דייר מבוגר עם פנקס , מוועד הבית.
+    <he>haχanjˈon meʔaχoʁˈej habinjˈan. ʁˈeχev kasˈuf χonˈe benitsˈav meʔaχoʁˈej ʁˈeχev ʔadˈom veχosˈem ʔotˈo leɡˈamʁej. lejadˈo mithalˈeχ ɡˈeveʁ bemadˈej bˈet χolˈim, mistakˈel baʃaʔˈon. bapinˈa ʔomˈed dajˈaʁ mevuɡˈaʁ ʔˈim pinkˈas, mivˈaʔad habˈajit.</he>
+[blocked-parking] roni: סוף סוף! אני צריך להיות בטיפול נמרץ בעוד עשרים דקות!
+    <he>sˈof sˈof! ʔanˈi tsaʁˈiχ lihjˈot betipˈul nimʁˈats beʔˈod ʔesʁˈim dakˈot!</he>
+[blocked-parking] player: קיבלתי את האירוע, יוצא.
+    <he>kibˈalti ʔˈet haʔejʁˈua, jotsˈe.</he>
+[blocked-parking] dispatch: קיבל.
+    <he>kibˈel.</he>
+[blocked-parking] player: קיבלתי.
+    <he>kibˈalti.</he>
+[blocked-parking] narrator: השדרה ריקה בשעת הלילה. הדרך הקצרה היא גם המהירה.
+    <he>haʃdeʁˈa ʁekˈa biʃʔˈat halˈajla. hadˈeʁeχ haktsaʁˈa hˈi ɡˈam hamehiʁˈa.</he>
+[blocked-parking] narrator: בשדרות הזית פקק של שעת בוקר. הניידת מתקדמת לאט בין הרכבים.
+    <he>bisdeʁˈot hazˈajit pkˈak ʃˈel ʃaʔˈat bˈokeʁ. hanajˈedet mitkadˈemet leʔˈat bˈen haʁeχavˈim.</he>
+[blocked-parking] narrator: השדרה עמוסה מעט בשעת הערב, אבל זורמת.
+    <he>haʃdeʁˈa ʔamusˈa meʔˈat biʃʔˈat haʔˈeʁev, ʔavˈal zoʁˈemet.</he>
+[blocked-parking] narrator: רחובות השכונה צרים ומפותלים. בשעה הזו השדרה הייתה פנויה , הדרך ארכה יותר.
+    <he>ʁeχovˈot haʃχunˈa tsaʁˈim umefutalˈim. baʃaʔˈa hazˈo haʃdeʁˈa hajtˈa pnujˈa, hadˈeʁeχ ʔaʁχˈa jotˈeʁ.</he>
+[blocked-parking] narrator: עוקפים את הפקק בשדרה דרך רחובות השכונה. ארוך יותר , אבל זורם.
+    <he>ʔokfˈim ʔˈet hapkˈak baʃdeʁˈa dˈeʁeχ ʁeχovˈot haʃχunˈa. ʔaʁˈoχ jotˈeʁ, ʔavˈal zoʁˈem.</he>
+[blocked-parking] player: מוקד, נמסר מספר רכב?
+    <he>mokˈed, nimsˈaʁ mispˈaʁ ʁˈeχev?</he>
+[blocked-parking] dispatch: 45, 218, 63, רכב כסוף.
+    <he>ʔaʁbaʔˈim veχamˈeʃ, matˈajim veʃmonˈa ʔesʁˈe, ʃiʃˈim veʃalˈoʃ, ʁˈeχev kasˈuf.</he>
+[blocked-parking] player: מה בדיוק אמר המתלונן? יש חשש לעימות?
+    <he>mˈa bidjˈuk ʔamˈaʁ hamitlonˈen? jˈeʃ χaʃˈaʃ leʔimˈut?</he>
+[blocked-parking] dispatch: הוא אמר שאם לא נגיע מהר הוא יטפל בזה לבד. אין אנשים נוספים במקום לפי הדיווח.
+    <he>hˈu ʔamˈaʁ ʃeʔˈim lˈo naɡˈia mahˈeʁ hˈu jetapˈel bezˈe levˈad. ʔˈejn ʔanaʃˈim nosafˈim bimakˈom lefˈi hadivˈuaχ.</he>
+[blocked-parking] roni: המשמרת שלי בטיפול נמרץ מתחילה בשבע, ואין מי שיחליף אותי. בסדר, רק מהר.
+    <he>hamiʃmˈeʁet ʃelˈi betipˈul nimʁˈats matχilˈa beʃˈeva, veʔˈejn mˈi ʃejaχalˈif ʔotˈi. besˈedeʁ, ʁˈak mahˈeʁ.</he>
+[blocked-parking] roni: לא מקרה חירום? יש לי מטופלים מונשמים! אתם לא עושים כלום!
+    <he>lˈo mikʁˈe χeʁˈum? jˈeʃ lˈi metupalˈim munʃamˈim! ʔatˈem lˈo ʔosˈim klˈum!</he>
+[blocked-parking] roni: ,אוקיי. תודה.
+    <he>,ʔokˈej. todˈa.</he>
+[blocked-parking] roni: ,בסדר. אני פשוט לא יודע מה לעשות.
+    <he>,besˈedeʁ. ʔanˈi paʃˈut lˈo jodˈea mˈa laʔasˈot.</he>
+[blocked-parking] roni: כן, אני מתקשר לאחראית משמרת.
+    <he>kˈen, ʔanˈi mitkaʃˈeʁ leʔaχʁaʔˈit miʃmˈeʁet.</he>
+[blocked-parking] narrator: מספר הרכב 45, 218, 63 , תואם למה שנמסר. מבעד לשמשה הקדמית רואים על לוח המחוונים פתק בכתב יד: אורחת בדירה 12, לכל בעיה , להתקשר, ומספר טלפון.
+    <he>mispˈaʁ haʁˈeχev ʔaʁbaʔˈim veχamˈeʃ, matˈajim veʃmonˈa ʔesʁˈe, ʃiʃˈim veʃalˈoʃ, toʔˈem lemˈa ʃenimsˈaʁ. mibˈaʔad laʃimʃˈa hakidmˈit ʁoʔˈim ʔˈal lˈuaχ hameχvanˈim pˈetek beχtˈav jˈad: ʔoʁˈaχat bediʁˈa ʃtˈem ʔesʁˈe, leχˈol beʔajˈa, lehitkaʃˈeʁ, vemispˈaʁ tˈelefon.</he>
+[blocked-parking] narrator: מספר הרכב 45, 218, 63 , תואם למה שנמסר. מבעד לשמשה הקדמית רואים על לוח המחוונים שום פתק או מספר טלפון.
+    <he>mispˈaʁ haʁˈeχev ʔaʁbaʔˈim veχamˈeʃ, matˈajim veʃmonˈa ʔesʁˈe, ʃiʃˈim veʃalˈoʃ, toʔˈem lemˈa ʃenimsˈaʁ. mibˈaʔad laʃimʃˈa hakidmˈit ʁoʔˈim ʔˈal lˈuaχ hameχvanˈim ʃˈum pˈetek ʔˈo mispˈaʁ tˈelefon.</he>
+[blocked-parking] narrator: אחרי שני צלצולים עונה קול מנומנם. כשאתה מסביר, היא אומרת: אוי, אני יורדת מיד!
+    <he>ʔaχʁˈej ʃnˈej tsiltsulˈim ʔonˈe kˈol menumnˈam. kʃeʔatˈa masbˈiʁ, hˈi ʔomˈeʁet: ʔˈoj, ʔanˈi joʁˈedet mijˈad!</he>
+[blocked-parking] narrator: צילמת את מיקום הרכב החוסם ואת מספרו, ורשמת את השעה.
+    <he>tsilˈamta ʔˈet mikˈum haʁˈeχev haχosˈem veʔˈet mispaʁˈo, veʁaʃˈamta ʔˈet haʃaʔˈa.</he>
+[blocked-parking] nissim: זה לא של דייר. אני חושב שזו האורחת של משפחת לוי מדירה 12 , הגיעה מאוחר בלילה.
+    <he>zˈe lˈo ʃˈel dajˈaʁ. ʔanˈi χoʃˈev ʃezˈo haʔoʁˈaχat ʃˈel miʃpˈaχat lˈevi midiʁˈa ʃtˈem ʔesʁˈe, hiɡˈiʔa meʔuχˈaʁ balˈajla.</he>
+[blocked-parking] narrator: ניסים מצלצל באינטרקום. אחרי רגע נשמע: אוי, זה האוטו שלי? אני יורדת!
+    <he>nisˈim metsaltsˈel baʔˈinteʁkum. ʔaχʁˈej ʁˈeɡa niʃmˈa: ʔˈoj, zˈe haʔˈoto ʃelˈi? ʔanˈi joʁˈedet!</he>
+[blocked-parking] shiran: הגעתי באחת בלילה, היה חושך ולא היה מקום. חשבתי שהמקום פנוי , לא ראיתי שאני חוסמת. אני ממש מצטערת.
+    <he>hiɡˈaʔti beʔaχˈat balˈajla, hajˈa χˈoʃeχ velˈo hajˈa makˈom. χaʃˈavti ʃehamakˈom panˈuj, lˈo ʁaʔˈiti ʃeʔanˈi χosˈemet. ʔanˈi mamˈaʃ mitstaʔˈeʁet.</he>
+[blocked-parking] shiran: דוח? ירדתי תוך שתי דקות! למה אתה מדבר אליי ככה?
+    <he>dˈoχ? jaʁˈadti tˈoχ ʃtˈej dakˈot! lˈama ʔatˈa medabˈeʁ ʔelˈaj kˈaχa?</he>
+[blocked-parking] narrator: שירן מזיזה את הרכב למקום פנוי ליד החומה. היציאה של רוני פנויה.
+    <he>ʃiʁˈan mezizˈa ʔˈet haʁˈeχev lemakˈom panˈuj lejˈad haχomˈa. hajetsiʔˈa ʃˈel ʁˈoni pnujˈa.</he>
+[blocked-parking] shiran: רוני, נכון? אני מצטערת, באמת לא ראיתי.
+    <he>ʁˈoni, naχˈon? ʔanˈi mitstaʔˈeʁet, beʔemˈet lˈo ʁaʔˈiti.</he>
+[blocked-parking] roni: בסדר, רק בפעם הבאה תשאירי מספר טלפון.
+    <he>besˈedeʁ, ʁˈak bapˈaʔam habaʔˈa taʃʔˈiʁi mispˈaʁ tˈelefon.</he>
+[blocked-parking] player: הגעתי למקום.
+    <he>hiɡˈaʔti lamakˈom.</he>
+[blocked-parking] dispatch: קיבל. עדכן כשיש תמונת מצב.
+    <he>kibˈel. ʔidkˈen kʃejˈeʃ tmunˈat matsˈav.</he>
+[blocked-parking] player: שלילי, עדיין בטיפול באירוע. אעדכן כשאתפנה.
+    <he>ʃlilˈi, ʔadˈajin betipˈul baʔejʁˈua. ʔeʔadkˈen kʃeʔetpanˈe.</he>
+[blocked-parking] dispatch: קיבל, מעביר לניידת אחרת.
+    <he>kibˈel, maʔavˈiʁ lenajˈedet ʔaχˈeʁet.</he>
+[blocked-parking] player: חיובי, פנוי.
+    <he>χijuvˈi, panˈuj.</he>
+[blocked-parking] dispatch: רגע , סיימת שם? המעורבים עדיין במקום לפי הדיווח שלך. תשלים קודם ותעדכן.
+    <he>ʁˈeɡa, sijˈamta ʃˈam? hameʔoʁavˈim ʔadˈajin bamakˈom lefˈi hadivˈuaχ ʃelχˈa. taʃlˈim kˈodem veteʔadkˈen.</he>
+[blocked-parking] dispatch: הרכב רשום על שם שירן לוי. יצרנו איתה קשר , היא בבניין ויורדת עכשיו.
+    <he>haʁˈeχev ʁaʃˈum ʔˈal ʃˈem ʃiʁˈan lˈevi. jatsˈaʁnu ʔitˈa kˈeʃeʁ, hˈi babinjˈan vejoʁˈedet ʔaχʃˈav.</he>
+[blocked-parking] narrator: רוני ניגש בצעדים מהירים לרכב הכסוף, מתכופף ליד הגלגל הקדמי ומתחיל לשחרר את פקק השסתום.
+    <he>ʁˈoni niɡˈaʃ betseʔadˈim mehiʁˈim laʁˈeχev hakasˈuf, mitkofˈef lejˈad haɡalɡˈal hakidmˈi vematχˈil leʃaχʁˈeʁ ʔˈet pkˈak haʃastˈom.</he>
+[blocked-parking] roni: אם היא לא יורדת , שתלמד לקח!
+    <he>ʔˈim hˈi lˈo joʁˈedet, ʃetilmˈad lˈekaχ!</he>
+[blocked-parking] dispatch: אתה פנוי? יש אירוע נוסף באזור.
+    <he>ʔatˈa panˈuj? jˈeʃ ʔejʁˈua nosˈaf baʔezˈoʁ.</he>
+[blocked-parking] dispatch: פקח עירוני יכול להגיע בעוד כ40 דקות. ניסיתם לאתר את הבעלים?
+    <he>pakˈaχ ʔiʁonˈi jaχˈol lehaɡˈia beʔˈod keʔaʁbaʔˈim dakˈot. nisˈitem leʔatˈeʁ ʔˈet habeʔalˈim?</he>
+[blocked-parking] center: פקח עירוני יכול להגיע בעוד כ40 דקות. ניסיתם לאתר את הבעלים?
+    <he>pakˈaχ ʔiʁonˈi jaχˈol lehaɡˈia beʔˈod keʔaʁbaʔˈim dakˈot. nisˈitem leʔatˈeʁ ʔˈet habeʔalˈim?</he>
+[blocked-parking] duty: פקח עירוני יכול להגיע בעוד כ40 דקות. ניסיתם לאתר את הבעלים?
+    <he>pakˈaχ ʔiʁonˈi jaχˈol lehaɡˈia beʔˈod keʔaʁbaʔˈim dakˈot. nisˈitem leʔatˈeʁ ʔˈet habeʔalˈim?</he>
+[blocked-parking] dispatch: הבעלים כבר במקום , אין צורך בגרר.
+    <he>habeʔalˈim kvˈaʁ bamakˈom, ʔˈejn tsˈoʁeχ beɡaʁˈaʁ.</he>
+[blocked-parking] center: הבעלים כבר במקום , אין צורך בגרר.
+    <he>habeʔalˈim kvˈaʁ bamakˈom, ʔˈejn tsˈoʁeχ beɡaʁˈaʁ.</he>
+[blocked-parking] duty: הבעלים כבר במקום , אין צורך בגרר.
+    <he>habeʔalˈim kvˈaʁ bamakˈom, ʔˈejn tsˈoʁeχ beɡaʁˈaʁ.</he>
+[blocked-parking] dispatch: קיבלתי, רשמתי.
+    <he>kibˈalti, ʁaʃˈamti.</he>
+[blocked-parking] center: קיבלתי, רשמתי.
+    <he>kibˈalti, ʁaʃˈamti.</he>
+[blocked-parking] duty: קיבלתי, רשמתי.
+    <he>kibˈalti, ʁaʃˈamti.</he>
+[blocked-parking] player: נמצא בחניון רחוב האלה 14
+    <he>nimtsˈa beχanjˈon ʁeχˈov haʔelˈa ʔaʁbˈa ʔesʁˈe</he>
+[blocked-parking] player: רכב כסוף 45, 218, 63 חוסם רכב של דייר
+    <he>ʁˈeχev kasˈuf ʔaʁbaʔˈim veχamˈeʃ, matˈajim veʃmonˈa ʔesʁˈe, ʃiʃˈim veʃalˈoʃ χosˈem ʁˈeχev ʃˈel dajˈaʁ</he>
+[blocked-parking] player: רכב חוסם , מספר טרם אומת
+    <he>ʁˈeχev χosˈem, mispˈaʁ tˈeʁem ʔumˈat</he>
+[blocked-parking] player: המתלונן לחוץ, ניסה לפגוע ברכב , הוזהר והתרחק
+    <he>hamitlonˈen laχˈuts, nisˈa lifɡˈoa baʁˈeχev, huzhˈaʁ vehitʁaχˈek</he>
+[blocked-parking] player: בעלת הרכב אותרה ונמצאת במקום
+    <he>baʔalˈat haʁˈeχev ʔutʁˈa venimtsˈet bamakˈom</he>
+[blocked-parking] player: מבקש פקח עירוני וגרר
+    <he>mevakˈeʃ pakˈaχ ʔiʁonˈi veɡaʁˈaʁ</he>
+[blocked-parking] player: הרכב הוזז, היציאה פנויה
+    <he>haʁˈeχev huzˈaz, hajetsiʔˈa pnujˈa</he>
+[blocked-parking] player: לא נדרש סיוע נוסף
+    <he>lˈo nidʁˈaʃ sijˈua nosˈaf</he>
+[blocked-parking] center: נפתח אירוע ארבע ארבע אחת שבע , רכב חוסם בחניון הבניין, חניון רחוב האלה 14. מעביר אליך לטיפול.
+    <he>niftˈaχ ʔejʁˈua ʔˈaʁba ʔˈaʁba ʔaχˈat ʃˈeva, ʁˈeχev χosˈem beχanjˈon habinjˈan, χenjˈon ʁeχˈov haʔelˈa ʔaʁbˈa ʔesʁˈe. maʔavˈiʁ ʔelˈeχa letipˈul.</he>
+[lost-child] dispatch: ילד בן שש נעלם בשוק העיר לפני כעשר דקות. האם, סיגל, ממתינה בכניסה לסמטת הדוכנים. אשר קבלה.
+    <he>jˈeled bˈen ʃˈeʃ neʔelˈam beʃˈuk haʔˈiʁ lifnˈej keʔˈeseʁ dakˈot. haʔˈem, siɡˈal, mamtinˈa baknisˈa lesimtˈat haduχanˈim. ʔaʃˈeʁ kabalˈa.</he>
+[lost-child] narrator: כניסה לסמטת הדוכנים. רעש, צפיפות, ריח תבלינים. סיגל עומדת ליד דוכן התבלינים, הטלפון רועד בידה, ועיניה סורקות את הקהל. בדוכן הירקות הסמוך מסדר חיים ארגזים.
+    <he>knisˈa lesimtˈat haduχanˈim. ʁˈaʔaʃ, tsfifˈut, ʁˈeaχ tavlinˈim. siɡˈal ʔomˈedet lejˈad duχˈan hatavlinˈim, hatˈelefon ʁoʔˈed bejadˈa, veʔenˈeha soʁkˈot ʔˈet hakahˈal. beduχˈan hajeʁakˈot hasamˈuχ mesadˈeʁ χajˈim ʔaʁɡazˈim.</he>
+[lost-child] sigal: הוא היה פה! רק הסתובבתי לשלם!
+    <he>hˈu hajˈa pˈo! ʁˈak histovˈavti leʃalˈem!</he>
+[lost-child] player: קיבלתי את האירוע, יוצא.
+    <he>kibˈalti ʔˈet haʔejʁˈua, jotsˈe.</he>
+[lost-child] dispatch: קיבל.
+    <he>kibˈel.</he>
+[lost-child] player: קיבלתי.
+    <he>kibˈalti.</he>
+[lost-child] narrator: השדרה ריקה בשעת הלילה. הדרך הקצרה היא גם המהירה.
+    <he>haʃdeʁˈa ʁekˈa biʃʔˈat halˈajla. hadˈeʁeχ haktsaʁˈa hˈi ɡˈam hamehiʁˈa.</he>
+[lost-child] narrator: בשדרות הזית פקק של שעת בוקר. הניידת מתקדמת לאט בין הרכבים.
+    <he>bisdeʁˈot hazˈajit pkˈak ʃˈel ʃaʔˈat bˈokeʁ. hanajˈedet mitkadˈemet leʔˈat bˈen haʁeχavˈim.</he>
+[lost-child] narrator: השדרה עמוסה מעט בשעת הערב, אבל זורמת.
+    <he>haʃdeʁˈa ʔamusˈa meʔˈat biʃʔˈat haʔˈeʁev, ʔavˈal zoʁˈemet.</he>
+[lost-child] narrator: רחובות השכונה צרים ומפותלים. בשעה הזו השדרה הייתה פנויה , הדרך ארכה יותר.
+    <he>ʁeχovˈot haʃχunˈa tsaʁˈim umefutalˈim. baʃaʔˈa hazˈo haʃdeʁˈa hajtˈa pnujˈa, hadˈeʁeχ ʔaʁχˈa jotˈeʁ.</he>
+[lost-child] narrator: עוקפים את הפקק בשדרה דרך רחובות השכונה. ארוך יותר , אבל זורם.
+    <he>ʔokfˈim ʔˈet hapkˈak baʃdeʁˈa dˈeʁeχ ʁeχovˈot haʃχunˈa. ʔaʁˈoχ jotˈeʁ, ʔavˈal zoʁˈem.</he>
+[lost-child] player: מוקד, יש תיאור של הילד?
+    <he>mokˈed, jˈeʃ teʔˈuʁ ʃˈel hajˈeled?</he>
+[lost-child] dispatch: עומרי, בן 6. חולצה צהובה עם כוכב, מכנסיים קצרים אדומים, נעלי ספורט כחולות.
+    <he>ʔomʁˈi, bˈen ʃˈeʃ. χultsˈa tsehubˈa ʔˈim koχˈav, miχnasˈajim ktsaʁˈim ʔadumˈim, naʔalˈej spˈoʁt kχulˈot.</he>
+[lost-child] player: איפה ראו אותו לאחרונה?
+    <he>ʔˈejfo ʁaʔˈu ʔotˈo laʔaχʁonˈa?</he>
+[lost-child] dispatch: ליד דוכן התבלינים בכניסה לסמטה.
+    <he>lejˈad duχˈan hatavlinˈim baknisˈa lasimtˈa.</he>
+[lost-child] sigal: חולצה צהובה עם כוכב ומכנסיים אדומים. הוא עמד פה, ליד התבלינים. הוא משוגע על בלונים , כל הבוקר ביקש ללכת לדוכן הצעצועים.
+    <he>χultsˈa tsehubˈa ʔˈim koχˈav vemiχnasˈajim ʔadumˈim. hˈu ʔamˈad pˈo, lejˈad hatavlinˈim. hˈu meʃuɡˈa ʔˈal balonˈim, kˈol habˈokeʁ bikˈeʃ lalˈeχet leduχˈan hatsaʔatsˈum.</he>
+[lost-child] sigal: אתה חושב שאני לא יודעת?!
+    <he>ʔatˈa χoʃˈev ʃeʔanˈi lˈo jodˈaʔat?!</he>
+[lost-child] sigal: כן, הנה , צילמתי אותו הבוקר בכניסה.
+    <he>kˈen, hˈine, tsilˈamti ʔotˈo habˈokeʁ baknisˈa.</he>
+[lost-child] narrator: בתמונה ילד מחייך בחולצה צהובה עם כוכב.
+    <he>batmunˈa jˈeled meχajˈeχ beχultsˈa tsehubˈa ʔˈim koχˈav.</he>
+[lost-child] sigal: בסדר, אני פה. רק תמצא אותו.
+    <he>besˈedeʁ, ʔanˈi pˈo. ʁˈak timtsˈa ʔotˈo.</he>
+[lost-child] sigal: ,אני נשארת.
+    <he>,ʔanˈi niʃʔˈeʁet.</he>
+[lost-child] sigal: עומרי! אל תעשה לי את זה שוב.
+    <he>ʔomʁˈi! ʔˈal taʔasˈe lˈi ʔˈet zˈe ʃˈuv.</he>
+[lost-child] omri: הבלון עף, אמא,
+    <he>habalˈon ʔˈaf, ʔˈima,</he>
+[lost-child] narrator: סיגל רצה ומחבקת את הילד. זה נראה בסדר , אבל לא שאלת את הילד דבר, ולא בדקת שזה באמת עומרי.
+    <he>siɡˈal ʁˈatsa vemeχabˈeket ʔˈet hajˈeled. zˈe niʁaʔˈa besˈedeʁ, ʔavˈal lˈo ʃaʔˈalt ʔˈet hajˈeled davˈaʁ, velˈo badˈakt ʃezˈe beʔemˈet ʔomʁˈi.</he>
+[lost-child] haim: ילד? עוברים פה מאות ילדים ביום, איך הוא נראה?
+    <he>jˈeled? ʔovʁˈim pˈo meʔˈot jeladˈim bejˈom, ʔˈejχ hˈu niʁʔˈa?</he>
+[lost-child] haim: בצהוב עם כוכב? הוא אצלי! מצאתי אותו בוכה ליד הארגזים והושבתי אותו מאחורי הדוכן, שלא ילך לאיבוד עוד יותר.
+    <he>betsahˈov ʔˈim koχˈav? hˈu ʔetslˈi! matsˈati ʔotˈo boχˈe lejˈad haʔaʁɡazˈim vehoʃˈavti ʔotˈo meʔaχoʁˈej haduχˈan, ʃelˈo jelˈeχ leʔibˈud ʔˈod jotˈeʁ.</he>
+[lost-child] haim: ילד קטן בצהוב? כן, לפני כמה דקות הוא עבר פה לבד, הולך לכיוון סוף הסמטה, איפה שהבלונים.
+    <he>jˈeled katˈan betsahˈov? kˈen, lifnˈej kˈama dakˈot hˈu ʔavˈaʁ pˈo levˈad, holˈeχ lekivˈun sˈof hasimtˈa, ʔejfˈo ʃehabalonˈim.</he>
+[lost-child] haim: כן, זה הילד שעבר פה! הלך לכיוון הבלונים.
+    <he>kˈen, zˈe hajˈeled ʃeʔavˈaʁ pˈo! halˈaχ lekivˈun habalonˈim.</he>
+[lost-child] haim: זה הוא! הוא יושב אצלי מאחורי הדוכן.
+    <he>zˈe hˈu! hˈu joʃˈev ʔetslˈi meʔaχoʁˈej haduχˈan.</he>
+[lost-child] haim: מיד. חבר׳ה! ילד קטן בצהוב, עם כוכב! מי שרואה , שומר עליו ומודיע!
+    <he>mijˈad. χˈevʁe! jˈeled katˈan betsahˈov, ʔˈim koχˈav! mˈi ʃeʁoʔˈe, ʃomˈeʁ ʔalˈav vemodˈia!</he>
+[lost-child] narrator: הלכת לאורך הסמטה עד דוכן הבלונים ובדקת בין הארגזים. אין ילד בצהוב. אולי מישהו מהסוחרים ראה אותו?
+    <he>halˈaχta leʔˈoʁeχ hasimtˈa ʔˈad duχˈan habalonˈim vebadˈakta bˈen haʔaʁɡazˈim. ʔˈejn jˈeled betsahˈov. ʔulˈaj mˈiʃu mehasoχaʁˈim ʁaʔˈa ʔotˈo?</he>
+[lost-child] narrator: עברת דוכן אחרי דוכן לכיוון סוף הסמטה. ליד דוכן הבלונים עומד ילד קטן בחולצה צהובה, מחזיק חוט של בלון, ובוכה בשקט.
+    <he>ʔavˈaʁta duχˈan ʔaχʁˈej duχˈan lekivˈun sˈof hasimtˈa. lejˈad duχˈan habalonˈim ʔomˈed jˈeled katˈan beχultsˈa tsehubˈa, maχzˈik χˈut ʃˈel balˈon, veboχˈe beʃˈeket.</he>
+[lost-child] narrator: תיעדת: הילד נמצא בדוכן הבלונים בסוף הסמטה, לבד, לא פצוע. שעה ומיקום נרשמו.
+    <he>tiʔˈadta: hajˈeled nimtsˈa beduχˈan habalonˈim besˈof hasimtˈa, levˈad, lˈo patsˈua. ʃaʔˈa vemikˈum niʁʃemˈu.</he>
+[lost-child] narrator: תיעדת: הילד נמצא בדוכן הירקות של חיים, עם הסוחר חיים, לא פצוע. שעה ומיקום נרשמו.
+    <he>tiʔˈadta: hajˈeled nimtsˈa beduχˈan hajeʁakˈot ʃˈel χajˈim, ʔˈim hasoχˈeʁ χajˈim, lˈo patsˈua. ʃaʔˈa vemikˈum niʁʃemˈu.</he>
+[lost-child] omri: עומרי, אמא שלי זה סיגל.
+    <he>ʔomʁˈi, ʔimˈa ʃelˈi zˈe siɡˈal.</he>
+[lost-child] narrator: הרמת את הילד. הוא נבהל, בועט ובוכה בקול: אני לא מכיר אותך! אנשים מסתובבים להסתכל.
+    <he>heʁˈamta ʔˈet hajˈeled. hˈu nivhˈal, boʔˈet veboχˈe bekˈol: ʔanˈi lˈo makˈiʁ ʔotχˈa! ʔanaʃˈim mistovevˈim lehistakˈel.</he>
+[lost-child] omri: ,עומרי.
+    <he>,ʔomʁˈi.</he>
+[lost-child] omri: היה לי בלון והוא עף, ורצתי אחריו, ואז לא ראיתי את אמא.
+    <he>hajˈa lˈi balˈon vehˈu ʔˈaf, veʁˈatsti ʔaχaʁˈav, veʔˈaz lˈo ʁaʔˈiti ʔˈet ʔˈima.</he>
+[lost-child] narrator: הילד תואם לתמונה. כשאתה מצביע לכיוון הכניסה, הוא קורא: אמא! וסיגל מנופפת אליו.
+    <he>hajˈeled toʔˈem latmunˈa. kʃeʔatˈa matsbˈia lekivˈun haknisˈa, hˈu koʁˈe: ʔˈima! vesiɡˈal menofˈefet ʔelˈav.</he>
+[lost-child] player: הגעתי למקום.
+    <he>hiɡˈaʔti lamakˈom.</he>
+[lost-child] dispatch: קיבל. עדכן כשיש תמונת מצב.
+    <he>kibˈel. ʔidkˈen kʃejˈeʃ tmunˈat matsˈav.</he>
+[lost-child] player: שלילי, עדיין בטיפול באירוע. אעדכן כשאתפנה.
+    <he>ʃlilˈi, ʔadˈajin betipˈul baʔejʁˈua. ʔeʔadkˈen kʃeʔetpanˈe.</he>
+[lost-child] dispatch: קיבל, מעביר לניידת אחרת.
+    <he>kibˈel, maʔavˈiʁ lenajˈedet ʔaχˈeʁet.</he>
+[lost-child] player: חיובי, פנוי.
+    <he>χijuvˈi, panˈuj.</he>
+[lost-child] dispatch: רגע , סיימת שם? המעורבים עדיין במקום לפי הדיווח שלך. תשלים קודם ותעדכן.
+    <he>ʁˈeɡa, sijˈamta ʃˈam? hameʔoʁavˈim ʔadˈajin bamakˈom lefˈi hadivˈuaχ ʃelχˈa. taʃlˈim kˈodem veteʔadkˈen.</he>
+[lost-child] dispatch: יצרנו קשר. הכריזה תופעל בעוד כמה דקות.
+    <he>jatsˈaʁnu kˈeʃeʁ. hakʁizˈa tufʔˈal beʔˈod kˈama dakˈot.</he>
+[lost-child] narrator: הצופים זזים כמה צעדים אחורה וממשיכים לצלם מרחוק. אף אחד לא מתווכח.
+    <he>hatsofˈim zazˈim kˈama tseʔadˈim ʔaχˈoʁa vemamʃiχˈim letsalˈem meʁaχˈok. ʔˈaf ʔeχˈad lˈo mitvakˈeaχ.</he>
+[lost-child] narrator: אחד הצופים מרים את הטלפון גבוה יותר: מותר לי לצלם ברחוב! הוויכוח מושך עוד אנשים לזירה.
+    <he>ʔeχˈad hatsofˈim meʁˈim ʔˈet hatˈelefon ɡavˈoa jotˈeʁ: mutˈaʁ lˈi letsalˈem baʁeχˈov! havikˈuaχ moʃˈeχ ʔˈod ʔanaʃˈim laziʁˈa.</he>
+[lost-child] sigal: עומרי! עומרי!
+    <he>ʔomʁˈi! ʔomʁˈi!</he>
+[lost-child] narrator: סיגל עוזבת את דוכן התבלינים ומתחילה לרוץ לתוך הקהל, דוחפת עגלות.
+    <he>siɡˈal ʔozˈevet ʔˈet duχˈan hatavlinˈim vematχilˈa laʁˈuts letˈoχ hakahˈal, doχˈefet ʔaɡalˈot.</he>
+[lost-child] dispatch: אתה פנוי? יש אירוע נוסף באזור.
+    <he>ʔatˈa panˈuj? jˈeʃ ʔejʁˈua nosˈaf baʔezˈoʁ.</he>
+[lost-child] dispatch: התיאור הועבר לניידות באזור ולאבטחת השוק.
+    <he>hateʔˈuʁ hoʔavˈaʁ lenajadˈut baʔezˈoʁ veleʔavtaχˈat haʃˈuk.</he>
+[lost-child] center: התיאור הועבר לניידות באזור ולאבטחת השוק.
+    <he>hateʔˈuʁ hoʔavˈaʁ lenajadˈut baʔezˈoʁ veleʔavtaχˈat haʃˈuk.</he>
+[lost-child] duty: התיאור הועבר לניידות באזור ולאבטחת השוק.
+    <he>hateʔˈuʁ hoʔavˈaʁ lenajadˈut baʔezˈoʁ veleʔavtaχˈat haʃˈuk.</he>
+[lost-child] dispatch: קיבלתי, מבטל את החיפוש. כל הכבוד.
+    <he>kibˈalti, mevatˈel ʔˈet haχipˈus. kˈol hakavˈod.</he>
+[lost-child] center: קיבלתי, מבטל את החיפוש. כל הכבוד.
+    <he>kibˈalti, mevatˈel ʔˈet haχipˈus. kˈol hakavˈod.</he>
+[lost-child] duty: קיבלתי, מבטל את החיפוש. כל הכבוד.
+    <he>kibˈalti, mevatˈel ʔˈet haχipˈus. kˈol hakavˈod.</he>
+[lost-child] dispatch: קיבלתי, רשמתי.
+    <he>kibˈalti, ʁaʃˈamti.</he>
+[lost-child] center: קיבלתי, רשמתי.
+    <he>kibˈalti, ʁaʃˈamti.</he>
+[lost-child] duty: קיבלתי, רשמתי.
+    <he>kibˈalti, ʁaʃˈamti.</he>
+[lost-child] player: נמצא בשוק העיר, סמטת הדוכנים
+    <he>nimtsˈa beʃˈuk haʔˈiʁ, simtˈat haduχanˈim</he>
+[lost-child] player: ילד אבוד: עומרי, 6, חולצה צהובה עם כוכב, מכנסיים אדומים
+    <he>jˈeled ʔavˈud: ʔomʁˈi, ʃˈeʃ, χultsˈa tsehubˈa ʔˈim koχˈav, miχnasˈajim ʔadumˈim</he>
+[lost-child] player: מבצע חיפוש בסמטה, הסוחרים מעודכנים
+    <he>mivtsˈa χipˈus basimtˈa, hasoχaʁˈim meʔudkanˈim</he>
+[lost-child] player: מבקש להעביר את התיאור לניידות ולשומרי היציאות
+    <he>mevakˈeʃ lehaʔavˈiʁ ʔˈet hateʔˈuʁ lanajadˈot veleʃomʁˈej hajetsiʔˈot</he>
+[lost-child] player: הילד נמצא בדוכן הבלונים בסוף הסמטה, לא פצוע
+    <he>hajˈeled nimtsˈa beduχˈan habalonˈim besˈof hasimtˈa, lˈo patsˈua</he>
+[lost-child] player: הילד נמצא בדוכן הירקות של חיים, לא פצוע
+    <he>hajˈeled nimtsˈa beduχˈan hajeʁakˈot ʃˈel χajˈim, lˈo patsˈua</he>
+[lost-child] player: זהות הילד אומתה מול האם
+    <he>zehˈut hajˈeled ʔumtˈa mˈul haʔˈem</he>
+[lost-child] player: הילד נמסר לאמו , ניתן לבטל את החיפוש
+    <he>hajˈeled nimsˈaʁ leʔimˈo, nitˈan levatˈel ʔˈet haχipˈus</he>
+[lost-child] player: לא נדרש סיוע נוסף
+    <he>lˈo nidʁˈaʃ sijˈua nosˈaf</he>
+[lost-child] center: נפתח אירוע שלוש אפס שמונה שש , ילד שהלך לאיבוד בשוק, שוק העיר, סמטת הדוכנים. מעביר אליך לטיפול.
+    <he>niftˈaχ ʔejʁˈua ʃalˈoʃ ʔˈefes ʃmonˈe ʃˈeʃ, jˈeled ʃehalˈaχ leʔibˈud baʃˈuk, ʃˈuk haʔˈiʁ, simtˈat haduχanˈim. maʔavˈiʁ ʔelˈeχa letipˈul.</he>
+[bar-fight] dispatch: דיווח על קטטה מחוץ לבר ברחוב התבור 3. יש פצוע, והמעורבים עדיין במקום. המדווחת היא הברמנית. אשר קבלה.
+    <he>divˈuaχ ʔˈal ktatˈa miχˈuts labˈaʁ beʁeχˈov hatavˈoʁ ʃalˈoʃ. jˈeʃ patsˈua, vehameʔoʁavˈim ʔadˈajin bamakˈom. hamedavˈaχat hˈi habaʁmanˈit. ʔaʃˈeʁ kabalˈa.</he>
+[bar-fight] narrator: מחוץ לבר: כיסא הפוך, שברי זכוכית על המדרכה. צעיר בחולצה לבנה יושב על הספסל ומצמיד מפית למצחו. לידו חבר בסווטשירט בורדו, מתהלך עצבני ומסתכל לעבר צעיר בחולצה שחורה שעומד ליד השולחנות. הברמנית בפתח, מגבת ביד.
+    <he>miχˈuts labˈaʁ: kisˈe hafˈuχ, ʃivʁˈej zχuχˈit ʔˈal hamidʁaχˈa. tsaʔˈiʁ beχultsˈa levanˈa joʃˈev ʔˈal hasafsˈal vematsmˈid mapˈit lemitsχˈo. lejadˈo χavˈeʁ besvˈetʃiʁt bˈoʁdo, mithalˈeχ ʔatsbanˈi vemistakˈel leʔˈeveʁ tsaʔˈiʁ beχultsˈa ʃχoʁˈa ʃeʔomˈed lejˈad haʃulχanˈot. habaʁmanˈit bapˈetaχ, maɡˈevet bajˈad.</he>
+[bar-fight] maor: זה הוא! הוא פתח לו את הראש!
+    <he>zˈe hˈu! hˈu patˈaχ lˈo ʔˈet haʁˈoʃ!</he>
+[bar-fight] player: קיבלתי את האירוע, יוצא.
+    <he>kibˈalti ʔˈet haʔejʁˈua, jotsˈe.</he>
+[bar-fight] dispatch: קיבל.
+    <he>kibˈel.</he>
+[bar-fight] player: קיבלתי.
+    <he>kibˈalti.</he>
+[bar-fight] narrator: השדרה ריקה בשעת הלילה. הדרך הקצרה היא גם המהירה.
+    <he>haʃdeʁˈa ʁekˈa biʃʔˈat halˈajla. hadˈeʁeχ haktsaʁˈa hˈi ɡˈam hamehiʁˈa.</he>
+[bar-fight] narrator: בשדרות הזית פקק של שעת בוקר. הניידת מתקדמת לאט בין הרכבים.
+    <he>bisdeʁˈot hazˈajit pkˈak ʃˈel ʃaʔˈat bˈokeʁ. hanajˈedet mitkadˈemet leʔˈat bˈen haʁeχavˈim.</he>
+[bar-fight] narrator: השדרה עמוסה מעט בשעת הערב, אבל זורמת.
+    <he>haʃdeʁˈa ʔamusˈa meʔˈat biʃʔˈat haʔˈeʁev, ʔavˈal zoʁˈemet.</he>
+[bar-fight] narrator: רחובות השכונה צרים ומפותלים. בשעה הזו השדרה הייתה פנויה , הדרך ארכה יותר.
+    <he>ʁeχovˈot haʃχunˈa tsaʁˈim umefutalˈim. baʃaʔˈa hazˈo haʃdeʁˈa hajtˈa pnujˈa, hadˈeʁeχ ʔaʁχˈa jotˈeʁ.</he>
+[bar-fight] narrator: עוקפים את הפקק בשדרה דרך רחובות השכונה. ארוך יותר , אבל זורם.
+    <he>ʔokfˈim ʔˈet hapkˈak baʃdeʁˈa dˈeʁeχ ʁeχovˈot haʃχunˈa. ʔaʁˈoχ jotˈeʁ, ʔavˈal zoʁˈem.</he>
+[bar-fight] player: מוקד, מה מצב הפצוע?
+    <he>mokˈed, mˈa matsˈav hapatsˈua?</he>
+[bar-fight] dispatch: לפי המדווחת בהכרה, מדמם מהמצח.
+    <he>lefˈi hamedavˈaχat bahakaʁˈa, medamˈem mehamˈetsaχ.</he>
+[bar-fight] player: החשוד עדיין שם? יש תיאור?
+    <he>haχaʃˈud ʔadˈajin ʃˈam? jˈeʃ teʔˈuʁ?</he>
+[bar-fight] dispatch: כן, צעיר בחולצה שחורה, עומד ליד השולחנות. לפי המדווחת נשברה כוס בזמן האירוע.
+    <he>kˈen, tsaʔˈiʁ beχultsˈa ʃχoʁˈa, ʔomˈed lejˈad haʃulχanˈot. lefˈi hamedavˈaχat niʃbeʁˈa kˈos bizmˈan haʔejʁˈua.</he>
+[bar-fight] player: מוקד, מבקש ניידת נוספת לנקודה וצוות מד״א לפצוע.
+    <he>mokˈed, mevakˈeʃ najˈedet nosˈefet lanekudˈa vetsˈevet madˈa lepatsˈua.</he>
+[bar-fight] dispatch: ניידת 42 בדרך, כשמונה דקות. צוות מד״א הוזנק.
+    <he>najˈedet ʔaʁbaʔˈim veʃtˈajim badˈeʁeχ, keʃmˈone dakˈot. tsˈevet mˈada huznˈak.</he>
+[bar-fight] narrator: מאור מתיישב בהיסוס ליד חברו. דור נשען על הקיר, ידיו בכיסים. יש עכשיו כמה מטרים ביניהם.
+    <he>maʔˈoʁ mitjaʃˈev behisˈus lejˈad χaveʁˈo. dˈoʁ niʃʔˈan ʔˈal hakˈiʁ, jadˈav bakisˈim. jˈeʃ ʔaχʃˈav kˈama mˈetʁim benehˈem.</he>
+[bar-fight] narrator: מתחת סרט סימון סביב השולחן והשברים.
+    <he>mitˈaχat sˈeʁet simˈun svˈiv haʃulχˈan vehaʃvaʁˈim.</he>
+[bar-fight] narrator: תיעדת את הזירה: מיקום השברים והכיסא ההפוך, הפציעה של אלון, שעת ההגעה ומיקום כל אחד מהנוכחים.
+    <he>tiʔˈadta ʔˈet haziʁˈa: mikˈum haʃvaʁˈim vehakisˈe hahafˈuχ, haptsiʔˈa ʃˈel ʔalˈon, ʃaʔˈat hahaɡaʔˈa vemikˈum kˈol ʔeχˈad mehanoχeχˈim.</he>
+[bar-fight] alon: כן, בבר של לילך. קצת מסתובב. זה שורף.
+    <he>kˈen, babˈaʁ ʃˈel lilˈaχ. ktsˈat mistovˈev. zˈe soʁˈef.</he>
+[bar-fight] narrator: חתך במצח, דימום מתון. הוא בהכרה ועונה לעניין.
+    <he>χatˈaχ bamˈetsaχ, dimˈum matˈun. hˈu behakaʁˈa veʔonˈe laʔinjˈan.</he>
+[bar-fight] alon: שפכתי בלי כוונה קצת בירה ליד השולחן שלו. הוא התחיל לצעוק, ואז דחף אותי על השולחן. הכוס נשברה ואני נפלתי.
+    <he>ʃafˈaχti blˈi kavanˈa ktsˈat biʁˈa lejˈad haʃulχˈan ʃelˈo. hˈu hitχˈil litsʔˈok, veʔˈaz daχˈaf ʔotˈi ʔˈal haʃulχˈan. hakˈos niʃbeʁˈa veʔanˈi nafˈalti.</he>
+[bar-fight] maor: בסדר, אבל אם הוא מתקרב , אני לא אחראי.
+    <he>besˈedeʁ, ʔavˈal ʔˈim hˈu mitkaʁˈev, ʔanˈi lˈo ʔaχʁˈai.</he>
+[bar-fight] maor: ,טוב. טוב. אני חוזר.
+    <he>,tˈov. tˈov. ʔanˈi χozˈeʁ.</he>
+[bar-fight] dor: הנה. אבל אני לא עשיתי כלום, הוא התחיל.
+    <he>hˈine. ʔavˈal ʔanˈi lˈo ʔasˈiti klˈum, hˈu hitχˈil.</he>
+[bar-fight] dor: למה? מה עשיתי? אני לא חייב לתת לך כלום!
+    <he>lˈama? mˈa ʔasˈiti? ʔanˈi lˈo χajˈav latˈet leχˈa klˈum!</he>
+[bar-fight] dor: ,בסדר. הנה.
+    <he>,besˈedeʁ. hˈine.</he>
+[bar-fight] dor: הוא שפך עליי בירה וצעק עליי מול כולם. דחפתי אותו כדי שיתרחק , לא חשבתי שהוא ייפול על השולחן.
+    <he>hˈu ʃafˈaχ ʔalˈaj biʁˈa vetsaʔˈak ʔalˈaj mˈul kulˈam. daχˈafti ʔotˈo kedˈej ʃejitʁaχˈek, lˈo χaʃˈavti ʃehˈu jipˈol ʔˈal haʃulχˈan.</he>
+[bar-fight] dor: על מה? אף אחד אפילו לא שאל מה קרה!
+    <he>ʔˈal mˈa? ʔˈaf ʔeχˈad ʔafˈilu lˈo ʃaʔˈal mˈa kaʁˈa!</he>
+[bar-fight] dor: אוקיי. אני לא בורח לשום מקום.
+    <he>ʔokˈej. ʔanˈi lˈo boʁˈeaχ leʃˈum makˈom.</he>
+[bar-fight] lilach: ראיתי הכול מהחלון: דור קם, הלך ישר לאלון ודחף אותו בכוח על השולחן. אלון לא עשה לו כלום לפני זה.
+    <he>ʁaʔˈiti hakˈol mehaχalˈon: dˈoʁ kˈam, halˈaχ jaʃˈaʁ leʔalˈon vedaχˈaf ʔotˈo bekˈoaχ ʔˈal haʃulχˈan. ʔalˈon lˈo ʔasˈa lˈo klˈum lifnˈej zˈe.</he>
+[bar-fight] lilach: ראיתי הכול מהחלון: הם התווכחו על בירה שנשפכה, אלון צעק ודחף קלות את דור, ודור דחף אותו בחזרה חזק , ואלון נפל על השולחן.
+    <he>ʁaʔˈiti hakˈol mehaχalˈon: hˈem hitvakχˈu ʔˈal biʁˈa ʃeniʃpeχˈa, ʔalˈon tsaʔˈak vedaχˈaf kalˈot ʔˈet dˈoʁ, vedˈoʁ daχˈaf ʔotˈo beχazaʁˈa χazˈak, veʔalˈon nafˈal ʔˈal haʃulχˈan.</he>
+[bar-fight] lilach: כן, המצלמה בפינה. אני שומרת את הקטע עכשיו.
+    <he>kˈen, hamatslemˈa bapinˈa. ʔanˈi ʃomˈeʁet ʔˈet hakˈeta ʔaχʃˈav.</he>
+[bar-fight] player: הגעתי למקום.
+    <he>hiɡˈaʔti lamakˈom.</he>
+[bar-fight] dispatch: קיבל. עדכן כשיש תמונת מצב.
+    <he>kibˈel. ʔidkˈen kʃejˈeʃ tmunˈat matsˈav.</he>
+[bar-fight] player: שלילי, עדיין בטיפול באירוע. אעדכן כשאתפנה.
+    <he>ʃlilˈi, ʔadˈajin betipˈul baʔejʁˈua. ʔeʔadkˈen kʃeʔetpanˈe.</he>
+[bar-fight] dispatch: קיבל, מעביר לניידת אחרת.
+    <he>kibˈel, maʔavˈiʁ lenajˈedet ʔaχˈeʁet.</he>
+[bar-fight] player: חיובי, פנוי.
+    <he>χijuvˈi, panˈuj.</he>
+[bar-fight] dispatch: רגע , סיימת שם? המעורבים עדיין במקום לפי הדיווח שלך. תשלים קודם ותעדכן.
+    <he>ʁˈeɡa, sijˈamta ʃˈam? hameʔoʁavˈim ʔadˈajin bamakˈom lefˈi hadivˈuaχ ʃelχˈa. taʃlˈim kˈodem veteʔadkˈen.</he>
+[bar-fight] narrator: הצופים זזים כמה צעדים אחורה וממשיכים לצלם מרחוק. אף אחד לא מתווכח.
+    <he>hatsofˈim zazˈim kˈama tseʔadˈim ʔaχˈoʁa vemamʃiχˈim letsalˈem meʁaχˈok. ʔˈaf ʔeχˈad lˈo mitvakˈeaχ.</he>
+[bar-fight] narrator: אחד הצופים מרים את הטלפון גבוה יותר: מותר לי לצלם ברחוב! הוויכוח מושך עוד אנשים לזירה.
+    <he>ʔeχˈad hatsofˈim meʁˈim ʔˈet hatˈelefon ɡavˈoa jotˈeʁ: mutˈaʁ lˈi letsalˈem baʁeχˈov! havikˈuaχ moʃˈeχ ʔˈod ʔanaʃˈim laziʁˈa.</he>
+[bar-fight] maor: אתה חושב שתלך הביתה ככה?!
+    <he>ʔatˈa χoʃˈev ʃetelˈeχ habˈajta kˈaχa?!</he>
+[bar-fight] narrator: מאור קם בבת אחת ומתקדם בצעדים מהירים לעבר דור. דור מוציא ידיים מהכיסים.
+    <he>maʔˈoʁ kˈam bevˈat ʔaχˈat vemitkadˈem betseʔadˈim mehiʁˈim leʔˈeveʁ dˈoʁ. dˈoʁ motsˈi jadˈajim mehakisˈim.</he>
+[bar-fight] narrator: צוות מד״א מגיע ומתחיל לטפל באלון. ניידת נוספת לא הוזמנה , אתה עדיין לבד מול שלושה מעורבים.
+    <he>tsˈevet mˈada maɡˈia vematχˈil letapˈel beʔalˈon. najˈedet nosˈefet lˈo huzmenˈa, ʔatˈa ʔadˈajin levˈad mˈul ʃloʃˈa meʔoʁavˈim.</he>
+[bar-fight] narrator: ניידת נוספת עוצרת ליד הבר, ושני שוטרים יורדים ממנה. רגע אחריהם מגיע צוות מד״א ומתחיל לטפל באלון.
+    <he>najˈedet nosˈefet ʔotsˈeʁet lejˈad habˈaʁ, veʃnˈej ʃotʁˈim joʁdˈim mimˈena. ʁˈeɡa ʔaχʁehˈem maɡˈia tsˈevet madˈa vematχˈil letapˈel beʔalˈon.</he>
+[bar-fight] dispatch: אתה פנוי? יש אירוע נוסף באזור.
+    <he>ʔatˈa panˈuj? jˈeʃ ʔejʁˈua nosˈaf baʔezˈoʁ.</he>
+[bar-fight] dispatch: צוות מד״א בדרך.
+    <he>tsˈevet madˈa badˈeʁeχ.</he>
+[bar-fight] center: צוות מד״א בדרך.
+    <he>tsˈevet madˈa badˈeʁeχ.</he>
+[bar-fight] duty: צוות מד״א בדרך.
+    <he>tsˈevet madˈa badˈeʁeχ.</he>
+[bar-fight] dispatch: ניידת 42 בדרך אליכם.
+    <he>najˈedet ʔaʁbaʔˈim veʃtˈajim badˈeʁeχ ʔaleχˈem.</he>
+[bar-fight] center: ניידת 42 בדרך אליכם.
+    <he>najˈedet ʔaʁbaʔˈim veʃtˈajim badˈeʁeχ ʔaleχˈem.</he>
+[bar-fight] duty: ניידת 42 בדרך אליכם.
+    <he>najˈedet ʔaʁbaʔˈim veʃtˈajim badˈeʁeχ ʔaleχˈem.</he>
+[bar-fight] dispatch: רשמתי. שים לב , מה הבסיס לקביעה? מסרו עובדות ועדויות.
+    <he>ʁaʃˈamti. sˈim lˈev, mˈa habasˈis lakviʔˈa? masʁˈu ʔuvdˈot veʔedujˈot.</he>
+[bar-fight] center: רשמתי. שים לב , מה הבסיס לקביעה? מסרו עובדות ועדויות.
+    <he>ʁaʃˈamti. sˈim lˈev, mˈa habasˈis lakviʔˈa? masʁˈu ʔuvdˈot veʔedujˈot.</he>
+[bar-fight] duty: רשמתי. שים לב , מה הבסיס לקביעה? מסרו עובדות ועדויות.
+    <he>ʁaʃˈamti. sˈim lˈev, mˈa habasˈis lakviʔˈa? masʁˈu ʔuvdˈot veʔedujˈot.</he>
+[bar-fight] dispatch: קיבלתי, רשמתי.
+    <he>kibˈalti, ʁaʃˈamti.</he>
+[bar-fight] center: קיבלתי, רשמתי.
+    <he>kibˈalti, ʁaʃˈamti.</he>
+[bar-fight] duty: קיבלתי, רשמתי.
+    <he>kibˈalti, ʁaʃˈamti.</he>
+[bar-fight] player: נמצא מחוץ לבר, רחוב התבור 3
+    <he>nimtsˈa miχˈuts labˈaʁ, ʁeχˈov hatavˈoʁ ʃalˈoʃ</he>
+[bar-fight] player: פצוע אחד בהכרה, חתך במצח, דימום מתון
+    <he>patsˈua ʔeχˈad bahakaʁˈa, χatˈaχ bamˈetsaχ, dimˈum matˈun</he>
+[bar-fight] player: יש פצוע , מצבו טרם נבדק
+    <he>jˈeʃ patsˈua, matsavˈo tˈeʁem nivdˈak</he>
+[bar-fight] player: הצדדים הופרדו, אין עימות פעיל
+    <he>hatsdadˈim hufʁedˈu, ʔˈejn ʔimˈut paʔˈil</he>
+[bar-fight] player: החשוד במקום והזדהה
+    <he>haχaʃˈud bamakˈom vehizdahˈa</he>
+[bar-fight] player: החשוד מעוכב לבירור על בסיס עדות
+    <he>haχaʃˈud meʔukˈav lebeʁˈuʁ ʔˈal bsˈis ʔedˈut</he>
+[bar-fight] player: צילומי מצלמת הבר נשמרו
+    <he>tsilumˈej matslemˈat habˈaʁ niʃmeʁˈu</he>
+[bar-fight] player: מבקש צוות מד״א
+    <he>mevakˈeʃ tsˈevet madˈa</he>
+[bar-fight] player: מבקש ניידת נוספת
+    <he>mevakˈeʃ najˈedet nosˈefet</he>
+[bar-fight] player: הגרסאות סותרות , מי התחיל טרם הוכרע
+    <he>haɡiʁsaʔˈot sotʁˈot, mˈi hitχˈil tˈeʁem huχʁˈa</he>
+[bar-fight] player: החשוד אשם בתקיפה
+    <he>haχaʃˈud ʔaʃˈem betkifˈa</he>
+[bar-fight] center: נפתח אירוע תשע אפס חמש שתיים , אחרי קטטה מחוץ לבר, הבר של לילך, רחוב התבור 3. מעביר אליך לטיפול.
+    <he>niftˈaχ ʔejʁˈua tˈeʃa ʔˈefes χamˈeʃ ʃtˈajim, ʔaχʁˈej ktatˈa miχˈuts labˈaʁ, habˈaʁ ʃˈel lilˈaχ, ʁeχˈov hatavˈoʁ ʃalˈoʃ. maʔavˈiʁ ʔelˈeχa letipˈul.</he>
+[gas-smell] dispatch: דיווח על ריח גז חזק בכניסה לבניין ברחוב השקד 8. המדווחת, גלית, יצאה מהבניין וממתינה בחוץ. אשר קבלה.
+    <he>divˈuaχ ʔˈal ʁˈeaχ ɡˈaz χazˈak baknisˈa labinjˈan beʁeχˈov haʃakˈed ʃmonˈe. hamedavˈaχat, ɡalˈit, jatsʔˈa mehabinjˈan vemamtinˈa baχˈuts. ʔaʃˈeʁ kabalˈa.</he>
+[gas-smell] narrator: כבר במדרכה מורגש ריח גז חריף. גלית ממתינה ליד הגדר. בפתח הבניין עומד דייר מבוגר בגופייה, סיגריה לא דלוקה בפה. נער עם אוזניות יורד במדרגות ומסתכל בטלפון.
+    <he>kvˈaʁ bamidʁaχˈa muʁɡˈaʃ ʁˈeaχ ɡˈaz χaʁˈif. ɡalˈit mamtinˈa lejˈad haɡadˈeʁ. befˈetaχ habinjˈan ʔomˈed dajˈaʁ mevuɡˈaʁ beɡufjˈa, siɡˈaʁja lˈo dlukˈa bapˈe. nˈaʔaʁ ʔˈim ʔoznijˈot joʁˈed bamadʁeɡˈot vemistakˈel batˈelefon.</he>
+[gas-smell] moshe: מה כל הרעש? זה תמיד מריח ככה פה, מה קרה.
+    <he>mˈa kˈol haʁˈaʔaʃ? zˈe tamˈid maʁˈiaχ kˈaχa pˈo, mˈa kaʁˈa.</he>
+[gas-smell] player: קיבלתי את האירוע, יוצא.
+    <he>kibˈalti ʔˈet haʔejʁˈua, jotsˈe.</he>
+[gas-smell] dispatch: קיבל.
+    <he>kibˈel.</he>
+[gas-smell] player: קיבלתי.
+    <he>kibˈalti.</he>
+[gas-smell] narrator: השדרה ריקה בשעת הלילה. הדרך הקצרה היא גם המהירה.
+    <he>haʃdeʁˈa ʁekˈa biʃʔˈat halˈajla. hadˈeʁeχ haktsaʁˈa hˈi ɡˈam hamehiʁˈa.</he>
+[gas-smell] narrator: בשדרות הזית פקק של שעת בוקר. הניידת מתקדמת לאט בין הרכבים.
+    <he>bisdeʁˈot hazˈajit pkˈak ʃˈel ʃaʔˈat bˈokeʁ. hanajˈedet mitkadˈemet leʔˈat bˈen haʁeχavˈim.</he>
+[gas-smell] narrator: השדרה עמוסה מעט בשעת הערב, אבל זורמת.
+    <he>haʃdeʁˈa ʔamusˈa meʔˈat biʃʔˈat haʔˈeʁev, ʔavˈal zoʁˈemet.</he>
+[gas-smell] narrator: רחובות השכונה צרים ומפותלים. בשעה הזו השדרה הייתה פנויה , הדרך ארכה יותר.
+    <he>ʁeχovˈot haʃχunˈa tsaʁˈim umefutalˈim. baʃaʔˈa hazˈo haʃdeʁˈa hajtˈa pnujˈa, hadˈeʁeχ ʔaʁχˈa jotˈeʁ.</he>
+[gas-smell] narrator: עוקפים את הפקק בשדרה דרך רחובות השכונה. ארוך יותר , אבל זורם.
+    <he>ʔokfˈim ʔˈet hapkˈak baʃdeʁˈa dˈeʁeχ ʁeχovˈot haʃχunˈa. ʔaʁˈoχ jotˈeʁ, ʔavˈal zoʁˈem.</he>
+[gas-smell] player: מוקד, כמה דירות בבניין? יש דיירים שיתקשו לצאת?
+    <he>mokˈed, kˈama diʁˈot babinjˈan? jˈeʃ dajaʁˈim ʃejitkaʃˈu latsˈet?</he>
+[gas-smell] dispatch: 12 דירות. לפי המדווחת יש דיירים מבוגרים בקומות העליונות.
+    <he>ʃtˈem ʔesʁˈe diʁˈot. lefˈi hamedavˈaχat jˈeʃ dajaʁˈim mevuɡaʁˈim bakomˈot haʔeljonˈot.</he>
+[gas-smell] player: מוקד, אפשר לוודא שכב״ה וחברת הגז הוזנקו?
+    <he>mokˈed, ʔefʃˈaʁ levadˈe ʃekabˈa veχevʁˈat haɡˈaz huznekˈu?</he>
+[gas-smell] dispatch: הוזנקו. כב״ה בעוד כעשר דקות.
+    <he>huznekˈu. kebaʁˈuχ haʃˈem beʔˈod keʔˈeseʁ dakˈot.</he>
+[gas-smell] narrator: עמדת בפתח, לא נכנסת פנימה. הריח חריף וחזק במיוחד ליד ארון מוני הגז בחזית. לא נגעת באור ולא באינטרקום.
+    <he>ʔamˈadta bapˈetaχ, lˈo niχnˈasta pnˈima. haʁˈeaχ χaʁˈif veχazˈak bimjuχˈad lejˈad ʔaʁˈon monˈej haɡˈaz baχazˈit. lˈo naɡˈaʔta baʔˈoʁ velˈo baʔinteʁkˈum.</he>
+[gas-smell] narrator: עמדת בפתח, לא נכנסת פנימה. הריח חריף וחזק במיוחד בקומת הכניסה, ליד דירה 2. לא נגעת באור ולא באינטרקום.
+    <he>ʔamˈadta bapˈetaχ, lˈo niχnˈasta pnˈima. haʁˈeaχ χaʁˈif veχazˈak bimjuχˈad bekomˈat haknisˈa, lejˈad diʁˈa ʃtˈajim. lˈo naɡˈaʔta baʔˈoʁ velˈo baʔinteʁkˈum.</he>
+[gas-smell] narrator: לחצת על כפתורי האינטרקום אחד אחרי השני. כמה דיירים עונים, מבולבלים. רק אחר כך אתה נזכר שמתג חשמלי עלול ליצור ניצוץ.
+    <he>laχˈatsta ʔˈal kaftoʁˈej haʔinteʁkˈum ʔeχˈad ʔaχʁˈej haʃenˈi. kˈama dajaʁˈim ʔonˈim, mevulbalˈim. ʁˈak ʔaχˈaʁ kˈaχ ʔatˈa nizkˈaʁ ʃemˈeteɡ χaʃmalˈi ʔalˈul litsˈoʁ nitsˈots.</he>
+[gas-smell] narrator: עלית במדרגות בחושך, דפקת בכל דלת וקראת: דליפת גז , יוצאים עכשיו, בלי להדליק כלום! הדיירים יוצאים ויורדים. שכנים עוזרים לגברת מבוגרת מקומה 4.
+    <he>ʔalˈita bamadʁeɡˈot baχˈoʃeχ, dafˈakta beχˈol dˈelet vekaʁˈata: dlifˈat ɡˈaz, jotsʔˈim ʔaχʃˈav, blˈi lehadlˈik klˈum! hadajaʁˈim jotsʔˈim vejoʁdˈim. ʃχenˈim ʔozʁˈim leɡvˈeʁet mevuɡˈeʁet mikomˈa ʔˈaʁba.</he>
+[gas-smell] narrator: הובלת את הדיירים לצד השני של הרחוב, הרחק מהכניסה, ומתחת סרט סימון. הגישה לבניין פנויה לרכב כב״ה.
+    <he>hovˈalta ʔˈet hadajaʁˈim latsˈad haʃenˈi ʃˈel haʁeχˈov, haʁχˈek mehaknisˈa, umitˈaχat sˈeʁet simˈon. haɡiʃˈa labinjˈan pnujˈa laʁˈeχev kebaʁˈuχ haʃˈem.</he>
+[gas-smell] narrator: תיעדת: שעת ההגעה, מקום הריח, הדירות שפונו, מי סירב ומה נאמר לו, ומה נעשה עד הגעת כב״ה.
+    <he>tiʔˈadta: ʃaʔˈat hahaɡaʔˈa, makˈom haʁˈeaχ, hadiʁˈot ʃepunˈu, mˈi seʁˈev vemˈa neʔemˈaʁ lˈo, vemˈa naʔasˈe ʔˈad hiɡˈaʔata kebaʁˈuχ haʃˈem.</he>
+[gas-smell] narrator: הכבאים נכנסים עם מכשירי מדידה. כעבור כמה דקות קצין כב״ה חוזר: איתרנו , דליפה בצנרת שליד ארון המונים. סגרנו. נאוורר את הבניין.
+    <he>hakabaʔˈim niχnasˈim ʔˈim maχʃiʁˈej medidˈa. kaʔavˈoʁ kˈama dakˈot katsˈin kebaʁˈuχ haʃˈem χozˈeʁ: ʔitˈaʁnu, dlifˈa batsanˈeʁet ʃelejˈad ʔaʁˈon hamonˈim. saɡˈaʁnu. neʔavʁˈeʁ ʔˈet habinjˈan.</he>
+[gas-smell] narrator: הכבאים נכנסים עם מכשירי מדידה. כעבור כמה דקות קצין כב״ה חוזר: איתרנו , כיריים שנשארו פתוחות בדירה 2 הריקה. סגרנו. נאוורר את הבניין.
+    <he>hakabaʔˈim niχnasˈim ʔˈim maχʃiʁˈej medidˈa. kaʔavˈoʁ kˈama dakˈot katsˈin kebaʁˈuχ haʃˈem χozˈeʁ: ʔitˈaʁnu, kiʁˈajim ʃeniʃʔaʁˈu ptuχˈot bediʁˈa ʃtˈajim haʁekˈa. saɡˈaʁnu. neʔavʁˈeʁ ʔˈet habinjˈan.</he>
+[gas-smell] galit: בערך עשרים דקות. כשירדתי לזרוק זבל זה היכה בי. הכי חזק ליד ארון מוני הגז בחזית.
+    <he>beʔˈeʁeχ ʔesʁˈim dakˈot. kʃejaʁˈadti lizʁˈok zˈevel zˈe hikˈa bˈi. haχˈi χazˈak lejˈad ʔaʁˈon monˈej haɡˈaz baχazˈit.</he>
+[gas-smell] galit: בערך עשרים דקות. כשירדתי לזרוק זבל זה היכה בי. הכי חזק בקומת הכניסה, ליד דירה 2.
+    <he>beʔˈeʁeχ ʔesʁˈim dakˈot. kʃejaʁˈadti lizʁˈok zˈevel zˈe hikˈa bˈi. haχˈi χazˈak bekomˈat haknisˈa, lejˈad diʁˈa ʃtˈajim.</he>
+[gas-smell] galit: כן. דירה 2 ריקה , הם בחו״ל. כל השאר, כן, כולם פה.
+    <he>kˈen. diʁˈa ʃtˈajim ʁekˈa, hˈem beχˈul. kˈol haʃʔˈaʁ, kˈen, kulˈam pˈo.</he>
+[gas-smell] galit: תודה. טוב לדעת מה קורה.
+    <he>todˈa. tˈov ladˈaʔat mˈa koʁˈe.</he>
+[gas-smell] moshe: נו, טוב. אם ככה צריך.
+    <he>nˈu, tˈov. ʔˈim kˈaχa tsaʁˈiχ.</he>
+[gas-smell] moshe: אל תצעק עליי בבית שלי! אני גר פה ארבעים שנה, אני לא זז!
+    <he>ʔˈal titsʔˈak ʔalˈaj babˈajit ʃelˈi! ʔanˈi ɡˈaʁ pˈo ʔaʁbaʔˈim ʃanˈa, ʔanˈi lˈo zˈaz!</he>
+[gas-smell] moshe: ,טוב. בשביל השכנים.
+    <he>,tˈov. biʃvˈil haʃχenˈim.</he>
+[gas-smell] moshe: ,לא חשבתי.
+    <he>,lˈo χaʃˈavti.</he>
+[gas-smell] tomer: רגע, המחשב שלי למעלה! אני רק עולה ויורד בשנייה.
+    <he>ʁˈeɡa, hamaχʃˈev ʃelˈi lemˈaʔla! ʔanˈi ʁˈak ʔolˈe vejoʁˈed beʃnijˈa.</he>
+[gas-smell] tomer: אוף, בסדר.
+    <he>ʔˈuf, besˈedeʁ.</he>
+[gas-smell] narrator: תומר רץ למעלה. אחרי דקה ארוכה הוא חוזר עם המחשב. אנשים מסתכלים , אם הוא נכנס, למה לא הם?
+    <he>tˈomeʁ ʁˈats lemˈaʔla. ʔaχʁˈej dakˈa ʔaʁukˈa hˈu χozˈeʁ ʔˈim hamaχʃˈev. ʔanaʃˈim mistaklˈim, ʔˈim hˈu niχnˈas, lˈama lˈo hˈem?</he>
+[gas-smell] player: הגעתי למקום.
+    <he>hiɡˈaʔti lamakˈom.</he>
+[gas-smell] dispatch: קיבל. עדכן כשיש תמונת מצב.
+    <he>kibˈel. ʔidkˈen kʃejˈeʃ tmunˈat matsˈav.</he>
+[gas-smell] player: שלילי, עדיין בטיפול באירוע. אעדכן כשאתפנה.
+    <he>ʃlilˈi, ʔadˈajin betipˈul baʔejʁˈua. ʔeʔadkˈen kʃeʔetpanˈe.</he>
+[gas-smell] dispatch: קיבל, מעביר לניידת אחרת.
+    <he>kibˈel, maʔavˈiʁ lenajˈedet ʔaχˈeʁet.</he>
+[gas-smell] player: חיובי, פנוי.
+    <he>χijuvˈi, panˈuj.</he>
+[gas-smell] dispatch: רגע , סיימת שם? המעורבים עדיין במקום לפי הדיווח שלך. תשלים קודם ותעדכן.
+    <he>ʁˈeɡa, sijˈamta ʃˈam? hameʔoʁavˈim ʔadˈajin bamakˈom lefˈi hadivˈuaχ ʃelχˈa. taʃlˈim kˈodem veteʔadkˈen.</he>
+[gas-smell] narrator: הצופים זזים כמה צעדים אחורה וממשיכים לצלם מרחוק. אף אחד לא מתווכח.
+    <he>hatsofˈim zazˈim kˈama tseʔadˈim ʔaχˈoʁa vemamʃiχˈim letsalˈem meʁaχˈok. ʔˈaf ʔeχˈad lˈo mitvakˈeaχ.</he>
+[gas-smell] narrator: אחד הצופים מרים את הטלפון גבוה יותר: מותר לי לצלם ברחוב! הוויכוח מושך עוד אנשים לזירה.
+    <he>ʔeχˈad hatsofˈim meʁˈim ʔˈet hatˈelefon ɡavˈoa jotˈeʁ: mutˈaʁ lˈi letsalˈem baʁeχˈov! havikˈuaχ moʃˈeχ ʔˈod ʔanaʃˈim laziʁˈa.</he>
+[gas-smell] moshe: אם אני כבר צריך לחכות בחוץ, לפחות אעשן.
+    <he>ʔˈim ʔanˈi kvˈaʁ tsaʁˈiχ leχakˈot baχˈuts, lefaχˈot ʔeʔaʃˈen.</he>
+[gas-smell] narrator: משה מוציא מצית מהכיס ומקרב אותו לסיגריה , כמה מטרים מהכניסה.
+    <he>moʃˈe motsˈi matsˈit mehakˈis vemekaʁˈev ʔotˈo lesiɡˈaʁja, kˈama mˈetʁim mehaknisˈa.</he>
+[gas-smell] narrator: רכב כב״ה נעצר בקצה הרחוב. קצין כב״ה ניגש אליך: מה יש לנו?
+    <he>ʁˈeχev kebaʁˈuχ haʃˈem neʔetsˈaʁ bektsˈe haʁeχˈov. katsˈin kebaʁˈuχ haʃˈem niɡˈaʃ ʔelˈeχa: mˈa jˈeʃ lanˈu?</he>
+[gas-smell] dispatch: אתה פנוי? יש אירוע נוסף באזור.
+    <he>ʔatˈa panˈuj? jˈeʃ ʔejʁˈua nosˈaf baʔezˈoʁ.</he>
+[gas-smell] dispatch: כב״ה וחברת הגז הוזנקו, כעשר דקות.
+    <he>kebaʁˈuχ haʃˈem veχevʁˈat haɡˈaz huznekˈu, keʔˈeseʁ dakˈot.</he>
+[gas-smell] center: כב״ה וחברת הגז הוזנקו, כעשר דקות.
+    <he>kebaʁˈuχ haʃˈem veχevʁˈat haɡˈaz huznekˈu, keʔˈeseʁ dakˈot.</he>
+[gas-smell] duty: כב״ה וחברת הגז הוזנקו, כעשר דקות.
+    <he>kebaʁˈuχ haʃˈem veχevʁˈat haɡˈaz huznekˈu, keʔˈeseʁ dakˈot.</he>
+[gas-smell] dispatch: קיבלתי. הסבירו לו שזו הוראת פינוי מחייבת, ועדכנו את כב״ה כשיגיעו.
+    <he>kibˈalti. hisbˈiʁu lˈo ʃezˈo hoʁaʔˈat pinˈuj meχajˈevet, veʔidkenˈu ʔˈet kibʁˈuχ haʃˈem kʃejaɡˈiʔu.</he>
+[gas-smell] center: קיבלתי. הסבירו לו שזו הוראת פינוי מחייבת, ועדכנו את כב״ה כשיגיעו.
+    <he>kibˈalti. hisbˈiʁu lˈo ʃezˈo hoʁaʔˈat pinˈuj meχajˈevet, veʔidkenˈu ʔˈet kibʁˈuχ haʃˈem kʃejaɡˈiʔu.</he>
+[gas-smell] duty: קיבלתי. הסבירו לו שזו הוראת פינוי מחייבת, ועדכנו את כב״ה כשיגיעו.
+    <he>kibˈalti. hisbˈiʁu lˈo ʃezˈo hoʁaʔˈat pinˈuj meχajˈevet, veʔidkenˈu ʔˈet kibʁˈuχ haʃˈem kʃejaɡˈiʔu.</he>
+[gas-smell] dispatch: קיבלתי, רשמתי.
+    <he>kibˈalti, ʁaʃˈamti.</he>
+[gas-smell] center: קיבלתי, רשמתי.
+    <he>kibˈalti, ʁaʃˈamti.</he>
+[gas-smell] duty: קיבלתי, רשמתי.
+    <he>kibˈalti, ʁaʃˈamti.</he>
+[gas-smell] player: נמצא ברחוב השקד 8
+    <he>nimtsˈa beʁeχˈov haʃakˈed ʃmonˈe</he>
+[gas-smell] player: ריח גז חזק ליד ארון מוני הגז בחזית
+    <he>ʁˈeaχ ɡˈaz χazˈak lejˈad ʔaʁˈon monˈej haɡˈaz baχazˈit</he>
+[gas-smell] player: ריח גז חזק בקומת הכניסה, ליד דירה 2
+    <he>ʁˈeaχ ɡˈaz χazˈak bekomˈat haknisˈa, lejˈad diʁˈa ʃtˈajim</he>
+[gas-smell] player: דיווח על ריח גז , טרם אומת
+    <he>divˈuaχ ʔˈal ʁˈeaχ ɡˈaz, tˈeʁem ʔumˈat</he>
+[gas-smell] player: מבקש כב״ה וחברת הגז
+    <he>mevakˈeʃ kebaʁˈuχ haʃˈem veχevʁˈat haɡˈaz</he>
+[gas-smell] player: מפנה את הדיירים
+    <he>mefanˈe ʔˈet hadajaʁˈim</he>
+[gas-smell] player: הבניין פונה, כל הדירות דווחו
+    <he>habinjˈan punˈa, kˈol hadiʁˈot duvχˈu</he>
+[gas-smell] player: דייר מסרב להתפנות
+    <he>dajˈaʁ mesaʁˈev lehitpanˈot</he>
+[gas-smell] player: הזירה הועברה לכב״ה; הדליפה אותרה ונסגרה
+    <he>haziʁˈa hoʔavʁˈa lekabˈa; hadlifˈa ʔutʁˈa venisɡeʁˈa</he>
+[gas-smell] player: לא נדרש סיוע נוסף
+    <he>lˈo nidʁˈaʃ sijˈua nosˈaf</he>
+[gas-smell] center: נפתח אירוע שמונה שמונה שתיים אחת , ריח גז בבניין מגורים, רחוב השקד 8. מעביר אליך לטיפול.
+    <he>niftˈaχ ʔejʁˈua ʃmonˈe ʃmonˈe ʃtˈajim ʔaχˈat, ʁˈeaχ ɡˈaz bebinjˈan meɡuʁˈim, ʁeχˈov haʃakˈed ʃmonˈe. maʔavˈiʁ ʔelˈeχa letipˈul.</he>
+[burglary] dispatch: פריצה לדירה ברחוב הרימון 14, קומה 3. הדיירת חזרה ומצאה את הדלת פרוצה, והיא ממתינה בחדר המדרגות. אשר קבלה.
+    <he>pʁitsˈa lediʁˈa beʁeχˈov haʁimˈon ʔaʁbˈa ʔesʁˈe, komˈa ʃalˈoʃ. hadajˈeʁet χazʁˈa vematsʔˈa ʔˈet hadˈelet pʁutsˈa, vehˈi mamtinˈa beχadˈaʁ hamadʁeɡˈot. ʔaʃˈeʁ kabalˈa.</he>
+[burglary] narrator: קומה שלישית. דלת הדירה פתוחה חלקית, המשקוף שבור ליד המנעול ושבבי עץ על הרצפה. מיכל עומדת ליד המדרגות, הטלפון ביד. דלת הדירה ממול נפתחת, ושכן מבוגר מציץ החוצה.
+    <he>komˈa ʃliʃˈit. dˈelet hadiʁˈa ptuχˈa χelkˈit, hamaʃkˈof ʃavˈuʁ lejˈad hamanʔˈul veʃvavˈej ʔˈets ʔˈal haʁitspˈa. miχˈal ʔomˈedet lejˈad hamadʁeɡˈot, hatˈelefon bajˈad. dˈelet hadiʁˈa mimˈul niftˈaχat, veʃaχˈen mevuɡˈaʁ metsˈits haχˈutsa.</he>
+[burglary] michal: סוף סוף. אני לא מאמינה שזה קרה לי.
+    <he>sˈof sˈof. ʔanˈi lˈo maʔaminˈa ʃezˈe kaʁˈa lˈi.</he>
+[burglary] player: קיבלתי את האירוע, יוצא.
+    <he>kibˈalti ʔˈet haʔejʁˈua, jotsˈe.</he>
+[burglary] dispatch: קיבל.
+    <he>kibˈel.</he>
+[burglary] player: קיבלתי.
+    <he>kibˈalti.</he>
+[burglary] narrator: השדרה ריקה בשעת הלילה. הדרך הקצרה היא גם המהירה.
+    <he>haʃdeʁˈa ʁekˈa biʃʔˈat halˈajla. hadˈeʁeχ haktsaʁˈa hˈi ɡˈam hamehiʁˈa.</he>
+[burglary] narrator: בשדרות הזית פקק של שעת בוקר. הניידת מתקדמת לאט בין הרכבים.
+    <he>bisdeʁˈot hazˈajit pkˈak ʃˈel ʃaʔˈat bˈokeʁ. hanajˈedet mitkadˈemet leʔˈat bˈen haʁeχavˈim.</he>
+[burglary] narrator: השדרה עמוסה מעט בשעת הערב, אבל זורמת.
+    <he>haʃdeʁˈa ʔamusˈa meʔˈat biʃʔˈat haʔˈeʁev, ʔavˈal zoʁˈemet.</he>
+[burglary] narrator: רחובות השכונה צרים ומפותלים. בשעה הזו השדרה הייתה פנויה , הדרך ארכה יותר.
+    <he>ʁeχovˈot haʃχunˈa tsaʁˈim umefutalˈim. baʃaʔˈa hazˈo haʃdeʁˈa hajtˈa pnujˈa, hadˈeʁeχ ʔaʁχˈa jotˈeʁ.</he>
+[burglary] narrator: עוקפים את הפקק בשדרה דרך רחובות השכונה. ארוך יותר , אבל זורם.
+    <he>ʔokfˈim ʔˈet hapkˈak baʃdeʁˈa dˈeʁeχ ʁeχovˈot haʃχunˈa. ʔaʁˈoχ jotˈeʁ, ʔavˈal zoʁˈem.</he>
+[burglary] player: מוקד, מישהו נכנס לדירה מאז שגילו את הפריצה?
+    <he>mokˈed, mˈiʃu niχnˈas ladiʁˈa meʔˈaz ʃeɡilˈu ʔˈet hapʁitsˈa?</he>
+[burglary] dispatch: לפי המדווחת היא לא נכנסה. היא עומדת בחוץ.
+    <he>lefˈi hamedavˈaχat hˈi lˈo niχnesˈa. hˈi ʔomˈedet baχˈuts.</he>
+[burglary] player: יש מידע על חשוד? ייתכן שמישהו עדיין בפנים?
+    <he>jˈeʃ mejdˈa ʔˈal χaʃˈud? jitaχˈen ʃemˈiʃu ʔadˈajin bifnˈim?</he>
+[burglary] dispatch: אין מידע על חשוד. המדווחת לא שמעה רעשים מבפנים.
+    <he>ʔˈejn mejdˈa ʔˈal χaʃˈud. hamedavˈaχat lˈo ʃamʔˈa ʁeʔaʃˈim mibifnˈim.</he>
+[burglary] player: מוקד, מבקש ניידת נוספת לנקודה , לבדיקת הדירה.
+    <he>mokˈed, mevakˈeʃ najˈedet nosˈefet lanekudˈa, libdikˈat hadiʁˈa.</he>
+[burglary] dispatch: ניידת 14 בדרך, כעשר דקות.
+    <he>najˈedet ʔaʁbˈa ʔesʁˈe badˈeʁeχ, keʔˈeseʁ dakˈot.</he>
+[burglary] narrator: בלי לגעת: המשקוף סדוק ליד המנעול, שבבי עץ על הרצפה , סימן לכלי פריצה. מבעד לפתח רואים מגירות פתוחות.
+    <he>blˈi laɡˈaʔat: hamaʃkˈof sadˈuk lejˈad hamanʔˈul, ʃvavˈej ʔˈets ʔˈal haʁitspˈa, simˈan leχlˈej pʁitsˈa. mibˈaʔad lapˈetaχ ʁoʔˈim meɡiʁˈot ptuχˈot.</he>
+[burglary] narrator: מתחת סרט סימון לפני הדלת.
+    <he>mitˈaχat sˈeʁet simˈun lifnˈej hadˈelet.</he>
+[burglary] narrator: דחפת את הדלת ונכנסת. החדרים ריקים , אבל הנעליים שלך השאירו עקבות על הרצפה, והידית נגעה בכפפה.
+    <he>daχˈafta ʔˈet hadˈelet veniχnˈasta. haχadaʁˈim ʁekˈim, ʔavˈal hanaʔalˈajim ʃelχˈa hiʃʔˈiʁu ʔakevˈot ʔˈal haʁitspˈa, vehajadˈit naɡˈaʔa bakfafˈa.</he>
+[burglary] narrator: נכנסתם יחד, בזהירות ובלי לגעת. אין איש בדירה. יצאתם באותו מסלול.
+    <he>niχnˈastem jˈaχad, bezehiʁˈut veblˈi laɡˈaʔat. ʔˈejn ʔˈiʃ badiʁˈa. jatsˈatem beʔotˈo maslˈul.</he>
+[burglary] narrator: תיעדת: שעת היציאה והחזרה של הדיירת, סימני הפריצה, השכן, ומה נעשה עד עכשיו.
+    <he>tiʔˈadta: ʃaʔˈat hajetsiʔˈa vehaχazaʁˈa ʃˈel hadajˈeʁet, simanˈej hapʁitsˈa, haʃaχˈen, vemˈa naʔasˈe ʔˈad ʔaχʃˈav.</he>
+[burglary] michal: יצאתי לעבודה בשמונה. חזרתי ברבע אחרי אחת, והדלת הייתה ככה. לא נכנסתי , פחדתי שמישהו עוד בפנים.
+    <he>jatsˈati laʔavodˈa beʃmˈone. χazˈaʁti beʁˈeva ʔaχʁˈej ʔaχˈat, vehadˈelet hajtˈa kˈaχa. lˈo niχnˈasti, paχˈadti ʃemˈiʃu ʔˈod bifnˈim.</he>
+[burglary] michal: תכשיטים של סבתא שלי, מחשב נייד, קצת מזומן במגירה. התכשיטים , זה מה ששובר לי את הלב.
+    <he>taχʃitˈim ʃˈel sˈavta ʃelˈi, maχʃˈev najˈad, ktsˈat mezumˈan bameɡiʁˈa. hataχʃitˈim, zˈe mˈa ʃeʃovˈeʁ lˈi ʔˈet halˈev.</he>
+[burglary] michal: עכשיו זה באשמתי?!
+    <he>ʔaχʃˈav zˈe beʔaʃmatˈi?!</he>
+[burglary] michal: ,טוב. אני מחכה.
+    <he>,tˈov. ʔanˈi meχakˈe.</he>
+[burglary] michal: תודה. טוב לדעת מה הולך לקרות.
+    <he>todˈa. tˈov ladˈaʔat mˈa holˈeχ likʁˈot.</he>
+[burglary] avi: ראיתי בחור צעיר, כובע אדום ותיק גב שחור, יוצא מהבניין בריצה לפני רבע שעה, לכיוון תחנת האוטובוס.
+    <he>ʁaʔˈiti baχˈuʁ tsaʔˈiʁ, kˈova ʔadˈom vatˈik ɡˈav ʃaχˈoʁ, jotsˈe mehabinjˈan beʁitsˈa lifnˈej ʁˈeva ʃaʔˈa, lekivˈun taχanˈat haʔˈotobus.</he>
+[burglary] avi: לא ראיתי אף אחד. רק שמעתי דפיקות חזקות בערך בשתים עשרה וחצי, וחשבתי שמשפצים.
+    <he>lˈo ʁaʔˈiti ʔˈaf ʔeχˈad. ʁˈak ʃamˈaʔti dfikˈot χazakˈot beʔˈeʁeχ beʃtˈem ʔesʁˈe vaχˈetsi, veχaʃˈavti ʃemeʃaptsˈim.</he>
+[burglary] avi: יש מצלמה בכניסה לבניין , ניסים מהוועד מחזיק את המקליט. אני יכול לקרוא לו.
+    <he>jˈeʃ matslemˈa baknisˈa labinjˈan, nisˈim mehavˈaʔad maχzˈik ʔˈet hamaklˈit. ʔanˈi jaχˈol likʁˈo lˈo.</he>
+[burglary] avi: כמובן, אני נשאר פה.
+    <he>kamuvˈan, ʔanˈi niʃʔˈaʁ pˈo.</he>
+[burglary] player: הגעתי למקום.
+    <he>hiɡˈaʔti lamakˈom.</he>
+[burglary] dispatch: קיבל. עדכן כשיש תמונת מצב.
+    <he>kibˈel. ʔidkˈen kʃejˈeʃ tmunˈat matsˈav.</he>
+[burglary] player: שלילי, עדיין בטיפול באירוע. אעדכן כשאתפנה.
+    <he>ʃlilˈi, ʔadˈajin betipˈul baʔejʁˈua. ʔeʔadkˈen kʃeʔetpanˈe.</he>
+[burglary] dispatch: קיבל, מעביר לניידת אחרת.
+    <he>kibˈel, maʔavˈiʁ lenajˈedet ʔaχˈeʁet.</he>
+[burglary] player: חיובי, פנוי.
+    <he>χijuvˈi, panˈuj.</he>
+[burglary] dispatch: רגע , סיימת שם? המעורבים עדיין במקום לפי הדיווח שלך. תשלים קודם ותעדכן.
+    <he>ʁˈeɡa, sijˈamta ʃˈam? hameʔoʁavˈim ʔadˈajin bamakˈom lefˈi hadivˈuaχ ʃelχˈa. taʃlˈim kˈodem veteʔadkˈen.</he>
+[burglary] michal: אני חייבת לבדוק אם התכשיטים של סבתא שלי שם!
+    <he>ʔanˈi χajˈevet livdˈok ʔˈim hataχʃitˈim ʃˈel sˈavta ʃelˈi ʃˈam!</he>
+[burglary] narrator: מיכל צועדת לעבר הדלת ומושיטה יד לידית.
+    <he>miχˈal tsoʔˈedet leʔˈeveʁ hadˈelet vemoʃitˈa jˈad lajadˈit.</he>
+[burglary] narrator: ניידת 14 עוצרת למטה. שוטר עולה במדרגות ומצטרף אליך.
+    <he>najˈedet ʔaʁbˈa ʔesʁˈe ʔotsˈeʁet lemˈata. ʃotˈeʁ ʔolˈe bamadʁeɡˈot vemitstaʁˈef ʔelˈeχa.</he>
+[burglary] dispatch: אתה פנוי? יש אירוע נוסף באזור.
+    <he>ʔatˈa panˈuj? jˈeʃ ʔejʁˈua nosˈaf baʔezˈoʁ.</he>
+[burglary] dispatch: צוות מז״פ הוזמן, כשעה. שמרו על הזירה.
+    <he>tsˈevet mazˈap huzmˈan, keʃaʔˈa. ʃimʁˈu ʔˈal haziʁˈa.</he>
+[burglary] center: צוות מז״פ הוזמן, כשעה. שמרו על הזירה.
+    <he>tsˈevet mazˈap huzmˈan, keʃaʔˈa. ʃimʁˈu ʔˈal haziʁˈa.</he>
+[burglary] duty: צוות מז״פ הוזמן, כשעה. שמרו על הזירה.
+    <he>tsˈevet mazˈap huzmˈan, keʃaʔˈa. ʃimʁˈu ʔˈal haziʁˈa.</he>
+[burglary] dispatch: ניידת 14 בדרך אליכם.
+    <he>najˈedet ʔaʁbˈa ʔesʁˈe badˈeʁeχ ʔaleχˈem.</he>
+[burglary] center: ניידת 14 בדרך אליכם.
+    <he>najˈedet ʔaʁbˈa ʔesʁˈe badˈeʁeχ ʔaleχˈem.</he>
+[burglary] duty: ניידת 14 בדרך אליכם.
+    <he>najˈedet ʔaʁbˈa ʔesʁˈe badˈeʁeχ ʔaleχˈem.</he>
+[burglary] dispatch: התיאור הופץ לניידות באזור.
+    <he>hateʔˈuʁ hufˈats lenajadˈut baʔezˈoʁ.</he>
+[burglary] center: התיאור הופץ לניידות באזור.
+    <he>hateʔˈuʁ hufˈats lenajadˈut baʔezˈoʁ.</he>
+[burglary] duty: התיאור הופץ לניידות באזור.
+    <he>hateʔˈuʁ hufˈats lenajadˈut baʔezˈoʁ.</he>
+[burglary] dispatch: קיבלתי, רשמתי.
+    <he>kibˈalti, ʁaʃˈamti.</he>
+[burglary] center: קיבלתי, רשמתי.
+    <he>kibˈalti, ʁaʃˈamti.</he>
+[burglary] duty: קיבלתי, רשמתי.
+    <he>kibˈalti, ʁaʃˈamti.</he>
+[burglary] player: נמצא ברחוב הרימון 14, קומה 3
+    <he>nimtsˈa beʁeχˈov haʁimˈon ʔaʁbˈa ʔesʁˈe, komˈa ʃalˈoʃ</he>
+[burglary] player: פריצה בכלי , משקוף שבור, מגירות פתוחות
+    <he>pʁitsˈa baklˈi, maʃkˈof ʃavˈuʁ, meɡiʁˈot ptuχˈot</he>
+[burglary] player: הזירה נשמרת, איש לא נכנס
+    <he>haziʁˈa niʃmˈeʁet, ʔˈiʃ lˈo niχnˈas</he>
+[burglary] player: חשוד: צעיר, כובע אדום, תיק גב שחור, לכיוון תחנת האוטובוס, לפני כרבע שעה
+    <he>χaʃˈud: tsaʔˈiʁ, kˈova ʔadˈom, tˈik ɡˈav ʃaχˈoʁ, lekivˈun taχanˈat haʔˈotobus, lifnˈej keʁˈeva ʃaʔˈa</he>
+[burglary] player: מבקש צוות מז״פ לזירה
+    <he>mevakˈeʃ tsˈevet mazˈap laziʁˈa</he>
+[burglary] player: מבקש ניידת נוספת לבדיקת הדירה
+    <he>mevakˈeʃ najˈedet nosˈefet libdikˈat hadiʁˈa</he>
+[burglary] player: יש מצלמה בכניסה לבניין , בטיפול מול הוועד
+    <he>jˈeʃ matslemˈa baknisˈa labinjˈan, betipˈul mˈul havˈaʔad</he>
+[burglary] player: הדירה נבדקה עם ניידת נוספת , אין איש
+    <he>hadiʁˈa nivdekˈa ʔˈim najˈedet nosˈefet, ʔˈejn ʔˈiʃ</he>
+[burglary] player: רשימת חפצים חסרים , תושלם אחרי מז״פ
+    <he>ʁeʃimˈat χafatsˈim χaseʁˈim, tuʃlˈam ʔaχʁˈej mazˈap</he>
+[burglary] player: לא נדרש סיוע נוסף
+    <he>lˈo nidʁˈaʃ sijˈua nosˈaf</he>
+[burglary] center: נפתח אירוע חמש חמש שלוש אפס , פריצה לדירה, רחוב הרימון 14, קומה 3. מעביר אליך לטיפול.
+    <he>niftˈaχ ʔejʁˈua χamˈeʃ χamˈeʃ ʃalˈoʃ ʔˈefes, pʁitsˈa lediʁˈa, ʁeχˈov haʁimˈon ʔaʁbˈa ʔesʁˈe, komˈa ʃalˈoʃ. maʔavˈiʁ ʔelˈeχa letipˈul.</he>
+[domestic-call] dispatch: ברחוב הגפן 8, דירה 5 , נערה התקשרה בשקט: צעקות ורעש שבירה, ואמא שלה בוכה. היא ביקשה שאביה לא יידע שהתקשרה. אשר קבלה.
+    <he>beʁeχˈov haɡˈefen ʃmonˈe, diʁˈa χamˈeʃ, naʔaʁˈa hitkaʃʁˈa beʃˈeket: tsaʔakˈot veʁˈaʔaʃ ʃviʁˈa, veʔˈima ʃelˈa boχˈa. hˈi bikʃˈa ʃeʔavˈiha lˈo jidˈa ʃehitkaʃʁˈa. ʔaʃˈeʁ kabalˈa.</he>
+[domestic-call] narrator: דפקת. האב פותח את הדלת חלקית. מאחוריו בסלון כיסא הפוך ושברי אגרטל. האם יושבת על הספה עם הגב אליכם.
+    <he>dafˈakta. haʔˈav potˈeaχ ʔˈet hadˈelet χelkˈit. meʔaχoʁˈav basalˈon kisˈe hafˈuχ veʃivʁˈej ʔaɡaʁtˈal. haʔˈem joʃˈevet ʔˈal hasapˈa ʔˈim haɡˈav ʔaleχˈem.</he>
+[domestic-call] gil: הכול בסדר פה. סתם ויכוח קטן. אתם יכולים ללכת.
+    <he>hakˈol besˈedeʁ pˈo. stˈam vikˈuaχ katˈan. ʔatˈem jeχolˈim lalˈeχet.</he>
+[domestic-call] player: קיבלתי את האירוע, יוצא.
+    <he>kibˈalti ʔˈet haʔejʁˈua, jotsˈe.</he>
+[domestic-call] dispatch: קיבל.
+    <he>kibˈel.</he>
+[domestic-call] player: קיבלתי.
+    <he>kibˈalti.</he>
+[domestic-call] narrator: השדרה ריקה בשעת הלילה. הדרך הקצרה היא גם המהירה.
+    <he>haʃdeʁˈa ʁekˈa biʃʔˈat halˈajla. hadˈeʁeχ haktsaʁˈa hˈi ɡˈam hamehiʁˈa.</he>
+[domestic-call] narrator: בשדרות הזית פקק של שעת בוקר. הניידת מתקדמת לאט בין הרכבים.
+    <he>bisdeʁˈot hazˈajit pkˈak ʃˈel ʃaʔˈat bˈokeʁ. hanajˈedet mitkadˈemet leʔˈat bˈen haʁeχavˈim.</he>
+[domestic-call] narrator: השדרה עמוסה מעט בשעת הערב, אבל זורמת.
+    <he>haʃdeʁˈa ʔamusˈa meʔˈat biʃʔˈat haʔˈeʁev, ʔavˈal zoʁˈemet.</he>
+[domestic-call] narrator: רחובות השכונה צרים ומפותלים. בשעה הזו השדרה הייתה פנויה , הדרך ארכה יותר.
+    <he>ʁeχovˈot haʃχunˈa tsaʁˈim umefutalˈim. baʃaʔˈa hazˈo haʃdeʁˈa hajtˈa pnujˈa, hadˈeʁeχ ʔaʁχˈa jotˈeʁ.</he>
+[domestic-call] narrator: עוקפים את הפקק בשדרה דרך רחובות השכונה. ארוך יותר , אבל זורם.
+    <he>ʔokfˈim ʔˈet hapkˈak baʃdeʁˈa dˈeʁeχ ʁeχovˈot haʃχunˈa. ʔaʁˈoχ jotˈeʁ, ʔavˈal zoʁˈem.</he>
+[domestic-call] player: מוקד, היו קריאות קודמות מהכתובת?
+    <he>mokˈed, hajˈu kʁiʔˈot kodmˈot mehaktˈovet?</he>
+[domestic-call] dispatch: כן , קריאה דומה לפני חצי שנה. אז הסתיים בלי תלונה.
+    <he>kˈen, kʁiʔˈa domˈa lifnˈej χatsˈi ʃanˈa. ʔˈaz histajˈem blˈi tlunˈa.</he>
+[domestic-call] player: מוקד, מבקש ניידת נוספת לכתובת , אירוע במשפחה, צריך להפריד.
+    <he>mokˈed, mevakˈeʃ najˈedet nosˈefet laktˈovet, ʔejʁˈua bamiʃpaχˈa, tsaʁˈiχ lehafʁˈid.</he>
+[domestic-call] dispatch: ניידת 23 בדרך, כשבע דקות.
+    <he>najˈedet ʔesʁˈim veʃalˈoʃ badˈeʁeχ, keʃˈeva dakˈot.</he>
+[domestic-call] player: ידוע על נשק ברשות מישהו בבית?
+    <he>jadˈua ʔˈal nˈeʃek biʁʃˈut mˈiʃu babˈajit?</he>
+[domestic-call] dispatch: אין רישום של נשק ברישיון בכתובת.
+    <he>ʔˈejn ʁiʃˈum ʃˈel nˈeʃek baʁiʃajˈon baktˈovet.</he>
+[domestic-call] gil: ,תיכנסו. אבל אין פה כלום.
+    <he>,tikansˈu. ʔavˈal ʔˈejn pˈo klˈum.</he>
+[domestic-call] narrator: יצאתם. מאחורי הדלת הצעקות מתחדשות כמה דקות אחר כך.
+    <he>jatsˈatem. meʔaχoʁˈej hadˈelet hatsaʔakˈot mitχadʃˈot kˈama dakˈot ʔaχˈaʁ kˈaχ.</he>
+[domestic-call] gil: למה במטבח? ,טוב.
+    <he>lˈama bamitbˈaχ?,tov.</he>
+[domestic-call] gil: היא התחילה לצעוק עליי על כסף. אני רק הרמתי את הקול. האגרטל נפל, זה הכול.
+    <he>hˈi hitχˈila litsʔˈok ʔalˈaj ʔˈal kˈesef. ʔanˈi ʁˈak heʁˈamti ʔˈet hakˈol. haʔaɡaʁtˈal nafˈal, zˈe hakˈol.</he>
+[domestic-call] gil: ,בסדר.
+    <he>,besˈedeʁ.</he>
+[domestic-call] gil: על מה? אף אחד אפילו לא שאל אותה!
+    <he>ʔˈal mˈa? ʔˈaf ʔeχˈad ʔafˈilu lˈo ʃaʔˈal ʔotˈa!</he>
+[domestic-call] gil: ,אני לא עשיתי כלום. טוב.
+    <he>,ʔanˈi lˈo ʔasˈiti klˈum. tˈov.</he>
+[domestic-call] ronit: הוא תפס לי את היד חזק ודחף אותי. האגרטל נפל כשנתקלתי בשולחן. זו לא הפעם הראשונה.
+    <he>hˈu tafˈas lˈi ʔˈet hajˈad χazˈak vedaχˈaf ʔotˈi. haʔaɡaʁtˈal nafˈal kʃenitkˈalti baʃulχˈan. zˈo lˈo hapˈaʔam haʁiʃonˈa.</he>
+[domestic-call] ronit: הוא לא נגע בי הפעם. הוא שבר את האגרטל וצעק שאם אעזוב , אני אצטער. אני מפחדת ממנו.
+    <he>hˈu lˈo naɡˈa bˈi hapˈaʔam. hˈu ʃavˈaʁ ʔˈet haʔaɡaʁtˈal vetsaʔˈak ʃeʔˈim ʔeʔazˈov, ʔanˈi ʔetstaʔˈeʁ. ʔanˈi mefaχˈedet mimˈenu.</he>
+[domestic-call] narrator: על הזרוע שלה סימן אדום טרי.
+    <he>ʔˈal hazʁˈoa ʃelˈa simˈan ʔadˈom taʁˈi.</he>
+[domestic-call] ronit: ,כלום. ויכוח. הכול בסדר.
+    <he>,klˈum. vikˈuaχ. hakˈol besˈedeʁ.</he>
+[domestic-call] ronit: זה קרה כבר. הוא שותה הרבה בזמן האחרון. יש סכין יפנית בארגז הכלים. הוא אמר שאם אעזוב , אני אצטער.
+    <he>zˈe kaʁˈa kvˈaʁ. hˈu ʃotˈe haʁbˈe bazmˈan haʔaχaʁˈon. jˈeʃ sakˈin japˈanit beʔaʁɡˈaz hakelˈim. hˈu ʔamˈaʁ ʃeʔˈim ʔeʔezˈov, ʔanˈi ʔetstaʔˈeʁ.</he>
+[domestic-call] ronit: אחותי גרה קרוב. אני מתקשרת אליה.
+    <he>ʔaχotˈi ɡaʁˈa kaʁˈov. ʔanˈi mitkaʃˈeʁet ʔelˈeha.</he>
+[domestic-call] narrator: בחדר האחרון במסדרון יושבת נערה בפיג׳מה, מחבקת את עצמה. אין אנשים נוספים בבית.
+    <he>baχˈedeʁ haʔaχaʁˈon bamisdeʁˈon joʃˈevet naʔaʁˈa bepidʒˈama, meχabˈeket ʔˈet ʔatsmˈa. ʔˈejn ʔanaʃˈim nosafˈim babˈajit.</he>
+[domestic-call] narrator: תיעדת את הסלון, את מה שנצפה על כל אחד, את הגרסאות ואת השעות.
+    <he>tiʔˈadta ʔˈet hasalˈon, ʔˈet mˈa ʃenitspˈa ʔˈal kˈol ʔeχˈad, ʔˈet haɡiʁsaʔˈot veʔˈet haʃaʔˈot.</he>
+[domestic-call] shaked: לא, רק פחדתי. שמעתי צעקות ושבירה.
+    <he>lˈo, ʁˈak paχˈadti. ʃamˈaʔti tsaʔakˈot veʃviʁˈa.</he>
+[domestic-call] gil: מה?! את התקשרת למשטרה?!
+    <he>mˈa?! ʔˈat hitkaʃˈaʁt lamiʃtaʁˈa?!</he>
+[domestic-call] player: הגעתי למקום.
+    <he>hiɡˈaʔti lamakˈom.</he>
+[domestic-call] dispatch: קיבל. עדכן כשיש תמונת מצב.
+    <he>kibˈel. ʔidkˈen kʃejˈeʃ tmunˈat matsˈav.</he>
+[domestic-call] player: שלילי, עדיין בטיפול באירוע. אעדכן כשאתפנה.
+    <he>ʃlilˈi, ʔadˈajin betipˈul baʔejʁˈua. ʔeʔadkˈen kʃeʔetpanˈe.</he>
+[domestic-call] dispatch: קיבל, מעביר לניידת אחרת.
+    <he>kibˈel, maʔavˈiʁ lenajˈedet ʔaχˈeʁet.</he>
+[domestic-call] player: חיובי, פנוי.
+    <he>χijuvˈi, panˈuj.</he>
+[domestic-call] dispatch: רגע , סיימת שם? המעורבים עדיין במקום לפי הדיווח שלך. תשלים קודם ותעדכן.
+    <he>ʁˈeɡa, sijˈamta ʃˈam? hameʔoʁavˈim ʔadˈajin bamakˈom lefˈi hadivˈuaχ ʃelχˈa. taʃlˈim kˈodem veteʔadkˈen.</he>
+[domestic-call] gil: תגידי להם שהכול בסדר!
+    <he>taɡˈidi lahˈem ʃehakˈol besˈedeʁ!</he>
+[domestic-call] narrator: גיל צועד בצעדים מהירים לעבר רונית, שמתכווצת על הספה.
+    <he>ɡˈil tsoʔˈed betseʔadˈim mehiʁˈim leʔˈeveʁ ʁonˈit, ʃemitkavˈetset ʔˈal hasapˈa.</he>
+[domestic-call] narrator: ניידת 23 הגיעה. שוטרת נכנסת ונשארת ליד המטבח.
+    <he>najˈedet ʔesʁˈim veʃalˈoʃ hiɡˈiʔa. ʃotˈeʁet niχnˈeset veniʃʔˈeʁet lejˈad hamitbˈaχ.</he>
+[domestic-call] dispatch: אתה פנוי? יש אירוע נוסף באזור.
+    <he>ʔatˈa panˈuj? jˈeʃ ʔejʁˈua nosˈaf baʔezˈoʁ.</he>
+[domestic-call] dispatch: ניידת 23 בדרך.
+    <he>najˈedet ʔesʁˈim veʃalˈoʃ badˈeʁeχ.</he>
+[domestic-call] center: ניידת 23 בדרך.
+    <he>najˈedet ʔesʁˈim veʃalˈoʃ badˈeʁeχ.</he>
+[domestic-call] duty: ניידת 23 בדרך.
+    <he>najˈedet ʔesʁˈim veʃalˈoʃ badˈeʁeχ.</he>
+[domestic-call] dispatch: רשמתי, גורמי הרווחה יעודכנו.
+    <he>ʁaʃˈamti, ɡoʁmˈej haʁevaχˈa jeʔudkenˈu.</he>
+[domestic-call] center: רשמתי, גורמי הרווחה יעודכנו.
+    <he>ʁaʃˈamti, ɡoʁmˈej haʁevaχˈa jeʔudkenˈu.</he>
+[domestic-call] duty: רשמתי, גורמי הרווחה יעודכנו.
+    <he>ʁaʃˈamti, ɡoʁmˈej haʁevaχˈa jeʔudkenˈu.</he>
+[domestic-call] dispatch: רשמתי. בטוח? הייתה קריאה דומה לפני חצי שנה.
+    <he>ʁaʃˈamti. batˈuaχ? hajtˈa kʁiʔˈa domˈa lifnˈej χatsˈi ʃanˈa.</he>
+[domestic-call] center: רשמתי. בטוח? הייתה קריאה דומה לפני חצי שנה.
+    <he>ʁaʃˈamti. batˈuaχ? hajtˈa kʁiʔˈa domˈa lifnˈej χatsˈi ʃanˈa.</he>
+[domestic-call] duty: רשמתי. בטוח? הייתה קריאה דומה לפני חצי שנה.
+    <he>ʁaʃˈamti. batˈuaχ? hajtˈa kʁiʔˈa domˈa lifnˈej χatsˈi ʃanˈa.</he>
+[domestic-call] dispatch: קיבלתי, רשמתי.
+    <he>kibˈalti, ʁaʃˈamti.</he>
+[domestic-call] center: קיבלתי, רשמתי.
+    <he>kibˈalti, ʁaʃˈamti.</he>
+[domestic-call] duty: קיבלתי, רשמתי.
+    <he>kibˈalti, ʁaʃˈamti.</he>
+[domestic-call] player: נמצא ברחוב הגפן 8, דירה 5
+    <he>nimtsˈa beʁeχˈov haɡˈefen ʃmonˈe, diʁˈa χamˈeʃ</he>
+[domestic-call] player: נכנסנו; כל בני הבית נראו
+    <he>niχnˈasnu; kˈol bnˈej habˈajit niʁʔˈu</he>
+[domestic-call] player: בני הזוג הופרדו
+    <he>bnˈej hazˈuɡ hufʁedˈu</he>
+[domestic-call] player: על זרוע האישה סימן אדום טרי
+    <he>ʔˈal zʁˈoa haʔiʃˈa simˈan ʔadˈom taʁˈi</he>
+[domestic-call] player: האישה מדווחת על איומים ועל אירועים קודמים
+    <he>haʔiʃˈa medavˈaχat ʔˈal ʔijumˈim veʔˈal ʔejʁuʔˈim kodmˈim</he>
+[domestic-call] player: האב מעוכב לבירור על בסיס דברי האישה
+    <he>haʔˈav meʔukˈav lebeʁˈuʁ ʔˈal bsˈis divʁˈej haʔiʃˈa</he>
+[domestic-call] player: מבקש ניידת נוספת
+    <he>mevakˈeʃ najˈedet nosˈefet</he>
+[domestic-call] player: מבקש יידוע גורמי רווחה , קטינה בבית
+    <he>mevakˈeʃ jidˈua ɡoʁmˈej ʁevaχˈa, ktinˈa babˈajit</he>
+[domestic-call] player: ויכוח משפחתי, הכול בסדר
+    <he>vikˈuaχ miʃpaχtˈi, hakˈol besˈedeʁ</he>
+[domestic-call] center: נפתח אירוע שמונה אחת ארבע אפס , קריאה על צעקות בבית , חשד לאלימות במשפחה, רחוב הגפן 8, דירה 5. מעביר אליך לטיפול.
+    <he>niftˈaχ ʔejʁˈua ʃmonˈe ʔaχˈat ʔˈaʁba ʔˈefes, kʁiʔˈa ʔˈal tseʔakˈot babˈajit, χaʃˈad laʔalimˈut bamiʃpaχˈa, ʁeχˈov haɡˈefen ʃmonˈe, diʁˈa χamˈeʃ. maʔavˈiʁ ʔelˈeχa letipˈul.</he>
+[park-youths] dispatch: תלונה על מוזיקה חזקה ושתייה של צעירים בגינת הזית ברחוב האורן. המתלוננת ביקשה לא להיחשף. אשר קבלה.
+    <he>tlunˈa ʔˈal mˈuzika χazakˈa veʃtijˈa ʃˈel tseʔiʁˈim beɡinˈat hazˈajit beʁeχˈov haʔˈoʁen. hamitlonˈenet bikʃˈa lˈo leheχasˈef. ʔaʃˈeʁ kabalˈa.</he>
+[park-youths] narrator: גינת הזית. ליד שולחן הפיקניק שלושה בני נוער, רמקול מנגן חזק, ועל השולחן בקבוקים ריקים. בחלון מול הגינה נדלק אור, ואישה מבוגרת מנופפת לכם.
+    <he>ɡinˈat hazˈajit. lejˈad ʃulχˈan hapˈiknik ʃloʃˈa bnˈej nˈoʔaʁ, ʁamkˈol menaɡˈen χazˈak, veʔˈal haʃulχˈan bakbukˈim ʁekˈim. baχalˈon mˈul haɡinˈa nidlˈak ʔˈoʁ, veʔiʃˈa mevuɡˈeʁet menofˈefet laχˈem.</he>
+[park-youths] player: קיבלתי את האירוע, יוצא.
+    <he>kibˈalti ʔˈet haʔejʁˈua, jotsˈe.</he>
+[park-youths] dispatch: קיבל.
+    <he>kibˈel.</he>
+[park-youths] player: קיבלתי.
+    <he>kibˈalti.</he>
+[park-youths] narrator: השדרה ריקה בשעת הלילה. הדרך הקצרה היא גם המהירה.
+    <he>haʃdeʁˈa ʁekˈa biʃʔˈat halˈajla. hadˈeʁeχ haktsaʁˈa hˈi ɡˈam hamehiʁˈa.</he>
+[park-youths] narrator: בשדרות הזית פקק של שעת בוקר. הניידת מתקדמת לאט בין הרכבים.
+    <he>bisdeʁˈot hazˈajit pkˈak ʃˈel ʃaʔˈat bˈokeʁ. hanajˈedet mitkadˈemet leʔˈat bˈen haʁeχavˈim.</he>
+[park-youths] narrator: השדרה עמוסה מעט בשעת הערב, אבל זורמת.
+    <he>haʃdeʁˈa ʔamusˈa meʔˈat biʃʔˈat haʔˈeʁev, ʔavˈal zoʁˈemet.</he>
+[park-youths] narrator: רחובות השכונה צרים ומפותלים. בשעה הזו השדרה הייתה פנויה , הדרך ארכה יותר.
+    <he>ʁeχovˈot haʃχunˈa tsaʁˈim umefutalˈim. baʃaʔˈa hazˈo haʃdeʁˈa hajtˈa pnujˈa, hadˈeʁeχ ʔaʁχˈa jotˈeʁ.</he>
+[park-youths] narrator: עוקפים את הפקק בשדרה דרך רחובות השכונה. ארוך יותר , אבל זורם.
+    <he>ʔokfˈim ʔˈet hapkˈak baʃdeʁˈa dˈeʁeχ ʁeχovˈot haʃχunˈa. ʔaʁˈoχ jotˈeʁ, ʔavˈal zoʁˈem.</he>
+[park-youths] player: מוקד, נמסר משהו על הגילאים?
+    <he>mokˈed, nimsˈaʁ mˈaʃu ʔˈal haɡilaʔˈim?</he>
+[park-youths] dispatch: לפי המתלוננת הם נראים צעירים מאוד , בני נוער.
+    <he>lefˈi hamitlonˈenet hˈem niʁʔˈim tseʔiʁˈim meʔˈod, bnˈej nˈoʔaʁ.</he>
+[park-youths] player: כמה הם? יש אלימות?
+    <he>kˈama hˈem? jˈeʃ ʔalimˈut?</he>
+[park-youths] dispatch: שלושה או ארבעה. אין דיווח על אלימות , צעקות ובקבוקים.
+    <he>ʃloʃˈa ʔˈo ʔaʁbaʔˈa. ʔˈejn divˈuaχ ʔˈal ʔalimˈut, tsaʔakˈot vebakbukˈim.</he>
+[park-youths] hana: הם פה כבר שעתיים. צועקים, שוברים בקבוקים. יש לי נכדים שישנים אצלי. רק אל תגידו שאני התקשרתי.
+    <he>hˈem pˈo kvˈaʁ ʃaʔatˈajim. tsoʔakˈim, ʃovʁˈim bakbukˈim. jˈeʃ lˈi neχadˈim ʃejeʃenˈim ʔetslˈi. ʁˈak ʔˈal taɡˈidu ʃeʔanˈi hitkaʃˈaʁti.</he>
+[park-youths] narrator: תיעדת: השעה, הרמקול והבקבוקים, הגילאים, מצבה של ליאור, וההורים שעודכנו.
+    <he>tiʔˈadta: haʃaʔˈa, haʁamkˈol vehabakbukˈim, haɡilaʔˈim, matsavˈa ʃˈel liʔˈoʁ, vehahoʁˈim ʃeʔudkenˈu.</he>
+[park-youths] idan: אנחנו רק שומעים מוזיקה,
+    <he>ʔanˈaχnu ʁˈak ʃomʔˈim mˈuzika,</he>
+[park-youths] idan: מה אתה צועק? אנחנו לא עושים כלום!
+    <he>mˈa ʔatˈa tsoʔˈek? ʔanˈaχnu lˈo ʔosˈim klˈum!</he>
+[park-youths] idan: טוב, מוריד.
+    <he>tˈov, moʁˈid.</he>
+[park-youths] narrator: המוזיקה נחלשת.
+    <he>hamˈuzika neχlˈeʃet.</he>
+[park-youths] narrator: עידן בן 17, ליאור בת 16, תום בן 16.
+    <he>ʔidˈan bˈen ʃvˈa ʔesʁˈe, liʔˈoʁ bˈat ʃˈeʃ ʔesʁˈe, tˈom bˈen ʃˈeʃ ʔesʁˈe.</he>
+[park-youths] idan: זה לא שלנו, זה היה פה כשבאנו.
+    <he>zˈe lˈo ʃelˈanu, zˈe hajˈa pˈo kʃebˈanu.</he>
+[park-youths] narrator: שפכת את שאריות הבקבוקים לפח.
+    <he>ʃafˈaχta ʔˈet ʃeʔeʁijˈot habakbukˈim lapˈaχ.</he>
+[park-youths] narrator: תום ועידן אוספים את הבקבוקים לפח.
+    <he>tˈom veʔidˈan ʔosfˈim ʔˈet habakbukˈim lapˈaχ.</he>
+[park-youths] lior: רק, כמה כוסות. מסתובב לי הכול.
+    <he>ʁˈak, kˈama kosˈot. mistovˈev lˈi hakˈol.</he>
+[park-youths] narrator: הושבת את ליאור על הספסל, תום נשאר לידה, ואתה עוקב אחרי הנשימה.
+    <he>hoʃˈavta ʔˈet liʔˈoʁ ʔˈal hasafsˈal, tˈom niʃʔˈaʁ lejadˈa, veʔatˈa ʔokˈev ʔaχʁˈej haneʃimˈa.</he>
+[park-youths] narrator: הורי ליאור ותום בדרך. אמא של עידן אומרת שהיא תבוא לאסוף אותו.
+    <he>hoʁˈaj liʔˈoʁ vetˈom badˈeʁeχ. ʔimˈa ʃˈel ʔidˈan ʔomˈeʁet ʃehˈi tavˈo laʔasˈof ʔotˈo.</he>
+[park-youths] tom: קנינו בקבוקים במכולת. ליאור שתתה הכי הרבה, היא לא רגילה.
+    <he>kanˈinu bakbukˈim bamakˈolet. liʔˈoʁ ʃatetˈa haχˈi haʁbˈe, hˈi lˈo ʁeɡilˈa.</he>
+[park-youths] player: הגעתי למקום.
+    <he>hiɡˈaʔti lamakˈom.</he>
+[park-youths] dispatch: קיבל. עדכן כשיש תמונת מצב.
+    <he>kibˈel. ʔidkˈen kʃejˈeʃ tmunˈat matsˈav.</he>
+[park-youths] player: שלילי, עדיין בטיפול באירוע. אעדכן כשאתפנה.
+    <he>ʃlilˈi, ʔadˈajin betipˈul baʔejʁˈua. ʔeʔadkˈen kʃeʔetpanˈe.</he>
+[park-youths] dispatch: קיבל, מעביר לניידת אחרת.
+    <he>kibˈel, maʔavˈiʁ lenajˈedet ʔaχˈeʁet.</he>
+[park-youths] player: חיובי, פנוי.
+    <he>χijuvˈi, panˈuj.</he>
+[park-youths] dispatch: רגע , סיימת שם? המעורבים עדיין במקום לפי הדיווח שלך. תשלים קודם ותעדכן.
+    <he>ʁˈeɡa, sijˈamta ʃˈam? hameʔoʁavˈim ʔadˈajin bamakˈom lefˈi hadivˈuaχ ʃelχˈa. taʃlˈim kˈodem veteʔadkˈen.</he>
+[park-youths] narrator: ליאור מחווירה, מתיישבת על הספסל ואומרת שמסתובב לה הראש.
+    <he>liʔˈoʁ maχviʁˈa, mitjaʃˈevet ʔˈal hasafsˈal veʔomˈeʁet ʃemistovˈev lˈa haʁˈoʃ.</he>
+[park-youths] narrator: ליאור מתכופפת, מקיאה ליד הספסל ומתקשה לעמוד על הרגליים.
+    <he>liʔˈoʁ mitkofˈefet, mekiʔˈa lejˈad hasafsˈal vemitkaʃˈa laʔamˈod ʔˈal haʁaɡlˈajim.</he>
+[park-youths] tom: ליאור? היא לא נראית טוב,
+    <he>liʔˈoʁ? hˈi lˈo niʁʔˈet tˈov,</he>
+[park-youths] dispatch: אתה פנוי? יש אירוע נוסף באזור.
+    <he>ʔatˈa panˈuj? jˈeʃ ʔejʁˈua nosˈaf baʔezˈoʁ.</he>
+[park-youths] dispatch: צוות מד״א בדרך, כשמונה דקות.
+    <he>tsˈevet madˈa badˈeʁeχ, keʃmˈone dakˈot.</he>
+[park-youths] center: צוות מד״א בדרך, כשמונה דקות.
+    <he>tsˈevet madˈa badˈeʁeχ, keʃmˈone dakˈot.</he>
+[park-youths] duty: צוות מד״א בדרך, כשמונה דקות.
+    <he>tsˈevet madˈa badˈeʁeχ, keʃmˈone dakˈot.</he>
+[park-youths] dispatch: קיבלתי, רשמתי.
+    <he>kibˈalti, ʁaʃˈamti.</he>
+[park-youths] center: קיבלתי, רשמתי.
+    <he>kibˈalti, ʁaʃˈamti.</he>
+[park-youths] duty: קיבלתי, רשמתי.
+    <he>kibˈalti, ʁaʃˈamti.</he>
+[park-youths] player: נמצא בגינת הזית, רחוב האורן
+    <he>nimtsˈa beɡinˈat hazˈajit, ʁeχˈov haʔˈoʁen</he>
+[park-youths] player: שלושה בני נוער, רמקול ואלכוהול
+    <he>ʃloʃˈa bnˈej nˈoʔaʁ, ʁamkˈol veʔalkohˈol</he>
+[park-youths] player: שלושתם קטינים
+    <he>ʃloʃtˈam ktinˈim</he>
+[park-youths] player: נערה בת 16 במצוקה אחרי שתייה
+    <he>naʔaʁˈa bˈat ʃˈeʃ ʔesʁˈe bemetsukˈa ʔaχʁˈej ʃtijˈa</he>
+[park-youths] player: מבקש מד״א לגינה , נערה במצוקה
+    <he>mevakˈeʃ midˈa laɡinˈa, naʔaʁˈa bemetsukˈa</he>
+[park-youths] player: ההורים עודכנו ובדרך
+    <he>hahoʁˈim ʔudkenˈu vebadˈeʁeχ</he>
+[park-youths] player: המוזיקה כובתה, הגינה נוקתה
+    <he>hamuzikˈa kubtˈa, haɡinˈa nuktˈa</he>
+[park-youths] center: נפתח אירוע שבע שלוש אפס שתיים , רעש ושתייה של בני נוער בגינה ציבורית, גינת הזית, רחוב האורן. מעביר אליך לטיפול.
+    <he>niftˈaχ ʔejʁˈua ʃˈeva ʃalˈoʃ ʔˈefes ʃtˈajim, ʁˈaʔaʃ veʃtijˈa ʃˈel bnˈej nˈoʔaʁ beɡinˈa tsibuʁˈit, ɡinˈat hazˈajit, ʁeχˈov haʔˈoʁen. maʔavˈiʁ ʔelˈeχa letipˈul.</he>
+[shoplifting] dispatch: מאבטח במינימרקט ברחוב הדקל 22 עיכב צעיר בחשד לגניבה. בעלת החנות במקום ונשמעת נסערת. אשר קבלה.
+    <he>meʔavtˈeaχ beminimˈaʁket beʁeχˈov hadˈekel ʔesʁˈim veʃtˈajim ʔikˈev tsaʔˈiʁ beχaʃˈad leɡnevˈa. baʔalˈat haχanˈut bamakˈom veniʃmˈaʔat nisʔˈeʁet. ʔaʃˈeʁ kabalˈa.</he>
+[shoplifting] narrator: המינימרקט. ליד הקופה יושב נער בקפוצ׳ון אפור, תיק גב פתוח לרגליו. מאבטח בחולצה שחורה עומד מעליו, ובעלת החנות מדברת בקול רם. כמה לקוחות מסתכלים.
+    <he>haminimˈaʁket. lejˈad hakupˈa joʃˈev nˈaʔaʁ bekaputʃon ʔafˈoʁ, tˈik ɡˈav patˈuaχ leʁaɡlˈav. meʔavtˈeaχ beχultsˈa ʃχoʁˈa ʔomˈed meʔalˈav, vubaʔalˈat haχanˈut medabˈeʁet bekˈol ʁˈam. kˈama lakoχˈot mistaklˈim.</he>
+[shoplifting] dvora: סוף סוף! זה כבר הפעם השלישית השבוע שגונבים לי!
+    <he>sˈof sˈof! zˈe kvˈaʁ hapˈaʔam haʃliʃˈit haʃavˈua ʃeɡonvˈim lˈi!</he>
+[shoplifting] player: קיבלתי את האירוע, יוצא.
+    <he>kibˈalti ʔˈet haʔejʁˈua, jotsˈe.</he>
+[shoplifting] dispatch: קיבל.
+    <he>kibˈel.</he>
+[shoplifting] player: קיבלתי.
+    <he>kibˈalti.</he>
+[shoplifting] narrator: השדרה ריקה בשעת הלילה. הדרך הקצרה היא גם המהירה.
+    <he>haʃdeʁˈa ʁekˈa biʃʔˈat halˈajla. hadˈeʁeχ haktsaʁˈa hˈi ɡˈam hamehiʁˈa.</he>
+[shoplifting] narrator: בשדרות הזית פקק של שעת בוקר. הניידת מתקדמת לאט בין הרכבים.
+    <he>bisdeʁˈot hazˈajit pkˈak ʃˈel ʃaʔˈat bˈokeʁ. hanajˈedet mitkadˈemet leʔˈat bˈen haʁeχavˈim.</he>
+[shoplifting] narrator: השדרה עמוסה מעט בשעת הערב, אבל זורמת.
+    <he>haʃdeʁˈa ʔamusˈa meʔˈat biʃʔˈat haʔˈeʁev, ʔavˈal zoʁˈemet.</he>
+[shoplifting] narrator: רחובות השכונה צרים ומפותלים. בשעה הזו השדרה הייתה פנויה , הדרך ארכה יותר.
+    <he>ʁeχovˈot haʃχunˈa tsaʁˈim umefutalˈim. baʃaʔˈa hazˈo haʃdeʁˈa hajtˈa pnujˈa, hadˈeʁeχ ʔaʁχˈa jotˈeʁ.</he>
+[shoplifting] narrator: עוקפים את הפקק בשדרה דרך רחובות השכונה. ארוך יותר , אבל זורם.
+    <he>ʔokfˈim ʔˈet hapkˈak baʃdeʁˈa dˈeʁeχ ʁeχovˈot haʃχunˈa. ʔaʁˈoχ jotˈeʁ, ʔavˈal zoʁˈem.</he>
+[shoplifting] player: מוקד, מה ידוע על גיל החשוד?
+    <he>mokˈed, mˈa jadˈua ʔˈal ɡˈil haχaʃˈud?</he>
+[shoplifting] dispatch: לפי המאבטח הוא נראה בן 16,18.
+    <he>lefˈi hameʔavtˈeaχ hˈu niʁʔˈa bˈen ʃˈeʃ ʔesʁe,ʃmonˈa ʔesʁˈe.</he>
+[shoplifting] player: איפה מחזיקים אותו? יש פציעות או כוח?
+    <he>ʔˈejfo maχzikˈim ʔotˈo? jˈeʃ ptsiʔˈot ʔˈo kˈoaχ?</he>
+[shoplifting] dispatch: לפי המדווח הוא יושב ליד הקופה. אין דיווח על פציעות.
+    <he>lefˈi hamedavˈaaχ hˈu joʃˈev lejˈad hakupˈa. ʔˈejn divˈuaχ ʔˈal ptsiʔˈot.</he>
+[shoplifting] shai: ראיתי אותו מכניס שוקולדים לתיק. עצרתי אותו בדלת, פתחתי לו את התיק , והנה הם.
+    <he>ʁaʔˈiti ʔotˈo maχnˈis ʃokolˈadim latˈik. ʔatsˈaʁti ʔotˈo badˈelet, patˈaχti lˈo ʔˈet hatˈik, vehˈine hˈem.</he>
+[shoplifting] shai: בסדר, הוא פתח את התיק בעצמו כשביקשתי.
+    <he>besˈedeʁ, hˈu patˈaχ ʔˈet hatˈik beʔatsmˈo kʃebikˈaʃti.</he>
+[shoplifting] dvora: כל שבוע גונבים לי. אני רוצה שיילמד לקח!
+    <he>kˈol ʃavˈua ɡonvˈim lˈi. ʔanˈi ʁotsˈe ʃejilamˈed lˈekaχ!</he>
+[shoplifting] narrator: דבורה מריצה את ההקלטה במסך שליד הקופה. במצלמה רואים את הנער מכניס שתי חפיסות שוקולד לתיק ויוצא בלי לעבור בקופה.
+    <he>dvˈoʁa meʁitsˈa ʔˈet hahaklatˈa bamasˈaχ ʃelejˈad hakupˈa. bamatslemˈa ʁoʔˈim ʔˈet hanˈaʔaʁ maχnˈis ʃtˈej χafisˈot ʃˈokolad latˈik vejotsˈe blˈi laʔavˈoʁ bakupˈa.</he>
+[shoplifting] narrator: דבורה מריצה את ההקלטה במסך שליד הקופה. במצלמה רואים את הנער משלם בקופה העצמית על שתי חפיסות השוקולד.
+    <he>dvˈoʁa meʁitsˈa ʔˈet hahaklatˈa bamasˈaχ ʃelejˈad hakupˈa. bamatslemˈa ʁoʔˈim ʔˈet hanˈaʔaʁ meʃalˈem bakupˈa haʔatsmˈit ʔˈal ʃtˈej χafisˈot haʃˈokolad.</he>
+[shoplifting] dvora: ,טוב. אבל שיטפלו בזה.
+    <he>,tˈov. ʔavˈal ʃejetaplˈu bezˈe.</he>
+[shoplifting] narrator: נכנסתם למשרד הקטן. הלקוחות חוזרים לקניות.
+    <he>niχnˈastem lamisʁˈad hakatˈan. halakoχˈot χozʁˈim laknijˈot.</he>
+[shoplifting] itay: אני לא גנבתי כלום.
+    <he>ʔanˈi lˈo ɡanˈavti klˈum.</he>
+[shoplifting] itay: איתי כהן. אני בן 17.
+    <he>ʔitˈaj kohˈen. ʔanˈi bˈen ʃvˈa ʔesʁˈe.</he>
+[shoplifting] itay: שילמתי, כלומר, רציתי לשלם. לא היה לי מספיק כסף.
+    <he>ʃilˈamti, klomˈaʁ, ʁatsˈiti leʃalˈem. lˈo hajˈa lˈi maspˈik kˈesef.</he>
+[shoplifting] itay: שילמתי בקופה העצמית! הנה הקבלה, בכיס.
+    <he>ʃilˈamti bakupˈa haʔatsmˈit! hˈine hakabalˈa, bakˈis.</he>
+[shoplifting] narrator: בכיס שלו קבלה על שתי חפיסות שוקולד.
+    <he>bakˈis ʃelˈo kabalˈa ʔˈal ʃtˈej χafisˈot ʃˈokolad.</he>
+[shoplifting] narrator: אמא של איתי עונה ואומרת שהיא בדרך , עשר דקות.
+    <he>ʔˈima ʃˈel ʔitˈaj ʔonˈa veʔomˈeʁet ʃehˈi badˈeʁeχ, ʔˈeseʁ dakˈot.</he>
+[shoplifting] itay: ,בסדר.
+    <he>,besˈedeʁ.</he>
+[shoplifting] itay: תודה.
+    <he>todˈa.</he>
+[shoplifting] narrator: תיעדת: גרסת המאבטח, מה נראה במצלמה, השעה, ושווי של 38 ₪.
+    <he>tiʔˈadta: ɡiʁsˈat hameʔavtˈeaχ, mˈa niʁʔˈa bamatslemˈa, haʃaʔˈa, veʃˈovi ʃˈel ʃloʃˈim veʃmonˈa ʃkalˈim.</he>
+[shoplifting] player: הגעתי למקום.
+    <he>hiɡˈaʔti lamakˈom.</he>
+[shoplifting] dispatch: קיבל. עדכן כשיש תמונת מצב.
+    <he>kibˈel. ʔidkˈen kʃejˈeʃ tmunˈat matsˈav.</he>
+[shoplifting] player: שלילי, עדיין בטיפול באירוע. אעדכן כשאתפנה.
+    <he>ʃlilˈi, ʔadˈajin betipˈul baʔejʁˈua. ʔeʔadkˈen kʃeʔetpanˈe.</he>
+[shoplifting] dispatch: קיבל, מעביר לניידת אחרת.
+    <he>kibˈel, maʔavˈiʁ lenajˈedet ʔaχˈeʁet.</he>
+[shoplifting] player: חיובי, פנוי.
+    <he>χijuvˈi, panˈuj.</he>
+[shoplifting] dispatch: רגע , סיימת שם? המעורבים עדיין במקום לפי הדיווח שלך. תשלים קודם ותעדכן.
+    <he>ʁˈeɡa, sijˈamta ʃˈam? hameʔoʁavˈim ʔadˈajin bamakˈom lefˈi hadivˈuaχ ʃelχˈa. taʃlˈim kˈodem veteʔadkˈen.</he>
+[shoplifting] dvora: אני מצלמת אותו ומעלה לקבוצה של השכונה. שכולם יידעו מי זה!
+    <he>ʔanˈi metsalˈemet ʔotˈo vemaʔalˈa lakvutsˈa ʃˈel haʃχunˈa. ʃekulˈam jidʔˈu mˈi zˈe!</he>
+[shoplifting] narrator: דבורה מכוונת את הטלפון אל איתי.
+    <he>dvˈoʁa meχavˈenet ʔˈet hatˈelefon ʔˈel ʔitˈaj.</he>
+[shoplifting] dispatch: אתה פנוי? יש אירוע נוסף באזור.
+    <he>ʔatˈa panˈuj? jˈeʃ ʔejʁˈua nosˈaf baʔezˈoʁ.</he>
+[shoplifting] dispatch: רשמתי, הפרטים יועברו לבירור לפי הנוהל לקטינים.
+    <he>ʁaʃˈamti, hapʁatˈim joʔavʁˈu lebeʁˈuʁ lefˈi hanˈohal lektinˈim.</he>
+[shoplifting] center: רשמתי, הפרטים יועברו לבירור לפי הנוהל לקטינים.
+    <he>ʁaʃˈamti, hapʁatˈim joʔavʁˈu lebeʁˈuʁ lefˈi hanˈohal lektinˈim.</he>
+[shoplifting] duty: רשמתי, הפרטים יועברו לבירור לפי הנוהל לקטינים.
+    <he>ʁaʃˈamti, hapʁatˈim joʔavʁˈu lebeʁˈuʁ lefˈi hanˈohal lektinˈim.</he>
+[shoplifting] dispatch: קיבלתי, רשמתי.
+    <he>kibˈalti, ʁaʃˈamti.</he>
+[shoplifting] center: קיבלתי, רשמתי.
+    <he>kibˈalti, ʁaʃˈamti.</he>
+[shoplifting] duty: קיבלתי, רשמתי.
+    <he>kibˈalti, ʁaʃˈamti.</he>
+[shoplifting] player: נמצא במינימרקט ברחוב הדקל 22
+    <he>nimtsˈa beminimˈaʁket beʁeχˈov hadˈekel ʔesʁˈim veʃtˈajim</he>
+[shoplifting] player: חשוד מעוכב על ידי מאבטח, ללא פציעות
+    <he>χaʃˈud meʔukˈav ʔˈal jedˈej meʔavtˈeaχ, lelˈo ptsiʔˈot</he>
+[shoplifting] player: החשוד קטין בן 17 , הורה בדרך
+    <he>haχaʃˈud katˈin bˈen ʃvˈa ʔesʁˈe, hoʁˈe badˈeʁeχ</he>
+[shoplifting] player: הצילום מראה גניבה של שתי חפיסות, שווי 38 ₪
+    <he>hatsilˈum maʁʔˈe ɡnevˈa ʃˈel ʃtˈej χafisˈot, ʃˈovi ʃloʃˈim veʃmonˈa ʃkalˈim</he>
+[shoplifting] player: הצילום והקבלה מראים שהנער שילם , אין עבירה
+    <he>hatsilˈum vehakabalˈa maʁʔˈim ʃehanˈaʔaʁ ʃilˈem, ʔˈejn ʔaveʁˈa</he>
+[shoplifting] player: מבקש הפניה לבירור לפי הנוהל לקטינים
+    <he>mevakˈeʃ hafnajˈa lebeʁˈuʁ lefˈi hanˈohal laktinˈim</he>
+[shoplifting] player: האירוע הסתיים במקום
+    <he>haʔejʁˈua histajˈem bamakˈom</he>
+[shoplifting] center: נפתח אירוע שש שש אחת אחת , חשד לגניבה ממינימרקט, מינימרקט השכונה, רחוב הדקל 22. מעביר אליך לטיפול.
+    <he>niftˈaχ ʔejʁˈua ʃˈeʃ ʃˈeʃ ʔaχˈat ʔaχˈat, χaʃˈad leɡnevˈa miminimˈaʁket, minimˈaʁket haʃχunˈa, ʁeχˈov hadˈekel ʔesʁˈim veʃtˈajim. maʔavˈiʁ ʔelˈeχa letipˈul.</he>
