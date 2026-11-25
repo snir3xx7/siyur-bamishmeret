@@ -204,3 +204,13 @@ test('הנפשת דמויות (PixiJS): השכבה רצה, הדמויות מצו
   await expect.poll(async () => Number(await layer.getAttribute('data-frames'))).toBeGreaterThan(30);
   await expect(page.locator('.scene.pixi-on .actor.has-sprite .sprite').first()).toHaveCSS('opacity', '0');
 });
+
+test('בחירת דמות: שוטרת – נשמר, ומופיע במסך הפתיחה', async ({ page }) => {
+  await page.goto('./#/officer');
+  await page.getByTestId('officer-f').click();
+  await expect(page.getByTestId('officer-f')).toHaveAttribute('aria-checked', 'true');
+  await page.getByTestId('officer-confirm').click();
+  await expect(page).toHaveURL(/#\/catalog/);
+  await page.goto('./#/');
+  await expect(page.getByTestId('home-officer')).toContainText('שוטרת');
+});
