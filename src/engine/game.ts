@@ -206,6 +206,13 @@ export function reduce(sc: Scenario, prev: GameState, action: GameAction): GameS
     const actions = last?.type === 'NOTE' ? [...prev.actions.slice(0, -1), { type: 'NOTE' as const, text }] : [...prev.actions, { type: 'NOTE' as const, text }];
     return { ...prev, notebook: text, actions };
   }
+  if (action.type === 'CAM') {
+    // מצלמת גוף: לא צורכת תור; נרשמת לשחזור ולתחקיר
+    if (prev.stage !== 'scene' || (prev.cam?.on ?? false) === action.on) return prev;
+    const cam = { ...(prev.cam ?? { on: false, log: [] }), on: action.on };
+    cam.log = [...cam.log, { on: action.on, turn: prev.turn }];
+    return { ...prev, cam, actions: [...prev.actions, { type: 'CAM', on: action.on }] };
+  }
   if (action.turn !== prev.turn || prev.stage === 'ended') return prev;
 
   const st = clone(prev);
@@ -224,6 +231,8 @@ export function reduce(sc: Scenario, prev: GameState, action: GameAction): GameS
       if (!inDispatch && prev.stage !== 'scene') return prev;
       if (inDispatch ? !availableFollowUps(sc, prev).some((c) => c.id === choice.id)
         : !availableChoices(sc, prev, hotspot!.id).some((c) => c.id === choice.id)) return prev;
+      // המגע הראשון עם מעורב בזירה – לבדיקת הפעלת מצלמת הגוף
+      if (hotspot?.kind === 'character' && st.cam?.firstContact === undefined) st.cam = { ...(st.cam ?? { on: false, log: [] }), firstContact: prev.turn };
       const branch = choice.branches?.find((b) => evalCond({ sc, st: prev }, b.when));
       const lines = (branch ? branch.lines : choice.lines ?? []).map((l) => ({ ...l, text: fill(l.text, st.vars) }));
       st.actions.push(action);

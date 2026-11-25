@@ -165,6 +165,8 @@ def main():
                 af.append(f'asetrate={int(tts.sample_rate * r)},aresample={tts.sample_rate},atempo={1 / r:.4f}')
             if cfg.get('radio'):
                 af.append(RADIO_FX)
+            if cfg.get('device'):
+                af.append('highpass=f=420,lowpass=f=4200,acompressor=threshold=-20dB:ratio=4,volume=1.3')
             af.append('silenceremove=start_periods=1:start_threshold=-50dB,areverse,silenceremove=start_periods=1:start_threshold=-50dB,areverse')
             af.append('loudnorm=I=-18:TP=-2')
             subprocess.run(['ffmpeg', '-v', 'error', '-y', '-i', tmp.name, '-af', ','.join(af), '-ac', '1', '-ar', '32000', '-b:a', '40k', str(out)], check=True)
@@ -187,6 +189,9 @@ def main():
                 jobs.append((st['id'], 'head', f'{d["centerCall"]} מ{pre} {st["shiftHead"]}'))
         for n in UNITS:
             jobs.append(('common', 'head', f'תעבירי את האירוע ל{n}.'))
+        # מצלמת גוף: הכרזות המכשיר והודעת השוטר על סיום הצילום
+        jobs += [('common', 'bodycam', 'מצלמה מקליטה'), ('common', 'bodycam', 'סיום הקלטה'),
+                 ('common', 'officer', 'אני מסיים את הצילום.'), ('common', 'officerF', 'אני מסיימת את הצילום.')]
         # תעבורת קשר ברקע (ניידות אחרות, המשל״ט, 401, 11): פתיחות לפי תחנה + גופי הודעות משותפים
         chatter = json.loads(subprocess.run(['npx', 'vite-node', 'scripts/dump-chatter.ts'], cwd=ROOT, capture_output=True, text=True, check=True).stdout)
         for x in chatter:

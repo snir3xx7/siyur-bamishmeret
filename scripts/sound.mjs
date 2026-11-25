@@ -358,8 +358,16 @@ export function siren() {
   return normalize(loopify(mix([muffled, 0.55], [road, 1.4], [eng, 0.25]), 0.3), 0.6);
 }
 
+/** מצלמת גוף: צפצוף כפול קצר של המכשיר */
+export function camBeep() {
+  const out = buf(0.32);
+  tone(out, 0.0, 0.08, 2400, 0.5);
+  tone(out, 0.13, 0.08, 2400, 0.5);
+  return normalize(out, 0.5);
+}
+
 export const SOUNDS = {
   rain, traffic, 'engine-wipers': engineWipers, 'radio-chirp': radioChirp, 'radio-end': radioEnd,
   'music-muffled': musicMuffled, 'building-hum': buildingHum, crowd, 'yard-evening': yardEvening,
-  'yard-morning': yardMorning, knock, 'ui-click': uiClick, sample, alert, 'radio-chatter': radioChatter, siren,
+  'yard-morning': yardMorning, knock, 'ui-click': uiClick, sample, alert, 'radio-chatter': radioChatter, siren, 'cam-beep': camBeep,
 };

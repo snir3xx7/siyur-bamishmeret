@@ -643,3 +643,11 @@ body.projector .no-projector { display: none !important; }
 @keyframes ticker { to { transform: translateX(100%); } }
 @keyframes ctaGlow { 0%, 100% { box-shadow: 0 0 0 1px #ffe3a0, 0 10px 30px #e8c15a55, 0 0 30px #e8c15a22; } 50% { box-shadow: 0 0 0 1px #ffe3a0, 0 10px 36px #e8c15a88, 0 0 60px #e8c15a55; } }
 @media (max-width: 600px) { .hud-wave { display: none; } .hud-live { inset-inline-start: 40px; font-size: .7rem; } .cine-content { padding-top: 70px; padding-bottom: 54px; } }
+
+/* ===== מצלמת גוף ===== */
+.cam-led { position: fixed; z-index: 60; inset-inline-end: calc(10px + env(safe-area-inset-right, 0px)); top: 50%; translate: 0 -50%;
+  display: grid; justify-items: center; gap: 2px; padding: 8px 6px; border-radius: 12px; background: #000b; border: 1px solid #ff3b4a66; color: #ffd6d9; font-family: var(--mono); font-size: .7rem; letter-spacing: .05em; pointer-events: none; }
+.cam-led i { width: 12px; height: 12px; border-radius: 50%; background: #ff2b3b; box-shadow: 0 0 10px #ff2b3b, 0 0 22px #ff2b3b88; }
+@media (prefers-reduced-motion: no-preference) { .cam-led i { animation: camBlink 1s steps(1) infinite; } }
+@keyframes camBlink { 0% { opacity: 1; } 50% { opacity: .15; } }
+.btn.cam-btn.on { border-color: #ff4a58; color: #ffd6d9; background: #3a1216; }

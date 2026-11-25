@@ -1,6 +1,6 @@
 {
  "id": "burglary",
- "version": 4,
+ "version": 5,
  "title": "פריצה לדירה",
  "category": "עבירות רכוש",
  "summary": "דיירת חזרה הביתה ומצאה את הדלת פרוצה. יש לשמור על הזירה בלי לגעת, למנוע כניסה, לא להיכנס לבד, לגבות גרסאות מהדיירת ומהשכן, לאתר מצלמות ולהזמין מז״פ.",
@@ -1593,6 +1593,8 @@
    "1734ec94": "audio/voice/burglary/l-1734ec94.mp3",
    "2bec06ca": "audio/voice/burglary/l-2bec06ca.mp3",
    "64c2f217": "audio/voice/burglary/l-64c2f217.mp3",
+   "c1ebef25": "audio/voice/burglary/l-c1ebef25.mp3",
+   "b4917c11": "audio/voice/burglary/l-b4917c11.mp3",
    "ebbc8af8": "audio/voice/burglary/l-ebbc8af8.mp3",
    "4e9bfee4": "audio/voice/burglary/l-4e9bfee4.mp3",
    "261def54": "audio/voice/burglary/l-261def54.mp3",
@@ -1630,5 +1632,6 @@
    "3bcc191c": "audio/voice/burglary/l-3bcc191c.mp3",
    "f35f4a12": "audio/voice/burglary/l-f35f4a12.mp3"
   }
- }
+ },
+ "privateHome": true
 }

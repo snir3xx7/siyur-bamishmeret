@@ -214,6 +214,8 @@ export interface SceneDef {
 export interface Scenario {
   /** חשודים: שכבת עיכוב/מעצר (engine/custody.ts) */
   custody?: import('./custody').CustodyDef[];
+  /** האירוע כולל כניסה לבית (רשות היחיד) – חובה להודיע על צילום במצלמת הגוף */
+  privateHome?: boolean;
   id: string;
   version: number;
   title: string;
@@ -348,6 +350,8 @@ export interface GameConfig {
 }
 
 export interface GameState {
+  /** מצלמת גוף: מתי הופעלה וכובתה (בתורות), ומתי היה המגע הראשון עם מעורב */
+  cam?: { on: boolean; log: { on: boolean; turn: number }[]; firstContact?: number };
   config: GameConfig;
   variant: string;
   vars: Record<string, string>;
@@ -384,4 +388,5 @@ export type GameAction = (
   | { type: 'FINISH'; turn: number }
   | { type: 'TICK'; ms: number }
   | { type: 'NOTE'; text: string }
+  | { type: 'CAM'; on: boolean }
 ) & { at?: number };

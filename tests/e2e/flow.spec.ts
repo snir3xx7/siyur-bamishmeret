@@ -240,3 +240,13 @@ test('זימון כוחות: גרר לתאונה דרך המשל״ט, עם פת�
   await dlg.getByRole('button', { name: /שליחת העדכון/ }).click();
   await expect(page.getByText(/גרר הוזמן/).first()).toBeVisible();
 });
+
+test('מצלמת גוף: הפעלה מציגה נורית הקלטה, כיבוי מסתיר אותה', async ({ page }) => {
+  await startScenario(page, 'domestic-call', 4, { mode: 'practice' });
+  await toScene(page);
+  await page.getByTestId('cam-toggle').click();
+  await expect(page.getByTestId('cam-led')).toBeVisible();
+  await expect(page.getByTestId('cam-toggle')).toHaveAttribute('aria-pressed', 'true');
+  await page.getByTestId('cam-toggle').click();
+  await expect(page.getByTestId('cam-led')).toHaveCount(0);
+});

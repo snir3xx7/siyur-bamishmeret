@@ -20,6 +20,7 @@ import { RadioGuide } from '../ui/RadioGuide';
 import { FirstSceneGuide, FullscreenButton, RotateHint } from '../ui/DeviceHints';
 import { custodyStatus } from '../engine/custody';
 import { LocateMap } from '../ui/LocateMap';
+import { CamLed } from '../ui/CamLed';
 import { callTo, chatterLines, gameProfile, headRouteText, radioize, RADIO_TO_LABEL, type RadioProfile, type RadioTo } from '../config/stations';
 import { Modal, useAudioStatus } from '../ui/SettingsDialog';
 
@@ -229,6 +230,28 @@ export function Play() {
   const [chatter, setChatter] = useState<string | undefined>();
   const chatterIdx = useRef(0);
   const [selected, setSelected] = useState<string | null>(null);
+  const [camSince, setCamSince] = useState<number | null>(null);
+  /** מצלמת גוף: צפצוף, הכרזת המכשיר בקול אישה, רטט; בכיבוי – הודעת השוטר על סיום הצילום */
+  const toggleCam = (on: boolean) => {
+    if (!sc || !st) return;
+    dispatch({ type: 'CAM', on });
+    setCamSince(on ? Date.now() : null);
+    try {
+      navigator.vibrate?.(on ? 90 : [60, 90, 60]);
+    } catch {
+      /* אין רטט (למשל באייפון) */
+    }
+    audio.unlock();
+    const off = settings.officerVoice === 'f' ? 'officerF' : 'officer';
+    const dev = (t: string) => radioIdx?.[voiceKey('bodycam', t)];
+    const me = radioIdx?.[voiceKey(off, off === 'officerF' ? 'אני מסיימת את הצילום.' : 'אני מסיים את הצילום.')];
+    const beep = { file: 'audio/cam-beep.mp3', radio: false, who: 'cam' };
+    const items = on
+      ? [beep, ...(dev('מצלמה מקליטה') ? [{ file: dev('מצלמה מקליטה')!, radio: false, who: 'cam' }] : [])]
+      : [...(me ? [{ file: me, radio: false, who: off }] : []), ...(dev('סיום הקלטה') ? [{ file: dev('סיום הקלטה')!, radio: false, who: 'cam' }] : []), beep];
+    void audio.playLines(items);
+    toast(on ? '🎥 מצלמת הגוף מקליטה' : '⏹ סיום הקלטה');
+  };
   const [summon, setSummon] = useState(false);
   const [composer, setComposer] = useState(false);
   const [finishing, setFinishing] = useState(false);
@@ -767,6 +790,7 @@ export function Play() {
             </div>
           )}
 
+          {stage === 'scene' && st.cam?.on && <CamLed since={camSince} />}
           {stage === 'scene' && (
             <div className="tray" role="toolbar" aria-label="פעולות עיקריות">
               <button type="button" className="btn" onClick={() => { setSummon(false); setComposer(true); }} data-testid="open-composer">
@@ -774,6 +798,15 @@ export function Play() {
               </button>
               <button type="button" className="btn" onClick={() => { setSummon(true); setComposer(true); }} data-testid="open-summon">
                 📞 זימון כוחות
+              </button>
+              <button
+                type="button"
+                className={`btn cam-btn ${st.cam?.on ? 'on' : ''}`}
+                aria-pressed={!!st.cam?.on}
+                data-testid="cam-toggle"
+                onClick={() => toggleCam(!st.cam?.on)}
+              >
+                {st.cam?.on ? '⏹ סיום צילום' : '🎥 מצלמת גוף'}
               </button>
               <button type="button" className="btn" onClick={() => setTab('info')}>
                 ℹ מה ידוע

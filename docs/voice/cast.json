@@ -56,6 +56,11 @@
    "voice": "shira",
    "radio": true,
    "speed": 1.05
+  },
+  "bodycam": {
+   "voice": "noa",
+   "speed": 0.95,
+   "device": true
   }
  },
  "characters": {

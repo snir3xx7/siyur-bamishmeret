@@ -1,6 +1,6 @@
 {
  "id": "domestic-call",
- "version": 6,
+ "version": 7,
  "title": "קריאה על צעקות בבית – חשד לאלימות במשפחה",
  "category": "עבירות נגד אדם",
  "summary": "נערה בת 15 התקשרה בשקט: צעקות ורעש שבירה, ואמה בוכה. בפתח האב אומר ש„הכול בסדר”. יש לראות את כל בני הבית, להפריד, לשוחח עם האם בנפרד, להגן על הנערה, להעריך סיכון ולפעול – בלי „לעשות שלום”.",
@@ -1905,6 +1905,8 @@
    "1734ec94": "audio/voice/domestic-call/l-1734ec94.mp3",
    "2bec06ca": "audio/voice/domestic-call/l-2bec06ca.mp3",
    "64c2f217": "audio/voice/domestic-call/l-64c2f217.mp3",
+   "c1ebef25": "audio/voice/domestic-call/l-c1ebef25.mp3",
+   "b4917c11": "audio/voice/domestic-call/l-b4917c11.mp3",
    "bf8d7099": "audio/voice/domestic-call/l-bf8d7099.mp3",
    "da3f073c": "audio/voice/domestic-call/l-da3f073c.mp3",
    "58edc2da": "audio/voice/domestic-call/l-58edc2da.mp3",
@@ -1974,5 +1976,6 @@
     "flag": "gilAngry"
    }
   }
- ]
+ ],
+ "privateHome": true
 }

@@ -6,6 +6,7 @@ import { buildReport, reportText, type ReportSection } from '../engine/report';
 import { gameProfile, radioize } from '../config/stations';
 import { notebookCheck, procedureReport } from '../engine/procedure';
 import { custodyReport } from '../engine/custody';
+import { bodycamReport } from '../engine/bodycam';
 import { evalCond } from '../engine/conditions';
 import { RadioCtx } from '../ui/radio';
 import { loadShift } from '../ui/shift';
@@ -91,6 +92,7 @@ export function DebriefScreen({ query }: { query: URLSearchParams }) {
   const radio = { ...gameProfile(st.config, settings.station, sc.dispatch.unit), fem: settings.officerVoice === 'f' };
   const proc = procedureReport(st, sc);
   const custody = custodyReport(st, sc, (c) => evalCond({ sc, st }, c));
+  const cam = bodycamReport(st, sc);
   const shiftPlan = loadShift();
   const nb = notebookCheck(sc, st);
   const reportFinal = report.map((s) => ({ ...s, text: edits[s.id] ?? radioize(s.text.replace(`צוות: ${sc.dispatch.unit}`, `צוות: ${radio.unit}${radio.real ? ` | ${radio.stationName}, ${radio.districtName}` : ''}`), radio) }));
@@ -216,6 +218,17 @@ export function DebriefScreen({ query }: { query: URLSearchParams }) {
             {proc.items.map((i) => (
               <li key={i.label} className={i.ok === null ? '' : i.ok ? 'ok' : 'bad'}>
                 <b>{i.ok === null ? '–' : i.ok ? '✓' : '✗'} {i.label}</b>
+                <span>{i.detail}</span>
+              </li>
+            ))}
+          </ul>
+        </section>
+        <section className="card print-debrief" aria-labelledby="cam-title" data-testid="bodycam">
+          <h2 id="cam-title">🎥 מצלמת גוף <span className="small muted">(לא נכלל בציון)</span></h2>
+          <ul className="proc-list">
+            {cam.map((i) => (
+              <li key={i.label} className={i.ok ? 'ok' : 'bad'}>
+                <b>{i.ok ? '✓' : '✗'} {i.label}</b>
                 <span>{i.detail}</span>
               </li>
             ))}
