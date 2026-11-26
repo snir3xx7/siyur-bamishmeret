@@ -1,6 +1,6 @@
 {
  "id": "id-check",
- "version": 1,
+ "version": 2,
  "title": "בקשת הזדהות ברחוב – עילה סבירה",
  "category": "סמכויות ושוויון",
  "summary": "דיירת מדווחת על גבר שמנסה לפתוח רכבים חונים, ומבקשת „לבדוק אותו, הוא לא מפה”. יש לדרוש הזדהות רק על בסיס עילה, להציג את עצמך ולהסביר, לטפל במי שאין עליו תעודה בלי לעכב סתם, לאמת במערכת – ובדרך גם לברר גיל של נער עם בירות.",
@@ -1834,6 +1834,47 @@
    }
   ]
  },
+ "pressure": [
+  {
+   "id": "leave",
+   "label": "עופר מתחיל להתרחק",
+   "turns": 3,
+   "resolved": {
+    "any": [
+     {
+      "chosen": "o-intro"
+     },
+     {
+      "chosen": "o-demand"
+     },
+     {
+      "chosen": "o-looks"
+     }
+    ]
+   },
+   "expire": {
+    "title": "החמרה: עופר הולך",
+    "lines": [
+     {
+      "speaker": "ofer",
+      "text": "טוב, אני לא מחכה פה כל הלילה."
+     },
+     {
+      "speaker": "narrator",
+      "text": "עופר מסתובב ומתחיל ללכת לכיוון הרכב הכסוף. עכשיו צריך לעצור אותו – וזה כבר עימות."
+     }
+    ],
+    "effects": {
+     "set": {
+      "prLeave": true,
+      "oferAngry": true
+     }
+    }
+   },
+   "keep": "פנית לעופר בזמן – לפני שהלך, והבירור נשאר רגוע.",
+   "improve": "עופר התחיל להתרחק לפני שפנית אליו. בסבב הבא: אחרי שמיעה קצרה של המדווחת – פונים מיד לאדם שנבדק."
+  }
+ ],
  "finish": {
   "label": "סיום הטיפול במקום",
   "confirm": "לסיים את הטיפול ולעבור לתחקיר? אפשר לשלוח עדכון אחרון למשל״ט לפני הסיום."
@@ -2250,6 +2291,8 @@
    "be53cfa9": "audio/voice/id-check/l-be53cfa9.mp3",
    "7211fb97": "audio/voice/id-check/l-7211fb97.mp3",
    "0d29f194": "audio/voice/id-check/l-0d29f194.mp3",
+   "dba06f93": "audio/voice/id-check/l-dba06f93.mp3",
+   "2b27eece": "audio/voice/id-check/l-2b27eece.mp3",
    "f347ef14": "audio/voice/id-check/l-f347ef14.mp3",
    "71101c3c": "audio/voice/id-check/l-71101c3c.mp3",
    "ba8d0026": "audio/voice/id-check/l-ba8d0026.mp3",

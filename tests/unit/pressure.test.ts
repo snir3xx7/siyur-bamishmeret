@@ -33,7 +33,7 @@ describe('לחץ זמן והקפאת מצב', () => {
   });
 
   it('לא משנה את הציון של המסלול המלא', () => {
-    for (const id of ['accident-rain', 'bar-fight', 'domestic-call', 'gas-smell']) {
+    for (const id of ['accident-rain', 'bar-fight', 'domestic-call', 'gas-smell', 'lost-child', 'suspicious-object', 'missing-elder', 'id-check']) {
       const s = loadScenario(id);
       expect(s.pressure?.length, id).toBeGreaterThan(0);
     }

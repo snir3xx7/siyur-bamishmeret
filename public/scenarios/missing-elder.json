@@ -1,6 +1,6 @@
 {
  "id": "missing-elder",
- "version": 8,
+ "version": 9,
  "title": "קשיש שלא חזר הביתה",
  "category": "נעדרים ואוכלוסיות פגיעות",
  "summary": "בת מודאגת מדווחת שאביה בן ה־82 יצא לטיול ערב ולא חזר. יש לאסוף תיאור ורקע רפואי, לחפש בשיטתיות, לגשת אליו ברגישות ולוודא טיפול רפואי.",
@@ -2117,6 +2117,7 @@
    "7fe82140": "audio/voice/missing-elder/l-7fe82140.mp3",
    "db752bf5": "audio/voice/missing-elder/l-db752bf5.mp3",
    "0d29f194": "audio/voice/missing-elder/l-0d29f194.mp3",
+   "f8599abe": "audio/voice/missing-elder/l-f8599abe.mp3",
    "7253e26c": "audio/voice/missing-elder/l-7253e26c.mp3",
    "680de2e4": "audio/voice/missing-elder/l-680de2e4.mp3",
    "62e5fdfe": "audio/voice/missing-elder/l-62e5fdfe.mp3",
@@ -2167,5 +2168,31 @@
     "שדרות הזית"
    ]
   }
- }
+ },
+ "pressure": [
+  {
+   "id": "cold",
+   "label": "הלילה מתקרר והנעדר בחוץ",
+   "turns": 3,
+   "resolved": {
+    "sent": "u-broadcast"
+   },
+   "expire": {
+    "title": "החמרה: קר יותר בחוץ",
+    "lines": [
+     {
+      "speaker": "narrator",
+      "text": "הטמפרטורה יורדת. הבת נזכרת שאביה יצא רק עם חולצה דקה, ושהוא לא לקח איתו את התרופות."
+     }
+    ],
+    "effects": {
+     "set": {
+      "prCold": true
+     }
+    }
+   },
+   "keep": "ביקשת מוקדם הפצה לכל הכוחות – החיפוש התחיל בזמן.",
+   "improve": "ההפצה לכוחות התעכבה, והלילה התקרר. בסבב הבא: תיאור ובקשת הפצה כבר בעדכון הראשון."
+  }
+ ]
 }

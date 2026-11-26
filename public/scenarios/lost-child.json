@@ -1,6 +1,6 @@
 {
  "id": "lost-child",
- "version": 8,
+ "version": 9,
  "title": "ילד שהלך לאיבוד בשוק",
  "category": "נעדרים ואוכלוסיות פגיעות",
  "summary": "אם בבהלה מדווחת שבנה בן השש נעלם בין הדוכנים. יש להרגיע ולקבל תיאור, להשאיר את האם בנקודה קבועה, לגייס את הסוחרים, לגשת לילד בגובה העיניים ולוודא זהות לפני מסירה.",
@@ -1971,6 +1971,7 @@
    "718c3851": "audio/voice/lost-child/l-718c3851.mp3",
    "a280d6af": "audio/voice/lost-child/l-a280d6af.mp3",
    "0d29f194": "audio/voice/lost-child/l-0d29f194.mp3",
+   "be8c5754": "audio/voice/lost-child/l-be8c5754.mp3",
    "bfc7b412": "audio/voice/lost-child/l-bfc7b412.mp3",
    "418d8bea": "audio/voice/lost-child/l-418d8bea.mp3",
    "30861520": "audio/voice/lost-child/l-30861520.mp3",
@@ -1999,5 +2000,31 @@
    "3bcc191c": "audio/voice/lost-child/l-3bcc191c.mp3",
    "f35f4a12": "audio/voice/lost-child/l-f35f4a12.mp3"
   }
- }
+ },
+ "pressure": [
+  {
+   "id": "desc",
+   "label": "הילד מתרחק – התיאור עוד לא הופץ",
+   "turns": 5,
+   "resolved": {
+    "sent": "u-desc"
+   },
+   "expire": {
+    "title": "החמרה: הילד נראה ליד היציאה",
+    "lines": [
+     {
+      "speaker": "narrator",
+      "text": "סוחר ניגש ומספר שלפני כמה דקות ראה ילד קטן עם בלונים הולך לבד לכיוון היציאה לכביש. אף אחד לא ידע שמחפשים ילד."
+     }
+    ],
+    "effects": {
+     "set": {
+      "prDesc": true
+     }
+    }
+   },
+   "keep": "הפצת תיאור מהר – כל הכוחות והסוחרים חיפשו את אותו ילד.",
+   "improve": "הילד התרחק בזמן שהתיאור לא הופץ. בסבב הבא: תיאור קצר למשל״ט מוקדם ככל האפשר."
+  }
+ ]
 }

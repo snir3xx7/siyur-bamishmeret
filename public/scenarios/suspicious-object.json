@@ -1,6 +1,6 @@
 {
  "id": "suspicious-object",
- "version": 8,
+ "version": 9,
  "title": "חפץ חשוד בתחנת אוטובוס",
  "category": "ביטחון שוטף וחפצים חשודים",
  "summary": "תיק סגור נשכח על ספסל בתחנה, ואזרח סקרן כבר מתכונן להציץ בו. יש לא לגעת, לבודד את המקום, להרחיק אנשים בהוראה ברורה ומוסברת, לחפש את הבעלים ולהזמין גורם מוסמך.",
@@ -2160,6 +2160,7 @@
    "952de53c": "audio/voice/suspicious-object/l-952de53c.mp3",
    "854e64bd": "audio/voice/suspicious-object/l-854e64bd.mp3",
    "0d29f194": "audio/voice/suspicious-object/l-0d29f194.mp3",
+   "2eb7d4d3": "audio/voice/suspicious-object/l-2eb7d4d3.mp3",
    "77546c68": "audio/voice/suspicious-object/l-77546c68.mp3",
    "57d77cf0": "audio/voice/suspicious-object/l-57d77cf0.mp3",
    "d648249a": "audio/voice/suspicious-object/l-d648249a.mp3",
@@ -2198,5 +2199,31 @@
    "3bcc191c": "audio/voice/suspicious-object/l-3bcc191c.mp3",
    "f35f4a12": "audio/voice/suspicious-object/l-f35f4a12.mp3"
   }
- }
+ },
+ "pressure": [
+  {
+   "id": "crowd",
+   "label": "אנשים מתקרבים לתיק",
+   "turns": 3,
+   "resolved": {
+    "chosen": "s-isolate"
+   },
+   "expire": {
+    "title": "החמרה: עוברי אורח ליד התיק",
+    "lines": [
+     {
+      "speaker": "narrator",
+      "text": "שני עוברי אורח נעצרים ממש ליד הספסל, מתכופפים ומצלמים את התיק בטלפון. אחד מהם מושיט יד לרוכסן."
+     }
+    ],
+    "effects": {
+     "set": {
+      "prCrowd": true
+     }
+    }
+   },
+   "keep": "בידדת את המקום מוקדם – אף אחד לא התקרב לתיק.",
+   "improve": "בזמן שבירר, אנשים הגיעו עד התיק. בסבב הבא: קודם מבודדים ומרחיקים, אחר כך מבררים."
+  }
+ ]
 }

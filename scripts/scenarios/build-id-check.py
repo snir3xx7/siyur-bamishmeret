@@ -319,6 +319,7 @@ sc['update'] = {
         {'when': {'inUpdate': 'u-looks'}, 'lines': [L('dispatch', 'מוקד: מה הוא עשה בפועל? תעדכן לפי מעשים.')]},
     ],
 }
+sc['pressure'] = old.get('pressure', [])
 sc['finish'] = {'label': 'סיום הטיפול במקום', 'confirm': 'לסיים את הטיפול ולעבור לתחקיר? אפשר לשלוח עדכון אחרון למשל״ט לפני הסיום.'}
 good_core = [ch('m-ask'), ch('o-intro'), NOT(flag('profiled')), NOT(flag('wrongDetain')), flag('checked_ofer'), NOT(flag('privacyBreach'))]
 sc['endings'] = [
