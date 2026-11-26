@@ -212,6 +212,8 @@ export interface SceneDef {
 }
 
 export interface Scenario {
+  /** לחץ זמן בזירה (engine/pressure.ts) */
+  pressure?: import('./pressure').PressureDef[];
   /** חשודים: שכבת עיכוב/מעצר (engine/custody.ts) */
   custody?: import('./custody').CustodyDef[];
   /** בדיקת פרטים במערכת (engine/records.ts) */

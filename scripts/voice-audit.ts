@@ -30,6 +30,7 @@ for (const e of idx) {
   for (const f of sc.dispatch.followUps) { push(f.lines, true); f.branches?.forEach((b) => push(b.lines, true)); }
   for (const h of sc.hotspots) for (const c of h.choices) { const r = c.id.startsWith('rp-'); push(c.lines, r); c.branches?.forEach((b) => push(b.lines, r)); }
   for (const ev of sc.events ?? []) { push(ev.lines, false); ev.branches?.forEach((b) => push(b.lines, false)); }
+  for (const p of sc.pressure ?? []) push(p.expire.lines, false);
   for (const r of sc.update.responses) push(r.lines, false);
   for (const el of sc.update.elements) if (el.id !== 'rp-open') all.push({ l: { speaker: 'player', text: el.text }, radio: true });
 

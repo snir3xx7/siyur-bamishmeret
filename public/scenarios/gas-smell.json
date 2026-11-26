@@ -1,6 +1,6 @@
 {
  "id": "gas-smell",
- "version": 8,
+ "version": 9,
  "title": "ריח גז בבניין מגורים",
  "category": "אירועים חריגים ובטיחות",
  "summary": "דיירת מדווחת על ריח גז חזק בכניסה לבניין. יש לפנות את הדיירים בלי ליצור ניצוץ, לתת הוראות פינוי ברורות גם למי שמסרב, למנוע אש ועישון, להרחיק את כולם ולהעביר את הזירה לכב״ה.",
@@ -1911,6 +1911,7 @@
    "9301bb86": "audio/voice/gas-smell/l-9301bb86.mp3",
    "b8e256cf": "audio/voice/gas-smell/l-b8e256cf.mp3",
    "0d29f194": "audio/voice/gas-smell/l-0d29f194.mp3",
+   "c6848f1f": "audio/voice/gas-smell/l-c6848f1f.mp3",
    "a6e1a1e6": "audio/voice/gas-smell/l-a6e1a1e6.mp3",
    "bb10233e": "audio/voice/gas-smell/l-bb10233e.mp3",
    "4de7ff40": "audio/voice/gas-smell/l-4de7ff40.mp3",
@@ -1941,5 +1942,38 @@
    "3bcc191c": "audio/voice/gas-smell/l-3bcc191c.mp3",
    "f35f4a12": "audio/voice/gas-smell/l-f35f4a12.mp3"
   }
- }
+ },
+ "pressure": [
+  {
+   "id": "gas",
+   "label": "ריח הגז מתחזק, ואין עדיין הוראה על אש ומתגים",
+   "turns": 3,
+   "resolved": {
+    "any": [
+     {
+      "chosen": "z-noflame"
+     },
+     {
+      "chosen": "mo-stop"
+     }
+    ]
+   },
+   "expire": {
+    "title": "החמרה: הריח מתחזק",
+    "lines": [
+     {
+      "speaker": "narrator",
+      "text": "הריח בכניסה מתחזק. דייר שיצא אחרון מושיט יד למתג האור בחדר המדרגות – ועוצר רק כששכנה צועקת עליו."
+     }
+    ],
+    "effects": {
+     "set": {
+      "prGas": true
+     }
+    }
+   },
+   "keep": "הכרזת מיד: בלי אש, בלי עישון ובלי מתגים. מנעת את מקור ההצתה לפני הכול.",
+   "improve": "הריח התחזק ודייר כמעט הדליק אור. בסבב הבא: ההכרזה על איסור אש ומתגים – בפעולה הראשונה."
+  }
+ ]
 }

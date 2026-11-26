@@ -129,6 +129,8 @@ def all_lines(sc):
             add(keep(c.get('lines'))); [add(keep(b['lines'])) for b in c.get('branches', [])]
     for e in sc.get('events', []):
         add(officer(e['lines'])); [add(officer(b['lines'])) for b in e.get('branches', [])]
+    for p in sc.get('pressure', []):
+        add(officer(p['expire']['lines']))
     for r in sc['update']['responses']:
         add(r['lines'])
         # אותה תשובה כשהעדכון נשלח לראש המשמרת או לקצין התורן (קולות אחרים)

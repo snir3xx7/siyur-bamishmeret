@@ -2,6 +2,7 @@ import { readFileSync, existsSync } from 'node:fs';
 import { join } from 'node:path';
 import { describe, expect, it } from 'vitest';
 import { computeScore } from '../../src/engine/scoring';
+import { pressureStatus } from '../../src/engine/pressure';
 import { validateScenario } from '../../src/engine/validate';
 import { transitionImages } from '../../src/scene/Transition';
 import { loadScenario, play, seedFor, type Step } from './helpers';
@@ -152,6 +153,8 @@ describe('קבצי תרחישים', () => {
         const st = play(sc, p.steps, { seed: seedFor(sc, p.variant) });
         expect(sc.endings.find((x) => x.id === st.endingId)!.kind).toBe('good');
         expect(computeScore(sc, st).total).toBe(100);
+        // במסלול המלא כל שעוני הלחץ הוקפאו בזמן
+        for (const p of pressureStatus(sc, st)) expect(p.state, p.def.id).toBe('ok');
       });
 
       it('סיום מיידי אחרי ההגעה נותן סיום שאינו טוב', () => {

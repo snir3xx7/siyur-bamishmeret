@@ -1,6 +1,6 @@
 {
  "id": "domestic-call",
- "version": 10,
+ "version": 11,
  "title": "קריאה על צעקות בבית – חשד לאלימות במשפחה",
  "category": "עבירות נגד אדם",
  "summary": "נערה בת 15 התקשרה בשקט: צעקות ורעש שבירה, ואמה בוכה. בפתח האב אומר ש„הכול בסדר”. יש לראות את כל בני הבית, להפריד, לשוחח עם האם בנפרד, להגן על הנערה, להעריך סיכון ולפעול – בלי „לעשות שלום”.",
@@ -1922,6 +1922,7 @@
    "da3f073c": "audio/voice/domestic-call/l-da3f073c.mp3",
    "58edc2da": "audio/voice/domestic-call/l-58edc2da.mp3",
    "0d29f194": "audio/voice/domestic-call/l-0d29f194.mp3",
+   "9a7360e1": "audio/voice/domestic-call/l-9a7360e1.mp3",
    "d09446c9": "audio/voice/domestic-call/l-d09446c9.mp3",
    "14a24ac1": "audio/voice/domestic-call/l-14a24ac1.mp3",
    "4c960e73": "audio/voice/domestic-call/l-4c960e73.mp3",
@@ -1997,6 +1998,36 @@
     "flag": "entered"
    },
    "text": "{{gil_record}}"
+  }
+ ],
+ "pressure": [
+  {
+   "id": "inside",
+   "label": "צעקות ובכי בפנים – לא ראיתם את כולם",
+   "turns": 2,
+   "resolved": {
+    "any": [
+     {
+      "chosen": "g-enter"
+     }
+    ]
+   },
+   "expire": {
+    "title": "החמרה: רעש שבירה מבפנים",
+    "lines": [
+     {
+      "speaker": "narrator",
+      "text": "מבפנים נשמע רעש של משהו שנשבר, ואחריו בכי חנוק. האב עדיין עומד בפתח וחוסם אותו."
+     }
+    ],
+    "effects": {
+     "set": {
+      "prInside": true
+     }
+    }
+   },
+   "keep": "נכנסת לבית מיד כדי לראות את כל בני הבית. בחשד לאלימות – זה הדבר הראשון.",
+   "improve": "בזמן שעמדת בפתח, משהו נשבר בפנים. בסבב הבא: מסבירים ונכנסים מיד – בודקים שכולם בשלום."
   }
  ]
 }

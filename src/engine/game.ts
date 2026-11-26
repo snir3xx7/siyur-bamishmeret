@@ -2,6 +2,7 @@ import { radioVars, recipientReply } from './procedure';
 import { evalCond } from './conditions';
 import { mulberry32, pickWeighted } from './rng';
 import { fill } from './text';
+import { startPressure, tickPressure } from './pressure';
 import type {
   Choice, Effects, GameAction, GameConfig, GameState, Hotspot, LogEntry, LogKind, Line, Mood, Scenario, UpdateElement,
 } from './types';
@@ -172,6 +173,17 @@ export const eventFlag = (id: string) => `ev:${id}`;
  * כל אירוע קורה פעם אחת, נרשם ביומן ומתווסף לדיאלוג של אותו תור.
  */
 function fireEvents(sc: Scenario, st: GameState) {
+  // לחץ זמן: שעון שנגמר בלי שהמצב הוקפא – ההחמרה קורית מעצמה
+  for (const p of tickPressure(sc, st)) {
+    const before = { ...st, known: { ...st.known } };
+    const lines = p.expire.lines.map((l) => ({ ...l, text: fill(l.text, st.vars) }));
+    const revealed: string[] = [];
+    const consequences: string[] = [];
+    applyEffects(sc, st, { note: `לא טופל בזמן: ${p.label}`, ...p.expire.effects }, revealed, consequences);
+    st.lastLines = [...st.lastLines, ...lines];
+    st.lastEvent = `pressure:${p.id}`;
+    pushLog(st, before, 'event', `event:pressure-${p.id}`, fill(p.expire.title, st.vars), lines, revealed, consequences);
+  }
   for (const ev of sc.events ?? []) {
     if (st.flags[eventFlag(ev.id)] || !evalCond({ sc, st }, ev.when)) continue;
     const before = { ...st, known: { ...st.known } };
@@ -263,6 +275,7 @@ export function reduce(sc: Scenario, prev: GameState, action: GameAction): GameS
       st.lastLines = lines;
       pushLog(st, { ...prev, simMinutes: st.simMinutes }, action.skipped ? 'skip' : 'arrive', 'arrive', action.skipped ? 'הגעה לזירה (המעבר דולג)' : 'הגעה לזירה', lines, revealed, []);
       st.log[st.log.length - 1].stage = 'scene';
+      startPressure(sc, st);
       return st;
     }
     case 'SEND_UPDATE': {

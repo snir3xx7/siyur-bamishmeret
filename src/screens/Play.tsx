@@ -19,6 +19,7 @@ import { RadioChain, RadioCtx, useRadio } from '../ui/radio';
 import { RadioGuide } from '../ui/RadioGuide';
 import { FirstSceneGuide, FullscreenButton, RotateHint } from '../ui/DeviceHints';
 import { custodyStatus } from '../engine/custody';
+import { pressureStatus } from '../engine/pressure';
 import { LocateMap } from '../ui/LocateMap';
 import { feminize } from '../config/feminize';
 import { CamLed } from '../ui/CamLed';
@@ -414,6 +415,7 @@ export function Play() {
     const other = st.lastLines.filter((l) => !['dispatch', 'center', 'duty', 'player'].includes(l.speaker)).map((l) => l.text).join(' ');
     const ev = st.lastEvent ? sc.events?.find((e) => e.id === st.lastEvent) : undefined;
     if (ev?.sfx) void audio.play(ev.sfx);
+    else if (st.lastEvent?.startsWith('pressure:')) void audio.play('alert');
     // קריינות לכל שורה (BlueTTS): אם לכל השורות המדוברות יש קטע – משמיעים אותם בקולות הדמויות
     const vl = sc.media.voiceLines ?? {};
     const clip = (sp: string, text: string) => (sp === 'player' ? pl(text) : vl[voiceKey(sp, text)]);
@@ -691,6 +693,16 @@ export function Play() {
 
           {stage === 'scene' && (
             <>
+              {pressureStatus(sc, st).length > 0 && (
+                <div className="pressure-row" data-testid="pressure">
+                  {pressureStatus(sc, st).map(({ def, state, left }) => (
+                    <span key={def.id} className={`chip pressure ${state}${state === 'running' && left <= 1 ? ' urgent' : ''}`} title={def.label}>
+                      {state === 'ok' ? '✓' : state === 'expired' ? '✗' : '⏱'} {def.label}
+                      {state === 'running' ? ` · ${left === 1 ? 'פעולה אחת' : `${left} פעולות`}` : state === 'ok' ? ' · הוקפא' : ' · החמיר'}
+                    </span>
+                  ))}
+                </div>
+              )}
               <section className="dialog-box" aria-live="polite" aria-label="מה קרה עכשיו" data-testid="dialogue">
                 {(() => {
                   // אירוע מתפתח: מפרידים בין התגובה לבחירה לבין מה שקרה מעצמו בזירה

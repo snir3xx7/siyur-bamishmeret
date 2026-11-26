@@ -7,6 +7,7 @@ import { gameProfile, radioize } from '../config/stations';
 import { notebookCheck, procedureReport } from '../engine/procedure';
 import { custodyReport } from '../engine/custody';
 import { bodycamReport } from '../engine/bodycam';
+import { pressureReport } from '../engine/pressure';
 import { evalCond } from '../engine/conditions';
 import { RadioCtx } from '../ui/radio';
 import { loadShift } from '../ui/shift';
@@ -93,6 +94,7 @@ export function DebriefScreen({ query }: { query: URLSearchParams }) {
   const proc = procedureReport(st, sc);
   const custody = custodyReport(st, sc, (c) => evalCond({ sc, st }, c));
   const cam = bodycamReport(st, sc);
+  const pressure = pressureReport(sc, st);
   const shiftPlan = loadShift();
   const nb = notebookCheck(sc, st);
   const reportFinal = report.map((s) => ({ ...s, text: edits[s.id] ?? radioize(s.text.replace(`צוות: ${sc.dispatch.unit}`, `צוות: ${radio.unit}${radio.real ? ` | ${radio.stationName}, ${radio.districtName}` : ''}`), radio) }));
@@ -234,6 +236,19 @@ export function DebriefScreen({ query }: { query: URLSearchParams }) {
             ))}
           </ul>
         </section>
+        {pressure.length > 0 && (
+          <section className="card print-debrief" aria-labelledby="pr-title" data-testid="pressure-report">
+            <h2 id="pr-title">⏱ לחץ זמן והקפאת מצב <span className="small muted">(לא נכלל בציון)</span></h2>
+            <ul className="proc-list">
+              {pressure.map((i) => (
+                <li key={i.label} className={i.ok ? 'ok' : 'bad'}>
+                  <b>{i.ok ? '✓ הוקפא בזמן' : '✗ לא טופל בזמן'}: {i.label}</b>
+                  <span>{i.detail}</span>
+                </li>
+              ))}
+            </ul>
+          </section>
+        )}
         {custody.length > 0 && (
           <section className="card print-debrief" aria-labelledby="cs-title" data-testid="custody">
             <h2 id="cs-title">🚔 עיכוב, מעצר וחיפוש <span className="small muted">(לא נכלל בציון)</span></h2>
