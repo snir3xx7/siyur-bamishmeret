@@ -9,6 +9,7 @@ import { custodyReport } from '../engine/custody';
 import { bodycamReport } from '../engine/bodycam';
 import { pressureReport } from '../engine/pressure';
 import { ActionReport } from '../ui/ActionReport';
+import { SendResult } from '../ui/SendResult';
 import { evalCond } from '../engine/conditions';
 import { RadioCtx } from '../ui/radio';
 import { loadShift } from '../ui/shift';
@@ -264,6 +265,7 @@ export function DebriefScreen({ query }: { query: URLSearchParams }) {
           </section>
         )}
         <ActionReport sc={sc} st={st} />
+        <SendResult sc={sc} st={st} />
         <section className="card print-debrief" aria-labelledby="nb-title" data-testid="notebook-check">
           <h2 id="nb-title">📒 פנקס השטח</h2>
           {st.notebook?.trim() ? (

@@ -8,6 +8,7 @@ import { scenarioLink } from '../ui/router';
 import { shiftLink } from '../ui/shift';
 import type { Difficulty, Shift } from '../engine/types';
 import { shiftLabel } from '../engine/feedback';
+import { ResultsBoard } from '../ui/ResultsBoard';
 
 export function Instructor() {
   const { toast } = useApp();
@@ -35,6 +36,8 @@ export function Instructor() {
       <p>
         העמוד מרכז את מה שצריך כדי להפעיל תרגול בכיתה, להפיק קישור לגרסה קבועה ולערוך תרחישים. מדריך מלא עם דוגמה מקצה לקצה נמצא בקובץ <code>docs/INSTRUCTOR.md</code> במאגר, וסכימת התרחיש מתועדת ב־<code>docs/SCENARIO_SCHEMA.md</code>.
       </p>
+
+      <ResultsBoard />
 
       <section className="card stack" aria-labelledby="link-title">
         <h2 id="link-title">קישור לגרסה קבועה לכל הכיתה</h2>

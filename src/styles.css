@@ -751,3 +751,21 @@ body.projector .no-projector { display: none !important; }
 .rv-dot.ok { background: var(--ok); border-color: var(--ok); }
 .rv-dot.bad { background: var(--bad); border-color: var(--bad); }
 .review-step .rv-label { font-size: 1.1em; }
+
+/* לוח תוצאות הכיתה */
+.board-kpis { display: grid; grid-template-columns: repeat(auto-fit, minmax(110px, 1fr)); gap: 8px; }
+.board-kpis div { background: var(--panel2); border-radius: 10px; padding: 10px; display: grid; text-align: center; }
+.board-kpis b { font-size: 1.6em; }
+.board-kpis span { font-size: 0.85em; opacity: 0.8; }
+.board-bars { list-style: none; padding: 0; display: grid; gap: 6px; }
+.board-bars li { display: grid; grid-template-columns: minmax(0, 11em) 1fr 3.5em; gap: 8px; align-items: center; }
+.board-bars .bar { height: 10px; background: var(--panel2); border-radius: 6px; overflow: hidden; }
+.board-bars .bar i { display: block; height: 100%; }
+.board-bars .bar i.low { background: var(--bad); }
+.board-bars .bar i.mid { background: var(--warn); }
+.board-bars .bar i.high { background: var(--ok); }
+.table-wrap { overflow-x: auto; }
+.board-table { width: 100%; border-collapse: collapse; font-size: 0.92em; }
+.board-table th, .board-table td { padding: 6px 8px; border-bottom: 1px solid #2c3446; text-align: start; }
+.board-table tr.sel td { background: rgba(232, 195, 90, 0.08); }
+@media print { .print-hide { display: none !important; } }
