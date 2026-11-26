@@ -719,3 +719,25 @@ body.projector .no-projector { display: none !important; }
 .chip.pressure.expired { color: var(--bad); border-color: #6b3434; }
 @keyframes pr-pulse { from { box-shadow: 0 0 0 0 rgba(255, 170, 60, 0); } to { box-shadow: 0 0 0 4px rgba(255, 170, 60, 0.35); } }
 @media (prefers-reduced-motion: reduce) { .chip.pressure.urgent { animation: none; } }
+
+/* הדוח שלך – סיווג פרטים וסמכויות */
+.action-report .ar-facts { list-style: decimal; padding-inline-start: 1.4em; display: grid; gap: 10px; margin: 10px 0; }
+.action-report .ar-facts li { padding: 6px 8px; border-radius: 8px; border: 1px solid transparent; }
+.action-report .ar-facts li.ok { border-color: #2f6b50; }
+.action-report .ar-facts li.bad { border-color: #6b3434; }
+.action-report .ar-text { display: block; margin-bottom: 6px; }
+.action-report .ar-opts { display: flex; flex-wrap: wrap; gap: 6px; }
+.action-report .ar-opt { display: inline-flex; align-items: center; gap: 4px; padding: 4px 10px; border-radius: 999px; border: 1px solid #3a4456; cursor: pointer; font-size: 0.9em; min-height: 32px; }
+.action-report .ar-opt.on { border-color: var(--accent, #e8c35a); background: rgba(232, 195, 90, 0.12); }
+.action-report .ar-opt input { accent-color: var(--accent, #e8c35a); }
+.action-report .ar-why { display: block; margin-top: 4px; color: var(--bad); }
+.action-report .ar-powers { display: grid; gap: 6px; border: 1px solid #3a4456; border-radius: 10px; padding: 10px; margin: 10px 0; }
+.action-report .ar-powers label.ok { color: var(--ok); }
+.action-report .ar-powers label.bad { color: var(--bad); }
+.action-report .ar-why-box { display: grid; gap: 4px; margin-top: 6px; }
+.action-report .ar-why-box textarea { width: 100%; font: inherit; }
+.action-report { grid-column: 1 / -1; }
+.action-report .ar-facts li { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 6px 12px; align-items: center; }
+.action-report .ar-text { margin: 0; }
+.action-report .ar-why { grid-column: 1 / -1; }
+@media (max-width: 640px) { .action-report .ar-facts li { grid-template-columns: 1fr; } }
