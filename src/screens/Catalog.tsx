@@ -2,12 +2,13 @@ import { useEffect, useState } from 'react';
 import { shiftLabel } from '../engine/feedback';
 import type { CatalogEntry } from '../engine/types';
 import { loadCatalog } from '../ui/data';
+import { customCatalog } from '../storage/custom';
 
 export function Catalog() {
   const [items, setItems] = useState<CatalogEntry[] | null>(null);
   const [err, setErr] = useState(false);
   useEffect(() => {
-    loadCatalog().then(setItems, () => setErr(true));
+    loadCatalog().then((c) => setItems([...c, ...customCatalog()]), () => setErr(true));
   }, []);
 
   if (err) return <p role="alert">לא ניתן לטעון את קטלוג התרחישים. בדקו חיבור ונסו שוב.</p>;

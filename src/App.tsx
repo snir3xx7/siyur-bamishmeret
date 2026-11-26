@@ -1,3 +1,4 @@
+import { Editor } from './screens/Editor';
 import { Review } from './screens/Review';
 import { ShiftScreen } from './screens/Shift';
 import { Help } from './screens/Help';
@@ -94,6 +95,7 @@ export default function App() {
   else if (p0 === 'help') screen = <Help />;
   else if (p0 === 'officer') screen = <Officer />;
   else if (p0 === 'review' && p1) screen = <Review id={p1} />;
+  else if (p0 === 'editor') screen = <Editor id={p1} />;
   else screen = <Home />;
 
   return (

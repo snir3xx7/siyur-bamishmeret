@@ -769,3 +769,14 @@ body.projector .no-projector { display: none !important; }
 .board-table th, .board-table td { padding: 6px 8px; border-bottom: 1px solid #2c3446; text-align: start; }
 .board-table tr.sel td { background: rgba(232, 195, 90, 0.08); }
 @media print { .print-hide { display: none !important; } }
+
+/* עורך תרחישים */
+.editor .ed-mine { list-style: none; padding: 0; display: grid; gap: 6px; }
+.editor .ed-mine li { display: flex; justify-content: space-between; align-items: center; gap: 8px; padding: 6px 8px; border-radius: 8px; background: var(--panel2); flex-wrap: wrap; }
+.editor .ed-mine li.sel { outline: 2px solid var(--accent, #e8c35a); }
+.editor .ed-group { border: 1px solid #2c3446; border-radius: 10px; padding: 6px 10px; }
+.editor .ed-group summary { cursor: pointer; font-weight: 700; padding: 4px 0; }
+.editor .ed-field { display: grid; gap: 2px; margin: 8px 0; }
+.editor .ed-field textarea { width: 100%; font: inherit; resize: vertical; }
+.editor label:not(.btn):not(.ed-field) { display: grid; gap: 4px; }
+.editor label:not(.btn) input { width: 100%; }

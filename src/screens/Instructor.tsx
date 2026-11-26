@@ -39,6 +39,12 @@ export function Instructor() {
 
       <ResultsBoard />
 
+      <section className="card stack" aria-labelledby="ed-link">
+        <h2 id="ed-link">✏️ עורך תרחישים</h2>
+        <p className="small muted">עותק של תרחיש קיים עם טקסטים משלכם: שמות, מקום, הקריאה מהמוקד, השורות והמשוב. בדיקת תקינות, ניסיון וייצוא לקובץ לשיתוף עם מדריכים אחרים.</p>
+        <a className="btn primary" href="#/editor" data-testid="editor-link">פתיחת העורך</a>
+      </section>
+
       <section className="card stack" aria-labelledby="link-title">
         <h2 id="link-title">קישור לגרסה קבועה לכל הכיתה</h2>
         <p className="small muted">הקישור כולל מזהה תרחיש, גרסה וזרע בלבד. כל מי שפותח אותו מקבל את אותן נסיבות (למשל איזה מעורב נפגע).</p>
