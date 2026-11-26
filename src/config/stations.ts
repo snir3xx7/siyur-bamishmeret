@@ -62,7 +62,7 @@ export const DISTRICTS: DistrictDef[] = [
     std('tayibe', 'תחנת טייבה', 'טייבה', false, { municipal: MUNI, cityUnits: [city('קל', 'קלנסווה')] }),
     std('sdot', 'תחנת שדות', 'שדות', false, { cityUnits: [city('קדימה', 'קדימה־צורן'), city('כפר', 'כפר יונה')] }),
     std('modiin', 'תחנת מודיעין', 'מודיעין', true, { municipal: MUNI }),
-    std('natbag', 'מרחב נתב״ג (נמל התעופה)', 'נתב״ג', true),
+    std('natbag', 'מרחב נתב״ג (נמל התעופה)', 'נמל', false),
   ] },
   { id: 'south', name: 'מחוז דרום', center: 'משל״ט דרום', centerCall: 'דרום', stations: [
     std('south-1', 'מרחב אילת', 'אילת', true, { municipal: MUNI }),
