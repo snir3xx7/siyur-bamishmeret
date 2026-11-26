@@ -234,6 +234,11 @@
    "voice": "ethan",
    "speed": 1.08,
    "pitch": 2
+  },
+  "ziv": {
+   "voice": "ethan",
+   "speed": 1.0,
+   "pitch": 1
   }
  }
 }

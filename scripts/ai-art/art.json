@@ -106,6 +106,13 @@
    "seed": 97,
    "base": "night",
    "prompt": "Wide eye-level view of a quiet Israeli residential street at night lit by warm orange street lamps. Left: a small brightly lit neighborhood kiosk with an open serving window, a fridge of cold drinks, snacks hanging, a plastic chair outside. Center and right: a row of parked cars along the curb under a ficus tree, beige stone apartment buildings with balconies and lit windows above, a low stone wall with a building entrance. Lower third: sidewalk with grey paving stones and curb, part of dark asphalt road at the bottom. No people, no text, no letters, no numbers, no logos."
+  },
+  {
+   "id": "pursuit",
+   "out": "school-street",
+   "seed": 103,
+   "base": "night",
+   "prompt": "Wide eye-level view of a quiet Israeli city street at night lit by orange street lamps. Right: a school building with a tall metal fence and a closed gate, a yellow-and-black striped curb, a zebra crosswalk with a pedestrian traffic light. Left: a row of beige stone apartment buildings with lit windows, a small park corner with a bench. Center: the street continues into the distance toward a traffic light showing red. Lower third: wide empty dark asphalt road and sidewalk. No people, no cars, no vehicles, no text, no letters, no numbers, no logos."
   }
  ],
  "characters": [
@@ -592,6 +599,16 @@
     "upset"
    ],
    "desc": "A teenage boy about sixteen, short black hair, light tan skin, wearing a white t-shirt, a black zip jacket, cargo shorts and sneakers, holding a plastic bag with a few beer bottles."
+  },
+  {
+   "id": "ziv",
+   "seed": 161,
+   "moods": [
+    "calm",
+    "tense",
+    "upset"
+   ],
+   "desc": "A teenage boy about seventeen, messy light brown hair, light skin, wearing a grey t-shirt under an open plaid flannel shirt, dark jeans and sneakers, empty hands."
   }
  ],
  "props": [

@@ -1,0 +1,1531 @@
+{
+ "id": "pursuit",
+ "version": 1,
+ "title": "רכב שנמלט – החלטות במרדף",
+ "category": "תנועה ובטיחות בדרך",
+ "summary": "רכב לבן לא עוצר לסימון ומאיץ. אין כאן נהיגה – רק החלטות: אורות וסירנה, דיווח רציף, הנחיה מ־401, מרחק בטוח, ומתי מפסיקים כי הסיכון לציבור גדול מהתועלת. בסוף – נהג צעיר, וטיפול בקטין.",
+ "estimatedMinutes": 10,
+ "difficultyLabel": "מתקדמת",
+ "skills": [
+  "דיווח רציף בקשר",
+  "הנחיית מפקד",
+  "הערכת סיכון לציבור",
+  "הפסקת מרדף והעברה לאיתור",
+  "טיפול בנהג קטין"
+ ],
+ "shifts": [
+  "evening",
+  "night"
+ ],
+ "defaultShift": "night",
+ "location": {
+  "name": "רחוב הרצל, ליד בית הספר „אופק”",
+  "area": "מרכז קריית אלון (בדוי)"
+ },
+ "objectives": [
+  "להפעיל אורות וסירנה ולדווח מיד: רכב, מספר, כיוון",
+  "לקבל הנחיה מ־401 ולעדכן בכל פנייה",
+  "לשמור מרחק – בלי לחסום ובלי „להדביק בכל מחיר”",
+  "להפסיק כשהסיכון לציבור גדל, ולהעביר את האיתור",
+  "בסיום: לגשת ברוגע, לעכב בהסבר ולערב הורה"
+ ],
+ "variants": [
+  {
+   "id": "father",
+   "label": "הרכב של האבא – נהג בלי רישיון",
+   "set": {
+    "stolen": false
+   },
+   "vars": {
+    "car_record": "הרכב רשום על שם אלי כהן, מרחוב הזית 3. אין דיווח על גניבה.",
+    "ziv_why": "לקחתי את האוטו של אבא שלי. אין לי רישיון… נבהלתי כשראיתי אתכם",
+    "ziv_offence": "נהיגה בלי רישיון ואי ציות להוראת שוטר"
+   }
+  },
+  {
+   "id": "stolen",
+   "label": "הרכב דווח כגנוב לפני שעתיים",
+   "set": {
+    "stolen": true
+   },
+   "vars": {
+    "car_record": "הרכב דווח כגנוב לפני שעתיים, מחניון ברחוב הגפן.",
+    "ziv_why": "חבר נתן לי את האוטו, אמר שזה של דוד שלו. כשראיתי אתכם הבנתי שמשהו לא בסדר ונבהלתי",
+    "ziv_offence": "שימוש ברכב בלי רשות, נהיגה בלי רישיון ואי ציות להוראת שוטר"
+   }
+  }
+ ],
+ "scoring": {
+  "weights": {
+   "info": 20,
+   "assessment": 25,
+   "communication": 10,
+   "authority": 25,
+   "dispatch": 10,
+   "documentation": 10
+  },
+  "rules": [
+   {
+    "id": "pu-info-report",
+    "domain": "info",
+    "label": "דיווח ראשוני",
+    "max": 10,
+    "required": true,
+    "tiers": [
+     {
+      "when": {
+       "chosen": "p-report"
+      },
+      "points": 10,
+      "explain": "נמסר דיווח עם פרטי הרכב והכיוון.",
+      "keep": "דיווחת מיד: סוג רכב, מספר, כיוון ומספר נוסעים. כך כל הכוחות יודעים מה מחפשים."
+     }
+    ],
+    "fallback": {
+     "explain": "לא נמסר דיווח.",
+     "improve": "לא דיווחת על המרדף. בסבב הבא: מיד בקשר – רכב, מספר, כיוון."
+    }
+   },
+   {
+    "id": "pu-info-updates",
+    "domain": "info",
+    "label": "עדכונים רציפים",
+    "max": 10,
+    "required": true,
+    "tiers": [
+     {
+      "when": {
+       "chosen": "p-distance"
+      },
+      "points": 10,
+      "explain": "הכיוון עודכן לאורך הדרך.",
+      "keep": "עדכנת בכל פנייה. אם תצטרך להפסיק – כבר יודעים איפה הוא."
+     }
+    ],
+    "fallback": {
+     "explain": "לא היו עדכוני כיוון.",
+     "improve": "אחרי הדיווח הראשון לא עדכנת. בסבב הבא: כל פנייה – בקשר."
+    }
+   },
+   {
+    "id": "pu-assess-stop",
+    "domain": "assessment",
+    "label": "הפסקת המרדף כשהסיכון גדל",
+    "max": 15,
+    "required": true,
+    "tiers": [
+     {
+      "when": {
+       "all": [
+        {
+         "chosen": "p-stop"
+        },
+        {
+         "not": {
+          "chosen": "p-continue"
+         }
+        }
+       ]
+      },
+      "points": 15,
+      "explain": "המרדף הופסק לפני שהסכנה התממשה.",
+      "keep": "ליד בית הספר, עם אנשים על המדרכה ורמזור אדום – הפסקת. אף נהג נמלט לא שווה סיכון לילד במעבר חצייה."
+     },
+     {
+      "when": {
+       "chosen": "p-stop"
+      },
+      "points": 5,
+      "explain": "המרדף הופסק – אחרי שכמעט קרה אסון.",
+      "improve": "הפסקת רק אחרי מעבר באדום ליד ילדים. בסבב הבא – לפני."
+     }
+    ],
+    "fallback": {
+     "explain": "המרדף לא הופסק.",
+     "improve": "המשכת לרדוף גם ליד בית הספר באדום. בסבב הבא: כשהסיכון לציבור גובר – מפסיקים ומעבירים."
+    }
+   },
+   {
+    "id": "pu-assess-safe",
+    "domain": "assessment",
+    "label": "בלי חסימה ובלי „בכל מחיר”",
+    "max": 10,
+    "required": true,
+    "tiers": [
+     {
+      "when": {
+       "all": [
+        {
+         "not": {
+          "chosen": "p-speed"
+         }
+        },
+        {
+         "not": {
+          "chosen": "p-block"
+         }
+        }
+       ]
+      },
+      "points": 10,
+      "explain": "נשמר מרחק בטוח.",
+      "keep": "לא ניסית לחסום ולא האצת בפראות. המטרה היא שכולם יגיעו הביתה, גם הנהג."
+     }
+    ],
+    "fallback": {
+     "explain": "הייתה נהיגה מסוכנת.",
+     "improve": "האצה „בכל מחיר” או ניסיון לחסום רכב בתנועה מסכנים את כולם. בסבב הבא – מרחק ודיווח."
+    }
+   },
+   {
+    "id": "pu-comm-ziv",
+    "domain": "communication",
+    "label": "גישה רגועה לנהג",
+    "max": 10,
+    "required": true,
+    "tiers": [
+     {
+      "when": {
+       "all": [
+        {
+         "chosen": "z-approach"
+        },
+        {
+         "not": {
+          "chosen": "z-yell"
+         }
+        }
+       ]
+      },
+      "points": 10,
+      "explain": "הגישה לנהג הייתה רגועה.",
+      "keep": "אחרי מרדף הדם רותח. ניגשת ברוגע, בדקת שהוא לא פצוע והסברת מה קורה."
+     }
+    ],
+    "fallback": {
+     "explain": "הגישה לא הייתה רגועה.",
+     "improve": "צעקות אחרי מרדף מסלימות. בסבב הבא: נשימה, הצגה עצמית, ובדיקה שאיש לא נפגע."
+    }
+   },
+   {
+    "id": "pu-auth-lights",
+    "domain": "authority",
+    "label": "אורות וסירנה",
+    "max": 5,
+    "required": true,
+    "tiers": [
+     {
+      "when": {
+       "chosen": "p-lights"
+      },
+      "points": 5,
+      "explain": "הופעלו אורות וסירנה.",
+      "keep": "הפעלת אורות וסירנה – כך הנהג וכל מי שבדרך יודעים שזו ניידת."
+     }
+    ],
+    "fallback": {
+     "explain": "לא הופעלו אורות וסירנה.",
+     "improve": "נסיעה אחרי רכב בלי אורות וסירנה – מסוכנת ולא מזוהה. בסבב הבא – קודם כול."
+    }
+   },
+   {
+    "id": "pu-auth-head",
+    "domain": "authority",
+    "label": "הנחיה מ־401",
+    "max": 8,
+    "required": true,
+    "tiers": [
+     {
+      "when": {
+       "chosen": "p-head"
+      },
+      "points": 8,
+      "explain": "התקבלה הנחיה מראש המשמרת.",
+      "keep": "עדכנת את 401 וקיבלת הנחיה. במרדף – ההחלטה אם להמשיך היא של המפקד, לא רק של הצוות."
+     }
+    ],
+    "fallback": {
+     "explain": "לא התקבלה הנחיה.",
+     "improve": "המשכת בלי לעדכן את 401. בסבב הבא בקש הנחיה מיד."
+    }
+   },
+   {
+    "id": "pu-auth-detain",
+    "domain": "authority",
+    "label": "עיכוב בהסבר",
+    "max": 6,
+    "required": true,
+    "tiers": [
+     {
+      "when": {
+       "flag": "detainedProper"
+      },
+      "points": 6,
+      "explain": "הנהג עוכב בהסבר.",
+      "keep": "אמרת לזיו במה הוא חשוד ולמה הוא מעוכב."
+     }
+    ],
+    "fallback": {
+     "explain": "הנהג לא עוכב.",
+     "improve": "נהג שנמלט משוטר – מעכבים ומסבירים. בסבב הבא אל תשאיר את זה פתוח."
+    },
+    "appliesWhen": {
+     "flag": "found"
+    }
+   },
+   {
+    "id": "pu-auth-parent",
+    "domain": "authority",
+    "label": "קטין – יידוע הורה",
+    "max": 6,
+    "required": true,
+    "tiers": [
+     {
+      "when": {
+       "chosen": "z-parent"
+      },
+      "points": 6,
+      "explain": "הורה עודכן.",
+      "keep": "זיו בן 17. התקשרת להורה עוד בזירה."
+     }
+    ],
+    "fallback": {
+     "explain": "הורה לא עודכן.",
+     "improve": "זיו קטין ואף הורה לא עודכן. בסבב הבא – מיד כשמתברר הגיל."
+    },
+    "appliesWhen": {
+     "flag": "minor"
+    }
+   },
+   {
+    "id": "pu-disp-hand",
+    "domain": "dispatch",
+    "label": "העברה לאיתור",
+    "max": 10,
+    "required": true,
+    "tiers": [
+     {
+      "when": {
+       "chosen": "p-handover"
+      },
+      "points": 10,
+      "explain": "האיתור הועבר למשל״ט.",
+      "keep": "ביקשת שהמשל״ט יפעיל מצלמות וניידות באזור – כך הרכב נמצא בלי לרדוף אחריו."
+     }
+    ],
+    "fallback": {
+     "explain": "האיתור לא הועבר.",
+     "improve": "הפסקת בלי לבקש איתור. בסבב הבא: המשל״ט ממשיך במקומך – מצלמות וניידות."
+    }
+   },
+   {
+    "id": "pu-doc",
+    "domain": "documentation",
+    "label": "תיעוד",
+    "max": 10,
+    "required": true,
+    "tiers": [
+     {
+      "when": {
+       "chosen": "z-doc"
+      },
+      "points": 10,
+      "explain": "האירוע תועד.",
+      "keep": "תיעדת: שעה, מסלול, מהירות, למה הפסקת, ואיך נמצא הנהג."
+     }
+    ],
+    "fallback": {
+     "explain": "האירוע לא תועד.",
+     "improve": "מרדף מתועד תמיד – כולל ההחלטה להפסיק. בסבב הבא רשום."
+    }
+   }
+  ]
+ },
+ "facts": [
+  {
+   "id": "d-report",
+   "kind": "dispatch",
+   "text": "בדיקה שגרתית: רכב לבן ברחוב הרצל לא עצר לסימון והאיץ"
+  },
+  {
+   "id": "d-plate",
+   "kind": "dispatch",
+   "text": "מאזדה לבנה, מספר 54-321-87, נהג יחיד"
+  },
+  {
+   "id": "d-car",
+   "kind": "dispatch",
+   "text": "{{car_record}}"
+  },
+  {
+   "id": "o-school",
+   "kind": "observation",
+   "text": "הרכב נכנס לרחוב בית הספר ועבר באדום; הורים וילדים על המדרכה"
+  },
+  {
+   "id": "o-found",
+   "kind": "observation",
+   "text": "הרכב נמצא עצור ברחוב צדדי; הנהג יושב על המדרכה, לא פצוע"
+  },
+  {
+   "id": "o-ziv-age",
+   "kind": "observation",
+   "text": "הנהג: זיו כהן, בן 17 – קטין, בלי רישיון"
+  },
+  {
+   "id": "c-ziv",
+   "kind": "claim",
+   "text": "{{ziv_why}}",
+   "source": "ziv"
+  }
+ ],
+ "characters": [
+  {
+   "id": "ziv",
+   "name": "זיו כהן",
+   "role": "נהג הרכב שנמלט",
+   "gender": "m",
+   "look": {
+    "skin": "#d6a57c",
+    "hair": "#3a2a20",
+    "hairStyle": "short",
+    "top": "#555",
+    "bottom": "#333"
+   },
+   "attitude": 0,
+   "x": 62,
+   "y": 95,
+   "scale": 1.25,
+   "when": {
+    "flag": "found"
+   },
+   "moodRules": [
+    {
+     "when": {
+      "flag": "zivShaken"
+     },
+     "mood": "upset"
+    },
+    {
+     "when": {
+      "not": {
+       "flag": "zivCalm"
+      }
+     },
+     "mood": "tense"
+    }
+   ],
+   "sprite": "img/chars/ziv",
+   "spriteMoods": [
+    "calm",
+    "tense",
+    "upset"
+   ]
+  }
+ ],
+ "dispatch": {
+  "time": {
+   "evening": "20:50",
+   "night": "22:35"
+  },
+  "unit": "סייר 32",
+  "incident": "7215",
+  "lines": [
+   {
+    "speaker": "dispatch",
+    "text": "סייר 32, כאן מוקד אלון. מבקשת שתבצעו בדיקה לרכב לבן שעומד עם מנוע דולק בחניון ליד רחוב הרצל, דיווח של שכן. אשר קבלה."
+   }
+  ],
+  "initialFacts": [],
+  "basicExtraFacts": [],
+  "followUps": [
+   {
+    "id": "f-units",
+    "label": "לשאול: יש עוד ניידות פעילות באזור?",
+    "lines": [
+     {
+      "speaker": "player",
+      "text": "מוקד, יש עוד ניידות פעילות באזור הרצל?"
+     },
+     {
+      "speaker": "dispatch",
+      "text": "ניידת אחת באזור התחנה המרכזית, כחמש דקות ממך."
+     }
+    ],
+    "effects": {
+     "set": {
+      "knowUnits": true
+     }
+    },
+    "report": "בירור כוחות באזור"
+   }
+  ],
+  "goLabel": "אישור קבלה ויציאה לרחוב הרצל"
+ },
+ "transition": {
+  "kind": "car",
+  "text": "ברחוב הרצל אתם מאתרים את הרכב הלבן. כשאתם מסמנים לו לעצור – הוא מאיץ ופונה ימינה.",
+  "travelMinutes": 3,
+  "ambience": [
+   "engine-wipers",
+   "radio-chatter"
+  ]
+ },
+ "scene": {
+  "background": "img/school-street",
+  "alt": "רחוב עירוני בלילה: בית ספר עם גדר ושער מימין, מעבר חצייה עם רמזור, בניינים מוארים, ורמזור אדום בקצה הרחוב.",
+  "fallbackColor": "#1b2130",
+  "ambience": [
+   "traffic",
+   "siren"
+  ],
+  "lights": "steady",
+  "weather": "none",
+  "ambienceRules": [
+   {
+    "when": {
+     "any": [
+      {
+       "flag": "stopped"
+      },
+      {
+       "flag": "found"
+      }
+     ]
+    },
+    "ambience": [
+     "traffic"
+    ]
+   }
+  ],
+  "bgByShift": {
+   "evening": "night",
+   "night": "night"
+  },
+  "props": [
+   {
+    "id": "patrol",
+    "kind": "patrol",
+    "x": 10,
+    "y": 99,
+    "scale": 0.8
+   },
+   {
+    "id": "car",
+    "kind": "car-silver",
+    "x": 82,
+    "y": 99,
+    "scale": 0.8,
+    "when": {
+     "flag": "found"
+    }
+   },
+   {
+    "id": "sg-school",
+    "kind": "sign",
+    "x": 78,
+    "y": 36,
+    "text": "בית ספר אופק",
+    "sign": "plate",
+    "scale": 0.8
+   }
+  ],
+  "painted": true
+ },
+ "arrivalLines": [
+  {
+   "speaker": "narrator",
+   "text": "הרכב הלבן מאיץ ברחוב הרצל. אתם מאחוריו, כמאה מטר. הרחוב מוביל לבית הספר „אופק”, ובקצהו רמזור."
+  }
+ ],
+ "arrivalFacts": [
+  "d-report"
+ ],
+ "hotspots": [
+  {
+   "id": "h-road",
+   "label": "הכביש לפנים",
+   "kind": "area",
+   "x": 50,
+   "y": 70,
+   "when": {
+    "not": {
+     "flag": "found"
+    }
+   },
+   "description": "הרכב הלבן כמאה מטר לפניכם.",
+   "choices": [
+    {
+     "id": "p-lights",
+     "label": "להפעיל אורות וסירנה",
+     "when": {
+      "not": {
+       "flag": "stopped"
+      }
+     },
+     "lines": [
+      {
+       "speaker": "narrator",
+       "text": "האורות הכחולים והסירנה פועלים. מכוניות לפניכם זזות לצד."
+      }
+     ],
+     "effects": {
+      "set": {
+       "lights": true,
+       "chasing": true
+      }
+     },
+     "report": "הפעלת אורות וסירנה"
+    },
+    {
+     "id": "p-report",
+     "label": "לדווח מיד למשל״ט: רכב, מספר, כיוון, נהג יחיד",
+     "lines": [
+      {
+       "speaker": "player",
+       "text": "{{toCenter}}, רכב לא עצר לסימון ונמלט. מאזדה לבנה, 54-321-87, נהג יחיד, נוסע צפונה ברחוב הרצל לכיוון בית הספר אופק. אני בעקבותיו."
+      },
+      {
+       "speaker": "dispatch",
+       "text": "{{centerToMe}}, קיבלתי. בודקת את הרכב. תעדכן בכל פנייה."
+      },
+      {
+       "speaker": "dispatch",
+       "text": "{{car_record}}"
+      }
+     ],
+     "effects": {
+      "set": {
+       "reported": true,
+       "chasing": true
+      },
+      "reveal": [
+       "d-plate",
+       "d-car"
+      ]
+     },
+     "report": "דיווח ראשוני על מרדף"
+    },
+    {
+     "id": "p-head",
+     "label": "לעדכן את 401 ולבקש הנחיה: להמשיך או לא",
+     "lines": [
+      {
+       "speaker": "player",
+       "text": "{{toHead}}, אני במרדף אחרי רכב שנמלט מסימון, ברחוב הרצל לכיוון בית הספר. מבקש הנחיה."
+      },
+      {
+       "speaker": "head",
+       "text": "{{headToMe}}, ממשיך במעקב בזהירות, בלי סיכונים. אם הוא נכנס לאזור עם אנשים – מפסיק ומעביר למשל״ט."
+      }
+     ],
+     "effects": {
+      "set": {
+       "guided": true,
+       "chasing": true
+      }
+     },
+     "report": "קבלת הנחיה מראש המשמרת"
+    },
+    {
+     "id": "p-distance",
+     "label": "לשמור מרחק בטוח ולעדכן בקשר בכל פנייה",
+     "when": {
+      "all": [
+       {
+        "flag": "chasing"
+       },
+       {
+        "not": {
+         "flag": "stopped"
+        }
+       }
+      ]
+     },
+     "lines": [
+      {
+       "speaker": "player",
+       "text": "{{toCenter}}, הוא פנה שמאלה לרחוב הגפן, עדיין צפונה, מהירות גבוהה."
+      },
+      {
+       "speaker": "dispatch",
+       "text": "{{centerToMe}}, קיבלתי, הגפן צפונה."
+      }
+     ],
+     "effects": {
+      "set": {
+       "updating": true
+      }
+     },
+     "report": "עדכוני כיוון לאורך הדרך"
+    },
+    {
+     "id": "p-speed",
+     "label": "להאיץ ולהדביק אותו בכל מחיר",
+     "when": {
+      "all": [
+       {
+        "flag": "chasing"
+       },
+       {
+        "not": {
+         "flag": "stopped"
+        }
+       },
+       {
+        "not": {
+         "flag": "found"
+        }
+       }
+      ]
+     },
+     "lines": [
+      {
+       "speaker": "narrator",
+       "text": "המחוג עולה. בצומת האחרון כמעט פגעתם ברכב שיצא מחניה. הנהג שלפניכם מאיץ עוד יותר."
+      }
+     ],
+     "effects": {
+      "set": {
+       "reckless": true
+      },
+      "note": "האצה מסוכנת – הנהג הנמלט האיץ עוד יותר"
+     }
+    },
+    {
+     "id": "p-block",
+     "label": "לעקוף אותו ולחסום אותו עם הניידת",
+     "when": {
+      "all": [
+       {
+        "flag": "chasing"
+       },
+       {
+        "not": {
+         "flag": "stopped"
+        }
+       },
+       {
+        "not": {
+         "flag": "found"
+        }
+       }
+      ]
+     },
+     "lines": [
+      {
+       "speaker": "narrator",
+       "text": "הניידת מתחילה לעקוף. הרכב הלבן סוטה בחדות, עולה על המדרכה ונוחת בחזרה לכביש. רק במזל איש לא עמד שם."
+      }
+     ],
+     "effects": {
+      "set": {
+       "reckless": true
+      },
+      "note": "ניסיון לחסום רכב בתנועה – כמעט פגיעה בעוברי אורח"
+     }
+    },
+    {
+     "id": "p-stop",
+     "label": "להפסיק את המרדף: לכבות סירנה, להאט, ולמסור את הכיוון האחרון",
+     "when": {
+      "all": [
+       {
+        "flag": "ev:school"
+       },
+       {
+        "not": {
+         "flag": "stopped"
+        }
+       }
+      ]
+     },
+     "lines": [
+      {
+       "speaker": "player",
+       "text": "{{toCenter}}, אני מפסיק את המרדף – הוא עבר באדום ליד בית הספר ויש אנשים על המדרכה. כיוון אחרון: צפונה ברחוב הגפן."
+      },
+      {
+       "speaker": "dispatch",
+       "text": "{{centerToMe}}, קיבלתי. מפסיק."
+      },
+      {
+       "speaker": "narrator",
+       "text": "הסירנה כבויה. הרכב הלבן נעלם בקצה הרחוב."
+      }
+     ],
+     "effects": {
+      "set": {
+       "stopped": true
+      }
+     },
+     "report": "הפסקת המרדף בגלל סיכון לציבור"
+    },
+    {
+     "id": "p-continue",
+     "label": "להמשיך אחריו גם באדום – הוא עוד רגע נתפס",
+     "when": {
+      "all": [
+       {
+        "flag": "ev:school"
+       },
+       {
+        "not": {
+         "flag": "stopped"
+        }
+       }
+      ]
+     },
+     "lines": [
+      {
+       "speaker": "narrator",
+       "text": "אתם חוצים באדום. אם עם עגלה כבר עלתה על מעבר החצייה ונעצרת ברגע האחרון. הרכב הלבן עדיין לפניכם."
+      }
+     ],
+     "effects": {
+      "set": {
+       "nearMiss": true,
+       "reckless": true
+      },
+      "note": "מעבר באדום ליד בית ספר – כמעט פגיעה באם עם עגלה"
+     }
+    },
+    {
+     "id": "p-handover",
+     "label": "לבקש מהמשל״ט להפעיל מצלמות וניידות באזור כדי לאתר את הרכב",
+     "when": {
+      "flag": "stopped"
+     },
+     "lines": [
+      {
+       "speaker": "player",
+       "text": "{{toCenter}}, מבקש שתפעילי מצלמות ותכווני ניידות לאזור הגפן לאיתור הרכב."
+      },
+      {
+       "speaker": "dispatch",
+       "text": "{{centerToMe}}, קיבלתי, מכוונת. … הרכב נראה במצלמה עוצר ברחוב השקד, הנהג יצא ממנו."
+      }
+     ],
+     "effects": {
+      "set": {
+       "handed": true
+      }
+     },
+     "report": "העברת האיתור למשל״ט"
+    },
+    {
+     "id": "p-go",
+     "label": "לנסוע בזהירות לרחוב השקד, למקום שבו נעצר הרכב",
+     "when": {
+      "any": [
+       {
+        "flag": "handed"
+       },
+       {
+        "all": [
+         {
+          "flag": "nearMiss"
+         },
+         {
+          "not": {
+           "flag": "stopped"
+          }
+         }
+        ]
+       }
+      ]
+     },
+     "lines": [
+      {
+       "speaker": "narrator",
+       "text": "רחוב השקד. המאזדה הלבנה עומדת באלכסון, דלת הנהג פתוחה. על המדרכה יושב נער ומחזיק את הראש בידיים."
+      }
+     ],
+     "effects": {
+      "set": {
+       "found": true
+      },
+      "reveal": [
+       "o-found"
+      ]
+     },
+     "report": "הגעה למקום שבו נעצר הרכב"
+    }
+   ]
+  },
+  {
+   "id": "h-ziv",
+   "label": "זיו – הנהג",
+   "kind": "character",
+   "character": "ziv",
+   "x": 62,
+   "y": 48,
+   "when": {
+    "flag": "found"
+   },
+   "description": "נער יושב על המדרכה ליד הרכב הלבן.",
+   "choices": [
+    {
+     "id": "z-approach",
+     "label": "לגשת ברוגע, להציג את עצמך ולבדוק שהוא לא פצוע",
+     "lines": [
+      {
+       "speaker": "player",
+       "text": "אני מצוות הסיור. אתה בסדר? נפגעת?"
+      },
+      {
+       "speaker": "ziv",
+       "text": "(רועד) לא… אני בסדר. סליחה. אני לא יודע למה ברחתי."
+      }
+     ],
+     "effects": {
+      "set": {
+       "zivCalm": true
+      },
+      "attitude": {
+       "ziv": 1
+      }
+     },
+     "report": "גישה רגועה ובדיקת שלום הנהג"
+    },
+    {
+     "id": "z-yell",
+     "label": "לצעוק עליו: „אתה יודע שכמעט הרגת מישהו?!”",
+     "lines": [
+      {
+       "speaker": "player",
+       "text": "אתה יודע שכמעט הרגת מישהו?!"
+      },
+      {
+       "speaker": "ziv",
+       "text": "(מתחיל לבכות) …"
+      }
+     ],
+     "effects": {
+      "set": {
+       "zivShaken": true
+      },
+      "attitude": {
+       "ziv": -2
+      },
+      "note": "צעקות על הנהג אחרי המרדף"
+     }
+    },
+    {
+     "id": "z-id",
+     "label": "לבקש ממנו להזדהות ולשמוע למה ברח",
+     "lines": [
+      {
+       "speaker": "player",
+       "text": "אני צריך לזהות אותך. מה השם שלך, בן כמה אתה, ולמה לא עצרת?"
+      },
+      {
+       "speaker": "ziv",
+       "text": "זיו כהן, בן 17. {{ziv_why}}."
+      }
+     ],
+     "effects": {
+      "set": {
+       "identified": true,
+       "minor": true
+      },
+      "reveal": [
+       "o-ziv-age",
+       "c-ziv"
+      ]
+     },
+     "report": "זיהוי הנהג ושמיעת גרסתו"
+    },
+    {
+     "id": "z-detain",
+     "label": "להודיע לזיו שהוא מעוכב, במה הוא חשוד, ומה יקרה עכשיו",
+     "when": {
+      "all": [
+       {
+        "flag": "identified"
+       },
+       {
+        "not": {
+         "flag": "detained"
+        }
+       }
+      ]
+     },
+     "lines": [
+      {
+       "speaker": "player",
+       "text": "זיו, אתה חשוד ב{{ziv_offence}}. אתה מעוכב, ותועבר לתחנה. נתקשר להורים שלך, והם יוכלו להיות איתך."
+      },
+      {
+       "speaker": "ziv",
+       "text": "…אוקיי."
+      }
+     ],
+     "effects": {
+      "set": {
+       "detained": true,
+       "detainedProper": true
+      }
+     },
+     "report": "עיכוב הנהג בהסבר"
+    },
+    {
+     "id": "z-parent",
+     "label": "להתקשר להורה של זיו",
+     "when": {
+      "flag": "minor"
+     },
+     "lines": [
+      {
+       "speaker": "player",
+       "text": "זיו, אני מתקשר לאחד ההורים שלך. מה המספר?"
+      },
+      {
+       "speaker": "narrator",
+       "text": "אבא של זיו עונה. הוא בשקט לרגע, ואז אומר שהוא יוצא מיד לתחנה."
+      }
+     ],
+     "effects": {
+      "set": {
+       "parent": true
+      }
+     },
+     "report": "יידוע הורה של קטין"
+    }
+   ]
+  },
+  {
+   "id": "h-doc",
+   "label": "פנקס ותיעוד",
+   "kind": "item",
+   "x": 90,
+   "y": 20,
+   "description": "תיעוד האירוע.",
+   "when": {
+    "flag": "found"
+   },
+   "choices": [
+    {
+     "id": "z-doc",
+     "label": "לתעד: שעה, מסלול, מהירות, למה הופסק המרדף, ואיך נמצא הנהג",
+     "lines": [
+      {
+       "speaker": "narrator",
+       "text": "רשמת: שעת הסימון, המסלול, המהירות, ההנחיה מ־401, הרגע שבו הופסק המרדף ולמה, ואיך אותר הרכב."
+      }
+     ],
+     "effects": {
+      "set": {
+       "documented": true
+      }
+     },
+     "report": "תיעוד המרדף"
+    }
+   ]
+  }
+ ],
+ "custody": [
+  {
+   "char": "ziv",
+   "hotspot": "h-ziv",
+   "offence": "נהיגה בלי רישיון ואי ציות להוראת שוטר",
+   "minor": true,
+   "arrestOk": {
+    "flag": "stolen"
+   }
+  }
+ ],
+ "events": [
+  {
+   "id": "school",
+   "title": "התפתחות: ליד בית הספר",
+   "when": {
+    "countChosen": {
+     "ids": [
+      "p-lights",
+      "p-report",
+      "p-head",
+      "p-distance",
+      "p-speed",
+      "p-block"
+     ],
+     "gte": 3
+    }
+   },
+   "lines": [
+    {
+     "speaker": "narrator",
+     "text": "הרכב הלבן נכנס לרחוב של בית הספר. מסתיים שם אירוע ערב: הורים וילדים על המדרכה, ורמזור אדום בצומת. הנהג לא מאט – ועובר באדום."
+    }
+   ],
+   "effects": {
+    "reveal": [
+     "o-school"
+    ],
+    "note": "המרדף הגיע לאזור עם הולכי רגל"
+   },
+   "sfx": "alert"
+  },
+  {
+   "id": "caught",
+   "title": "התפתחות: הרכב נעצר",
+   "when": {
+    "all": [
+     {
+      "flag": "nearMiss"
+     },
+     {
+      "not": {
+       "flag": "stopped"
+      }
+     }
+    ]
+   },
+   "lines": [
+    {
+     "speaker": "dispatch",
+     "text": "{{centerToMe}}, הרכב נעצר ברחוב השקד, הנהג יצא ממנו."
+    }
+   ],
+   "effects": {
+    "note": "הרכב נעצר אחרי מעבר באדום"
+   }
+  }
+ ],
+ "update": {
+  "categories": {
+   "location": "מקום",
+   "situation": "מצב נוכחי",
+   "status": "מצב המעורבים",
+   "verified": "מה אומת",
+   "missing": "מה עדיין חסר",
+   "assistance": "סיוע נדרש",
+   "judgement": "קביעה"
+  },
+  "elements": [
+   {
+    "id": "u-loc",
+    "category": "location",
+    "text": "נמצא ברחוב השקד",
+    "when": {
+     "flag": "found"
+    }
+   },
+   {
+    "id": "u-found",
+    "category": "situation",
+    "text": "הרכב אותר עצור, הנהג במקום ולא פצוע",
+    "when": {
+     "flag": "found"
+    }
+   },
+   {
+    "id": "u-minor",
+    "category": "status",
+    "text": "הנהג קטין בן 17, בלי רישיון – מעוכב, הורה בדרך",
+    "when": {
+     "all": [
+      {
+       "flag": "detained"
+      },
+      {
+       "flag": "parent"
+      }
+     ]
+    }
+   },
+   {
+    "id": "u-tow",
+    "category": "assistance",
+    "text": "מבקש גרר לרכב",
+    "when": {
+     "flag": "found"
+    }
+   },
+   {
+    "id": "u-stolen",
+    "category": "verified",
+    "text": "הרכב שדווח כגנוב נמצא",
+    "when": {
+     "all": [
+      {
+       "flag": "found"
+      },
+      {
+       "flag": "stolen"
+      }
+     ]
+    }
+   },
+   {
+    "id": "u-caught",
+    "category": "judgement",
+    "text": "תפסנו אותו סוף סוף",
+    "when": {
+     "flag": "found"
+    }
+   }
+  ],
+  "responses": [
+   {
+    "when": {
+     "inUpdate": "u-minor"
+    },
+    "lines": [
+     {
+      "speaker": "dispatch",
+      "text": "מוקד: רשמתי. תעבירו אותו לתחנה, נוער מעודכן."
+     }
+    ],
+    "effects": {
+     "set": {
+      "closedReport": true
+     }
+    }
+   },
+   {
+    "when": {
+     "inUpdate": "u-tow"
+    },
+    "lines": [
+     {
+      "speaker": "dispatch",
+      "text": "מוקד: גרר מוזמן, כעשרים דקות."
+     }
+    ],
+    "effects": {
+     "set": {
+      "towCalled": true
+     }
+    }
+   }
+  ]
+ },
+ "finish": {
+  "label": "סיום הטיפול במקום",
+  "confirm": "לסיים את הטיפול ולעבור לתחקיר? אפשר לשלוח עדכון אחרון למשל״ט לפני הסיום."
+ },
+ "endings": [
+  {
+   "id": "e-good",
+   "kind": "good",
+   "title": "המרדף הופסק בזמן – והנהג אותר בלי שאיש נפגע",
+   "text": "דיווחת והתעדכנת, קיבלת הנחיה, הפסקת כשהסיכון לציבור גדל, והמשל״ט איתר את הרכב. בסוף – גישה רגועה, עיכוב בהסבר והורה מעודכן.",
+   "when": {
+    "all": [
+     {
+      "chosen": "p-report"
+     },
+     {
+      "chosen": "p-head"
+     },
+     {
+      "flag": "stopped"
+     },
+     {
+      "not": {
+       "flag": "reckless"
+      }
+     },
+     {
+      "flag": "handed"
+     },
+     {
+      "flag": "detainedProper"
+     },
+     {
+      "flag": "parent"
+     },
+     {
+      "not": {
+       "flag": "zivShaken"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "id": "e-partial",
+   "kind": "partial",
+   "title": "הנהג אותר – אבל במחיר סיכון",
+   "text": "הרכב נמצא, אבל בדרך: נהיגה מסוכנת, מעבר באדום, דיווח חסר או טיפול חלקי בנהג הקטין.",
+   "when": {
+    "flag": "found"
+   }
+  },
+  {
+   "id": "e-retry",
+   "kind": "retry",
+   "title": "הזדמנות לתיקון: האירוע לא הסתיים",
+   "text": "הרכב לא אותר והנהג לא טופל.",
+   "when": {
+    "always": true
+   }
+  }
+ ],
+ "hints": [
+  {
+   "when": {
+    "all": [
+     {
+      "stage": [
+       "scene"
+      ]
+     },
+     {
+      "not": {
+       "chosen": "p-report"
+      }
+     }
+    ]
+   },
+   "text": "מי יודע עכשיו שאתם במרדף? רכב, מספר, כיוון – בקשר."
+  },
+  {
+   "when": {
+    "all": [
+     {
+      "stage": [
+       "scene"
+      ]
+     },
+     {
+      "not": {
+       "chosen": "p-head"
+      }
+     }
+    ]
+   },
+   "text": "מי מחליט אם להמשיך? 401."
+  },
+  {
+   "when": {
+    "all": [
+     {
+      "flag": "ev:school"
+     },
+     {
+      "not": {
+       "flag": "stopped"
+      }
+     }
+    ]
+   },
+   "text": "ילדים על המדרכה ורמזור אדום. מה שווה יותר?"
+  },
+  {
+   "when": {
+    "all": [
+     {
+      "flag": "stopped"
+     },
+     {
+      "not": {
+       "flag": "handed"
+      }
+     }
+    ]
+   },
+   "text": "הפסקת. מי ממשיך לחפש במקומך?"
+  },
+  {
+   "when": {
+    "all": [
+     {
+      "flag": "found"
+     },
+     {
+      "not": {
+       "flag": "minor"
+      }
+     }
+    ]
+   },
+   "text": "מי הנהג, בן כמה, ולמה ברח?"
+  },
+  {
+   "when": {
+    "always": true
+   },
+   "text": "מרדף הוא החלטה שמתחדשת כל רגע: האם התועלת עדיין גדולה מהסיכון?"
+  }
+ ],
+ "challenges": [
+  "הפסק את המרדף לפני שהרכב מגיע לבית הספר – מה השתנה?",
+  "נסה גרסה אחרת – אולי הרכב גנוב. האם זה מצדיק סיכון גדול יותר לציבור?",
+  "נסח עדכון: איפה, מה המצב, ומה נדרש – בלי „תפסנו אותו סוף סוף”."
+ ],
+ "report": {
+  "reason": "במהלך בדיקה ברחוב הרצל רכב לא עצר לסימון ונמלט.",
+  "checklist": [
+   {
+    "label": "פרטי הרכב",
+    "when": {
+     "fact": "d-plate"
+    }
+   },
+   {
+    "label": "הסיכון ליד בית הספר",
+    "when": {
+     "fact": "o-school"
+    }
+   },
+   {
+    "label": "איתור הרכב",
+    "when": {
+     "fact": "o-found"
+    }
+   },
+   {
+    "label": "זיהוי הנהג",
+    "when": {
+     "fact": "o-ziv-age"
+    }
+   }
+  ]
+ },
+ "media": {
+  "images": [
+   "img/school-street-day.webp",
+   "img/school-street-night.webp",
+   "img/chars/ziv-calm.webp",
+   "img/chars/ziv-tense.webp",
+   "img/chars/ziv-upset.webp",
+   "img/props/car-silver.webp",
+   "img/props/patrol.webp",
+   "img/drive/interior.webp",
+   "img/drive/road-day.webp",
+   "img/drive/road-night.webp"
+  ],
+  "audio": [
+   "audio/radio-chatter.mp3",
+   "audio/traffic.mp3",
+   "audio/siren.mp3",
+   "audio/engine-wipers.mp3",
+   "audio/radio-chirp.mp3",
+   "audio/alert.mp3"
+  ],
+  "voice": {},
+  "voiceLines": {
+   "afbdb9f5": "audio/voice/pursuit/l-afbdb9f5.mp3",
+   "55f06a36": "audio/voice/pursuit/l-55f06a36.mp3",
+   "0e01a700": "audio/voice/pursuit/l-0e01a700.mp3",
+   "c675d78a": "audio/voice/pursuit/l-c675d78a.mp3",
+   "5a7fa6a9": "audio/voice/pursuit/l-5a7fa6a9.mp3",
+   "e45f91ee": "audio/voice/pursuit/l-e45f91ee.mp3",
+   "b1d2b164": "audio/voice/pursuit/l-b1d2b164.mp3",
+   "59ad1f64": "audio/voice/pursuit/l-59ad1f64.mp3",
+   "bc4ef680": "audio/voice/pursuit/l-bc4ef680.mp3",
+   "dec6b838": "audio/voice/pursuit/l-dec6b838.mp3",
+   "39c2e3ce": "audio/voice/pursuit/l-39c2e3ce.mp3",
+   "0bb6cb73": "audio/voice/pursuit/l-0bb6cb73.mp3",
+   "29b547b9": "audio/voice/pursuit/l-29b547b9.mp3",
+   "fbf4d877": "audio/voice/pursuit/l-fbf4d877.mp3",
+   "3dc83549": "audio/voice/pursuit/l-3dc83549.mp3",
+   "00bb37ea": "audio/voice/pursuit/l-00bb37ea.mp3",
+   "5a1eafa0": "audio/voice/pursuit/l-5a1eafa0.mp3",
+   "116e52e6": "audio/voice/pursuit/l-116e52e6.mp3",
+   "3d04a844": "audio/voice/pursuit/l-3d04a844.mp3",
+   "08ef7370": "audio/voice/pursuit/l-08ef7370.mp3",
+   "a1edeae3": "audio/voice/pursuit/l-a1edeae3.mp3",
+   "d88e06d6": "audio/voice/pursuit/l-d88e06d6.mp3",
+   "0a2b7fd1": "audio/voice/pursuit/l-0a2b7fd1.mp3",
+   "e83594d3": "audio/voice/pursuit/l-e83594d3.mp3",
+   "6534fd3f": "audio/voice/pursuit/l-6534fd3f.mp3",
+   "aeefa3f2": "audio/voice/pursuit/l-aeefa3f2.mp3",
+   "fb4fc2d8": "audio/voice/pursuit/l-fb4fc2d8.mp3",
+   "77ecd5da": "audio/voice/pursuit/l-77ecd5da.mp3",
+   "5ebace59": "audio/voice/pursuit/l-5ebace59.mp3",
+   "09945c64": "audio/voice/pursuit/l-09945c64.mp3",
+   "e34e32f0": "audio/voice/pursuit/l-e34e32f0.mp3",
+   "03baa32e": "audio/voice/pursuit/l-03baa32e.mp3",
+   "751cde07": "audio/voice/pursuit/l-751cde07.mp3",
+   "32e2b4b6": "audio/voice/pursuit/l-32e2b4b6.mp3",
+   "96300cbe": "audio/voice/pursuit/l-96300cbe.mp3",
+   "2573b809": "audio/voice/pursuit/l-2573b809.mp3",
+   "677cae4f": "audio/voice/pursuit/l-677cae4f.mp3",
+   "d63a24cb": "audio/voice/pursuit/l-d63a24cb.mp3",
+   "d78a9451": "audio/voice/pursuit/l-d78a9451.mp3",
+   "e1ccc1df": "audio/voice/pursuit/l-e1ccc1df.mp3",
+   "8b848313": "audio/voice/pursuit/l-8b848313.mp3",
+   "92a14104": "audio/voice/pursuit/l-92a14104.mp3",
+   "a6280cd4": "audio/voice/pursuit/l-a6280cd4.mp3",
+   "263496d0": "audio/voice/pursuit/l-263496d0.mp3",
+   "bdaecb43": "audio/voice/pursuit/l-bdaecb43.mp3",
+   "c70fdd8f": "audio/voice/pursuit/l-c70fdd8f.mp3",
+   "df124e03": "audio/voice/pursuit/l-df124e03.mp3",
+   "5963c5a1": "audio/voice/pursuit/l-5963c5a1.mp3",
+   "3d57433f": "audio/voice/pursuit/l-3d57433f.mp3",
+   "80ef2958": "audio/voice/pursuit/l-80ef2958.mp3",
+   "1654c0b3": "audio/voice/pursuit/l-1654c0b3.mp3",
+   "6e376a6c": "audio/voice/pursuit/l-6e376a6c.mp3",
+   "6379868f": "audio/voice/pursuit/l-6379868f.mp3",
+   "0ab1010d": "audio/voice/pursuit/l-0ab1010d.mp3",
+   "62a49671": "audio/voice/pursuit/l-62a49671.mp3",
+   "2389feda": "audio/voice/pursuit/l-2389feda.mp3",
+   "39bf1f36": "audio/voice/pursuit/l-39bf1f36.mp3",
+   "2fcbc04a": "audio/voice/pursuit/l-2fcbc04a.mp3",
+   "ba363792": "audio/voice/pursuit/l-ba363792.mp3",
+   "d2029d7e": "audio/voice/pursuit/l-d2029d7e.mp3",
+   "fb2381d5": "audio/voice/pursuit/l-fb2381d5.mp3",
+   "229b94fd": "audio/voice/pursuit/l-229b94fd.mp3",
+   "c5ef8009": "audio/voice/pursuit/l-c5ef8009.mp3",
+   "888309b9": "audio/voice/pursuit/l-888309b9.mp3",
+   "299a7f0e": "audio/voice/pursuit/l-299a7f0e.mp3",
+   "299d6eae": "audio/voice/pursuit/l-299d6eae.mp3",
+   "9e3403f2": "audio/voice/pursuit/l-9e3403f2.mp3",
+   "8ab93c30": "audio/voice/pursuit/l-8ab93c30.mp3",
+   "60e54bb2": "audio/voice/pursuit/l-60e54bb2.mp3",
+   "6a1fd7c6": "audio/voice/pursuit/l-6a1fd7c6.mp3",
+   "dac68a02": "audio/voice/pursuit/l-dac68a02.mp3",
+   "830577d2": "audio/voice/pursuit/l-830577d2.mp3",
+   "f18f8316": "audio/voice/pursuit/l-f18f8316.mp3",
+   "b528931d": "audio/voice/pursuit/l-b528931d.mp3",
+   "e7044d39": "audio/voice/pursuit/l-e7044d39.mp3",
+   "44e1b6b5": "audio/voice/pursuit/l-44e1b6b5.mp3",
+   "d36cfed1": "audio/voice/pursuit/l-d36cfed1.mp3",
+   "94d2f55f": "audio/voice/pursuit/l-94d2f55f.mp3",
+   "955fb669": "audio/voice/pursuit/l-955fb669.mp3",
+   "45cb44ed": "audio/voice/pursuit/l-45cb44ed.mp3",
+   "d644c414": "audio/voice/pursuit/l-d644c414.mp3",
+   "3b677d03": "audio/voice/pursuit/l-3b677d03.mp3",
+   "eb03ec08": "audio/voice/pursuit/l-eb03ec08.mp3",
+   "cda9652e": "audio/voice/pursuit/l-cda9652e.mp3",
+   "ec463fb2": "audio/voice/pursuit/l-ec463fb2.mp3",
+   "f3f6d4e7": "audio/voice/pursuit/l-f3f6d4e7.mp3",
+   "622f1a19": "audio/voice/pursuit/l-622f1a19.mp3",
+   "883b4819": "audio/voice/pursuit/l-883b4819.mp3",
+   "6c920960": "audio/voice/pursuit/l-6c920960.mp3",
+   "9ef192d6": "audio/voice/pursuit/l-9ef192d6.mp3",
+   "66de6994": "audio/voice/pursuit/l-66de6994.mp3",
+   "1734ec94": "audio/voice/pursuit/l-1734ec94.mp3",
+   "2bec06ca": "audio/voice/pursuit/l-2bec06ca.mp3",
+   "555496c5": "audio/voice/pursuit/l-555496c5.mp3",
+   "40cbc0a8": "audio/voice/pursuit/l-40cbc0a8.mp3",
+   "9a2e9e9c": "audio/voice/pursuit/l-9a2e9e9c.mp3",
+   "0d29f194": "audio/voice/pursuit/l-0d29f194.mp3",
+   "99206ec7": "audio/voice/pursuit/l-99206ec7.mp3",
+   "d7783aff": "audio/voice/pursuit/l-d7783aff.mp3",
+   "63dd8aed": "audio/voice/pursuit/l-63dd8aed.mp3",
+   "b6283e67": "audio/voice/pursuit/l-b6283e67.mp3",
+   "582b81bf": "audio/voice/pursuit/l-582b81bf.mp3",
+   "cf7fb241": "audio/voice/pursuit/l-cf7fb241.mp3",
+   "80fc5f75": "audio/voice/pursuit/l-80fc5f75.mp3",
+   "74d70b6d": "audio/voice/pursuit/l-74d70b6d.mp3",
+   "170f5e23": "audio/voice/pursuit/l-170f5e23.mp3",
+   "d345e328": "audio/voice/pursuit/l-d345e328.mp3",
+   "56dbd0fe": "audio/voice/pursuit/l-56dbd0fe.mp3",
+   "e32b83d4": "audio/voice/pursuit/l-e32b83d4.mp3",
+   "5d3924b2": "audio/voice/pursuit/l-5d3924b2.mp3",
+   "2edc51e9": "audio/voice/pursuit/l-2edc51e9.mp3",
+   "b1fc456b": "audio/voice/pursuit/l-b1fc456b.mp3",
+   "d7578e02": "audio/voice/pursuit/l-d7578e02.mp3",
+   "e1f96144": "audio/voice/pursuit/l-e1f96144.mp3",
+   "b6f1ad32": "audio/voice/pursuit/l-b6f1ad32.mp3",
+   "e81ca260": "audio/voice/pursuit/l-e81ca260.mp3",
+   "c560ee1d": "audio/voice/pursuit/l-c560ee1d.mp3",
+   "d05cf42b": "audio/voice/pursuit/l-d05cf42b.mp3"
+  },
+  "narrationMissing": "קריינות: קולות מסונתזים מקומית ב־BlueTTS (קוד MIT; קולות מ־LibriTTS-R, CC BY 4.0). שורות עם אות קריאה של התחנה מוקראות בקול הדפדפן אם הופעל."
+ }
+}
