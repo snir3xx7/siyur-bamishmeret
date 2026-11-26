@@ -1,4 +1,7 @@
 import { Editor } from './screens/Editor';
+import { Admin } from './screens/Admin';
+import { identity, track, trackingOn } from './tracking/track';
+import { buildResult } from './engine/results';
 import { Review } from './screens/Review';
 import { ShiftScreen } from './screens/Shift';
 import { Help } from './screens/Help';
@@ -64,6 +67,7 @@ export default function App() {
 
   const startGame = useCallback((sc: Scenario, config: GameConfig, actions?: GameAction[], activeMs?: number) => {
     const st = actions ? replay(sc, config, actions) : createGame(sc, config);
+    if (!actions) track({ event: 'start', scenarioId: sc.id, title: sc.title, version: sc.version });
     if (typeof activeMs === 'number' && activeMs > st.activeMs) st.activeMs = activeMs;
     setGame({ sc, st });
   }, []);
@@ -75,6 +79,28 @@ export default function App() {
       return st === g.st ? g : { ...g, st };
     });
   }, []);
+
+  // מעקב: כניסה (פעם אחת בכל פתיחה של האתר) וסיום תרחיש עם ציון ומשוב
+  useEffect(() => {
+    try {
+      if (trackingOn() && identity().name && !sessionStorage.getItem('siyur.entered')) {
+        sessionStorage.setItem('siyur.entered', '1');
+        track({ event: 'enter' });
+      }
+    } catch {
+      /* אחסון חסום */
+    }
+  }, []);
+  const tracked = useRef('');
+  useEffect(() => {
+    if (!game || game.st.stage !== 'ended' || game.st.actions.length === 0) return;
+    const key = `${game.sc.id}|${game.st.startedAt}`;
+    if (tracked.current === key) return;
+    tracked.current = key;
+    if (!trackingOn()) return;
+    const r = buildResult(game.sc, game.st, identity().name);
+    track({ event: 'finish', scenarioId: r.scenarioId, title: r.title, version: r.version, total: r.total, ending: r.ending, endingKind: r.endingKind, domains: r.domains as Record<string, number>, improve: r.improve, extra: r.extra as Record<string, number> });
+  }, [game]);
 
   const reducedMotion = prefersReducedMotion(settings);
   const ctx = useMemo(
@@ -96,6 +122,7 @@ export default function App() {
   else if (p0 === 'officer') screen = <Officer />;
   else if (p0 === 'review' && p1) screen = <Review id={p1} />;
   else if (p0 === 'editor') screen = <Editor id={p1} />;
+  else if (p0 === 'admin') screen = <Admin />;
   else screen = <Home />;
 
   return (

@@ -1,3 +1,4 @@
+import { identity, trackingOn } from '../tracking/track';
 import { useEffect, useState } from 'react';
 import { SITE } from '../config/site';
 import { loadCurrent, type SavedGame } from '../storage/db';
@@ -13,7 +14,7 @@ export function Home() {
   // כניסה ראשונה: קודם בוחרים דמות (לא בבדיקות אוטומטיות)
   useEffect(() => {
     // בכניסה: חובה לבחור דמות ותחנה (לא בבדיקות אוטומטיות)
-    if ((!settings.officerChosen || settings.station.mode === 'fictional') && !navigator.webdriver) location.replace('#/officer');
+    if ((!settings.officerChosen || settings.station.mode === 'fictional' || (trackingOn() && !identity().team)) && !navigator.webdriver) location.replace('#/officer');
   }, [settings.officerChosen, settings.station.mode]);
   const [saved, setSaved] = useState<SavedGame | null>(null);
   const [count, setCount] = useState<number | null>(null);

@@ -37,6 +37,12 @@ export function Instructor() {
         העמוד מרכז את מה שצריך כדי להפעיל תרגול בכיתה, להפיק קישור לגרסה קבועה ולערוך תרחישים. מדריך מלא עם דוגמה מקצה לקצה נמצא בקובץ <code>docs/INSTRUCTOR.md</code> במאגר, וסכימת התרחיש מתועדת ב־<code>docs/SCENARIO_SCHEMA.md</code>.
       </p>
 
+      <section className="card stack" aria-labelledby="adm-link">
+        <h2 id="adm-link">🔐 ניהול – מעקב חניכים</h2>
+        <p className="small muted">מי נכנס, אילו תרחישים התחיל והשלים, הציון והמשוב של כל אחד. מוגן בסיסמה שרק המדריך יודע.</p>
+        <a className="btn primary" href="#/admin" data-testid="admin-link">כניסה לניהול</a>
+      </section>
+
       <ResultsBoard />
 
       <section className="card stack" aria-labelledby="ed-link">

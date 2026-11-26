@@ -5,6 +5,7 @@ import { audio } from '../audio/audio';
 import { loadRadioIndex, voiceKey } from '../audio/voiceKey';
 import { callTo, radioProfile } from '../config/stations';
 import { StationPicker } from '../ui/StationPicker';
+import { fetchTeams, identity, setIdentity, track, trackingOn } from '../tracking/track';
 
 const CHOICES = [
   { id: 'm', title: 'שוטר', who: 'player', line: 'הקול שלך בקשר ובזירה – גבר.' },
@@ -19,6 +20,12 @@ export function Officer() {
   const { settings, setSettings } = useApp();
   const [sel, setSel] = useState<'m' | 'f'>(settings.officerVoice ?? 'm');
   const [idx, setIdx] = useState<Record<string, string>>({});
+  const [who, setWho] = useState(identity);
+  const [teams, setTeams] = useState<string[]>([]);
+  useEffect(() => {
+    if (trackingOn()) void fetchTeams().then(setTeams);
+  }, []);
+  const needId = trackingOn() && (!who.name.trim() || !who.team.trim());
   const [art, setArt] = useState<Record<string, boolean>>({ m: true, f: true });
   useEffect(() => {
     void loadRadioIndex().then(setIdx);
@@ -37,6 +44,10 @@ export function Officer() {
     preview(id);
   };
   const confirm = () => {
+    if (trackingOn()) {
+      setIdentity(who.name.trim(), who.team.trim());
+      track({ event: 'enter' });
+    }
     setSettings({ ...settings, officerVoice: sel, officerChosen: true });
     location.hash = '#/catalog';
   };
@@ -87,8 +98,31 @@ export function Officer() {
         <StationPicker fictionalUnit="402" required />
         {!prof.real && <p className="os-need" role="status">כדי לצאת לסיור – בחרו מחוז ותחנה. עד אז בקשר: „משל״ט מ402”.</p>}
       </div>
+      {trackingOn() && (
+        <div className="os-station os-who" data-testid="who">
+          <h2>🪪 מי מתרגל?</h2>
+          <div className="station-grid">
+            <label>
+              השם שלך
+              <input value={who.name} onChange={(e) => setWho({ ...who, name: e.target.value })} maxLength={40} placeholder="למשל: שירן כ." data-testid="who-name" />
+            </label>
+            <label>
+              קורס / צוות
+              {teams.length ? (
+                <select value={who.team} onChange={(e) => setWho({ ...who, team: e.target.value })} data-testid="who-team">
+                  <option value="" disabled>בחרו…</option>
+                  {teams.map((t) => <option key={t} value={t}>{t}</option>)}
+                </select>
+              ) : (
+                <input value={who.team} onChange={(e) => setWho({ ...who, team: e.target.value })} maxLength={40} placeholder="למשל: קורס סיור 12" data-testid="who-team" />
+              )}
+            </label>
+          </div>
+          <p className="small muted">השם, הצוות, התרחישים שהתחלת וסיימת, הציון והמשוב נשלחים למדריך בלבד – לגיליון פרטי שלו. לא נשלח מה שכתבת בפנקס.</p>
+        </div>
+      )}
       <div className="os-actions">
-        <button type="button" className="btn primary big" onClick={confirm} data-testid="officer-confirm" disabled={!prof.real}>
+        <button type="button" className="btn primary big" onClick={confirm} data-testid="officer-confirm" disabled={!prof.real || needId}>
           יוצא{sel === 'f' ? 'ת' : ''} לסיור ▶
         </button>
         <button type="button" className="btn glass" onClick={() => preview(sel)}>

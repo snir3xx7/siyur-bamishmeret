@@ -1,9 +1,10 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { buildReview } from '../engine/review';
 import { randomSeed } from '../engine/rng';
 import type { Scenario } from '../engine/types';
 import { loadScenario } from '../ui/data';
 import { Lines } from './Play';
+import { track } from '../tracking/track';
 
 /**
  * „מצא את הטעויות”: צופים בטיפול של שוטר אחר באירוע, צעד אחרי צעד, ומסמנים בכל צעד – תקין או טעות.
@@ -14,12 +15,22 @@ export function Review({ id }: { id: string }) {
   const [err, setErr] = useState(false);
   const [seed, setSeed] = useState(() => randomSeed());
   const [i, setI] = useState(0);
+  const reported = useRef(false);
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
 
   useEffect(() => {
     loadScenario(id).then(setSc, () => setErr(true));
   }, [id]);
   const r = useMemo(() => (sc ? buildReview(sc, seed) : null), [sc, seed]);
+  // מעקב: סיום תרגול „מצא את הטעויות”
+  useEffect(() => {
+    if (!sc || !r || i < r.steps.length || reported.current) return;
+    reported.current = true;
+    const right = r.steps.filter((s, k) => answers[k] === s.mistake).length;
+    const caught = r.steps.filter((s, k) => s.mistake && answers[k] === true).length;
+    const total = r.steps.filter((s) => s.mistake).length;
+    track({ event: 'review', scenarioId: sc.id, title: sc.title, version: sc.version, total: Math.round((100 * right) / Math.max(1, r.steps.length)), ending: `מצא את הטעויות: זוהו ${caught}/${total}` });
+  }, [i, r, sc, answers]);
 
   if (err) return <p className="card">התרחיש לא נמצא.</p>;
   if (!sc || !r) return <p className="card">טוען…</p>;
@@ -31,6 +42,7 @@ export function Review({ id }: { id: string }) {
     if (newSeed) setSeed(randomSeed());
     setI(0);
     setAnswers({});
+    reported.current = false;
   };
   const right = r.steps.filter((s, k) => answers[k] === s.mistake).length;
   const caught = r.steps.filter((s, k) => s.mistake && answers[k] === true).length;

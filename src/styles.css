@@ -780,3 +780,15 @@ body.projector .no-projector { display: none !important; }
 .editor .ed-field textarea { width: 100%; font: inherit; resize: vertical; }
 .editor label:not(.btn):not(.ed-field) { display: grid; gap: 4px; }
 .editor label:not(.btn) input { width: 100%; }
+
+/* ניהול – מעקב חניכים */
+.admin-login { max-width: 420px; margin-inline: auto; }
+.admin-top { align-items: center; }
+.admin-top h1 { margin: 0; flex: 1 1 auto; }
+.admin-filter { display: grid; gap: 4px; max-width: 320px; }
+.admin-timeline { list-style: none; padding: 0; display: grid; gap: 6px; }
+.admin-timeline li { padding: 6px 10px; border-radius: 8px; background: var(--panel2); border-inline-start: 4px solid #3a4456; }
+.admin-timeline li.finish { border-inline-start-color: var(--ok); }
+.admin-timeline li.start { border-inline-start-color: var(--warn); }
+.admin-timeline li.review { border-inline-start-color: #7aa7ff; }
+.admin-timeline details summary { cursor: pointer; }
