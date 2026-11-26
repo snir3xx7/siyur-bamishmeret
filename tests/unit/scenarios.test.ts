@@ -63,6 +63,10 @@ const GOOD_PATHS: Record<string, { variant: string; steps: Step[] }> = {
     variant: 'faint',
     steps: ['f-ages', 'GO', 'ARRIVE', 'h-meet', 'y-approach', 'y-lower', 'l-check', 'l-side', ['UPDATE', 'u-loc', 'u-youths', 'u-lior', 'u-ems'], 'y-ages', 'y-alcohol', 't-talk', 't-parents', 'y-clean', 'z-doc', ['UPDATE', 'u-loc', 'u-minors', 'u-parents', 'u-quiet'], 'FINISH'],
   },
+  'id-check': {
+    variant: 'own',
+    steps: ['f-desc', 'f-caller', 'GO', 'ARRIVE', 'm-ask', 'm-equal', 'o-intro', 'o-give-name', 'o-details', 'o-check', 'o-car', 'y-age', 'y-alcohol', 'y-kiosk', 'y-parent', 'o-close', 'm-update', 'z-doc', ['UPDATE', 'u-loc', 'u-identified', 'u-clear', 'u-minor', 'u-kiosk'], 'FINISH'],
+  },
 };
 
 describe('קבצי תרחישים', () => {

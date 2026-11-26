@@ -99,6 +99,13 @@
    "seed": 94,
    "base": "night",
    "prompt": "Wide eye-level view of a small public neighborhood garden at night lit by orange street lamps. Center: a wooden bench and a picnic table with scattered empty glass bottles and snack wrappers, a small portable speaker glowing on the table. Left: outdoor fitness equipment and a playground slide. Background: apartment buildings with a few lit windows and balconies. Right: a trash bin overflowing slightly, a path leading out. Grass and paved path in the bottom third. No people, no text, no letters, no numbers, no logos."
+  },
+  {
+   "id": "kiosk",
+   "out": "kiosk-street",
+   "seed": 97,
+   "base": "night",
+   "prompt": "Wide eye-level view of a quiet Israeli residential street at night lit by warm orange street lamps. Left: a small brightly lit neighborhood kiosk with an open serving window, a fridge of cold drinks, snacks hanging, a plastic chair outside. Center and right: a row of parked cars along the curb under a ficus tree, beige stone apartment buildings with balconies and lit windows above, a low stone wall with a building entrance. Lower third: sidewalk with grey paving stones and curb, part of dark asphalt road at the bottom. No people, no text, no letters, no numbers, no logos."
   }
  ],
  "characters": [
@@ -555,6 +562,36 @@
     "upset"
    ],
    "desc": "A teenage boy about sixteen, curly light brown hair, light skin, wearing a blue hoodie, grey jogging trousers and sneakers, holding a bottle of soda."
+  },
+  {
+   "id": "miriam",
+   "seed": 151,
+   "moods": [
+    "calm",
+    "tense",
+    "upset"
+   ],
+   "desc": "A woman in her early sixties, short grey hair, glasses, light skin, wearing a beige knitted cardigan over a blouse, dark trousers and house slippers, holding a mobile phone."
+  },
+  {
+   "id": "ofer",
+   "seed": 158,
+   "moods": [
+    "calm",
+    "tense",
+    "upset"
+   ],
+   "desc": "A man about thirty, short dark hair and a short beard, olive skin, wearing a dark grey hoodie, jeans and white sneakers, a black backpack on one shoulder, empty hands with nothing in them."
+  },
+  {
+   "id": "yuval",
+   "seed": 153,
+   "moods": [
+    "calm",
+    "tense",
+    "upset"
+   ],
+   "desc": "A teenage boy about sixteen, short black hair, light tan skin, wearing a white t-shirt, a black zip jacket, cargo shorts and sneakers, holding a plastic bag with a few beer bottles."
   }
  ],
  "props": [

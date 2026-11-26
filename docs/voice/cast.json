@@ -221,6 +221,19 @@
   },
   "tom": {
    "voice": "ethan"
+  },
+  "miriam": {
+   "voice": "tamar",
+   "speed": 0.93
+  },
+  "ofer": {
+   "voice": "adam",
+   "speed": 1.02
+  },
+  "yuval": {
+   "voice": "ethan",
+   "speed": 1.08,
+   "pitch": 2
   }
  }
 }

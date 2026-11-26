@@ -108,7 +108,7 @@
   "confidence": "high"
  },
  {
-  "district": "מרכז",
+  "district": "תל אביב",
   "merhav": null,
   "station": "מסובים",
   "covers": [
@@ -126,11 +126,11 @@
    "רמת גן"
   ],
   "source": "https://data.gov.il/dataset/yeshuv_by_station",
-  "confidence": "medium",
-  "note": "לפי המשתמש – מחוז מרכז. במאגר הרשמי (data.gov.il, 10/2026) ובדוח הכנסת (06/2026) משויכת למחוז ת\"א, מרחב דן."
+  "confidence": "high",
+  "note": "אומת: מחוז ת״א (המשתמש, המאגר הרשמי, סקירת הכנסת 06/2026)"
  },
  {
-  "district": "מרכז",
+  "district": "תל אביב",
   "merhav": null,
   "station": "גלילות",
   "covers": [
@@ -144,8 +144,8 @@
    "הרצלייה"
   ],
   "source": "https://data.gov.il/dataset/yeshuv_by_station",
-  "confidence": "medium",
-  "note": "לפי המשתמש – מחוז מרכז. במאגר הרשמי (data.gov.il, 10/2026) ובדוח הכנסת (06/2026) משויכת למחוז ת\"א, מרחב ירקון."
+  "confidence": "high",
+  "note": "אומת: מחוז ת״א (המשתמש, המאגר הרשמי, סקירת הכנסת 06/2026)"
  },
  {
   "district": "מרכז",

@@ -1,0 +1,2284 @@
+{
+ "id": "id-check",
+ "version": 1,
+ "title": "בקשת הזדהות ברחוב – עילה סבירה",
+ "category": "סמכויות ושוויון",
+ "summary": "דיירת מדווחת על גבר שמנסה לפתוח רכבים חונים, ומבקשת „לבדוק אותו, הוא לא מפה”. יש לדרוש הזדהות רק על בסיס עילה, להציג את עצמך ולהסביר, לטפל במי שאין עליו תעודה בלי לעכב סתם, לאמת במערכת – ובדרך גם לברר גיל של נער עם בירות.",
+ "estimatedMinutes": 12,
+ "difficultyLabel": "בינונית",
+ "skills": [
+  "עילה לדרישת הזדהות",
+  "הצגה עצמית והסבר",
+  "אין תעודה – אימות פרטים",
+  "שוויון ולא מראה חיצוני",
+  "בירור גיל של קטין"
+ ],
+ "shifts": [
+  "evening",
+  "night"
+ ],
+ "defaultShift": "night",
+ "location": {
+  "name": "רחוב האלה 9, ליד הקיוסק",
+  "area": "שכונת גבעת הברושים, קריית אלון (בדוי)"
+ },
+ "objectives": [
+  "לברר עם המדווחת מה בדיוק ראתה – מעשים ולא מראה",
+  "לדרוש הזדהות רק על בסיס עילה, ולהציג את עצמך ואת הסיבה",
+  "אם אין תעודה – לקבל פרטים ולאמת במערכת, בלי לעכב סתם",
+  "לפעול לפי תוצאת הבדיקה: לשחרר בתודה, או לעכב ולהעביר",
+  "לברר גיל של נער עם אלכוהול ולערב הורה"
+ ],
+ "variants": [
+  {
+   "id": "own",
+   "label": "הרכב שלו – השלט לא עבד",
+   "set": {
+    "own": true
+   },
+   "vars": {
+    "saw": "הוא משך את הידית של הרכב הכסוף כמה פעמים, הסתכל פנימה, ואז הלך לרכב הבא והסתכל גם עליו",
+    "ofer_record": "עופר נחום, בן 31. אין רישום ואין נגדו צו. הרכב הכסוף רשום על שמו."
+   }
+  },
+  {
+   "id": "tried",
+   "label": "ניסה לפתוח רכבים – ויש נגדו צו מעצר",
+   "set": {
+    "own": false
+   },
+   "vars": {
+    "saw": "הוא ניסה ידיות של שלושה רכבים, אחד אחרי השני, והסתכל לצדדים כל פעם",
+    "ofer_record": "עופר נחום, בן 31. יש נגדו צו מעצר מבית משפט על אי התייצבות לדיון, ותיק פתוח בחשד לגניבות מרכבים. הרכב הכסוף לא רשום על שמו."
+   }
+  }
+ ],
+ "scoring": {
+  "weights": {
+   "info": 20,
+   "assessment": 20,
+   "communication": 15,
+   "authority": 25,
+   "dispatch": 10,
+   "documentation": 10
+  },
+  "rules": [
+   {
+    "id": "ic-info-caller",
+    "domain": "info",
+    "label": "מה המדווחת ראתה בפועל",
+    "max": 10,
+    "required": true,
+    "tiers": [
+     {
+      "when": {
+       "chosen": "m-ask"
+      },
+      "points": 10,
+      "explain": "נשמעה עדות המדווחת על המעשים.",
+      "keep": "שאלת את מרים מה בדיוק ראתה. כך העילה נשענת על מעשה, לא על תחושה."
+     }
+    ],
+    "fallback": {
+     "explain": "המדווחת לא נשאלה.",
+     "improve": "לא שאלת את מרים מה ראתה. בסבב הבא התחל ממי שדיווח."
+    }
+   },
+   {
+    "id": "ic-info-check",
+    "domain": "info",
+    "label": "אימות הפרטים במערכת",
+    "max": 10,
+    "required": true,
+    "tiers": [
+     {
+      "when": {
+       "flag": "checked_ofer"
+      },
+      "points": 10,
+      "explain": "הפרטים נבדקו במערכת.",
+      "keep": "בדקת את הפרטים דרך המשל״ט, בצד, בלי שהמעורבים ישמעו."
+     }
+    ],
+    "fallback": {
+     "explain": "הפרטים לא נבדקו.",
+     "improve": "לא בדקת את הפרטים במערכת. כשאין תעודה – זה הצעד שמאמת את הזהות."
+    }
+   },
+   {
+    "id": "ic-assess-ground",
+    "domain": "assessment",
+    "label": "עילה לדרישת ההזדהות",
+    "max": 12,
+    "required": true,
+    "tiers": [
+     {
+      "when": {
+       "all": [
+        {
+         "chosen": "o-intro"
+        },
+        {
+         "not": {
+          "flag": "profiled"
+         }
+        }
+       ]
+      },
+      "points": 12,
+      "explain": "הדרישה נשענה על עילה.",
+      "keep": "דרשת הזדהות בגלל חשד לעבירה מהדיווח – ניסיון לפתוח רכבים – ולא בגלל איך שהוא נראה."
+     },
+     {
+      "when": {
+       "chosen": "o-intro"
+      },
+      "points": 4,
+      "explain": "הייתה עילה, אך גם התייחסות למראה.",
+      "improve": "„אתה נראה חשוד” זו לא עילה. מראה, מוצא או לבוש – אף פעם לא סיבה לבדיקה."
+     }
+    ],
+    "fallback": {
+     "explain": "לא הייתה עילה מוסברת.",
+     "improve": "לא הסברת על מה נשענת הדרישה. בסבב הבא: עילה – חשד לעבירה, בירור גיל, הגשת עזרה או אדם שמחפשים."
+    }
+   },
+   {
+    "id": "ic-assess-verify",
+    "domain": "assessment",
+    "label": "בדיקת הטענה על הרכב",
+    "max": 8,
+    "required": true,
+    "tiers": [
+     {
+      "when": {
+       "chosen": "o-car"
+      },
+      "points": 8,
+      "explain": "נבדק אם הרכב שלו.",
+      "keep": "ביקשת ממנו להראות שהרכב שלו – בדיקה פשוטה שמבררת את החשד."
+     }
+    ],
+    "fallback": {
+     "explain": "הטענה לא נבדקה.",
+     "improve": "לא בדקת אם הרכב באמת שלו. בסבב הבא בקש שיראה מפתח או מסמכים."
+    }
+   },
+   {
+    "id": "ic-comm-ofer",
+    "domain": "communication",
+    "label": "פנייה מכבדת ומוסברת",
+    "max": 8,
+    "required": true,
+    "tiers": [
+     {
+      "when": {
+       "all": [
+        {
+         "chosen": "o-intro"
+        },
+        {
+         "not": {
+          "chosen": "o-demand"
+         }
+        },
+        {
+         "not": {
+          "flag": "profiled"
+         }
+        }
+       ]
+      },
+      "points": 8,
+      "explain": "הפנייה הייתה מכבדת ומוסברת.",
+      "keep": "הצגת את עצמך, אמרת למה פנית אליו ומה יקרה עכשיו. הוא הבין ושיתף פעולה."
+     },
+     {
+      "when": {
+       "chosen": "o-explain"
+      },
+      "points": 4,
+      "explain": "ההסבר הגיע רק אחרי סירוב.",
+      "improve": "הסברת רק אחרי שהוא סירב. הסבר מההתחלה חוסך את העימות."
+     }
+    ],
+    "fallback": {
+     "explain": "הפנייה לא הוסברה.",
+     "improve": "דרישה בלי הסבר מעוררת התנגדות. בסבב הבא: מי אתה, למה פנית, ומה אתה מבקש."
+    }
+   },
+   {
+    "id": "ic-comm-caller",
+    "domain": "communication",
+    "label": "מעשים ולא מראה – מול המדווחת",
+    "max": 7,
+    "required": true,
+    "tiers": [
+     {
+      "when": {
+       "chosen": "m-equal"
+      },
+      "points": 7,
+      "explain": "הובהר למדווחת על מה נשענת הבדיקה.",
+      "keep": "הבהרת למרים שבודקים לפי מה שאדם עשה, לא לפי איך שהוא נראה – בלי לזלזל בדיווח שלה."
+     }
+    ],
+    "fallback": {
+     "explain": "דברי המדווחת על המראה לא נענו.",
+     "improve": "מרים אמרה „הוא לא מפה” ולא קיבלה תשובה. בסבב הבא הבהר: בודקים מעשים, לא מראה."
+    },
+    "appliesWhen": {
+     "flag": "ev:looks"
+    }
+   },
+   {
+    "id": "ic-auth-name",
+    "domain": "authority",
+    "label": "הזדהות השוטר",
+    "max": 5,
+    "required": true,
+    "tiers": [
+     {
+      "when": {
+       "chosen": "o-give-name"
+      },
+      "points": 5,
+      "explain": "השוטר הזדהה כשהתבקש.",
+      "keep": "כשעופר שאל מי אתה, מסרת שם ומספר. גם השוטר חייב להזדהות."
+     }
+    ],
+    "fallback": {
+     "explain": "השוטר לא הזדהה.",
+     "improve": "עופר ביקש לדעת מי אתה ולא קיבל תשובה. בסבב הבא מסור שם ומספר שוטר."
+    },
+    "appliesWhen": {
+     "flag": "ev:name"
+    }
+   },
+   {
+    "id": "ic-auth-nocard",
+    "domain": "authority",
+    "label": "אין תעודה – לא סיבה לעיכוב",
+    "max": 6,
+    "required": true,
+    "tiers": [
+     {
+      "when": {
+       "all": [
+        {
+         "flag": "identified"
+        },
+        {
+         "not": {
+          "flag": "wrongDetain"
+         }
+        }
+       ]
+      },
+      "points": 6,
+      "explain": "הפרטים נמסרו ואומתו בלי עיכוב מיותר.",
+      "keep": "הוא לא נשא תעודה, אז קיבלת שם, מספר זהות וכתובת ובדקת. עיכוב שמור למי שמסרב או כשיש חשש שהפרטים כוזבים."
+     }
+    ],
+    "fallback": {
+     "explain": "נעשה עיכוב רק בגלל היעדר תעודה.",
+     "improve": "עיכבת רק כי לא הייתה עליו תעודה. בסבב הבא בקש פרטים ואמת אותם – זה מספיק."
+    }
+   },
+   {
+    "id": "ic-auth-outcome",
+    "domain": "authority",
+    "label": "פעולה לפי תוצאת הבדיקה",
+    "max": 8,
+    "required": true,
+    "tiers": [
+     {
+      "when": {
+       "any": [
+        {
+         "all": [
+          {
+           "variant": [
+            "own"
+           ]
+          },
+          {
+           "flag": "released"
+          }
+         ]
+        },
+        {
+         "all": [
+          {
+           "variant": [
+            "tried"
+           ]
+          },
+          {
+           "flag": "detainedProper"
+          }
+         ]
+        }
+       ]
+      },
+      "points": 8,
+      "explain": "הפעולה התאימה לממצאים.",
+      "keep": "פעלת לפי מה שאומת: שחרור בתודה כשהכול תקין, או עיכוב מוסבר כשעלה צו ונמצא בסיס לחשד."
+     }
+    ],
+    "fallback": {
+     "explain": "הבדיקה לא הסתיימה בהחלטה.",
+     "improve": "הבדיקה נשארה פתוחה. בסבב הבא סיים אותה: לשחרר בהסבר, או לעכב לפי הממצאים."
+    }
+   },
+   {
+    "id": "ic-auth-minor",
+    "domain": "authority",
+    "label": "נער עם אלכוהול – גיל והורה",
+    "max": 6,
+    "required": true,
+    "tiers": [
+     {
+      "when": {
+       "all": [
+        {
+         "chosen": "y-age"
+        },
+        {
+         "chosen": "y-alcohol"
+        },
+        {
+         "chosen": "y-parent"
+        }
+       ]
+      },
+      "points": 6,
+      "explain": "הגיל התברר, האלכוהול נלקח והורה עודכן.",
+      "keep": "ביקשת מיובל להזדהות כדי לברר גיל, לקחת את הבירות והתקשרת להורה – בלי השפלה."
+     },
+     {
+      "when": {
+       "chosen": "y-age"
+      },
+      "points": 3,
+      "explain": "הגיל התברר, אך הטיפול לא הושלם.",
+      "improve": "בררת גיל אבל לא השלמת: אלכוהול והורה."
+     }
+    ],
+    "fallback": {
+     "explain": "הטיפול בנער לא הושלם.",
+     "improve": "נער עם בירות ברחוב בלילה – מבררים גיל, לוקחים את האלכוהול ומעדכנים הורה."
+    },
+    "appliesWhen": {
+     "flag": "ev:teen"
+    }
+   },
+   {
+    "id": "ic-disp",
+    "domain": "dispatch",
+    "label": "עדכון המשל״ט",
+    "max": 10,
+    "required": true,
+    "tiers": [
+     {
+      "when": {
+       "any": [
+        {
+         "sent": "u-clear"
+        },
+        {
+         "sent": "u-warrant"
+        }
+       ]
+      },
+      "points": 10,
+      "explain": "נמסר עדכון לפי הממצאים.",
+      "keep": "עדכנת את המשל״ט במה שאומת ובמה שנעשה."
+     },
+     {
+      "when": {
+       "updatesGte": 1
+      },
+      "points": 4,
+      "explain": "נשלח עדכון בלי התוצאה.",
+      "improve": "העדכון לא כלל את תוצאת הבדיקה."
+     }
+    ],
+    "fallback": {
+     "explain": "לא נשלח עדכון.",
+     "improve": "לא עדכנת את המשל״ט בתוצאת הבדיקה."
+    }
+   },
+   {
+    "id": "ic-doc",
+    "domain": "documentation",
+    "label": "תיעוד",
+    "max": 10,
+    "required": true,
+    "tiers": [
+     {
+      "when": {
+       "chosen": "z-doc"
+      },
+      "points": 10,
+      "explain": "האירוע תועד.",
+      "keep": "תיעדת את העילה, את מה שנמסר ואת תוצאת הבדיקה."
+     }
+    ],
+    "fallback": {
+     "explain": "האירוע לא תועד.",
+     "improve": "לא תיעדת. בסבב הבא רשום: עילה, פרטים, תוצאה."
+    }
+   }
+  ]
+ },
+ "facts": [
+  {
+   "id": "d-report",
+   "kind": "dispatch",
+   "text": "דיירת ברחוב האלה 9 מדווחת על גבר שמסתובב בין רכבים חונים ומנסה לפתוח דלתות"
+  },
+  {
+   "id": "d-desc",
+   "kind": "dispatch",
+   "text": "לפי המדווחת: גבר כבן 30, קפוצ׳ון כהה ותיק גב"
+  },
+  {
+   "id": "c-miriam-saw",
+   "kind": "claim",
+   "text": "{{saw}}",
+   "source": "miriam"
+  },
+  {
+   "id": "c-miriam-looks",
+   "kind": "claim",
+   "text": "אומרת שהוא „לא נראה מהשכונה”",
+   "source": "miriam"
+  },
+  {
+   "id": "c-ofer",
+   "kind": "claim",
+   "text": "אומר שהרכב הכסוף שלו ושהשלט לא עובד",
+   "source": "ofer"
+  },
+  {
+   "id": "o-details",
+   "kind": "observation",
+   "text": "מסר פרטים: עופר נחום, מספר זהות וכתובת – בלי תעודה עליו"
+  },
+  {
+   "id": "o-car-own",
+   "kind": "observation",
+   "text": "עם המפתח הרכב נפתח, ובתא הכפפות רישיון רכב על שמו"
+  },
+  {
+   "id": "o-car-not",
+   "kind": "observation",
+   "text": "אין לו מפתח לרכב, והגרסה השתנתה: „זה של חבר”"
+  },
+  {
+   "id": "o-yuval-age",
+   "kind": "observation",
+   "text": "הנער הזדהה: יובל, בן 16 – קטין, עם בירות"
+  },
+  {
+   "id": "c-kiosk",
+   "kind": "claim",
+   "text": "הבירות נקנו בקיוסק בלי שביקשו ממנו תעודה",
+   "source": "yuval"
+  }
+ ],
+ "characters": [
+  {
+   "id": "miriam",
+   "name": "מרים גולן",
+   "role": "המדווחת, דיירת ברחוב",
+   "gender": "f",
+   "look": {
+    "skin": "#d6a57c",
+    "hair": "#3a2a20",
+    "hairStyle": "short",
+    "top": "#555",
+    "bottom": "#333"
+   },
+   "attitude": 0,
+   "x": 15,
+   "y": 95,
+   "scale": 1.25,
+   "moodRules": [
+    {
+     "when": {
+      "all": [
+       {
+        "flag": "ev:looks"
+       },
+       {
+        "not": {
+         "flag": "miriamCalm"
+        }
+       }
+      ]
+     },
+     "mood": "upset"
+    },
+    {
+     "when": {
+      "not": {
+       "flag": "miriamCalm"
+      }
+     },
+     "mood": "tense"
+    }
+   ],
+   "sprite": "img/chars/miriam",
+   "spriteMoods": [
+    "calm",
+    "tense",
+    "upset"
+   ]
+  },
+  {
+   "id": "ofer",
+   "name": "עופר נחום",
+   "role": "האדם שנבדק",
+   "gender": "m",
+   "look": {
+    "skin": "#d6a57c",
+    "hair": "#3a2a20",
+    "hairStyle": "short",
+    "top": "#555",
+    "bottom": "#333"
+   },
+   "attitude": 0,
+   "x": 60,
+   "y": 96,
+   "scale": 1.3,
+   "moodRules": [
+    {
+     "when": {
+      "any": [
+       {
+        "flag": "oferAngry"
+       },
+       {
+        "flag": "profiled"
+       }
+      ]
+     },
+     "mood": "upset"
+    },
+    {
+     "when": {
+      "not": {
+       "flag": "oferCalm"
+      }
+     },
+     "mood": "tense"
+    }
+   ],
+   "sprite": "img/chars/ofer",
+   "spriteMoods": [
+    "calm",
+    "tense",
+    "upset"
+   ]
+  },
+  {
+   "id": "yuval",
+   "name": "יובל שגיא",
+   "role": "נער שיצא מהקיוסק",
+   "gender": "m",
+   "look": {
+    "skin": "#d6a57c",
+    "hair": "#3a2a20",
+    "hairStyle": "short",
+    "top": "#555",
+    "bottom": "#333"
+   },
+   "attitude": 0,
+   "x": 36,
+   "y": 95,
+   "scale": 1.15,
+   "when": {
+    "flag": "ev:teen"
+   },
+   "moodRules": [
+    {
+     "when": {
+      "flag": "yuvalShamed"
+     },
+     "mood": "upset"
+    },
+    {
+     "when": {
+      "not": {
+       "flag": "yuvalCalm"
+      }
+     },
+     "mood": "tense"
+    }
+   ],
+   "sprite": "img/chars/yuval",
+   "spriteMoods": [
+    "calm",
+    "tense",
+    "upset"
+   ]
+  }
+ ],
+ "dispatch": {
+  "time": {
+   "evening": "21:40",
+   "night": "23:15"
+  },
+  "unit": "סייר 31",
+  "incident": "7140",
+  "lines": [
+   {
+    "speaker": "dispatch",
+    "text": "סייר 31, כאן מוקד אלון. דיירת ברחוב האלה 9 מדווחת על גבר שמסתובב בין רכבים חונים ומנסה לפתוח דלתות. המדווחת במקום. אשר קבלה."
+   }
+  ],
+  "initialFacts": [
+   "d-report"
+  ],
+  "basicExtraFacts": [
+   "d-desc"
+  ],
+  "followUps": [
+   {
+    "id": "f-desc",
+    "label": "לשאול: מה התיאור, ומה בדיוק נראה?",
+    "when": {
+     "not": {
+      "fact": "d-desc"
+     }
+    },
+    "lines": [
+     {
+      "speaker": "player",
+      "text": "מוקד, מה התיאור ומה בדיוק ראתה?"
+     },
+     {
+      "speaker": "dispatch",
+      "text": "גבר כבן 30, קפוצ׳ון כהה ותיק גב. לדבריה ראתה אותו מושך ידיות של רכבים."
+     }
+    ],
+    "effects": {
+     "reveal": [
+      "d-desc"
+     ]
+    },
+    "report": "בירור תיאור ומה נצפה"
+   },
+   {
+    "id": "f-caller",
+    "label": "לשאול: איפה המדווחת, ואפשר לדבר איתה?",
+    "lines": [
+     {
+      "speaker": "player",
+      "text": "איפה המדווחת? אפשר לדבר איתה כשנגיע?"
+     },
+     {
+      "speaker": "dispatch",
+      "text": "היא מחכה ליד הקיוסק, בקצה הרחוב."
+     }
+    ],
+    "effects": {
+     "set": {
+      "askedCaller": true
+     }
+    },
+    "report": "תיאום מפגש עם המדווחת"
+   }
+  ],
+  "goLabel": "אישור קבלה ויציאה לרחוב האלה"
+ },
+ "transition": {
+  "kind": "car",
+  "text": "נסיעה של כמה דקות. הרחוב שקט, רוב החלונות כבר חשוכים. ליד הקיוסק דולק אור.",
+  "travelMinutes": 4,
+  "ambience": [
+   "engine-wipers",
+   "radio-chatter"
+  ]
+ },
+ "scene": {
+  "background": "img/kiosk-street",
+  "alt": "רחוב מגורים שקט בלילה: קיוסק מואר משמאל, שורת רכבים חונים מתחת לעץ פיקוס, ובניינים עם מרפסות וחלונות מוארים.",
+  "fallbackColor": "#1d2230",
+  "ambience": [
+   "traffic"
+  ],
+  "lights": "steady",
+  "weather": "none",
+  "bgByShift": {
+   "evening": "night",
+   "night": "night"
+  },
+  "props": [
+   {
+    "id": "car",
+    "kind": "car-silver",
+    "x": 80,
+    "y": 99,
+    "scale": 0.85
+   },
+   {
+    "id": "patrol",
+    "kind": "patrol",
+    "x": 6,
+    "y": 99,
+    "scale": 0.75
+   },
+   {
+    "id": "sg-kiosk",
+    "kind": "sign",
+    "x": 18,
+    "y": 30,
+    "text": "קיוסק האלה",
+    "sign": "shop",
+    "scale": 0.9
+   }
+  ],
+  "painted": true
+ },
+ "arrivalLines": [
+  {
+   "speaker": "narrator",
+   "text": "רחוב האלה. ליד הקיוסק עומדת אישה בקרדיגן ומצביעה. ליד רכב כסוף חונה עומד גבר בקפוצ׳ון כהה, תיק על הכתף, ומסתכל עליכם."
+  },
+  {
+   "speaker": "miriam",
+   "text": "הנה הוא! זה הוא, תבדקו אותו!"
+  }
+ ],
+ "arrivalFacts": [],
+ "hotspots": [
+  {
+   "id": "h-miriam",
+   "label": "מרים – המדווחת",
+   "kind": "character",
+   "character": "miriam",
+   "x": 15,
+   "y": 46,
+   "description": "מרים גולן, דיירת ברחוב. מחזיקה טלפון.",
+   "choices": [
+    {
+     "id": "m-ask",
+     "label": "לשאול את מרים מה בדיוק ראתה – מה הוא עשה, ולא איך הוא נראה",
+     "lines": [
+      {
+       "speaker": "player",
+       "text": "ערב טוב, אני מצוות הסיור. ספרי לי בדיוק מה ראית – מה הוא עשה?"
+      },
+      {
+       "speaker": "miriam",
+       "text": "{{saw}}."
+      }
+     ],
+     "effects": {
+      "reveal": [
+       "c-miriam-saw"
+      ],
+      "set": {
+       "heardCaller": true
+      }
+     },
+     "report": "גביית עדות המדווחת על המעשים"
+    },
+    {
+     "id": "m-equal",
+     "label": "להבהיר למרים שבודקים לפי מה שאדם עשה, לא לפי איך שהוא נראה – ולהודות על הדיווח",
+     "when": {
+      "flag": "ev:looks"
+     },
+     "lines": [
+      {
+       "speaker": "player",
+       "text": "תודה שהתקשרת, זה בדיוק מה שצריך. אבל אני בודק לפי מה שראית אותו עושה, לא לפי איך שהוא נראה או מאיפה הוא. ככה בודקים כל אחד."
+      },
+      {
+       "speaker": "miriam",
+       "text": "…כן, צודק. פשוט נבהלתי. היו פה פריצות לרכבים."
+      }
+     ],
+     "effects": {
+      "set": {
+       "miriamCalm": true
+      },
+      "attitude": {
+       "miriam": 1
+      }
+     },
+     "report": "הבהרה למדווחת: בודקים מעשים, לא מראה"
+    },
+    {
+     "id": "m-tell",
+     "label": "לספר למרים מה עלה במערכת על עופר",
+     "when": {
+      "flag": "checked_ofer"
+     },
+     "lines": [
+      {
+       "speaker": "player",
+       "text": "בדקתי אותו במערכת, ויצא ש…"
+      },
+      {
+       "speaker": "miriam",
+       "text": "נו? מה יצא?"
+      },
+      {
+       "speaker": "narrator",
+       "text": "עצרת באמצע. מידע מהמערכת על אדם לא מוסרים לשכנים."
+      }
+     ],
+     "effects": {
+      "set": {
+       "privacyBreach": true
+      },
+      "note": "כמעט נמסר מידע מהמערכת לגורם לא מוסמך"
+     }
+    },
+    {
+     "id": "m-update",
+     "label": "לעדכן את מרים שהבדיקה הסתיימה – בלי לחשוף פרטים אישיים",
+     "when": {
+      "flag": "closed"
+     },
+     "lines": [
+      {
+       "speaker": "player",
+       "text": "בדקנו את הדיווח שלך וטיפלנו בו. פרטים על אנשים אני לא יכול למסור, אבל תודה שהתקשרת – ואם תראי משהו, תתקשרי שוב."
+      },
+      {
+       "speaker": "miriam",
+       "text": "תודה רבה."
+      }
+     ],
+     "effects": {
+      "set": {
+       "callerUpdated": true,
+       "miriamCalm": true
+      }
+     },
+     "report": "עדכון המדווחת בלי חשיפת פרטים"
+    }
+   ]
+  },
+  {
+   "id": "h-ofer",
+   "label": "עופר – ליד הרכב הכסוף",
+   "kind": "character",
+   "character": "ofer",
+   "x": 60,
+   "y": 46,
+   "description": "גבר כבן 30, קפוצ׳ון כהה ותיק גב, עומד ליד רכב כסוף.",
+   "choices": [
+    {
+     "id": "o-intro",
+     "label": "להציג את עצמך, להסביר את העילה – דיווח על ניסיון לפתוח רכבים – ולבקש תעודה מזהה",
+     "when": {
+      "not": {
+       "flag": "asked"
+      }
+     },
+     "lines": [
+      {
+       "speaker": "player",
+       "text": "ערב טוב, אני מצוות הסיור. קיבלנו דיווח שמישהו כאן ניסה לפתוח דלתות של רכבים, ולכן אני מבקש ממך להזדהות. יש לך תעודה מזהה?"
+      },
+      {
+       "speaker": "ofer",
+       "text": "(נאנח) אין לי תעודה עליי. ולמה דווקא אני? כי אני עם קפוצ׳ון?"
+      }
+     ],
+     "effects": {
+      "set": {
+       "asked": true,
+       "noCard": true
+      },
+      "reveal": [],
+      "attitude": {
+       "ofer": 1
+      }
+     },
+     "branches": [
+      {
+       "when": {
+        "chosen": "m-ask"
+       },
+       "lines": [
+        {
+         "speaker": "player",
+         "text": "ערב טוב, אני מצוות הסיור. דיירת ראתה אותך מושך ידיות של רכבים כאן ברחוב, ולכן אני מבקש ממך להזדהות. זה בירור – עוד לא האשמה. יש לך תעודה מזהה?"
+        },
+        {
+         "speaker": "ofer",
+         "text": "אין לי תעודה עליי. אבל אני לא מנסה לגנוב כלום, אם זה מה שאתה חושב."
+        }
+       ],
+       "effects": {
+        "set": {
+         "asked": true,
+         "noCard": true,
+         "oferCalm": true
+        },
+        "attitude": {
+         "ofer": 1
+        }
+       }
+      }
+     ],
+     "report": "דרישת הזדהות עם הצגה עצמית והסבר העילה"
+    },
+    {
+     "id": "o-demand",
+     "label": "לדרוש: „תעודת זהות. עכשיו.”",
+     "when": {
+      "not": {
+       "flag": "asked"
+      }
+     },
+     "lines": [
+      {
+       "speaker": "player",
+       "text": "תעודת זהות. עכשיו."
+      },
+      {
+       "speaker": "ofer",
+       "text": "על מה? מי אתה בכלל? אני לא חייב לתת לך כלום!"
+      }
+     ],
+     "effects": {
+      "set": {
+       "asked": true,
+       "noCard": true,
+       "oferAngry": true
+      },
+      "attitude": {
+       "ofer": -2
+      },
+      "note": "דרישה בלי הצגה עצמית והסבר עוררה סירוב"
+     }
+    },
+    {
+     "id": "o-looks",
+     "label": "לומר לעופר שהוא נראה חשוד ולכן צריך לבדוק אותו",
+     "when": {
+      "not": {
+       "flag": "asked"
+      }
+     },
+     "lines": [
+      {
+       "speaker": "player",
+       "text": "אתה נראה חשוד, אז אני צריך לבדוק אותך. תעודה."
+      },
+      {
+       "speaker": "ofer",
+       "text": "נראה חשוד? בגלל איך שאני נראה? אני לא נותן לך כלום."
+      }
+     ],
+     "effects": {
+      "set": {
+       "asked": true,
+       "noCard": true,
+       "oferAngry": true,
+       "profiled": true
+      },
+      "attitude": {
+       "ofer": -2
+      },
+      "note": "דרישת הזדהות על בסיס מראה – בלי עילה"
+     }
+    },
+    {
+     "id": "o-explain",
+     "label": "להסביר בשקט: יש עילה – חשד לעבירה מהדיווח, ההזדהות מחייבת, וסירוב עלול להוביל לעיכוב",
+     "when": {
+      "all": [
+       {
+        "flag": "oferAngry"
+       },
+       {
+        "not": {
+         "flag": "identified"
+        }
+       }
+      ]
+     },
+     "lines": [
+      {
+       "speaker": "player",
+       "text": "אני מבין שזה לא נעים. פניתי אליך בגלל דיווח שמישהו כאן ניסה לפתוח רכבים – לא בגלל איך שאתה נראה. כשיש חשד כזה, אתה חייב למסור לי שם ומספר זהות. אם תסרב, אצטרך לעכב אותך לבירור. אני מעדיף שנסיים את זה כאן בשתי דקות."
+      },
+      {
+       "speaker": "ofer",
+       "text": "…טוב. אין לי תעודה עליי, אבל אני אגיד לך את הפרטים."
+      }
+     ],
+     "effects": {
+      "set": {
+       "oferAngry": false,
+       "oferCalm": true
+      },
+      "attitude": {
+       "ofer": 1
+      }
+     },
+     "report": "הסבר העילה והחובה להזדהות לאחר סירוב"
+    },
+    {
+     "id": "o-details",
+     "label": "אין תעודה: לבקש שם מלא, מספר זהות וכתובת – כדי לאמת במערכת",
+     "when": {
+      "all": [
+       {
+        "flag": "asked"
+       },
+       {
+        "not": {
+         "flag": "identified"
+        }
+       }
+      ]
+     },
+     "lines": [
+      {
+       "speaker": "player",
+       "text": "אין בעיה שאין תעודה. תן לי שם מלא, מספר זהות וכתובת, ואני בודק."
+      },
+      {
+       "speaker": "ofer",
+       "text": "עופר נחום. גר ברחוב הברוש 4. הנה המספר."
+      }
+     ],
+     "effects": {
+      "set": {
+       "identified": true
+      },
+      "reveal": [
+       "o-details"
+      ]
+     },
+     "branches": [
+      {
+       "when": {
+        "flag": "oferAngry"
+       },
+       "lines": [
+        {
+         "speaker": "player",
+         "text": "תן לי שם מלא, מספר זהות וכתובת."
+        },
+        {
+         "speaker": "ofer",
+         "text": "אני לא מוסר לך כלום עד שתגיד לי למה."
+        }
+       ],
+       "effects": {
+        "set": {
+         "refused": true
+        },
+        "note": "סירוב למסור פרטים – לפני שהוסברה העילה"
+       }
+      }
+     ],
+     "once": false,
+     "report": "קבלת פרטים מזהים בהיעדר תעודה"
+    },
+    {
+     "id": "o-nocard-detain",
+     "label": "לעכב את עופר כי אין עליו תעודה מזהה",
+     "when": {
+      "all": [
+       {
+        "flag": "noCard"
+       },
+       {
+        "not": {
+         "flag": "identified"
+        }
+       }
+      ]
+     },
+     "lines": [
+      {
+       "speaker": "player",
+       "text": "אין לך תעודה? אז אתה מעוכב."
+      },
+      {
+       "speaker": "ofer",
+       "text": "מעוכב? כי שכחתי ארנק בבית?! תשאל אותי את הפרטים!"
+      }
+     ],
+     "effects": {
+      "set": {
+       "wrongDetain": true,
+       "oferAngry": true
+      },
+      "attitude": {
+       "ofer": -2
+      },
+      "note": "עיכוב רק בגלל היעדר תעודה – בלי לבקש פרטים"
+     }
+    },
+    {
+     "id": "o-check",
+     "label": "לבדוק את הפרטים של עופר במערכת דרך המשל״ט – בצד, בלי שהמעורבים ישמעו",
+     "when": {
+      "all": [
+       {
+        "flag": "identified"
+       },
+       {
+        "not": {
+         "flag": "checked_ofer"
+        }
+       }
+      ]
+     },
+     "lines": [
+      {
+       "speaker": "narrator",
+       "text": "התרחקת כמה צעדים, כך שאף אחד מהמעורבים לא ישמע את התשובה."
+      },
+      {
+       "speaker": "player",
+       "text": "{{toCenter}}, תבדקי לי פרטים של עופר נחום."
+      },
+      {
+       "speaker": "dispatch",
+       "text": "{{ofer_record}}"
+      }
+     ],
+     "effects": {
+      "set": {
+       "checked_ofer": true
+      },
+      "minutes": 2
+     },
+     "report": "אימות הפרטים במערכת דרך המשל״ט"
+    },
+    {
+     "id": "o-car",
+     "label": "לשמוע את עופר ולבקש שיראה שהרכב הכסוף באמת שלו",
+     "when": {
+      "flag": "identified"
+     },
+     "lines": [
+      {
+       "speaker": "ofer",
+       "text": "זה האוטו שלי! השלט לא עובד, אז ניסיתי את הידית. בדקתי גם אם השארתי את הפנס של השכן דולק."
+      },
+      {
+       "speaker": "narrator",
+       "text": "עופר לוחץ על השלט כמה פעמים, ואז פותח את הדלת עם המפתח. בתא הכפפות – רישיון רכב על שמו."
+      }
+     ],
+     "effects": {
+      "reveal": [
+       "c-ofer",
+       "o-car-own"
+      ],
+      "set": {
+       "carChecked": true,
+       "oferCalm": true
+      }
+     },
+     "branches": [
+      {
+       "when": {
+        "variant": [
+         "tried"
+        ]
+       },
+       "lines": [
+        {
+         "speaker": "ofer",
+         "text": "זה… זה האוטו של חבר. הוא ביקש שאביא לו משהו ממנו."
+        },
+        {
+         "speaker": "player",
+         "text": "יש לך מפתח?"
+        },
+        {
+         "speaker": "ofer",
+         "text": "לא, הוא… אמר שזה פתוח."
+        }
+       ],
+       "effects": {
+        "reveal": [
+         "o-car-not"
+        ],
+        "set": {
+         "carChecked": true
+        }
+       }
+      }
+     ],
+     "report": "בדיקת הטענה על הרכב"
+    },
+    {
+     "id": "o-give-name",
+     "label": "למסור לעופר את שמך ומספר השוטר שלך",
+     "when": {
+      "all": [
+       {
+        "flag": "ev:name"
+       },
+       {
+        "not": {
+         "flag": "nameRefused"
+        }
+       }
+      ]
+     },
+     "lines": [
+      {
+       "speaker": "player",
+       "text": "בטח. שמי רשום כאן על המדים, ואני גם אומר לך: זה מספר השוטר שלי. אם תרצה, תוכל להגיש עליי פנייה."
+      },
+      {
+       "speaker": "ofer",
+       "text": "אוקיי. תודה."
+      }
+     ],
+     "effects": {
+      "set": {
+       "officerNamed": true
+      },
+      "attitude": {
+       "ofer": 1
+      }
+     },
+     "report": "הזדהות השוטר לבקשת הנבדק"
+    },
+    {
+     "id": "o-refuse-name",
+     "label": "לסרב: „זה לא עניינך מי אני”",
+     "when": {
+      "all": [
+       {
+        "flag": "ev:name"
+       },
+       {
+        "not": {
+         "flag": "officerNamed"
+        }
+       },
+       {
+        "not": {
+         "flag": "nameRefused"
+        }
+       }
+      ]
+     },
+     "lines": [
+      {
+       "speaker": "player",
+       "text": "זה לא עניינך מי אני."
+      },
+      {
+       "speaker": "ofer",
+       "text": "אתה דורש ממני פרטים ולא מוכן להגיד מי אתה?"
+      }
+     ],
+     "effects": {
+      "set": {
+       "nameRefused": true,
+       "oferAngry": true
+      },
+      "attitude": {
+       "ofer": -1
+      },
+      "note": "השוטר סירב להזדהות כשהתבקש"
+     }
+    },
+    {
+     "id": "o-close",
+     "label": "לסיים את הבדיקה: להסביר שהכול תקין, להודות על שיתוף הפעולה ולאפשר לו ללכת",
+     "when": {
+      "all": [
+       {
+        "flag": "checked_ofer"
+       },
+       {
+        "variant": [
+         "own"
+        ]
+       },
+       {
+        "not": {
+         "flag": "released"
+        }
+       }
+      ]
+     },
+     "lines": [
+      {
+       "speaker": "player",
+       "text": "בדקתי – הכול תקין, הרכב שלך. תודה על הסבלנות ועל שיתוף הפעולה. אני מצטער על אי הנעימות, הבדיקה נבעה מהדיווח."
+      },
+      {
+       "speaker": "ofer",
+       "text": "בסדר. אני מבין שהיא דאגה."
+      }
+     ],
+     "effects": {
+      "set": {
+       "released": true,
+       "closed": true,
+       "oferCalm": true
+      },
+      "attitude": {
+       "ofer": 1
+      }
+     },
+     "report": "סיום הבדיקה ושחרור בהסבר"
+    },
+    {
+     "id": "o-detain",
+     "label": "להודיע לעופר שהוא מעוכב: יש נגדו צו מעצר, וחשד לניסיון גניבה מרכב – ולהסביר מה יקרה",
+     "when": {
+      "all": [
+       {
+        "flag": "checked_ofer"
+       },
+       {
+        "variant": [
+         "tried"
+        ]
+       },
+       {
+        "not": {
+         "flag": "detained"
+        }
+       }
+      ]
+     },
+     "lines": [
+      {
+       "speaker": "player",
+       "text": "עופר, הבדיקה העלתה שיש נגדך צו מעצר מבית משפט. בנוסף, ראו אותך מנסה לפתוח כמה רכבים, ואין לך מפתח לרכב הזה. אתה מעוכב. ניידת תעביר אותך לתחנה."
+      },
+      {
+       "speaker": "ofer",
+       "text": "(מסתכל לצדדים) …אוקיי. אני לא עושה בעיות."
+      }
+     ],
+     "effects": {
+      "set": {
+       "detained": true,
+       "detainedProper": true
+      }
+     },
+     "branches": [
+      {
+       "when": {
+        "not": {
+         "flag": "carChecked"
+        }
+       },
+       "lines": [
+        {
+         "speaker": "player",
+         "text": "עופר, יש נגדך צו מעצר מבית משפט. אתה מעוכב, ניידת תעביר אותך לתחנה."
+        },
+        {
+         "speaker": "ofer",
+         "text": "…אוקיי."
+        }
+       ],
+       "effects": {
+        "set": {
+         "detained": true,
+         "detainedProper": true
+        }
+       }
+      }
+     ],
+     "report": "עיכוב על בסיס צו וחשד, בהסבר"
+    }
+   ]
+  },
+  {
+   "id": "h-yuval",
+   "label": "יובל – נער עם בירות",
+   "kind": "character",
+   "character": "yuval",
+   "x": 36,
+   "y": 48,
+   "when": {
+    "flag": "ev:teen"
+   },
+   "description": "נער צעיר יוצא מהקיוסק עם שקית בירות.",
+   "choices": [
+    {
+     "id": "y-age",
+     "label": "לגשת ליובל ברוגע, להציג את עצמך ולבקש הזדהות כדי לברר את גילו",
+     "lines": [
+      {
+       "speaker": "player",
+       "text": "היי, אני מצוות הסיור. אני רואה שיש לך בירות, ואני צריך לברר בן כמה אתה. יש לך תעודה, או שתגיד לי את הפרטים?"
+      },
+      {
+       "speaker": "yuval",
+       "text": "(מגמגם) יובל שגיא… אני בן 16."
+      }
+     ],
+     "effects": {
+      "reveal": [
+       "o-yuval-age"
+      ],
+      "set": {
+       "minor": true,
+       "yuvalCalm": true
+      }
+     },
+     "report": "בירור גיל – חשד לעבירה התלויה בגיל"
+    },
+    {
+     "id": "y-grab",
+     "label": "לקחת לו את השקית בלי לומר מילה, ולצעוק עליו מול כולם",
+     "when": {
+      "not": {
+       "flag": "alcoholTaken"
+      }
+     },
+     "lines": [
+      {
+       "speaker": "player",
+       "text": "תביא את זה! מה אתה חושב שאתה עושה?!"
+      },
+      {
+       "speaker": "yuval",
+       "text": "(מסמיק) …סליחה."
+      }
+     ],
+     "effects": {
+      "set": {
+       "yuvalShamed": true,
+       "alcoholTaken": true
+      },
+      "attitude": {
+       "yuval": -2
+      },
+      "note": "הבירות נלקחו בצעקות ובלי הסבר"
+     }
+    },
+    {
+     "id": "y-alcohol",
+     "label": "להסביר ליובל שקטין לא מחזיק אלכוהול במקום ציבורי, ולקחת את הבירות",
+     "when": {
+      "all": [
+       {
+        "flag": "minor"
+       },
+       {
+        "not": {
+         "flag": "alcoholTaken"
+        }
+       }
+      ]
+     },
+     "lines": [
+      {
+       "speaker": "player",
+       "text": "יובל, בגיל 16 אסור לך להחזיק אלכוהול ברחוב, ולכן אני לוקח את הבירות. זה לא עונש – זה בשביל הבטיחות שלך."
+      },
+      {
+       "speaker": "yuval",
+       "text": "טוב… בסדר."
+      }
+     ],
+     "effects": {
+      "set": {
+       "alcoholTaken": true
+      }
+     },
+     "report": "לקיחת אלכוהול מקטין בהסבר"
+    },
+    {
+     "id": "y-kiosk",
+     "label": "לשאול את יובל מאיפה הבירות, והאם ביקשו ממנו תעודה",
+     "when": {
+      "flag": "minor"
+     },
+     "lines": [
+      {
+       "speaker": "player",
+       "text": "מאיפה הבירות? ביקשו ממך תעודה?"
+      },
+      {
+       "speaker": "yuval",
+       "text": "מהקיוסק פה. לא ביקשו כלום."
+      }
+     ],
+     "effects": {
+      "reveal": [
+       "c-kiosk"
+      ],
+      "set": {
+       "kioskSold": true
+      }
+     },
+     "report": "בירור מקור האלכוהול"
+    },
+    {
+     "id": "y-parent",
+     "label": "להתקשר להורה של יובל ולהסביר את המצב",
+     "when": {
+      "flag": "minor"
+     },
+     "lines": [
+      {
+       "speaker": "player",
+       "text": "יובל, אני מתקשר לאחד ההורים שלך. מה המספר?"
+      },
+      {
+       "speaker": "narrator",
+       "text": "אבא של יובל עונה. הוא מודה, ואומר שיגיע לאסוף אותו תוך חמש דקות."
+      }
+     ],
+     "effects": {
+      "set": {
+       "parent": true
+      }
+     },
+     "report": "יידוע הורה של קטין"
+    }
+   ]
+  },
+  {
+   "id": "h-doc",
+   "label": "פנקס ותיעוד",
+   "kind": "item",
+   "x": 90,
+   "y": 22,
+   "description": "תיעוד הבדיקה.",
+   "choices": [
+    {
+     "id": "z-doc",
+     "label": "לתעד: עילת הדרישה, הפרטים שנמסרו, תוצאת הבדיקה ומה נעשה",
+     "when": {
+      "flag": "identified"
+     },
+     "lines": [
+      {
+       "speaker": "narrator",
+       "text": "רשמת: שעה, עילת הדרישה (דיווח על ניסיון לפתוח רכבים), איך זוהה, תוצאת הבדיקה במערכת ומה הוחלט."
+      }
+     ],
+     "effects": {
+      "set": {
+       "documented": true
+      }
+     },
+     "report": "תיעוד הבדיקה"
+    }
+   ]
+  }
+ ],
+ "custody": [
+  {
+   "char": "ofer",
+   "hotspot": "h-ofer",
+   "offence": "ניסיון גניבה מרכב",
+   "arrestOk": {
+    "all": [
+     {
+      "variant": [
+       "tried"
+      ]
+     },
+     {
+      "flag": "checked_ofer"
+     }
+    ]
+   }
+  }
+ ],
+ "events": [
+  {
+   "id": "looks",
+   "title": "התפתחות: „הוא לא מפה”",
+   "when": {
+    "any": [
+     {
+      "chosen": "m-ask"
+     },
+     {
+      "countChosen": {
+       "ids": [
+        "o-intro",
+        "o-demand",
+        "o-looks",
+        "o-details",
+        "o-explain",
+        "o-car",
+        "o-nocard-detain",
+        "o-check",
+        "o-give-name",
+        "m-ask",
+        "m-equal"
+       ],
+       "gte": 2
+      }
+     }
+    ]
+   },
+   "lines": [
+    {
+     "speaker": "miriam",
+     "text": "ותבדקו אותו טוב. הוא בכלל לא נראה מהשכונה, רואים עליו."
+    },
+    {
+     "speaker": "narrator",
+     "text": "עופר שומע, ומסתכל עליכם בכעס."
+    }
+   ],
+   "effects": {
+    "reveal": [
+     "c-miriam-looks"
+    ],
+    "note": "המדווחת ביקשה לבדוק את האדם בגלל המראה שלו"
+   },
+   "sfx": "alert"
+  },
+  {
+   "id": "name",
+   "title": "התפתחות: „ומי אתה בכלל?”",
+   "when": {
+    "flag": "asked"
+   },
+   "lines": [
+    {
+     "speaker": "ofer",
+     "text": "רגע. אתה רוצה את הפרטים שלי – אז מה השם שלך? מה מספר השוטר שלך?"
+    }
+   ],
+   "effects": {
+    "note": "הנבדק ביקש מהשוטר להזדהות"
+   }
+  },
+  {
+   "id": "teen",
+   "title": "התפתחות: נער יוצא מהקיוסק",
+   "when": {
+    "countChosen": {
+     "ids": [
+      "o-intro",
+      "o-demand",
+      "o-looks",
+      "o-details",
+      "o-explain",
+      "o-car",
+      "o-nocard-detain",
+      "o-check",
+      "o-give-name",
+      "m-ask",
+      "m-equal"
+     ],
+     "gte": 4
+    }
+   },
+   "lines": [
+    {
+     "speaker": "narrator",
+     "text": "מהקיוסק יוצא נער צעיר עם שקית, ובתוכה כמה בקבוקי בירה. כשהוא רואה את הניידת, הוא מאט."
+    }
+   ],
+   "effects": {
+    "note": "נער צעיר יצא מהקיוסק עם בירות"
+   },
+   "sfx": "alert"
+  }
+ ],
+ "update": {
+  "categories": {
+   "location": "מקום",
+   "situation": "מצב נוכחי",
+   "status": "מצב המעורבים",
+   "verified": "מה אומת",
+   "missing": "מה עדיין חסר",
+   "assistance": "סיוע נדרש",
+   "judgement": "קביעה"
+  },
+  "elements": [
+   {
+    "id": "u-loc",
+    "category": "location",
+    "text": "נמצא ברחוב האלה 9, ליד הקיוסק"
+   },
+   {
+    "id": "u-checking",
+    "category": "situation",
+    "text": "בודק אדם לפי דיווח על ניסיון לפתוח רכבים"
+   },
+   {
+    "id": "u-looks",
+    "category": "judgement",
+    "text": "האדם נראה חשוד ולא מהשכונה"
+   },
+   {
+    "id": "u-identified",
+    "category": "status",
+    "text": "האדם זוהה לפי פרטים, ללא תעודה",
+    "when": {
+     "flag": "identified"
+    }
+   },
+   {
+    "id": "u-clear",
+    "category": "verified",
+    "text": "הרכב שלו והפרטים תקינים – אין עבירה, שוחרר",
+    "when": {
+     "all": [
+      {
+       "flag": "released"
+      },
+      {
+       "variant": [
+        "own"
+       ]
+      }
+     ]
+    }
+   },
+   {
+    "id": "u-warrant",
+    "category": "status",
+    "text": "מעוכב – צו מעצר פעיל וחשד לניסיון גניבה מרכב, מועבר לתחנה",
+    "when": {
+     "all": [
+      {
+       "flag": "detained"
+      },
+      {
+       "variant": [
+        "tried"
+       ]
+      }
+     ]
+    }
+   },
+   {
+    "id": "u-minor",
+    "category": "status",
+    "text": "קטין בן 16 עם אלכוהול – הבירות נלקחו, הורה בדרך",
+    "when": {
+     "all": [
+      {
+       "flag": "alcoholTaken"
+      },
+      {
+       "flag": "parent"
+      }
+     ]
+    }
+   },
+   {
+    "id": "u-kiosk",
+    "category": "assistance",
+    "text": "הקיוסק ברחוב מכר אלכוהול לקטין – מבקש שיועבר לטיפול",
+    "when": {
+     "flag": "kioskSold"
+    }
+   }
+  ],
+  "responses": [
+   {
+    "when": {
+     "inUpdate": "u-warrant"
+    },
+    "lines": [
+     {
+      "speaker": "dispatch",
+      "text": "מוקד: רשמתי. תעבירו אותו לתחנה, החוקר התורן מעודכן בצו."
+     }
+    ],
+    "effects": {
+     "set": {
+      "warrantReported": true
+     }
+    }
+   },
+   {
+    "when": {
+     "inUpdate": "u-kiosk"
+    },
+    "lines": [
+     {
+      "speaker": "dispatch",
+      "text": "מוקד: רשמתי, יועבר לטיפול."
+     }
+    ],
+    "effects": {
+     "set": {
+      "kioskReported": true
+     }
+    }
+   },
+   {
+    "when": {
+     "inUpdate": "u-looks"
+    },
+    "lines": [
+     {
+      "speaker": "dispatch",
+      "text": "מוקד: מה הוא עשה בפועל? תעדכן לפי מעשים."
+     }
+    ]
+   }
+  ]
+ },
+ "finish": {
+  "label": "סיום הטיפול במקום",
+  "confirm": "לסיים את הטיפול ולעבור לתחקיר? אפשר לשלוח עדכון אחרון למשל״ט לפני הסיום."
+ },
+ "endings": [
+  {
+   "id": "e-good",
+   "kind": "good",
+   "title": "בדיקה הוגנת, שנשענת על עילה",
+   "text": "ההזדהות נדרשה בגלל מעשה ולא בגלל מראה, הפרטים אומתו בלי עיכוב מיותר, וההחלטה התאימה לממצאים.",
+   "when": {
+    "all": [
+     {
+      "chosen": "m-ask"
+     },
+     {
+      "chosen": "o-intro"
+     },
+     {
+      "not": {
+       "flag": "profiled"
+      }
+     },
+     {
+      "not": {
+       "flag": "wrongDetain"
+      }
+     },
+     {
+      "flag": "checked_ofer"
+     },
+     {
+      "not": {
+       "flag": "privacyBreach"
+      }
+     },
+     {
+      "any": [
+       {
+        "all": [
+         {
+          "variant": [
+           "own"
+          ]
+         },
+         {
+          "flag": "released"
+         }
+        ]
+       },
+       {
+        "all": [
+         {
+          "variant": [
+           "tried"
+          ]
+         },
+         {
+          "flag": "detainedProper"
+         },
+         {
+          "flag": "warrantReported"
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "any": [
+       {
+        "not": {
+         "flag": "ev:teen"
+        }
+       },
+       {
+        "all": [
+         {
+          "flag": "alcoholTaken"
+         },
+         {
+          "flag": "parent"
+         },
+         {
+          "not": {
+           "flag": "yuvalShamed"
+          }
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "e-partial",
+   "kind": "partial",
+   "title": "הבדיקה הסתיימה – לא הכול נעשה נכון",
+   "text": "הבדיקה הסתיימה, אבל משהו חסר: עילה מוסברת, אימות במערכת, יחס שוויוני, שמירה על פרטיות או טיפול בנער.",
+   "when": {
+    "any": [
+     {
+      "flag": "released"
+     },
+     {
+      "flag": "detained"
+     }
+    ]
+   }
+  },
+  {
+   "id": "e-retry",
+   "kind": "retry",
+   "title": "הזדמנות לתיקון: הבדיקה לא הסתיימה",
+   "text": "הצוות עזב בלי לסיים את הבדיקה: לא ברור מי האדם, ולא הוחלט אם לשחרר או לעכב.",
+   "when": {
+    "always": true
+   }
+  }
+ ],
+ "hints": [
+  {
+   "when": {
+    "all": [
+     {
+      "stage": [
+       "scene"
+      ]
+     },
+     {
+      "not": {
+       "chosen": "m-ask"
+      }
+     }
+    ]
+   },
+   "text": "מה בדיוק המדווחת ראתה? מעשה – לא מראה."
+  },
+  {
+   "when": {
+    "all": [
+     {
+      "stage": [
+       "scene"
+      ]
+     },
+     {
+      "not": {
+       "flag": "asked"
+      }
+     }
+    ]
+   },
+   "text": "לפני דרישת הזדהות: מי אתה, למה פנית, ומה אתה מבקש."
+  },
+  {
+   "when": {
+    "all": [
+     {
+      "flag": "noCard"
+     },
+     {
+      "not": {
+       "flag": "identified"
+      }
+     }
+    ]
+   },
+   "text": "אין תעודה? זה לא סוף הבדיקה – בקש פרטים ואמת אותם."
+  },
+  {
+   "when": {
+    "all": [
+     {
+      "flag": "identified"
+     },
+     {
+      "not": {
+       "flag": "checked_ofer"
+      }
+     }
+    ]
+   },
+   "text": "יש פרטים. עכשיו לאמת – דרך המשל״ט, בצד."
+  },
+  {
+   "when": {
+    "all": [
+     {
+      "flag": "ev:teen"
+     },
+     {
+      "not": {
+       "flag": "minor"
+      }
+     }
+    ]
+   },
+   "text": "נער עם בירות בלילה. מה צריך לברר?"
+  },
+  {
+   "when": {
+    "always": true
+   },
+   "text": "ארבע עילות לדרישת הזדהות: חשד לעבירה, עבירה התלויה בגיל, הגשת עזרה, ואדם שהמשטרה מחפשת."
+  }
+ ],
+ "challenges": [
+  "שחק עם זרע אחר – אולי לעופר יש צו. האם ההחלטה שלך נשענת על הבדיקה?",
+  "נסה לדרוש הזדהות בלי להסביר – ותראה איך הסירוב משנה את האירוע.",
+  "נסח עדכון למשל״ט: מה אומת ומה הוחלט – בלי „נראה חשוד”."
+ ],
+ "report": {
+  "reason": "התקבלה משימה מהמשל״ט: דיווח על גבר שמנסה לפתוח רכבים ברחוב האלה 9.",
+  "checklist": [
+   {
+    "label": "עדות המדווחת",
+    "when": {
+     "fact": "c-miriam-saw"
+    }
+   },
+   {
+    "label": "פרטים מזהים",
+    "when": {
+     "fact": "o-details"
+    }
+   },
+   {
+    "label": "בדיקת הרכב",
+    "when": {
+     "any": [
+      {
+       "fact": "o-car-own"
+      },
+      {
+       "fact": "o-car-not"
+      }
+     ]
+    }
+   },
+   {
+    "label": "גיל הנער",
+    "when": {
+     "fact": "o-yuval-age"
+    }
+   }
+  ]
+ },
+ "media": {
+  "images": [
+   "img/kiosk-street-day.webp",
+   "img/kiosk-street-night.webp",
+   "img/chars/miriam-calm.webp",
+   "img/chars/miriam-tense.webp",
+   "img/chars/miriam-upset.webp",
+   "img/chars/ofer-calm.webp",
+   "img/chars/ofer-tense.webp",
+   "img/chars/ofer-upset.webp",
+   "img/chars/yuval-calm.webp",
+   "img/chars/yuval-tense.webp",
+   "img/chars/yuval-upset.webp",
+   "img/props/car-silver.webp",
+   "img/props/patrol.webp",
+   "img/drive/interior.webp",
+   "img/drive/road-day.webp",
+   "img/drive/road-night.webp"
+  ],
+  "audio": [
+   "audio/radio-chatter.mp3",
+   "audio/traffic.mp3",
+   "audio/engine-wipers.mp3",
+   "audio/radio-chirp.mp3",
+   "audio/alert.mp3"
+  ],
+  "voice": {},
+  "voiceLines": {
+   "371f2213": "audio/voice/id-check/l-371f2213.mp3",
+   "12cd5acc": "audio/voice/id-check/l-12cd5acc.mp3",
+   "39946312": "audio/voice/id-check/l-39946312.mp3",
+   "0e01a700": "audio/voice/id-check/l-0e01a700.mp3",
+   "c675d78a": "audio/voice/id-check/l-c675d78a.mp3",
+   "5a7fa6a9": "audio/voice/id-check/l-5a7fa6a9.mp3",
+   "e45f91ee": "audio/voice/id-check/l-e45f91ee.mp3",
+   "b1d2b164": "audio/voice/id-check/l-b1d2b164.mp3",
+   "59ad1f64": "audio/voice/id-check/l-59ad1f64.mp3",
+   "bc4ef680": "audio/voice/id-check/l-bc4ef680.mp3",
+   "dec6b838": "audio/voice/id-check/l-dec6b838.mp3",
+   "39c2e3ce": "audio/voice/id-check/l-39c2e3ce.mp3",
+   "0bb6cb73": "audio/voice/id-check/l-0bb6cb73.mp3",
+   "29b547b9": "audio/voice/id-check/l-29b547b9.mp3",
+   "6021f041": "audio/voice/id-check/l-6021f041.mp3",
+   "c358867f": "audio/voice/id-check/l-c358867f.mp3",
+   "d0bca0ac": "audio/voice/id-check/l-d0bca0ac.mp3",
+   "6d2f616b": "audio/voice/id-check/l-6d2f616b.mp3",
+   "42ce349d": "audio/voice/id-check/l-42ce349d.mp3",
+   "950a8449": "audio/voice/id-check/l-950a8449.mp3",
+   "0d5c937d": "audio/voice/id-check/l-0d5c937d.mp3",
+   "b818c1e1": "audio/voice/id-check/l-b818c1e1.mp3",
+   "0eea9a13": "audio/voice/id-check/l-0eea9a13.mp3",
+   "9a698d62": "audio/voice/id-check/l-9a698d62.mp3",
+   "9821e4b5": "audio/voice/id-check/l-9821e4b5.mp3",
+   "6ae4c239": "audio/voice/id-check/l-6ae4c239.mp3",
+   "d463954a": "audio/voice/id-check/l-d463954a.mp3",
+   "f0c75622": "audio/voice/id-check/l-f0c75622.mp3",
+   "7a8c6ab6": "audio/voice/id-check/l-7a8c6ab6.mp3",
+   "f3828811": "audio/voice/id-check/l-f3828811.mp3",
+   "e1d4906f": "audio/voice/id-check/l-e1d4906f.mp3",
+   "6d8c7b4e": "audio/voice/id-check/l-6d8c7b4e.mp3",
+   "67f0ad4a": "audio/voice/id-check/l-67f0ad4a.mp3",
+   "3fb59d56": "audio/voice/id-check/l-3fb59d56.mp3",
+   "6e04d772": "audio/voice/id-check/l-6e04d772.mp3",
+   "cc0f54ee": "audio/voice/id-check/l-cc0f54ee.mp3",
+   "6124fd0f": "audio/voice/id-check/l-6124fd0f.mp3",
+   "9d85a009": "audio/voice/id-check/l-9d85a009.mp3",
+   "d05e528d": "audio/voice/id-check/l-d05e528d.mp3",
+   "3ad6e215": "audio/voice/id-check/l-3ad6e215.mp3",
+   "b6f4d0c0": "audio/voice/id-check/l-b6f4d0c0.mp3",
+   "16fe94bc": "audio/voice/id-check/l-16fe94bc.mp3",
+   "6bc6c626": "audio/voice/id-check/l-6bc6c626.mp3",
+   "0166a8cc": "audio/voice/id-check/l-0166a8cc.mp3",
+   "cd777560": "audio/voice/id-check/l-cd777560.mp3",
+   "3f013b79": "audio/voice/id-check/l-3f013b79.mp3",
+   "b8f30b28": "audio/voice/id-check/l-b8f30b28.mp3",
+   "ddf5bc2c": "audio/voice/id-check/l-ddf5bc2c.mp3",
+   "8dbe4181": "audio/voice/id-check/l-8dbe4181.mp3",
+   "91b565d7": "audio/voice/id-check/l-91b565d7.mp3",
+   "18a16693": "audio/voice/id-check/l-18a16693.mp3",
+   "dac01467": "audio/voice/id-check/l-dac01467.mp3",
+   "e032141a": "audio/voice/id-check/l-e032141a.mp3",
+   "e9ecc1f6": "audio/voice/id-check/l-e9ecc1f6.mp3",
+   "14bf9893": "audio/voice/id-check/l-14bf9893.mp3",
+   "d8026ae1": "audio/voice/id-check/l-d8026ae1.mp3",
+   "1774a7fd": "audio/voice/id-check/l-1774a7fd.mp3",
+   "6d04abbd": "audio/voice/id-check/l-6d04abbd.mp3",
+   "e571acd9": "audio/voice/id-check/l-e571acd9.mp3",
+   "3e749592": "audio/voice/id-check/l-3e749592.mp3",
+   "cdbb2fa8": "audio/voice/id-check/l-cdbb2fa8.mp3",
+   "a5f13268": "audio/voice/id-check/l-a5f13268.mp3",
+   "ec4a5761": "audio/voice/id-check/l-ec4a5761.mp3",
+   "4227a375": "audio/voice/id-check/l-4227a375.mp3",
+   "7fd0c20e": "audio/voice/id-check/l-7fd0c20e.mp3",
+   "c98f67c4": "audio/voice/id-check/l-c98f67c4.mp3",
+   "07ac8651": "audio/voice/id-check/l-07ac8651.mp3",
+   "465bb795": "audio/voice/id-check/l-465bb795.mp3",
+   "31bfe9cc": "audio/voice/id-check/l-31bfe9cc.mp3",
+   "5ff639f7": "audio/voice/id-check/l-5ff639f7.mp3",
+   "d2f03853": "audio/voice/id-check/l-d2f03853.mp3",
+   "0294e698": "audio/voice/id-check/l-0294e698.mp3",
+   "2c6a6fac": "audio/voice/id-check/l-2c6a6fac.mp3",
+   "f40fd148": "audio/voice/id-check/l-f40fd148.mp3",
+   "bcac7068": "audio/voice/id-check/l-bcac7068.mp3",
+   "2ccef72a": "audio/voice/id-check/l-2ccef72a.mp3",
+   "9000f89e": "audio/voice/id-check/l-9000f89e.mp3",
+   "32c823ec": "audio/voice/id-check/l-32c823ec.mp3",
+   "e1e0f23f": "audio/voice/id-check/l-e1e0f23f.mp3",
+   "3892e08b": "audio/voice/id-check/l-3892e08b.mp3",
+   "abd80cd4": "audio/voice/id-check/l-abd80cd4.mp3",
+   "e9844642": "audio/voice/id-check/l-e9844642.mp3",
+   "6609a34e": "audio/voice/id-check/l-6609a34e.mp3",
+   "0227f910": "audio/voice/id-check/l-0227f910.mp3",
+   "59cfa680": "audio/voice/id-check/l-59cfa680.mp3",
+   "84ef6c3c": "audio/voice/id-check/l-84ef6c3c.mp3",
+   "d97a0068": "audio/voice/id-check/l-d97a0068.mp3",
+   "52ad251d": "audio/voice/id-check/l-52ad251d.mp3",
+   "403e67c1": "audio/voice/id-check/l-403e67c1.mp3",
+   "fe7cdd88": "audio/voice/id-check/l-fe7cdd88.mp3",
+   "299a7f0e": "audio/voice/id-check/l-299a7f0e.mp3",
+   "299d6eae": "audio/voice/id-check/l-299d6eae.mp3",
+   "9e3403f2": "audio/voice/id-check/l-9e3403f2.mp3",
+   "849739f5": "audio/voice/id-check/l-849739f5.mp3",
+   "25131af8": "audio/voice/id-check/l-25131af8.mp3",
+   "173e66b4": "audio/voice/id-check/l-173e66b4.mp3",
+   "2ef8d193": "audio/voice/id-check/l-2ef8d193.mp3",
+   "fa1be332": "audio/voice/id-check/l-fa1be332.mp3",
+   "dfc05eee": "audio/voice/id-check/l-dfc05eee.mp3",
+   "ed874318": "audio/voice/id-check/l-ed874318.mp3",
+   "e7044d39": "audio/voice/id-check/l-e7044d39.mp3",
+   "44e1b6b5": "audio/voice/id-check/l-44e1b6b5.mp3",
+   "fdf6327e": "audio/voice/id-check/l-fdf6327e.mp3",
+   "716be387": "audio/voice/id-check/l-716be387.mp3",
+   "4ee5c8c9": "audio/voice/id-check/l-4ee5c8c9.mp3",
+   "fbf72895": "audio/voice/id-check/l-fbf72895.mp3",
+   "825a63e7": "audio/voice/id-check/l-825a63e7.mp3",
+   "98f90ac9": "audio/voice/id-check/l-98f90ac9.mp3",
+   "cfb632f5": "audio/voice/id-check/l-cfb632f5.mp3",
+   "36101657": "audio/voice/id-check/l-36101657.mp3",
+   "b6e3d2ba": "audio/voice/id-check/l-b6e3d2ba.mp3",
+   "1758cb3e": "audio/voice/id-check/l-1758cb3e.mp3",
+   "aa323199": "audio/voice/id-check/l-aa323199.mp3",
+   "96538957": "audio/voice/id-check/l-96538957.mp3",
+   "06b82e83": "audio/voice/id-check/l-06b82e83.mp3",
+   "ff63e3b2": "audio/voice/id-check/l-ff63e3b2.mp3",
+   "29f9ec0e": "audio/voice/id-check/l-29f9ec0e.mp3",
+   "6ad5365a": "audio/voice/id-check/l-6ad5365a.mp3",
+   "c88c97dd": "audio/voice/id-check/l-c88c97dd.mp3",
+   "c5fb1903": "audio/voice/id-check/l-c5fb1903.mp3",
+   "3dcabb4f": "audio/voice/id-check/l-3dcabb4f.mp3",
+   "d8b7809c": "audio/voice/id-check/l-d8b7809c.mp3",
+   "342602d5": "audio/voice/id-check/l-342602d5.mp3",
+   "eb03ec08": "audio/voice/id-check/l-eb03ec08.mp3",
+   "cda9652e": "audio/voice/id-check/l-cda9652e.mp3",
+   "ec463fb2": "audio/voice/id-check/l-ec463fb2.mp3",
+   "f3f6d4e7": "audio/voice/id-check/l-f3f6d4e7.mp3",
+   "622f1a19": "audio/voice/id-check/l-622f1a19.mp3",
+   "883b4819": "audio/voice/id-check/l-883b4819.mp3",
+   "6c920960": "audio/voice/id-check/l-6c920960.mp3",
+   "9ef192d6": "audio/voice/id-check/l-9ef192d6.mp3",
+   "66de6994": "audio/voice/id-check/l-66de6994.mp3",
+   "1734ec94": "audio/voice/id-check/l-1734ec94.mp3",
+   "2bec06ca": "audio/voice/id-check/l-2bec06ca.mp3",
+   "555496c5": "audio/voice/id-check/l-555496c5.mp3",
+   "fb16c9c0": "audio/voice/id-check/l-fb16c9c0.mp3",
+   "567902bd": "audio/voice/id-check/l-567902bd.mp3",
+   "be53cfa9": "audio/voice/id-check/l-be53cfa9.mp3",
+   "7211fb97": "audio/voice/id-check/l-7211fb97.mp3",
+   "0d29f194": "audio/voice/id-check/l-0d29f194.mp3",
+   "f347ef14": "audio/voice/id-check/l-f347ef14.mp3",
+   "71101c3c": "audio/voice/id-check/l-71101c3c.mp3",
+   "ba8d0026": "audio/voice/id-check/l-ba8d0026.mp3",
+   "84af3889": "audio/voice/id-check/l-84af3889.mp3",
+   "90721211": "audio/voice/id-check/l-90721211.mp3",
+   "7e315823": "audio/voice/id-check/l-7e315823.mp3",
+   "af39c950": "audio/voice/id-check/l-af39c950.mp3",
+   "026c1b68": "audio/voice/id-check/l-026c1b68.mp3",
+   "e42e65c2": "audio/voice/id-check/l-e42e65c2.mp3",
+   "80fc5f75": "audio/voice/id-check/l-80fc5f75.mp3",
+   "74d70b6d": "audio/voice/id-check/l-74d70b6d.mp3",
+   "170f5e23": "audio/voice/id-check/l-170f5e23.mp3",
+   "b17de60c": "audio/voice/id-check/l-b17de60c.mp3",
+   "be1fa3c6": "audio/voice/id-check/l-be1fa3c6.mp3",
+   "5362504a": "audio/voice/id-check/l-5362504a.mp3",
+   "9e7717f0": "audio/voice/id-check/l-9e7717f0.mp3",
+   "b96202aa": "audio/voice/id-check/l-b96202aa.mp3",
+   "04eb592c": "audio/voice/id-check/l-04eb592c.mp3",
+   "a5ce7acc": "audio/voice/id-check/l-a5ce7acc.mp3",
+   "5d48c1be": "audio/voice/id-check/l-5d48c1be.mp3",
+   "aebbebda": "audio/voice/id-check/l-aebbebda.mp3",
+   "52fabd28": "audio/voice/id-check/l-52fabd28.mp3",
+   "6be09095": "audio/voice/id-check/l-6be09095.mp3",
+   "444253af": "audio/voice/id-check/l-444253af.mp3",
+   "56474fe8": "audio/voice/id-check/l-56474fe8.mp3",
+   "df130f46": "audio/voice/id-check/l-df130f46.mp3",
+   "a18bf582": "audio/voice/id-check/l-a18bf582.mp3",
+   "2c0a83c0": "audio/voice/id-check/l-2c0a83c0.mp3"
+  },
+  "narrationMissing": "קריינות: קולות מסונתזים מקומית ב־BlueTTS (קוד MIT; קולות מ־LibriTTS-R, CC BY 4.0). שורות עם אות קריאה של התחנה מוקראות בקול הדפדפן אם הופעל."
+ }
+}
