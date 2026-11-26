@@ -233,6 +233,19 @@ export function Play() {
   const [chatter, setChatter] = useState<string | undefined>();
   const chatterIdx = useRef(0);
   const [selected, setSelected] = useState<string | null>(null);
+  // מגש הפעולות הקבוע בנייד: גובהו משתנה (כפתורים נוספים, גלישה לשורות) – הרווח בתחתית הרשימה מתעדכן לפיו,
+  // כך שהפעולה האחרונה ברשימה אף פעם לא מוסתרת מתחת למגש
+  const trayObs = useRef<ResizeObserver | null>(null);
+  const trayRef = useCallback((el: HTMLDivElement | null) => {
+    trayObs.current?.disconnect();
+    if (!el) return;
+    const set = () => document.documentElement.style.setProperty('--tray-h', `${el.offsetHeight}px`);
+    set();
+    if (typeof ResizeObserver !== 'undefined') {
+      trayObs.current = new ResizeObserver(set);
+      trayObs.current.observe(el);
+    }
+  }, []);
   const [camSince, setCamSince] = useState<number | null>(null);
   /** מצלמת גוף: צפצוף, הכרזת המכשיר בקול אישה, רטט; בכיבוי – הודעת השוטר על סיום הצילום */
   const toggleCam = (on: boolean) => {
@@ -806,7 +819,7 @@ export function Play() {
 
           {stage === 'scene' && st.cam?.on && <CamLed since={camSince} />}
           {stage === 'scene' && (
-            <div className="tray" role="toolbar" aria-label="פעולות עיקריות">
+            <div className="tray" role="toolbar" aria-label="פעולות עיקריות" ref={trayRef}>
               <button type="button" className="btn" onClick={() => { setSummon(false); setComposer(true); }} data-testid="open-composer">
                 📻 עדכון למוקד
               </button>
