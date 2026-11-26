@@ -741,3 +741,13 @@ body.projector .no-projector { display: none !important; }
 .action-report .ar-text { margin: 0; }
 .action-report .ar-why { grid-column: 1 / -1; }
 @media (max-width: 640px) { .action-report .ar-facts li { grid-template-columns: 1fr; } }
+
+/* מצא את הטעויות */
+.review { display: grid; gap: 12px; }
+.review .kicker { color: var(--accent, #e8c35a); font-weight: 700; margin: 0; }
+.review-progress { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
+.rv-dot { width: 14px; height: 14px; border-radius: 50%; border: 2px solid #3a4456; }
+.rv-dot.cur { border-color: var(--accent, #e8c35a); }
+.rv-dot.ok { background: var(--ok); border-color: var(--ok); }
+.rv-dot.bad { background: var(--bad); border-color: var(--bad); }
+.review-step .rv-label { font-size: 1.1em; }

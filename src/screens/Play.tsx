@@ -35,12 +35,12 @@ export function speakerName(sc: Scenario, id: string, p?: RadioProfile): string 
   return sc.characters.find((c) => c.id === id)?.name ?? id;
 }
 
-export function Lines({ sc, lines }: { sc: Scenario; lines: Line[] }) {
+export function Lines({ sc, lines, playerName }: { sc: Scenario; lines: Line[]; playerName?: string }) {
   const p = useRadio();
   return (
     <>
       {lines.map((l, i) => {
-        const named = speakerName(sc, l.speaker, p);
+        const named = l.speaker === 'player' && playerName ? playerName : speakerName(sc, l.speaker, p);
         const text = l.speaker === 'player' && p.fem ? feminize(radioize(l.text, p)) : radioize(l.text, p);
         // אם הטקסט כבר פותח בשם הדובר (למשל „מוקד: …”) – לא מכפילים
         const who = named && text.startsWith(`${named}:`) ? '' : named;

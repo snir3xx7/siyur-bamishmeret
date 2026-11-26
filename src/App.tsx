@@ -1,3 +1,4 @@
+import { Review } from './screens/Review';
 import { ShiftScreen } from './screens/Shift';
 import { Help } from './screens/Help';
 import { Officer } from './screens/Officer';
@@ -92,6 +93,7 @@ export default function App() {
   else if (p0 === 'shift') screen = <ShiftScreen query={route.query} />;
   else if (p0 === 'help') screen = <Help />;
   else if (p0 === 'officer') screen = <Officer />;
+  else if (p0 === 'review' && p1) screen = <Review id={p1} />;
   else screen = <Home />;
 
   return (

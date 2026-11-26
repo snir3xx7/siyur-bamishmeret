@@ -195,6 +195,9 @@ export function ScenarioCard({ id, query }: { id: string; query: URLSearchParams
           <button type="button" className="btn primary" onClick={start} data-testid="start">
             ▶ התחלת התרחיש
           </button>
+          <a className="btn" href={`#/review/${sc.id}`} data-testid="review-link">
+            🔎 מצא את הטעויות – צפייה בטיפול של צוות אחר
+          </a>
         </div>
       </div>
     </div>
