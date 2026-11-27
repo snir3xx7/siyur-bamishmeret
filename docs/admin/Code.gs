@@ -17,8 +17,27 @@ const SHEET = 'Events';
 const HEAD = ['זמן', 'חניך', 'צוות', 'מזהה מכשיר', 'אירוע', 'תרחיש', 'שם התרחיש', 'ציון', 'סיום', 'סוג סיום', 'תחומים', 'לשיפור', 'נוספים', 'גרסה'];
 const EVENTS = ['enter', 'start', 'finish', 'review'];
 
+/** הגיליון: אם הסקריפט נוצר מתוך גיליון – הוא; אם נוצר ישירות ב-script.google.com – גיליון חדש נוצר אוטומטית ונשמר */
+function book_() {
+  const active = SpreadsheetApp.getActiveSpreadsheet();
+  if (active) return active;
+  const props = PropertiesService.getScriptProperties();
+  const id = props.getProperty('SHEET_ID');
+  if (id) return SpreadsheetApp.openById(id);
+  const ss = SpreadsheetApp.create('סיור במשמרת – מעקב חניכים');
+  props.setProperty('SHEET_ID', ss.getId());
+  return ss;
+}
+
+/** הרצה ידנית אחת (▶ Run) – יוצרת את הגיליון ומאשרת הרשאות, ומדפיסה את הקישור אליו */
+function setup() {
+  const ss = book_();
+  sheet_();
+  Logger.log('הגיליון: ' + ss.getUrl());
+}
+
 function sheet_() {
-  const ss = SpreadsheetApp.getActiveSpreadsheet();
+  const ss = book_();
   let sh = ss.getSheetByName(SHEET);
   if (!sh) {
     sh = ss.insertSheet(SHEET);
