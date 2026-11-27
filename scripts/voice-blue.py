@@ -128,7 +128,7 @@ def all_lines(sc):
             L.append(x)
             if x['speaker'] == 'player':
                 L.append({**x, 'speaker': 'playerF'})
-            elif x['speaker'] not in ('narrator', 'playerF', 'officer', 'officerF') and address_f(x['text']) != x['text']:
+            elif x['speaker'] not in ('playerF', 'officer', 'officerF') and address_f(x['text']) != x['text']:
                 # שוטרת: אותה שורה בפנייה בלשון נקבה
                 L.append({**x, 'text': address_f(x['text'])})
     add(sc['dispatch']['lines']); add(officer(sc['arrivalLines']))

@@ -21,14 +21,14 @@ import { FirstSceneGuide, FullscreenButton, RotateHint } from '../ui/DeviceHints
 import { custodyStatus } from '../engine/custody';
 import { pressureStatus } from '../engine/pressure';
 import { LocateMap } from '../ui/LocateMap';
-import { addressF, feminize } from '../config/feminize';
+import { addressF, feminize, feminizeFeedback } from '../config/feminize';
 import { CamLed } from '../ui/CamLed';
 import { callTo, chatterLines, gameProfile, headRouteText, radioize, RADIO_TO_LABEL, type RadioProfile, type RadioTo } from '../config/stations';
 import { Modal, useAudioStatus } from '../ui/SettingsDialog';
 
 export function speakerName(sc: Scenario, id: string, p?: RadioProfile): string {
   if (id === 'player') return p?.fem ? (p?.real ? `את (${p.unit})` : 'את (הסיירת)') : p?.real ? `אתה (${p.unit})` : 'אתה (הסייר)';
-  if (id === 'dispatch' || id === 'center') return p?.real ? p.center : 'מוקד';
+  if (id === 'dispatch' || id === 'center') return p?.real ? p.center : 'משל״ט';
   if (id === 'head') return p?.real ? p.head : 'ראש המשמרת';
   if (id === 'duty') return p?.dutyOfficer ?? 'קצין תורן';
   if (id === 'narrator') return '';
@@ -42,7 +42,7 @@ export function Lines({ sc, lines, playerName }: { sc: Scenario; lines: Line[]; 
       {lines.map((l, i) => {
         const named = l.speaker === 'player' && playerName ? playerName : speakerName(sc, l.speaker, p);
         const text = l.speaker === 'player' ? (p.fem ? feminize(radioize(l.text, p)) : radioize(l.text, p)) : p.fem ? addressF(radioize(l.text, p)) : radioize(l.text, p);
-        // אם הטקסט כבר פותח בשם הדובר (למשל „מוקד: …”) – לא מכפילים
+        // אם הטקסט כבר פותח בשם הדובר (למשל „משל״ט: …”) – לא מכפילים
         const who = named && text.startsWith(`${named}:`) ? '' : named;
         return (
           <p key={i} className={`line ${['center', 'duty', 'head'].includes(l.speaker) ? 'dispatch' : l.speaker === 'dispatch' || l.speaker === 'player' || l.speaker === 'narrator' ? l.speaker : ''}`}>
@@ -76,15 +76,15 @@ function FactsPanel({ sc, st }: { sc: Scenario; st: GameState }) {
     );
   return (
     <div className="facts" data-testid="facts">
-      <h4>📻 מידע מהמוקד – טרם אומת בזירה</h4>
-      <List items={dispatch} empty="אין מידע פתוח מהמוקד." />
+      <h4>📻 מידע מהמשל״ט – טרם אומת בזירה</h4>
+      <List items={dispatch} empty="אין מידע פתוח מהמשל״ט." />
       <h4>✓ אומת או נצפה בזירה</h4>
       <List items={verified} empty="עדיין לא אומת דבר בזירה." />
       <h4>🗣 נטען על ידי מעורבים (גרסאות)</h4>
       <List items={claims} empty="עדיין לא נמסרו גרסאות." />
       {st.updates.length > 0 && (
         <>
-          <h4>עדכונים שנשלחו למוקד</h4>
+          <h4>עדכונים שנשלחו למשל״ט</h4>
           <ul>
             {st.updates.map((u) => (
               <li key={u.n}>
@@ -168,7 +168,7 @@ function Composer({ sc, st, onSend, learning, summon }: { sc: Scenario; st: Game
     <div className="stack">
       {summon && (
         <p className="point challenge small" data-testid="summon-hint">
-          📞 זימון כוחות דרך המשל״ט: בחרו את הכוח ב„סיוע נדרש”, ומסרו את מה שהמוקד צריך – מיקום מדויק, מה קרה, נפגעים ומצבם, סכנות בדרך.
+          📞 זימון כוחות דרך המשל״ט: בחרו את הכוח ב„סיוע נדרש”, ומסרו את מה שהמשל״ט צריך – מיקום מדויק, מה קרה, נפגעים ומצבם, סכנות בדרך.
         </p>
       )}
       <fieldset className="composer-to" data-testid="composer-to">
@@ -177,7 +177,7 @@ function Composer({ sc, st, onSend, learning, summon }: { sc: Scenario; st: Game
           {(['center', 'head', 'duty'] as RadioTo[]).map((k) => (
             <label key={k}>
               <input type="radio" name="radio-to" checked={to === k} onChange={() => setTo(k)} />
-              <span>{p.real ? `${RADIO_TO_LABEL[k]}${k === 'center' ? ` – ${p.center}` : ''}` : k === 'center' ? 'המוקד' : RADIO_TO_LABEL[k]}</span>
+              <span>{p.real ? `${RADIO_TO_LABEL[k]}${k === 'center' ? ` – ${p.center}` : ''}` : k === 'center' ? 'המשל״ט' : RADIO_TO_LABEL[k]}</span>
             </label>
           ))}
         </div>
@@ -219,7 +219,7 @@ function Composer({ sc, st, onSend, learning, summon }: { sc: Scenario; st: Game
         {sel.length ? preview : 'בחרו לפחות רכיב אחד.'}
       </div>
       <button type="button" className="btn primary" disabled={!sel.length} onClick={() => onSend(sel, note.trim(), to)}>
-        📻 שליחת העדכון למוקד
+        📻 שליחת העדכון למשל״ט
       </button>
     </div>
   );
@@ -415,7 +415,7 @@ export function Play() {
     else audio.setAmbience([]);
   }, [sc, stage, audioStatus, ambienceKey]);
 
-  // השמעת שורות חדשות: הודעות מוקד בערוץ קשר, השאר בדיבור
+  // השמעת שורות חדשות: הודעות משל״ט בערוץ קשר, השאר בדיבור
   const spokenTurn = useRef(-1);
   useEffect(() => {
     if (!sc || !st || spokenTurn.current === st.turn) return;
@@ -563,7 +563,7 @@ export function Play() {
         kind={sc.transition.kind}
         shift={st.config.shift}
         rain={sc.scene.weather === 'rain'}
-        text={stage === 'transition' ? sc.transition.text : 'הניידת ממתינה. קראו את הודעת המוקד, בקשו השלמת פרטים לפי הצורך ואשרו יציאה.'}
+        text={stage === 'transition' ? sc.transition.text : 'הניידת ממתינה. קראו את הודעת המשל״ט, בקשו השלמת פרטים לפי הצורך ואשרו יציאה.'}
         animate={animate && stage === 'transition'}
         running={stage === 'transition'}
         paused={paused || settingsOpen}
@@ -691,14 +691,14 @@ export function Play() {
                   📻 נוהל קשר
                 </button>
                 {learning && (
-                  <button type="button" className="btn small" onClick={() => setHint(currentHint(sc, st) ?? null)}>
+                  <button type="button" className="btn small" onClick={() => setHint((h => (h && settings.officerVoice === 'f' ? feminizeFeedback(h) : h))(currentHint(sc, st) ?? null))}>
                     💡 רמז
                   </button>
                 )}
               </div>
               {hint && <p className="point challenge small">{hint}</p>}
               {(() => {
-                // שלב הקריאה, לפי הסדר בשטח: אישור קבלה בקשר ← מסלול ← שאלות למוקד ← יציאה
+                // שלב הקריאה, לפי הסדר בשטח: אישור קבלה בקשר ← מסלול ← שאלות למשל״ט ← יציאה
                 const fus = availableFollowUps(sc, st);
                 const ack = fus.filter((c) => c.id.startsWith('rp-ack'));
                 const route = fus.filter((c) => c.id.startsWith('rt-'));
@@ -706,7 +706,7 @@ export function Play() {
                 const btns = (cs: typeof fus) =>
                   cs.map((c) => (
                     <button key={c.id} type="button" className="btn block" onClick={() => choose(c.id)}>
-                      {fill(c.label, st.vars)}
+                      {settings.officerVoice === 'f' ? feminize(fill(c.label, st.vars)) : fill(c.label, st.vars)}
                     </button>
                   ));
                 return (
@@ -725,10 +725,10 @@ export function Play() {
                         <div className="stack" style={{ marginTop: 0 }}>{btns(route)}</div>
                       </>
                     )}
-                    <h3 style={{ fontSize: '1em' }}>❓ שאלות למוקד</h3>
+                    <h3 style={{ fontSize: '1em' }}>❓ שאלות למשל״ט</h3>
                     <div className="stack" style={{ marginTop: 0 }}>
                       {btns(ask)}
-                      {ask.length === 0 && <p className="small muted">אין שאלות נוספות למוקד.</p>}
+                      {ask.length === 0 && <p className="small muted">אין שאלות נוספות למשל״ט.</p>}
                     </div>
                   </>
                 );
@@ -840,7 +840,7 @@ export function Play() {
                             <div className="choices" role="group" aria-label={`פעולות: ${h.label}`}>
                               {choices.map((c) => (
                                 <button key={c.id} type="button" className="btn block" onClick={() => choose(c.id)}>
-                                  {fill(c.label, st.vars)}
+                                  {settings.officerVoice === 'f' ? feminize(fill(c.label, st.vars)) : fill(c.label, st.vars)}
                                 </button>
                               ))}
                               {choices.length === 0 && <p className="small muted">כל הפעולות כאן בוצעו.</p>}
@@ -859,7 +859,7 @@ export function Play() {
           {stage === 'scene' && (
             <div className="tray" role="toolbar" aria-label="פעולות עיקריות" ref={trayRef}>
               <button type="button" className="btn" onClick={() => { setSummon(false); setComposer(true); }} data-testid="open-composer">
-                📻 עדכון למוקד
+                📻 עדכון למשל״ט
               </button>
               <button type="button" className="btn" onClick={() => { setSummon(true); setComposer(true); }} data-testid="open-summon">
                 📞 זימון כוחות
@@ -883,7 +883,7 @@ export function Play() {
                 📻 נוהל
               </button>
               {learning && (
-                <button type="button" className="btn" onClick={() => setHint(currentHint(sc, st) ?? null)}>
+                <button type="button" className="btn" onClick={() => setHint((h => (h && settings.officerVoice === 'f' ? feminizeFeedback(h) : h))(currentHint(sc, st) ?? null))}>
                   💡 רמז
                 </button>
               )}

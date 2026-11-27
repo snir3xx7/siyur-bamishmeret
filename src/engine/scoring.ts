@@ -19,7 +19,7 @@ export const DOMAIN_LABELS: Record<Domain, string> = {
   assessment: 'הערכת מצב ותעדוף פעולות',
   communication: 'תקשורת עם המעורבים',
   authority: 'הפעלת סמכות ונהלים',
-  dispatch: 'עדכון מוקד ותיאום סיוע',
+  dispatch: 'עדכון המשל״ט ותיאום סיוע',
   documentation: 'תיעוד וסיכום האירוע',
 };
 

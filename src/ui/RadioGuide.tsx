@@ -1,3 +1,4 @@
+import { addressF, feminize } from '../config/feminize';
 import { callTo, type RadioProfile } from '../config/stations';
 
 /**
@@ -17,7 +18,7 @@ export function RadioGuide({ p }: { p: RadioProfile }) {
         ['שיטור עירוני', '301–302', 'איכות חיים, רעש, חניה, סדר ציבורי ברשות.'],
       ]
     : [
-        ['מוקד אלון (בדוי)', 'מוקד', 'פותח אירוע, מעביר פרטים, מקבל עדכונים ומזמין כוחות.'],
+        ['מוקד אלון (בדוי)', 'משל״ט', 'פותח אירוע, מעביר פרטים, מקבל עדכונים ומזמין כוחות.'],
         ['קצין תורן', 'קצין תורן', 'מעודכן באירוע משמעותי.'],
       ];
   const examples: [string, string, string][] = [
@@ -36,7 +37,7 @@ export function RadioGuide({ p }: { p: RadioProfile }) {
   return (
     <div className="radio-guide stack" data-testid="radio-guide">
       <p className="small muted">
-        מבנה כל שידור: <b>למי – ממי – מה</b>, השולח באות קריאה מלא: „{ctr} מ{me}”. באירוע עובדים מול <b>{p.real ? p.center : 'המוקד'}</b> – ממנו מקבלים את הפרטים ואליו מדווחים. קצר, עובדתי, בלי קביעות. מי שקיבל – מאשר („{me}, קיבלתי”).
+        מבנה כל שידור: <b>למי – ממי – מה</b>, השולח באות קריאה מלא: „{ctr} מ{me}”. באירוע עובדים מול <b>{p.real ? p.center : 'המשל״ט'}</b> – ממנו מקבלים את הפרטים ואליו מדווחים. קצר, עובדתי, בלי קביעות. מי שקיבל – מאשר („{me}, קיבלתי”).
       </p>
       <h3>מי זה מי</h3>
       <table className="guide-table">
@@ -45,14 +46,14 @@ export function RadioGuide({ p }: { p: RadioProfile }) {
       </table>
       <h3>למי פונים על מה</h3>
       <ul>
-        <li><b>{p.real ? p.center : 'המוקד'}</b> – כל ניהול האירוע: שאלות על הפרטים, קבלה, הגעה, תמונת מצב, פנוי/עסוק, סיום, מד״א, כב״ה, גורם מוסמך לחפץ חשוד, גרר/פקח, איתור בעלים, הפצת תיאור.</li>
+        <li><b>{p.real ? p.center : 'המשל״ט'}</b> – כל ניהול האירוע: שאלות על הפרטים, קבלה, הגעה, תמונת מצב, פנוי/עסוק, סיום, מד״א, כב״ה, גורם מוסמך לחפץ חשוד, גרר/פקח, איתור בעלים, הפצת תיאור.</li>
         {p.real && <li><b>{p.headNum}</b> – תגבור ניידת, החלפת ניידת, ענייני משמרת. בתחילת האירוע הוא מבקש מהמשל״ט להעביר אליך את האירוע.</li>}
         <li><b>{p.real ? `קצין תורן ${p.dutyNum}` : 'קצין תורן'}</b> – נפגע, עיכוב, פינוי, חפץ חשוד, סירוב או התנגדות.</li>
       </ul>
       <h3>דוגמאות שידור</h3>
       <table className="guide-table">
-        <thead><tr><th>מצב</th><th>אתה משדר</th><th>תשובה</th></tr></thead>
-        <tbody>{examples.map((e) => <tr key={e[0]}><td>{e[0]}</td><td>„{e[1]}”</td><td>„{e[2]}”</td></tr>)}</tbody>
+        <thead><tr><th>מצב</th><th>{p.fem ? 'את משדרת' : 'אתה משדר'}</th><th>תשובה</th></tr></thead>
+        <tbody>{examples.map((e) => <tr key={e[0]}><td>{p.fem ? addressF(e[0]) : e[0]}</td><td>„{p.fem ? feminize(e[1]) : e[1]}”</td><td>„{p.fem ? addressF(e[2]) : e[2]}”</td></tr>)}</tbody>
       </table>
       <p className="small muted">עקרונות לתרגול בלבד. ניסוחים ואותות קריאה בתחנות שסומנו „משוער” – לפי ההיגיון של תחנות כפר סבא ונתניה; המדריך יכול לעדכן.</p>
     </div>

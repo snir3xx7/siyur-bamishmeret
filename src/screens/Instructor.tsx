@@ -47,7 +47,7 @@ export function Instructor() {
 
       <section className="card stack" aria-labelledby="ed-link">
         <h2 id="ed-link">✏️ עורך תרחישים</h2>
-        <p className="small muted">עותק של תרחיש קיים עם טקסטים משלכם: שמות, מקום, הקריאה מהמוקד, השורות והמשוב. בדיקת תקינות, ניסיון וייצוא לקובץ לשיתוף עם מדריכים אחרים.</p>
+        <p className="small muted">עותק של תרחיש קיים עם טקסטים משלכם: שמות, מקום, הקריאה מהמשל״ט, השורות והמשוב. בדיקת תקינות, ניסיון וייצוא לקובץ לשיתוף עם מדריכים אחרים.</p>
         <a className="btn primary" href="#/editor" data-testid="editor-link">פתיחת העורך</a>
       </section>
 

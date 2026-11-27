@@ -1107,7 +1107,7 @@
  },
  "finish": {
   "label": "סיום הטיפול במקום",
-  "confirm": "לסיים את הטיפול ולעבור לתחקיר? אפשר לשלוח עדכון אחרון למוקד לפני הסיום."
+  "confirm": "לסיים את הטיפול ולעבור לתחקיר? אפשר לשלוח עדכון אחרון למשל״ט לפני הסיום."
  },
  "endings": [
   {
@@ -1240,7 +1240,7 @@
   "נסח שידור למשל״ט שכולל: מקום, גיל, מצב ומה נדרש."
  ],
  "report": {
-  "reason": "התקבלה משימה מהמוקד: רעש ושתייה של צעירים בגינת הזית.",
+  "reason": "התקבלה משימה מהמשל״ט: רעש ושתייה של צעירים בגינת הזית.",
   "checklist": [
    {
     "label": "מה נצפה בגינה",
@@ -1345,6 +1345,7 @@
    "ffbeae93": "audio/voice/park-youths/l-ffbeae93.mp3",
    "95a2a11c": "audio/voice/park-youths/l-95a2a11c.mp3",
    "10abbf22": "audio/voice/park-youths/l-10abbf22.mp3",
+   "c473ca0a": "audio/voice/park-youths/l-c473ca0a.mp3",
    "8e9f2fe4": "audio/voice/park-youths/l-8e9f2fe4.mp3",
    "c1fccee0": "audio/voice/park-youths/l-c1fccee0.mp3",
    "2334e85f": "audio/voice/park-youths/l-2334e85f.mp3",

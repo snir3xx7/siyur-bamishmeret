@@ -57,7 +57,7 @@ for (const e of idx) {
           if (!ok && sp === 'playerF') ok = has('player', raw) || has('player', text); // נפילה לקול השוטר
           if (!ok) r.missing.push(`[${mode}/${v.id}] ${sp}: ${text.slice(0, 80)}`);
           // שוטרת: השורה שפונה אלייך – בנוסח נקבה
-          if (ok && l.speaker !== 'player' && l.speaker !== 'narrator') {
+          if (ok && l.speaker !== 'player') {
             const tf = addressF(text);
             if (tf !== text) {
               const j = tf.indexOf(', ');

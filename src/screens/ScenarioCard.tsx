@@ -11,7 +11,7 @@ import { downloadScenario, offlineStatus, removeScenario, type OfflineState } fr
 import { go, scenarioLink } from '../ui/router';
 
 const DIFF: [Difficulty, string, string][] = [
-  ['basic', 'בסיסית', 'המוקד מוסר יותר פרטים מראש'],
+  ['basic', 'בסיסית', 'המשל״ט מוסר יותר פרטים מראש'],
   ['standard', 'רגילה', 'מידע חלקי, צריך לשאול'],
   ['advanced', 'מתקדמת', 'קטיעות קשר וסתירות נוספות'],
 ];

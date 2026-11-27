@@ -76,7 +76,7 @@ export function StationPicker({ fictionalUnit, required }: { fictionalUnit: stri
       )}
       {(p.real || !required) && <p className="small muted" data-testid="radio-summary">
         {p.real
-          ? `בקשר: אתה ${p.unit}. ${p.center} („${p.centerCall}”) פותח את האירוע, ${p.head} (ראש המשמרת) מבקש להעביר אותו אליך, ואת האירוע מנהלים מול המשל״ט. קצין תורן: ${p.dutyOfficer}.`
+          ? `בקשר: ${settings.officerVoice === 'f' ? 'את' : 'אתה'} ${p.unit}. ${p.center} („${p.centerCall}”) פותח את האירוע, ${p.head} (ראש המשמרת) מבקש להעביר אותו אליך, ואת האירוע מנהלים מול המשל״ט. קצין תורן: ${p.dutyOfficer}.`
           : `שמות בדויים: ${fictionalUnit} ומוקד אלון.`}
       </p>}
     </fieldset>

@@ -9,11 +9,11 @@ export const useRadio = () => useContext(RadioCtx);
 export function RadioChain({ p, incident }: { p: RadioProfile; incident: string }) {
   if (!p.real) return null;
   const steps = [
-    { icon: '📞', who: 'אזרח', what: 'פנייה למוקד' },
+    { icon: '📞', who: 'אזרח', what: 'פנייה למוקד 100' },
     { icon: '🖥', who: p.center, what: `נפתח אירוע ${incident}` },
     { icon: '🎧', who: p.head, what: `„תעבירי ל־${p.unitNum}”` },
     { icon: '📡', who: p.center, what: `מעדכן את ${p.unitNum}` },
-    { icon: '🚓', who: p.unit, what: 'אתה – מול המשל״ט' },
+    { icon: '🚓', who: p.unit, what: p.fem ? 'את – מול המשל״ט' : 'אתה – מול המשל״ט' },
   ];
   return (
     <ol className="radio-chain" aria-label="שרשרת הקשר" data-testid="radio-chain">

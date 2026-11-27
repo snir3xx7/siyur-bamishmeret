@@ -1,5 +1,5 @@
 /**
- * דוח פעולה שהחניך כותב בעצמו בסיום: לכל פרט – נצפה / נטען / נמסר מהמוקד / לא ידוע לי,
+ * דוח פעולה שהחניך כותב בעצמו בסיום: לכל פרט – נצפה / נטען / נמסר מהמשל״ט / לא ידוע לי,
  * ואילו סמכויות הופעלו. המערכת משווה למה שקרה בפועל במשחק (מה נחשף ואיך, ואילו פעולות בוצעו).
  * לא נכלל בציון – תרגול כתיבה מדויקת: לא לכתוב מה שלא ידוע, ולא להציג טענה כעובדה.
  */
@@ -10,7 +10,7 @@ export type FactClass = 'seen' | 'said' | 'dispatch' | 'none';
 export const FACT_CLASS_LABEL: Record<FactClass, string> = {
   seen: 'נצפה / אומת',
   said: 'נטען',
-  dispatch: 'נמסר מהמוקד',
+  dispatch: 'נמסר מהמשל״ט',
   none: 'לא ידוע לי',
 };
 
@@ -63,7 +63,7 @@ export function factQuiz(sc: Scenario, st: GameState): FactItem[] {
     }
     const src = f.source ? sc.characters.find((c) => c.id === f.source)?.name : undefined;
     if (k.verified) items.push({ id: f.id, text, answer: 'seen', why: f.kind === 'observation' ? 'ראית או בדקת בעצמך.' : 'נמסר, ואחר כך אומת בזירה.' });
-    else if (f.kind === 'dispatch') items.push({ id: f.id, text, answer: 'dispatch', why: 'מסר המוקד ולא אומת בזירה.' });
+    else if (f.kind === 'dispatch') items.push({ id: f.id, text, answer: 'dispatch', why: 'מסר המשל״ט ולא אומת בזירה.' });
     else items.push({ id: f.id, text, answer: 'said', why: src ? `טענה של ${src} – נכתב „לדברי…”.` : 'טענה – נכתב „לדברי…”.' });
   }
   return items.slice(0, 12);

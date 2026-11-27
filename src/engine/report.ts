@@ -30,12 +30,12 @@ export function buildReport(sc: Scenario, st: GameState): ReportSection[] {
   ];
 
   const dispatchFacts = Object.keys(st.known).filter((id) => sc.facts.find((f) => f.id === id)?.kind === 'dispatch');
-  const reason = [fill(sc.report.reason, st.vars), ...dispatchFacts.map((id) => `– ${factText(sc, st, id)}${st.known[id].verified ? ' (אומת בזירה)' : ' (מסר המוקד, לא אומת)'}`)];
+  const reason = [fill(sc.report.reason, st.vars), ...dispatchFacts.map((id) => `– ${factText(sc, st, id)}${st.known[id].verified ? ' (אומת בזירה)' : ' (מסר המשל״ט, לא אומת)'}`)];
 
   const timeline = st.log
     .filter((l) => ['dispatch', 'arrive', 'skip', 'update', 'finish', 'event'].includes(l.kind) || (l.kind === 'choice' && l.ref !== 'go' && reportOf(sc, l.ref)))
     .map((l) => {
-      if (l.kind === 'dispatch') return `${time(l.t)} – התקבלה משימה מהמוקד`;
+      if (l.kind === 'dispatch') return `${time(l.t)} – התקבלה משימה מהמשל״ט`;
       if (l.kind === 'arrive' || l.kind === 'skip') return `${time(l.t)} – הגעה לזירה`;
       if (l.kind === 'finish') return `${time(l.t)} – סיום הטיפול בזירה`;
       if (l.kind === 'update') return `${time(l.t)} – ${l.label}`;
@@ -87,7 +87,7 @@ export function buildReport(sc: Scenario, st: GameState): ReportSection[] {
     { id: 'observations', title: 'תצפיות (מה נצפה ואומת בזירה)', text: or(observations) },
     { id: 'statements', title: 'דברים שנמסרו (טענות וגרסאות, לא אומתו)', text: or(statements) },
     { id: 'actions', title: 'פעולות שבוצעו', text: or(actions) },
-    { id: 'updates', title: 'עדכונים למוקד', text: or(updates) },
+    { id: 'updates', title: 'עדכונים למשל״ט', text: or(updates) },
     { id: 'outcome', title: 'תוצאת האירוע', text: or(outcome) },
     { id: 'missing', title: 'פרטים חסרים', text: missing.length ? missing.join('\n') : 'לא זוהו פרטים חסרים ברשימת הבדיקה.' },
   ];

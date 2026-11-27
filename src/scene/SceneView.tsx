@@ -219,7 +219,7 @@ export function SceneView({ sc, st, selected, onSelect, animate, lightsAnim, sho
 
       <div className={`radio-led ${radioIn ? 'rx' : ''}`} data-testid="radio-led" aria-hidden="true">
         <span className="led" />
-        {radioIn ? 'הודעת מוקד' : 'קשר'}
+        {radioIn ? 'הודעת משל״ט' : 'קשר'}
       </div>
       {chatter && !radioIn && (
         <div className="radio-feed" key={chatter} data-testid="radio-feed" aria-hidden="true">

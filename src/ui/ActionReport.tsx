@@ -18,7 +18,7 @@ export function ActionReport({ sc, st }: { sc: Scenario; st: GameState }) {
     <section className="card print-debrief action-report" aria-labelledby="ar-title" data-testid="action-report">
       <h2 id="ar-title">✍️ הדוח שלך <span className="small muted">(לא נכלל בציון)</span></h2>
       <p className="small muted">
-        כתוב דוח פעולה: לכל פרט – האם ראית או אימתת אותו, האם מישהו טען אותו, האם רק המוקד מסר, או שבכלל לא ידוע לך. אחר כך סמן אילו סמכויות הפעלת.
+        כתוב דוח פעולה: לכל פרט – האם ראית או אימתת אותו, האם מישהו טען אותו, האם רק המשל״ט מסר, או שבכלל לא ידוע לך. אחר כך סמן אילו סמכויות הפעלת.
       </p>
       <ol className="ar-facts">
         {facts.map((f, i) => {

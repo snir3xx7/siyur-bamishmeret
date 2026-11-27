@@ -8,6 +8,7 @@ import { notebookCheck, procedureReport } from '../engine/procedure';
 import { custodyReport } from '../engine/custody';
 import { bodycamReport } from '../engine/bodycam';
 import { pressureReport } from '../engine/pressure';
+import { femDeep } from '../config/feminize';
 import { ActionReport } from '../ui/ActionReport';
 import { SendResult } from '../ui/SendResult';
 import { evalCond } from '../engine/conditions';
@@ -79,7 +80,12 @@ export function DebriefScreen({ query }: { query: URLSearchParams }) {
     return () => document.body.classList.remove('projector');
   }, [projector]);
 
-  const d = useMemo(() => (game && game.st.stage === 'ended' ? buildDebrief(game.sc, game.st) : null), [game]);
+  const fem = settings.officerVoice === 'f';
+  // שוטרת: המשוב, ההסברים והכרטיסים בלשון נקבה
+  const d = useMemo(() => {
+    const x = game && game.st.stage === 'ended' ? buildDebrief(game.sc, game.st) : null;
+    return x && fem ? femDeep(x) : x;
+  }, [game, fem]);
   const report = useMemo<ReportSection[]>(() => (game && game.st.stage === 'ended' ? buildReport(game.sc, game.st) : []), [game]);
 
   if (!game || !d) {
@@ -93,10 +99,11 @@ export function DebriefScreen({ query }: { query: URLSearchParams }) {
   }
   const { sc, st } = game;
   const radio = { ...gameProfile(st.config, settings.station, sc.dispatch.unit), fem: settings.officerVoice === 'f' };
-  const proc = procedureReport(st, sc);
-  const custody = custodyReport(st, sc, (c) => evalCond({ sc, st }, c));
-  const cam = bodycamReport(st, sc);
-  const pressure = pressureReport(sc, st);
+  const F = <T,>(v: T): T => (fem ? femDeep(v) : v);
+  const proc = F(procedureReport(st, sc));
+  const custody = F(custodyReport(st, sc, (c) => evalCond({ sc, st }, c)));
+  const cam = F(bodycamReport(st, sc));
+  const pressure = F(pressureReport(sc, st));
   const shiftPlan = loadShift();
   const nb = notebookCheck(sc, st);
   const reportFinal = report.map((s) => ({ ...s, text: edits[s.id] ?? radioize(s.text.replace(`צוות: ${sc.dispatch.unit}`, `צוות: ${radio.unit}${radio.real ? ` | ${radio.stationName}, ${radio.districtName}` : ''}`), radio) }));
@@ -348,7 +355,7 @@ export function DebriefScreen({ query }: { query: URLSearchParams }) {
                 ) : (
                   <ul className="small">
                     {t.knownDispatch.map((x) => (
-                      <li key={x}>מהמוקד: {x}</li>
+                      <li key={x}>מהמשל״ט: {x}</li>
                     ))}
                     {t.knownVerified.map((x) => (
                       <li key={x}>אומת: {x}</li>

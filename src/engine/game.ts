@@ -42,7 +42,7 @@ export function createGame(sc: Scenario, config: GameConfig): GameState {
     startedAt: new Date().toISOString(),
   };
   st.log.push({
-    turn: 0, kind: 'dispatch', ref: 'dispatch', label: 'התקבלה משימה מהמוקד', t: 0, stage: 'dispatch',
+    turn: 0, kind: 'dispatch', ref: 'dispatch', label: 'התקבלה משימה מהמשל״ט', t: 0, stage: 'dispatch',
     knownBefore: [], verifiedBefore: [], lines, revealed: initial, consequences: [], actionIndex: -1,
   });
   return st;
@@ -310,7 +310,7 @@ export function reduce(sc: Scenario, prev: GameState, action: GameAction): GameS
       st.simMinutes += 1;
       st.lastLines = lines;
       const texts = elements.map((id) => fill(sc.update.elements.find((e) => e.id === id)!.text, st.vars));
-      pushLog(st, prev, 'update', `update:${n}`, `עדכון ${n} למוקד: ${texts.join('; ')}${action.note ? ` (${action.note.slice(0, 280)})` : ''}`, lines, revealed, consequences);
+      pushLog(st, prev, 'update', `update:${n}`, `עדכון ${n} למשל״ט: ${texts.join('; ')}${action.note ? ` (${action.note.slice(0, 280)})` : ''}`, lines, revealed, consequences);
       fireEvents(sc, st);
       return st;
     }

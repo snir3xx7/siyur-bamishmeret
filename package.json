@@ -17,7 +17,8 @@
     "budget": "node scripts/check-budget.mjs",
     "test:all": "npm run lint && npm test && npm run build && npm run budget && npm run test:e2e",
     "art": "node scripts/ai-art/generate.mjs",
-    "voice:audit": "vite-node scripts/voice-audit.ts"
+    "voice:audit": "vite-node scripts/voice-audit.ts",
+    "qa": "vite-node scripts/qa-fuzz.ts"
   },
   "dependencies": {
     "pixi.js": "8.22.0",
