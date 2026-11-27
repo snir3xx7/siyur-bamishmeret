@@ -101,15 +101,16 @@ export function track(ev: TrackEvent) {
   void flush();
 }
 
-export async function fetchTeams(): Promise<string[]> {
+/** קורסים/צוותים: רשימה סגורה שהמדריך הגדיר (fixed), או הצעות ממה שחניכים כבר כתבו */
+export async function fetchTeams(): Promise<{ teams: string[]; fixed: boolean }> {
   const url = trackUrl();
-  if (!url) return [];
+  if (!url) return { teams: [], fixed: false };
   try {
     const r = await fetch(url);
-    const j = (await r.json()) as { teams?: string[] };
-    return j.teams ?? [];
+    const j = (await r.json()) as { teams?: string[]; fixed?: boolean };
+    return { teams: j.teams ?? [], fixed: !!j.fixed };
   } catch {
-    return [];
+    return { teams: [], fixed: false };
   }
 }
 

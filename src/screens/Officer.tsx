@@ -21,7 +21,7 @@ export function Officer() {
   const [sel, setSel] = useState<'m' | 'f'>(settings.officerVoice ?? 'm');
   const [idx, setIdx] = useState<Record<string, string>>({});
   const [who, setWho] = useState(identity);
-  const [teams, setTeams] = useState<string[]>([]);
+  const [teams, setTeams] = useState<{ teams: string[]; fixed: boolean }>({ teams: [], fixed: false });
   useEffect(() => {
     if (trackingOn()) void fetchTeams().then(setTeams);
   }, []);
@@ -45,7 +45,7 @@ export function Officer() {
   };
   const confirm = () => {
     if (trackingOn()) {
-      setIdentity(who.name.trim(), who.team.trim());
+      setIdentity(who.name.trim(), who.team.trim().replace(/\s+/g, ' '));
       track({ event: 'enter' });
     }
     setSettings({ ...settings, officerVoice: sel, officerChosen: true });
@@ -108,13 +108,18 @@ export function Officer() {
             </label>
             <label>
               קורס / צוות
-              {teams.length ? (
+              {teams.fixed && teams.teams.length ? (
                 <select value={who.team} onChange={(e) => setWho({ ...who, team: e.target.value })} data-testid="who-team">
                   <option value="" disabled>בחרו…</option>
-                  {teams.map((t) => <option key={t} value={t}>{t}</option>)}
+                  {teams.teams.map((t) => <option key={t} value={t}>{t}</option>)}
                 </select>
               ) : (
-                <input value={who.team} onChange={(e) => setWho({ ...who, team: e.target.value })} maxLength={40} placeholder="למשל: קורס סיור 12" data-testid="who-team" />
+                <>
+                  <input value={who.team} onChange={(e) => setWho({ ...who, team: e.target.value })} maxLength={40} placeholder="למשל: קורס סיור 12" list="team-list" data-testid="who-team" />
+                  <datalist id="team-list">
+                    {teams.teams.map((t) => <option key={t} value={t} />)}
+                  </datalist>
+                </>
               )}
             </label>
           </div>

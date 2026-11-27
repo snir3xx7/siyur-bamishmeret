@@ -5,7 +5,7 @@
  *  1. גיליון Google חדש → הרחבות → Apps Script → מוחקים הכול ומדביקים את הקובץ הזה → שמירה.
  *  2. הגדרות הפרויקט (⚙) → מאפייני סקריפט → מוסיפים:
  *       ADMIN_PASSWORD = הסיסמה שלכם (רק אתם יודעים אותה; לא נשמרת באתר)
- *       TEAMS          = רשימת קורסים/צוותים מופרדת בפסיקים, למשל: קורס סיור 12, קורס סיור 13
+ *       TEAMS          = (לא חובה) רשימת קורסים מופרדת בפסיקים. בלי זה – כל חניך כותב את שם הקורס, ומקבל הצעות ממה שאחרים כבר כתבו
  *  3. פריסה → פריסה חדשה → סוג: אפליקציית אינטרנט → „ביצוע בתור: אני”, „גישה: כל אחד” → פריסה → אישור הרשאות.
  *  4. מעתיקים את כתובת אפליקציית האינטרנט (…/exec) ושולחים למפתח – היא נכנסת להגדרות האתר.
  *
@@ -55,9 +55,18 @@ function out_(o) {
 const s_ = (v, n) => String(v == null ? '' : v).slice(0, n);
 
 function doGet(e) {
-  // רשימת הצוותים לבחירה בכניסה – ציבורי
-  const teams = (PropertiesService.getScriptProperties().getProperty('TEAMS') || '').split(',').map((t) => t.trim()).filter(String);
-  return out_({ ok: true, teams });
+  // הצעות לשם הקורס/צוות בכניסה – ציבורי. אם הוגדר TEAMS – הרשימה הזו; אחרת – השמות שחניכים כבר הזינו
+  let teams = (PropertiesService.getScriptProperties().getProperty('TEAMS') || '').split(',').map((t) => t.trim()).filter(String);
+  if (!teams.length) {
+    const sh = sheet_();
+    const n = sh.getLastRow() - 1;
+    if (n > 0) {
+      const take = Math.min(n, 3000);
+      const vals = sh.getRange(sh.getLastRow() - take + 1, 3, take, 1).getValues().map((r) => String(r[0]).trim()).filter(String);
+      teams = Array.from(new Set(vals)).slice(0, 50);
+    }
+  }
+  return out_({ ok: true, teams, fixed: !!PropertiesService.getScriptProperties().getProperty('TEAMS') });
 }
 
 function doPost(e) {

@@ -14,7 +14,7 @@ const URL = `http://127.0.0.1:${PORT}/exec`;
 test.beforeAll(async () => {
   server = createServer((req, res) => {
     res.setHeader('Access-Control-Allow-Origin', '*');
-    if (req.method === 'GET') return res.end(JSON.stringify({ ok: true, teams: ['קורס סיור 12', 'קורס סיור 13'] }));
+    if (req.method === 'GET') return res.end(JSON.stringify({ ok: true, teams: ['קורס סיור 12', 'קורס סיור 13'], fixed: true }));
     let b = '';
     req.on('data', (c) => (b += c));
     req.on('end', () => {
