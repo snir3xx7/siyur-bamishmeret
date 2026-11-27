@@ -43,7 +43,11 @@ const ls = {
 
 /** הכתובת: ברירת מחדל מהקוד; אפשר לעקוף לבדיקות (localStorage) */
 export function trackUrl(): string {
-  return ls.get('siyur.trackUrl') || TRACK_URL;
+  const o = ls.get('siyur.trackUrl');
+  if (o) return o === 'off' ? '' : o;
+  // בדיקות אוטומטיות לא שולחות לגיליון האמיתי של המדריך
+  if (typeof navigator !== 'undefined' && navigator.webdriver) return '';
+  return TRACK_URL;
 }
 export const trackingOn = () => !!trackUrl();
 
