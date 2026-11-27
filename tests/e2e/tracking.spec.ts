@@ -41,7 +41,9 @@ test('מעקב: שם וצוות בכניסה, התחלה וסיום נרשמים
   await page.getByTestId('who-name').fill('שירן כ.');
   await page.getByTestId('who-team').selectOption('קורס סיור 13');
   await page.getByTestId('district-select').selectOption('center');
-  await page.getByTestId('officer-confirm').click();
+  // בסימולציית האייפון של Playwright הלחיצה נחסמת אחרי הקלדה בשדה (באג של הכלי, לא של הדף) – לוחצים במקלדת
+  await page.getByTestId('officer-confirm').focus();
+  await page.keyboard.press('Enter');
   await expect.poll(() => rows.filter((r) => r.event === 'enter').length).toBeGreaterThan(0);
 
   await startScenario(page, 'shoplifting', 3);

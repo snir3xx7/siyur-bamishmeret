@@ -36,7 +36,7 @@ export function IntroVideo() {
   const toTitle = () => {
     if (phase !== 'play') return;
     setPhase('title');
-    window.setTimeout(finish, 3400);
+    window.setTimeout(finish, 5600);
   };
 
   useEffect(() => {
@@ -65,6 +65,14 @@ export function IntroVideo() {
       <span className="grain" aria-hidden="true" />
       <span className="vignette" aria-hidden="true" />
       <span className="bars" aria-hidden="true" />
+      {/* סוף הטריילר: סמלי המכללה הלאומית לשוטרים ואגף ההדרכה נכנסים מתוך המצלמה – אחד מימין ואחד משמאל */}
+      <div className="intro-crest r" aria-hidden="true" style={{ ['--crest' as string]: `url(${assetUrl('img/brand/academy.webp')})` }}>
+        <img src={assetUrl('img/brand/academy.webp')} alt="" />
+      </div>
+      <div className="intro-crest l" aria-hidden="true" style={{ ['--crest' as string]: `url(${assetUrl('img/brand/training.webp')})` }}>
+        <img src={assetUrl('img/brand/training.webp')} alt="" />
+      </div>
+      <span className="intro-flash" aria-hidden="true" />
       <div className="intro-title" aria-live="polite">
         <p>{SITE.creditLine}</p>
         <h2>{SITE.name}</h2>

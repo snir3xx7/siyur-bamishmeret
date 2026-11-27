@@ -121,7 +121,7 @@ legend { padding: 0 6px; color: var(--muted); font-size: .9em; }
 .radio-row label:has(input:checked) { border-color: var(--accent); }
 input[type='radio'], input[type='checkbox'] { width: 20px; height: 20px; accent-color: var(--accent); }
 input[type='range'] { width: 100%; accent-color: var(--accent); }
-textarea, input[type='text'], input[type='number'], select {
+textarea, input:not([type]), input[type='text'], input[type='password'], input[type='number'], select {
   font: inherit; color: var(--text); background: #0f1822; border: 1px solid var(--line); border-radius: 8px; padding: 8px; width: 100%;
 }
 textarea { min-height: 90px; resize: vertical; }
@@ -792,3 +792,52 @@ body.projector .no-projector { display: none !important; }
 .admin-timeline li.start { border-inline-start-color: var(--warn); }
 .admin-timeline li.review { border-inline-start-color: #7aa7ff; }
 .admin-timeline details summary { cursor: pointer; }
+
+/* אייפון מגדיל את הדף כשמקלידים בשדה עם טקסט קטן מ־16px – בנייד כל השדות לפחות 16px */
+@media (max-width: 899px), (pointer: coarse) {
+  input, select, textarea { font-size: max(16px, 1em); }
+}
+
+/* סוף הטריילר: הסמלים נכנסים מתוך המצלמה (מקרוב ומטושטש → למקום), פגיעה עם הבזק, ואז ברק שעובר עליהם */
+.intro-crest { position: absolute; z-index: 5; top: 50%; width: clamp(110px, 19vw, 250px); aspect-ratio: 1; display: grid; place-items: center; opacity: 0; pointer-events: none; transform: translateY(-50%) scale(4.2); }
+.intro-crest img { width: 100%; height: auto; filter: drop-shadow(0 10px 26px #000c); }
+.intro-crest.r { inset-inline-start: 5vw; }
+.intro-crest.l { inset-inline-end: 5vw; }
+.intro-crest::after { content: ''; position: absolute; inset: 0; pointer-events: none; background: linear-gradient(115deg, transparent 35%, #fff9 48%, transparent 60%) no-repeat; background-size: 250% 100%; background-position: 150% 0;
+  -webkit-mask: var(--crest) center / contain no-repeat; mask: var(--crest) center / contain no-repeat; opacity: 0; }
+.intro.film.title .intro-crest, .intro.film.out .intro-crest { animation: crestIn 1.5s cubic-bezier(.16, .84, .25, 1) forwards, crestFloat 6s ease-in-out 1.6s infinite; }
+.intro.film.title .intro-crest.r, .intro.film.out .intro-crest.r { --tilt: -10deg; animation-delay: .35s, 1.95s; }
+.intro.film.title .intro-crest.l, .intro.film.out .intro-crest.l { --tilt: 10deg; animation-delay: .75s, 2.35s; }
+.intro.film.title .intro-crest::after { animation: crestSheen 1.4s ease 2.4s forwards; }
+.intro.film.title .intro-crest.l::after { animation-delay: 2.7s; }
+@keyframes crestIn {
+  0% { opacity: 0; transform: translateY(-50%) scale(4.2) rotate(var(--tilt, 0deg)); filter: blur(18px) brightness(2.4); }
+  45% { opacity: 1; }
+  62% { transform: translateY(-50%) scale(.93) rotate(0deg); filter: blur(0) brightness(1.5); }
+  78% { transform: translateY(-50%) scale(1.04); filter: brightness(1.15); }
+  100% { opacity: 1; transform: translateY(-50%) scale(1); filter: drop-shadow(0 0 22px #9fc0ff55); }
+}
+@keyframes crestFloat { 0%, 100% { translate: 0 0; } 50% { translate: 0 -6px; } }
+@keyframes crestSheen { 0% { opacity: 1; background-position: 150% 0; } 100% { opacity: 1; background-position: -60% 0; } }
+/* הבזק קצר ברגע ש„נוחתים” */
+.intro-flash { position: absolute; inset: 0; z-index: 5; pointer-events: none; background: radial-gradient(circle at 50% 50%, #cfe0ff55, transparent 60%); opacity: 0; }
+.intro.film.title .intro-flash { animation: introFlash 1.8s ease .9s forwards; }
+@keyframes introFlash { 0% { opacity: 0; } 15% { opacity: 1; } 100% { opacity: 0; } }
+/* בטלפון לאורך: הסמלים מעל הכותרת, אחד בכל צד */
+@media (orientation: portrait) {
+  .intro-crest { top: 22%; width: clamp(92px, 30vw, 170px); }
+  .intro-crest.r { inset-inline-start: 8vw; }
+  .intro-crest.l { inset-inline-end: 8vw; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .intro.film.title .intro-crest, .intro.film.out .intro-crest { animation: none; opacity: 1; transform: translateY(-50%); }
+}
+/* לרוחב: הכותרת בין שני הסמלים, בלי לעלות עליהם */
+@media (orientation: landscape) {
+  .intro-title { padding-inline: calc(5vw + clamp(110px, 19vw, 250px) + 16px); }
+  .intro-title h2 { font-size: clamp(2.2rem, 6.4vw, 6rem); white-space: nowrap; }
+}
+/* לאורך: הכותרת מתחת לסמלים */
+@media (orientation: portrait) {
+  .intro.film .intro-title { padding-top: 22vh; }
+}
