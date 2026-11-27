@@ -686,6 +686,10 @@ body.projector .no-projector { display: none !important; }
 .intro.film.title .intro-frame, .intro.film.out .intro-frame { opacity: .15; transition: opacity 1.6s ease; }
 .intro.film.title .fog { opacity: .8; }
 .intro.film .intro-bar { z-index: 6; }
+.intro-tap { position: absolute; z-index: 6; top: calc(18px + env(safe-area-inset-top, 0px)); left: 50%; transform: translateX(-50%); pointer-events: none;
+  padding: 8px 16px; border-radius: 999px; background: #000a; border: 1px solid #ffffff44; color: #fff; font-size: 15px; white-space: nowrap; backdrop-filter: blur(6px); }
+@media (prefers-reduced-motion: no-preference) { .intro-tap { animation: tapPulse 1.6s ease-in-out infinite; } }
+@keyframes tapPulse { 50% { opacity: .55; } }
 @media (prefers-reduced-motion: no-preference) {
   .intro.film .intro-fg { animation: pushIn 14s ease-out both; }
   .intro.film .fog.f1 { animation: fogDrift 18s ease-in-out infinite alternate; }

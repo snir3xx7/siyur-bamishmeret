@@ -3,11 +3,20 @@ import { assetUrl } from './data';
 import { SITE } from '../config/site';
 
 const KEY = 'siyur.intro.seen';
+const MUTE = 'siyur.intro.muted';
+const wantMuted = () => {
+  try {
+    return localStorage.getItem(MUTE) === '1';
+  } catch {
+    return false;
+  }
+};
 
 /**
  * טריילר פתיחה בסגנון סרט: מסך מלא (גם בטלפון לאורך – הפריים ממלא את המסך עם תנועת מצלמה איטית לרוחב),
  * שכבות ערפל נעות, גרעיניות של פילם, וינייטה ופסי קולנוע. בסוף – כותרת המשחק עולה מתוך הערפל,
- * ואז החשכה ומעבר למסך הכניסה. מתחיל מושתק (דפדפנים חוסמים קול בלי לחיצה); „עם קול” ו„דילוג”.
+ * ואז החשכה ומעבר למסך הכניסה. מתחיל עם קול; מי שרוצה – משתיק (הבחירה נשמרת).
+ * דפדפן שחוסם קול בלי לחיצה (למשל Safari בכניסה ראשונה): הסרטון ממשיך מושתק, והקול עולה בנגיעה הראשונה במסך.
  */
 export function IntroVideo() {
   const [show, setShow] = useState(() => {
@@ -20,7 +29,9 @@ export function IntroVideo() {
     return h === '' || h === 'officer';
   });
   const [phase, setPhase] = useState<'play' | 'title' | 'out'>('play');
-  const [muted, setMuted] = useState(true);
+  const [muted, setMuted] = useState(wantMuted);
+  // הדפדפן חסם הפעלה עם קול – מנגנים מושתק עד הנגיעה הראשונה
+  const [blocked, setBlocked] = useState(false);
   const fg = useRef<HTMLVideoElement>(null);
 
   const finish = () => {
@@ -43,8 +54,15 @@ export function IntroVideo() {
     if (!show) return;
     const v = fg.current;
     if (v) {
-      v.muted = true;
-      void v.play().catch(() => undefined);
+      const m = wantMuted();
+      v.muted = m;
+      void v.play().catch(() => {
+        if (m) return;
+        v.muted = true;
+        setMuted(true);
+        setBlocked(true);
+        void v.play().catch(() => undefined);
+      });
     }
     const onKey = (e: KeyboardEvent) => e.key === 'Escape' && finish();
     window.addEventListener('keydown', onKey);
@@ -52,12 +70,34 @@ export function IntroVideo() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [show]);
 
+  // נגיעה ראשונה במסך (לא בכפתורים) מפעילה את הקול שנחסם
+  useEffect(() => {
+    if (!blocked) return;
+    const on = (e: Event) => {
+      if ((e.target as Element | null)?.closest?.('.intro-bar')) return;
+      if (e instanceof KeyboardEvent && e.key === 'Escape') return;
+      const v = fg.current;
+      setBlocked(false);
+      if (!v) return;
+      v.muted = false;
+      setMuted(false);
+      void v.play().catch(() => undefined);
+    };
+    const opts = { capture: true } as const;
+    window.addEventListener('pointerdown', on, opts);
+    window.addEventListener('keydown', on, opts);
+    return () => {
+      window.removeEventListener('pointerdown', on, opts);
+      window.removeEventListener('keydown', on, opts);
+    };
+  }, [blocked]);
+
   if (!show) return null;
   const src = assetUrl('video/intro.mp4');
   return (
     <div className={`intro film ${phase}`} role="dialog" aria-label="טריילר פתיחה" data-testid="intro">
       <div className="intro-frame">
-        <video ref={fg} className="intro-fg" src={src} poster={assetUrl('video/intro-poster.jpg')} playsInline muted={muted} autoPlay preload="auto" onEnded={toTitle} onError={finish} />
+        <video ref={fg} className="intro-fg" src={src} poster={assetUrl('video/intro-poster.jpg')} playsInline muted={muted} preload="auto" onEnded={toTitle} onError={finish} />
       </div>
       <span className="fog f1" aria-hidden="true" />
       <span className="fog f2" aria-hidden="true" />
@@ -78,6 +118,7 @@ export function IntroVideo() {
         <h2>{SITE.name}</h2>
         <span>סימולטור אימון לשוטרי סיור</span>
       </div>
+      {blocked && <div className="intro-tap" aria-hidden="true">🔊 נגיעה במסך להפעלת הקול</div>}
       <div className="intro-bar">
         <button
           type="button"
@@ -85,10 +126,18 @@ export function IntroVideo() {
           onClick={() => {
             const v = fg.current;
             if (!v) return;
-            v.muted = !muted;
-            setMuted(!muted);
+            const m = !muted;
+            v.muted = m;
+            setMuted(m);
+            setBlocked(false);
+            try {
+              localStorage.setItem(MUTE, m ? '1' : '0');
+            } catch {
+              /* ignore */
+            }
             void v.play().catch(() => undefined);
           }}
+          data-testid="intro-sound"
         >
           {muted ? '🔊 עם קול' : '🔇 השתקה'}
         </button>
