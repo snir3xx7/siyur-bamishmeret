@@ -7,3 +7,13 @@ const RE = new RegExp(`(^|[.,!?–]\\s+|ו?אני\\s+(?:לא\\s+|גם\\s+|רק\\
 export function feminize(text: string): string {
   return text.replace(RE, (_, pre: string, w: string) => `${pre}${WORDS[w] ?? w}`);
 }
+
+import addr from './address-f.json';
+const PAIRS = (addr as { pairs: [string, string][] }).pairs;
+
+/** פנייה אל השוטרת: שורות של המשל״ט, 401, 11 והדמויות בלשון נקבה (ביטויים שלמים בלבד) */
+export function addressF(text: string): string {
+  let t = text;
+  for (const [a, b] of PAIRS) t = t.split(a).join(b);
+  return t;
+}

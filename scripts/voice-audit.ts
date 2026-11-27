@@ -8,6 +8,7 @@ import { DEFAULT_RADIO, radioProfile } from '../src/config/stations';
 import { radioVars, withProcedure } from '../src/engine/procedure';
 import { fill } from '../src/engine/text';
 import { voiceKey } from '../src/audio/voiceKey';
+import { addressF } from '../src/config/feminize';
 import type { Line, Scenario } from '../src/engine/types';
 
 const idx = JSON.parse(readFileSync('public/scenarios/index.json', 'utf8')).scenarios as { id: string; file: string }[];
@@ -55,6 +56,15 @@ for (const e of idx) {
           if (!ok && i > 0) ok = has(sp, text.slice(i + 2)) && (!!radioIdx[voiceKey(sp, text.slice(0, i))] || !!radioIdx[voiceKey(sp === 'playerF' ? 'player' : sp, text.slice(0, i))]);
           if (!ok && sp === 'playerF') ok = has('player', raw) || has('player', text); // נפילה לקול השוטר
           if (!ok) r.missing.push(`[${mode}/${v.id}] ${sp}: ${text.slice(0, 80)}`);
+          // שוטרת: השורה שפונה אלייך – בנוסח נקבה
+          if (ok && l.speaker !== 'player' && l.speaker !== 'narrator') {
+            const tf = addressF(text);
+            if (tf !== text) {
+              const j = tf.indexOf(', ');
+              const okF = has(sp, addressF(raw)) || has(sp, tf) || (j > 0 && has(sp, tf.slice(j + 2)));
+              if (!okF) row('פנייה לשוטרת').missing.push(`[${mode}/${v.id}] ${sp}: ${tf.slice(0, 80)}`);
+            }
+          }
         }
       }
     }

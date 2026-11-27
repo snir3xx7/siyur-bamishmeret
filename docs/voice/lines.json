@@ -4,6 +4,11 @@
 "say": "דיווח על תאונה בין שני כלי רכב בשדרות הזית פינת רחוב הכלנית, ליד מכולת הגפן. לפי המדווח התנועה ממשיכה לעבור לידם. אין מידע על נפגעים. אשר קבלה.",
 "ipa": "<he>divˈuaχ ʔˈal teʔunˈa bˈen ʃnˈej klˈej ʁˈeχev bisdeʁˈot hazˈajit pinˈat ʁeχˈov hakalanˈit, lejˈad makˈolet haɡˈefen. lefˈi hameduvˈaχ hatnuʔˈa mamʃiχˈa laʔavˈoʁ lejadˈam. ʔˈejn mejdˈa ʔˈal nifɡaʔˈim. ʔaʃˈeʁ kabalˈa.</he>"
 },
+"audio/voice/accident-rain/l-2d3ce4fd.mp3": {
+"speaker": "dispatch",
+"say": "דיווח על תאונה בין שני כלי רכב בשדרות הזית פינת רחוב הכלנית, ליד מכולת הגפן. לפי המדווח התנועה ממשיכה לעבור לידם. אין מידע על נפגעים. אשרי קבלה.",
+"ipa": "<he>divˈuaχ ʔˈal teʔunˈa bˈen ʃnˈej klˈej ʁˈeχev bisdeʁˈot hazˈajit pinˈat ʁeχˈov hakalanˈit, lejˈad makˈolet haɡˈefen. lefˈi hameduvˈaχ hatnuʔˈa mamʃiχˈa laʔavˈoʁ lejadˈam. ʔˈejn mejdˈa ʔˈal nifɡaʔˈim. ʔaʃʁˈi kabalˈa.</he>"
+},
 "audio/voice/accident-rain/l-d3a6b8f3.mp3": {
 "speaker": "narrator",
 "say": "הניידת נעצרת סמוך לצומת. שני רכבים עומדים באלכסון, ושני אנשים מתווכחים בקול ליד הרכב האדום. מתחת לסוכך המכולת עומד אדם עם מטרייה ומנופף לעברך. רכבים ממשיכים לחלוף לאט ליד התאונה.",
@@ -38,6 +43,11 @@
 "speaker": "dispatch",
 "say": "לא ברור מי ענה. אשר בנוהל שאתה לוקח את האירוע.",
 "ipa": "<he>lˈo baʁˈuʁ mˈi ʔanˈa. ʔaʃˈeʁ banˈohal ʃeʔatˈa lokˈeaχ ʔˈet haʔejʁˈua.</he>"
+},
+"audio/voice/accident-rain/l-24aa0c84.mp3": {
+"speaker": "dispatch",
+"say": "לא ברור מי ענה. אשרי בנוהל שאת לוקחת את האירוע.",
+"ipa": "<he>lˈo baʁˈuʁ mˈi ʔanˈa. ʔaʃʁˈi banˈohal ʃeʔˈat lokˈaχat ʔˈet haʔejʁˈua.</he>"
 },
 "audio/voice/accident-rain/l-bc4ef680.mp3": {
 "speaker": "narrator",
@@ -229,6 +239,11 @@
 "say": "מה יש לשאול? היא אשמה. תרשום את זה וזהו.",
 "ipa": "<he>mˈa jˈeʃ liʃʔˈol? hˈi ʔaʃemˈa. tiʁʃˈom ʔˈet zˈe vezˈehu.</he>"
 },
+"audio/voice/accident-rain/l-575a6a7d.mp3": {
+"speaker": "oren",
+"say": "מה יש לשאול? היא אשמה. תרשמי את זה וזהו.",
+"ipa": "<he>mˈa jˈeʃ liʃʔˈol? hˈi ʔaʃemˈa. tiʁʃemˈi ʔˈet zˈe vezˈehu.</he>"
+},
 "audio/voice/accident-rain/l-ded8466c.mp3": {
 "speaker": "officer",
 "say": "מה עשית בשניות שלפני הפגיעה? איפה היה הטלפון?",
@@ -278,6 +293,11 @@
 "speaker": "oren",
 "say": "טוב, בסדר. תשאל.",
 "ipa": "<he>tˈov, besˈedeʁ. tiʃʔˈal.</he>"
+},
+"audio/voice/accident-rain/l-7ea7e6ae.mp3": {
+"speaker": "oren",
+"say": "טוב, בסדר. תשאלי.",
+"ipa": "<he>tˈov, besˈedeʁ. tiʃʔalˈi.</he>"
 },
 "audio/voice/accident-rain/l-a1af60c9.mp3": {
 "speaker": "oren",
@@ -399,6 +419,11 @@
 "say": "אז מה, אתה כבר מאמין לו? אין לי מה להוסיף.",
 "ipa": "<he>ʔˈaz mˈa, ʔatˈa kvˈaʁ maʔamˈin lˈo? ʔˈejn lˈi mˈa lehosˈif.</he>"
 },
+"audio/voice/accident-rain/l-7dc1a175.mp3": {
+"speaker": "dana",
+"say": "אז מה, את כבר מאמינה לו? אין לי מה להוסיף.",
+"ipa": "<he>ʔˈaz mˈa, ʔˈat kvˈaʁ maʔaminˈa lˈo? ʔˈejn lˈi mˈa lehosˈif.</he>"
+},
 "audio/voice/accident-rain/l-957661d6.mp3": {
 "speaker": "officer",
 "say": "שבי כאן מתחת לסוכך ואל תזיזי את הצוואר. נדאג שיבדקו אותך.",
@@ -484,6 +509,11 @@
 "say": "קיבלתי. תמשיך, ותעדכן כשאתה פנוי.",
 "ipa": "<he>kibˈalti. tamʃˈiχ, veteʔadkˈen kʃeʔatˈa panˈuj.</he>"
 },
+"audio/voice/accident-rain/l-e68a8fe9.mp3": {
+"speaker": "head",
+"say": "קיבלתי. תמשיכי, ותעדכני כשאת פנויה.",
+"ipa": "<he>kibˈalti. tamʃˈiχi, veteʔadkenˈi kʃeʔˈat pnujˈa.</he>"
+},
 "audio/voice/accident-rain/l-6c920960.mp3": {
 "speaker": "player",
 "say": "שלילי, עדיין בטיפול באירוע. אעדכן כשאתפנה.",
@@ -513,6 +543,11 @@
 "speaker": "head",
 "say": "רגע , סיימת שם? לפי הדיווח המעורבים עדיין במקום. תשלים קודם ותעדכן.",
 "ipa": "<he>ʁˈeɡa, sijˈamta ʃˈam? lefˈi hadivˈuaχ hameʔoʁavˈim ʔadˈajin bamakˈom. taʃlˈim kˈodem veteʔadkˈen.</he>"
+},
+"audio/voice/accident-rain/l-afdddcf9.mp3": {
+"speaker": "head",
+"say": "רגע , סיימת שם? לפי הדיווח המעורבים עדיין במקום. תשלימי קודם ותעדכני.",
+"ipa": "<he>ʁˈeɡa, sijˈamt ʃˈam? lefˈi hadivˈuaχ hameʔoʁavˈim ʔadˈajin bamakˈom. taʃlˈimi kˈodem veteʔadkenˈi.</he>"
 },
 "audio/voice/accident-rain/l-6dfe0419.mp3": {
 "speaker": "player",
@@ -604,6 +639,16 @@
 "say": "מה המצב אצלך? אתה פנוי? יש אירוע נוסף באזור.",
 "ipa": "<he>mˈa hamatsˈav ʔetsleχˈa? ʔatˈa panˈuj? jˈeʃ ʔejʁˈua nosˈaf baʔezˈoʁ.</he>"
 },
+"audio/voice/accident-rain/l-2a0a8c7a.mp3": {
+"speaker": "head",
+"say": "מה המצב אצלך? את פנויה? יש אירוע נוסף באזור.",
+"ipa": "<he>mˈa hamatsˈav ʔetslˈeχ? ʔˈat pnujˈa? jˈeʃ ʔeʁˈua nosˈaf baʔezˈoʁ.</he>"
+},
+"audio/voice/accident-rain/l-3a120093.mp3": {
+"speaker": "narrator",
+"say": "רכב שמגיע מהצומת מבחין ברגע האחרון ברכבים העומדים, בולם בחריקה ועוקף אותם במרחק סנטימטרים מהנהגים שעומדים לידם.",
+"ipa": "<he>ʁˈeχev ʃemaɡˈia mehatsˈomet mavχˈin baʁˈeɡa haʔaχaʁˈon baʁeχavˈim haʔomdˈim, bolˈem baχaʁikˈa veʔokˈef ʔotˈam bemeʁχˈak santimˈetʁim mehanahaɡˈim ʃeʔomdˈim lejadˈam.</he>"
+},
 "audio/voice/accident-rain/l-b2dc42d3.mp3": {
 "speaker": "dispatch",
 "say": "קיבלתי, העברתי לצוות הרפואי את ההחמרה. הם במרחק ארבע דקות. הישאר לידה ועדכן אם יש שינוי.",
@@ -613,6 +658,16 @@
 "speaker": "dispatch",
 "say": "קיבלתי, העברתי לצוות הרפואי את ההחמרה. הם במרחק ארבע דקות. הישאר לידו ועדכן אם יש שינוי.",
 "ipa": "<he>kibˈalti, heʔevˈaʁti latsˈevet haʁefuʔˈi ʔˈet hahaχmaʁˈa. hˈem bemeʁχˈak ʔˈaʁba dakˈot. hiʃaʔˈeʁ lejadˈo veʔadkˈen ʔˈim jˈeʃ ʃinˈuj.</he>"
+},
+"audio/voice/accident-rain/l-9dfbe7da.mp3": {
+"speaker": "dispatch",
+"say": "קיבלתי, העברתי לצוות הרפואי את ההחמרה. הם במרחק ארבע דקות. הישארי לידה ועדכני אם יש שינוי.",
+"ipa": "<he>kibˈalti, heʔevˈaʁti latsˈevet haʁefuʔˈi ʔˈet hahaχmaʁˈa. hˈem bemeʁχˈak ʔˈaʁba dakˈot. hiʃaʔˈaʁi ledˈa veʔadkenˈi ʔˈim jˈeʃ ʃinˈuj.</he>"
+},
+"audio/voice/accident-rain/l-d60d8243.mp3": {
+"speaker": "dispatch",
+"say": "קיבלתי, העברתי לצוות הרפואי את ההחמרה. הם במרחק ארבע דקות. הישארי לידו ועדכני אם יש שינוי.",
+"ipa": "<he>kibˈalti, heʔevˈaʁti latsˈevet haʁefuʔˈi ʔˈet hahaχmaʁˈa. hˈem bemeʁχˈak ʔˈaʁba dakˈot. hiʃaʔˈaʁi lejadˈo veʔadkenˈi ʔˈim jˈeʃ ʃinˈuj.</he>"
 },
 "audio/voice/accident-rain/l-3d8199db.mp3": {
 "speaker": "head",
@@ -624,6 +679,16 @@
 "say": "קיבלתי, העברתי לצוות הרפואי את ההחמרה. הם במרחק ארבע דקות. הישאר לידו ועדכן אם יש שינוי.",
 "ipa": "<he>kibˈalti, heʔevˈaʁti latsˈevet haʁefuʔˈi ʔˈet hahaχmaʁˈa. hˈem bemeʁχˈak ʔˈaʁba dakˈot. hiʃaʔˈeʁ lejadˈo veʔadkˈen ʔˈim jˈeʃ ʃinˈuj.</he>"
 },
+"audio/voice/accident-rain/l-07a84752.mp3": {
+"speaker": "head",
+"say": "קיבלתי, העברתי לצוות הרפואי את ההחמרה. הם במרחק ארבע דקות. הישארי לידה ועדכני אם יש שינוי.",
+"ipa": "<he>kibˈalti, heʔevˈaʁti latsˈevet haʁefuʔˈi ʔˈet hahaχmaʁˈa. hˈem bemeʁχˈak ʔˈaʁba dakˈot. hiʃaʔˈaʁi ledˈa veʔadkenˈi ʔˈim jˈeʃ ʃinˈuj.</he>"
+},
+"audio/voice/accident-rain/l-ee3e53fb.mp3": {
+"speaker": "head",
+"say": "קיבלתי, העברתי לצוות הרפואי את ההחמרה. הם במרחק ארבע דקות. הישארי לידו ועדכני אם יש שינוי.",
+"ipa": "<he>kibˈalti, heʔevˈaʁti latsˈevet haʁefuʔˈi ʔˈet hahaχmaʁˈa. hˈem bemeʁχˈak ʔˈaʁba dakˈot. hiʃaʔˈaʁi lejadˈo veʔadkenˈi ʔˈim jˈeʃ ʃinˈuj.</he>"
+},
 "audio/voice/accident-rain/l-7cc8858d.mp3": {
 "speaker": "duty",
 "say": "קיבלתי, העברתי לצוות הרפואי את ההחמרה. הם במרחק ארבע דקות. הישאר לידה ועדכן אם יש שינוי.",
@@ -633,6 +698,16 @@
 "speaker": "duty",
 "say": "קיבלתי, העברתי לצוות הרפואי את ההחמרה. הם במרחק ארבע דקות. הישאר לידו ועדכן אם יש שינוי.",
 "ipa": "<he>kibˈalti, heʔevˈaʁti latsˈevet haʁefuʔˈi ʔˈet hahaχmaʁˈa. hˈem bemeʁχˈak ʔˈaʁba dakˈot. hiʃaʔˈeʁ lejadˈo veʔadkˈen ʔˈim jˈeʃ ʃinˈuj.</he>"
+},
+"audio/voice/accident-rain/l-37376168.mp3": {
+"speaker": "duty",
+"say": "קיבלתי, העברתי לצוות הרפואי את ההחמרה. הם במרחק ארבע דקות. הישארי לידה ועדכני אם יש שינוי.",
+"ipa": "<he>kibˈalti, heʔevˈaʁti latsˈevet haʁefuʔˈi ʔˈet hahaχmaʁˈa. hˈem bemeʁχˈak ʔˈaʁba dakˈot. hiʃaʔˈaʁi ledˈa veʔadkenˈi ʔˈim jˈeʃ ʃinˈuj.</he>"
+},
+"audio/voice/accident-rain/l-ba98f511.mp3": {
+"speaker": "duty",
+"say": "קיבלתי, העברתי לצוות הרפואי את ההחמרה. הם במרחק ארבע דקות. הישארי לידו ועדכני אם יש שינוי.",
+"ipa": "<he>kibˈalti, heʔevˈaʁti latsˈevet haʁefuʔˈi ʔˈet hahaχmaʁˈa. hˈem bemeʁχˈak ʔˈaʁba dakˈot. hiʃaʔˈaʁi lejadˈo veʔadkenˈi ʔˈim jˈeʃ ʃinˈuj.</he>"
 },
 "audio/voice/accident-rain/l-5c026a18.mp3": {
 "speaker": "dispatch",
@@ -949,6 +1024,11 @@
 "say": "תלונה על מוזיקה חזקה בבניין מגורים ברחוב התאנה 9, קומה 2. לפי המדווחת המוזיקה מגיעה מדירה 7, כבר כשעה. המדווחת ביקשה שפרטיה לא ייחשפו בפני השכנים. אשר קבלה.",
 "ipa": "<he>tlunˈa ʔˈal mˈuzika χazakˈa bebinjˈan meɡuʁˈim beʁeχˈov hateʔenˈa tˈeʃa, komˈa ʃtˈajim. lefˈi hamedavˈaχat hamˈuzika maɡiʔˈa midiʁˈa ʃˈeva, kvˈaʁ keʃaʔˈa. hamedavˈaχat bikʃˈa ʃepʁatˈeha lˈo jeχasfˈu bifnˈej haʃχenˈim. ʔaʃˈeʁ kabalˈa.</he>"
 },
+"audio/voice/noise-building/l-a5e2053c.mp3": {
+"speaker": "dispatch",
+"say": "תלונה על מוזיקה חזקה בבניין מגורים ברחוב התאנה 9, קומה 2. לפי המדווחת המוזיקה מגיעה מדירה 7, כבר כשעה. המדווחת ביקשה שפרטיה לא ייחשפו בפני השכנים. אשרי קבלה.",
+"ipa": "<he>tlunˈa ʔˈal mˈuzika χazakˈa bebinjˈan meɡuʁˈim beʁeχˈov hateʔenˈa tˈeʃa, komˈa ʃtˈajim. lefˈi hamedavˈaχat hamˈuzika maɡiʔˈa midiʁˈa ʃˈeva, kvˈaʁ keʃaʔˈa. hamedavˈaχat bikʃˈa ʃepʁatˈeha lˈo jeχasfˈu bifnˈej haʃχenˈim. ʔaʃʁˈi kabalˈa.</he>"
+},
 "audio/voice/noise-building/l-aa86d9f1.mp3": {
 "speaker": "narrator",
 "say": "חדר המדרגות בקומה השנייה. בס עמום מהדהד בקירות, והאור במדרגות כבה ונדלק עם המתג. על הדלתות מספרים 7 ו8. שלט על הקיר מבקש לשמור על השקט.",
@@ -983,6 +1063,11 @@
 "speaker": "dispatch",
 "say": "לא ברור מי ענה. אשר בנוהל שאתה לוקח את האירוע.",
 "ipa": "<he>lˈo baʁˈuʁ mˈi ʔanˈa. ʔaʃˈeʁ banˈohal ʃeʔatˈa lokˈeaχ ʔˈet haʔejʁˈua.</he>"
+},
+"audio/voice/noise-building/l-24aa0c84.mp3": {
+"speaker": "dispatch",
+"say": "לא ברור מי ענה. אשרי בנוהל שאת לוקחת את האירוע.",
+"ipa": "<he>lˈo baʁˈuʁ mˈi ʔanˈa. ʔaʃʁˈi banˈohal ʃeʔˈat lokˈaχat ʔˈet haʔejʁˈua.</he>"
 },
 "audio/voice/noise-building/l-bc4ef680.mp3": {
 "speaker": "narrator",
@@ -1229,6 +1314,11 @@
 "say": ",אוקיי. מה אתה מציע?",
 "ipa": "<he>,ʔokˈej. mˈa ʔatˈa matsˈia?</he>"
 },
+"audio/voice/noise-building/l-1e9b7d7d.mp3": {
+"speaker": "ido",
+"say": ",אוקיי. מה את מציעה?",
+"ipa": "<he>,ʔokˈej. mˈa ʔˈat matsiʔˈa?</he>"
+},
 "audio/voice/noise-building/l-960124fe.mp3": {
 "speaker": "ido",
 "say": "בערך חמישה עשר חברים. חשבנו לסיים לפני חצות.",
@@ -1324,6 +1414,11 @@
 "say": "קיבלתי. תמשיך, ותעדכן כשאתה פנוי.",
 "ipa": "<he>kibˈalti. tamʃˈiχ, veteʔadkˈen kʃeʔatˈa panˈuj.</he>"
 },
+"audio/voice/noise-building/l-e68a8fe9.mp3": {
+"speaker": "head",
+"say": "קיבלתי. תמשיכי, ותעדכני כשאת פנויה.",
+"ipa": "<he>kibˈalti. tamʃˈiχi, veteʔadkenˈi kʃeʔˈat pnujˈa.</he>"
+},
 "audio/voice/noise-building/l-6c920960.mp3": {
 "speaker": "player",
 "say": "שלילי, עדיין בטיפול באירוע. אעדכן כשאתפנה.",
@@ -1354,6 +1449,11 @@
 "say": "רגע , סיימת שם? לפי הדיווח המעורבים עדיין במקום. תשלים קודם ותעדכן.",
 "ipa": "<he>ʁˈeɡa, sijˈamta ʃˈam? lefˈi hadivˈuaχ hameʔoʁavˈim ʔadˈajin bamakˈom. taʃlˈim kˈodem veteʔadkˈen.</he>"
 },
+"audio/voice/noise-building/l-afdddcf9.mp3": {
+"speaker": "head",
+"say": "רגע , סיימת שם? לפי הדיווח המעורבים עדיין במקום. תשלימי קודם ותעדכני.",
+"ipa": "<he>ʁˈeɡa, sijˈamt ʃˈam? lefˈi hadivˈuaχ hameʔoʁavˈim ʔadˈajin bamakˈom. taʃlˈimi kˈodem veteʔadkenˈi.</he>"
+},
 "audio/voice/noise-building/l-2a6f40cc.mp3": {
 "speaker": "player",
 "say": "התקבלו פניות נוספות מהכתובת?",
@@ -1373,6 +1473,11 @@
 "speaker": "head",
 "say": "מה המצב אצלך? אתה פנוי? יש אירוע נוסף באזור.",
 "ipa": "<he>mˈa hamatsˈav ʔetsleχˈa? ʔatˈa panˈuj? jˈeʃ ʔejʁˈua nosˈaf baʔezˈoʁ.</he>"
+},
+"audio/voice/noise-building/l-2a0a8c7a.mp3": {
+"speaker": "head",
+"say": "מה המצב אצלך? את פנויה? יש אירוע נוסף באזור.",
+"ipa": "<he>mˈa hamatsˈav ʔetslˈeχ? ʔˈat pnujˈa? jˈeʃ ʔeʁˈua nosˈaf baʔezˈoʁ.</he>"
 },
 "audio/voice/noise-building/l-5aec0dfc.mp3": {
 "speaker": "dispatch",
@@ -1594,6 +1699,11 @@
 "say": "דיווח על ויכוח קולני בין שכנים בחצר משותפת ברחוב השקמה 4, בנוגע לרכוש משותף. אשר קבלה.",
 "ipa": "<he>divˈuaχ ʔˈal vikˈuaχ kolanˈi bˈen ʃχenˈim beχatsˈeʁ meʃutˈefet beʁeχˈov haʃikmˈa ʔˈaʁba, benoɡˈea leʁeχˈuʃ meʃutˈaf. ʔaʃˈeʁ kabalˈa.</he>"
 },
+"audio/voice/yard-dispute/l-8c5d16f3.mp3": {
+"speaker": "dispatch",
+"say": "דיווח על ויכוח קולני בין שכנים בחצר משותפת ברחוב השקמה 4, בנוגע לרכוש משותף. אשרי קבלה.",
+"ipa": "<he>divˈuaχ ʔˈal vikˈuaχ kolanˈi bˈen ʃχenˈim beχatsˈeʁ meʃutˈefet beʁeχˈov haʃikmˈa ʔˈaʁba, benoɡˈea leʁeχˈuʃ meʃutˈaf. ʔaʃʁˈi kabalˈa.</he>"
+},
 "audio/voice/yard-dispute/l-7a2ffc33.mp3": {
 "speaker": "narrator",
 "say": "בחצר עומדים גבר ואישה ליד המחסן המשותף ומדברים זה מעל זה. שני שכנים צופים מהצד ומוסיפים הערות, ועוד ראשים מציצים מהמרפסות. ליד השער עומדת אישה ומסמנת לך.",
@@ -1638,6 +1748,11 @@
 "speaker": "dispatch",
 "say": "לא ברור מי ענה. אשר בנוהל שאתה לוקח את האירוע.",
 "ipa": "<he>lˈo baʁˈuʁ mˈi ʔanˈa. ʔaʃˈeʁ banˈohal ʃeʔatˈa lokˈeaχ ʔˈet haʔejʁˈua.</he>"
+},
+"audio/voice/yard-dispute/l-24aa0c84.mp3": {
+"speaker": "dispatch",
+"say": "לא ברור מי ענה. אשרי בנוהל שאת לוקחת את האירוע.",
+"ipa": "<he>lˈo baʁˈuʁ mˈi ʔanˈa. ʔaʃʁˈi banˈohal ʃeʔˈat lokˈaχat ʔˈet haʔejʁˈua.</he>"
 },
 "audio/voice/yard-dispute/l-bc4ef680.mp3": {
 "speaker": "narrator",
@@ -1909,6 +2024,11 @@
 "say": "אז עכשיו אתה גם שופט? אני חבר ועד!",
 "ipa": "<he>ʔˈaz ʔaχʃˈav ʔatˈa ɡˈam ʃofˈet? ʔanˈi χavˈeʁ vˈaʔad!</he>"
 },
+"audio/voice/yard-dispute/l-1b8bfc1d.mp3": {
+"speaker": "michael",
+"say": "אז עכשיו את גם שופטת? אני חבר ועד!",
+"ipa": "<he>ʔˈaz ʔaχʃˈav ʔˈat ɡˈam ʃofˈetet? ʔanˈi χavˈeʁ vˈaʔad!</he>"
+},
 "audio/voice/yard-dispute/l-b1c8fc24.mp3": {
 "speaker": "narrator",
 "say": "אילנה מחייכת בניצחון לעבר המרפסות.",
@@ -1953,6 +2073,11 @@
 "speaker": "ilana",
 "say": "אז אתה בצד שלו. ברור.",
 "ipa": "<he>ʔˈaz ʔatˈa batsˈad ʃelˈo. baʁˈuʁ.</he>"
+},
+"audio/voice/yard-dispute/l-bebdeb54.mp3": {
+"speaker": "ilana",
+"say": "אז את בצד שלו. ברור.",
+"ipa": "<he>ʔˈaz ʔˈat batsˈad ʃelˈo. baʁˈuʁ.</he>"
 },
 "audio/voice/yard-dispute/l-3dd73d1c.mp3": {
 "speaker": "narrator",
@@ -2004,6 +2129,11 @@
 "say": "קיבלתי. תמשיך, ותעדכן כשאתה פנוי.",
 "ipa": "<he>kibˈalti. tamʃˈiχ, veteʔadkˈen kʃeʔatˈa panˈuj.</he>"
 },
+"audio/voice/yard-dispute/l-e68a8fe9.mp3": {
+"speaker": "head",
+"say": "קיבלתי. תמשיכי, ותעדכני כשאת פנויה.",
+"ipa": "<he>kibˈalti. tamʃˈiχi, veteʔadkenˈi kʃeʔˈat pnujˈa.</he>"
+},
 "audio/voice/yard-dispute/l-6c920960.mp3": {
 "speaker": "player",
 "say": "שלילי, עדיין בטיפול באירוע. אעדכן כשאתפנה.",
@@ -2034,6 +2164,11 @@
 "say": "רגע , סיימת שם? לפי הדיווח המעורבים עדיין במקום. תשלים קודם ותעדכן.",
 "ipa": "<he>ʁˈeɡa, sijˈamta ʃˈam? lefˈi hadivˈuaχ hameʔoʁavˈim ʔadˈajin bamakˈom. taʃlˈim kˈodem veteʔadkˈen.</he>"
 },
+"audio/voice/yard-dispute/l-afdddcf9.mp3": {
+"speaker": "head",
+"say": "רגע , סיימת שם? לפי הדיווח המעורבים עדיין במקום. תשלימי קודם ותעדכני.",
+"ipa": "<he>ʁˈeɡa, sijˈamt ʃˈam? lefˈi hadivˈuaχ hameʔoʁavˈim ʔadˈajin bamakˈom. taʃlˈimi kˈodem veteʔadkenˈi.</he>"
+},
 "audio/voice/yard-dispute/l-1ea9ebca.mp3": {
 "speaker": "player",
 "say": "היו אירועים קודמים בכתובת?",
@@ -2053,6 +2188,11 @@
 "speaker": "head",
 "say": "מה המצב אצלך? אתה פנוי? יש אירוע נוסף באזור.",
 "ipa": "<he>mˈa hamatsˈav ʔetsleχˈa? ʔatˈa panˈuj? jˈeʃ ʔejʁˈua nosˈaf baʔezˈoʁ.</he>"
+},
+"audio/voice/yard-dispute/l-2a0a8c7a.mp3": {
+"speaker": "head",
+"say": "מה המצב אצלך? את פנויה? יש אירוע נוסף באזור.",
+"ipa": "<he>mˈa hamatsˈav ʔetslˈeχ? ʔˈat pnujˈa? jˈeʃ ʔeʁˈua nosˈaf baʔezˈoʁ.</he>"
 },
 "audio/voice/yard-dispute/l-40f68f81.mp3": {
 "speaker": "dispatch",
@@ -2254,6 +2394,11 @@
 "say": "דיווח על נעדר: אברהם כהן, בן 82, יצא לטיול מביתו ברחוב הדקל 4 לפני כשעתיים ולא חזר. הבת, אורית, מחכה בכניסה לגן הברוש. אשר קבלה.",
 "ipa": "<he>divˈuaχ ʔˈal neʔedˈaʁ: ʔavʁahˈam kohˈen, bˈen ʃmonˈim veʃtˈajim, jatsˈa letijˈul mibetˈo beʁeχˈov hadˈekel ʔˈaʁba lifnˈej keʃaʔatˈajim velˈo χazˈaʁ. habˈat, ʔoʁˈit, meχakˈa baknisˈa leɡˈan habʁˈoʃ. ʔaʃˈeʁ kabalˈa.</he>"
 },
+"audio/voice/missing-elder/l-6687309e.mp3": {
+"speaker": "dispatch",
+"say": "דיווח על נעדר: אברהם כהן, בן 82, יצא לטיול מביתו ברחוב הדקל 4 לפני כשעתיים ולא חזר. הבת, אורית, מחכה בכניסה לגן הברוש. אשרי קבלה.",
+"ipa": "<he>divˈuaχ ʔˈal neʔedˈaʁ: ʔavʁahˈam kohˈen, bˈen ʃmonˈim veʃtˈajim, jatsˈa letijˈul mibetˈo beʁeχˈov hadˈekel ʔˈaʁba lifnˈej keʃaʔatˈajim velˈo χazˈaʁ. habˈat, ʔoʁˈit, meχakˈa baknisˈa leɡˈan habʁˈoʃ. ʔaʃʁˈi kabalˈa.</he>"
+},
 "audio/voice/missing-elder/l-918ab44b.mp3": {
 "speaker": "narrator",
 "say": "כניסה לגן הברוש. אורית ממתינה ליד השער, הטלפון ביד. הגן שקט: שבילים מוארים, מגרש משחקים ריק, וקיוסק קטן בקצה. יוסי, בעל הקיוסק, סוגר את התריס.",
@@ -2288,6 +2433,11 @@
 "speaker": "dispatch",
 "say": "לא ברור מי ענה. אשר בנוהל שאתה לוקח את האירוע.",
 "ipa": "<he>lˈo baʁˈuʁ mˈi ʔanˈa. ʔaʃˈeʁ banˈohal ʃeʔatˈa lokˈeaχ ʔˈet haʔejʁˈua.</he>"
+},
+"audio/voice/missing-elder/l-24aa0c84.mp3": {
+"speaker": "dispatch",
+"say": "לא ברור מי ענה. אשרי בנוהל שאת לוקחת את האירוע.",
+"ipa": "<he>lˈo baʁˈuʁ mˈi ʔanˈa. ʔaʃʁˈi banˈohal ʃeʔˈat lokˈaχat ʔˈet haʔejʁˈua.</he>"
 },
 "audio/voice/missing-elder/l-bc4ef680.mp3": {
 "speaker": "narrator",
@@ -2379,6 +2529,11 @@
 "say": "האיכון אושר. המכשיר מאוכן באזור גן הברוש, ברדיוס של כשלושה רחובות: הדקל, הברוש והאלון. מעבירה אליך פוליגון לסריקה.",
 "ipa": "<he>haʔikˈun ʔuʃˈaʁ. hamaχʃˈiʁ meʔuχˈan beʔezˈoʁ ɡˈan habʁˈoʃ, beʁˈadjus ʃˈel keʃloʃˈa ʁeχovˈot: hadˈekel, habʁˈoʃ vehaʔalˈon. maʔaviʁˈa ʔelˈeχa poliɡˈon lesʁikˈa.</he>"
 },
+"audio/voice/missing-elder/l-5477a7c6.mp3": {
+"speaker": "dispatch",
+"say": "האיכון אושר. המכשיר מאוכן באזור גן הברוש, ברדיוס של כשלושה רחובות: הדקל, הברוש והאלון. מעבירה אלייך פוליגון לסריקה.",
+"ipa": "<he>haʔikˈun ʔuʃˈaʁ. hamaχʃˈiʁ meʔuχˈan beʔezˈoʁ ɡˈan habʁˈoʃ, beʁˈadjus ʃˈel keʃloʃˈa ʁeχovˈot: hadˈekel, habʁˈoʃ vehaʔalˈon. maʔaviʁˈa ʔelˈajiχ poliɡˈon lesʁikˈa.</he>"
+},
 "audio/voice/missing-elder/l-2e2ae7c1.mp3": {
 "speaker": "dispatch",
 "say": "הטלפון שלו נשאר בבית, ואיכון יראה רק את הבית. אין טעם באיכון. ממשיכים בסריקה ובהפצת התיאור.",
@@ -2429,6 +2584,11 @@
 "say": "אתה חושב שאני לא מאשימה את עצמי מספיק? באתי לבקש עזרה, לא נזיפה.",
 "ipa": "<he>ʔatˈa χoʃˈev ʃeʔanˈi lˈo maʔaʃimˈa ʔˈet ʔatsmˈi maspˈik? bˈati levakˈeʃ ʔezʁˈa, lˈo nezifˈa.</he>"
 },
+"audio/voice/missing-elder/l-c7bb215b.mp3": {
+"speaker": "orit",
+"say": "את חושבת שאני לא מאשימה את עצמי מספיק? באתי לבקש עזרה, לא נזיפה.",
+"ipa": "<he>ʔˈat χoʃˈevet ʃeʔanˈi lˈo maʔaʃimˈa ʔˈet ʔatsmˈi maspˈik? bˈati levakˈeʃ ʔezʁˈa, lˈo nezifˈa.</he>"
+},
 "audio/voice/missing-elder/l-f0057a89.mp3": {
 "speaker": "officer",
 "say": "סליחה, זה לא היה במקום. את עשית בדיוק את הדבר הנכון כשהתקשרת. בואי נתמקד במציאה שלו.",
@@ -2443,6 +2603,11 @@
 "speaker": "orit",
 "say": ",בסדר. מה אתה צריך ממני?",
 "ipa": "<he>,besˈedeʁ. mˈa ʔatˈa tsaʁˈiχ mimˈeni?</he>"
+},
+"audio/voice/missing-elder/l-57dfe309.mp3": {
+"speaker": "orit",
+"say": ",בסדר. מה את צריכה ממני?",
+"ipa": "<he>,besˈedeʁ. mˈa ʔˈat tsʁiχˈa mimˈeni?</he>"
 },
 "audio/voice/missing-elder/l-609f037d.mp3": {
 "speaker": "officer",
@@ -2579,6 +2744,11 @@
 "say": "מי אתה? עזוב אותי! אני לא הולך עם אנשים שאני לא מכיר!",
 "ipa": "<he>mˈi ʔatˈa? ʔazˈov ʔotˈi! ʔanˈi lˈo holˈeχ ʔˈim ʔanaʃˈim ʃeʔanˈi lˈo makˈiʁ!</he>"
 },
+"audio/voice/missing-elder/l-26d71d15.mp3": {
+"speaker": "avraham",
+"say": "מי את? עזבי אותי! אני לא הולך עם אנשים שאני לא מכיר!",
+"ipa": "<he>mˈi ʔˈat? ʔazvˈi ʔotˈi! ʔanˈi lˈo holˈeχ ʔˈim ʔanaʃˈim ʃeʔanˈi lˈo makˈiʁ!</he>"
+},
 "audio/voice/missing-elder/l-1d964a6d.mp3": {
 "speaker": "officer",
 "say": "סליחה, הבהלתי אותך. אני מהסיור, אני כאן לעזור. איך קוראים לך?",
@@ -2644,6 +2814,11 @@
 "say": "קיבלתי. תמשיך, ותעדכן כשאתה פנוי.",
 "ipa": "<he>kibˈalti. tamʃˈiχ, veteʔadkˈen kʃeʔatˈa panˈuj.</he>"
 },
+"audio/voice/missing-elder/l-e68a8fe9.mp3": {
+"speaker": "head",
+"say": "קיבלתי. תמשיכי, ותעדכני כשאת פנויה.",
+"ipa": "<he>kibˈalti. tamʃˈiχi, veteʔadkenˈi kʃeʔˈat pnujˈa.</he>"
+},
 "audio/voice/missing-elder/l-6c920960.mp3": {
 "speaker": "player",
 "say": "שלילי, עדיין בטיפול באירוע. אעדכן כשאתפנה.",
@@ -2674,6 +2849,11 @@
 "say": "רגע , סיימת שם? לפי הדיווח המעורבים עדיין במקום. תשלים קודם ותעדכן.",
 "ipa": "<he>ʁˈeɡa, sijˈamta ʃˈam? lefˈi hadivˈuaχ hameʔoʁavˈim ʔadˈajin bamakˈom. taʃlˈim kˈodem veteʔadkˈen.</he>"
 },
+"audio/voice/missing-elder/l-afdddcf9.mp3": {
+"speaker": "head",
+"say": "רגע , סיימת שם? לפי הדיווח המעורבים עדיין במקום. תשלימי קודם ותעדכני.",
+"ipa": "<he>ʁˈeɡa, sijˈamt ʃˈam? lefˈi hadivˈuaχ hameʔoʁavˈim ʔadˈajin bamakˈom. taʃlˈimi kˈodem veteʔadkenˈi.</he>"
+},
 "audio/voice/missing-elder/l-6f29cb9e.mp3": {
 "speaker": "player",
 "say": "אפשר לוודא מול הבית שהוא לא חזר בינתיים?",
@@ -2698,6 +2878,16 @@
 "speaker": "head",
 "say": "מה המצב אצלך? אתה פנוי? יש אירוע נוסף באזור.",
 "ipa": "<he>mˈa hamatsˈav ʔetsleχˈa? ʔatˈa panˈuj? jˈeʃ ʔejʁˈua nosˈaf baʔezˈoʁ.</he>"
+},
+"audio/voice/missing-elder/l-2a0a8c7a.mp3": {
+"speaker": "head",
+"say": "מה המצב אצלך? את פנויה? יש אירוע נוסף באזור.",
+"ipa": "<he>mˈa hamatsˈav ʔetslˈeχ? ʔˈat pnujˈa? jˈeʃ ʔeʁˈua nosˈaf baʔezˈoʁ.</he>"
+},
+"audio/voice/missing-elder/l-f8599abe.mp3": {
+"speaker": "narrator",
+"say": "הטמפרטורה יורדת. הבת נזכרת שאביה יצא רק עם חולצה דקה, ושהוא לא לקח איתו את התרופות.",
+"ipa": "<he>hatempeʁatˈuʁa joʁˈedet. habˈat nizkˈeʁet ʃeʔavˈiha jatsˈa ʁˈak ʔˈim χultsˈa dakˈa, veʃehˈu lˈo lakˈaχ ʔitˈo ʔˈet hatʁufˈot.</he>"
 },
 "audio/voice/missing-elder/l-7253e26c.mp3": {
 "speaker": "dispatch",
@@ -2904,6 +3094,11 @@
 "say": "דיווח על תיק שנשכח בתחנת האוטובוס הנרקיס בשדרות הזית. לפי המדווחת התיק שם כ20 דקות ואין איש לידו. אשר קבלה.",
 "ipa": "<he>divˈuaχ ʔˈal tˈik ʃeniʃkˈaχ betaχanˈat haʔˈotobus hanaʁkˈis bisdeʁˈot hazˈajit. lefˈi hamedavˈaχat hatˈik ʃˈam keʔesʁˈim dakˈot veʔˈejn ʔˈiʃ lejadˈo. ʔaʃˈeʁ kabalˈa.</he>"
 },
+"audio/voice/suspicious-object/l-48a61de4.mp3": {
+"speaker": "dispatch",
+"say": "דיווח על תיק שנשכח בתחנת האוטובוס הנרקיס בשדרות הזית. לפי המדווחת התיק שם כ20 דקות ואין איש לידו. אשרי קבלה.",
+"ipa": "<he>divˈuaχ ʔˈal tˈik ʃeniʃkˈaχ betaχanˈat haʔˈotobus hanaʁkˈis bisdeʁˈot hazˈajit. lefˈi hamedavˈaχat hatˈik ʃˈam keʔesʁˈim dakˈot veʔˈejn ʔˈiʃ lejadˈo. ʔaʃʁˈi kabalˈa.</he>"
+},
 "audio/voice/suspicious-object/l-916e5990.mp3": {
 "speaker": "narrator",
 "say": "התחנה בשדרות הזית. בקצה הספסל מונח תיק ספורט כחול, סגור. לידו עומד אדם מבוגר בטרנינג, מתבונן בתיק ומושיט אליו יד. נועה, המדווחת, עומדת ליד המאפייה ומסמנת לך.",
@@ -2938,6 +3133,11 @@
 "speaker": "dispatch",
 "say": "לא ברור מי ענה. אשר בנוהל שאתה לוקח את האירוע.",
 "ipa": "<he>lˈo baʁˈuʁ mˈi ʔanˈa. ʔaʃˈeʁ banˈohal ʃeʔatˈa lokˈeaχ ʔˈet haʔejʁˈua.</he>"
+},
+"audio/voice/suspicious-object/l-24aa0c84.mp3": {
+"speaker": "dispatch",
+"say": "לא ברור מי ענה. אשרי בנוהל שאת לוקחת את האירוע.",
+"ipa": "<he>lˈo baʁˈuʁ mˈi ʔanˈa. ʔaʃʁˈi banˈohal ʃeʔˈat lokˈaχat ʔˈet haʔejʁˈua.</he>"
 },
 "audio/voice/suspicious-object/l-bc4ef680.mp3": {
 "speaker": "narrator",
@@ -3109,6 +3309,11 @@
 "say": "מה אתה צועק עליי? אני מחכה פה לאוטובוס, זכותי! מה כבר יש בתיק?",
 "ipa": "<he>mˈa ʔatˈa tsoʔˈek ʔalˈaj? ʔanˈi meχakˈe pˈo laʔˈotobus, zχutˈi! mˈa kvˈaʁ jˈeʃ batˈik?</he>"
 },
+"audio/voice/suspicious-object/l-58e49228.mp3": {
+"speaker": "beni",
+"say": "מה את צועקת עליי? אני מחכה פה לאוטובוס, זכותי! מה כבר יש בתיק?",
+"ipa": "<he>mˈa ʔˈat tsoʔˈeket ʔalˈaj? ʔanˈi meχakˈa pˈo laʔˈotobus, zχutˈi! mˈa kvˈaʁ jˈeʃ batˈik?</he>"
+},
 "audio/voice/suspicious-object/l-7ed5b24b.mp3": {
 "speaker": "officer",
 "say": "אני מבין שזה מרגיז. יש כאן חפץ שלא ברור מה הוא, ועד שייבדק אני מרחיק את כולם , גם אותך. זו הוראה לשמירה על ביטחון הציבור, ואני צריך שתמלא אותה עכשיו.",
@@ -3229,6 +3434,11 @@
 "say": "קיבלתי. תמשיך, ותעדכן כשאתה פנוי.",
 "ipa": "<he>kibˈalti. tamʃˈiχ, veteʔadkˈen kʃeʔatˈa panˈuj.</he>"
 },
+"audio/voice/suspicious-object/l-e68a8fe9.mp3": {
+"speaker": "head",
+"say": "קיבלתי. תמשיכי, ותעדכני כשאת פנויה.",
+"ipa": "<he>kibˈalti. tamʃˈiχi, veteʔadkenˈi kʃeʔˈat pnujˈa.</he>"
+},
 "audio/voice/suspicious-object/l-6c920960.mp3": {
 "speaker": "player",
 "say": "שלילי, עדיין בטיפול באירוע. אעדכן כשאתפנה.",
@@ -3258,6 +3468,11 @@
 "speaker": "head",
 "say": "רגע , סיימת שם? לפי הדיווח המעורבים עדיין במקום. תשלים קודם ותעדכן.",
 "ipa": "<he>ʁˈeɡa, sijˈamta ʃˈam? lefˈi hadivˈuaχ hameʔoʁavˈim ʔadˈajin bamakˈom. taʃlˈim kˈodem veteʔadkˈen.</he>"
+},
+"audio/voice/suspicious-object/l-afdddcf9.mp3": {
+"speaker": "head",
+"say": "רגע , סיימת שם? לפי הדיווח המעורבים עדיין במקום. תשלימי קודם ותעדכני.",
+"ipa": "<he>ʁˈeɡa, sijˈamt ʃˈam? lefˈi hadivˈuaχ hameʔoʁavˈim ʔadˈajin bamakˈom. taʃlˈimi kˈodem veteʔadkenˈi.</he>"
 },
 "audio/voice/suspicious-object/l-5d74cd68.mp3": {
 "speaker": "player",
@@ -3313,6 +3528,16 @@
 "speaker": "head",
 "say": "מה המצב אצלך? אתה פנוי? יש אירוע נוסף באזור.",
 "ipa": "<he>mˈa hamatsˈav ʔetsleχˈa? ʔatˈa panˈuj? jˈeʃ ʔejʁˈua nosˈaf baʔezˈoʁ.</he>"
+},
+"audio/voice/suspicious-object/l-2a0a8c7a.mp3": {
+"speaker": "head",
+"say": "מה המצב אצלך? את פנויה? יש אירוע נוסף באזור.",
+"ipa": "<he>mˈa hamatsˈav ʔetslˈeχ? ʔˈat pnujˈa? jˈeʃ ʔeʁˈua nosˈaf baʔezˈoʁ.</he>"
+},
+"audio/voice/suspicious-object/l-2eb7d4d3.mp3": {
+"speaker": "narrator",
+"say": "שני עוברי אורח נעצרים ממש ליד הספסל, מתכופפים ומצלמים את התיק בטלפון. אחד מהם מושיט יד לרוכסן.",
+"ipa": "<he>ʃnˈej ʔovʁˈej ʔˈoʁaχ neʔetsaʁˈim mamˈaʃ lejˈad hasafsˈal, mitkofefˈim vemetsalmˈim ʔˈet hatˈik batˈelefon. ʔeχˈad mehˈem moʃˈit jˈad laʁoχsˈan.</he>"
 },
 "audio/voice/suspicious-object/l-77546c68.mp3": {
 "speaker": "dispatch",
@@ -3504,6 +3729,11 @@
 "say": "תלונה על רכב שחוסם יציאה בחניון רחוב האלה 14. המתלונן, רוני, צריך לצאת בדחיפות ונשמע נסער. אשר קבלה.",
 "ipa": "<he>tlunˈa ʔˈal ʁˈeχev ʃeχosˈem jetsiʔˈa beχanjˈon ʁeχˈov haʔelˈa ʔaʁbˈa ʔesʁˈe. hamitlonˈen, ʁˈoni, tsaʁˈiχ latsˈet bidχifˈut veniʃmˈa nisʔˈaʁ. ʔaʃˈeʁ kabalˈa.</he>"
 },
+"audio/voice/blocked-parking/l-c9b267ed.mp3": {
+"speaker": "dispatch",
+"say": "תלונה על רכב שחוסם יציאה בחניון רחוב האלה 14. המתלונן, רוני, צריך לצאת בדחיפות ונשמע נסער. אשרי קבלה.",
+"ipa": "<he>tlunˈa ʔˈal ʁˈeχev ʃeχosˈem jetsiʔˈa beχanjˈon ʁeχˈov haʔelˈa ʔaʁbˈa ʔesʁˈe. hamitlonˈen, ʁˈoni, tsaʁˈiχ latsˈet bidχifˈut veniʃmˈa nisʔˈaʁ. ʔaʃʁˈi kabalˈa.</he>"
+},
 "audio/voice/blocked-parking/l-3973a649.mp3": {
 "speaker": "narrator",
 "say": "החניון מאחורי הבניין. רכב כסוף חונה בניצב מאחורי רכב אדום וחוסם אותו לגמרי. לידו מתהלך גבר במדי בית חולים, מסתכל בשעון. בפינה עומד דייר מבוגר עם פנקס , מוועד הבית.",
@@ -3543,6 +3773,11 @@
 "speaker": "dispatch",
 "say": "לא ברור מי ענה. אשר בנוהל שאתה לוקח את האירוע.",
 "ipa": "<he>lˈo baʁˈuʁ mˈi ʔanˈa. ʔaʃˈeʁ banˈohal ʃeʔatˈa lokˈeaχ ʔˈet haʔejʁˈua.</he>"
+},
+"audio/voice/blocked-parking/l-24aa0c84.mp3": {
+"speaker": "dispatch",
+"say": "לא ברור מי ענה. אשרי בנוהל שאת לוקחת את האירוע.",
+"ipa": "<he>lˈo baʁˈuʁ mˈi ʔanˈa. ʔaʃʁˈi banˈohal ʃeʔˈat lokˈaχat ʔˈet haʔejʁˈua.</he>"
 },
 "audio/voice/blocked-parking/l-bc4ef680.mp3": {
 "speaker": "narrator",
@@ -3734,6 +3969,11 @@
 "say": "דוח? ירדתי תוך שתי דקות! למה אתה מדבר אליי ככה?",
 "ipa": "<he>dˈoχ? jaʁˈadti tˈoχ ʃtˈej dakˈot! lˈama ʔatˈa medabˈeʁ ʔelˈaj kˈaχa?</he>"
 },
+"audio/voice/blocked-parking/l-c0daafca.mp3": {
+"speaker": "shiran",
+"say": "דוח? ירדתי תוך שתי דקות! למה את מדברת אליי ככה?",
+"ipa": "<he>dˈoχ? jaʁˈadti tˈoχ ʃtˈej dakˈot! lˈama ʔˈat medabˈeʁet ʔelˈaj kˈaχa?</he>"
+},
 "audio/voice/blocked-parking/l-2f5f1c78.mp3": {
 "speaker": "officer",
 "say": "בואי נזיז את הרכב עכשיו. אני אכווין אותך.",
@@ -3799,6 +4039,11 @@
 "say": "קיבלתי. תמשיך, ותעדכן כשאתה פנוי.",
 "ipa": "<he>kibˈalti. tamʃˈiχ, veteʔadkˈen kʃeʔatˈa panˈuj.</he>"
 },
+"audio/voice/blocked-parking/l-e68a8fe9.mp3": {
+"speaker": "head",
+"say": "קיבלתי. תמשיכי, ותעדכני כשאת פנויה.",
+"ipa": "<he>kibˈalti. tamʃˈiχi, veteʔadkenˈi kʃeʔˈat pnujˈa.</he>"
+},
 "audio/voice/blocked-parking/l-6c920960.mp3": {
 "speaker": "player",
 "say": "שלילי, עדיין בטיפול באירוע. אעדכן כשאתפנה.",
@@ -3829,6 +4074,11 @@
 "say": "רגע , סיימת שם? לפי הדיווח המעורבים עדיין במקום. תשלים קודם ותעדכן.",
 "ipa": "<he>ʁˈeɡa, sijˈamta ʃˈam? lefˈi hadivˈuaχ hameʔoʁavˈim ʔadˈajin bamakˈom. taʃlˈim kˈodem veteʔadkˈen.</he>"
 },
+"audio/voice/blocked-parking/l-afdddcf9.mp3": {
+"speaker": "head",
+"say": "רגע , סיימת שם? לפי הדיווח המעורבים עדיין במקום. תשלימי קודם ותעדכני.",
+"ipa": "<he>ʁˈeɡa, sijˈamt ʃˈam? lefˈi hadivˈuaχ hameʔoʁavˈim ʔadˈajin bamakˈom. taʃlˈimi kˈodem veteʔadkenˈi.</he>"
+},
 "audio/voice/blocked-parking/l-1fc4527d.mp3": {
 "speaker": "player",
 "say": "אימתתי את המספר 45, 218, 63. אפשר לאתר את הבעלים הרשומים וליצור קשר?",
@@ -3858,6 +4108,11 @@
 "speaker": "head",
 "say": "מה המצב אצלך? אתה פנוי? יש אירוע נוסף באזור.",
 "ipa": "<he>mˈa hamatsˈav ʔetsleχˈa? ʔatˈa panˈuj? jˈeʃ ʔejʁˈua nosˈaf baʔezˈoʁ.</he>"
+},
+"audio/voice/blocked-parking/l-2a0a8c7a.mp3": {
+"speaker": "head",
+"say": "מה המצב אצלך? את פנויה? יש אירוע נוסף באזור.",
+"ipa": "<he>mˈa hamatsˈav ʔetslˈeχ? ʔˈat pnujˈa? jˈeʃ ʔeʁˈua nosˈaf baʔezˈoʁ.</he>"
 },
 "audio/voice/blocked-parking/l-32caff91.mp3": {
 "speaker": "dispatch",
@@ -3989,6 +4244,11 @@
 "say": "ילד בן שש נעלם בשוק העיר לפני כעשר דקות. האם, סיגל, ממתינה בכניסה לסמטת הדוכנים. אשר קבלה.",
 "ipa": "<he>jˈeled bˈen ʃˈeʃ neʔelˈam beʃˈuk haʔˈiʁ lifnˈej keʔˈeseʁ dakˈot. haʔˈem, siɡˈal, mamtinˈa baknisˈa lesimtˈat haduχanˈim. ʔaʃˈeʁ kabalˈa.</he>"
 },
+"audio/voice/lost-child/l-cf99c48d.mp3": {
+"speaker": "dispatch",
+"say": "ילד בן שש נעלם בשוק העיר לפני כעשר דקות. האם, סיגל, ממתינה בכניסה לסמטת הדוכנים. אשרי קבלה.",
+"ipa": "<he>jˈeled bˈen ʃˈeʃ neʔelˈam beʃˈuk haʔˈiʁ lifnˈej keʔˈeseʁ dakˈot. haʔˈem, siɡˈal, mamtinˈa baknisˈa lesimtˈat haduχanˈim. ʔaʃʁˈi kabalˈa.</he>"
+},
 "audio/voice/lost-child/l-e6dc5b43.mp3": {
 "speaker": "narrator",
 "say": "כניסה לסמטת הדוכנים. רעש, צפיפות, ריח תבלינים. סיגל עומדת ליד דוכן התבלינים, הטלפון רועד בידה, ועיניה סורקות את הקהל. בדוכן הירקות הסמוך מסדר חיים ארגזים.",
@@ -4028,6 +4288,11 @@
 "speaker": "dispatch",
 "say": "לא ברור מי ענה. אשר בנוהל שאתה לוקח את האירוע.",
 "ipa": "<he>lˈo baʁˈuʁ mˈi ʔanˈa. ʔaʃˈeʁ banˈohal ʃeʔatˈa lokˈeaχ ʔˈet haʔejʁˈua.</he>"
+},
+"audio/voice/lost-child/l-24aa0c84.mp3": {
+"speaker": "dispatch",
+"say": "לא ברור מי ענה. אשרי בנוהל שאת לוקחת את האירוע.",
+"ipa": "<he>lˈo baʁˈuʁ mˈi ʔanˈa. ʔaʃʁˈi banˈohal ʃeʔˈat lokˈaχat ʔˈet haʔejʁˈua.</he>"
 },
 "audio/voice/lost-child/l-bc4ef680.mp3": {
 "speaker": "narrator",
@@ -4113,6 +4378,11 @@
 "speaker": "sigal",
 "say": "אתה חושב שאני לא יודעת?!",
 "ipa": "<he>ʔatˈa χoʃˈev ʃeʔanˈi lˈo jodˈaʔat?!</he>"
+},
+"audio/voice/lost-child/l-7895fdf3.mp3": {
+"speaker": "sigal",
+"say": "את חושבת שאני לא יודעת?!",
+"ipa": "<he>ʔˈat χoʃˈevet ʃeʔanˈi lˈo jodˈaʔat?!</he>"
 },
 "audio/voice/lost-child/l-392ebd2b.mp3": {
 "speaker": "officer",
@@ -4314,6 +4584,11 @@
 "say": "קיבלתי. תמשיך, ותעדכן כשאתה פנוי.",
 "ipa": "<he>kibˈalti. tamʃˈiχ, veteʔadkˈen kʃeʔatˈa panˈuj.</he>"
 },
+"audio/voice/lost-child/l-e68a8fe9.mp3": {
+"speaker": "head",
+"say": "קיבלתי. תמשיכי, ותעדכני כשאת פנויה.",
+"ipa": "<he>kibˈalti. tamʃˈiχi, veteʔadkenˈi kʃeʔˈat pnujˈa.</he>"
+},
 "audio/voice/lost-child/l-6c920960.mp3": {
 "speaker": "player",
 "say": "שלילי, עדיין בטיפול באירוע. אעדכן כשאתפנה.",
@@ -4343,6 +4618,11 @@
 "speaker": "head",
 "say": "רגע , סיימת שם? לפי הדיווח המעורבים עדיין במקום. תשלים קודם ותעדכן.",
 "ipa": "<he>ʁˈeɡa, sijˈamta ʃˈam? lefˈi hadivˈuaχ hameʔoʁavˈim ʔadˈajin bamakˈom. taʃlˈim kˈodem veteʔadkˈen.</he>"
+},
+"audio/voice/lost-child/l-afdddcf9.mp3": {
+"speaker": "head",
+"say": "רגע , סיימת שם? לפי הדיווח המעורבים עדיין במקום. תשלימי קודם ותעדכני.",
+"ipa": "<he>ʁˈeɡa, sijˈamt ʃˈam? lefˈi hadivˈuaχ hameʔoʁavˈim ʔadˈajin bamakˈom. taʃlˈimi kˈodem veteʔadkenˈi.</he>"
 },
 "audio/voice/lost-child/l-ef2d4a01.mp3": {
 "speaker": "player",
@@ -4403,6 +4683,16 @@
 "speaker": "head",
 "say": "מה המצב אצלך? אתה פנוי? יש אירוע נוסף באזור.",
 "ipa": "<he>mˈa hamatsˈav ʔetsleχˈa? ʔatˈa panˈuj? jˈeʃ ʔejʁˈua nosˈaf baʔezˈoʁ.</he>"
+},
+"audio/voice/lost-child/l-2a0a8c7a.mp3": {
+"speaker": "head",
+"say": "מה המצב אצלך? את פנויה? יש אירוע נוסף באזור.",
+"ipa": "<he>mˈa hamatsˈav ʔetslˈeχ? ʔˈat pnujˈa? jˈeʃ ʔeʁˈua nosˈaf baʔezˈoʁ.</he>"
+},
+"audio/voice/lost-child/l-be8c5754.mp3": {
+"speaker": "narrator",
+"say": "סוחר ניגש ומספר שלפני כמה דקות ראה ילד קטן עם בלונים הולך לבד לכיוון היציאה לכביש. אף אחד לא ידע שמחפשים ילד.",
+"ipa": "<he>soχˈeʁ niɡˈaʃ vemesapˈeʁ ʃelifnˈej kˈama dakˈot ʁaʔˈa jˈeled katˈan ʔˈim balonˈim holˈeχ levˈad lekivˈun hajetsiʔˈa lakvˈiʃ. ʔˈaf ʔeχˈad lˈo jadˈa ʃemeχapsˈim jˈeled.</he>"
 },
 "audio/voice/lost-child/l-bfc7b412.mp3": {
 "speaker": "dispatch",
@@ -4544,6 +4834,11 @@
 "say": "דיווח על קטטה מחוץ לבר ברחוב התבור 3. יש פצוע, והמעורבים עדיין במקום. המדווחת היא הברמנית. אשר קבלה.",
 "ipa": "<he>divˈuaχ ʔˈal ktatˈa miχˈuts labˈaʁ beʁeχˈov hatavˈoʁ ʃalˈoʃ. jˈeʃ patsˈua, vehameʔoʁavˈim ʔadˈajin bamakˈom. hamedavˈaχat hˈi habaʁmanˈit. ʔaʃˈeʁ kabalˈa.</he>"
 },
+"audio/voice/bar-fight/l-fa401c88.mp3": {
+"speaker": "dispatch",
+"say": "דיווח על קטטה מחוץ לבר ברחוב התבור 3. יש פצוע, והמעורבים עדיין במקום. המדווחת היא הברמנית. אשרי קבלה.",
+"ipa": "<he>divˈuaχ ʔˈal ktatˈa miχˈuts labˈaʁ beʁeχˈov hatavˈoʁ ʃalˈoʃ. jˈeʃ patsˈua, vehameʔoʁavˈim ʔadˈajin bamakˈom. hamedavˈaχat hˈi habaʁmanˈit. ʔaʃʁˈi kabalˈa.</he>"
+},
 "audio/voice/bar-fight/l-cc0ad56a.mp3": {
 "speaker": "narrator",
 "say": "מחוץ לבר: כיסא הפוך, שברי זכוכית על המדרכה. צעיר בחולצה לבנה יושב על הספסל ומצמיד מפית למצחו. לידו חבר בסווטשירט בורדו, מתהלך עצבני ומסתכל לעבר צעיר בחולצה שחורה שעומד ליד השולחנות. הברמנית בפתח, מגבת ביד.",
@@ -4583,6 +4878,11 @@
 "speaker": "dispatch",
 "say": "לא ברור מי ענה. אשר בנוהל שאתה לוקח את האירוע.",
 "ipa": "<he>lˈo baʁˈuʁ mˈi ʔanˈa. ʔaʃˈeʁ banˈohal ʃeʔatˈa lokˈeaχ ʔˈet haʔejʁˈua.</he>"
+},
+"audio/voice/bar-fight/l-24aa0c84.mp3": {
+"speaker": "dispatch",
+"say": "לא ברור מי ענה. אשרי בנוהל שאת לוקחת את האירוע.",
+"ipa": "<he>lˈo baʁˈuʁ mˈi ʔanˈa. ʔaʃʁˈi banˈohal ʃeʔˈat lokˈaχat ʔˈet haʔejʁˈua.</he>"
 },
 "audio/voice/bar-fight/l-bc4ef680.mp3": {
 "speaker": "narrator",
@@ -4653,6 +4953,11 @@
 "speaker": "head",
 "say": "קיבלתי. שולח אליך ניידת נוספת, כשמונה דקות.",
 "ipa": "<he>kibˈalti. ʃolˈeaχ ʔelˈeχa najˈedet nosˈefet, keʃmˈone dakˈot.</he>"
+},
+"audio/voice/bar-fight/l-2f4588e8.mp3": {
+"speaker": "head",
+"say": "קיבלתי. שולח אלייך ניידת נוספת, כשמונה דקות.",
+"ipa": "<he>kibˈalti. ʃolˈeaχ ʔelˈajiχ najˈedet nosˈefet, keʃmˈone dakˈot.</he>"
 },
 "audio/voice/bar-fight/l-9e100446.mp3": {
 "speaker": "player",
@@ -5029,6 +5334,11 @@
 "say": "קיבלתי. תמשיך, ותעדכן כשאתה פנוי.",
 "ipa": "<he>kibˈalti. tamʃˈiχ, veteʔadkˈen kʃeʔatˈa panˈuj.</he>"
 },
+"audio/voice/bar-fight/l-e68a8fe9.mp3": {
+"speaker": "head",
+"say": "קיבלתי. תמשיכי, ותעדכני כשאת פנויה.",
+"ipa": "<he>kibˈalti. tamʃˈiχi, veteʔadkenˈi kʃeʔˈat pnujˈa.</he>"
+},
 "audio/voice/bar-fight/l-6c920960.mp3": {
 "speaker": "player",
 "say": "שלילי, עדיין בטיפול באירוע. אעדכן כשאתפנה.",
@@ -5058,6 +5368,11 @@
 "speaker": "head",
 "say": "רגע , סיימת שם? לפי הדיווח המעורבים עדיין במקום. תשלים קודם ותעדכן.",
 "ipa": "<he>ʁˈeɡa, sijˈamta ʃˈam? lefˈi hadivˈuaχ hameʔoʁavˈim ʔadˈajin bamakˈom. taʃlˈim kˈodem veteʔadkˈen.</he>"
+},
+"audio/voice/bar-fight/l-afdddcf9.mp3": {
+"speaker": "head",
+"say": "רגע , סיימת שם? לפי הדיווח המעורבים עדיין במקום. תשלימי קודם ותעדכני.",
+"ipa": "<he>ʁˈeɡa, sijˈamt ʃˈam? lefˈi hadivˈuaχ hameʔoʁavˈim ʔadˈajin bamakˈom. taʃlˈimi kˈodem veteʔadkenˈi.</he>"
 },
 "audio/voice/bar-fight/l-f0d394ac.mp3": {
 "speaker": "officer",
@@ -5114,6 +5429,16 @@
 "say": "מה המצב אצלך? אתה פנוי? יש אירוע נוסף באזור.",
 "ipa": "<he>mˈa hamatsˈav ʔetsleχˈa? ʔatˈa panˈuj? jˈeʃ ʔejʁˈua nosˈaf baʔezˈoʁ.</he>"
 },
+"audio/voice/bar-fight/l-2a0a8c7a.mp3": {
+"speaker": "head",
+"say": "מה המצב אצלך? את פנויה? יש אירוע נוסף באזור.",
+"ipa": "<he>mˈa hamatsˈav ʔetslˈeχ? ʔˈat pnujˈa? jˈeʃ ʔeʁˈua nosˈaf baʔezˈoʁ.</he>"
+},
+"audio/voice/bar-fight/l-b9d014e8.mp3": {
+"speaker": "narrator",
+"say": "אלון מתנודד ומחוויר. הדם מהחתך במצח ממשיך לטפטף על החולצה, והוא נאחז בשולחן כדי לא ליפול.",
+"ipa": "<he>ʔalˈon mitnodˈed vemaχvˈiʁ. hadˈam mehaχatˈaχ bamˈetsaχ mamʃˈiχ letaftˈef ʔˈal haχultsˈa, vehˈu neʔeχˈaz baʃulχˈan kedˈej lˈo lipˈol.</he>"
+},
 "audio/voice/bar-fight/l-1298c733.mp3": {
 "speaker": "dispatch",
 "say": "צוות מד״א בדרך.",
@@ -5149,15 +5474,30 @@
 "say": "רשמתי. שים לב , מה הבסיס לקביעה? מסרו עובדות ועדויות.",
 "ipa": "<he>ʁaʃˈamti. sˈim lˈev, mˈa habasˈis lakviʔˈa? masʁˈu ʔuvdˈot veʔedujˈot.</he>"
 },
+"audio/voice/bar-fight/l-5b6dee4f.mp3": {
+"speaker": "dispatch",
+"say": "רשמתי. שימי לב , מה הבסיס לקביעה? מסרו עובדות ועדויות.",
+"ipa": "<he>ʁaʃˈamti. sˈimi lˈev, mˈa habasˈis lakviʔˈa? masʁˈu ʔuvdˈot veʔedujˈot.</he>"
+},
 "audio/voice/bar-fight/l-421d65fc.mp3": {
 "speaker": "head",
 "say": "רשמתי. שים לב , מה הבסיס לקביעה? מסרו עובדות ועדויות.",
 "ipa": "<he>ʁaʃˈamti. sˈim lˈev, mˈa habasˈis lakviʔˈa? masʁˈu ʔuvdˈot veʔedujˈot.</he>"
 },
+"audio/voice/bar-fight/l-fec64df7.mp3": {
+"speaker": "head",
+"say": "רשמתי. שימי לב , מה הבסיס לקביעה? מסרו עובדות ועדויות.",
+"ipa": "<he>ʁaʃˈamti. sˈimi lˈev, mˈa habasˈis lakviʔˈa? masʁˈu ʔuvdˈot veʔedujˈot.</he>"
+},
 "audio/voice/bar-fight/l-f1afacf6.mp3": {
 "speaker": "duty",
 "say": "רשמתי. שים לב , מה הבסיס לקביעה? מסרו עובדות ועדויות.",
 "ipa": "<he>ʁaʃˈamti. sˈim lˈev, mˈa habasˈis lakviʔˈa? masʁˈu ʔuvdˈot veʔedujˈot.</he>"
+},
+"audio/voice/bar-fight/l-38e6a209.mp3": {
+"speaker": "duty",
+"say": "רשמתי. שימי לב , מה הבסיס לקביעה? מסרו עובדות ועדויות.",
+"ipa": "<he>ʁaʃˈamti. sˈimi lˈev, mˈa habasˈis lakviʔˈa? masʁˈu ʔuvdˈot veʔedujˈot.</he>"
 },
 "audio/voice/bar-fight/l-80fc5f75.mp3": {
 "speaker": "dispatch",
@@ -5289,6 +5629,11 @@
 "say": "דיווח על ריח גז חזק בכניסה לבניין ברחוב השקד 8. המדווחת, גלית, יצאה מהבניין וממתינה בחוץ. אשר קבלה.",
 "ipa": "<he>divˈuaχ ʔˈal ʁˈeaχ ɡˈaz χazˈak baknisˈa labinjˈan beʁeχˈov haʃakˈed ʃmonˈe. hamedavˈaχat, ɡalˈit, jatsʔˈa mehabinjˈan vemamtinˈa baχˈuts. ʔaʃˈeʁ kabalˈa.</he>"
 },
+"audio/voice/gas-smell/l-ac2c1d9d.mp3": {
+"speaker": "dispatch",
+"say": "דיווח על ריח גז חזק בכניסה לבניין ברחוב השקד 8. המדווחת, גלית, יצאה מהבניין וממתינה בחוץ. אשרי קבלה.",
+"ipa": "<he>divˈuaχ ʔˈal ʁˈeaχ ɡˈaz χazˈak baknisˈa labinjˈan beʁeχˈov haʃakˈed ʃmonˈe. hamedavˈaχat, ɡalˈit, jatsʔˈa mehabinjˈan vemamtinˈa baχˈuts. ʔaʃʁˈi kabalˈa.</he>"
+},
 "audio/voice/gas-smell/l-92c814ac.mp3": {
 "speaker": "narrator",
 "say": "כבר במדרכה מורגש ריח גז חריף. גלית ממתינה ליד הגדר. בפתח הבניין עומד דייר מבוגר בגופייה, סיגריה לא דלוקה בפה. נער עם אוזניות יורד במדרגות ומסתכל בטלפון.",
@@ -5328,6 +5673,11 @@
 "speaker": "dispatch",
 "say": "לא ברור מי ענה. אשר בנוהל שאתה לוקח את האירוע.",
 "ipa": "<he>lˈo baʁˈuʁ mˈi ʔanˈa. ʔaʃˈeʁ banˈohal ʃeʔatˈa lokˈeaχ ʔˈet haʔejʁˈua.</he>"
+},
+"audio/voice/gas-smell/l-24aa0c84.mp3": {
+"speaker": "dispatch",
+"say": "לא ברור מי ענה. אשרי בנוהל שאת לוקחת את האירוע.",
+"ipa": "<he>lˈo baʁˈuʁ mˈi ʔanˈa. ʔaʃʁˈi banˈohal ʃeʔˈat lokˈaχat ʔˈet haʔejʁˈua.</he>"
 },
 "audio/voice/gas-smell/l-bc4ef680.mp3": {
 "speaker": "narrator",
@@ -5609,6 +5959,11 @@
 "say": "קיבלתי. תמשיך, ותעדכן כשאתה פנוי.",
 "ipa": "<he>kibˈalti. tamʃˈiχ, veteʔadkˈen kʃeʔatˈa panˈuj.</he>"
 },
+"audio/voice/gas-smell/l-e68a8fe9.mp3": {
+"speaker": "head",
+"say": "קיבלתי. תמשיכי, ותעדכני כשאת פנויה.",
+"ipa": "<he>kibˈalti. tamʃˈiχi, veteʔadkenˈi kʃeʔˈat pnujˈa.</he>"
+},
 "audio/voice/gas-smell/l-6c920960.mp3": {
 "speaker": "player",
 "say": "שלילי, עדיין בטיפול באירוע. אעדכן כשאתפנה.",
@@ -5638,6 +5993,11 @@
 "speaker": "head",
 "say": "רגע , סיימת שם? לפי הדיווח המעורבים עדיין במקום. תשלים קודם ותעדכן.",
 "ipa": "<he>ʁˈeɡa, sijˈamta ʃˈam? lefˈi hadivˈuaχ hameʔoʁavˈim ʔadˈajin bamakˈom. taʃlˈim kˈodem veteʔadkˈen.</he>"
+},
+"audio/voice/gas-smell/l-afdddcf9.mp3": {
+"speaker": "head",
+"say": "רגע , סיימת שם? לפי הדיווח המעורבים עדיין במקום. תשלימי קודם ותעדכני.",
+"ipa": "<he>ʁˈeɡa, sijˈamt ʃˈam? lefˈi hadivˈuaχ hameʔoʁavˈim ʔadˈajin bamakˈom. taʃlˈimi kˈodem veteʔadkenˈi.</he>"
 },
 "audio/voice/gas-smell/l-f0d394ac.mp3": {
 "speaker": "officer",
@@ -5688,6 +6048,16 @@
 "speaker": "head",
 "say": "מה המצב אצלך? אתה פנוי? יש אירוע נוסף באזור.",
 "ipa": "<he>mˈa hamatsˈav ʔetsleχˈa? ʔatˈa panˈuj? jˈeʃ ʔejʁˈua nosˈaf baʔezˈoʁ.</he>"
+},
+"audio/voice/gas-smell/l-2a0a8c7a.mp3": {
+"speaker": "head",
+"say": "מה המצב אצלך? את פנויה? יש אירוע נוסף באזור.",
+"ipa": "<he>mˈa hamatsˈav ʔetslˈeχ? ʔˈat pnujˈa? jˈeʃ ʔeʁˈua nosˈaf baʔezˈoʁ.</he>"
+},
+"audio/voice/gas-smell/l-c6848f1f.mp3": {
+"speaker": "narrator",
+"say": "הריח בכניסה מתחזק. דייר שיצא אחרון מושיט יד למתג האור בחדר המדרגות , ועוצר רק כששכנה צועקת עליו.",
+"ipa": "<he>haʁˈeaχ baknisˈa mitχazˈek. dajˈaʁ ʃejatsˈa ʔaχaʁˈon moʃˈit jˈad lemˈetaɡ haʔˈoʁ beχadˈaʁ hamadʁeɡˈot, veʔotsˈeʁ ʁˈak kʃeʃχenˈa tsoʔˈeket ʔalˈav.</he>"
 },
 "audio/voice/gas-smell/l-a6e1a1e6.mp3": {
 "speaker": "dispatch",
@@ -5839,6 +6209,11 @@
 "say": "תלונה על מוזיקה חזקה ושתייה של צעירים בגינת הזית ברחוב האורן. המתלוננת ביקשה לא להיחשף. אשר קבלה.",
 "ipa": "<he>tlunˈa ʔˈal mˈuzika χazakˈa veʃtijˈa ʃˈel tseʔiʁˈim beɡinˈat hazˈajit beʁeχˈov haʔˈoʁen. hamitlonˈenet bikʃˈa lˈo leheχasˈef. ʔaʃˈeʁ kabalˈa.</he>"
 },
+"audio/voice/park-youths/l-61265b4f.mp3": {
+"speaker": "dispatch",
+"say": "תלונה על מוזיקה חזקה ושתייה של צעירים בגינת הזית ברחוב האורן. המתלוננת ביקשה לא להיחשף. אשרי קבלה.",
+"ipa": "<he>tlunˈa ʔˈal mˈuzika χazakˈa veʃtijˈa ʃˈel tseʔiʁˈim beɡinˈat hazˈajit beʁeχˈov haʔˈoʁen. hamitlonˈenet bikʃˈa lˈo leheχasˈef. ʔaʃʁˈi kabalˈa.</he>"
+},
 "audio/voice/park-youths/l-f3c7836a.mp3": {
 "speaker": "narrator",
 "say": "גינת הזית. ליד שולחן הפיקניק שלושה בני נוער, רמקול מנגן חזק, ועל השולחן בקבוקים ריקים. בחלון מול הגינה נדלק אור, ואישה מבוגרת מנופפת לכם.",
@@ -5873,6 +6248,11 @@
 "speaker": "dispatch",
 "say": "לא ברור מי ענה. אשר בנוהל שאתה לוקח את האירוע.",
 "ipa": "<he>lˈo baʁˈuʁ mˈi ʔanˈa. ʔaʃˈeʁ banˈohal ʃeʔatˈa lokˈeaχ ʔˈet haʔejʁˈua.</he>"
+},
+"audio/voice/park-youths/l-24aa0c84.mp3": {
+"speaker": "dispatch",
+"say": "לא ברור מי ענה. אשרי בנוהל שאת לוקחת את האירוע.",
+"ipa": "<he>lˈo baʁˈuʁ mˈi ʔanˈa. ʔaʃʁˈi banˈohal ʃeʔˈat lokˈaχat ʔˈet haʔejʁˈua.</he>"
 },
 "audio/voice/park-youths/l-bc4ef680.mp3": {
 "speaker": "narrator",
@@ -5968,6 +6348,11 @@
 "speaker": "idan",
 "say": "מה אתה צועק? אנחנו לא עושים כלום!",
 "ipa": "<he>mˈa ʔatˈa tsoʔˈek? ʔanˈaχnu lˈo ʔosˈim klˈum!</he>"
+},
+"audio/voice/park-youths/l-d5c24cd9.mp3": {
+"speaker": "idan",
+"say": "מה את צועקת? אנחנו לא עושים כלום!",
+"ipa": "<he>mˈa ʔˈat tsoʔˈeket? ʔanˈaχnu lˈo ʔosˈim klˈum!</he>"
 },
 "audio/voice/park-youths/l-670738b8.mp3": {
 "speaker": "idan",
@@ -6099,6 +6484,11 @@
 "say": "קיבלתי. תמשיך, ותעדכן כשאתה פנוי.",
 "ipa": "<he>kibˈalti. tamʃˈiχ, veteʔadkˈen kʃeʔatˈa panˈuj.</he>"
 },
+"audio/voice/park-youths/l-e68a8fe9.mp3": {
+"speaker": "head",
+"say": "קיבלתי. תמשיכי, ותעדכני כשאת פנויה.",
+"ipa": "<he>kibˈalti. tamʃˈiχi, veteʔadkenˈi kʃeʔˈat pnujˈa.</he>"
+},
 "audio/voice/park-youths/l-6c920960.mp3": {
 "speaker": "player",
 "say": "שלילי, עדיין בטיפול באירוע. אעדכן כשאתפנה.",
@@ -6129,6 +6519,11 @@
 "say": "רגע , סיימת שם? לפי הדיווח המעורבים עדיין במקום. תשלים קודם ותעדכן.",
 "ipa": "<he>ʁˈeɡa, sijˈamta ʃˈam? lefˈi hadivˈuaχ hameʔoʁavˈim ʔadˈajin bamakˈom. taʃlˈim kˈodem veteʔadkˈen.</he>"
 },
+"audio/voice/park-youths/l-afdddcf9.mp3": {
+"speaker": "head",
+"say": "רגע , סיימת שם? לפי הדיווח המעורבים עדיין במקום. תשלימי קודם ותעדכני.",
+"ipa": "<he>ʁˈeɡa, sijˈamt ʃˈam? lefˈi hadivˈuaχ hameʔoʁavˈim ʔadˈajin bamakˈom. taʃlˈimi kˈodem veteʔadkenˈi.</he>"
+},
 "audio/voice/park-youths/l-0a71efb5.mp3": {
 "speaker": "narrator",
 "say": "ליאור מחווירה, מתיישבת על הספסל ואומרת שמסתובב לה הראש.",
@@ -6148,6 +6543,11 @@
 "speaker": "head",
 "say": "מה המצב אצלך? אתה פנוי? יש אירוע נוסף באזור.",
 "ipa": "<he>mˈa hamatsˈav ʔetsleχˈa? ʔatˈa panˈuj? jˈeʃ ʔejʁˈua nosˈaf baʔezˈoʁ.</he>"
+},
+"audio/voice/park-youths/l-2a0a8c7a.mp3": {
+"speaker": "head",
+"say": "מה המצב אצלך? את פנויה? יש אירוע נוסף באזור.",
+"ipa": "<he>mˈa hamatsˈav ʔetslˈeχ? ʔˈat pnujˈa? jˈeʃ ʔeʁˈua nosˈaf baʔezˈoʁ.</he>"
 },
 "audio/voice/park-youths/l-ce34c535.mp3": {
 "speaker": "dispatch",
@@ -6254,6 +6654,11 @@
 "say": "מאבטח במינימרקט ברחוב הדקל 22 עיכב צעיר בחשד לגניבה. בעלת החנות במקום ונשמעת נסערת. אשר קבלה.",
 "ipa": "<he>meʔavtˈeaχ beminimˈaʁket beʁeχˈov hadˈekel ʔesʁˈim veʃtˈajim ʔikˈev tsaʔˈiʁ beχaʃˈad leɡnevˈa. baʔalˈat haχanˈut bamakˈom veniʃmˈaʔat nisʔˈeʁet. ʔaʃˈeʁ kabalˈa.</he>"
 },
+"audio/voice/shoplifting/l-5ce81927.mp3": {
+"speaker": "dispatch",
+"say": "מאבטח במינימרקט ברחוב הדקל 22 עיכב צעיר בחשד לגניבה. בעלת החנות במקום ונשמעת נסערת. אשרי קבלה.",
+"ipa": "<he>meʔavtˈeaχ beminimˈaʁket beʁeχˈov hadˈekel ʔesʁˈim veʃtˈajim ʔikˈev tsaʔˈiʁ beχaʃˈad leɡnevˈa. baʔalˈat haχanˈut bamakˈom veniʃmˈaʔat nisʔˈeʁet. ʔaʃʁˈi kabalˈa.</he>"
+},
 "audio/voice/shoplifting/l-c729818b.mp3": {
 "speaker": "narrator",
 "say": "המינימרקט. ליד הקופה יושב נער בקפוצ׳ון אפור, תיק גב פתוח לרגליו. מאבטח בחולצה שחורה עומד מעליו, ובעלת החנות מדברת בקול רם. כמה לקוחות מסתכלים.",
@@ -6293,6 +6698,11 @@
 "speaker": "dispatch",
 "say": "לא ברור מי ענה. אשר בנוהל שאתה לוקח את האירוע.",
 "ipa": "<he>lˈo baʁˈuʁ mˈi ʔanˈa. ʔaʃˈeʁ banˈohal ʃeʔatˈa lokˈeaχ ʔˈet haʔejʁˈua.</he>"
+},
+"audio/voice/shoplifting/l-24aa0c84.mp3": {
+"speaker": "dispatch",
+"say": "לא ברור מי ענה. אשרי בנוהל שאת לוקחת את האירוע.",
+"ipa": "<he>lˈo baʁˈuʁ mˈi ʔanˈa. ʔaʃʁˈi banˈohal ʃeʔˈat lokˈaχat ʔˈet haʔejʁˈua.</he>"
 },
 "audio/voice/shoplifting/l-bc4ef680.mp3": {
 "speaker": "narrator",
@@ -6579,6 +6989,11 @@
 "say": "קיבלתי. תמשיך, ותעדכן כשאתה פנוי.",
 "ipa": "<he>kibˈalti. tamʃˈiχ, veteʔadkˈen kʃeʔatˈa panˈuj.</he>"
 },
+"audio/voice/shoplifting/l-e68a8fe9.mp3": {
+"speaker": "head",
+"say": "קיבלתי. תמשיכי, ותעדכני כשאת פנויה.",
+"ipa": "<he>kibˈalti. tamʃˈiχi, veteʔadkenˈi kʃeʔˈat pnujˈa.</he>"
+},
 "audio/voice/shoplifting/l-6c920960.mp3": {
 "speaker": "player",
 "say": "שלילי, עדיין בטיפול באירוע. אעדכן כשאתפנה.",
@@ -6609,6 +7024,11 @@
 "say": "רגע , סיימת שם? לפי הדיווח המעורבים עדיין במקום. תשלים קודם ותעדכן.",
 "ipa": "<he>ʁˈeɡa, sijˈamta ʃˈam? lefˈi hadivˈuaχ hameʔoʁavˈim ʔadˈajin bamakˈom. taʃlˈim kˈodem veteʔadkˈen.</he>"
 },
+"audio/voice/shoplifting/l-afdddcf9.mp3": {
+"speaker": "head",
+"say": "רגע , סיימת שם? לפי הדיווח המעורבים עדיין במקום. תשלימי קודם ותעדכני.",
+"ipa": "<he>ʁˈeɡa, sijˈamt ʃˈam? lefˈi hadivˈuaχ hameʔoʁavˈim ʔadˈajin bamakˈom. taʃlˈimi kˈodem veteʔadkenˈi.</he>"
+},
 "audio/voice/shoplifting/l-1f48c6c5.mp3": {
 "speaker": "dvora",
 "say": "אני מצלמת אותו ומעלה לקבוצה של השכונה. שכולם יידעו מי זה!",
@@ -6623,6 +7043,11 @@
 "speaker": "head",
 "say": "מה המצב אצלך? אתה פנוי? יש אירוע נוסף באזור.",
 "ipa": "<he>mˈa hamatsˈav ʔetsleχˈa? ʔatˈa panˈuj? jˈeʃ ʔejʁˈua nosˈaf baʔezˈoʁ.</he>"
+},
+"audio/voice/shoplifting/l-2a0a8c7a.mp3": {
+"speaker": "head",
+"say": "מה המצב אצלך? את פנויה? יש אירוע נוסף באזור.",
+"ipa": "<he>mˈa hamatsˈav ʔetslˈeχ? ʔˈat pnujˈa? jˈeʃ ʔeʁˈua nosˈaf baʔezˈoʁ.</he>"
 },
 "audio/voice/shoplifting/l-68760a99.mp3": {
 "speaker": "dispatch",
@@ -6729,6 +7154,11 @@
 "say": "פריצה לדירה ברחוב הרימון 14, קומה 3. הדיירת חזרה ומצאה את הדלת פרוצה, והיא ממתינה בחדר המדרגות. אשר קבלה.",
 "ipa": "<he>pʁitsˈa lediʁˈa beʁeχˈov haʁimˈon ʔaʁbˈa ʔesʁˈe, komˈa ʃalˈoʃ. hadajˈeʁet χazʁˈa vematsʔˈa ʔˈet hadˈelet pʁutsˈa, vehˈi mamtinˈa beχadˈaʁ hamadʁeɡˈot. ʔaʃˈeʁ kabalˈa.</he>"
 },
+"audio/voice/burglary/l-5a95ba12.mp3": {
+"speaker": "dispatch",
+"say": "פריצה לדירה ברחוב הרימון 14, קומה 3. הדיירת חזרה ומצאה את הדלת פרוצה, והיא ממתינה בחדר המדרגות. אשרי קבלה.",
+"ipa": "<he>pʁitsˈa lediʁˈa beʁeχˈov haʁimˈon ʔaʁbˈa ʔesʁˈe, komˈa ʃalˈoʃ. hadajˈeʁet χazʁˈa vematsʔˈa ʔˈet hadˈelet pʁutsˈa, vehˈi mamtinˈa beχadˈaʁ hamadʁeɡˈot. ʔaʃʁˈi kabalˈa.</he>"
+},
 "audio/voice/burglary/l-757679e0.mp3": {
 "speaker": "narrator",
 "say": "קומה שלישית. דלת הדירה פתוחה חלקית, המשקוף שבור ליד המנעול ושבבי עץ על הרצפה. מיכל עומדת ליד המדרגות, הטלפון ביד. דלת הדירה ממול נפתחת, ושכן מבוגר מציץ החוצה.",
@@ -6768,6 +7198,11 @@
 "speaker": "dispatch",
 "say": "לא ברור מי ענה. אשר בנוהל שאתה לוקח את האירוע.",
 "ipa": "<he>lˈo baʁˈuʁ mˈi ʔanˈa. ʔaʃˈeʁ banˈohal ʃeʔatˈa lokˈeaχ ʔˈet haʔejʁˈua.</he>"
+},
+"audio/voice/burglary/l-24aa0c84.mp3": {
+"speaker": "dispatch",
+"say": "לא ברור מי ענה. אשרי בנוהל שאת לוקחת את האירוע.",
+"ipa": "<he>lˈo baʁˈuʁ mˈi ʔanˈa. ʔaʃʁˈi banˈohal ʃeʔˈat lokˈaχat ʔˈet haʔejʁˈua.</he>"
 },
 "audio/voice/burglary/l-bc4ef680.mp3": {
 "speaker": "narrator",
@@ -6838,6 +7273,11 @@
 "speaker": "head",
 "say": "קיבלתי. שולח אליך ניידת נוספת, כעשר דקות.",
 "ipa": "<he>kibˈalti. ʃolˈeaχ ʔelˈeχa najˈedet nosˈefet, keʔˈeseʁ dakˈot.</he>"
+},
+"audio/voice/burglary/l-6e42a4a3.mp3": {
+"speaker": "head",
+"say": "קיבלתי. שולח אלייך ניידת נוספת, כעשר דקות.",
+"ipa": "<he>kibˈalti. ʃolˈeaχ ʔelˈajiχ najˈedet nosˈefet, keʔˈeseʁ dakˈot.</he>"
 },
 "audio/voice/burglary/l-7c34abc3.mp3": {
 "speaker": "narrator",
@@ -6999,6 +7439,11 @@
 "say": "קיבלתי. תמשיך, ותעדכן כשאתה פנוי.",
 "ipa": "<he>kibˈalti. tamʃˈiχ, veteʔadkˈen kʃeʔatˈa panˈuj.</he>"
 },
+"audio/voice/burglary/l-e68a8fe9.mp3": {
+"speaker": "head",
+"say": "קיבלתי. תמשיכי, ותעדכני כשאת פנויה.",
+"ipa": "<he>kibˈalti. tamʃˈiχi, veteʔadkenˈi kʃeʔˈat pnujˈa.</he>"
+},
 "audio/voice/burglary/l-6c920960.mp3": {
 "speaker": "player",
 "say": "שלילי, עדיין בטיפול באירוע. אעדכן כשאתפנה.",
@@ -7029,6 +7474,11 @@
 "say": "רגע , סיימת שם? לפי הדיווח המעורבים עדיין במקום. תשלים קודם ותעדכן.",
 "ipa": "<he>ʁˈeɡa, sijˈamta ʃˈam? lefˈi hadivˈuaχ hameʔoʁavˈim ʔadˈajin bamakˈom. taʃlˈim kˈodem veteʔadkˈen.</he>"
 },
+"audio/voice/burglary/l-afdddcf9.mp3": {
+"speaker": "head",
+"say": "רגע , סיימת שם? לפי הדיווח המעורבים עדיין במקום. תשלימי קודם ותעדכני.",
+"ipa": "<he>ʁˈeɡa, sijˈamt ʃˈam? lefˈi hadivˈuaχ hameʔoʁavˈim ʔadˈajin bamakˈom. taʃlˈimi kˈodem veteʔadkenˈi.</he>"
+},
 "audio/voice/burglary/l-c1ebef25.mp3": {
 "speaker": "officer",
 "say": "שימו לב, מצלמת הגוף שלי מתעדת את האירוע.",
@@ -7058,6 +7508,11 @@
 "speaker": "head",
 "say": "מה המצב אצלך? אתה פנוי? יש אירוע נוסף באזור.",
 "ipa": "<he>mˈa hamatsˈav ʔetsleχˈa? ʔatˈa panˈuj? jˈeʃ ʔejʁˈua nosˈaf baʔezˈoʁ.</he>"
+},
+"audio/voice/burglary/l-2a0a8c7a.mp3": {
+"speaker": "head",
+"say": "מה המצב אצלך? את פנויה? יש אירוע נוסף באזור.",
+"ipa": "<he>mˈa hamatsˈav ʔetslˈeχ? ʔˈat pnujˈa? jˈeʃ ʔeʁˈua nosˈaf baʔezˈoʁ.</he>"
 },
 "audio/voice/burglary/l-e687981b.mp3": {
 "speaker": "dispatch",
@@ -7224,6 +7679,11 @@
 "say": "ברחוב הגפן 8, דירה 5 , נערה התקשרה בשקט: צעקות ורעש שבירה, ואמא שלה בוכה. היא ביקשה שאביה לא יידע שהתקשרה. אשר קבלה.",
 "ipa": "<he>beʁeχˈov haɡˈefen ʃmonˈe, diʁˈa χamˈeʃ, naʔaʁˈa hitkaʃʁˈa beʃˈeket: tsaʔakˈot veʁˈaʔaʃ ʃviʁˈa, veʔˈima ʃelˈa boχˈa. hˈi bikʃˈa ʃeʔavˈiha lˈo jidˈa ʃehitkaʃʁˈa. ʔaʃˈeʁ kabalˈa.</he>"
 },
+"audio/voice/domestic-call/l-be5e4a87.mp3": {
+"speaker": "dispatch",
+"say": "ברחוב הגפן 8, דירה 5 , נערה התקשרה בשקט: צעקות ורעש שבירה, ואמא שלה בוכה. היא ביקשה שאביה לא יידע שהתקשרה. אשרי קבלה.",
+"ipa": "<he>beʁeχˈov haɡˈefen ʃmonˈe, diʁˈa χamˈeʃ, naʔaʁˈa hitkaʃʁˈa beʃˈeket: tsaʔakˈot veʁˈaʔaʃ ʃviʁˈa, veʔˈima ʃelˈa boχˈa. hˈi bikʃˈa ʃeʔavˈiha lˈo jidˈa ʃehitkaʃʁˈa. ʔaʃʁˈi kabalˈa.</he>"
+},
 "audio/voice/domestic-call/l-9e880dae.mp3": {
 "speaker": "narrator",
 "say": "דפקת. האב פותח את הדלת חלקית. מאחוריו בסלון כיסא הפוך ושברי אגרטל. האם יושבת על הספה עם הגב אליכם.",
@@ -7263,6 +7723,11 @@
 "speaker": "dispatch",
 "say": "לא ברור מי ענה. אשר בנוהל שאתה לוקח את האירוע.",
 "ipa": "<he>lˈo baʁˈuʁ mˈi ʔanˈa. ʔaʃˈeʁ banˈohal ʃeʔatˈa lokˈeaχ ʔˈet haʔejʁˈua.</he>"
+},
+"audio/voice/domestic-call/l-24aa0c84.mp3": {
+"speaker": "dispatch",
+"say": "לא ברור מי ענה. אשרי בנוהל שאת לוקחת את האירוע.",
+"ipa": "<he>lˈo baʁˈuʁ mˈi ʔanˈa. ʔaʃʁˈi banˈohal ʃeʔˈat lokˈaχat ʔˈet haʔejʁˈua.</he>"
 },
 "audio/voice/domestic-call/l-bc4ef680.mp3": {
 "speaker": "narrator",
@@ -7338,6 +7803,11 @@
 "speaker": "head",
 "say": "קיבלתי. שולח אליך ניידת נוספת, כשבע דקות.",
 "ipa": "<he>kibˈalti. ʃolˈeaχ ʔelˈeχa najˈedet nosˈefet, keʃˈeva dakˈot.</he>"
+},
+"audio/voice/domestic-call/l-2746e4c8.mp3": {
+"speaker": "head",
+"say": "קיבלתי. שולח אלייך ניידת נוספת, כשבע דקות.",
+"ipa": "<he>kibˈalti. ʃolˈeaχ ʔelˈajiχ najˈedet nosˈefet, keʃˈeva dakˈot.</he>"
 },
 "audio/voice/domestic-call/l-36b1f7d6.mp3": {
 "speaker": "player",
@@ -7759,6 +8229,11 @@
 "say": "קיבלתי. תמשיך, ותעדכן כשאתה פנוי.",
 "ipa": "<he>kibˈalti. tamʃˈiχ, veteʔadkˈen kʃeʔatˈa panˈuj.</he>"
 },
+"audio/voice/domestic-call/l-e68a8fe9.mp3": {
+"speaker": "head",
+"say": "קיבלתי. תמשיכי, ותעדכני כשאת פנויה.",
+"ipa": "<he>kibˈalti. tamʃˈiχi, veteʔadkenˈi kʃeʔˈat pnujˈa.</he>"
+},
 "audio/voice/domestic-call/l-6c920960.mp3": {
 "speaker": "player",
 "say": "שלילי, עדיין בטיפול באירוע. אעדכן כשאתפנה.",
@@ -7789,6 +8264,11 @@
 "say": "רגע , סיימת שם? לפי הדיווח המעורבים עדיין במקום. תשלים קודם ותעדכן.",
 "ipa": "<he>ʁˈeɡa, sijˈamta ʃˈam? lefˈi hadivˈuaχ hameʔoʁavˈim ʔadˈajin bamakˈom. taʃlˈim kˈodem veteʔadkˈen.</he>"
 },
+"audio/voice/domestic-call/l-afdddcf9.mp3": {
+"speaker": "head",
+"say": "רגע , סיימת שם? לפי הדיווח המעורבים עדיין במקום. תשלימי קודם ותעדכני.",
+"ipa": "<he>ʁˈeɡa, sijˈamt ʃˈam? lefˈi hadivˈuaχ hameʔoʁavˈim ʔadˈajin bamakˈom. taʃlˈimi kˈodem veteʔadkenˈi.</he>"
+},
 "audio/voice/domestic-call/l-c1ebef25.mp3": {
 "speaker": "officer",
 "say": "שימו לב, מצלמת הגוף שלי מתעדת את האירוע.",
@@ -7818,6 +8298,16 @@
 "speaker": "head",
 "say": "מה המצב אצלך? אתה פנוי? יש אירוע נוסף באזור.",
 "ipa": "<he>mˈa hamatsˈav ʔetsleχˈa? ʔatˈa panˈuj? jˈeʃ ʔejʁˈua nosˈaf baʔezˈoʁ.</he>"
+},
+"audio/voice/domestic-call/l-2a0a8c7a.mp3": {
+"speaker": "head",
+"say": "מה המצב אצלך? את פנויה? יש אירוע נוסף באזור.",
+"ipa": "<he>mˈa hamatsˈav ʔetslˈeχ? ʔˈat pnujˈa? jˈeʃ ʔeʁˈua nosˈaf baʔezˈoʁ.</he>"
+},
+"audio/voice/domestic-call/l-9a7360e1.mp3": {
+"speaker": "narrator",
+"say": "מבפנים נשמע רעש של משהו שנשבר, ואחריו בכי חנוק. האב עדיין עומד בפתח וחוסם אותו.",
+"ipa": "<he>mibifnˈim niʃmˈa ʁˈaʔaʃ ʃˈel mˈaʃu ʃeniʃbˈaʁ, veʔaχaʁˈav bˈeχi χanˈuk. haʔˈav ʔadˈajin ʔomˈed bapˈetaχ veχosˈem ʔotˈo.</he>"
 },
 "audio/voice/domestic-call/l-d09446c9.mp3": {
 "speaker": "dispatch",
@@ -7968,5 +8458,1540 @@
 "speaker": "playerF",
 "say": "ויכוח משפחתי, הכול בסדר",
 "ipa": "<he>vikˈuaχ miʃpaχtˈi, hakˈol besˈedeʁ</he>"
+},
+"audio/voice/pursuit/l-afbdb9f5.mp3": {
+"speaker": "dispatch",
+"say": "מבקשת שתבצעו בדיקה לרכב לבן שעומד עם מנוע דולק בחניון ליד רחוב הרצל, דיווח של שכן. אשר קבלה.",
+"ipa": "<he>mevakˈeʃet ʃetevatsʔˈu bdikˈa leʁˈeχev lavˈan ʃeʔomˈed ʔˈim manˈoa dolˈek baχanjˈon lejˈad ʁeχˈov hˈeʁtsel, divˈuaχ ʃˈel ʃaχˈen. ʔaʃˈeʁ kabalˈa.</he>"
+},
+"audio/voice/pursuit/l-104c85e5.mp3": {
+"speaker": "dispatch",
+"say": "מבקשת שתבצעו בדיקה לרכב לבן שעומד עם מנוע דולק בחניון ליד רחוב הרצל, דיווח של שכן. אשרי קבלה.",
+"ipa": "<he>mevakˈeʃet ʃetevatsʔˈu bdikˈa leʁˈeχev lavˈan ʃeʔomˈed ʔˈim manˈoa dolˈek baχanjˈon lejˈad ʁeχˈov hˈeʁtsel, divˈuaχ ʃˈel ʃaχˈen. ʔaʃʁˈi kabalˈa.</he>"
+},
+"audio/voice/pursuit/l-55f06a36.mp3": {
+"speaker": "narrator",
+"say": "הרכב הלבן מאיץ ברחוב הרצל. אתם מאחוריו, כמאה מטר. הרחוב מוביל לבית הספר אופק, ובקצהו רמזור.",
+"ipa": "<he>haʁˈeχev halavˈan meʔˈits beʁeχˈov hˈeʁtsel. ʔatˈem meʔaχoʁˈav, kemˈeʔa mˈeteʁ. haʁeχˈov movˈil lebˈet hasˈefeʁ ʔˈofek, uvekatsˈehu ʁamzˈoʁ.</he>"
+},
+"audio/voice/pursuit/l-0e01a700.mp3": {
+"speaker": "player",
+"say": "קיבלתי את האירוע, יוצא.",
+"ipa": "<he>kibˈalti ʔˈet haʔejʁˈua, jotsˈe.</he>"
+},
+"audio/voice/pursuit/l-c675d78a.mp3": {
+"speaker": "playerF",
+"say": "קיבלתי את האירוע, יוצאת.",
+"ipa": "<he>kibˈalti ʔˈet haʔejʁˈua, jotsˈet.</he>"
+},
+"audio/voice/pursuit/l-5a7fa6a9.mp3": {
+"speaker": "dispatch",
+"say": "קיבלתי.",
+"ipa": "<he>kibˈalti.</he>"
+},
+"audio/voice/pursuit/l-e45f91ee.mp3": {
+"speaker": "player",
+"say": "קיבלתי.",
+"ipa": "<he>kibˈalti.</he>"
+},
+"audio/voice/pursuit/l-b1d2b164.mp3": {
+"speaker": "playerF",
+"say": "קיבלתי.",
+"ipa": "<he>kibˈalti.</he>"
+},
+"audio/voice/pursuit/l-59ad1f64.mp3": {
+"speaker": "dispatch",
+"say": "לא ברור מי ענה. אשר בנוהל שאתה לוקח את האירוע.",
+"ipa": "<he>lˈo baʁˈuʁ mˈi ʔanˈa. ʔaʃˈeʁ banˈohal ʃeʔatˈa lokˈeaχ ʔˈet haʔejʁˈua.</he>"
+},
+"audio/voice/pursuit/l-24aa0c84.mp3": {
+"speaker": "dispatch",
+"say": "לא ברור מי ענה. אשרי בנוהל שאת לוקחת את האירוע.",
+"ipa": "<he>lˈo baʁˈuʁ mˈi ʔanˈa. ʔaʃʁˈi banˈohal ʃeʔˈat lokˈaχat ʔˈet haʔejʁˈua.</he>"
+},
+"audio/voice/pursuit/l-bc4ef680.mp3": {
+"speaker": "narrator",
+"say": "השדרה ריקה בשעת הלילה. הדרך הקצרה היא גם המהירה.",
+"ipa": "<he>haʃdeʁˈa ʁekˈa biʃʔˈat halˈajla. hadˈeʁeχ haktsaʁˈa hˈi ɡˈam hamehiʁˈa.</he>"
+},
+"audio/voice/pursuit/l-dec6b838.mp3": {
+"speaker": "narrator",
+"say": "בשדרות הזית פקק של שעת בוקר. הניידת מתקדמת לאט בין הרכבים.",
+"ipa": "<he>bisdeʁˈot hazˈajit pkˈak ʃˈel ʃaʔˈat bˈokeʁ. hanajˈedet mitkadˈemet leʔˈat bˈen haʁeχavˈim.</he>"
+},
+"audio/voice/pursuit/l-39c2e3ce.mp3": {
+"speaker": "narrator",
+"say": "השדרה עמוסה מעט בשעת הערב, אבל זורמת.",
+"ipa": "<he>haʃdeʁˈa ʔamusˈa meʔˈat biʃʔˈat haʔˈeʁev, ʔavˈal zoʁˈemet.</he>"
+},
+"audio/voice/pursuit/l-0bb6cb73.mp3": {
+"speaker": "narrator",
+"say": "רחובות השכונה צרים ומפותלים. בשעה הזו השדרה הייתה פנויה , הדרך ארכה יותר.",
+"ipa": "<he>ʁeχovˈot haʃχunˈa tsaʁˈim umefutalˈim. baʃaʔˈa hazˈo haʃdeʁˈa hajtˈa pnujˈa, hadˈeʁeχ ʔaʁχˈa jotˈeʁ.</he>"
+},
+"audio/voice/pursuit/l-29b547b9.mp3": {
+"speaker": "narrator",
+"say": "עוקפים את הפקק בשדרה דרך רחובות השכונה. ארוך יותר , אבל זורם.",
+"ipa": "<he>ʔokfˈim ʔˈet hapkˈak baʃdeʁˈa dˈeʁeχ ʁeχovˈot haʃχunˈa. ʔaʁˈoχ jotˈeʁ, ʔavˈal zoʁˈem.</he>"
+},
+"audio/voice/pursuit/l-fbf4d877.mp3": {
+"speaker": "player",
+"say": "יש עוד ניידות פעילות באזור הרצל?",
+"ipa": "<he>jˈeʃ ʔˈod najadˈot peʔilˈot beʔezˈoʁ hˈeʁtsel?</he>"
+},
+"audio/voice/pursuit/l-3dc83549.mp3": {
+"speaker": "playerF",
+"say": "יש עוד ניידות פעילות באזור הרצל?",
+"ipa": "<he>jˈeʃ ʔˈod najadˈot peʔilˈot beʔezˈoʁ hˈeʁtsel?</he>"
+},
+"audio/voice/pursuit/l-00bb37ea.mp3": {
+"speaker": "dispatch",
+"say": "ניידת אחת באזור התחנה המרכזית, כחמש דקות ממך.",
+"ipa": "<he>najˈedet ʔaχˈat beʔezˈoʁ hataχanˈa hameʁkazˈit, keχamˈeʃ dakˈot mimχˈa.</he>"
+},
+"audio/voice/pursuit/l-5a1eafa0.mp3": {
+"speaker": "narrator",
+"say": "האורות הכחולים והסירנה פועלים. מכוניות לפניכם זזות לצד.",
+"ipa": "<he>haʔoʁˈot hakχulˈim vehasiʁˈena poʔalˈim. meχonijˈot lifneχˈem zazˈot latsˈad.</he>"
+},
+"audio/voice/pursuit/l-116e52e6.mp3": {
+"speaker": "player",
+"say": "רכב לא עצר לסימון ונמלט. מאזדה לבנה, 54, 321, 87, נהג יחיד, נוסע צפונה ברחוב הרצל לכיוון בית הספר אופק. אני בעקבותיו.",
+"ipa": "<he>ʁˈeχev lˈo ʔatsˈaʁ lesimˈun venimlˈat. mˈazda levanˈa, χamiʃˈim veʔˈaʁba, ʃlˈoʃ meʔˈot ʔesʁˈim veʔaχˈat, ʃmonˈim veʃˈeva, nahˈaɡ jaχˈid, nosˈea tsafˈona beʁeχˈov hˈeʁtsel lekivˈun bˈet hasˈefeʁ ʔˈofek. ʔanˈi beʔikvotˈav.</he>"
+},
+"audio/voice/pursuit/l-3d04a844.mp3": {
+"speaker": "playerF",
+"say": "רכב לא עצר לסימון ונמלט. מאזדה לבנה, 54, 321, 87, נהג יחיד, נוסע צפונה ברחוב הרצל לכיוון בית הספר אופק. אני בעקבותיו.",
+"ipa": "<he>ʁˈeχev lˈo ʔatsˈaʁ lesimˈun venimlˈat. mˈazda levanˈa, χamiʃˈim veʔˈaʁba, ʃlˈoʃ meʔˈot ʔesʁˈim veʔaχˈat, ʃmonˈim veʃˈeva, nahˈaɡ jaχˈid, nosˈea tsafˈona beʁeχˈov hˈeʁtsel lekivˈun bˈet hasˈefeʁ ʔˈofek. ʔanˈi beʔikvotˈav.</he>"
+},
+"audio/voice/pursuit/l-08ef7370.mp3": {
+"speaker": "dispatch",
+"say": "קיבלתי. בודקת את הרכב. תעדכן בכל פנייה.",
+"ipa": "<he>kibˈalti. bodˈeket ʔˈet haʁˈeχev. teʔadkˈen beχˈol pnijˈa.</he>"
+},
+"audio/voice/pursuit/l-49aac987.mp3": {
+"speaker": "dispatch",
+"say": "קיבלתי. בודקת את הרכב. תעדכני בכל פנייה.",
+"ipa": "<he>kibˈalti. bodˈeket ʔˈet haʁˈeχev. teʔadkˈeni beχˈol pnijˈa.</he>"
+},
+"audio/voice/pursuit/l-a1edeae3.mp3": {
+"speaker": "dispatch",
+"say": "הרכב רשום על שם אלי כהן, מרחוב הזית 3. אין דיווח על גניבה.",
+"ipa": "<he>haʁˈeχev ʁaʃˈum ʔˈal ʃˈem ʔˈeli kohˈen, meʁeχˈov hazˈajit ʃalˈoʃ. ʔˈejn divˈuaχ ʔˈal ɡnevˈa.</he>"
+},
+"audio/voice/pursuit/l-d88e06d6.mp3": {
+"speaker": "dispatch",
+"say": "הרכב דווח כגנוב לפני שעתיים, מחניון ברחוב הגפן.",
+"ipa": "<he>haʁˈeχev duvˈaχ keɡanˈuv lifnˈej ʃaʔatˈajim, meχanjˈon beʁeχˈov haɡˈefen.</he>"
+},
+"audio/voice/pursuit/l-0a2b7fd1.mp3": {
+"speaker": "player",
+"say": "אני במרדף אחרי רכב שנמלט מסימון, ברחוב הרצל לכיוון בית הספר. מבקש הנחיה.",
+"ipa": "<he>ʔanˈi bemeʁdˈaf ʔaχʁˈej ʁˈeχev ʃenimlˈat misimˈon, beʁeχˈov hˈeʁtsel lekivˈun bˈet hasˈefeʁ. mevakˈeʃ hanχajˈa.</he>"
+},
+"audio/voice/pursuit/l-e83594d3.mp3": {
+"speaker": "playerF",
+"say": "אני במרדף אחרי רכב שנמלט מסימון, ברחוב הרצל לכיוון בית הספר. מבקשת הנחיה.",
+"ipa": "<he>ʔanˈi bemeʁdˈaf ʔaχʁˈej ʁˈeχev ʃenimlˈat misimˈon, beʁeχˈov hˈeʁtsel lekivˈun bˈet hasˈefeʁ. mevakˈeʃet hanχajˈa.</he>"
+},
+"audio/voice/pursuit/l-6534fd3f.mp3": {
+"speaker": "head",
+"say": "ממשיך במעקב בזהירות, בלי סיכונים. אם הוא נכנס לאזור עם אנשים , מפסיק ומעביר למשל״ט.",
+"ipa": "<he>mamʃˈiχ bemaʔakˈav bezehiʁˈut, blˈi sikunˈim. ʔˈim hˈu niχnˈas laʔezˈoʁ ʔˈim ʔanaʃˈim, mafsˈik vemaʔavˈiʁ lemaʃlˈat.</he>"
+},
+"audio/voice/pursuit/l-aeefa3f2.mp3": {
+"speaker": "player",
+"say": "הוא פנה שמאלה לרחוב הגפן, עדיין צפונה, מהירות גבוהה.",
+"ipa": "<he>hˈu panˈa smˈola leʁeχˈov haɡˈefen, ʔadˈajin tsafˈona, mehiʁˈut ɡvohˈa.</he>"
+},
+"audio/voice/pursuit/l-fb4fc2d8.mp3": {
+"speaker": "playerF",
+"say": "הוא פנה שמאלה לרחוב הגפן, עדיין צפונה, מהירות גבוהה.",
+"ipa": "<he>hˈu panˈa smˈola leʁeχˈov haɡˈefen, ʔadˈajin tsafˈona, mehiʁˈut ɡvohˈa.</he>"
+},
+"audio/voice/pursuit/l-77ecd5da.mp3": {
+"speaker": "dispatch",
+"say": "קיבלתי, הגפן צפונה.",
+"ipa": "<he>kibˈalti, haɡˈefen tsafˈona.</he>"
+},
+"audio/voice/pursuit/l-5ebace59.mp3": {
+"speaker": "narrator",
+"say": "המחוג עולה. בצומת האחרון כמעט פגעתם ברכב שיצא מחניה. הנהג שלפניכם מאיץ עוד יותר.",
+"ipa": "<he>hamaχˈoɡ ʔolˈe. batsˈomet haʔaχaʁˈon kimʔˈat paɡˈaʔtem baʁˈeχev ʃejatsˈa meχanajˈa. hanahˈaɡ ʃelifneχˈem meʔˈits ʔˈod jotˈeʁ.</he>"
+},
+"audio/voice/pursuit/l-09945c64.mp3": {
+"speaker": "narrator",
+"say": "הניידת מתחילה לעקוף. הרכב הלבן סוטה בחדות, עולה על המדרכה ונוחת בחזרה לכביש. רק במזל איש לא עמד שם.",
+"ipa": "<he>hanajˈedet matχilˈa laʔakˈof. haʁˈeχev halavˈan sotˈe beχadˈut, ʔolˈe ʔˈal hamidʁaχˈa venoχˈet beχazaʁˈa lakvˈiʃ. ʁˈak bemazˈal ʔˈiʃ lˈo ʔamˈad ʃˈam.</he>"
+},
+"audio/voice/pursuit/l-e34e32f0.mp3": {
+"speaker": "player",
+"say": "אני מפסיק את המרדף , הוא עבר באדום ליד בית הספר ויש אנשים על המדרכה. כיוון אחרון: צפונה ברחוב הגפן.",
+"ipa": "<he>ʔanˈi mafsˈik ʔˈet hameʁdˈaf, hˈu ʔavˈaʁ beʔadˈom lejˈad bˈet hasˈefeʁ vejˈeʃ ʔanaʃˈim ʔˈal hamidʁaχˈa. kivˈun ʔaχaʁˈon: tsafˈona beʁeχˈov haɡˈefen.</he>"
+},
+"audio/voice/pursuit/l-03baa32e.mp3": {
+"speaker": "playerF",
+"say": "אני מפסיקה את המרדף , הוא עבר באדום ליד בית הספר ויש אנשים על המדרכה. כיוון אחרון: צפונה ברחוב הגפן.",
+"ipa": "<he>ʔanˈi mafsikˈa ʔˈet hameʁdˈaf, hˈu ʔavˈaʁ beʔadˈom lejˈad bˈet hasˈefeʁ vejˈeʃ ʔanaʃˈim ʔˈal hamidʁaχˈa. kivˈun ʔaχaʁˈon: tsafˈona beʁeχˈov haɡˈefen.</he>"
+},
+"audio/voice/pursuit/l-751cde07.mp3": {
+"speaker": "dispatch",
+"say": "קיבלתי. מפסיק.",
+"ipa": "<he>kibˈalti. mafsˈik.</he>"
+},
+"audio/voice/pursuit/l-32e2b4b6.mp3": {
+"speaker": "narrator",
+"say": "הסירנה כבויה. הרכב הלבן נעלם בקצה הרחוב.",
+"ipa": "<he>hasiʁˈena kvujˈa. haʁˈeχev halavˈan neʔelˈam bektsˈe haʁeχˈov.</he>"
+},
+"audio/voice/pursuit/l-96300cbe.mp3": {
+"speaker": "narrator",
+"say": "אתם חוצים באדום. אם עם עגלה כבר עלתה על מעבר החצייה ונעצרת ברגע האחרון. הרכב הלבן עדיין לפניכם.",
+"ipa": "<he>ʔatˈem χotsˈim baʔadˈom. ʔˈim ʔˈim ʔaɡalˈa kvˈaʁ ʔaltˈa ʔˈal maʔavˈaʁ haχatsajˈa veneʔetsˈeʁet baʁˈeɡa haʔaχaʁˈon. haʁˈeχev halavˈan ʔadˈajin lifneχˈem.</he>"
+},
+"audio/voice/pursuit/l-2573b809.mp3": {
+"speaker": "player",
+"say": "מבקש שתפעילי מצלמות ותכווני ניידות לאזור הגפן לאיתור הרכב.",
+"ipa": "<he>mevakˈeʃ ʃetafʔˈili matslemˈot veteχavnˈe najadˈot leʔezˈoʁ haɡˈefen leʔitˈuʁ haʁˈeχev.</he>"
+},
+"audio/voice/pursuit/l-677cae4f.mp3": {
+"speaker": "playerF",
+"say": "מבקשת שתפעילי מצלמות ותכווני ניידות לאזור הגפן לאיתור הרכב.",
+"ipa": "<he>mevakˈeʃet ʃetafʔˈili matslemˈot veteχavnˈe najadˈot leʔezˈoʁ haɡˈefen leʔitˈuʁ haʁˈeχev.</he>"
+},
+"audio/voice/pursuit/l-d63a24cb.mp3": {
+"speaker": "dispatch",
+"say": "קיבלתי, מכוונת. , הרכב נראה במצלמה עוצר ברחוב השקד, הנהג יצא ממנו.",
+"ipa": "<he>kibˈalti, meχavˈenet., haʁˈeχev niʁʔˈa bematslemˈa ʔotsˈeʁ beʁeχˈov haʃakˈed, hanahˈaɡ jatsˈa mimˈenu.</he>"
+},
+"audio/voice/pursuit/l-d78a9451.mp3": {
+"speaker": "narrator",
+"say": "רחוב השקד. המאזדה הלבנה עומדת באלכסון, דלת הנהג פתוחה. על המדרכה יושב נער ומחזיק את הראש בידיים.",
+"ipa": "<he>ʁeχˈov haʃakˈed. hamˈazda halevanˈa ʔomˈedet baʔaleχsˈon, dˈelet hanahˈaɡ ptuχˈa. ʔˈal hamidʁaχˈa joʃˈev nˈaʔaʁ vemaχzˈik ʔˈet haʁˈoʃ bajadˈajim.</he>"
+},
+"audio/voice/pursuit/l-e1ccc1df.mp3": {
+"speaker": "officer",
+"say": "אני מצוות הסיור. אתה בסדר? נפגעת?",
+"ipa": "<he>ʔanˈi mitsˈevet hasijˈuʁ. ʔatˈa besˈedeʁ? nifɡˈaʔta?</he>"
+},
+"audio/voice/pursuit/l-8b848313.mp3": {
+"speaker": "officerF",
+"say": "אני מצוות הסיור. אתה בסדר? נפגעת?",
+"ipa": "<he>ʔanˈi mitsˈevet hasijˈuʁ. ʔatˈa besˈedeʁ? nifɡˈaʔta?</he>"
+},
+"audio/voice/pursuit/l-92a14104.mp3": {
+"speaker": "ziv",
+"say": "לא, אני בסדר. סליחה. אני לא יודע למה ברחתי.",
+"ipa": "<he>lˈo, ʔanˈi besˈedeʁ. sliχˈa. ʔanˈi lˈo jodˈea lˈama baʁˈaχti.</he>"
+},
+"audio/voice/pursuit/l-a6280cd4.mp3": {
+"speaker": "officer",
+"say": "אתה יודע שכמעט הרגת מישהו?!",
+"ipa": "<he>ʔatˈa jodˈeʔa ʃekimʔˈat haʁˈaɡta mˈiʃu?!</he>"
+},
+"audio/voice/pursuit/l-263496d0.mp3": {
+"speaker": "officerF",
+"say": "אתה יודע שכמעט הרגת מישהו?!",
+"ipa": "<he>ʔatˈa jodˈeʔa ʃekimʔˈat haʁˈaɡta mˈiʃu?!</he>"
+},
+"audio/voice/pursuit/l-bdaecb43.mp3": {
+"speaker": "officer",
+"say": "אני צריך לזהות אותך. מה השם שלך, בן כמה אתה, ולמה לא עצרת?",
+"ipa": "<he>ʔanˈi tsaʁˈiχ lezahˈot ʔotχˈa. mˈa haʃˈem ʃelχˈa, bˈen kˈama ʔatˈa, velˈama lˈo ʔatsˈaʁta?</he>"
+},
+"audio/voice/pursuit/l-c70fdd8f.mp3": {
+"speaker": "officerF",
+"say": "אני צריכה לזהות אותך. מה השם שלך, בן כמה אתה, ולמה לא עצרת?",
+"ipa": "<he>ʔanˈi tsʁiχˈa lezahˈot ʔotχˈa. mˈa haʃˈem ʃelχˈa, bˈen kˈama ʔatˈa, velˈama lˈo ʔatsˈaʁta?</he>"
+},
+"audio/voice/pursuit/l-df124e03.mp3": {
+"speaker": "ziv",
+"say": "זיו כהן, בן 17. לקחתי את האוטו של אבא שלי. אין לי רישיון, נבהלתי כשראיתי אתכם.",
+"ipa": "<he>zˈiv kohˈen, bˈen ʃvˈa ʔesʁˈe. lakˈaχti ʔˈet haʔˈoto ʃˈel ʔˈaba ʃelˈi. ʔˈejn lˈi ʁiʃajˈon, nivhˈalti kʃeʁaʔˈiti ʔotχˈem.</he>"
+},
+"audio/voice/pursuit/l-5963c5a1.mp3": {
+"speaker": "ziv",
+"say": "זיו כהן, בן 17. חבר נתן לי את האוטו, אמר שזה של דוד שלו. כשראיתי אתכם הבנתי שמשהו לא בסדר ונבהלתי.",
+"ipa": "<he>zˈiv kohˈen, bˈen ʃvˈa ʔesʁˈe. χavˈeʁ natˈan lˈi ʔˈet haʔˈoto, ʔamˈaʁ ʃezˈe ʃˈel dˈod ʃelˈo. kʃeʁaʔˈiti ʔotχˈem hevˈanti ʃemˈaʃu lˈo besˈedeʁ venivhˈalti.</he>"
+},
+"audio/voice/pursuit/l-3d57433f.mp3": {
+"speaker": "officer",
+"say": "זיו, אתה חשוד בנהיגה בלי רישיון ואי ציות להוראת שוטר. אתה מעוכב, ותועבר לתחנה. נתקשר להורים שלך, והם יוכלו להיות איתך.",
+"ipa": "<he>zˈiv, ʔatˈa χaʃˈud benehiɡˈa blˈi ʁiʃajˈon veʔˈi tsijˈut lehoʁaʔˈat ʃotˈeʁ. ʔatˈa meʔukˈav, vetoʔavˈaʁ lataχanˈa. nitkaʃˈeʁ lahoʁˈim ʃelχˈa, vehˈem juχlˈu lihjˈot ʔitχˈa.</he>"
+},
+"audio/voice/pursuit/l-80ef2958.mp3": {
+"speaker": "officer",
+"say": "זיו, אתה חשוד בשימוש ברכב בלי רשות, נהיגה בלי רישיון ואי ציות להוראת שוטר. אתה מעוכב, ותועבר לתחנה. נתקשר להורים שלך, והם יוכלו להיות איתך.",
+"ipa": "<he>zˈiv, ʔatˈa χaʃˈud beʃimˈuʃ baʁˈeχev blˈi ʁeʃˈut, nehiɡˈa blˈi ʁiʃajˈon veʔˈi tsijˈut lehoʁaʔˈat ʃotˈeʁ. ʔatˈa meʔukˈav, vetoʔavˈaʁ lataχanˈa. nitkaʃˈeʁ lahoʁˈim ʃelχˈa, vehˈem juχlˈu lihjˈot ʔitχˈa.</he>"
+},
+"audio/voice/pursuit/l-1654c0b3.mp3": {
+"speaker": "officerF",
+"say": "זיו, אתה חשוד בנהיגה בלי רישיון ואי ציות להוראת שוטר. אתה מעוכב, ותועבר לתחנה. נתקשר להורים שלך, והם יוכלו להיות איתך.",
+"ipa": "<he>zˈiv, ʔatˈa χaʃˈud benehiɡˈa blˈi ʁiʃajˈon veʔˈi tsijˈut lehoʁaʔˈat ʃotˈeʁ. ʔatˈa meʔukˈav, vetoʔavˈaʁ lataχanˈa. nitkaʃˈeʁ lahoʁˈim ʃelχˈa, vehˈem juχlˈu lihjˈot ʔitχˈa.</he>"
+},
+"audio/voice/pursuit/l-6e376a6c.mp3": {
+"speaker": "officerF",
+"say": "זיו, אתה חשוד בשימוש ברכב בלי רשות, נהיגה בלי רישיון ואי ציות להוראת שוטר. אתה מעוכב, ותועבר לתחנה. נתקשר להורים שלך, והם יוכלו להיות איתך.",
+"ipa": "<he>zˈiv, ʔatˈa χaʃˈud beʃimˈuʃ baʁˈeχev blˈi ʁeʃˈut, nehiɡˈa blˈi ʁiʃajˈon veʔˈi tsijˈut lehoʁaʔˈat ʃotˈeʁ. ʔatˈa meʔukˈav, vetoʔavˈaʁ lataχanˈa. nitkaʃˈeʁ lahoʁˈim ʃelχˈa, vehˈem juχlˈu lihjˈot ʔitχˈa.</he>"
+},
+"audio/voice/pursuit/l-6379868f.mp3": {
+"speaker": "ziv",
+"say": ",אוקיי.",
+"ipa": "<he>,ʔokˈej.</he>"
+},
+"audio/voice/pursuit/l-0ab1010d.mp3": {
+"speaker": "officer",
+"say": "זיו, אני מתקשר לאחד ההורים שלך. מה המספר?",
+"ipa": "<he>zˈiv, ʔanˈi mitkaʃˈeʁ leʔeχˈad hahoʁˈim ʃelχˈa. mˈa hamispˈaʁ?</he>"
+},
+"audio/voice/pursuit/l-62a49671.mp3": {
+"speaker": "officerF",
+"say": "זיו, אני מתקשרת לאחד ההורים שלך. מה המספר?",
+"ipa": "<he>zˈiv, ʔanˈi mitkaʃˈeʁet leʔeχˈad hahoʁˈim ʃelχˈa. mˈa hamispˈaʁ?</he>"
+},
+"audio/voice/pursuit/l-2389feda.mp3": {
+"speaker": "narrator",
+"say": "אבא של זיו עונה. הוא בשקט לרגע, ואז אומר שהוא יוצא מיד לתחנה.",
+"ipa": "<he>ʔˈaba ʃˈel zˈiv ʔonˈe. hˈu beʃˈeket leʁˈeɡa, veʔˈaz ʔomˈeʁ ʃehˈu jotsˈe mijˈad lataχanˈa.</he>"
+},
+"audio/voice/pursuit/l-39bf1f36.mp3": {
+"speaker": "officer",
+"say": "זיו, אתה חשוד בנהיגה בלי רישיון ואי ציות להוראת שוטר. כל מה שתאמר יכול לשמש נגדך. יש לך זכות לא לומר דבר, אבל שתיקה עלולה לחזק את הראיות נגדך. יש לך זכות להיוועץ בעורך דין, ותוכל ליצור איתו קשר כשתגיע לתחנה.",
+"ipa": "<he>zˈiv, ʔatˈa χaʃˈud benehiɡˈa blˈi ʁiʃajˈon veʔˈi tsijˈut lehoʁaʔˈat ʃotˈeʁ. kˈol mˈa ʃetomˈaʁ jaχˈol leʃamˈeʃ neɡdeχˈa. jˈeʃ leχˈa zχˈut lˈo lomˈaʁ davˈaʁ, ʔavˈal ʃtikˈa ʔalulˈa leχazˈek ʔˈet haʁeʔajˈot neɡdeχˈa. jˈeʃ leχˈa zχˈut lehivaʔˈets beʔoʁˈeχ dˈin, vetuχˈal litsˈoʁ ʔitˈo kˈeʃeʁ kʃetaɡˈia lataχanˈa.</he>"
+},
+"audio/voice/pursuit/l-2fcbc04a.mp3": {
+"speaker": "officerF",
+"say": "זיו, אתה חשוד בנהיגה בלי רישיון ואי ציות להוראת שוטר. כל מה שתאמר יכול לשמש נגדך. יש לך זכות לא לומר דבר, אבל שתיקה עלולה לחזק את הראיות נגדך. יש לך זכות להיוועץ בעורך דין, ותוכל ליצור איתו קשר כשתגיע לתחנה.",
+"ipa": "<he>zˈiv, ʔatˈa χaʃˈud benehiɡˈa blˈi ʁiʃajˈon veʔˈi tsijˈut lehoʁaʔˈat ʃotˈeʁ. kˈol mˈa ʃetomˈaʁ jaχˈol leʃamˈeʃ neɡdeχˈa. jˈeʃ leχˈa zχˈut lˈo lomˈaʁ davˈaʁ, ʔavˈal ʃtikˈa ʔalulˈa leχazˈek ʔˈet haʁeʔajˈot neɡdeχˈa. jˈeʃ leχˈa zχˈut lehivaʔˈets beʔoʁˈeχ dˈin, vetuχˈal litsˈoʁ ʔitˈo kˈeʃeʁ kʃetaɡˈia lataχanˈa.</he>"
+},
+"audio/voice/pursuit/l-ba363792.mp3": {
+"speaker": "officer",
+"say": "יש לך גם זכות להתייעץ לפני החקירה עם אחד ההורים או עם קרוב משפחה בגיר, ושהוא יהיה איתך בחקירה.",
+"ipa": "<he>jˈeʃ leχˈa ɡˈam zχˈut lehitjaʔˈets lifnˈej haχakiʁˈa ʔˈim ʔeχˈad hahoʁˈim ʔˈo ʔˈim kaʁˈov miʃpaχˈa baɡˈiʁ, veʃehˈu jihjˈe ʔitχˈa baχakiʁˈa.</he>"
+},
+"audio/voice/pursuit/l-d2029d7e.mp3": {
+"speaker": "officerF",
+"say": "יש לך גם זכות להתייעץ לפני החקירה עם אחד ההורים או עם קרוב משפחה בגיר, ושהוא יהיה איתך בחקירה.",
+"ipa": "<he>jˈeʃ leχˈa ɡˈam zχˈut lehitjaʔˈets lifnˈej haχakiʁˈa ʔˈim ʔeχˈad hahoʁˈim ʔˈo ʔˈim kaʁˈov miʃpaχˈa baɡˈiʁ, veʃehˈu jihjˈe ʔitχˈa baχakiʁˈa.</he>"
+},
+"audio/voice/pursuit/l-fb2381d5.mp3": {
+"speaker": "ziv",
+"say": "הבנתי. אני לא אומר כלום בלי עורך דין.",
+"ipa": "<he>hevˈanti. ʔanˈi lˈo ʔomˈeʁ klˈum blˈi ʔoʁˈeχ dˈin.</he>"
+},
+"audio/voice/pursuit/l-229b94fd.mp3": {
+"speaker": "officer",
+"say": "זיו, לפני שאתה נכנס לניידת אני עורך עליך חיפוש. יש עליך משהו חד או אסור? תגיד לי עכשיו.",
+"ipa": "<he>zˈiv, lifnˈej ʃeʔatˈa niχnˈas lanajˈedet ʔanˈi ʔoʁˈeχ ʔalˈeχa χipˈus. jˈeʃ ʔalˈeχa mˈaʃu χˈad ʔˈo ʔasˈuʁ? taɡˈid lˈi ʔaχʃˈav.</he>"
+},
+"audio/voice/pursuit/l-c5ef8009.mp3": {
+"speaker": "officerF",
+"say": "זיו, לפני שאתה נכנס לניידת אני עורכת עליך חיפוש. יש עליך משהו חד או אסור? תגיד לי עכשיו.",
+"ipa": "<he>zˈiv, lifnˈej ʃeʔatˈa niχnˈas lanajˈedet ʔanˈi ʔoʁˈeχet ʔalˈeχa χipˈus. jˈeʃ ʔalˈeχa mˈaʃu χˈad ʔˈo ʔasˈuʁ? taɡˈid lˈi ʔaχʃˈav.</he>"
+},
+"audio/voice/pursuit/l-888309b9.mp3": {
+"speaker": "ziv",
+"say": "רק מפתחות, טלפון וארנק.",
+"ipa": "<he>ʁˈak mafteχˈot, tˈelefon veʔaʁnˈak.</he>"
+},
+"audio/voice/pursuit/l-299a7f0e.mp3": {
+"speaker": "narrator",
+"say": "בכיסים: מפתחות, טלפון וארנק. במישוש על הבגדים לא נמצא דבר נוסף. החיפוש נעשה בידי שוטר מאותו מין, בצד ולא מול הקהל.",
+"ipa": "<he>bakisˈim: mafteχˈot, tˈelefon veʔaʁnˈak. bemiʃˈuʃ ʔˈal habɡadˈim lˈo nimtsˈa davˈaʁ nosˈaf. haχipˈus naʔasˈa bijdˈej ʃotˈeʁ meʔotˈo mˈin, batsˈad velˈo mˈul hakahˈal.</he>"
+},
+"audio/voice/pursuit/l-299d6eae.mp3": {
+"speaker": "officer",
+"say": "תוריד את החולצה והמכנסיים. אני בודק אותך כאן.",
+"ipa": "<he>toʁˈid ʔˈet haχultsˈa vehamiχnasˈajim. ʔanˈi bodˈek ʔotχˈa kˈan.</he>"
+},
+"audio/voice/pursuit/l-9e3403f2.mp3": {
+"speaker": "officerF",
+"say": "תוריד את החולצה והמכנסיים. אני בודקת אותך כאן.",
+"ipa": "<he>toʁˈid ʔˈet haχultsˈa vehamiχnasˈajim. ʔanˈi bodˈeket ʔotχˈa kˈan.</he>"
+},
+"audio/voice/pursuit/l-8ab93c30.mp3": {
+"speaker": "ziv",
+"say": "מה?! מול כל האנשים? זה השפלה!",
+"ipa": "<he>mˈa?! mˈul kˈol haʔanaʃˈim? zˈe haʃpalˈa!</he>"
+},
+"audio/voice/pursuit/l-60e54bb2.mp3": {
+"speaker": "officer",
+"say": "זיו, אתה עצור בחשד לנהיגה בלי רישיון ואי ציות להוראת שוטר. אתה מועבר עכשיו לתחנה.",
+"ipa": "<he>zˈiv, ʔatˈa ʔatsˈuʁ beχaʃˈad lenehiɡˈa blˈi ʁiʃajˈon veʔˈi tsijˈut lehoʁaʔˈat ʃotˈeʁ. ʔatˈa moʔavˈaʁ ʔaχʃˈav lataχanˈa.</he>"
+},
+"audio/voice/pursuit/l-6a1fd7c6.mp3": {
+"speaker": "officerF",
+"say": "זיו, אתה עצור בחשד לנהיגה בלי רישיון ואי ציות להוראת שוטר. אתה מועבר עכשיו לתחנה.",
+"ipa": "<he>zˈiv, ʔatˈa ʔatsˈuʁ beχaʃˈad lenehiɡˈa blˈi ʁiʃajˈon veʔˈi tsijˈut lehoʁaʔˈat ʃotˈeʁ. ʔatˈa moʔavˈaʁ ʔaχʃˈav lataχanˈa.</he>"
+},
+"audio/voice/pursuit/l-dac68a02.mp3": {
+"speaker": "ziv",
+"say": "עצור? על מה בדיוק? אני לא מאמין.",
+"ipa": "<he>ʔatsˈoʁ? ʔˈal mˈa bidjˈuk? ʔanˈi lˈo maʔamˈin.</he>"
+},
+"audio/voice/pursuit/l-830577d2.mp3": {
+"speaker": "officer",
+"say": "זיו, ידיים מאחורי הגב. אני אוזק אותך , תגיד לי אם זה לוחץ.",
+"ipa": "<he>zˈiv, jadˈajim meʔaχoʁˈej haɡˈav. ʔanˈi ʔozˈek ʔotχˈa, taɡˈid lˈi ʔˈim zˈe loχˈets.</he>"
+},
+"audio/voice/pursuit/l-f18f8316.mp3": {
+"speaker": "officerF",
+"say": "זיו, ידיים מאחורי הגב. אני אוזקת אותך , תגיד לי אם זה לוחץ.",
+"ipa": "<he>zˈiv, jadˈajim meʔaχoʁˈej haɡˈav. ʔanˈi ʔozˈeket ʔotχˈa, taɡˈid lˈi ʔˈim zˈe loχˈets.</he>"
+},
+"audio/voice/pursuit/l-b528931d.mp3": {
+"speaker": "ziv",
+"say": "בסדר, בסדר. לא צריך להדק.",
+"ipa": "<he>besˈedeʁ, besˈedeʁ. lˈo tsaʁˈiχ lehadˈek.</he>"
+},
+"audio/voice/pursuit/l-e7044d39.mp3": {
+"speaker": "officer",
+"say": "אני לא אוזק אותך כל עוד אתה משתף פעולה. תלך לידי עד הניידת.",
+"ipa": "<he>ʔanˈi lˈo ʔozˈek ʔotχˈa kˈol ʔˈod ʔatˈa meʃatˈef peʔulˈa. telˈeχ lejadˈi ʔˈad hanajˈedet.</he>"
+},
+"audio/voice/pursuit/l-44e1b6b5.mp3": {
+"speaker": "officerF",
+"say": "אני לא אוזקת אותך כל עוד אתה משתף פעולה. תלך לידי עד הניידת.",
+"ipa": "<he>ʔanˈi lˈo ʔozˈeket ʔotχˈa kˈol ʔˈod ʔatˈa meʃatˈef peʔulˈa. telˈeχ lejadˈi ʔˈad hanajˈedet.</he>"
+},
+"audio/voice/pursuit/l-d36cfed1.mp3": {
+"speaker": "ziv",
+"say": "אוקיי. אני לא עושה בעיות.",
+"ipa": "<he>ʔokˈej. ʔanˈi lˈo ʔosˈe beʔajˈot.</he>"
+},
+"audio/voice/pursuit/l-94d2f55f.mp3": {
+"speaker": "narrator",
+"say": "זיו נכנס לניידת התגבור, והניידת יוצאת לתחנה. בזירה נשארים רק אתה והמעורבים האחרים.",
+"ipa": "<he>zˈiv niχnˈas lenajˈedet hatiɡbˈuʁ, vehanajˈedet jotsˈet lataχanˈa. baziʁˈa niʃʔaʁˈim ʁˈak ʔatˈa vehameʔoʁavˈim haʔaχeʁˈim.</he>"
+},
+"audio/voice/pursuit/l-955fb669.mp3": {
+"speaker": "officer",
+"say": "זיו, הבירור הסתיים. אתה משוחרר.",
+"ipa": "<he>zˈiv, habeʁˈuʁ histajˈem. ʔatˈa meʃuχʁˈaʁ.</he>"
+},
+"audio/voice/pursuit/l-45cb44ed.mp3": {
+"speaker": "officerF",
+"say": "זיו, הבירור הסתיים. אתה משוחרר.",
+"ipa": "<he>zˈiv, habeʁˈuʁ histajˈem. ʔatˈa meʃuχʁˈaʁ.</he>"
+},
+"audio/voice/pursuit/l-d644c414.mp3": {
+"speaker": "ziv",
+"say": "סוף סוף.",
+"ipa": "<he>sˈof sˈof.</he>"
+},
+"audio/voice/pursuit/l-3b677d03.mp3": {
+"speaker": "narrator",
+"say": "רשמת: שעת הסימון, המסלול, המהירות, ההנחיה מ401, הרגע שבו הופסק המרדף ולמה, ואיך אותר הרכב.",
+"ipa": "<he>ʁaʃˈemta: ʃaʔˈat hasimˈun, hamaslˈul, hamehiʁˈut, hahanχajˈa meʔaʁbˈa meʔˈot veʔaχˈat, haʁˈeɡa ʃebˈo hufsˈak hamiʁdˈaf velˈama, veʔˈejχ ʔutˈaʁ haʁˈeχev.</he>"
+},
+"audio/voice/pursuit/l-eb03ec08.mp3": {
+"speaker": "player",
+"say": "הגעתי למקום.",
+"ipa": "<he>hiɡˈaʔti lamakˈom.</he>"
+},
+"audio/voice/pursuit/l-cda9652e.mp3": {
+"speaker": "playerF",
+"say": "הגעתי למקום.",
+"ipa": "<he>hiɡˈaʔti lamakˈom.</he>"
+},
+"audio/voice/pursuit/l-ec463fb2.mp3": {
+"speaker": "dispatch",
+"say": "קיבלתי. עדכן כשיש תמונת מצב.",
+"ipa": "<he>kibˈalti. ʔadkˈen kʃejˈeʃ tmunˈat matsˈav.</he>"
+},
+"audio/voice/pursuit/l-f3f6d4e7.mp3": {
+"speaker": "player",
+"say": "שלילי. עדכון: אני בזירה עם המעורבים, המצב בשליטה. אוסף גרסאות ומתעד. ממשיך לתחקר ולברר, ואעדכן כשאתפנה.",
+"ipa": "<he>ʃlilˈi. ʔidkˈun: ʔanˈi baziʁˈa ʔˈim hameʔoʁavˈim, hamatsˈav beʃlitˈa. ʔosˈef ɡiʁsaʔˈot vemetaʔˈed. mamʃˈiχ letaχkˈeʁ velevaʁˈeʁ, veʔeʔadkˈen kʃeʔetpanˈe.</he>"
+},
+"audio/voice/pursuit/l-622f1a19.mp3": {
+"speaker": "playerF",
+"say": "שלילי. עדכון: אני בזירה עם המעורבים, המצב בשליטה. אוסף גרסאות ומתעד. ממשיכה לתחקר ולברר, ואעדכן כשאתפנה.",
+"ipa": "<he>ʃlilˈi. ʔidkˈun: ʔanˈi baziʁˈa ʔˈim hameʔoʁavˈim, hamatsˈav beʃlitˈa. ʔosˈef ɡiʁsaʔˈot vemetaʔˈed. mamʃiχˈa letaχkˈeʁ velevaʁˈeʁ, veʔeʔadkˈen kʃeʔetpanˈe.</he>"
+},
+"audio/voice/pursuit/l-883b4819.mp3": {
+"speaker": "head",
+"say": "קיבלתי. תמשיך, ותעדכן כשאתה פנוי.",
+"ipa": "<he>kibˈalti. tamʃˈiχ, veteʔadkˈen kʃeʔatˈa panˈuj.</he>"
+},
+"audio/voice/pursuit/l-e68a8fe9.mp3": {
+"speaker": "head",
+"say": "קיבלתי. תמשיכי, ותעדכני כשאת פנויה.",
+"ipa": "<he>kibˈalti. tamʃˈiχi, veteʔadkenˈi kʃeʔˈat pnujˈa.</he>"
+},
+"audio/voice/pursuit/l-6c920960.mp3": {
+"speaker": "player",
+"say": "שלילי, עדיין בטיפול באירוע. אעדכן כשאתפנה.",
+"ipa": "<he>ʃlilˈi, ʔadˈajin betipˈul baʔejʁˈua. ʔeʔadkˈen kʃeʔetpanˈe.</he>"
+},
+"audio/voice/pursuit/l-9ef192d6.mp3": {
+"speaker": "playerF",
+"say": "שלילי, עדיין בטיפול באירוע. אעדכן כשאתפנה.",
+"ipa": "<he>ʃlilˈi, ʔadˈajin betipˈul baʔejʁˈua. ʔeʔadkˈen kʃeʔetpanˈe.</he>"
+},
+"audio/voice/pursuit/l-66de6994.mp3": {
+"speaker": "head",
+"say": "קיבלתי, מעביר את האירוע הנוסף לניידת אחרת.",
+"ipa": "<he>kibˈalti, maʔavˈiʁ ʔˈet haʔejʁˈua hanosˈaf lenajˈedet ʔaχˈeʁet.</he>"
+},
+"audio/voice/pursuit/l-1734ec94.mp3": {
+"speaker": "player",
+"say": "חיובי, פנוי.",
+"ipa": "<he>χijuvˈi, panˈuj.</he>"
+},
+"audio/voice/pursuit/l-2bec06ca.mp3": {
+"speaker": "playerF",
+"say": "חיובי, פנוי.",
+"ipa": "<he>χijuvˈi, panˈuj.</he>"
+},
+"audio/voice/pursuit/l-555496c5.mp3": {
+"speaker": "head",
+"say": "רגע , סיימת שם? לפי הדיווח המעורבים עדיין במקום. תשלים קודם ותעדכן.",
+"ipa": "<he>ʁˈeɡa, sijˈamta ʃˈam? lefˈi hadivˈuaχ hameʔoʁavˈim ʔadˈajin bamakˈom. taʃlˈim kˈodem veteʔadkˈen.</he>"
+},
+"audio/voice/pursuit/l-afdddcf9.mp3": {
+"speaker": "head",
+"say": "רגע , סיימת שם? לפי הדיווח המעורבים עדיין במקום. תשלימי קודם ותעדכני.",
+"ipa": "<he>ʁˈeɡa, sijˈamt ʃˈam? lefˈi hadivˈuaχ hameʔoʁavˈim ʔadˈajin bamakˈom. taʃlˈimi kˈodem veteʔadkenˈi.</he>"
+},
+"audio/voice/pursuit/l-40cbc0a8.mp3": {
+"speaker": "narrator",
+"say": "הרכב הלבן נכנס לרחוב של בית הספר. מסתיים שם אירוע ערב: הורים וילדים על המדרכה, ורמזור אדום בצומת. הנהג לא מאט , ועובר באדום.",
+"ipa": "<he>haʁˈeχev halavˈan niχnˈas laʁeχˈov ʃˈel bˈet hasˈefeʁ. mistajˈem ʃˈam ʔejʁˈua ʔˈeʁev: hoʁˈim vejeladˈim ʔˈal hamidʁaχˈa, veʁamzˈoʁ ʔadˈom batsˈomet. hanahˈaɡ lˈo meʔˈet, veʔovˈeʁ beʔadˈom.</he>"
+},
+"audio/voice/pursuit/l-9a2e9e9c.mp3": {
+"speaker": "dispatch",
+"say": "הרכב נעצר ברחוב השקד, הנהג יצא ממנו.",
+"ipa": "<he>haʁˈeχev neʔetsˈaʁ beʁeχˈov haʃakˈed, hanahˈaɡ jatsˈa mimˈenu.</he>"
+},
+"audio/voice/pursuit/l-0d29f194.mp3": {
+"speaker": "head",
+"say": "מה המצב אצלך? אתה פנוי? יש אירוע נוסף באזור.",
+"ipa": "<he>mˈa hamatsˈav ʔetsleχˈa? ʔatˈa panˈuj? jˈeʃ ʔejʁˈua nosˈaf baʔezˈoʁ.</he>"
+},
+"audio/voice/pursuit/l-2a0a8c7a.mp3": {
+"speaker": "head",
+"say": "מה המצב אצלך? את פנויה? יש אירוע נוסף באזור.",
+"ipa": "<he>mˈa hamatsˈav ʔetslˈeχ? ʔˈat pnujˈa? jˈeʃ ʔeʁˈua nosˈaf baʔezˈoʁ.</he>"
+},
+"audio/voice/pursuit/l-99206ec7.mp3": {
+"speaker": "dispatch",
+"say": "רשמתי. תעבירו אותו לתחנה, נוער מעודכן.",
+"ipa": "<he>ʁaʃˈamti. taʔavˈiʁu ʔotˈo lataχanˈa, nˈoʔaʁ meʔudkˈan.</he>"
+},
+"audio/voice/pursuit/l-d7783aff.mp3": {
+"speaker": "head",
+"say": "רשמתי. תעבירו אותו לתחנה, נוער מעודכן.",
+"ipa": "<he>ʁaʃˈamti. taʔavˈiʁu ʔotˈo lataχanˈa, nˈoʔaʁ meʔudkˈan.</he>"
+},
+"audio/voice/pursuit/l-63dd8aed.mp3": {
+"speaker": "duty",
+"say": "רשמתי. תעבירו אותו לתחנה, נוער מעודכן.",
+"ipa": "<he>ʁaʃˈamti. taʔavˈiʁu ʔotˈo lataχanˈa, nˈoʔaʁ meʔudkˈan.</he>"
+},
+"audio/voice/pursuit/l-b6283e67.mp3": {
+"speaker": "dispatch",
+"say": "גרר מוזמן, כעשרים דקות.",
+"ipa": "<he>ɡʁˈaʁ muzmˈan, keʔesʁˈim dakˈot.</he>"
+},
+"audio/voice/pursuit/l-582b81bf.mp3": {
+"speaker": "head",
+"say": "גרר מוזמן, כעשרים דקות.",
+"ipa": "<he>ɡʁˈaʁ muzmˈan, keʔesʁˈim dakˈot.</he>"
+},
+"audio/voice/pursuit/l-cf7fb241.mp3": {
+"speaker": "duty",
+"say": "גרר מוזמן, כעשרים דקות.",
+"ipa": "<he>ɡʁˈaʁ muzmˈan, keʔesʁˈim dakˈot.</he>"
+},
+"audio/voice/pursuit/l-80fc5f75.mp3": {
+"speaker": "dispatch",
+"say": "קיבלתי, רשמתי.",
+"ipa": "<he>kibˈalti, ʁaʃˈamti.</he>"
+},
+"audio/voice/pursuit/l-74d70b6d.mp3": {
+"speaker": "head",
+"say": "קיבלתי, רשמתי.",
+"ipa": "<he>kibˈalti, ʁaʃˈamti.</he>"
+},
+"audio/voice/pursuit/l-170f5e23.mp3": {
+"speaker": "duty",
+"say": "קיבלתי, רשמתי.",
+"ipa": "<he>kibˈalti, ʁaʃˈamti.</he>"
+},
+"audio/voice/pursuit/l-d345e328.mp3": {
+"speaker": "player",
+"say": "נמצא ברחוב השקד",
+"ipa": "<he>nimtsˈa beʁeχˈov haʃakˈed</he>"
+},
+"audio/voice/pursuit/l-56dbd0fe.mp3": {
+"speaker": "playerF",
+"say": "נמצאת ברחוב השקד",
+"ipa": "<he>nimtsˈet beʁeχˈov haʃakˈed</he>"
+},
+"audio/voice/pursuit/l-e32b83d4.mp3": {
+"speaker": "player",
+"say": "הרכב אותר עצור, הנהג במקום ולא פצוע",
+"ipa": "<he>haʁˈeχev ʔotˈaʁ ʔatsˈuʁ, hanahˈaɡ bamakˈom velˈo patsˈua</he>"
+},
+"audio/voice/pursuit/l-5d3924b2.mp3": {
+"speaker": "playerF",
+"say": "הרכב אותר עצור, הנהג במקום ולא פצוע",
+"ipa": "<he>haʁˈeχev ʔotˈaʁ ʔatsˈuʁ, hanahˈaɡ bamakˈom velˈo patsˈua</he>"
+},
+"audio/voice/pursuit/l-2edc51e9.mp3": {
+"speaker": "player",
+"say": "הנהג קטין בן 17, בלי רישיון , מעוכב, הורה בדרך",
+"ipa": "<he>hanahˈaɡ katˈin bˈen ʃvˈa ʔesʁˈe, blˈi ʁiʃajˈon, meʔukˈav, hoʁˈe badˈeʁeχ</he>"
+},
+"audio/voice/pursuit/l-b1fc456b.mp3": {
+"speaker": "playerF",
+"say": "הנהג קטין בן 17, בלי רישיון , מעוכב, הורה בדרך",
+"ipa": "<he>hanahˈaɡ katˈin bˈen ʃvˈa ʔesʁˈe, blˈi ʁiʃajˈon, meʔukˈav, hoʁˈe badˈeʁeχ</he>"
+},
+"audio/voice/pursuit/l-d7578e02.mp3": {
+"speaker": "player",
+"say": "מבקש גרר לרכב",
+"ipa": "<he>mevakˈeʃ ɡʁˈaʁ laʁˈeχev</he>"
+},
+"audio/voice/pursuit/l-e1f96144.mp3": {
+"speaker": "playerF",
+"say": "מבקשת גרר לרכב",
+"ipa": "<he>mevakˈeʃet ɡeʁˈaʁ laʁˈeχev</he>"
+},
+"audio/voice/pursuit/l-b6f1ad32.mp3": {
+"speaker": "player",
+"say": "הרכב שדווח כגנוב נמצא",
+"ipa": "<he>haʁˈeχev ʃeduvˈaχ keɡanˈuv nimtsˈa</he>"
+},
+"audio/voice/pursuit/l-e81ca260.mp3": {
+"speaker": "playerF",
+"say": "הרכב שדווח כגנוב נמצא",
+"ipa": "<he>haʁˈeχev ʃeduvˈaχ keɡanˈuv nimtsˈa</he>"
+},
+"audio/voice/pursuit/l-c560ee1d.mp3": {
+"speaker": "player",
+"say": "תפסנו אותו סוף סוף",
+"ipa": "<he>tafˈasnu ʔotˈo sˈof sˈof</he>"
+},
+"audio/voice/pursuit/l-d05cf42b.mp3": {
+"speaker": "playerF",
+"say": "תפסנו אותו סוף סוף",
+"ipa": "<he>tafˈasnu ʔotˈo sˈof sˈof</he>"
+},
+"audio/voice/id-check/l-371f2213.mp3": {
+"speaker": "dispatch",
+"say": "דיירת ברחוב האלה 9 מדווחת על גבר שמסתובב בין רכבים חונים ומנסה לפתוח דלתות. המדווחת במקום. אשר קבלה.",
+"ipa": "<he>dajˈeʁet baʁeχˈov haʔelˈa tˈeʃa medavˈaχat ʔˈal ɡˈeveʁ ʃemistovˈev bˈen ʁeχavˈim χonˈim vemenasˈa liftˈoaχ dlatˈot. hamedavˈaχat bamakˈom. ʔaʃˈeʁ kabalˈa.</he>"
+},
+"audio/voice/id-check/l-3860e2d7.mp3": {
+"speaker": "dispatch",
+"say": "דיירת ברחוב האלה 9 מדווחת על גבר שמסתובב בין רכבים חונים ומנסה לפתוח דלתות. המדווחת במקום. אשרי קבלה.",
+"ipa": "<he>dajˈeʁet baʁeχˈov haʔelˈa tˈeʃa medavˈaχat ʔˈal ɡˈeveʁ ʃemistovˈev bˈen ʁeχavˈim χonˈim vemenasˈa liftˈoaχ dlatˈot. hamedavˈaχat bamakˈom. ʔaʃʁˈi kabalˈa.</he>"
+},
+"audio/voice/id-check/l-12cd5acc.mp3": {
+"speaker": "narrator",
+"say": "רחוב האלה. ליד הקיוסק עומדת אישה בקרדיגן ומצביעה. ליד רכב כסוף חונה עומד גבר בקפוצ׳ון כהה, תיק על הכתף, ומסתכל עליכם.",
+"ipa": "<he>ʁeχˈov haʔelˈa. lejˈad hakijˈosk ʔomˈedet ʔiʃˈa bekaʁdiɡˈen vematsbiʔˈa. lejˈad ʁˈeχev kasˈuf χonˈa ʔomˈed ɡˈeveʁ bekaputʃon kehˈe, tˈik ʔˈal hakatˈef, vemistakˈel ʔaleχˈem.</he>"
+},
+"audio/voice/id-check/l-39946312.mp3": {
+"speaker": "miriam",
+"say": "הנה הוא! זה הוא, תבדקו אותו!",
+"ipa": "<he>hˈine hˈu! zˈe hˈu, tivdekˈu ʔotˈo!</he>"
+},
+"audio/voice/id-check/l-0e01a700.mp3": {
+"speaker": "player",
+"say": "קיבלתי את האירוע, יוצא.",
+"ipa": "<he>kibˈalti ʔˈet haʔejʁˈua, jotsˈe.</he>"
+},
+"audio/voice/id-check/l-c675d78a.mp3": {
+"speaker": "playerF",
+"say": "קיבלתי את האירוע, יוצאת.",
+"ipa": "<he>kibˈalti ʔˈet haʔejʁˈua, jotsˈet.</he>"
+},
+"audio/voice/id-check/l-5a7fa6a9.mp3": {
+"speaker": "dispatch",
+"say": "קיבלתי.",
+"ipa": "<he>kibˈalti.</he>"
+},
+"audio/voice/id-check/l-e45f91ee.mp3": {
+"speaker": "player",
+"say": "קיבלתי.",
+"ipa": "<he>kibˈalti.</he>"
+},
+"audio/voice/id-check/l-b1d2b164.mp3": {
+"speaker": "playerF",
+"say": "קיבלתי.",
+"ipa": "<he>kibˈalti.</he>"
+},
+"audio/voice/id-check/l-59ad1f64.mp3": {
+"speaker": "dispatch",
+"say": "לא ברור מי ענה. אשר בנוהל שאתה לוקח את האירוע.",
+"ipa": "<he>lˈo baʁˈuʁ mˈi ʔanˈa. ʔaʃˈeʁ banˈohal ʃeʔatˈa lokˈeaχ ʔˈet haʔejʁˈua.</he>"
+},
+"audio/voice/id-check/l-24aa0c84.mp3": {
+"speaker": "dispatch",
+"say": "לא ברור מי ענה. אשרי בנוהל שאת לוקחת את האירוע.",
+"ipa": "<he>lˈo baʁˈuʁ mˈi ʔanˈa. ʔaʃʁˈi banˈohal ʃeʔˈat lokˈaχat ʔˈet haʔejʁˈua.</he>"
+},
+"audio/voice/id-check/l-bc4ef680.mp3": {
+"speaker": "narrator",
+"say": "השדרה ריקה בשעת הלילה. הדרך הקצרה היא גם המהירה.",
+"ipa": "<he>haʃdeʁˈa ʁekˈa biʃʔˈat halˈajla. hadˈeʁeχ haktsaʁˈa hˈi ɡˈam hamehiʁˈa.</he>"
+},
+"audio/voice/id-check/l-dec6b838.mp3": {
+"speaker": "narrator",
+"say": "בשדרות הזית פקק של שעת בוקר. הניידת מתקדמת לאט בין הרכבים.",
+"ipa": "<he>bisdeʁˈot hazˈajit pkˈak ʃˈel ʃaʔˈat bˈokeʁ. hanajˈedet mitkadˈemet leʔˈat bˈen haʁeχavˈim.</he>"
+},
+"audio/voice/id-check/l-39c2e3ce.mp3": {
+"speaker": "narrator",
+"say": "השדרה עמוסה מעט בשעת הערב, אבל זורמת.",
+"ipa": "<he>haʃdeʁˈa ʔamusˈa meʔˈat biʃʔˈat haʔˈeʁev, ʔavˈal zoʁˈemet.</he>"
+},
+"audio/voice/id-check/l-0bb6cb73.mp3": {
+"speaker": "narrator",
+"say": "רחובות השכונה צרים ומפותלים. בשעה הזו השדרה הייתה פנויה , הדרך ארכה יותר.",
+"ipa": "<he>ʁeχovˈot haʃχunˈa tsaʁˈim umefutalˈim. baʃaʔˈa hazˈo haʃdeʁˈa hajtˈa pnujˈa, hadˈeʁeχ ʔaʁχˈa jotˈeʁ.</he>"
+},
+"audio/voice/id-check/l-29b547b9.mp3": {
+"speaker": "narrator",
+"say": "עוקפים את הפקק בשדרה דרך רחובות השכונה. ארוך יותר , אבל זורם.",
+"ipa": "<he>ʔokfˈim ʔˈet hapkˈak baʃdeʁˈa dˈeʁeχ ʁeχovˈot haʃχunˈa. ʔaʁˈoχ jotˈeʁ, ʔavˈal zoʁˈem.</he>"
+},
+"audio/voice/id-check/l-6021f041.mp3": {
+"speaker": "player",
+"say": "מה התיאור ומה בדיוק ראתה?",
+"ipa": "<he>mˈa hateʔˈuʁ vemˈa bidjˈuk ʁaʔatˈa?</he>"
+},
+"audio/voice/id-check/l-c358867f.mp3": {
+"speaker": "playerF",
+"say": "מה התיאור ומה בדיוק ראתה?",
+"ipa": "<he>mˈa hateʔˈuʁ vemˈa bidjˈuk ʁaʔatˈa?</he>"
+},
+"audio/voice/id-check/l-d0bca0ac.mp3": {
+"speaker": "dispatch",
+"say": "גבר כבן 30, קפוצ׳ון כהה ותיק גב. לדבריה ראתה אותו מושך ידיות של רכבים.",
+"ipa": "<he>ɡˈeveʁ kebˈen ʃloʃˈim, kaputʃon kehˈe vetˈik ɡˈav. ledvaʁˈeha ʁaʔatˈa ʔotˈo moʃˈeχ jadijˈot ʃˈel ʁeχavˈim.</he>"
+},
+"audio/voice/id-check/l-6d2f616b.mp3": {
+"speaker": "player",
+"say": "איפה המדווחת? אפשר לדבר איתה כשנגיע?",
+"ipa": "<he>ʔˈejfo hamedavˈaχat? ʔefʃˈaʁ ledabˈeʁ ʔitˈa kʃenaɡˈia?</he>"
+},
+"audio/voice/id-check/l-42ce349d.mp3": {
+"speaker": "playerF",
+"say": "איפה המדווחת? אפשר לדבר איתה כשנגיע?",
+"ipa": "<he>ʔˈejfo hamedavˈaχat? ʔefʃˈaʁ ledabˈeʁ ʔitˈa kʃenaɡˈia?</he>"
+},
+"audio/voice/id-check/l-950a8449.mp3": {
+"speaker": "dispatch",
+"say": "היא מחכה ליד הקיוסק, בקצה הרחוב.",
+"ipa": "<he>hˈi meχakˈa lejˈad hakijˈosk, bektsˈe haʁeχˈov.</he>"
+},
+"audio/voice/id-check/l-0d5c937d.mp3": {
+"speaker": "officer",
+"say": "ערב טוב, אני מצוות הסיור. ספרי לי בדיוק מה ראית , מה הוא עשה?",
+"ipa": "<he>ʔˈeʁev tˈov, ʔanˈi mitsˈevat hasijˈuʁ. sapʁˈi lˈi bidjˈuk mˈa ʁaʔˈit, mˈa hˈu ʔasˈa?</he>"
+},
+"audio/voice/id-check/l-b818c1e1.mp3": {
+"speaker": "officerF",
+"say": "ערב טוב, אני מצוות הסיור. ספרי לי בדיוק מה ראית , מה הוא עשה?",
+"ipa": "<he>ʔˈeʁev tˈov, ʔanˈi mitsˈevat hasijˈuʁ. sapʁˈi lˈi bidjˈuk mˈa ʁaʔˈit, mˈa hˈu ʔasˈa?</he>"
+},
+"audio/voice/id-check/l-0eea9a13.mp3": {
+"speaker": "miriam",
+"say": "הוא משך את הידית של הרכב הכסוף כמה פעמים, הסתכל פנימה, ואז הלך לרכב הבא והסתכל גם עליו.",
+"ipa": "<he>hˈu maʃˈaχ ʔˈet hajadˈit ʃˈel haʁˈeχev hakasˈuf kˈama peʔamˈim, histakˈel pnˈima, veʔˈaz halˈaχ laʁˈeχev habˈa vehistakˈel ɡˈam ʔalˈav.</he>"
+},
+"audio/voice/id-check/l-9a698d62.mp3": {
+"speaker": "miriam",
+"say": "הוא ניסה ידיות של שלושה רכבים, אחד אחרי השני, והסתכל לצדדים כל פעם.",
+"ipa": "<he>hˈu nisˈa jadijˈot ʃˈel ʃloʃˈa ʁeχavˈim, ʔeχˈad ʔaχʁˈej haʃenˈi, vehistakˈel latsdadˈim kˈol pˈaʔam.</he>"
+},
+"audio/voice/id-check/l-9821e4b5.mp3": {
+"speaker": "officer",
+"say": "תודה שהתקשרת, זה בדיוק מה שצריך. אבל אני בודק לפי מה שראית אותו עושה, לא לפי איך שהוא נראה או מאיפה הוא. ככה בודקים כל אחד.",
+"ipa": "<he>todˈa ʃehitkaʃˈaʁta, zˈe bidjˈuk mˈa ʃetsaʁˈiχ. ʔavˈal ʔanˈi bodˈek lefˈi mˈa ʃeʁaʔˈita ʔotˈo ʔosˈe, lˈo lefˈi ʔˈejχ ʃehˈu niʁʔˈa ʔˈo meʔˈejfo hˈu. kˈaχa bodkˈim kˈol ʔeχˈad.</he>"
+},
+"audio/voice/id-check/l-6ae4c239.mp3": {
+"speaker": "officerF",
+"say": "תודה שהתקשרת, זה בדיוק מה שצריך. אבל אני בודקת לפי מה שראית אותו עושה, לא לפי איך שהוא נראה או מאיפה הוא. ככה בודקים כל אחד.",
+"ipa": "<he>todˈa ʃehitkaʃˈaʁta, zˈe bidjˈuk mˈa ʃetsaʁˈiχ. ʔavˈal ʔanˈi bodˈeket lefˈi mˈa ʃeʁaʔˈita ʔotˈo ʔosˈe, lˈo lefˈi ʔˈejχ ʃehˈu niʁʔˈa ʔˈo meʔˈejfo hˈu. kˈaχa bodkˈim kˈol ʔeχˈad.</he>"
+},
+"audio/voice/id-check/l-d463954a.mp3": {
+"speaker": "miriam",
+"say": ",כן, צודק. פשוט נבהלתי. היו פה פריצות לרכבים.",
+"ipa": "<he>,kˈen, tsodˈek. paʃˈut nivhˈalti. hajˈu pˈo pʁitsˈot laʁeχavˈim.</he>"
+},
+"audio/voice/id-check/l-f0c75622.mp3": {
+"speaker": "officer",
+"say": "בדקתי אותו במערכת, ויצא ש,",
+"ipa": "<he>badˈakti ʔotˈo bamaʔaʁˈeχet, vejatsˈa ʃˈe,</he>"
+},
+"audio/voice/id-check/l-7a8c6ab6.mp3": {
+"speaker": "officerF",
+"say": "בדקתי אותו במערכת, ויצא ש,",
+"ipa": "<he>badˈakti ʔotˈo bamaʔaʁˈeχet, vejatsˈa ʃˈe,</he>"
+},
+"audio/voice/id-check/l-f3828811.mp3": {
+"speaker": "miriam",
+"say": "נו? מה יצא?",
+"ipa": "<he>nˈu? mˈa jatsˈa?</he>"
+},
+"audio/voice/id-check/l-e1d4906f.mp3": {
+"speaker": "narrator",
+"say": "עצרת באמצע. מידע מהמערכת על אדם לא מוסרים לשכנים.",
+"ipa": "<he>ʔatsˈaʁet baʔemtsˈa. mejdˈa mehamaʔaʁˈeχet ʔˈal ʔadˈam lˈo mosʁˈim laʃχenˈim.</he>"
+},
+"audio/voice/id-check/l-6d8c7b4e.mp3": {
+"speaker": "officer",
+"say": "בדקנו את הדיווח שלך וטיפלנו בו. פרטים על אנשים אני לא יכול למסור, אבל תודה שהתקשרת , ואם תראי משהו, תתקשרי שוב.",
+"ipa": "<he>badˈaknu ʔˈet hadivˈuaχ ʃelˈaχ vetipˈalnu bˈo. pʁatˈim ʔˈal ʔanaʃˈim ʔanˈi lˈo jaχˈol limsˈoʁ, ʔavˈal todˈa ʃehitkaʃˈaʁt, veʔˈim tiʁʔˈi mˈaʃu, titkaʃʁˈi ʃˈuv.</he>"
+},
+"audio/voice/id-check/l-67f0ad4a.mp3": {
+"speaker": "officerF",
+"say": "בדקנו את הדיווח שלך וטיפלנו בו. פרטים על אנשים אני לא יכולה למסור, אבל תודה שהתקשרת , ואם תראי משהו, תתקשרי שוב.",
+"ipa": "<he>badˈaknu ʔˈet hadivˈuaχ ʃelˈaχ vetipˈalnu bˈo. pʁatˈim ʔˈal ʔanaʃˈim ʔanˈi lˈo jeχolˈa limsˈoʁ, ʔavˈal todˈa ʃehitkaʃˈaʁt, veʔˈim tiʁʔˈi mˈaʃu, titkaʃʁˈi ʃˈuv.</he>"
+},
+"audio/voice/id-check/l-3fb59d56.mp3": {
+"speaker": "miriam",
+"say": "תודה רבה.",
+"ipa": "<he>todˈa ʁabˈa.</he>"
+},
+"audio/voice/id-check/l-6e04d772.mp3": {
+"speaker": "officer",
+"say": "ערב טוב, אני מצוות הסיור. קיבלנו דיווח שמישהו כאן ניסה לפתוח דלתות של רכבים, ולכן אני מבקש ממך להזדהות. יש לך תעודה מזהה?",
+"ipa": "<he>ʔˈeʁev tˈov, ʔanˈi mitsˈevet hasijˈuʁ. kibˈalnu divˈuaχ ʃemˈiʃu kˈan nisˈa liftˈoaχ dlatˈot ʃˈel ʁeχavˈim, velaχˈen ʔanˈi mevakˈeʃ mimχˈa lehizdahˈot. jˈeʃ leχˈa teʔudˈa mezahˈa?</he>"
+},
+"audio/voice/id-check/l-cc0f54ee.mp3": {
+"speaker": "officerF",
+"say": "ערב טוב, אני מצוות הסיור. קיבלנו דיווח שמישהו כאן ניסה לפתוח דלתות של רכבים, ולכן אני מבקשת ממך להזדהות. יש לך תעודה מזהה?",
+"ipa": "<he>ʔˈeʁev tˈov, ʔanˈi mitsˈevet hasijˈuʁ. kibˈalnu divˈuaχ ʃemˈiʃu kˈan nisˈa liftˈoaχ dlatˈot ʃˈel ʁeχavˈim, velaχˈen ʔanˈi mevakˈeʃet mimχˈa lehizdahˈot. jˈeʃ leχˈa teʔudˈa mezahˈa?</he>"
+},
+"audio/voice/id-check/l-6124fd0f.mp3": {
+"speaker": "ofer",
+"say": "אין לי תעודה עליי. ולמה דווקא אני? כי אני עם קפוצ׳ון?",
+"ipa": "<he>ʔˈejn lˈi teʔudˈa ʔalˈaj. velˈama dˈavka ʔanˈi? kˈi ʔanˈi ʔˈim kaputʃˈon?</he>"
+},
+"audio/voice/id-check/l-9d85a009.mp3": {
+"speaker": "officer",
+"say": "ערב טוב, אני מצוות הסיור. דיירת ראתה אותך מושך ידיות של רכבים כאן ברחוב, ולכן אני מבקש ממך להזדהות. זה בירור , עוד לא האשמה. יש לך תעודה מזהה?",
+"ipa": "<he>ʔˈeʁev tˈov, ʔanˈi mitsˈevet hasijˈuʁ. dajˈeʁet ʁaʔatˈa ʔotχˈa moʃˈeχ jadijˈot ʃˈel ʁeχavˈim kˈan baʁeχˈov, velaχˈen ʔanˈi mevakˈeʃ mimχˈa lehizdahˈot. zˈe beʁˈuʁ, ʔˈod lˈo haʔaʃamˈa. jˈeʃ leχˈa teʔudˈa mezahˈa?</he>"
+},
+"audio/voice/id-check/l-d05e528d.mp3": {
+"speaker": "officerF",
+"say": "ערב טוב, אני מצוות הסיור. דיירת ראתה אותך מושך ידיות של רכבים כאן ברחוב, ולכן אני מבקשת ממך להזדהות. זה בירור , עוד לא האשמה. יש לך תעודה מזהה?",
+"ipa": "<he>ʔˈeʁev tˈov, ʔanˈi mitsˈevet hasijˈuʁ. dajˈeʁet ʁaʔatˈa ʔotχˈa moʃˈeχ jadijˈot ʃˈel ʁeχavˈim kˈan baʁeχˈov, velaχˈen ʔanˈi mevakˈeʃet mimχˈa lehizdahˈot. zˈe beʁˈuʁ, ʔˈod lˈo haʔaʃamˈa. jˈeʃ laχˈa teʔudˈa mezahˈa?</he>"
+},
+"audio/voice/id-check/l-3ad6e215.mp3": {
+"speaker": "ofer",
+"say": "אין לי תעודה עליי. אבל אני לא מנסה לגנוב כלום, אם זה מה שאתה חושב.",
+"ipa": "<he>ʔˈejn lˈi teʔudˈa ʔalˈaj. ʔavˈal ʔanˈi lˈo menasˈe liɡnˈov klˈum, ʔˈim zˈe mˈa ʃeʔatˈa χoʃˈev.</he>"
+},
+"audio/voice/id-check/l-b6f4d0c0.mp3": {
+"speaker": "officer",
+"say": "תעודת זהות. עכשיו.",
+"ipa": "<he>teʔudˈat zehˈut. ʔaχʃˈav.</he>"
+},
+"audio/voice/id-check/l-16fe94bc.mp3": {
+"speaker": "officerF",
+"say": "תעודת זהות. עכשיו.",
+"ipa": "<he>teʔudˈat zehˈut. ʔaχʃˈav.</he>"
+},
+"audio/voice/id-check/l-6bc6c626.mp3": {
+"speaker": "ofer",
+"say": "על מה? מי אתה בכלל? אני לא חייב לתת לך כלום!",
+"ipa": "<he>ʔˈal mˈa? mˈi ʔatˈa beχlˈal? ʔanˈi lˈo χajˈav latˈet leχˈa klˈum!</he>"
+},
+"audio/voice/id-check/l-ed421b67.mp3": {
+"speaker": "ofer",
+"say": "על מה? מי את בכלל? אני לא חייב לתת לך כלום!",
+"ipa": "<he>ʔˈal mˈa? mˈi ʔˈat beχlˈal? ʔanˈi lˈo χajˈav latˈet lˈaχ klˈum!</he>"
+},
+"audio/voice/id-check/l-0166a8cc.mp3": {
+"speaker": "officer",
+"say": "אתה נראה חשוד, אז אני צריך לבדוק אותך. תעודה.",
+"ipa": "<he>ʔatˈa niʁʔˈa χaʃˈud, ʔˈaz ʔanˈi tsaʁˈiχ livdˈok ʔotχˈa. teʔudˈa.</he>"
+},
+"audio/voice/id-check/l-cd777560.mp3": {
+"speaker": "officerF",
+"say": "אתה נראה חשוד, אז אני צריכה לבדוק אותך. תעודה.",
+"ipa": "<he>ʔatˈa niʁʔˈa χaʃˈud, ʔˈaz ʔanˈi tsʁiχˈa livdˈok ʔotχˈa. teʔudˈa.</he>"
+},
+"audio/voice/id-check/l-3f013b79.mp3": {
+"speaker": "ofer",
+"say": "נראה חשוד? בגלל איך שאני נראה? אני לא נותן לך כלום.",
+"ipa": "<he>niʁʔˈa χaʃˈud? biɡlˈal ʔˈejχ ʃeʔanˈi niʁʔˈa? ʔanˈi lˈo notˈen leχˈa klˈum.</he>"
+},
+"audio/voice/id-check/l-b8f30b28.mp3": {
+"speaker": "officer",
+"say": "אני מבין שזה לא נעים. פניתי אליך בגלל דיווח שמישהו כאן ניסה לפתוח רכבים , לא בגלל איך שאתה נראה. כשיש חשד כזה, אתה חייב למסור לי שם ומספר זהות. אם תסרב, אצטרך לעכב אותך לבירור. אני מעדיף שנסיים את זה כאן בשתי דקות.",
+"ipa": "<he>ʔanˈi mevˈin ʃezˈe lˈo naʔˈim. panˈiti ʔelˈeχa biɡlˈal divˈuaχ ʃemˈiʃu kˈan nisˈa liftˈoaχ ʁeχavˈim, lˈo biɡlˈal ʔˈejχ ʃeʔatˈa niʁʔˈa. kʃejˈeʃ χaʃˈad kazˈe, ʔatˈa χajˈav limsˈoʁ lˈi ʃˈem vemispˈaʁ zehˈut. ʔˈim tesaʁˈev, ʔetstaʁˈeχ leʔakˈev ʔotχˈa lebeʁˈuʁ. ʔanˈi maʔadˈif ʃenesajˈem ʔˈet zˈe kˈan beʃtˈej dakˈot.</he>"
+},
+"audio/voice/id-check/l-ddf5bc2c.mp3": {
+"speaker": "officerF",
+"say": "אני מבינה שזה לא נעים. פניתי אליך בגלל דיווח שמישהו כאן ניסה לפתוח רכבים , לא בגלל איך שאתה נראה. כשיש חשד כזה, אתה חייב למסור לי שם ומספר זהות. אם תסרב, אצטרך לעכב אותך לבירור. אני מעדיפה שנסיים את זה כאן בשתי דקות.",
+"ipa": "<he>ʔanˈi mevinˈa ʃezˈe lˈo naʔˈim. panˈiti ʔelˈeχa biɡlˈal divˈuaχ ʃemˈiʃu kˈan nisˈa liftˈoaχ ʁeχavˈim, lˈo biɡlˈal ʔˈejχ ʃeʔatˈa niʁʔˈa. kʃejˈeʃ χaʃˈad kazˈe, ʔatˈa χajˈav limsˈoʁ lˈi ʃˈem vemispˈaʁ zehˈut. ʔˈim tesaʁˈev, ʔetstaʁˈeχ leʔakˈev ʔotχˈa lebeʁˈuʁ. ʔanˈi maʔadifˈa ʃenesajˈem ʔˈet zˈe kˈan beʃtˈej dakˈot.</he>"
+},
+"audio/voice/id-check/l-8dbe4181.mp3": {
+"speaker": "ofer",
+"say": ",טוב. אין לי תעודה עליי, אבל אני אגיד לך את הפרטים.",
+"ipa": "<he>,tˈov. ʔˈejn lˈi teʔudˈa ʔalˈaj, ʔavˈal ʔanˈi ʔaɡˈid leχˈa ʔˈet hapʁatˈim.</he>"
+},
+"audio/voice/id-check/l-91b565d7.mp3": {
+"speaker": "officer",
+"say": "אין בעיה שאין תעודה. תן לי שם מלא, מספר זהות וכתובת, ואני בודק.",
+"ipa": "<he>ʔˈejn beʔajˈa ʃeʔˈejn teʔudˈa. tˈen lˈi ʃˈem malˈe, mispˈaʁ zehˈut vektˈovet, veʔanˈi bodˈek.</he>"
+},
+"audio/voice/id-check/l-18a16693.mp3": {
+"speaker": "officerF",
+"say": "אין בעיה שאין תעודה. תן לי שם מלא, מספר זהות וכתובת, ואני בודקת.",
+"ipa": "<he>ʔˈejn beʔajˈa ʃeʔˈejn teʔudˈa. tˈen lˈi ʃˈem malˈe, mispˈaʁ zehˈut vektˈovet, veʔanˈi bodˈeket.</he>"
+},
+"audio/voice/id-check/l-dac01467.mp3": {
+"speaker": "ofer",
+"say": "עופר נחום. גר ברחוב הברוש 4. הנה המספר.",
+"ipa": "<he>ʔˈofeʁ naχˈum. ɡˈaʁ beʁeχˈov habʁˈuʃ ʔˈaʁba. hˈine hamispˈaʁ.</he>"
+},
+"audio/voice/id-check/l-e032141a.mp3": {
+"speaker": "officer",
+"say": "תן לי שם מלא, מספר זהות וכתובת.",
+"ipa": "<he>tˈen lˈi ʃˈem malˈe, mispˈaʁ zehˈut vektˈovet.</he>"
+},
+"audio/voice/id-check/l-e9ecc1f6.mp3": {
+"speaker": "officerF",
+"say": "תן לי שם מלא, מספר זהות וכתובת.",
+"ipa": "<he>tˈen lˈi ʃˈem malˈe, mispˈaʁ zehˈut vektˈovet.</he>"
+},
+"audio/voice/id-check/l-14bf9893.mp3": {
+"speaker": "ofer",
+"say": "אני לא מוסר לך כלום עד שתגיד לי למה.",
+"ipa": "<he>ʔanˈi lˈo mosˈeʁ leχˈa klˈum ʔˈad ʃetaɡˈid lˈi lˈama.</he>"
+},
+"audio/voice/id-check/l-7f7f4d5f.mp3": {
+"speaker": "ofer",
+"say": "אני לא מוסר לך כלום עד שתגידי לי למה.",
+"ipa": "<he>ʔanˈi lˈo mosˈeʁ lˈaχ klˈum ʔˈad ʃetaɡˈidi lˈi lˈama.</he>"
+},
+"audio/voice/id-check/l-d8026ae1.mp3": {
+"speaker": "officer",
+"say": "אין לך תעודה? אז אתה מעוכב.",
+"ipa": "<he>ʔˈejn leχˈa teʔudˈa? ʔˈaz ʔatˈa meʔukˈav.</he>"
+},
+"audio/voice/id-check/l-1774a7fd.mp3": {
+"speaker": "officerF",
+"say": "אין לך תעודה? אז אתה מעוכב.",
+"ipa": "<he>ʔˈejn leχˈa teʔudˈa? ʔˈaz ʔatˈa meʔukˈav.</he>"
+},
+"audio/voice/id-check/l-6d04abbd.mp3": {
+"speaker": "ofer",
+"say": "מעוכב? כי שכחתי ארנק בבית?! תשאל אותי את הפרטים!",
+"ipa": "<he>meʔukˈav? kˈi ʃaχˈaχti ʔaʁnˈak babˈajit?! tiʃʔˈal ʔotˈi ʔˈet hapʁatˈim!</he>"
+},
+"audio/voice/id-check/l-92dd214d.mp3": {
+"speaker": "ofer",
+"say": "מעוכב? כי שכחתי ארנק בבית?! תשאלי אותי את הפרטים!",
+"ipa": "<he>meʔukˈav? kˈi ʃaχˈaχti ʔaʁnˈak babˈajit?! tiʃʔalˈi ʔotˈi ʔˈet hapʁatˈim!</he>"
+},
+"audio/voice/id-check/l-e571acd9.mp3": {
+"speaker": "narrator",
+"say": "התרחקת כמה צעדים, כך שאף אחד מהמעורבים לא ישמע את התשובה.",
+"ipa": "<he>hitʁaχˈakta kˈama tseʔadˈim, kˈaχ ʃeʔˈaf ʔeχˈad mehameʔoʁavˈim lˈo jiʃmˈa ʔˈet hatʃuvˈa.</he>"
+},
+"audio/voice/id-check/l-3e749592.mp3": {
+"speaker": "player",
+"say": "תבדקי לי פרטים של עופר נחום.",
+"ipa": "<he>tivdekˈi lˈi pʁatˈim ʃˈel ʔˈofeʁ naχˈum.</he>"
+},
+"audio/voice/id-check/l-cdbb2fa8.mp3": {
+"speaker": "playerF",
+"say": "תבדקי לי פרטים של עופר נחום.",
+"ipa": "<he>tivdekˈi lˈi pʁatˈim ʃˈel ʔˈofeʁ naχˈum.</he>"
+},
+"audio/voice/id-check/l-a5f13268.mp3": {
+"speaker": "dispatch",
+"say": "עופר נחום, בן 31. אין רישום ואין נגדו צו. הרכב הכסוף רשום על שמו.",
+"ipa": "<he>ʔˈofeʁ naχˈum, bˈen ʃloʃˈim veʔaχˈat. ʔˈejn ʁiʃˈum veʔˈejn neɡdˈo tsˈav. haʁˈeχev hakasˈuf ʁaʃˈum ʔˈal ʃmˈo.</he>"
+},
+"audio/voice/id-check/l-ec4a5761.mp3": {
+"speaker": "dispatch",
+"say": "עופר נחום, בן 31. יש נגדו צו מעצר מבית משפט על אי התייצבות לדיון, ותיק פתוח בחשד לגניבות מרכבים. הרכב הכסוף לא רשום על שמו.",
+"ipa": "<he>ʔˈofeʁ naχˈum, bˈen ʃloʃˈim veʔaχˈat. jˈeʃ neɡdˈo tsˈav maʔatsˈaʁ mibˈet miʃpˈat ʔˈal ʔˈi hitjatsvˈut ledijˈun, vetˈik patˈuaχ beχaʃˈad leɡnevˈot meʁχavˈim. haʁˈeχev hakasˈuf lˈo ʁaʃˈum ʔˈal ʃmˈo.</he>"
+},
+"audio/voice/id-check/l-4227a375.mp3": {
+"speaker": "ofer",
+"say": "זה האוטו שלי! השלט לא עובד, אז ניסיתי את הידית. בדקתי גם אם השארתי את הפנס של השכן דולק.",
+"ipa": "<he>zˈe haʔˈoto ʃelˈi! haʃˈelet lˈo ʔovˈed, ʔˈaz nisˈiti ʔˈet hajadˈit. badˈakti ɡˈam ʔˈim hiʃaʔˈaʁti ʔˈet hapanˈas ʃˈel haʃaχˈen dolˈek.</he>"
+},
+"audio/voice/id-check/l-7fd0c20e.mp3": {
+"speaker": "narrator",
+"say": "עופר לוחץ על השלט כמה פעמים, ואז פותח את הדלת עם המפתח. בתא הכפפות , רישיון רכב על שמו.",
+"ipa": "<he>ʔˈofeʁ loχˈets ʔˈal haʃˈelet kˈama peʔamˈim, veʔˈaz potˈeaχ ʔˈet hadˈelet ʔˈim hamaftˈeaχ. betˈa hakfafˈot, ʁiʃajˈon ʁˈeχev ʔˈal ʃmˈo.</he>"
+},
+"audio/voice/id-check/l-c98f67c4.mp3": {
+"speaker": "ofer",
+"say": "זה, זה האוטו של חבר. הוא ביקש שאביא לו משהו ממנו.",
+"ipa": "<he>zˈe, zˈe haʔˈoto ʃˈel χavˈeʁ. hˈu bikˈeʃ ʃeʔavˈi lˈo mˈaʃu mimˈenu.</he>"
+},
+"audio/voice/id-check/l-07ac8651.mp3": {
+"speaker": "officer",
+"say": "יש לך מפתח?",
+"ipa": "<he>jˈeʃ leχˈa maftˈeaχ?</he>"
+},
+"audio/voice/id-check/l-465bb795.mp3": {
+"speaker": "officerF",
+"say": "יש לך מפתח?",
+"ipa": "<he>jˈeʃ leχˈa maftˈeaχ?</he>"
+},
+"audio/voice/id-check/l-31bfe9cc.mp3": {
+"speaker": "ofer",
+"say": "לא, הוא, אמר שזה פתוח.",
+"ipa": "<he>lˈo, hˈu, ʔamˈaʁ ʃezˈe patˈuaχ.</he>"
+},
+"audio/voice/id-check/l-5ff639f7.mp3": {
+"speaker": "officer",
+"say": "בטח. שמי רשום כאן על המדים, ואני גם אומר לך: זה מספר השוטר שלי. אם תרצה, תוכל להגיש עליי פנייה.",
+"ipa": "<he>bˈetaχ. ʃmˈi ʁaʃˈum kˈan ʔˈal hamadˈim, veʔanˈi ɡˈam ʔomˈeʁ leχˈa: zˈe mispˈaʁ haʃotˈeʁ ʃelˈi. ʔˈim tiʁtsˈe, tuχˈal lehaɡˈiʃ ʔalˈaj pnijˈa.</he>"
+},
+"audio/voice/id-check/l-d2f03853.mp3": {
+"speaker": "officerF",
+"say": "בטח. שמי רשום כאן על המדים, ואני גם אומרת לך: זה מספר השוטר שלי. אם תרצה, תוכל להגיש עליי פנייה.",
+"ipa": "<he>bˈetaχ. ʃmˈi ʁaʃˈum kˈan ʔˈal hamadˈim, veʔanˈi ɡˈam ʔomˈeʁet leχˈa: zˈe mispˈaʁ haʃotˈeʁ ʃelˈi. ʔˈim tiʁtsˈe, tuχˈal lehaɡˈiʃ ʔalˈaj pnijˈa.</he>"
+},
+"audio/voice/id-check/l-0294e698.mp3": {
+"speaker": "ofer",
+"say": "אוקיי. תודה.",
+"ipa": "<he>ʔokˈej. todˈa.</he>"
+},
+"audio/voice/id-check/l-2c6a6fac.mp3": {
+"speaker": "officer",
+"say": "זה לא עניינך מי אני.",
+"ipa": "<he>zˈe lˈo ʔinjanχˈa mˈi ʔanˈi.</he>"
+},
+"audio/voice/id-check/l-f40fd148.mp3": {
+"speaker": "officerF",
+"say": "זה לא עניינך מי אני.",
+"ipa": "<he>zˈe lˈo ʔinjanχˈa mˈi ʔanˈi.</he>"
+},
+"audio/voice/id-check/l-bcac7068.mp3": {
+"speaker": "ofer",
+"say": "אתה דורש ממני פרטים ולא מוכן להגיד מי אתה?",
+"ipa": "<he>ʔatˈa doʁˈeʃ mimˈeni pʁatˈim velˈo muχˈan lehaɡˈid mˈi ʔatˈa?</he>"
+},
+"audio/voice/id-check/l-23566533.mp3": {
+"speaker": "ofer",
+"say": "את דורשת ממני פרטים ולא מוכנה להגיד מי את?",
+"ipa": "<he>ʔˈat doʁˈeʃet mimˈeni pʁatˈim velˈo muχanˈa lehaɡˈid mˈi ʔˈat?</he>"
+},
+"audio/voice/id-check/l-2ccef72a.mp3": {
+"speaker": "officer",
+"say": "בדקתי , הכול תקין, הרכב שלך. תודה על הסבלנות ועל שיתוף הפעולה. אני מצטער על אי הנעימות, הבדיקה נבעה מהדיווח.",
+"ipa": "<he>badˈakti, hakˈol takˈin, haʁˈeχev ʃelχˈa. todˈa ʔˈal hasavlanˈut veʔˈal ʃitˈuf hapeʔulˈa. ʔanˈi mitstaʔˈeʁ ʔˈal ʔˈi haneʔimˈut, habdikˈa navʔˈa mehadivˈuaχ.</he>"
+},
+"audio/voice/id-check/l-9000f89e.mp3": {
+"speaker": "officerF",
+"say": "בדקתי , הכול תקין, הרכב שלך. תודה על הסבלנות ועל שיתוף הפעולה. אני מצטערת על אי הנעימות, הבדיקה נבעה מהדיווח.",
+"ipa": "<he>badˈakti, hakˈol takˈin, haʁˈeχev ʃelχˈa. todˈa ʔˈal hasavlanˈut veʔˈal ʃitˈuf hapeʔulˈa. ʔanˈi mitstaʔˈeʁet ʔˈal ʔˈi haneʔimˈut, habdikˈa navʔˈa mehadivˈuaχ.</he>"
+},
+"audio/voice/id-check/l-32c823ec.mp3": {
+"speaker": "ofer",
+"say": "בסדר. אני מבין שהיא דאגה.",
+"ipa": "<he>besˈedeʁ. ʔanˈi mevˈin ʃehˈi daʔaɡˈa.</he>"
+},
+"audio/voice/id-check/l-e1e0f23f.mp3": {
+"speaker": "officer",
+"say": "עופר, הבדיקה העלתה שיש נגדך צו מעצר מבית משפט. בנוסף, ראו אותך מנסה לפתוח כמה רכבים, ואין לך מפתח לרכב הזה. אתה מעוכב. ניידת תעביר אותך לתחנה.",
+"ipa": "<he>ʔˈofeʁ, habdikˈa heʔeltˈa ʃejˈeʃ neɡdeχˈa tsˈav maʔatsˈaʁ mibˈet miʃpˈat. benosˈaf, ʁaʔˈu ʔotχˈa menasˈe liftˈoaχ kˈama ʁeχavˈim, veʔˈejn leχˈa maftˈeaχ laʁˈeχev hazˈe. ʔatˈa meʔukˈav. najˈedet taʔavˈiʁ ʔotχˈa lataχanˈa.</he>"
+},
+"audio/voice/id-check/l-3892e08b.mp3": {
+"speaker": "officerF",
+"say": "עופר, הבדיקה העלתה שיש נגדך צו מעצר מבית משפט. בנוסף, ראו אותך מנסה לפתוח כמה רכבים, ואין לך מפתח לרכב הזה. אתה מעוכב. ניידת תעביר אותך לתחנה.",
+"ipa": "<he>ʔˈofeʁ, habdikˈa heʔeltˈa ʃejˈeʃ neɡdeχˈa tsˈav maʔatsˈaʁ mibˈet miʃpˈat. benosˈaf, ʁaʔˈu ʔotχˈa menasˈe liftˈoaχ kˈama ʁeχavˈim, veʔˈejn leχˈa maftˈeaχ laʁˈeχev hazˈe. ʔatˈa meʔukˈav. najˈedet taʔavˈiʁ ʔotχˈa lataχanˈa.</he>"
+},
+"audio/voice/id-check/l-abd80cd4.mp3": {
+"speaker": "ofer",
+"say": ",אוקיי. אני לא עושה בעיות.",
+"ipa": "<he>,ʔokˈej. ʔanˈi lˈo ʔosˈe beʔajˈot.</he>"
+},
+"audio/voice/id-check/l-e9844642.mp3": {
+"speaker": "officer",
+"say": "עופר, יש נגדך צו מעצר מבית משפט. אתה מעוכב, ניידת תעביר אותך לתחנה.",
+"ipa": "<he>ʔˈofeʁ, jˈeʃ neɡdeχˈa tsˈav maʔatsˈaʁ mibˈet miʃpˈat. ʔatˈa meʔukˈav, najˈedet taʔavˈiʁ ʔotχˈa lataχanˈa.</he>"
+},
+"audio/voice/id-check/l-6609a34e.mp3": {
+"speaker": "officerF",
+"say": "עופר, יש נגדך צו מעצר מבית משפט. אתה מעוכב, ניידת תעביר אותך לתחנה.",
+"ipa": "<he>ʔˈofeʁ, jˈeʃ neɡdeχˈa tsˈav maʔatsˈaʁ mibˈet miʃpˈat. ʔatˈa meʔukˈav, najˈedet taʔavˈiʁ ʔotχˈa lataχanˈa.</he>"
+},
+"audio/voice/id-check/l-0227f910.mp3": {
+"speaker": "ofer",
+"say": ",אוקיי.",
+"ipa": "<he>,ʔokˈej.</he>"
+},
+"audio/voice/id-check/l-59cfa680.mp3": {
+"speaker": "officer",
+"say": "עופר, אתה חשוד בניסיון גניבה מרכב. כל מה שתאמר יכול לשמש נגדך. יש לך זכות לא לומר דבר, אבל שתיקה עלולה לחזק את הראיות נגדך. יש לך זכות להיוועץ בעורך דין, ותוכל ליצור איתו קשר כשתגיע לתחנה.",
+"ipa": "<he>ʔˈofeʁ, ʔatˈa χaʃˈud benisajˈon ɡnevˈa meʁˈeχev. kˈol mˈa ʃetomˈaʁ jaχˈol leʃamˈeʃ neɡdeχˈa. jˈeʃ leχˈa zχˈut lˈo lomˈaʁ davˈaʁ, ʔavˈal ʃtikˈa ʔalulˈa leχazˈek ʔˈet haʁeʔajˈot neɡdeχˈa. jˈeʃ leχˈa zχˈut lehivaʔˈets beʔoʁˈeχ dˈin, vetuχˈal litsˈoʁ ʔitˈo kˈeʃeʁ kʃetaɡˈia lataχanˈa.</he>"
+},
+"audio/voice/id-check/l-84ef6c3c.mp3": {
+"speaker": "officerF",
+"say": "עופר, אתה חשוד בניסיון גניבה מרכב. כל מה שתאמר יכול לשמש נגדך. יש לך זכות לא לומר דבר, אבל שתיקה עלולה לחזק את הראיות נגדך. יש לך זכות להיוועץ בעורך דין, ותוכל ליצור איתו קשר כשתגיע לתחנה.",
+"ipa": "<he>ʔˈofeʁ, ʔatˈa χaʃˈud benisajˈon ɡnevˈa meʁˈeχev. kˈol mˈa ʃetomˈaʁ jaχˈol leʃamˈeʃ neɡdeχˈa. jˈeʃ leχˈa zχˈut lˈo lomˈaʁ davˈaʁ, ʔavˈal ʃtikˈa ʔalulˈa leχazˈek ʔˈet haʁeʔajˈot neɡdeχˈa. jˈeʃ leχˈa zχˈut lehivaʔˈets beʔoʁˈeχ dˈin, vetuχˈal litsˈoʁ ʔitˈo kˈeʃeʁ kʃetaɡˈia lataχanˈa.</he>"
+},
+"audio/voice/id-check/l-d97a0068.mp3": {
+"speaker": "ofer",
+"say": "הבנתי. אני לא אומר כלום בלי עורך דין.",
+"ipa": "<he>hevˈanti. ʔanˈi lˈo ʔomˈeʁ klˈum blˈi ʔoʁˈeχ dˈin.</he>"
+},
+"audio/voice/id-check/l-52ad251d.mp3": {
+"speaker": "officer",
+"say": "עופר, לפני שאתה נכנס לניידת אני עורך עליך חיפוש. יש עליך משהו חד או אסור? תגיד לי עכשיו.",
+"ipa": "<he>ʔˈofeʁ, lifnˈej ʃeʔatˈa niχnˈas lanajˈedet ʔanˈi ʔoʁˈeχ ʔalˈeχa χipˈus. jˈeʃ ʔalˈeχa mˈaʃu χˈad ʔˈo ʔasˈuʁ? taɡˈid lˈi ʔaχʃˈav.</he>"
+},
+"audio/voice/id-check/l-403e67c1.mp3": {
+"speaker": "officerF",
+"say": "עופר, לפני שאתה נכנס לניידת אני עורכת עליך חיפוש. יש עליך משהו חד או אסור? תגיד לי עכשיו.",
+"ipa": "<he>ʔˈofeʁ, lifnˈej ʃeʔatˈa niχnˈas lanajˈedet ʔanˈi ʔoʁˈeχet ʔalˈeχa χipˈus. jˈeʃ ʔalˈeχa mˈaʃu χˈad ʔˈo ʔasˈuʁ? taɡˈid lˈi ʔaχʃˈav.</he>"
+},
+"audio/voice/id-check/l-fe7cdd88.mp3": {
+"speaker": "ofer",
+"say": "רק מפתחות, טלפון וארנק.",
+"ipa": "<he>ʁˈak mafteχˈot, tˈelefon veʔaʁnˈak.</he>"
+},
+"audio/voice/id-check/l-299a7f0e.mp3": {
+"speaker": "narrator",
+"say": "בכיסים: מפתחות, טלפון וארנק. במישוש על הבגדים לא נמצא דבר נוסף. החיפוש נעשה בידי שוטר מאותו מין, בצד ולא מול הקהל.",
+"ipa": "<he>bakisˈim: mafteχˈot, tˈelefon veʔaʁnˈak. bemiʃˈuʃ ʔˈal habɡadˈim lˈo nimtsˈa davˈaʁ nosˈaf. haχipˈus naʔasˈa bijdˈej ʃotˈeʁ meʔotˈo mˈin, batsˈad velˈo mˈul hakahˈal.</he>"
+},
+"audio/voice/id-check/l-299d6eae.mp3": {
+"speaker": "officer",
+"say": "תוריד את החולצה והמכנסיים. אני בודק אותך כאן.",
+"ipa": "<he>toʁˈid ʔˈet haχultsˈa vehamiχnasˈajim. ʔanˈi bodˈek ʔotχˈa kˈan.</he>"
+},
+"audio/voice/id-check/l-9e3403f2.mp3": {
+"speaker": "officerF",
+"say": "תוריד את החולצה והמכנסיים. אני בודקת אותך כאן.",
+"ipa": "<he>toʁˈid ʔˈet haχultsˈa vehamiχnasˈajim. ʔanˈi bodˈeket ʔotχˈa kˈan.</he>"
+},
+"audio/voice/id-check/l-849739f5.mp3": {
+"speaker": "ofer",
+"say": "מה?! מול כל האנשים? זה השפלה!",
+"ipa": "<he>mˈa?! mˈul kˈol haʔanaʃˈim? zˈe haʃpalˈa!</he>"
+},
+"audio/voice/id-check/l-25131af8.mp3": {
+"speaker": "officer",
+"say": "עופר, אתה עצור בחשד לניסיון גניבה מרכב. אתה מועבר עכשיו לתחנה.",
+"ipa": "<he>ʔˈofeʁ, ʔatˈa ʔatsˈuʁ beχaʃˈad lenisajˈon ɡnevˈa meʁˈeχev. ʔatˈa moʔavˈaʁ ʔaχʃˈav lataχanˈa.</he>"
+},
+"audio/voice/id-check/l-173e66b4.mp3": {
+"speaker": "officerF",
+"say": "עופר, אתה עצור בחשד לניסיון גניבה מרכב. אתה מועבר עכשיו לתחנה.",
+"ipa": "<he>ʔˈofeʁ, ʔatˈa ʔatsˈuʁ beχaʃˈad lenisajˈon ɡnevˈa meʁˈeχev. ʔatˈa moʔavˈaʁ ʔaχʃˈav lataχanˈa.</he>"
+},
+"audio/voice/id-check/l-2ef8d193.mp3": {
+"speaker": "ofer",
+"say": "עצור? על מה בדיוק? אני לא מאמין.",
+"ipa": "<he>ʔatsˈoʁ? ʔˈal mˈa bidjˈuk? ʔanˈi lˈo maʔamˈin.</he>"
+},
+"audio/voice/id-check/l-fa1be332.mp3": {
+"speaker": "officer",
+"say": "עופר, ידיים מאחורי הגב. אני אוזק אותך , תגיד לי אם זה לוחץ.",
+"ipa": "<he>ʔˈofeʁ, jadˈajim meʔaχoʁˈej haɡˈav. ʔanˈi ʔozˈek ʔotχˈa, taɡˈid lˈi ʔˈim zˈe loχˈets.</he>"
+},
+"audio/voice/id-check/l-dfc05eee.mp3": {
+"speaker": "officerF",
+"say": "עופר, ידיים מאחורי הגב. אני אוזקת אותך , תגיד לי אם זה לוחץ.",
+"ipa": "<he>ʔˈofeʁ, jadˈajim meʔaχoʁˈej haɡˈav. ʔanˈi ʔozˈeket ʔotχˈa, taɡˈid lˈi ʔˈim zˈe loχˈets.</he>"
+},
+"audio/voice/id-check/l-ed874318.mp3": {
+"speaker": "ofer",
+"say": "בסדר, בסדר. לא צריך להדק.",
+"ipa": "<he>besˈedeʁ, besˈedeʁ. lˈo tsaʁˈiχ lehadˈek.</he>"
+},
+"audio/voice/id-check/l-e7044d39.mp3": {
+"speaker": "officer",
+"say": "אני לא אוזק אותך כל עוד אתה משתף פעולה. תלך לידי עד הניידת.",
+"ipa": "<he>ʔanˈi lˈo ʔozˈek ʔotχˈa kˈol ʔˈod ʔatˈa meʃatˈef peʔulˈa. telˈeχ lejadˈi ʔˈad hanajˈedet.</he>"
+},
+"audio/voice/id-check/l-44e1b6b5.mp3": {
+"speaker": "officerF",
+"say": "אני לא אוזקת אותך כל עוד אתה משתף פעולה. תלך לידי עד הניידת.",
+"ipa": "<he>ʔanˈi lˈo ʔozˈeket ʔotχˈa kˈol ʔˈod ʔatˈa meʃatˈef peʔulˈa. telˈeχ lejadˈi ʔˈad hanajˈedet.</he>"
+},
+"audio/voice/id-check/l-fdf6327e.mp3": {
+"speaker": "ofer",
+"say": "אוקיי. אני לא עושה בעיות.",
+"ipa": "<he>ʔokˈej. ʔanˈi lˈo ʔosˈe beʔajˈot.</he>"
+},
+"audio/voice/id-check/l-716be387.mp3": {
+"speaker": "narrator",
+"say": "עופר נכנס לניידת התגבור, והניידת יוצאת לתחנה. בזירה נשארים רק אתה והמעורבים האחרים.",
+"ipa": "<he>ʔˈofeʁ niχnˈas lenajˈedet hatiɡbˈuʁ, vehanajˈedet jotsˈet lataχanˈa. baziʁˈa niʃʔaʁˈim ʁˈak ʔatˈa vehameʔoʁavˈim haʔaχeʁˈim.</he>"
+},
+"audio/voice/id-check/l-4ee5c8c9.mp3": {
+"speaker": "officer",
+"say": "עופר, הבירור הסתיים. אתה משוחרר.",
+"ipa": "<he>ʔˈofeʁ, habeʁˈuʁ histajˈem. ʔatˈa meʃuχʁˈaʁ.</he>"
+},
+"audio/voice/id-check/l-fbf72895.mp3": {
+"speaker": "officerF",
+"say": "עופר, הבירור הסתיים. אתה משוחרר.",
+"ipa": "<he>ʔˈofeʁ, habeʁˈuʁ histajˈem. ʔatˈa meʃuχʁˈaʁ.</he>"
+},
+"audio/voice/id-check/l-825a63e7.mp3": {
+"speaker": "ofer",
+"say": "סוף סוף.",
+"ipa": "<he>sˈof sˈof.</he>"
+},
+"audio/voice/id-check/l-98f90ac9.mp3": {
+"speaker": "officer",
+"say": "היי, אני מצוות הסיור. אני רואה שיש לך בירות, ואני צריך לברר בן כמה אתה. יש לך תעודה, או שתגיד לי את הפרטים?",
+"ipa": "<he>hˈej, ʔanˈi mitsevˈat hasijˈuʁ. ʔanˈi ʁoʔˈe ʃejˈeʃ leχˈa biʁˈot, veʔanˈi tsaʁˈiχ levaʁˈeʁ bˈen kˈama ʔatˈa. jˈeʃ leχˈa teʔudˈa, ʔˈo ʃetaɡˈid lˈi ʔˈet hapʁatˈim?</he>"
+},
+"audio/voice/id-check/l-cfb632f5.mp3": {
+"speaker": "officerF",
+"say": "היי, אני מצוות הסיור. אני רואה שיש לך בירות, ואני צריכה לברר בן כמה אתה. יש לך תעודה, או שתגיד לי את הפרטים?",
+"ipa": "<he>hˈej, ʔanˈi mitsevˈat hasijˈuʁ. ʔanˈi ʁoʔˈa ʃejˈeʃ leχˈa biʁˈot, veʔanˈi tsʁiχˈa levaʁˈeʁ bˈen kˈama ʔatˈa. jˈeʃ leχˈa teʔudˈa, ʔˈo ʃetaɡˈid lˈi ʔˈet hapʁatˈim?</he>"
+},
+"audio/voice/id-check/l-36101657.mp3": {
+"speaker": "yuval",
+"say": "יובל שגיא, אני בן 16.",
+"ipa": "<he>juvˈal saɡˈi, ʔanˈi bˈen ʃˈeʃ ʔesʁˈe.</he>"
+},
+"audio/voice/id-check/l-b6e3d2ba.mp3": {
+"speaker": "officer",
+"say": "תביא את זה! מה אתה חושב שאתה עושה?!",
+"ipa": "<he>tavˈi ʔˈet zˈe! mˈa ʔatˈa χoʃˈev ʃeʔatˈa ʔosˈe?!</he>"
+},
+"audio/voice/id-check/l-1758cb3e.mp3": {
+"speaker": "officerF",
+"say": "תביא את זה! מה אתה חושב שאתה עושה?!",
+"ipa": "<he>tavˈi ʔˈet zˈe! mˈa ʔatˈa χoʃˈev ʃeʔatˈa ʔosˈe?!</he>"
+},
+"audio/voice/id-check/l-aa323199.mp3": {
+"speaker": "yuval",
+"say": ",סליחה.",
+"ipa": "<he>,sliχˈa.</he>"
+},
+"audio/voice/id-check/l-96538957.mp3": {
+"speaker": "officer",
+"say": "יובל, בגיל 16 אסור לך להחזיק אלכוהול ברחוב, ולכן אני לוקח את הבירות. זה לא עונש , זה בשביל הבטיחות שלך.",
+"ipa": "<he>jovˈal, beɡˈil ʃˈeʃ ʔesʁˈe ʔasˈuʁ leχˈa lehaχzˈik ʔalkohˈol baʁeχˈov, velaχˈen ʔanˈi lokˈeaχ ʔˈet habiʁˈot. zˈe lˈo ʔˈoneʃ, zˈe biʃvˈil habetiχˈut ʃelχˈa.</he>"
+},
+"audio/voice/id-check/l-06b82e83.mp3": {
+"speaker": "officerF",
+"say": "יובל, בגיל 16 אסור לך להחזיק אלכוהול ברחוב, ולכן אני לוקחת את הבירות. זה לא עונש , זה בשביל הבטיחות שלך.",
+"ipa": "<he>jovˈal, beɡˈil ʃˈeʃ ʔesʁˈe ʔasˈuʁ leχˈa lehaχzˈik ʔalkohˈol baʁeχˈov, velaχˈen ʔanˈi lokˈaχat ʔˈet habiʁˈot. zˈe lˈo ʔˈoneʃ, zˈe biʃvˈil habetiχˈut ʃelχˈa.</he>"
+},
+"audio/voice/id-check/l-ff63e3b2.mp3": {
+"speaker": "yuval",
+"say": "טוב, בסדר.",
+"ipa": "<he>tˈov, besˈedeʁ.</he>"
+},
+"audio/voice/id-check/l-29f9ec0e.mp3": {
+"speaker": "officer",
+"say": "מאיפה הבירות? ביקשו ממך תעודה?",
+"ipa": "<he>meʔˈejfo habiʁˈot? bikʃˈu mimχˈa teʔudˈa?</he>"
+},
+"audio/voice/id-check/l-6ad5365a.mp3": {
+"speaker": "officerF",
+"say": "מאיפה הבירות? ביקשו ממך תעודה?",
+"ipa": "<he>meʔˈejfo habiʁˈot? bikʃˈu mimχˈa teʔudˈa?</he>"
+},
+"audio/voice/id-check/l-c88c97dd.mp3": {
+"speaker": "yuval",
+"say": "מהקיוסק פה. לא ביקשו כלום.",
+"ipa": "<he>mehakijˈosk pˈo. lˈo bikʃˈu klˈum.</he>"
+},
+"audio/voice/id-check/l-c5fb1903.mp3": {
+"speaker": "officer",
+"say": "יובל, אני מתקשר לאחד ההורים שלך. מה המספר?",
+"ipa": "<he>jovˈal, ʔanˈi mitkaʃˈeʁ leʔeχˈad hahoʁˈim ʃelχˈa. mˈa hamispˈaʁ?</he>"
+},
+"audio/voice/id-check/l-3dcabb4f.mp3": {
+"speaker": "officerF",
+"say": "יובל, אני מתקשרת לאחד ההורים שלך. מה המספר?",
+"ipa": "<he>jovˈal, ʔanˈi mitkaʃˈeʁet leʔeχˈad hahoʁˈim ʃelχˈa. mˈa hamispˈaʁ?</he>"
+},
+"audio/voice/id-check/l-d8b7809c.mp3": {
+"speaker": "narrator",
+"say": "אבא של יובל עונה. הוא מודה, ואומר שיגיע לאסוף אותו תוך חמש דקות.",
+"ipa": "<he>ʔˈaba ʃˈel juvˈal ʔonˈe. hˈu modˈe, veʔomˈeʁ ʃejaɡˈia leʔesˈof ʔotˈo tˈoχ χamˈeʃ dakˈot.</he>"
+},
+"audio/voice/id-check/l-342602d5.mp3": {
+"speaker": "narrator",
+"say": "רשמת: שעה, עילת הדרישה , איך זוהה, תוצאת הבדיקה במערכת ומה הוחלט.",
+"ipa": "<he>ʁaʃˈemeta: ʃaʔˈa, ʔilˈat hadʁiʃˈa, ʔˈejχ zohˈa, totsaʔˈat habdikˈa bamaʔaʁˈeχet vemˈa huχlˈat.</he>"
+},
+"audio/voice/id-check/l-eb03ec08.mp3": {
+"speaker": "player",
+"say": "הגעתי למקום.",
+"ipa": "<he>hiɡˈaʔti lamakˈom.</he>"
+},
+"audio/voice/id-check/l-cda9652e.mp3": {
+"speaker": "playerF",
+"say": "הגעתי למקום.",
+"ipa": "<he>hiɡˈaʔti lamakˈom.</he>"
+},
+"audio/voice/id-check/l-ec463fb2.mp3": {
+"speaker": "dispatch",
+"say": "קיבלתי. עדכן כשיש תמונת מצב.",
+"ipa": "<he>kibˈalti. ʔadkˈen kʃejˈeʃ tmunˈat matsˈav.</he>"
+},
+"audio/voice/id-check/l-f3f6d4e7.mp3": {
+"speaker": "player",
+"say": "שלילי. עדכון: אני בזירה עם המעורבים, המצב בשליטה. אוסף גרסאות ומתעד. ממשיך לתחקר ולברר, ואעדכן כשאתפנה.",
+"ipa": "<he>ʃlilˈi. ʔidkˈun: ʔanˈi baziʁˈa ʔˈim hameʔoʁavˈim, hamatsˈav beʃlitˈa. ʔosˈef ɡiʁsaʔˈot vemetaʔˈed. mamʃˈiχ letaχkˈeʁ velevaʁˈeʁ, veʔeʔadkˈen kʃeʔetpanˈe.</he>"
+},
+"audio/voice/id-check/l-622f1a19.mp3": {
+"speaker": "playerF",
+"say": "שלילי. עדכון: אני בזירה עם המעורבים, המצב בשליטה. אוסף גרסאות ומתעד. ממשיכה לתחקר ולברר, ואעדכן כשאתפנה.",
+"ipa": "<he>ʃlilˈi. ʔidkˈun: ʔanˈi baziʁˈa ʔˈim hameʔoʁavˈim, hamatsˈav beʃlitˈa. ʔosˈef ɡiʁsaʔˈot vemetaʔˈed. mamʃiχˈa letaχkˈeʁ velevaʁˈeʁ, veʔeʔadkˈen kʃeʔetpanˈe.</he>"
+},
+"audio/voice/id-check/l-883b4819.mp3": {
+"speaker": "head",
+"say": "קיבלתי. תמשיך, ותעדכן כשאתה פנוי.",
+"ipa": "<he>kibˈalti. tamʃˈiχ, veteʔadkˈen kʃeʔatˈa panˈuj.</he>"
+},
+"audio/voice/id-check/l-e68a8fe9.mp3": {
+"speaker": "head",
+"say": "קיבלתי. תמשיכי, ותעדכני כשאת פנויה.",
+"ipa": "<he>kibˈalti. tamʃˈiχi, veteʔadkenˈi kʃeʔˈat pnujˈa.</he>"
+},
+"audio/voice/id-check/l-6c920960.mp3": {
+"speaker": "player",
+"say": "שלילי, עדיין בטיפול באירוע. אעדכן כשאתפנה.",
+"ipa": "<he>ʃlilˈi, ʔadˈajin betipˈul baʔejʁˈua. ʔeʔadkˈen kʃeʔetpanˈe.</he>"
+},
+"audio/voice/id-check/l-9ef192d6.mp3": {
+"speaker": "playerF",
+"say": "שלילי, עדיין בטיפול באירוע. אעדכן כשאתפנה.",
+"ipa": "<he>ʃlilˈi, ʔadˈajin betipˈul baʔejʁˈua. ʔeʔadkˈen kʃeʔetpanˈe.</he>"
+},
+"audio/voice/id-check/l-66de6994.mp3": {
+"speaker": "head",
+"say": "קיבלתי, מעביר את האירוע הנוסף לניידת אחרת.",
+"ipa": "<he>kibˈalti, maʔavˈiʁ ʔˈet haʔejʁˈua hanosˈaf lenajˈedet ʔaχˈeʁet.</he>"
+},
+"audio/voice/id-check/l-1734ec94.mp3": {
+"speaker": "player",
+"say": "חיובי, פנוי.",
+"ipa": "<he>χijuvˈi, panˈuj.</he>"
+},
+"audio/voice/id-check/l-2bec06ca.mp3": {
+"speaker": "playerF",
+"say": "חיובי, פנוי.",
+"ipa": "<he>χijuvˈi, panˈuj.</he>"
+},
+"audio/voice/id-check/l-555496c5.mp3": {
+"speaker": "head",
+"say": "רגע , סיימת שם? לפי הדיווח המעורבים עדיין במקום. תשלים קודם ותעדכן.",
+"ipa": "<he>ʁˈeɡa, sijˈamta ʃˈam? lefˈi hadivˈuaχ hameʔoʁavˈim ʔadˈajin bamakˈom. taʃlˈim kˈodem veteʔadkˈen.</he>"
+},
+"audio/voice/id-check/l-afdddcf9.mp3": {
+"speaker": "head",
+"say": "רגע , סיימת שם? לפי הדיווח המעורבים עדיין במקום. תשלימי קודם ותעדכני.",
+"ipa": "<he>ʁˈeɡa, sijˈamt ʃˈam? lefˈi hadivˈuaχ hameʔoʁavˈim ʔadˈajin bamakˈom. taʃlˈimi kˈodem veteʔadkenˈi.</he>"
+},
+"audio/voice/id-check/l-fb16c9c0.mp3": {
+"speaker": "miriam",
+"say": "ותבדקו אותו טוב. הוא בכלל לא נראה מהשכונה, רואים עליו.",
+"ipa": "<he>vetivdekˈu ʔotˈo tˈov. hˈu beχlˈal lˈo niʁʔˈa mehaʃχunˈa, ʁoʔˈim ʔalˈav.</he>"
+},
+"audio/voice/id-check/l-567902bd.mp3": {
+"speaker": "narrator",
+"say": "עופר שומע, ומסתכל עליכם בכעס.",
+"ipa": "<he>ʔˈofeʁ ʃomˈea, vemistakˈel ʔaleχˈem bekˈaʔas.</he>"
+},
+"audio/voice/id-check/l-be53cfa9.mp3": {
+"speaker": "ofer",
+"say": "רגע. אתה רוצה את הפרטים שלי , אז מה השם שלך? מה מספר השוטר שלך?",
+"ipa": "<he>ʁˈeɡa. ʔatˈa ʁotsˈe ʔˈet hapʁatˈim ʃelˈi, ʔˈaz mˈa haʃˈem ʃelχˈa? mˈa mesapˈeʁ haʃotˈeʁ ʃelχˈa?</he>"
+},
+"audio/voice/id-check/l-35d2c4fe.mp3": {
+"speaker": "ofer",
+"say": "רגע. את רוצה את הפרטים שלי , אז מה השם שלך? מה מספר השוטר שלך?",
+"ipa": "<he>ʁˈeɡa. ʔˈat ʁotsˈa ʔˈet hapʁatˈim ʃelˈi, ʔˈaz mˈa haʃˈem ʃelˈaχ? mˈa mesapˈeʁ haʃotˈeʁ ʃelˈaχ?</he>"
+},
+"audio/voice/id-check/l-7211fb97.mp3": {
+"speaker": "narrator",
+"say": "מהקיוסק יוצא נער צעיר עם שקית, ובתוכה כמה בקבוקי בירה. כשהוא רואה את הניידת, הוא מאט.",
+"ipa": "<he>mehakijˈosk jotsˈe nˈaʔaʁ tsaʔˈiʁ ʔˈim sakˈit, uvetoχˈa kˈama bakbukˈej biʁˈa. kʃehˈu ʁoʔˈe ʔˈet hanajˈedet, hˈu meʔˈet.</he>"
+},
+"audio/voice/id-check/l-0d29f194.mp3": {
+"speaker": "head",
+"say": "מה המצב אצלך? אתה פנוי? יש אירוע נוסף באזור.",
+"ipa": "<he>mˈa hamatsˈav ʔetsleχˈa? ʔatˈa panˈuj? jˈeʃ ʔejʁˈua nosˈaf baʔezˈoʁ.</he>"
+},
+"audio/voice/id-check/l-2a0a8c7a.mp3": {
+"speaker": "head",
+"say": "מה המצב אצלך? את פנויה? יש אירוע נוסף באזור.",
+"ipa": "<he>mˈa hamatsˈav ʔetslˈeχ? ʔˈat pnujˈa? jˈeʃ ʔeʁˈua nosˈaf baʔezˈoʁ.</he>"
+},
+"audio/voice/id-check/l-dba06f93.mp3": {
+"speaker": "ofer",
+"say": "טוב, אני לא מחכה פה כל הלילה.",
+"ipa": "<he>tˈov, ʔanˈi lˈo meχakˈe pˈo kˈol halˈajla.</he>"
+},
+"audio/voice/id-check/l-2b27eece.mp3": {
+"speaker": "narrator",
+"say": "עופר מסתובב ומתחיל ללכת לכיוון הרכב הכסוף. עכשיו צריך לעצור אותו , וזה כבר עימות.",
+"ipa": "<he>ʔˈofeʁ mistovˈev vematχˈil lalˈeχet lekivˈun haʁˈeχev hakasˈuf. ʔaχʃˈav tsaʁˈiχ laʔatsˈoʁ ʔotˈo, vezˈe kvˈaʁ ʔimˈut.</he>"
+},
+"audio/voice/id-check/l-f347ef14.mp3": {
+"speaker": "dispatch",
+"say": "רשמתי. תעבירו אותו לתחנה, החוקר התורן מעודכן בצו.",
+"ipa": "<he>ʁaʃˈamti. taʔavˈiʁu ʔotˈo lataχanˈa, haχokˈeʁ hatoʁˈan meʔudkˈan batsˈav.</he>"
+},
+"audio/voice/id-check/l-71101c3c.mp3": {
+"speaker": "head",
+"say": "רשמתי. תעבירו אותו לתחנה, החוקר התורן מעודכן בצו.",
+"ipa": "<he>ʁaʃˈamti. taʔavˈiʁu ʔotˈo lataχanˈa, haχokˈeʁ hatoʁˈan meʔudkˈan batsˈav.</he>"
+},
+"audio/voice/id-check/l-ba8d0026.mp3": {
+"speaker": "duty",
+"say": "רשמתי. תעבירו אותו לתחנה, החוקר התורן מעודכן בצו.",
+"ipa": "<he>ʁaʃˈamti. taʔavˈiʁu ʔotˈo lataχanˈa, haχokˈeʁ hatoʁˈan meʔudkˈan batsˈav.</he>"
+},
+"audio/voice/id-check/l-84af3889.mp3": {
+"speaker": "dispatch",
+"say": "רשמתי, יועבר לטיפול.",
+"ipa": "<he>ʁaʃˈamti, joʔavˈaʁ letipˈul.</he>"
+},
+"audio/voice/id-check/l-90721211.mp3": {
+"speaker": "head",
+"say": "רשמתי, יועבר לטיפול.",
+"ipa": "<he>ʁaʃˈamti, joʔavˈaʁ letipˈul.</he>"
+},
+"audio/voice/id-check/l-7e315823.mp3": {
+"speaker": "duty",
+"say": "רשמתי, יועבר לטיפול.",
+"ipa": "<he>ʁaʃˈamti, joʔavˈaʁ letipˈul.</he>"
+},
+"audio/voice/id-check/l-af39c950.mp3": {
+"speaker": "dispatch",
+"say": "מה הוא עשה בפועל? תעדכן לפי מעשים.",
+"ipa": "<he>mˈa hˈu ʔasˈa bafˈoʔal? teʔadkˈen lefˈi maʔasˈim.</he>"
+},
+"audio/voice/id-check/l-3e579bdb.mp3": {
+"speaker": "dispatch",
+"say": "מה הוא עשה בפועל? תעדכני לפי מעשים.",
+"ipa": "<he>mˈa hˈu ʔasˈa bafˈoʔal? teʔadkˈeni lefˈi maʔasˈim.</he>"
+},
+"audio/voice/id-check/l-026c1b68.mp3": {
+"speaker": "head",
+"say": "מה הוא עשה בפועל? תעדכן לפי מעשים.",
+"ipa": "<he>mˈa hˈu ʔasˈa bafˈoʔal? teʔadkˈen lefˈi maʔasˈim.</he>"
+},
+"audio/voice/id-check/l-543b4513.mp3": {
+"speaker": "head",
+"say": "מה הוא עשה בפועל? תעדכני לפי מעשים.",
+"ipa": "<he>mˈa hˈu ʔasˈa bafˈoʔal? teʔadkˈeni lefˈi maʔasˈim.</he>"
+},
+"audio/voice/id-check/l-e42e65c2.mp3": {
+"speaker": "duty",
+"say": "מה הוא עשה בפועל? תעדכן לפי מעשים.",
+"ipa": "<he>mˈa hˈu ʔasˈa bafˈoʔal? teʔadkˈen lefˈi maʔasˈim.</he>"
+},
+"audio/voice/id-check/l-87ede3ad.mp3": {
+"speaker": "duty",
+"say": "מה הוא עשה בפועל? תעדכני לפי מעשים.",
+"ipa": "<he>mˈa hˈu ʔasˈa bafˈoʔal? teʔadkˈeni lefˈi maʔasˈim.</he>"
+},
+"audio/voice/id-check/l-80fc5f75.mp3": {
+"speaker": "dispatch",
+"say": "קיבלתי, רשמתי.",
+"ipa": "<he>kibˈalti, ʁaʃˈamti.</he>"
+},
+"audio/voice/id-check/l-74d70b6d.mp3": {
+"speaker": "head",
+"say": "קיבלתי, רשמתי.",
+"ipa": "<he>kibˈalti, ʁaʃˈamti.</he>"
+},
+"audio/voice/id-check/l-170f5e23.mp3": {
+"speaker": "duty",
+"say": "קיבלתי, רשמתי.",
+"ipa": "<he>kibˈalti, ʁaʃˈamti.</he>"
+},
+"audio/voice/id-check/l-b17de60c.mp3": {
+"speaker": "player",
+"say": "נמצא ברחוב האלה 9, ליד הקיוסק",
+"ipa": "<he>nimtsˈa baʁeχˈov haʔelˈa tˈeʃa, lejˈad hakijˈosk</he>"
+},
+"audio/voice/id-check/l-be1fa3c6.mp3": {
+"speaker": "playerF",
+"say": "נמצאת ברחוב האלה 9, ליד הקיוסק",
+"ipa": "<he>nimtsˈet baʁeχˈov haʔelˈa tˈeʃa, lejˈad hakijˈosk</he>"
+},
+"audio/voice/id-check/l-5362504a.mp3": {
+"speaker": "player",
+"say": "בודק אדם לפי דיווח על ניסיון לפתוח רכבים",
+"ipa": "<he>bodˈek ʔadˈam lefˈi divˈuaχ ʔˈal nisajˈon liftˈoaχ ʁeχavˈim</he>"
+},
+"audio/voice/id-check/l-9e7717f0.mp3": {
+"speaker": "playerF",
+"say": "בודקת אדם לפי דיווח על ניסיון לפתוח רכבים",
+"ipa": "<he>bodˈeket ʔadˈam lefˈi divˈuaχ ʔˈal nisajˈon liftˈoaχ ʁeχavˈim</he>"
+},
+"audio/voice/id-check/l-b96202aa.mp3": {
+"speaker": "player",
+"say": "האדם נראה חשוד ולא מהשכונה",
+"ipa": "<he>haʔadˈam niʁʔˈa χaʃˈud velˈo mehaʃχunˈa</he>"
+},
+"audio/voice/id-check/l-04eb592c.mp3": {
+"speaker": "playerF",
+"say": "האדם נראה חשוד ולא מהשכונה",
+"ipa": "<he>haʔadˈam niʁʔˈa χaʃˈud velˈo mehaʃχunˈa</he>"
+},
+"audio/voice/id-check/l-a5ce7acc.mp3": {
+"speaker": "player",
+"say": "האדם זוהה לפי פרטים, ללא תעודה",
+"ipa": "<he>haʔadˈam zohˈe lefˈi pʁatˈim, lelˈo teʔudˈa</he>"
+},
+"audio/voice/id-check/l-5d48c1be.mp3": {
+"speaker": "playerF",
+"say": "האדם זוהה לפי פרטים, ללא תעודה",
+"ipa": "<he>haʔadˈam zohˈe lefˈi pʁatˈim, lelˈo teʔudˈa</he>"
+},
+"audio/voice/id-check/l-aebbebda.mp3": {
+"speaker": "player",
+"say": "הרכב שלו והפרטים תקינים , אין עבירה, שוחרר",
+"ipa": "<he>haʁˈeχev ʃelˈo vehapʁatˈim tkinˈim, ʔˈejn ʔaveʁˈa, ʃuχʁˈaʁ</he>"
+},
+"audio/voice/id-check/l-52fabd28.mp3": {
+"speaker": "playerF",
+"say": "הרכב שלו והפרטים תקינים , אין עבירה, שוחרר",
+"ipa": "<he>haʁˈeχev ʃelˈo vehapʁatˈim tkinˈim, ʔˈejn ʔaveʁˈa, ʃuχʁˈaʁ</he>"
+},
+"audio/voice/id-check/l-6be09095.mp3": {
+"speaker": "player",
+"say": "מעוכב , צו מעצר פעיל וחשד לניסיון גניבה מרכב, מועבר לתחנה",
+"ipa": "<he>meʔukˈav, tsˈav maʔatsˈaʁ paʔˈil veχaʃˈad lenisajˈon ɡnevˈa meʁˈeχev, moʔavˈaʁ lataχanˈa</he>"
+},
+"audio/voice/id-check/l-444253af.mp3": {
+"speaker": "playerF",
+"say": "מעוכב , צו מעצר פעיל וחשד לניסיון גניבה מרכב, מועבר לתחנה",
+"ipa": "<he>meʔukˈav, tsˈav maʔatsˈaʁ paʔˈil veχaʃˈad lenisajˈon ɡnevˈa meʁˈeχev, moʔavˈaʁ lataχanˈa</he>"
+},
+"audio/voice/id-check/l-56474fe8.mp3": {
+"speaker": "player",
+"say": "קטין בן 16 עם אלכוהול , הבירות נלקחו, הורה בדרך",
+"ipa": "<he>katˈin bˈen ʃˈeʃ ʔesʁˈe ʔˈim ʔalkohˈol, habiʁˈot nilkeχˈu, hoʁˈe badˈeʁeχ</he>"
+},
+"audio/voice/id-check/l-df130f46.mp3": {
+"speaker": "playerF",
+"say": "קטין בן 16 עם אלכוהול , הבירות נלקחו, הורה בדרך",
+"ipa": "<he>katˈin bˈen ʃˈeʃ ʔesʁˈe ʔˈim ʔalkohˈol, habiʁˈot nilkeχˈu, hoʁˈe badˈeʁeχ</he>"
+},
+"audio/voice/id-check/l-a18bf582.mp3": {
+"speaker": "player",
+"say": "הקיוסק ברחוב מכר אלכוהול לקטין , מבקש שיועבר לטיפול",
+"ipa": "<he>hakijˈosk baʁeχˈov maχˈaʁ ʔalkohˈol lakatˈin, mevakˈeʃ ʃejoʔavˈaʁ letipˈul</he>"
+},
+"audio/voice/id-check/l-2c0a83c0.mp3": {
+"speaker": "playerF",
+"say": "הקיוסק ברחוב מכר אלכוהול לקטין , מבקשת שיועבר לטיפול",
+"ipa": "<he>hakijˈosk baʁeχˈov maχˈaʁ ʔalkohˈol lakatˈin, mevakˈeʃet ʃejoʔavˈaʁ letipˈul</he>"
 }
 }

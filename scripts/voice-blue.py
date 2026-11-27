@@ -44,6 +44,16 @@ _FEM = json.load(open(ROOT / 'src/config/feminize.json'))['words']
 _FEM_RE = re.compile(r'(^|[.,!?–]\s+|ו?אני\s+(?:לא\s+|גם\s+|רק\s+)?)(' + '|'.join(map(re.escape, _FEM)) + r')(?=[\s.,!?–]|$)')
 
 
+_ADDR = json.load(open(ROOT / 'src/config/address-f.json'))['pairs']
+
+
+def address_f(text: str) -> str:
+    """פנייה אל השוטרת בלשון נקבה (זהה ל-addressF ב-src/config/feminize.ts)"""
+    for a, b in _ADDR:
+        text = text.replace(a, b)
+    return text
+
+
 def feminize(text: str) -> str:
     """שוטרת: פעלים בגוף ראשון בלשון נקבה (זהה ל-src/config/feminize.ts)"""
     return _FEM_RE.sub(lambda m: m.group(1) + _FEM.get(m.group(2), m.group(2)), text)
@@ -118,6 +128,9 @@ def all_lines(sc):
             L.append(x)
             if x['speaker'] == 'player':
                 L.append({**x, 'speaker': 'playerF'})
+            elif x['speaker'] not in ('narrator', 'playerF', 'officer', 'officerF') and address_f(x['text']) != x['text']:
+                # שוטרת: אותה שורה בפנייה בלשון נקבה
+                L.append({**x, 'text': address_f(x['text'])})
     add(sc['dispatch']['lines']); add(officer(sc['arrivalLines']))
     for f in sc['dispatch']['followUps']:
         add(f.get('lines')); [add(b['lines']) for b in f.get('branches', [])]
@@ -216,6 +229,8 @@ def main():
         chatter = json.loads(subprocess.run(['npx', 'vite-node', 'scripts/dump-chatter.ts'], cwd=ROOT, capture_output=True, text=True, check=True).stdout)
         for x in chatter:
             jobs.append(('common', x['who'], x['body']))
+            if address_f(x['body']) != x['body']:
+                jobs.append(('common', x['who'], address_f(x['body'])))
         for d in districts:
             ctr = d['centerCall']
             for st in d['stations']:

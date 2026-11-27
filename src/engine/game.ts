@@ -261,6 +261,8 @@ export function reduce(sc: Scenario, prev: GameState, action: GameAction): GameS
       st.actions.push(action);
       st.turn++;
       st.stage = 'transition';
+      // בלי זה השורות האחרונות (למשל אישור הקבלה) היו מושמעות שוב ביציאה
+      st.lastLines = [];
       pushLog(st, prev, 'choice', 'go', sc.dispatch.goLabel, [], [], []);
       return st;
     }

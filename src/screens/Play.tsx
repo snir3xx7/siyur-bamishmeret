@@ -21,7 +21,7 @@ import { FirstSceneGuide, FullscreenButton, RotateHint } from '../ui/DeviceHints
 import { custodyStatus } from '../engine/custody';
 import { pressureStatus } from '../engine/pressure';
 import { LocateMap } from '../ui/LocateMap';
-import { feminize } from '../config/feminize';
+import { addressF, feminize } from '../config/feminize';
 import { CamLed } from '../ui/CamLed';
 import { callTo, chatterLines, gameProfile, headRouteText, radioize, RADIO_TO_LABEL, type RadioProfile, type RadioTo } from '../config/stations';
 import { Modal, useAudioStatus } from '../ui/SettingsDialog';
@@ -41,7 +41,7 @@ export function Lines({ sc, lines, playerName }: { sc: Scenario; lines: Line[]; 
     <>
       {lines.map((l, i) => {
         const named = l.speaker === 'player' && playerName ? playerName : speakerName(sc, l.speaker, p);
-        const text = l.speaker === 'player' && p.fem ? feminize(radioize(l.text, p)) : radioize(l.text, p);
+        const text = l.speaker === 'player' ? (p.fem ? feminize(radioize(l.text, p)) : radioize(l.text, p)) : p.fem ? addressF(radioize(l.text, p)) : radioize(l.text, p);
         // אם הטקסט כבר פותח בשם הדובר (למשל „מוקד: …”) – לא מכפילים
         const who = named && text.startsWith(`${named}:`) ? '' : named;
         return (
@@ -431,7 +431,8 @@ export function Play() {
     else if (st.lastEvent?.startsWith('pressure:')) void audio.play('alert');
     // קריינות לכל שורה (BlueTTS): אם לכל השורות המדוברות יש קטע – משמיעים אותם בקולות הדמויות
     const vl = sc.media.voiceLines ?? {};
-    const clip = (sp: string, text: string) => (sp === 'player' ? pl(text) : vl[voiceKey(sp, text)]);
+    // קטע לשורה: מהקלטות התרחיש, ואם אין – מהמאגר המשותף (למשל תשובות 401/11 לעדכון)
+    const clip = (sp: string, text: string) => (sp === 'player' ? pl(text) : vl[voiceKey(sp, text)] ?? radioIdx?.[voiceKey(sp, text)]);
     const addr = (sp: string, text: string) => (sp === 'player' && settings.officerVoice === 'f' && radioIdx?.[voiceKey('playerF', text)]) || radioIdx?.[voiceKey(sp, text)];
     const isRadio = (sp: string) => ['dispatch', 'center', 'duty', 'head', 'player'].includes(sp);
     const prof = gameProfile(st.config, settings.station, sc.dispatch.unit);
@@ -440,7 +441,16 @@ export function Play() {
     const fem = settings.officerVoice === 'f';
     // שוטרת: השידורים שלך בקשר בקול נשי (playerF), אם הוקלטו
     const pl = (text: string) => (fem && vl[voiceKey('playerF', text)] ? vl[voiceKey('playerF', text)] : vl[voiceKey('player', text)]);
+    // שוטרת: פונים אלייך בלשון נקבה – אם הנוסח הנקבי הוקלט (שורה מלאה או גוף אחרי פתיחה בנוהל)
+    const toF = (l: Line): Line => {
+      if (!fem || l.speaker === 'player') return l;
+      const t = addressF(l.text);
+      if (t === l.text) return l;
+      const i = t.indexOf(', ');
+      return clip(l.speaker, t) || (i > 0 && clip(l.speaker, t.slice(i + 2))) ? { ...l, text: t } : l;
+    };
     const spoken = st.lastLines
+      .map(toF)
       .map((l) => (l.speaker === 'player' && !clip('player', l.text) && clip(off, l.text) ? { ...l, speaker: off } : l))
       .filter((l) => l.speaker !== 'player' || clip('player', l.text) || clip('player', l.text.slice(l.text.indexOf(', ') + 2)))
       // הוראות במה בלבד („(שותקת, מורידה את העיניים)”) – אין מה להשמיע, ולא חוסמות את שאר השורות
@@ -687,18 +697,46 @@ export function Play() {
                 )}
               </div>
               {hint && <p className="point challenge small">{hint}</p>}
-              <h3 style={{ fontSize: '1em' }}>בקשת השלמת פרטים</h3>
-              <div className="stack" style={{ marginTop: 0 }}>
-                {availableFollowUps(sc, st).map((c) => (
-                  <button key={c.id} type="button" className="btn block" onClick={() => choose(c.id)}>
-                    {fill(c.label, st.vars)}
-                  </button>
-                ))}
-                {availableFollowUps(sc, st).length === 0 && <p className="small muted">אין שאלות נוספות למוקד.</p>}
-              </div>
+              {(() => {
+                // שלב הקריאה, לפי הסדר בשטח: אישור קבלה בקשר ← מסלול ← שאלות למוקד ← יציאה
+                const fus = availableFollowUps(sc, st);
+                const ack = fus.filter((c) => c.id.startsWith('rp-ack'));
+                const route = fus.filter((c) => c.id.startsWith('rt-'));
+                const ask = fus.filter((c) => !c.id.startsWith('rp-ack') && !c.id.startsWith('rt-'));
+                const btns = (cs: typeof fus) =>
+                  cs.map((c) => (
+                    <button key={c.id} type="button" className="btn block" onClick={() => choose(c.id)}>
+                      {fill(c.label, st.vars)}
+                    </button>
+                  ));
+                return (
+                  <>
+                    {ack.length > 0 ? (
+                      <>
+                        <h3 style={{ fontSize: '1em' }}>📻 1. אישור קבלה בקשר</h3>
+                        <div className="stack" style={{ marginTop: 0 }}>{btns(ack)}</div>
+                      </>
+                    ) : (
+                      st.flags.rpAck && <p className="small muted" data-testid="acked">✓ הקבלה אושרה בקשר.</p>
+                    )}
+                    {route.length > 0 && (
+                      <>
+                        <h3 style={{ fontSize: '1em' }}>🧭 מסלול</h3>
+                        <div className="stack" style={{ marginTop: 0 }}>{btns(route)}</div>
+                      </>
+                    )}
+                    <h3 style={{ fontSize: '1em' }}>❓ שאלות למוקד</h3>
+                    <div className="stack" style={{ marginTop: 0 }}>
+                      {btns(ask)}
+                      {ask.length === 0 && <p className="small muted">אין שאלות נוספות למוקד.</p>}
+                    </div>
+                  </>
+                );
+              })()}
               <button type="button" className="btn primary" style={{ marginTop: 12 }} onClick={() => { audio.unlock(); dispatch({ type: 'GO', turn: st.turn }); }} data-testid="go">
-                🚓 {sc.dispatch.goLabel}
+                🚓 {sc.dispatch.goLabel.replace(/^אישור קבלה ו/, '')}
               </button>
+              {!st.flags.rpAck && <p className="small muted">טרם אישרת קבלה בקשר – בשטח מאשרים לפני שיוצאים.</p>}
             </section>
           )}
 
